@@ -517,7 +517,7 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
 function ContactSection() {
   const { lang } = useLang();
   const t = useT(TX);
-  const { getToken, elapsedMs } = useAntispam();
+  const { prime, getToken, elapsedMs } = useAntispam();
   const [status, setStatus] = useState<Status>('idle');
   // [clé de pôle stable, clé de traduction du libellé]
   const subjects: [string, string][] = [
@@ -613,7 +613,7 @@ function ContactSection() {
             </button>
           </div>
         ) : (
-          <form className="g-form" onSubmit={onSubmit}>
+          <form className="g-form" onSubmit={onSubmit} onFocusCapture={prime}>
             <Honeypot />
             <div className="row2">
               <label>

@@ -188,7 +188,7 @@ const POLE_KEYS = ['ecom', 'forma', 'domo', 'cowo', 'todo', 'autre'];
 function ContactForm() {
   const { lang } = useLang();
   const t = useT(TX);
-  const { getToken, elapsedMs } = useAntispam();
+  const { prime, getToken, elapsedMs } = useAntispam();
   const [status, setStatus] = useState<Status>('idle');
   const [pole, setPole] = useState('ecom');
   // [clé de pôle stable, clé de traduction du libellé]
@@ -269,7 +269,7 @@ function ContactForm() {
           </button>
         </div>
       ) : (
-        <form className="g-form" onSubmit={onSubmit}>
+        <form className="g-form" onSubmit={onSubmit} onFocusCapture={prime}>
           <Honeypot />
           <div className="row2">
             <label>
