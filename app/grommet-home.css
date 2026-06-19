@@ -1,0 +1,516 @@
+/* =========================================================
+   ALATERE WEB — HOME « GROMMET »
+   Langage de design Grommet (boutons pilule 18px, élévations
+   douces, Work Sans 18px, cartes CardHeader/Body, edgeSize)
+   appliqué aux COULEURS DU LOGO Alatere (navy / or / vert / terracotta).
+   ========================================================= */
+
+.g-home {
+  /* ---- Couleurs logo Alatere, nommées façon Grommet ---- */
+  --brand: #163a6e;            /* navy du monogramme AW (primaire) */
+  --brand-dark: #0f2a52;
+  --brand-soft: #e7eef8;
+
+  --gold: #C29446;             /* barre dorée du logo — forMa */
+  --gold-dark: #a87f33;
+  --gold-soft: #f7eed9;
+
+  --green: #2f7d52;            /* trait vert du logo — doMo */
+  --green-dark: #246040;
+  --green-soft: #e3f1e9;
+
+  --clay: #b86137;             /* coWo */
+  --clay-dark: #9a4d26;
+  --clay-soft: #f7e7dc;
+
+  /* ---- Neutres Grommet (clairs) ---- */
+  --background: #ffffff;       /* surface principale (Grommet = blanc) */
+  --background-back: #f2f3f4;  /* fond alterné */
+  --background-contrast: #f7f8f9;
+  --dark-1: #1a1f27;           /* texte fort */
+  --dark-2: #404a57;           /* texte */
+  --dark-3: #6b7686;           /* texte doux / labels */
+  --border: rgba(20, 30, 45, 0.16);
+  --border-strong: rgba(20, 30, 45, 0.28);
+  --status-ok: #2f9e6f;
+
+  /* ---- Élévations Grommet (ombres noires translucides) ---- */
+  --elev-xs: 0 1px 2px rgba(20,30,45,0.18);
+  --elev-s:  0 2px 4px rgba(20,30,45,0.16);
+  --elev-m:  0 4px 12px rgba(20,30,45,0.14);
+  --elev-l:  0 8px 24px rgba(20,30,45,0.16);
+  --elev-xl: 0 14px 38px rgba(20,30,45,0.18);
+
+  /* ---- edgeSize (espacement Grommet) ---- */
+  --xxs: 3px; --xs: 6px; --s: 12px; --m: 24px; --l: 48px; --xl: 96px;
+
+  /* ---- rayons ---- */
+  --round-s: 12px;     /* cartes (round small) */
+  --round-m: 24px;     /* grands conteneurs */
+  --round-btn: 18px;   /* bouton pilule — signature Grommet */
+
+  /* ---- type ---- */
+  --font: var(--font-work-sans, "Work Sans"), "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+.g-home {
+  background: var(--background);
+  color: var(--dark-1);
+  font-family: var(--font);
+  font-size: 18px;            /* taille de base Grommet */
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   TYPO (Grommet Heading : weight 600, échelle large)
+   ========================================================= */
+.g-h1 { font-size: 64px; line-height: 1.05; font-weight: 600; letter-spacing: -0.018em; margin: 0 0 var(--m); text-wrap: balance; }
+.g-h2 { font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -0.012em; margin: 0 0 var(--s); text-wrap: balance; }
+.g-h3 { font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -0.008em; margin: 0; }
+.g-h4 { font-size: 20px; line-height: 1.2; font-weight: 600; margin: 0; }
+.g-lead { font-size: 20px; line-height: 1.5; color: var(--dark-2); margin: 0 0 var(--m); max-width: 56ch; }
+.g-text { font-size: 16px; line-height: 1.5; color: var(--dark-2); }
+.g-text--sm { font-size: 14px; }
+.g-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--dark-3); display: inline-flex; align-items: center; gap: var(--xs);
+}
+
+/* =========================================================
+   BOUTONS Grommet (pilule 18px)
+   ========================================================= */
+.g-btn {
+  font-family: var(--font); font-size: 16px; font-weight: 600;
+  padding: 10px 22px; border-radius: var(--round-btn);
+  border: 2px solid transparent; cursor: pointer; line-height: 1.2;
+  display: inline-flex; align-items: center; gap: var(--xs); text-decoration: none;
+  transition: background-color 180ms, border-color 180ms, box-shadow 180ms, transform 180ms;
+}
+.g-btn--primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+.g-btn--primary:hover { box-shadow: 0 0 0 2px var(--brand); }
+.g-btn--secondary { background: transparent; color: var(--brand); border-color: var(--brand); }
+.g-btn--secondary:hover { box-shadow: 0 0 0 2px var(--brand); }
+.g-btn--light { background: #fff; color: var(--brand); border-color: #fff; }
+.g-btn--light:hover { box-shadow: 0 0 0 2px rgba(255,255,255,0.6); }
+.g-btn--ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.55); }
+.g-btn--ghost-light:hover { border-color: #fff; }
+.g-btn--sm { font-size: 14px; padding: 7px 16px; }
+.g-btn--lg { font-size: 17px; padding: 13px 28px; }
+.g-arrow { transition: transform 180ms; }
+.g-btn:hover .g-arrow { transform: translateX(3px); }
+
+/* Anchor (lien texte Grommet) */
+.g-anchor { color: var(--brand); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+.g-anchor:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Co-badge doMo/coWo discret */
+.g-cobadge { display:block; width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 14px; opacity: 0.9; }
+@media (max-width: 640px) { .g-cobadge { width: 60px; height: 60px; } }
+
+/* Logo doMo/coWo aligné à côté du titre */
+.g-titlelogo { display: flex; align-items: center; gap: 0.3em; flex-wrap: wrap; }
+.g-titlebadge { height: 1.15em; width: auto; border-radius: 50%; align-self: center; }
+@media (max-width: 640px) { .g-titlebadge { height: 1em; } }
+
+/* Couleurs exactes du logo doMo coWo (pour les titres lettre par lettre) */
+.lg-teal  { color: #1f7a6d; }
+.lg-green { color: #5a9e34; }
+.lg-gold  { color: #b8862b; }
+.lg-navy  { color: #1d3a73; }
+.lg-clay  { color: #c8732e; }
+
+/* Tag / Pill Grommet */
+.g-tag {
+  font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 6px; line-height: 1.3;
+  border: 1px solid transparent; text-decoration: none;
+}
+a.g-tag { transition: transform 160ms, box-shadow 160ms, filter 160ms; cursor: pointer; }
+a.g-tag:hover { transform: translateY(-2px); box-shadow: var(--elev-m); filter: brightness(0.97); }
+.g-tag--brand { background: var(--brand-soft); color: var(--brand); }
+.g-tag--gold  { background: var(--gold-soft);  color: var(--gold-dark); }
+.g-tag--green { background: var(--green-soft); color: var(--green-dark); }
+.g-tag--clay  { background: var(--clay-soft);  color: var(--clay-dark); }
+.g-tag--ok    { background: var(--green-soft); color: var(--green-dark); }
+/* Pastille « pôle » : lettres colorées (comme le menu) sur fond blanc */
+.g-tag--pole { background: #fff; border-color: var(--border); }
+.g-tag--pole .g-subword { font-weight: 700; }
+
+/* =========================================================
+   HEADER (Grommet AppBar : sticky, élévation, Anchors)
+   ========================================================= */
+.g-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--m); padding: 14px 40px;
+  background: var(--background);
+  box-shadow: var(--elev-s);
+}
+.g-brand { display: flex; align-items: center; gap: var(--s); text-decoration: none; color: var(--dark-1); }
+.g-brand img { width: 40px; height: 40px; border-radius: 50%; }
+.g-brand b { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; }
+.g-nav { display: flex; gap: var(--m); align-items: center; }
+.g-nav a { font-size: 15px; font-weight: 600; color: var(--dark-2); text-decoration: none; transition: color 160ms; }
+.g-nav a:hover { color: var(--brand); }
+.g-actions { display: flex; align-items: center; gap: var(--s); }
+.g-lang { display: inline-flex; border: 1.5px solid var(--border-strong); border-radius: 999px; overflow: hidden; }
+.g-lang button { font-family: var(--font); font-size: 13px; font-weight: 600; padding: 6px 13px; border: none; background: transparent; color: var(--dark-3); cursor: pointer; transition: background-color 160ms, color 160ms; }
+.g-lang button:hover { color: var(--brand); }
+.g-lang button.is-active { background: var(--brand); color: #fff; }
+
+/* ---- Hamburger (caché en desktop) ---- */
+.g-burger { display: none; width: 42px; height: 42px; border: 1.5px solid var(--border-strong); border-radius: 10px; background: var(--background); cursor: pointer; padding: 0; flex-direction: column; align-items: center; justify-content: center; gap: 4px; flex-shrink: 0; }
+.g-burger span { display: block; width: 18px; height: 2px; background: var(--dark-1); border-radius: 2px; transition: transform 200ms, opacity 160ms; }
+.g-burger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.g-burger.is-open span:nth-child(2) { opacity: 0; }
+.g-burger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---- Tiroir mobile ---- */
+.g-drawer { position: fixed; inset: 0; z-index: 60; background: rgba(20,30,45,0.42); opacity: 0; transition: opacity 240ms; }
+.g-drawer.is-open { opacity: 1; }
+.g-drawer__panel { position: absolute; top: 0; right: 0; height: 100%; width: min(80vw, 320px); background: var(--background); box-shadow: var(--elev-xl); padding: 80px 24px 24px; display: flex; flex-direction: column; gap: 4px; transform: translateX(100%); transition: transform 260ms var(--ease, cubic-bezier(.2,.7,.2,1)); overflow-y: auto; }
+.g-drawer.is-open .g-drawer__panel { transform: translateX(0); }
+.g-drawer__panel a { font-size: 17px; font-weight: 600; color: var(--dark-1); text-decoration: none; padding: 13px 8px; border-bottom: 1px solid var(--border); }
+.g-drawer__panel a:hover { color: var(--brand); }
+.g-drawer__lang { align-self: flex-start; margin: 16px 0 8px; border: 1.5px solid var(--border-strong); border-radius: 999px; overflow: hidden; display: inline-flex; }
+.g-drawer__lang button { font-family: var(--font); font-size: 14px; font-weight: 600; padding: 8px 18px; border: none; background: transparent; color: var(--dark-3); cursor: pointer; }
+.g-drawer__lang button.is-active { background: var(--brand); color: #fff; }
+.g-drawer__cta { border-bottom: none !important; justify-content: center; margin-top: 8px; }
+/* Items du tiroir : titres de pôles colorés + sous-titre (comme le menu desktop) */
+.g-drawer__panel a.g-drawer__item { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1.12; }
+.g-drawer__item .g-nav__label { font-size: 17px; font-weight: 700; }
+.g-drawer__item .g-nav__label .g-subword { font-weight: 700; }
+.g-drawer__item .g-nav__sub { font-size: 12px; font-weight: 400; color: var(--dark-3); }
+.g-drawer__item.is-active .g-nav__label { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.g-hero { max-width: 1240px; margin: 0 auto; padding: 80px 40px 56px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center; }
+.g-hero__cta { display: flex; gap: var(--s); flex-wrap: wrap; margin: var(--m) 0 0; }
+.g-hero__proof { display: flex; gap: var(--l); padding-top: var(--m); }
+.g-hero__proof div strong { display: block; font-size: 30px; font-weight: 700; color: var(--brand); line-height: 1; }
+.g-hero__proof div span { font-size: 13px; color: var(--dark-3); }
+
+.g-hero__badge { position: relative; aspect-ratio: 1; display: grid; place-items: center; transform: translateY(-30px); }
+.g-hero__halo { position: absolute; inset: 6%; border-radius: 50%; background:
+  radial-gradient(circle at 50% 40%, rgba(22,58,110,0.16), transparent 60%),
+  radial-gradient(circle at 30% 75%, rgba(47,125,82,0.16), transparent 55%),
+  radial-gradient(circle at 72% 70%, rgba(194,148,70,0.18), transparent 55%);
+  filter: blur(8px); }
+.g-hero__badge > img { width: 74%; height: 74%; border-radius: 50%; position: relative; z-index: 1; box-shadow: var(--elev-l); }
+.g-hero__chips { position: absolute; bottom: 0; display: flex; gap: var(--xs); flex-wrap: wrap; justify-content: center; z-index: 2; }
+.g-hero__chips .g-tag { font-size: 15px; padding: 8px 16px; box-shadow: var(--elev-s); }
+
+/* =========================================================
+   SECTION HEADERS
+   ========================================================= */
+.g-wrap { max-width: 1240px; margin: 0 auto; padding: 24px 40px 48px; }
+.g-sechead { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--m); flex-wrap: wrap; margin-bottom: var(--m); }
+.g-sechead .g-h2 { margin: var(--xs) 0 0; }
+
+/* =========================================================
+   BENTO de CARTES Grommet (Card : header teinté / body / footer)
+   ========================================================= */
+.g-bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--m); }
+.g-bento--quad { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; }
+.c2 { grid-column: span 2; } .c3 { grid-column: span 3; } .c4 { grid-column: span 4; }
+.r2 { grid-row: span 2; }
+
+.g-card {
+  background: var(--background);
+  border-radius: var(--round-s);
+  box-shadow: var(--elev-s);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: box-shadow 200ms, transform 200ms;
+  text-decoration: none; color: inherit;
+}
+a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: translateY(-3px); }
+
+.g-card__header {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s);
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--border);
+}
+.g-card--brand .g-card__header { background: var(--brand-soft); }
+.g-card--gold  .g-card__header { background: var(--gold-soft); }
+.g-card--green .g-card__header { background: var(--green-soft); }
+.g-card--clay  .g-card__header { background: var(--clay-soft); }
+
+.g-card__hash { font-family: "Work Sans", monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; }
+.g-card--brand .g-card__hash { color: var(--brand); }
+.g-card--gold  .g-card__hash { color: var(--gold-dark); }
+.g-card--green .g-card__hash { color: var(--green-dark); }
+.g-card--clay  .g-card__hash { color: var(--clay-dark); }
+
+.g-card__body { padding: 22px; display: flex; flex-direction: column; gap: var(--s); flex: 1; }
+.g-card__brandname { font-size: 34px; font-weight: 700; line-height: 1; letter-spacing: -0.01em; margin: 0; color: var(--dark-1); }
+.g-card__brandname em { font-style: normal; }
+.g-card--brand .g-card__brandname em { color: var(--brand); }
+.g-card--gold  .g-card__brandname em { color: var(--gold-dark); }
+.g-card--green .g-card__brandname em { color: var(--green-dark); }
+.g-card--clay  .g-card__brandname em { color: var(--clay-dark); }
+.g-card__activity { font-size: 15px; font-weight: 600; color: var(--dark-3); margin: -4px 0 0; }
+.g-card__copy { font-size: 15.5px; line-height: 1.5; color: var(--dark-2); margin: 0; }
+.g-card__footer { margin-top: auto; padding-top: var(--xs); }
+
+.g-card__icon { width: 26px; height: 26px; stroke-width: 1.6; }
+.g-card--brand .g-card__icon { color: var(--brand); }
+.g-card--gold  .g-card__icon { color: var(--gold-dark); }
+.g-card--green .g-card__icon { color: var(--green-dark); }
+.g-card--clay  .g-card__icon { color: var(--clay-dark); }
+
+/* Liste à puces façon Grommet (check icons) */
+.g-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.g-list li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--dark-2); }
+.g-list li i { width: 17px; height: 17px; stroke-width: 2; flex-shrink: 0; }
+.g-card--gold .g-list li i { color: var(--gold-dark); }
+
+/* Showcase mini-frames */
+.g-shots { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s); margin-top: var(--xs); flex: 1 1 auto; align-items: stretch; }
+.g-shot { display: flex; flex-direction: column; gap: 8px; }
+.g-shot image-slot { width: 100%; flex: 1 1 auto; min-height: 240px; height: auto; display: block; box-shadow: inset 0 0 0 1px var(--border); }
+.g-shot__row { display: flex; align-items: center; justify-content: space-between; }
+.g-shot__url { font-size: 12px; font-weight: 600; color: var(--brand); }
+.g-shot__meta { font-size: 11px; color: var(--dark-3); }
+
+/* Tuile sombre (stats) */
+.g-card--dark { background: var(--brand); color: #fff; }
+.g-card--dark .g-card__header { background: transparent; border-color: rgba(255,255,255,0.18); }
+.g-card--dark .g-card__hash, .g-card--dark .g-label { color: rgba(255,255,255,0.7); }
+.g-stat-big { font-size: 56px; font-weight: 700; line-height: 0.95; margin: var(--xs) 0; }
+.g-stat-sub { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.5; }
+.g-stat-row { display: flex; gap: var(--m); margin-top: var(--s); padding-top: var(--s); border-top: 1px solid rgba(255,255,255,0.16); }
+.g-stat-row strong { display: block; font-size: 22px; font-weight: 700; line-height: 1; }
+.g-stat-row span { font-size: 11px; color: rgba(255,255,255,0.6); }
+
+/* Pricing pills dans une carte */
+.g-prices { display: flex; gap: var(--s); flex-wrap: wrap; }
+.g-price { border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; min-width: 92px; display: flex; flex-direction: column; gap: 2px; }
+.g-price strong { font-size: 22px; font-weight: 700; color: var(--dark-1); line-height: 1; }
+.g-price span { font-size: 12px; color: var(--dark-3); }
+.g-price strong .g-price__per { font-size: 12px; font-weight: 400; color: var(--dark-3); }
+.g-price.is-featured { border-color: var(--green); box-shadow: inset 0 0 0 1px var(--green); }
+
+/* Photo (coWo) */
+.g-card__photo { width: 100%; flex: 1 1 auto; min-height: 170px; height: auto; display: block; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); }
+/* Photo carrée (forMa / doMo) */
+.g-card__photo--sq { width: 150px; height: 150px; flex: 0 0 150px; display: block; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); }
+/* forMa : cadre paysage (plus large que haut), s'étire en hauteur */
+.g-card__photo--land { flex: 0 0 230px; height: auto; align-self: stretch; min-height: 290px; display: block; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); }
+/* forMa v2 : liste 2 colonnes au-dessus + image paysage pleine largeur */
+.g-list--2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px var(--m); margin: 0; }
+.g-card__photo--land2 { width: 100%; flex: 1 1 auto; min-height: 150px; height: auto; display: block; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); margin-top: var(--xs); }
+/* doMo : image qui occupe l'espace restant en largeur et s'étire en hauteur */
+.g-card__photo--grow { flex: 1 1 auto; align-self: stretch; min-height: 290px; display: block; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); }
+/* Disposition deux colonnes : contenu à gauche, photo à droite */
+.g-split { display: flex; gap: var(--m); align-items: stretch; flex: 1 1 auto; }
+.g-split > .g-list, .g-split > .g-prices { flex: 1 1 auto; min-width: 0; margin: 0; }
+.g-prices--col { flex-direction: column; flex-wrap: nowrap; }
+.g-prices--col .g-price { width: 100%; }
+/* doMo : colonne de prix plus étroite pour laisser place à l'image */
+.g-split--domo { align-items: stretch; }
+.g-split--domo > .g-prices--col { flex: 0 0 128px; justify-content: space-between; }
+/* forMa : la liste des domaines se répartit sur la hauteur de l'image */
+.g-split > .g-list { justify-content: space-between; }
+
+/* Tuile CTA */
+.g-card--cta { background: var(--clay); color: #fff; }
+.g-card--cta .g-card__header { background: transparent; border-color: rgba(255,255,255,0.2); }
+.g-card--cta .g-label { color: rgba(255,255,255,0.8); }
+.g-card--cta .g-card__brandname { color: #fff; font-size: 26px; }
+.g-card--cta .g-card__copy { color: rgba(255,255,255,0.85); }
+
+.g-qualiopi-check { width: 38px; height: 38px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-dark); display: grid; place-items: center; }
+.g-qualiopi-check i { width: 22px; height: 22px; stroke-width: 2; }
+
+/* =========================================================
+   MANIFESTO (section sombre Grommet)
+   ========================================================= */
+.g-manifesto { background: var(--brand); color: #fff; padding: 80px 40px; position: relative; overflow: hidden; }
+.g-manifesto__pattern { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.5px, transparent 1.5px); background-size: 26px 26px; mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); }
+.g-manifesto__inner { position: relative; max-width: 1160px; margin: 0 auto; }
+.g-manifesto__inner .g-h2 { max-width: 22ch; margin-bottom: var(--l); }
+.g-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--m); }
+.g-pillars > div { display: flex; flex-direction: column; gap: 8px; }
+.g-pillars i { width: 28px; height: 28px; stroke-width: 1.6; color: var(--gold); margin-bottom: 4px; }
+.g-pillars h4 { font-size: 17px; font-weight: 600; margin: 0; }
+.g-pillars p { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.74); margin: 0; }
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.g-contact { background: var(--background-back); padding: 80px 40px; }
+.g-contact__card { max-width: 1240px; margin: 0 auto; background: var(--background); border-radius: var(--round-m); box-shadow: var(--elev-m); padding: 52px; display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--l); }
+.g-contact__meta { display: flex; flex-direction: column; gap: 12px; margin-top: var(--m); }
+.g-contact__meta > div { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--dark-2); }
+.g-contact__meta i { width: 18px; height: 18px; stroke-width: 1.6; color: var(--brand); flex-shrink: 0; }
+.g-form { display: flex; flex-direction: column; gap: var(--s); }
+.g-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s); }
+.g-form label { font-size: 12px; font-weight: 600; color: var(--dark-2); display: flex; flex-direction: column; gap: 6px; }
+.g-form input, .g-form select, .g-form textarea {
+  font-family: var(--font); font-size: 15px; padding: 12px 14px; border-radius: 8px;
+  border: 1px solid var(--border-strong); background: #fff; color: var(--dark-1); outline: none;
+  transition: border-color 160ms, box-shadow 160ms;
+}
+.g-form input:focus, .g-form select:focus, .g-form textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 2px var(--brand-soft); }
+.g-form button { justify-content: center; margin-top: var(--xs); }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.g-footer { background: var(--dark-1); color: #fff; padding: 60px 40px 28px; }
+.g-footer__top { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 2fr; gap: var(--l); padding-bottom: var(--l); border-bottom: 1px solid rgba(255,255,255,0.14); }
+.g-footer__brand { display: flex; gap: var(--s); align-items: flex-start; }
+.g-footer__brand img { width: 46px; height: 46px; border-radius: 50%; }
+.g-footer__name { font-size: 21px; font-weight: 700; }
+.g-footer__addr { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 6px; line-height: 1.5; }
+.g-footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--m); }
+.g-footer__cols .g-label { color: rgba(255,255,255,0.5); margin-bottom: 12px; display: block; }
+.g-footer__cols a { display: flex; align-items: center; gap: 9px; padding: 5px 0; font-size: 14px; color: rgba(255,255,255,0.82); text-decoration: none; }
+.g-footer__cols a:hover { color: #fff; }
+.g-footer__cols i { width: 15px; height: 15px; stroke-width: 1.6; color: rgba(255,255,255,0.5); }
+.g-footer__legal { max-width: 1240px; margin: var(--m) auto 0; display: flex; justify-content: space-between; gap: var(--s); flex-wrap: wrap; font-size: 12px; color: rgba(255,255,255,0.55); }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1080px) {
+  .g-h1 { font-size: 48px; }
+  .g-hero { grid-template-columns: 1fr; gap: var(--l); }
+  .g-hero__badge { max-width: 360px; margin: 0 auto; transform: none; }
+  .g-bento { grid-template-columns: repeat(2, 1fr); }
+  .g-bento--quad { grid-auto-rows: auto; }
+  .c4 { grid-column: span 2; } .c3 { grid-column: span 2; } .c2 { grid-column: span 1; }
+  .r2 { grid-row: auto; }
+  .g-pillars { grid-template-columns: repeat(2, 1fr); }
+  .g-contact__card { grid-template-columns: 1fr; gap: var(--m); padding: 32px; }
+  .g-footer__top { grid-template-columns: 1fr; gap: var(--m); }
+}
+@media (max-width: 640px) {
+  .g-nav { display: none; }
+  .g-burger { display: flex; }
+  .g-header { padding: 12px 20px; }
+  .g-actions .g-btn { display: none; }
+  .g-actions .g-lang { display: none; }
+  .g-bento { grid-template-columns: 1fr; }
+  .g-bento--quad { grid-template-columns: 1fr; }
+  .c4, .c3, .c2 { grid-column: span 1; }
+  .g-shots { grid-template-columns: 1fr; }
+  .g-split { flex-direction: column; }
+  .g-card__photo--sq, .g-card__photo--land, .g-card__photo--grow { width: 100%; height: auto; aspect-ratio: 16 / 10; max-width: none; min-height: 0; flex: none; }
+  .g-pillars { grid-template-columns: 1fr; }
+  .g-hero, .g-wrap, .g-manifesto, .g-contact { padding-left: 22px; padding-right: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .g-btn, .g-card, .g-arrow { transition: none !important; }
+}
+
+/* =========================================================
+   SHIM — icônes & placeholders d'images rendus côté React.
+   <Icon> rend `<i class="g-ico"><svg/></i>` : le `<i>` est la cible
+   exacte des sélecteurs du prototype (`i`, `.f-domain__icon`, …),
+   donc les CSS portés (forma/domo/activity/pages) s'appliquent tels
+   quels. Le SVG remplit le `<i>` et hérite color + stroke-width.
+   ========================================================= */
+.g-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  line-height: 0; flex-shrink: 0; width: 1.15em; height: 1.15em; stroke-width: 2;
+}
+.g-ico > svg { width: 100%; height: 100%; display: block; }
+
+/* Placeholder d'image (état vide façon <image-slot>) */
+.g-img-slot {
+  position: relative; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px; text-align: center;
+  padding: 14px; border-radius: 10px; color: var(--dark-3); font-size: 13px;
+  background: rgba(20,30,45,0.03); box-shadow: inset 0 0 0 1px var(--border);
+  border: 1.5px dashed var(--border-strong); min-height: 150px;
+}
+.g-img-slot .g-ico { width: 28px; height: 28px; opacity: .5; color: var(--dark-3); }
+.g-img-slot__cap { font-weight: 500; max-width: 90%; line-height: 1.35; }
+.g-img-slot--shot  { width: 100%; flex: 1 1 auto; min-height: 240px; }
+.g-img-slot--land2 { width: 100%; flex: 1 1 auto; min-height: 150px; margin-top: var(--xs); }
+.g-img-slot--grow  { flex: 1 1 auto; align-self: stretch; min-height: 290px; }
+.g-img-slot--photo { width: 100%; flex: 1 1 auto; min-height: 170px; }
+@media (max-width: 640px) {
+  .g-img-slot--grow { min-height: 0; aspect-ratio: 16 / 10; }
+}
+
+/* =========================================================
+   FAQ accueil (questions fréquentes — extractible IA/SEO)
+   ========================================================= */
+.g-faqwrap { max-width: 880px; padding-top: 8px; padding-bottom: 8px; }
+.g-faq details { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.g-faq summary {
+  font-size: 17px; font-weight: 600; color: var(--dark-1); cursor: pointer;
+  list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
+.g-faq summary::-webkit-details-marker { display: none; }
+.g-faq summary::after { content: "+"; font-size: 24px; color: var(--brand); line-height: 1; }
+.g-faq details[open] summary::after { content: "\2212"; }
+.g-faq__a { font-size: 15px; line-height: 1.6; color: var(--dark-2); margin: 10px 0 0; max-width: 72ch; }
+
+/* =========================================================
+   Réseaux sociaux (footer) — Facebook / LinkedIn par marque
+   ========================================================= */
+.g-social { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.g-social__title {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.g-social__group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.g-social__label { font-size: 13px; color: rgba(255,255,255,0.72); min-width: 132px; }
+.g-social__icons { display: flex; gap: 8px; }
+.g-social a {
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.82);
+  transition: background-color 160ms, color 160ms, transform 160ms;
+}
+.g-social a:hover { background: rgba(255,255,255,0.16); color: #fff; transform: translateY(-2px); }
+.g-social a svg { width: 17px; height: 17px; display: block; }
+
+/* Lien Google Maps dans le footer */
+.g-footer__maps {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 12px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.82); text-decoration: none;
+}
+.g-footer__maps:hover { color: #fff; }
+.g-footer__maps .g-ico { width: 15px; height: 15px; color: rgba(255,255,255,0.6); }
+
+/* Mobile : empiler la rangée Nom/Société du formulaire (sinon trop à l'étroit) */
+@media (max-width: 560px) {
+  .g-form .row2 { grid-template-columns: 1fr; }
+}
+
+/* Emplacement d'image REMPLI (vraie photo) */
+.g-img-slot { overflow: hidden; }
+.g-img-slot--filled {
+  padding: 0; border: none; background: none; display: block; position: relative;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.g-img-slot--filled img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* Titre de carte cliquable (vers la page du pôle) */
+.g-card__brandlink { color: inherit; text-decoration: none; display: inline-block; }
+.g-card__brandlink:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+
+/* Menu : sous-titre par pôle (e-commerce / formations / …) */
+.g-nav a.g-nav__item { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.12; gap: 1px; }
+.g-nav__label { font-size: 15px; font-weight: 700; }
+.g-nav__label .g-subword { font-weight: 700; }
+.g-nav__sub { font-size: 11px; font-weight: 400; color: var(--dark-3); }
+.g-nav a.g-nav__item:hover .g-nav__sub { color: var(--brand); }
+/* Pôle courant : soulignement (les couleurs des lettres sont conservées) */
+.g-nav a.g-nav__item.is-active .g-nav__label { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.g-nav a.g-nav__item.is-active .g-nav__sub { color: var(--brand); }
+
+/* Mention légale reCAPTCHA sous le formulaire */
+.g-recaptcha-notice { font-size: 11.5px; color: var(--dark-3); line-height: 1.4; margin: 4px 0 0; }
+.g-recaptcha-notice a { color: var(--dark-2); text-decoration: underline; }

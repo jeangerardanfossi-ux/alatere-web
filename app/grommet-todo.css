@@ -1,0 +1,42 @@
+/* =========================================================
+   ALATERE toDo — bloc de mise en avant (cross-sell) doMo
+   Réutilise grommet-home.css. Accent : navy maison (--brand).
+   La page toDo elle-même est autonome : « Alatere toDo - HPE.html ».
+   ========================================================= */
+.x-todo { max-width: 1240px; margin: 0 auto; padding: 8px 40px 64px; }
+.x-todo__card {
+  background: linear-gradient(180deg, var(--brand-soft) 0%, var(--background) 70%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--round-s);
+  box-shadow: var(--elev-s);
+  padding: 34px 38px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.x-todo__eyebrow { color: var(--brand); }
+.x-todo__card h2 { font-size: 27px; font-weight: 700; margin: 8px 0 8px; color: var(--dark-1); letter-spacing: -0.01em; }
+.x-todo__card h2 em { font-style: normal; color: var(--brand); }
+.x-todo__card > div > p { font-size: 15.5px; line-height: 1.55; color: var(--dark-2); margin: 0 0 18px; max-width: 52ch; }
+.x-todo__card > div > p strong { color: var(--brand); font-weight: 700; }
+.x-todo__cta { display: flex; gap: var(--s); flex-wrap: wrap; }
+.x-todo__list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.x-todo__list li { display: flex; gap: 10px; font-size: 14.5px; color: var(--dark-2); align-items: flex-start; }
+.x-todo__list li:first-child { font-weight: 700; color: var(--brand); }
+.x-todo__list li i { width: 17px; height: 17px; stroke-width: 2; color: var(--brand); flex-shrink: 0; margin-top: 3px; }
+
+/* Bouton navy (cohérent avec l'identité transversale toDo) */
+.t-btn-navy { background: var(--brand); color: #fff; border-color: var(--brand); }
+.t-btn-navy:hover { box-shadow: 0 0 0 2px var(--brand); color: #fff; }
+
+@media (max-width: 900px) {
+  .x-todo__card { grid-template-columns: 1fr; gap: 24px; }
+  .x-todo__list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .x-todo { padding-left: 22px; padding-right: 22px; }
+  .x-todo__card { padding: 26px 24px; }
+  .x-todo__list { grid-template-columns: 1fr; }
+}

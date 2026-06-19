@@ -1,0 +1,111 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 243, 234, 0.82);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(19, 35, 46, 0.08);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brandLink {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navLink {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.navLink:hover {
+  color: var(--brand);
+}
+
+.cta {
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.cta:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* Burger — masqué en desktop */
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(19, 35, 46, 0.12);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.mobilePanel {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .inner {
+    padding: 0 20px;
+    height: 72px;
+  }
+  .nav {
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+  }
+  .mobilePanel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 20px 20px;
+    background: rgba(247, 243, 234, 0.98);
+    border-bottom: 1px solid rgba(19, 35, 46, 0.08);
+  }
+  .mobileLink {
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 12px 6px;
+    border-bottom: 1px solid rgba(19, 35, 46, 0.07);
+  }
+  .mobileCta {
+    margin-top: 12px;
+    text-align: center;
+    background: var(--brand);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

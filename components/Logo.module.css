@@ -1,0 +1,49 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--brand);
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  box-shadow: 0 2px 10px rgba(12, 48, 108, 0.12);
+  flex: 0 0 auto;
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.name {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-weak);
+  margin-top: 3px;
+}
+
+/* Sur fond sombre (footer / héros sombre éventuel). */
+.dark .name {
+  color: #fff;
+}
+.dark .tagline {
+  color: rgba(255, 255, 255, 0.7);
+}

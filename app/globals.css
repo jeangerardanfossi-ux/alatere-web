@@ -1,49 +1,65 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Charte Alatere (miroir CSS de theme/alatere.ts pour les CSS Modules). */
+  --brand: #0c306c;
+  --brand-dark: #0a2756;
+  --forest: #305424;
+  --leaf: #88b456;
+  --teal: #186c60;
+  --gold: #c0934a;
+  --gold-light: #e4c078;
+  /* Or assombri, réservé au TEXTE doré sur fond clair (contraste AA). */
+  --gold-ink: #94701f;
+  --cream: #f7f3ea;
+  --ink: #13232e;
+  --ink-weak: #274050;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Grommet gère la typo/couleur via le thème ; on neutralise juste les défauts. */
+body {
+  background: #f7f3ea;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+img {
+  max-width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus clavier visible et cohérent sur tout le site. */
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respecte la préférence de réduction des animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
