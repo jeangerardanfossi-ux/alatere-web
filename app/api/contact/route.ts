@@ -22,17 +22,30 @@ const MIN_ELAPSED_MS = 2000; // un envoi humain prend toujours plus de 2 s
 async function verifyRecaptcha(token?: string): Promise<boolean> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   if (!secret) return true; // reCAPTCHA non activé → on ne bloque pas
-  if (!token) return false;
+  // Pas de jeton (reCAPTCHA bloqué côté navigateur) → on n'empêche pas l'envoi.
+  // Le honeypot + le piège temporel restent actifs.
+  if (!token) return true;
   try {
     const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({ secret, response: token }),
     });
-    const data = (await res.json()) as { success?: boolean; score?: number };
-    return !!data.success && (typeof data.score !== 'number' || data.score >= 0.5);
+    const data = (await res.json()) as {
+      success?: boolean;
+      score?: number;
+      hostname?: string;
+      'error-codes'?: string[];
+    };
+    // Quand reCAPTCHA répond vraiment : on applique le score.
+    if (data.success === true) {
+      return typeof data.score !== 'number' || data.score >= 0.5;
+    }
+    // success=false : erreurs navigateur/transitoires (browser-error, timeout, etc.)
+    // → on ne bloque pas le visiteur (honeypot + piège temporel protègent).
+    return true;
   } catch {
-    return false;
+    return true; // panne reCAPTCHA → ne pas bloquer
   }
 }
 
