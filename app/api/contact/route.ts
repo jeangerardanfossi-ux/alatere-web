@@ -117,9 +117,11 @@ export async function POST(request: Request) {
     ackOk,
   });
 
-  // La notification interne est la voie critique : si elle échoue, on signale
-  // une erreur pour que le front affiche le repli « écrivez-nous directement ».
-  if (!internalOk) {
+  // La demande est considérée reçue dès qu'elle est captée quelque part :
+  // enregistrée dans Notion OU notifiée par e-mail. On n'affiche une erreur au
+  // visiteur que si TOUT a échoué (aucune trace de la demande) — ainsi un
+  // incident passager Brevo ne bloque pas le visiteur et ne perd aucun lead.
+  if (!notionOk && !internalOk) {
     return NextResponse.json({ error: 'Envoi impossible.' }, { status: 502 });
   }
 

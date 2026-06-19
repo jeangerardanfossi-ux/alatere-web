@@ -121,19 +121,31 @@ async function sendBrevo(opts: {
 }): Promise<boolean> {
   const key = process.env.BREVO_API_KEY;
   if (!key) return false;
-  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
-    method: 'POST',
-    headers: { 'api-key': key, 'Content-Type': 'application/json', accept: 'application/json' },
-    body: JSON.stringify({
-      sender: { name: opts.senderName, email: opts.senderEmail },
-      to: [{ email: opts.to }],
-      ...(opts.replyTo ? { replyTo: { email: opts.replyTo } } : {}),
-      subject: opts.subject,
-      htmlContent: opts.html,
-    }),
+  const payload = JSON.stringify({
+    sender: { name: opts.senderName, email: opts.senderEmail },
+    to: [{ email: opts.to }],
+    ...(opts.replyTo ? { replyTo: { email: opts.replyTo } } : {}),
+    subject: opts.subject,
+    htmlContent: opts.html,
   });
-  if (!res.ok) console.error('[brevo]', res.status, await res.text().catch(() => ''));
-  return res.ok;
+  // 2 tentatives : on relance une fois sur erreur serveur/réseau (incident passager Brevo).
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: { 'api-key': key, 'Content-Type': 'application/json', accept: 'application/json' },
+        body: payload,
+      });
+      if (res.ok) return true;
+      console.error('[brevo]', res.status, await res.text().catch(() => ''));
+      if (res.status < 500 || attempt === 2) return false; // 4xx = erreur définitive
+    } catch (e) {
+      console.error('[brevo] exception', String(e));
+      if (attempt === 2) return false;
+    }
+    await new Promise((r) => setTimeout(r, 700));
+  }
+  return false;
 }
 
 /* --------------------------- Gabarits ----------------------------- */
