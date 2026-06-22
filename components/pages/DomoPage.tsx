@@ -375,7 +375,7 @@ function Body() {
                 <span className="lg-gold">o</span>
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/domo-cowo-badge.png" alt="Alatere doMo · coWo" className="g-titlebadge" />
+              <img src="/domo-cowo-badge.webp" alt="Alatere doMo · coWo" className="g-titlebadge" width={400} height={400} decoding="async" />
             </h1>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="d-hero__cta">

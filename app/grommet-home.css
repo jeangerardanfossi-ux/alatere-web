@@ -346,6 +346,7 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
    ========================================================= */
 .g-contact { background: var(--background-back); padding: 80px 40px; }
 .g-contact__card { max-width: 1240px; margin: 0 auto; background: var(--background); border-radius: var(--round-m); box-shadow: var(--elev-m); padding: 52px; display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--l); }
+.g-contact__card > * { min-width: 0; }
 .g-contact__meta { display: flex; flex-direction: column; gap: 12px; margin-top: var(--m); }
 .g-contact__meta > div { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--dark-2); }
 .g-contact__meta i { width: 18px; height: 18px; stroke-width: 1.6; color: var(--brand); flex-shrink: 0; }
@@ -353,10 +354,12 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
 .g-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s); }
 .g-form label { font-size: 12px; font-weight: 600; color: var(--dark-2); display: flex; flex-direction: column; gap: 6px; }
 .g-form input, .g-form select, .g-form textarea {
-  font-family: var(--font); font-size: 15px; padding: 12px 14px; border-radius: 8px;
+  font-family: var(--font); font-size: 16px; padding: 12px 14px; border-radius: 8px;
   border: 1px solid var(--border-strong); background: #fff; color: var(--dark-1); outline: none;
+  width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
   transition: border-color 160ms, box-shadow 160ms;
 }
+.g-form textarea { resize: vertical; }
 .g-form input:focus, .g-form select:focus, .g-form textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 2px var(--brand-soft); }
 .g-form button { justify-content: center; margin-top: var(--xs); }
 

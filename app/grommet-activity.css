@@ -69,7 +69,7 @@
 .ap-shop p { font-size: 14px; line-height: 1.5; color: var(--dark-2); margin: 0; }
 
 /* Tarifs / offres */
-.ap-plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--m); align-items: start; }
+.ap-plans { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--m); align-items: stretch; }
 .ap-plans--3 { grid-template-columns: repeat(3, 1fr); }
 .ap-plan { background: var(--background); border-radius: var(--round-s); box-shadow: var(--elev-s); padding: 24px; display: flex; flex-direction: column; gap: 8px; position: relative; border: 1px solid var(--border); }
 .ap-plan.is-featured { border: 2px solid var(--accent); box-shadow: var(--elev-m); }
@@ -77,8 +77,9 @@
 .ap-plan__name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent-dark); }
 .ap-plan__price { font-size: 40px; font-weight: 700; color: var(--dark-1); line-height: 1; }
 .ap-plan__price span { font-size: 14px; font-weight: 500; color: var(--dark-3); }
+.ap-plan__na { align-self: center; text-align: center; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--dark-3); background: var(--light-3, #f1f1f1); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; }
 .ap-plan p { font-size: 13px; color: var(--dark-2); margin: 0; }
-.ap-plan .g-btn { justify-content: center; margin-top: 6px; }
+.ap-plan .g-btn { justify-content: center; margin-top: auto; }
 
 /* À la carte chips */
 .ap-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: var(--m); }

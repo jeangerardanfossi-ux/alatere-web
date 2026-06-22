@@ -20,7 +20,7 @@ const NAV: [string, string, string, string][] = [
   ['/#contact', 'Contact', 'contact', ''],
 ];
 
-const BADGE = '/alatere-web-badge.png';
+const BADGE = '/alatere-web-badge.webp';
 
 /** `active` met en valeur le pôle courant (sur les sous-pages). */
 export default function Header({ active }: { active?: string }) {
@@ -53,7 +53,7 @@ export default function Header({ active }: { active?: string }) {
       <header className="g-header">
         <Link className="g-brand" href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGE} alt="Alatere Web" />
+          <img src={BADGE} alt="Alatere Web" width={800} height={800} fetchPriority="high" decoding="async" />
           <b>Alatere Web</b>
         </Link>
         <nav className="g-nav">

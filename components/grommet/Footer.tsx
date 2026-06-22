@@ -8,7 +8,7 @@ import { Icon, BrandIcon } from './icons';
 import { company } from '@/lib/site';
 import { Email } from '@/components/grommet/Email';
 
-const BADGE = '/alatere-web-badge.png';
+const BADGE = '/alatere-web-badge.webp';
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
 const FOOT: Dict = {
@@ -65,7 +65,7 @@ export default function Footer() {
       <div className="g-footer__top">
         <div className="g-footer__brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGE} alt="Alatere Web" />
+          <img src={BADGE} alt="Alatere Web" width={800} height={800} loading="lazy" decoding="async" />
           <div>
             <div className="g-footer__name">Alatere Web SAS</div>
             <div className="g-footer__addr">

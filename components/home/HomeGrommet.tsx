@@ -16,7 +16,7 @@ import { Email } from '@/components/grommet/Email';
 import { BrandSuffix } from '@/components/grommet/BrandName';
 import { useAntispam, Honeypot, RecaptchaNotice } from '@/components/grommet/antispam';
 
-const BADGE = '/alatere-web-badge.png';
+const BADGE = '/alatere-web-badge.webp';
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
 const TITLE = {
@@ -264,7 +264,15 @@ function Body() {
         <div className="g-hero__badge">
           <div className="g-hero__halo" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGE} alt="Alatere Web" />
+          <img
+            src={BADGE}
+            alt="Alatere Web"
+            width={800}
+            height={800}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
           <div className="g-hero__chips">
             <Link className="g-tag g-tag--pole" href="/alatere-ecom">
               <BrandSuffix pole="ecom" />

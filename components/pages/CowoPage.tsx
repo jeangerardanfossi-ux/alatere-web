@@ -60,9 +60,12 @@ const TX: Dict = {
   off_label: { fr: 'Nos offres', en: 'Our offers' },
   off_title: { fr: 'Des formules pour chaque besoin', en: 'Plans for every need' },
   off_p: {
-    fr: "Du passage ponctuel à l'installation longue durée. Tarifs communiqués sur demande, selon vos besoins.",
-    en: 'From occasional visits to long-term setup. Pricing provided on request, based on your needs.',
+    fr: "Du passage ponctuel à l'installation longue durée. Des formules claires, adaptées à vos besoins.",
+    en: 'From occasional visits to long-term setup. Clear plans, tailored to your needs.',
   },
+  price_ttc: { fr: 'TTC', en: 'incl. VAT' },
+  per_day: { fr: '/ jour', en: '/ day' },
+  plan_na: { fr: 'Actuellement indisponible', en: 'Currently unavailable' },
   plan1_name: { fr: 'Pass journée', en: 'Day pass' },
   plan1_p: {
     fr: 'Un poste en open-space pour la journée, café inclus.',
@@ -231,9 +234,12 @@ function Body() {
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/domo-cowo-badge.png"
+                src="/domo-cowo-badge.webp"
                 alt="Alatere doMo · coWo"
                 className="g-titlebadge"
+                width={400}
+                height={400}
+                decoding="async"
               />
             </h1>
             <p className="g-lead">{t('hero_lead')}</p>
@@ -299,6 +305,9 @@ function Body() {
             <div className="ap-plans">
               <div className="ap-plan">
                 <div className="ap-plan__name">{t('plan1_name')}</div>
+                <div className="ap-plan__price">
+                  30&nbsp;€ <span>{t('price_ttc')}</span>
+                </div>
                 <p>{t('plan1_p')}</p>
                 <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan1_cta')}
@@ -307,6 +316,9 @@ function Body() {
               <div className="ap-plan is-featured">
                 <div className="ap-plan__ribbon">{t('plan2_ribbon')}</div>
                 <div className="ap-plan__name">{t('plan2_name')}</div>
+                <div className="ap-plan__price">
+                  360&nbsp;€ <span>{t('price_ttc')}</span>
+                </div>
                 <p>{t('plan2_p')}</p>
                 <a href="#contact" className="g-btn ap-btn g-btn--sm">
                   {t('plan2_cta')}
@@ -314,6 +326,10 @@ function Body() {
               </div>
               <div className="ap-plan">
                 <div className="ap-plan__name">{t('plan3_name')}</div>
+                <div className="ap-plan__price">
+                  72&nbsp;€ <span>{t('price_ttc')} {t('per_day')}</span>
+                </div>
+                <span className="ap-plan__na">{t('plan_na')}</span>
                 <p>{t('plan3_p')}</p>
                 <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan3_cta')}
@@ -321,6 +337,9 @@ function Body() {
               </div>
               <div className="ap-plan">
                 <div className="ap-plan__name">{t('plan4_name')}</div>
+                <div className="ap-plan__price">
+                  180&nbsp;€ <span>{t('price_ttc')} {t('per_day')}</span>
+                </div>
                 <p>{t('plan4_p')}</p>
                 <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan4_cta')}

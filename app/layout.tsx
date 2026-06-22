@@ -1,26 +1,15 @@
 import type { Metadata } from 'next';
-import { Poppins, Mulish, Work_Sans } from 'next/font/google';
-import StyledComponentsRegistry from '@/lib/registry';
-import Providers from './providers';
+import { Work_Sans } from 'next/font/google';
 import './globals.css';
 
-// Titres — Poppins (géométrique, friendly).
-const poppins = Poppins({
-  variable: '--font-poppins',
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  display: 'swap',
-});
+// Provider Grommet + registry styled-components retirés le 2026-06-22 : aucune
+// page rendue n'utilise de composant Grommet (tout le design passe par les CSS
+// `grommet-*.css`). Ils ne servaient qu'à des composants legacy non rendus et
+// alourdissaient le bundle JS / le travail main-thread → pénalité LCP simulé.
 
-// Corps — Mulish.
-const mulish = Mulish({
-  variable: '--font-mulish',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
-
-// Design « Grommet » de la home — Work Sans (cf. handoff Claude Design).
+// Police unique du site (design « Grommet », cf. handoff Claude Design).
+// Poppins/Mulish retirées le 2026-06-22 : plus utilisées que par des composants
+// legacy non rendus → leur préchargement pénalisait inutilement le LCP.
 const workSans = Work_Sans({
   variable: '--font-work-sans',
   subsets: ['latin'],
@@ -53,12 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${poppins.variable} ${mulish.variable} ${workSans.variable}`}>
-      <body>
-        <StyledComponentsRegistry>
-          <Providers>{children}</Providers>
-        </StyledComponentsRegistry>
-      </body>
+    <html lang="fr" className={workSans.variable}>
+      <body>{children}</body>
     </html>
   );
 }
