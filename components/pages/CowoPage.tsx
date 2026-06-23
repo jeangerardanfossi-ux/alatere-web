@@ -87,8 +87,8 @@ const TX: Dict = {
   plan3_cta: { fr: 'Nous consulter', en: 'Contact us' },
   plan4_name: { fr: 'Salle de réunion', en: 'Meeting room' },
   plan4_p: {
-    fr: 'Cinq salles climatisées à louer à la journée.',
-    en: 'Five air-conditioned rooms to rent by the day.',
+    fr: 'Disponibilité limitée : la plupart de nos salles sont louées à l’année. Mieux vaut réserver quelques jours à l’avance.',
+    en: 'Limited availability: most of our rooms are rented yearly. Best to book a few days ahead.',
   },
   plan4_cta: { fr: 'Réserver', en: 'Book' },
   eq_label: { fr: 'Équipements & services', en: 'Amenities & services' },
@@ -149,8 +149,8 @@ const TX: Dict = {
     en: 'Can I book a meeting room without a membership?',
   },
   faq3_a: {
-    fr: 'Oui, nos cinq salles climatisées se louent à la journée, que vous soyez membre ou non.',
-    en: 'Yes, our five air-conditioned rooms can be rented by the day, member or not.',
+    fr: 'Oui, que vous soyez membre ou non. La disponibilité est toutefois limitée : la plupart de nos salles sont louées à l’année par des entreprises, mieux vaut donc réserver quelques jours à l’avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).',
+    en: 'Yes, member or not. Availability is limited, though: most of our rooms are rented yearly by companies, so it’s best to book a few days ahead. Rate: €180 incl. VAT per day, or €80 incl. VAT for the late slot (after 4 pm).',
   },
   faq4_q: {
     fr: 'Puis-je aussi y domicilier mon entreprise ?',

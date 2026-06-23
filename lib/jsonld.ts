@@ -295,7 +295,7 @@ export const cowoFaqLd = faqLd([
   },
   {
     q: 'Puis-je réserver une salle de réunion sans être abonné ?',
-    a: 'Oui, nos cinq salles climatisées se louent à la journée, que vous soyez membre ou non.',
+    a: 'Oui, que vous soyez membre ou non. La disponibilité est toutefois limitée : la plupart de nos salles sont louées à l’année par des entreprises, mieux vaut donc réserver quelques jours à l’avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).',
   },
   {
     q: 'Puis-je aussi y domicilier mon entreprise ?',
