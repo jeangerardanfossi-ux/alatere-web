@@ -93,3 +93,14 @@ export const posts: Post[] = [
 ];
 
 export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
+
+const MONTHS_FR = [
+  'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
+  'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre',
+];
+
+/** Formate une date ISO (AAAA-MM-JJ) en français : « 8 juillet 2026 ». */
+export function formatFrDate(iso: string) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${d} ${MONTHS_FR[m - 1]} ${y}`;
+}

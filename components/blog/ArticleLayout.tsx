@@ -8,17 +8,7 @@ import { LangProvider } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { BrandName, POLE_HREF } from '@/components/grommet/BrandName';
-import type { Post } from '@/lib/blog';
-
-const MONTHS = [
-  'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
-  'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre',
-];
-
-function frDate(iso: string) {
-  const [y, m, d] = iso.split('-').map(Number);
-  return `${d} ${MONTHS[m - 1]} ${y}`;
-}
+import { formatFrDate, type Post } from '@/lib/blog';
 
 export default function ArticleLayout({ post, children }: { post: Post; children: ReactNode }) {
   return (
@@ -51,7 +41,14 @@ export default function ArticleLayout({ post, children }: { post: Post; children
                   </a>
                 </span>
               )}
-              <span>· Mis à jour le {frDate(post.updated)}</span>
+              <span>
+                · Publié le <time dateTime={post.date}>{formatFrDate(post.date)}</time>
+              </span>
+              {post.updated !== post.date && (
+                <span>
+                  · Mis à jour le <time dateTime={post.updated}>{formatFrDate(post.updated)}</time>
+                </span>
+              )}
               <span>· {post.readingMin} min de lecture</span>
             </div>
           </div>

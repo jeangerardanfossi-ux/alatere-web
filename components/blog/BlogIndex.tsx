@@ -7,7 +7,7 @@ import { LangProvider } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { BrandName } from '@/components/grommet/BrandName';
-import { posts } from '@/lib/blog';
+import { posts, formatFrDate } from '@/lib/blog';
 
 const TITLES = {
   fr: 'Ressources & guides — Alatere Web',
@@ -43,7 +43,8 @@ export default function BlogIndex() {
                 <h2>{p.title}</h2>
                 <p>{p.excerpt}</p>
                 <span className="blog-card__meta">
-                  {p.readingMin} min · Lire l&rsquo;article <span className="g-arrow">→</span>
+                  <time dateTime={p.date}>Publié le {formatFrDate(p.date)}</time> · {p.readingMin} min ·{' '}
+                  Lire l&rsquo;article <span className="g-arrow">→</span>
                 </span>
               </Link>
             ))}
