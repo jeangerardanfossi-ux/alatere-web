@@ -295,7 +295,7 @@ export const cowoFaqLd = faqLd([
   },
   {
     q: 'Puis-je réserver une salle de réunion sans être abonné ?',
-    a: "Oui, nos cinq salles climatisées se louent à l'heure ou à la demi-journée, que vous soyez membre ou non.",
+    a: 'Oui, nos cinq salles climatisées se louent à la journée, que vous soyez membre ou non.',
   },
   {
     q: 'Puis-je aussi y domicilier mon entreprise ?',

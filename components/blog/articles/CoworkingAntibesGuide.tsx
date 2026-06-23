@@ -48,7 +48,7 @@ export default function CoworkingAntibesGuide() {
           <li><strong>Pass à la journée</strong> : pour un besoin ponctuel ;</li>
           <li><strong>Abonnement mensuel en open-space</strong> : pour un usage régulier ;</li>
           <li><strong>Bureau privatif à l&rsquo;année</strong> : pour une équipe ou plus d&rsquo;intimité ;</li>
-          <li><strong>Location de salle de réunion</strong> à l&rsquo;heure ou à la demi-journée, membre ou non.</li>
+          <li><strong>Location de salle de réunion</strong> à la journée, membre ou non.</li>
         </ul>
         <p>
           Chez Alatere coWo, les cinq salles sont climatisées et la fibre est à disposition. Les
