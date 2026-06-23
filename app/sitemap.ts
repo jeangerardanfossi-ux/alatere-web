@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/blog/domicilier-entreprise-antibes',
     '/blog/financer-formation-opco-faf',
+    '/blog/coworking-antibes-journee',
     '/blog/coworking-antibes-guide',
     '/blog/domiciliation-ou-bureau-antibes',
     '/contact',

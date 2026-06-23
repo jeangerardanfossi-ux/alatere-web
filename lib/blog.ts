@@ -16,9 +16,28 @@ export type Post = {
   date: string; // ISO — publication
   updated: string; // ISO — dernière mise à jour
   readingMin: number;
+  author?: { name: string; url: string; bio?: string }; // auteur nommé (E-E-A-T) — sinon Alatere Web
 };
 
 export const posts: Post[] = [
+  {
+    slug: 'coworking-antibes-journee',
+    pole: 'cowo',
+    title: 'Coworking à la journée à Antibes : où travailler quand on est de passage',
+    metaTitle: 'Coworking à la journée à Antibes — pass dès 30 € | Alatere coWo',
+    excerpt:
+      "Travailler à Antibes le temps d'une journée ? Pass coworking à 30 €, café et fibre inclus, à deux pas du port Vauban. Sans engagement — réservez votre poste.",
+    keyword: 'coworking Antibes à la journée',
+    category: 'Coworking',
+    date: '2026-07-08',
+    updated: '2026-07-08',
+    readingMin: 4,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: "Jean-Gérard Anfossi dirige Alatere Web à Antibes. Il y conçoit et opère ses propres sites e-commerce et anime l'espace de coworking Alatere coWo, à deux pas du port Vauban.",
+    },
+  },
   {
     slug: 'financer-formation-opco-faf',
     pole: 'forma',

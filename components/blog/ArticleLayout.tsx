@@ -38,12 +38,45 @@ export default function ArticleLayout({ post, children }: { post: Post; children
             <p className="g-page-sub">{post.excerpt}</p>
             <div className="blog-meta">
               <span className="blog-tag">{post.category}</span>
-              <span>Mis à jour le {frDate(post.updated)}</span>
+              {post.author && (
+                <span>
+                  Par{' '}
+                  <a
+                    href={post.author.url}
+                    target="_blank"
+                    rel="author noopener noreferrer"
+                    className="blog-author-link"
+                  >
+                    {post.author.name}
+                  </a>
+                </span>
+              )}
+              <span>· Mis à jour le {frDate(post.updated)}</span>
               <span>· {post.readingMin} min de lecture</span>
             </div>
           </div>
 
-          <article className="g-prose">{children}</article>
+          <article className="g-prose">
+            {children}
+            {post.author?.bio && (
+              <aside className="article-author">
+                <p className="article-author__name">
+                  À propos de l&rsquo;auteur — {post.author.name}
+                </p>
+                <p>
+                  {post.author.bio}{' '}
+                  <a
+                    href={post.author.url}
+                    target="_blank"
+                    rel="author noopener noreferrer"
+                    className="g-inline"
+                  >
+                    Profil LinkedIn
+                  </a>
+                </p>
+              </aside>
+            )}
+          </article>
 
           <div className="g-pagecta">
             <div className="g-pagecta__inner">

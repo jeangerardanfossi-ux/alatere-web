@@ -135,6 +135,7 @@ export function blogPostingLd(post: {
   updated: string;
   category: string;
   keyword: string;
+  author?: { name: string; url: string };
 }) {
   return {
     '@context': 'https://schema.org',
@@ -144,7 +145,14 @@ export function blogPostingLd(post: {
     datePublished: post.date,
     dateModified: post.updated,
     inLanguage: 'fr-FR',
-    author: { '@type': 'Organization', name: 'Alatere Web', url: SITE_URL },
+    author: post.author
+      ? {
+          '@type': 'Person',
+          name: post.author.name,
+          url: post.author.url,
+          sameAs: [post.author.url],
+        }
+      : { '@type': 'Organization', name: 'Alatere Web', url: SITE_URL },
     publisher: {
       '@type': 'Organization',
       name: company.legalName,
@@ -300,5 +308,33 @@ export const cowoFaqLd = faqLd([
   {
     q: 'Puis-je aussi y domicilier mon entreprise ?',
     a: 'Oui, via notre offre Alatere doMo. Les membres du coworking bénéficient de conditions avantageuses sur la domiciliation.',
+  },
+]);
+
+/** FAQ visible de l'article « coworking à la journée » (miroir du FAQPage). */
+export const cowoJourneeFaqLd = faqLd([
+  {
+    q: 'Combien coûte une journée de coworking à Antibes ?',
+    a: 'Le pass à la journée est à 30 € TTC chez Alatere coWo : un poste en open-space, café, fibre et Wi-Fi inclus, sans engagement.',
+  },
+  {
+    q: 'Peut-on venir sans abonnement ?',
+    a: "Oui. Le pass journée est sans engagement. Un appel ou un e-mail la veille permet de s'assurer qu'un poste est disponible le jour souhaité.",
+  },
+  {
+    q: 'Y a-t-il le Wi-Fi et de quoi passer des appels ?',
+    a: "Oui : fibre haut-débit et Wi-Fi sécurisé partout. Pour les appels et visios, la grande salle à bureau partagé sert de coin appels (casque recommandé) et le bar de la cuisine permet de s'isoler ; les salles fermées, en majorité louées à l'année, se réservent à l'avance.",
+  },
+  {
+    q: 'Peut-on louer une salle de réunion juste pour la journée ?',
+    a: "Oui, mais la disponibilité est limitée : la plupart de nos salles sont louées à l'année par des entreprises. Mieux vaut réserver quelques jours à l'avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).",
+  },
+  {
+    q: "Où se situe l'espace et comment y accéder ?",
+    a: 'Au 9 boulevard Albert 1er (immeuble La Caravelle), 06600 Antibes, à deux pas du port Vauban et à cinq minutes à pied de la gare SNCF.',
+  },
+  {
+    q: 'Peut-on aussi y domicilier son entreprise ?',
+    a: 'Oui, via Alatere doMo. Les membres du coworking profitent de conditions avantageuses sur la domiciliation.',
   },
 ]);

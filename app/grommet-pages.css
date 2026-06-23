@@ -138,6 +138,32 @@
 .g-prose td { color: var(--dark-2); }
 @media (max-width: 560px) { .g-prose th, .g-prose td { padding: 8px 10px; font-size: 14px; } }
 
+/* Encadré « repère / à noter » dans la prose */
+.g-prose p.g-callout {
+  background: var(--background-back);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 4px 0 16px;
+  font-size: 15px;
+}
+
+/* Lien auteur dans la méta d'en-tête */
+.blog-author-link { color: var(--brand); font-weight: 600; text-decoration: none; }
+.blog-author-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Encadré « À propos de l'auteur » en fin d'article (E-E-A-T) */
+.g-prose .article-author {
+  margin-top: 28px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background-back);
+}
+.g-prose .article-author p { margin: 0 0 6px; font-size: 15px; }
+.g-prose .article-author p:last-child { margin-bottom: 0; }
+.g-prose .article-author__name { font-weight: 700; color: var(--dark-1); }
+
 /* En-tête d'article : nom de marque coloré (pôle), façon bento accueil */
 .article-pole {
   display: inline-block; margin: 4px 0 10px; font-size: 26px; font-weight: 700;
