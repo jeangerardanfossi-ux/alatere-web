@@ -168,8 +168,8 @@ const TX: Dict = {
   },
   faq2_q: { fr: 'Où se situe Alatere Web ?', en: 'Where is Alatere Web located?' },
   faq2_a: {
-    fr: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ cinq minutes à pied de la gare SNCF.',
-    en: 'At 9 Boulevard Albert 1er, 06600 Antibes, steps from Port Vauban and about a five-minute walk from the SNCF station.',
+    fr: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
+    en: 'At 9 Boulevard Albert 1er, 06600 Antibes, steps from Port Vauban and about a ten-minute walk (700 m) from the SNCF station.',
   },
   faq3_q: {
     fr: 'Alatere forMa est-il un organisme de formation certifié Qualiopi ?',

@@ -209,7 +209,7 @@ export const homeFaq = [
   },
   {
     q: 'Où se situe Alatere Web ?',
-    a: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ cinq minutes à pied de la gare SNCF.',
+    a: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
   },
   {
     q: 'Alatere forMa est-il un organisme de formation certifié Qualiopi ?',
@@ -295,7 +295,7 @@ export const ecomFaqLd = faqLd([
 export const cowoFaqLd = faqLd([
   {
     q: "Où se situe l'espace de coworking ?",
-    a: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ cinq minutes à pied de la gare SNCF.',
+    a: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
   },
   {
     q: 'Quelles formules proposez-vous ?',
@@ -331,7 +331,7 @@ export const cowoJourneeFaqLd = faqLd([
   },
   {
     q: "Où se situe l'espace et comment y accéder ?",
-    a: 'Au 9 boulevard Albert 1er (immeuble La Caravelle), 06600 Antibes, à deux pas du port Vauban et à cinq minutes à pied de la gare SNCF.',
+    a: 'Au 9 boulevard Albert 1er (immeuble La Caravelle), 06600 Antibes, à deux pas du port Vauban et à dix minutes à pied (700 m) de la gare SNCF.',
   },
   {
     q: 'Peut-on aussi y domicilier son entreprise ?',

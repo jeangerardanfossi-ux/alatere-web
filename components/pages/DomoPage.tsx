@@ -74,8 +74,8 @@ const TX: Dict = {
   nap_hours_v: { fr: 'Lun – Ven · 9h – 17h', en: 'Mon – Fri · 9am – 5pm' },
   nap_access_l: { fr: 'Accès', en: 'Access' },
   nap_access_v: {
-    fr: 'Gare SNCF & Port Vauban à 5 min à pied',
-    en: 'Train station & Port Vauban 5 min walk',
+    fr: 'Port Vauban à deux pas, gare SNCF à 10 min à pied',
+    en: 'Port Vauban steps away, train station 10-min walk',
   },
 
   // Bénéfices

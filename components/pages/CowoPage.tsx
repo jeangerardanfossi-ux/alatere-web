@@ -136,8 +136,8 @@ const TX: Dict = {
     en: 'Where is the coworking space located?',
   },
   faq1_a: {
-    fr: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ cinq minutes à pied de la gare SNCF.',
-    en: 'At 9 Boulevard Albert 1er, 06600 Antibes, steps from Port Vauban and about a five-minute walk from the train station.',
+    fr: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
+    en: 'At 9 Boulevard Albert 1er, 06600 Antibes, steps from Port Vauban and about a ten-minute walk (700 m) from the train station.',
   },
   faq2_q: { fr: 'Quelles formules proposez-vous ?', en: 'What plans do you offer?' },
   faq2_a: {
@@ -172,8 +172,8 @@ const TX: Dict = {
   loc_mail_l: { fr: 'E-mail', en: 'E-mail' },
   loc_acc_l: { fr: 'Accès', en: 'Access' },
   loc_acc_v: {
-    fr: 'Port Vauban & gare SNCF à 5 min à pied',
-    en: 'Port Vauban & train station 5 min walk',
+    fr: 'Port Vauban à deux pas, gare SNCF à 10 min à pied',
+    en: 'Port Vauban steps away, train station 10-min walk',
   },
   loc_cta: { fr: 'Planifier une visite', en: 'Schedule a visit' },
   loc_maps: { fr: 'Voir sur Google Maps', en: 'View on Google Maps' },

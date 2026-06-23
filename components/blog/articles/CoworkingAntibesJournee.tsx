@@ -10,7 +10,7 @@ export default function CoworkingAntibesJournee() {
         À Antibes, un <strong>coworking à la journée</strong>{' '}
         coûte 30 € TTC : vous réservez un poste
         en open-space, café, fibre et Wi-Fi inclus, sans engagement. Alatere coWo se trouve au 9
-        boulevard Albert 1er, à deux pas du port Vauban et à cinq minutes de la gare SNCF —
+        boulevard Albert 1er, à deux pas du port Vauban et à dix minutes à pied de la gare SNCF —
         l&rsquo;option simple pour travailler le temps d&rsquo;une journée, entre deux rendez-vous ou
         loin de chez soi.
       </p>
@@ -183,7 +183,7 @@ export default function CoworkingAntibesJournee() {
         <h2>Venir travailler chez Alatere coWo</h2>
         <p>
           L&rsquo;espace est au <strong>9 boulevard Albert 1er</strong> (immeuble La Caravelle), 06600
-          Antibes — port Vauban à deux pas, gare SNCF à cinq minutes à pied. Le pass est sans
+          Antibes — port Vauban à deux pas, gare SNCF à dix minutes à pied (700 m). Le pass est sans
           engagement : un appel au <strong>{company.phoneDisplay}</strong> ou un message à{' '}
           <Email className="g-inline" user="coworking" /> suffit à s&rsquo;assurer un poste pour le
           jour voulu. Café offert si vous venez d&rsquo;abord visiter.
@@ -255,7 +255,7 @@ export default function CoworkingAntibesJournee() {
         <h3>Où se situe l&rsquo;espace et comment y accéder ?</h3>
         <p>
           Au 9 boulevard Albert 1er (immeuble La Caravelle), 06600 Antibes, à deux pas du port Vauban
-          et à cinq minutes à pied de la gare SNCF.
+          et à dix minutes à pied (700 m) de la gare SNCF.
         </p>
 
         <h3>Peut-on aussi y domicilier son entreprise ?</h3>
