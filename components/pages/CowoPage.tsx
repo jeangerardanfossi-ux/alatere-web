@@ -87,8 +87,8 @@ const TX: Dict = {
   plan3_cta: { fr: 'Nous consulter', en: 'Contact us' },
   plan4_name: { fr: 'Salle de réunion', en: 'Meeting room' },
   plan4_p: {
-    fr: "Cinq salles climatisées à louer à l'heure ou à la demi-journée.",
-    en: 'Five air-conditioned rooms to rent by the hour or half-day.',
+    fr: 'Cinq salles climatisées à louer à la journée.',
+    en: 'Five air-conditioned rooms to rent by the day.',
   },
   plan4_cta: { fr: 'Réserver', en: 'Book' },
   eq_label: { fr: 'Équipements & services', en: 'Amenities & services' },
@@ -149,8 +149,8 @@ const TX: Dict = {
     en: 'Can I book a meeting room without a membership?',
   },
   faq3_a: {
-    fr: "Oui, nos cinq salles climatisées se louent à l'heure ou à la demi-journée, que vous soyez membre ou non.",
-    en: 'Yes, our five air-conditioned rooms can be rented by the hour or half-day, member or not.',
+    fr: 'Oui, nos cinq salles climatisées se louent à la journée, que vous soyez membre ou non.',
+    en: 'Yes, our five air-conditioned rooms can be rented by the day, member or not.',
   },
   faq4_q: {
     fr: 'Puis-je aussi y domicilier mon entreprise ?',
