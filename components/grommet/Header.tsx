@@ -48,6 +48,10 @@ export default function Header({ active }: { active?: string }) {
     </>
   );
 
+  // Sur une page pôle, « Prendre rendez-vous » pré-sélectionne le sujet
+  // correspondant dans le formulaire (/contact lit ?pole=). Ailleurs → #contact accueil.
+  const ctaHref = active && POLES.has(active) ? `/contact?pole=${active}` : '/#contact';
+
   return (
     <>
       <header className="g-header">
@@ -72,7 +76,7 @@ export default function Header({ active }: { active?: string }) {
         </nav>
         <div className="g-actions">
           <LangToggle />
-          <Link href="/#contact" className="g-btn g-btn--primary g-btn--sm">
+          <Link href={ctaHref} className="g-btn g-btn--primary g-btn--sm">
             {cta}
           </Link>
         </div>
@@ -112,7 +116,7 @@ export default function Header({ active }: { active?: string }) {
           ))}
           <LangToggle extra="g-drawer__lang" />
           <Link
-            href="/#contact"
+            href={ctaHref}
             className="g-btn g-btn--primary g-drawer__cta"
             onClick={() => setDrawer(false)}
           >
