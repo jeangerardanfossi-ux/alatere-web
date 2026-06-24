@@ -138,7 +138,7 @@ const TX: Dict = {
   plan1_btn: { fr: 'Choisir Headquarters', en: 'Choose Headquarters' },
   plan_ribbon: { fr: 'Le plus demandé', en: 'Most popular' },
   plan2_name: { fr: 'Offre Forward', en: 'Forward plan' },
-  plan2_tag: { fr: 'Siège social et réexpédition', en: 'Registered office & forwarding' },
+  plan2_tag: { fr: 'Siège social et numérisation du courrier', en: 'Registered office & mail scanning' },
   plan2_f1: { fr: "Tout l'offre Headquarters", en: 'Everything in Headquarters' },
   plan2_f2: { fr: 'Numérisation du courrier', en: 'Mail scanning' },
   plan2_f3: { fr: 'Réexpédition hebdomadaire', en: 'Weekly forwarding' },
