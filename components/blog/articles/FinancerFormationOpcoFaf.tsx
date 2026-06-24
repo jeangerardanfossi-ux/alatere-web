@@ -20,7 +20,17 @@ export default function FinancerFormationOpcoFaf() {
           Chaque branche professionnelle dépend d&rsquo;un OPCO qui prend en charge tout ou partie des
           coûts pédagogiques, dans le cadre du <strong>plan de développement des compétences</strong>{' '}
           de l&rsquo;entreprise. C&rsquo;est l&rsquo;employeur qui dépose la demande, <strong>avant</strong>{' '}
-          le début de la formation.
+          le début de la formation. Pour identifier l&rsquo;OPCO de votre branche, utilisez l&rsquo;outil
+          officiel{' '}
+          <a
+            className="g-inline"
+            href="https://www.service-public.gouv.fr/particuliers/vosdroits/R63043"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            « Trouver son opérateur de compétences » (service-public.gouv.fr)
+          </a>
+          .
         </p>
       </section>
 
@@ -29,9 +39,14 @@ export default function FinancerFormationOpcoFaf() {
         <p>
           Le <strong>FAF</strong> (Fonds d&rsquo;Assurance Formation) concerne les{' '}
           <strong>travailleurs non-salariés</strong> : indépendants, professions libérales,
-          dirigeants non-salariés (FIF PL, AGEFICE…). Il prend en charge la formation continue des
+          dirigeants non-salariés. Il prend en charge la formation continue des
           non-salariés, selon des plafonds annuels propres à chaque fonds. La demande se dépose
-          auprès du FAF dont vous relevez, en règle générale <strong>avant</strong> la formation.
+          auprès du FAF dont vous relevez, en règle générale <strong>avant</strong> la formation. Les
+          deux principaux sont le{' '}
+          <a className="g-inline" href="https://www.fifpl.fr" target="_blank" rel="noopener noreferrer">
+            FIF PL
+          </a>{' '}
+          (professions libérales) et l&rsquo;AGEFICE (commerçants, dirigeants non-salariés).
         </p>
       </section>
 
@@ -48,7 +63,19 @@ export default function FinancerFormationOpcoFaf() {
             <tr><td>Salarié</td><td>OPCO (plan de développement des compétences)</td></tr>
             <tr><td>Indépendant / profession libérale</td><td>FAF (FIF PL, AGEFICE…)</td></tr>
             <tr><td>Dirigeant assimilé salarié</td><td>OPCO</td></tr>
-            <tr><td>Demandeur d&rsquo;emploi</td><td>France Travail</td></tr>
+            <tr>
+              <td>Demandeur d&rsquo;emploi</td>
+              <td>
+                <a
+                  className="g-inline"
+                  href="https://www.francetravail.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  France Travail
+                </a>
+              </td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -95,6 +122,46 @@ export default function FinancerFormationOpcoFaf() {
             demandez un devis
           </Link>{' '}
           — réponse sous 48 heures.
+        </p>
+      </section>
+
+      <section>
+        <h2>Questions fréquentes</h2>
+
+        <h3>Qui finance ma formation professionnelle ?</h3>
+        <p>
+          Selon votre statut : l&rsquo;OPCO (opérateur de compétences) pour les salariés, le FAF (Fonds
+          d&rsquo;Assurance Formation) pour les travailleurs non-salariés, et France Travail pour les
+          demandeurs d&rsquo;emploi.
+        </p>
+
+        <h3>Quelle différence entre OPCO et FAF ?</h3>
+        <p>
+          L&rsquo;OPCO finance la formation des salariés dans le cadre du plan de développement des
+          compétences de l&rsquo;employeur. Le FAF finance la formation continue des travailleurs
+          non-salariés — indépendants, professions libérales (FIF PL, AGEFICE…) — selon des plafonds
+          annuels propres à chaque fonds.
+        </p>
+
+        <h3>Comment faire financer sa formation sans reste à charge ?</h3>
+        <p>
+          Obtenez un devis et un programme détaillé, identifiez votre financeur (OPCO de votre branche
+          ou FAF des non-salariés), déposez la demande de prise en charge avant le début de la
+          formation, obtenez l&rsquo;accord, puis transmettez les justificatifs après la formation.
+        </p>
+
+        <h3>Faut-il un organisme certifié Qualiopi pour être financé ?</h3>
+        <p>
+          Oui. Seuls les organismes certifiés Qualiopi ouvrent droit aux financements publics et
+          mutualisés (OPCO, FAF…). Alatere Web SAS (marque Alatere forMa) est certifié Qualiopi,
+          enregistré sous le n° 93.06.07588.06.
+        </p>
+
+        <h3>Combien de temps prend un dossier de financement ?</h3>
+        <p>
+          Un dossier OPCO ou FAF demande souvent plusieurs semaines d&rsquo;instruction. Chez Alatere
+          forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne
+          sous 14 jours une fois le financement validé.
         </p>
       </section>
     </>

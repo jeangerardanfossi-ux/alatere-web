@@ -50,6 +50,11 @@ export const posts: Post[] = [
     date: '2026-06-17',
     updated: '2026-06-17',
     readingMin: 6,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, dont la marque Alatere forMa est l'organisme de formation professionnelle certifié Qualiopi (n° 93.06.07588.06).",
+    },
   },
   {
     slug: 'coworking-antibes-guide',
@@ -63,6 +68,11 @@ export const posts: Post[] = [
     date: '2026-06-17',
     updated: '2026-06-17',
     readingMin: 5,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: "Jean-Gérard Anfossi dirige Alatere Web à Antibes. Il y conçoit et opère ses propres sites e-commerce et anime l'espace de coworking Alatere coWo, à deux pas du port Vauban.",
+    },
   },
   {
     slug: 'domiciliation-ou-bureau-antibes',
@@ -76,6 +86,11 @@ export const posts: Post[] = [
     date: '2026-06-17',
     updated: '2026-06-17',
     readingMin: 5,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, où il opère le service de domiciliation d'entreprise Alatere doMo, agréé par la préfecture, à deux pas du port Vauban.",
+    },
   },
   {
     slug: 'domicilier-entreprise-antibes',
@@ -89,6 +104,11 @@ export const posts: Post[] = [
     date: '2026-06-17',
     updated: '2026-06-17',
     readingMin: 6,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, où il opère le service de domiciliation d'entreprise Alatere doMo, agréé par la préfecture, à deux pas du port Vauban.",
+    },
   },
 ];
 

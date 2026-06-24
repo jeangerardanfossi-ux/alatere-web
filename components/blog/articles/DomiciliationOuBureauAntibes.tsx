@@ -43,6 +43,37 @@ export default function DomiciliationOuBureauAntibes() {
       </section>
 
       <section>
+        <h2>Le vrai coût : domiciliation, bureau ou coworking ?</h2>
+        <p>
+          L&rsquo;écart de budget est l&rsquo;argument décisif pour la plupart des créateurs
+          d&rsquo;entreprise. Concrètement, à Antibes :
+        </p>
+        <ul>
+          <li>
+            <strong>Domiciliation</strong> : à partir de <strong>25 € HT/mois</strong> (boîte aux
+            lettres) ou <strong>30 € HT/mois</strong> pour une adresse de siège social, plus 50 € HT de
+            frais de dossier une seule fois. Aucune charge, aucun bail.
+          </li>
+          <li>
+            <strong>Coworking</strong> : <strong>30 € TTC la journée</strong> ou{' '}
+            <strong>360 € TTC/mois</strong> en open-space illimité — un vrai poste de travail, sans
+            engagement long.
+          </li>
+          <li>
+            <strong>Location de bureau</strong> : un loyer mensuel (souvent plusieurs centaines
+            d&rsquo;euros), auquel s&rsquo;ajoutent les charges, l&rsquo;assurance, l&rsquo;internet et
+            un bail (généralement 3-6-9). Le coût d&rsquo;entrée et l&rsquo;engagement sont sans commune
+            mesure.
+          </li>
+        </ul>
+        <p>
+          Autrement dit : si vous n&rsquo;avez pas besoin d&rsquo;un espace physique tous les jours, la
+          domiciliation (pour l&rsquo;adresse) éventuellement complétée par le coworking (pour les jours
+          de présence) coûte une fraction d&rsquo;un bureau loué à l&rsquo;année.
+        </p>
+      </section>
+
+      <section>
         <h2>Quand choisir la domiciliation ?</h2>
         <p>
           La domiciliation est idéale si vous <strong>travaillez de chez vous ou en déplacement</strong>,
@@ -82,6 +113,37 @@ export default function DomiciliationOuBureauAntibes() {
             Contactez-nous
           </Link>{' '}
           — réponse sous 48 heures.
+        </p>
+      </section>
+
+      <section>
+        <h2>Questions fréquentes</h2>
+
+        <h3>Quelle est la différence entre domiciliation et location de bureau ?</h3>
+        <p>
+          La domiciliation fournit une adresse de siège social et la gestion du courrier, sans espace
+          de travail dédié. La location de bureau fournit un espace physique, mais avec un bail, des
+          charges et un engagement. Le coworking est intermédiaire : un poste flexible, sans bail long.
+        </p>
+
+        <h3>Qu&rsquo;est-ce qui coûte le moins cher, domiciliation ou bureau ?</h3>
+        <p>
+          La domiciliation, nettement : à partir de 30 € HT par mois chez Alatere doMo, contre un loyer
+          plus charges pour un bureau. Le coworking se situe entre les deux.
+        </p>
+
+        <h3>Quand choisir la domiciliation plutôt qu&rsquo;un bureau ?</h3>
+        <p>
+          Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que
+          vous voulez une adresse professionnelle séparée de votre domicile à moindre coût.
+          C&rsquo;est aussi la solution pour un transfert de siège vers Antibes.
+        </p>
+
+        <h3>Peut-on combiner domiciliation et coworking ?</h3>
+        <p>
+          Oui, et c&rsquo;est souvent le plus pratique : domicilier son siège et disposer d&rsquo;un
+          poste de coworking au même endroit, à Antibes. Alatere réunit domiciliation, coworking et
+          secrétariat externalisé sous un seul interlocuteur.
         </p>
       </section>
     </>

@@ -311,6 +311,98 @@ export const cowoFaqLd = faqLd([
   },
 ]);
 
+/** FAQ visible de l'article « coworking à Antibes : guide » (miroir du FAQPage). */
+export const cowoGuideFaqLd = faqLd([
+  {
+    q: "Qu'est-ce que le coworking ?",
+    a: "Le coworking est un espace de travail partagé : on loue un poste, un bureau ou une salle, à la journée ou au mois, avec les services inclus (wifi fibre, café, salles de réunion). C'est une alternative souple au bureau classique et au travail à domicile.",
+  },
+  {
+    q: 'Pour qui le coworking est-il intéressant ?',
+    a: 'Pour les indépendants et freelances, les télétravailleurs en quête d’un cadre professionnel, les petites équipes et entreprises en création, ainsi que les professionnels de passage sur la Côte d’Azur.',
+  },
+  {
+    q: 'Quelles formules de coworking existe-t-il à Antibes ?',
+    a: "Pass à la journée pour un besoin ponctuel, abonnement mensuel en open-space pour un usage régulier, bureau privatif à l'année, et location de salle de réunion à la journée. Chez Alatere coWo, le pass journée est à 30 € TTC et l'abonnement mensuel à 360 € TTC.",
+  },
+  {
+    q: 'Comment choisir son espace de coworking à Antibes ?',
+    a: 'Regardez l’emplacement (proximité gare, port, parking), les services réellement inclus, la flexibilité des formules et de l’engagement, l’ambiance et la taille de la communauté, et les services annexes comme la domiciliation.',
+  },
+  {
+    q: 'Peut-on domicilier son entreprise dans un espace de coworking ?',
+    a: 'Oui. Chez Alatere coWo, vous pouvez domicilier le siège social de votre entreprise sur place via Alatere doMo, avec des conditions avantageuses pour les membres du coworking.',
+  },
+]);
+
+/** FAQ visible de l'article « domiciliation ou bureau » (miroir du FAQPage). */
+export const domoBureauFaqLd = faqLd([
+  {
+    q: 'Quelle est la différence entre domiciliation et location de bureau ?',
+    a: 'La domiciliation fournit une adresse de siège social et la gestion du courrier, sans espace de travail dédié. La location de bureau fournit un espace physique, mais avec un bail, des charges et un engagement. Le coworking est intermédiaire : un poste flexible, sans bail long.',
+  },
+  {
+    q: 'Qu’est-ce qui coûte le moins cher, domiciliation ou bureau ?',
+    a: 'La domiciliation, nettement : à partir de 30 € HT par mois chez Alatere doMo, contre un loyer plus charges pour un bureau. Le coworking se situe entre les deux.',
+  },
+  {
+    q: 'Quand choisir la domiciliation plutôt qu’un bureau ?',
+    a: "Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que vous voulez une adresse professionnelle séparée de votre domicile à moindre coût. C'est aussi la solution pour un transfert de siège vers Antibes.",
+  },
+  {
+    q: 'Peut-on combiner domiciliation et coworking ?',
+    a: 'Oui, et c’est souvent le plus pratique : domicilier son siège et disposer d’un poste de coworking au même endroit, à Antibes. Alatere réunit domiciliation, coworking et secrétariat externalisé sous un seul interlocuteur.',
+  },
+]);
+
+/** FAQ visible de l'article « domicilier son entreprise à Antibes » (miroir du FAQPage). */
+export const domicilierFaqLd = faqLd([
+  {
+    q: "Qu'est-ce que la domiciliation d'entreprise ?",
+    a: "Domicilier une entreprise, c'est lui attribuer une adresse de siège social officielle, distincte du domicile personnel. Cette adresse figure sur le Kbis, les factures et les documents légaux. Seule une société de domiciliation agréée par la préfecture peut délivrer l'attestation exigée par le greffe et le RCS.",
+  },
+  {
+    q: "Combien coûte une domiciliation d'entreprise à Antibes ?",
+    a: "Chez Alatere doMo : offre Dropbox (boîte aux lettres) à 25 € HT/mois, offre Headquarters (adresse de siège social) à 30 € HT/mois, offre Forward (numérisation et réexpédition incluses) à 50 € HT/mois, plus 50 € HT de frais de dossier réglés une seule fois à l'ouverture.",
+  },
+  {
+    q: 'Quels documents faut-il pour domicilier son entreprise ?',
+    a: 'Une pièce d’identité du dirigeant, un justificatif de domicile personnel récent, les statuts ou le Kbis pour une société déjà immatriculée, et un RIB pour le mandat de prélèvement. La liste exacte varie selon la forme juridique et la situation.',
+  },
+  {
+    q: 'Combien de temps faut-il pour domicilier son entreprise ?',
+    a: "Chez Alatere doMo, l'attestation de domiciliation est émise sous 24 à 48 heures une fois le dossier complet. L'adresse est utilisable dès l'attestation émise.",
+  },
+  {
+    q: 'Peut-on transférer le siège d’une entreprise existante ?',
+    a: 'Oui. La domiciliation s’accompagne d’un transfert de siège : nous vous aidons pour les formalités auprès du greffe et la mise à jour de vos statuts.',
+  },
+]);
+
+/** FAQ visible de l'article « financer sa formation : OPCO et FAF » (miroir du FAQPage). */
+export const financerFormationFaqLd = faqLd([
+  {
+    q: 'Qui finance ma formation professionnelle ?',
+    a: "Selon votre statut : l'OPCO (opérateur de compétences) pour les salariés, le FAF (Fonds d'Assurance Formation) pour les travailleurs non-salariés, et France Travail pour les demandeurs d'emploi.",
+  },
+  {
+    q: 'Quelle différence entre OPCO et FAF ?',
+    a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés — indépendants, professions libérales (FIF PL, AGEFICE…) — selon des plafonds annuels propres à chaque fonds.",
+  },
+  {
+    q: 'Comment faire financer sa formation sans reste à charge ?',
+    a: 'Obtenez un devis et un programme détaillé, identifiez votre financeur (OPCO de votre branche ou FAF des non-salariés), déposez la demande de prise en charge avant le début de la formation, obtenez l’accord, puis transmettez les justificatifs après la formation.',
+  },
+  {
+    q: 'Faut-il un organisme certifié Qualiopi pour être financé ?',
+    a: 'Oui. Seuls les organismes certifiés Qualiopi ouvrent droit aux financements publics et mutualisés (OPCO, FAF…). Alatere Web SAS (marque Alatere forMa) est certifié Qualiopi, enregistré sous le n° 93.06.07588.06.',
+  },
+  {
+    q: 'Combien de temps prend un dossier de financement ?',
+    a: 'Un dossier OPCO ou FAF demande souvent plusieurs semaines d’instruction. Chez Alatere forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne sous 14 jours une fois le financement validé.',
+  },
+]);
+
 /** FAQ visible de l'article « coworking à la journée » (miroir du FAQPage). */
 export const cowoJourneeFaqLd = faqLd([
   {

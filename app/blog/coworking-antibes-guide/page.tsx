@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ArticleLayout from '@/components/blog/ArticleLayout';
 import Body from '@/components/blog/articles/CoworkingAntibesGuide';
 import JsonLd from '@/components/JsonLd';
-import { blogPostingLd, breadcrumbLd } from '@/lib/jsonld';
+import { blogPostingLd, breadcrumbLd, cowoGuideFaqLd } from '@/lib/jsonld';
 import { postBySlug } from '@/lib/blog';
 import '../../grommet-home.css';
 import '../../grommet-pages.css';
@@ -22,6 +22,7 @@ export default function Page() {
       <JsonLd
         data={[
           blogPostingLd(post),
+          cowoGuideFaqLd,
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Ressources', path: '/blog' },

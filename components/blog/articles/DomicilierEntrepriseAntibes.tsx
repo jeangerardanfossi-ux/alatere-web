@@ -133,6 +133,45 @@ export default function DomicilierEntrepriseAntibes() {
           : nous répondons sous 48 heures.
         </p>
       </section>
+
+      <section>
+        <h2>Questions fréquentes</h2>
+
+        <h3>Qu&rsquo;est-ce que la domiciliation d&rsquo;entreprise ?</h3>
+        <p>
+          Domicilier une entreprise, c&rsquo;est lui attribuer une adresse de siège social officielle,
+          distincte du domicile personnel. Cette adresse figure sur le Kbis, les factures et les
+          documents légaux. Seule une société de domiciliation agréée par la préfecture peut délivrer
+          l&rsquo;attestation exigée par le greffe et le RCS.
+        </p>
+
+        <h3>Combien coûte une domiciliation d&rsquo;entreprise à Antibes ?</h3>
+        <p>
+          Chez Alatere doMo : offre Dropbox (boîte aux lettres) à 25 € HT/mois, offre Headquarters
+          (adresse de siège social) à 30 € HT/mois, offre Forward (numérisation et réexpédition
+          incluses) à 50 € HT/mois, plus 50 € HT de frais de dossier réglés une seule fois à
+          l&rsquo;ouverture.
+        </p>
+
+        <h3>Quels documents faut-il pour domicilier son entreprise ?</h3>
+        <p>
+          Une pièce d&rsquo;identité du dirigeant, un justificatif de domicile personnel récent, les
+          statuts ou le Kbis pour une société déjà immatriculée, et un RIB pour le mandat de
+          prélèvement. La liste exacte varie selon la forme juridique et la situation.
+        </p>
+
+        <h3>Combien de temps faut-il pour domicilier son entreprise ?</h3>
+        <p>
+          Chez Alatere doMo, l&rsquo;attestation de domiciliation est émise sous 24 à 48 heures une
+          fois le dossier complet. L&rsquo;adresse est utilisable dès l&rsquo;attestation émise.
+        </p>
+
+        <h3>Peut-on transférer le siège d&rsquo;une entreprise existante ?</h3>
+        <p>
+          Oui. La domiciliation s&rsquo;accompagne d&rsquo;un transfert de siège : nous vous aidons
+          pour les formalités auprès du greffe et la mise à jour de vos statuts.
+        </p>
+      </section>
     </>
   );
 }

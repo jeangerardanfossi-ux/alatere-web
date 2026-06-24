@@ -51,8 +51,53 @@ export default function CoworkingAntibesGuide() {
           <li><strong>Location de salle de réunion</strong> à la journée (selon disponibilité), membre ou non.</li>
         </ul>
         <p>
-          Chez Alatere coWo, les cinq salles sont climatisées et la fibre est à disposition. Les
-          tarifs sont communiqués selon votre besoin.
+          Chez Alatere coWo, les cinq salles sont climatisées et la fibre est à disposition.
+        </p>
+      </section>
+
+      <section>
+        <h2>Combien coûte un coworking à Antibes ?</h2>
+        <p>
+          À titre de repère, voici les tarifs pratiqués chez Alatere coWo, près du port Vauban :
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Formule</th>
+              <th>Tarif</th>
+              <th>Idéal pour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pass journée</td>
+              <td>30 € TTC / jour, café inclus</td>
+              <td>Besoin ponctuel, de passage</td>
+            </tr>
+            <tr>
+              <td>Abonnement mensuel</td>
+              <td>360 € TTC / mois, open-space illimité</td>
+              <td>Présence régulière sur Antibes</td>
+            </tr>
+            <tr>
+              <td>Salle de réunion</td>
+              <td>180 € TTC / jour — 80 € TTC après 16 h</td>
+              <td>Réunion, atelier, entretien — sur réservation</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="g-callout">
+          <strong>Repère utile :</strong>{' '}
+          au-delà de 12 journées par mois, l&rsquo;abonnement mensuel (360 €) revient moins cher que le
+          pass à la journée (360 ÷ 30 = 12). En dessous, le pass reste le plus économique.
+        </p>
+        <p>
+          Vous venez juste pour une journée ? Tous les détails (ce qui est inclus, comment passer un
+          appel, comment réserver) sont dans notre{' '}
+          <Link className="g-inline" href="/blog/coworking-antibes-journee">
+            guide du coworking à la journée à Antibes
+          </Link>
+          .
         </p>
       </section>
 
@@ -88,6 +133,44 @@ export default function CoworkingAntibesGuide() {
             réserver une visite
           </Link>
           .
+        </p>
+      </section>
+
+      <section>
+        <h2>Questions fréquentes</h2>
+
+        <h3>Qu&rsquo;est-ce que le coworking ?</h3>
+        <p>
+          Le coworking est un espace de travail partagé : on loue un poste, un bureau ou une salle, à
+          la journée ou au mois, avec les services inclus (wifi fibre, café, salles de réunion).
+          C&rsquo;est une alternative souple au bureau classique et au travail à domicile.
+        </p>
+
+        <h3>Pour qui le coworking est-il intéressant ?</h3>
+        <p>
+          Pour les indépendants et freelances, les télétravailleurs en quête d&rsquo;un cadre
+          professionnel, les petites équipes et entreprises en création, ainsi que les professionnels
+          de passage sur la Côte d&rsquo;Azur.
+        </p>
+
+        <h3>Quelles formules de coworking existe-t-il à Antibes ?</h3>
+        <p>
+          Pass à la journée pour un besoin ponctuel, abonnement mensuel en open-space pour un usage
+          régulier, bureau privatif à l&rsquo;année, et location de salle de réunion à la journée. Chez
+          Alatere coWo, le pass journée est à 30 € TTC et l&rsquo;abonnement mensuel à 360 € TTC.
+        </p>
+
+        <h3>Comment choisir son espace de coworking à Antibes ?</h3>
+        <p>
+          Regardez l&rsquo;emplacement (proximité gare, port, parking), les services réellement
+          inclus, la flexibilité des formules et de l&rsquo;engagement, l&rsquo;ambiance et la taille
+          de la communauté, et les services annexes comme la domiciliation.
+        </p>
+
+        <h3>Peut-on domicilier son entreprise dans un espace de coworking ?</h3>
+        <p>
+          Oui. Chez Alatere coWo, vous pouvez domicilier le siège social de votre entreprise sur place
+          via Alatere doMo, avec des conditions avantageuses pour les membres du coworking.
         </p>
       </section>
     </>
