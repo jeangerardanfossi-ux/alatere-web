@@ -7,9 +7,10 @@
  * de sorte que les pages /en sont rendues en anglais et indexables.
  */
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, type ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { EN_SLUG, FR_FROM_EN } from '@/lib/i18n';
 
 export type Lang = 'fr' | 'en';
 export type Dict = Record<string, { fr: string; en: string }>;
@@ -59,9 +60,13 @@ export function LangProvider({
 export function localizePath(href: string, lang: Lang): string {
   if (lang !== 'en' || !href.startsWith('/')) return href;
   if (href === '/') return '/en';
-  if (href.startsWith('/#')) return '/en' + href.slice(1); // '/#contact' → '/en#contact'
   if (href.startsWith('/en/') || href === '/en') return href;
-  return '/en' + href;
+  // Sépare le chemin de l'éventuelle query/ancre, traduit le slug, recolle.
+  const m = href.match(/^([^?#]*)([?#].*)?$/);
+  const path = m?.[1] || href;
+  const suffix = m?.[2] || '';
+  if (path === '/') return `/en${suffix}`; // ex. '/#contact' → '/en#contact'
+  return `/en${EN_SLUG[path] ?? path}${suffix}`;
 }
 
 /** Bascule FR/EN : navigue vers l'URL équivalente dans l'autre langue. */
@@ -69,10 +74,14 @@ export function LangToggle({ extra = '' }: { extra?: string }) {
   const { lang } = useLang();
   const pathname = usePathname() || '/';
 
-  // Chemin « nu » (sans préfixe /en) → on en dérive les deux variantes.
-  const bare = pathname === '/en' ? '/' : pathname.startsWith('/en/') ? pathname.slice(3) : pathname;
-  const frHref = bare;
-  const enHref = bare === '/' ? '/en' : '/en' + bare;
+  // Chemin FR de référence, dérivé de l'URL courante (FR ou EN localisée).
+  const frHref =
+    pathname === '/en'
+      ? '/'
+      : pathname.startsWith('/en/')
+        ? FR_FROM_EN[pathname.slice(3)] ?? pathname.slice(3)
+        : pathname;
+  const enHref = localizePath(frHref, 'en');
 
   const items: { l: Lang; href: string }[] = [
     { l: 'fr', href: frHref },

@@ -3,21 +3,21 @@ import FormaDomainPage from '@/components/pages/FormaDomainPage';
 import JsonLd from '@/components/JsonLd';
 import { courseLd, faqLd, breadcrumbLd, CONTENT_UPDATED } from '@/lib/jsonld';
 import { FORMA_DOMAIN_BY_SLUG, FORMA_FAQ } from '@/lib/forma-domains';
-import { pageAlternates } from '@/lib/i18n';
+import { pageAlternates, enPath } from '@/lib/i18n';
 import '../../../grommet-home.css';
 import '../../../grommet-forma.css';
 import '../../../grommet-forma-pages.css';
 
-const D = FORMA_DOMAIN_BY_SLUG['communication-digitale'];
-const FR = '/alatere-forma/communication-digitale';
+const D = FORMA_DOMAIN_BY_SLUG['intelligence-artificielle'];
+const FR = '/alatere-forma/intelligence-artificielle';
 const DESC_EN =
-  'Digital communication courses in Antibes: social media, brand content, editorial strategy and content creation. Qualiopi-certified.';
+  'Artificial intelligence courses in Antibes: generative AI, prompt engineering, automation, business integration. Qualiopi-certified.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },
   description: DESC_EN,
   alternates: pageAlternates(FR, 'en'),
-  openGraph: { title: D.metaTitle.en, description: DESC_EN, url: `/en${FR}`, locale: 'en_US' },
+  openGraph: { title: D.metaTitle.en, description: DESC_EN, url: enPath(FR), locale: 'en_US' },
 };
 
 export default function Page() {
@@ -28,7 +28,7 @@ export default function Page() {
           courseLd({
             name: D.name.en,
             description: DESC_EN,
-            path: `/en${FR}`,
+            path: enPath(FR),
             teaches: D.skills.map((s) => s.en),
             dateModified: CONTENT_UPDATED,
           }),
@@ -36,7 +36,7 @@ export default function Page() {
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere forMa', path: '/en/alatere-forma' },
-            { name: D.name.en, path: `/en${FR}` },
+            { name: D.name.en, path: enPath(FR) },
           ]),
         ]}
       />

@@ -1,12 +1,48 @@
 /**
- * Helpers i18n : URL EN dérivée d'un chemin FR + alternates hreflang réciproques.
- * FR à la racine (sans préfixe), EN sous /en.
+ * Helpers i18n : slugs localisés EN + alternates hreflang réciproques.
+ * FR à la racine (sans préfixe), EN sous /en avec slugs traduits.
  */
 import type { Metadata } from 'next';
 
-/** Chemin EN dérivé d'un chemin FR (« / » → « /en »). */
+/**
+ * Correspondance chemin FR → chemin EN « nu » (sans préfixe /en).
+ * Seuls les mots génériques sont traduits ; les noms de marque (alatere-*) restent.
+ * Tout chemin absent de la table garde son slug (ex. /contact, /alatere-forma/webmarketing).
+ */
+export const EN_SLUG: Record<string, string> = {
+  '/a-propos': '/about',
+  '/conditions-generales-de-vente': '/terms-of-sale',
+  '/mentions-legales': '/legal-notice',
+  '/confidentialite': '/privacy',
+  '/plan-du-site': '/sitemap',
+  '/organisme-de-formation': '/training-provider',
+  '/accessibilite-et-handicap': '/accessibility',
+  '/alatere-forma/intelligence-artificielle': '/alatere-forma/artificial-intelligence',
+  '/alatere-forma/langues': '/alatere-forma/languages',
+  '/alatere-forma/communication-digitale': '/alatere-forma/digital-communication',
+  '/alatere-forma/immobilier': '/alatere-forma/real-estate',
+  '/alatere-forma/formateurs': '/alatere-forma/trainers',
+};
+
+/** Correspondance inverse : chemin EN nu → chemin FR. */
+export const FR_FROM_EN: Record<string, string> = Object.fromEntries(
+  Object.entries(EN_SLUG).map(([fr, en]) => [en, fr]),
+);
+
+/** Chemin EN nu (sans /en) à partir d'un chemin FR. */
+export function toEnLocalized(frPath: string): string {
+  return EN_SLUG[frPath] ?? frPath;
+}
+
+/** Chemin FR à partir d'un chemin EN nu (sans /en). */
+export function frFromEnLocalized(enLocalized: string): string {
+  return FR_FROM_EN[enLocalized] ?? enLocalized;
+}
+
+/** URL EN complète (avec /en + slug localisé) à partir d'un chemin FR. */
 export function enPath(frPath: string): string {
-  return frPath === '/' ? '/en' : `/en${frPath}`;
+  const loc = toEnLocalized(frPath);
+  return loc === '/' ? '/en' : `/en${loc}`;
 }
 
 /**

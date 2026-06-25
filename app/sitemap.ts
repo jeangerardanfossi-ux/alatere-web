@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { enPath } from '@/lib/i18n';
 
 const BASE = 'https://www.alatere-web.com';
 
@@ -35,7 +36,7 @@ const FR_ONLY = [
 ];
 
 const frUrl = (p: string) => `${BASE}${p}`;
-const enUrl = (p: string) => (p === '' ? `${BASE}/en` : `${BASE}/en${p}`);
+const enUrl = (p: string) => `${BASE}${enPath(p)}`;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
