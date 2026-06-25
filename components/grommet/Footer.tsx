@@ -3,7 +3,7 @@
 /** Pied de page « Grommet » partagé (FR/EN). */
 
 import Link from 'next/link';
-import { useT, type Dict } from './lang';
+import { useT, useLang, localizePath, type Dict } from './lang';
 import { Icon, BrandIcon } from './icons';
 import { company } from '@/lib/site';
 import { Email } from '@/components/grommet/Email';
@@ -21,6 +21,7 @@ const FOOT: Dict = {
   foot_a5: { fr: 'Alatere toDo', en: 'Alatere toDo' },
   foot_col2: { fr: 'Liens utiles', en: 'Useful links' },
   foot_l1: { fr: 'Catalogue formations', en: 'Training catalog' },
+  foot_l3: { fr: 'Nos formateurs', en: 'Our trainers' },
   foot_l2: { fr: 'À propos', en: 'About' },
   foot_l6: { fr: 'Ressources (blog)', en: 'Resources (blog)' },
   foot_l5: { fr: 'Secrétariat externalisé', en: 'Outsourced secretariat' },
@@ -60,6 +61,8 @@ const SOCIALS = [
 
 export default function Footer() {
   const t = useT(FOOT);
+  const { lang } = useLang();
+  const lp = (h: string) => localizePath(h, lang);
   return (
     <footer className="g-footer">
       <div className="g-footer__top">
@@ -116,16 +119,16 @@ export default function Footer() {
         <div className="g-footer__cols">
           <div>
             <span className="g-label">{t('foot_col1')}</span>
-            <Link href="/alatere-ecom">
+            <Link href={lp('/alatere-ecom')}>
               <Icon name="shopping-bag" /> <span>{t('foot_a1')}</span>
             </Link>
-            <Link href="/alatere-forma">
+            <Link href={lp('/alatere-forma')}>
               <Icon name="graduation-cap" /> <span>{t('foot_a2')}</span>
             </Link>
-            <Link href="/alatere-domo">
+            <Link href={lp('/alatere-domo')}>
               <Icon name="map-pin" /> <span>{t('foot_a3')}</span>
             </Link>
-            <Link href="/alatere-cowo">
+            <Link href={lp('/alatere-cowo')}>
               <Icon name="users-round" /> <span>{t('foot_a4')}</span>
             </Link>
             <a href="/alatere-todo.html">
@@ -137,10 +140,13 @@ export default function Footer() {
             <a href={CATALOG} target="_blank" rel="noopener noreferrer">
               <Icon name="external-link" /> <span>{t('foot_l1')}</span>
             </a>
-            <Link href="/a-propos">
+            <Link href={lp('/alatere-forma/formateurs')}>
+              <Icon name="users" /> <span>{t('foot_l3')}</span>
+            </Link>
+            <Link href={lp('/a-propos')}>
               <Icon name="info" /> <span>{t('foot_l2')}</span>
             </Link>
-            <Link href="/blog">
+            <Link href={lp('/blog')}>
               <Icon name="book-open" /> <span>{t('foot_l6')}</span>
             </Link>
             <a href="/alatere-todo.html">
@@ -149,28 +155,28 @@ export default function Footer() {
             <a href="https://repro-tableaux.com" target="_blank" rel="noopener noreferrer">
               <Icon name="external-link" /> <span>repro-tableaux.com</span>
             </a>
-            <Link href="/contact">
+            <Link href={lp('/contact')}>
               <Icon name="mail" /> <span>{t('foot_l4')}</span>
             </Link>
           </div>
           <div>
             <span className="g-label">{t('foot_col3')}</span>
-            <Link href="/mentions-legales">
+            <Link href={lp('/mentions-legales')}>
               <Icon name="file-text" /> <span>{t('foot_g1')}</span>
             </Link>
-            <Link href="/confidentialite">
+            <Link href={lp('/confidentialite')}>
               <Icon name="shield" /> <span>{t('foot_g2')}</span>
             </Link>
-            <Link href="/conditions-generales-de-vente">
+            <Link href={lp('/conditions-generales-de-vente')}>
               <Icon name="file-text" /> <span>{t('foot_g6')}</span>
             </Link>
-            <Link href="/accessibilite-et-handicap">
+            <Link href={lp('/accessibilite-et-handicap')}>
               <Icon name="accessibility" /> <span>{t('foot_g4')}</span>
             </Link>
-            <Link href="/organisme-de-formation">
+            <Link href={lp('/organisme-de-formation')}>
               <Icon name="badge-check" /> <span>{t('foot_g3')}</span>
             </Link>
-            <Link href="/plan-du-site">
+            <Link href={lp('/plan-du-site')}>
               <Icon name="navigation" /> <span>{t('foot_g7')}</span>
             </Link>
           </div>

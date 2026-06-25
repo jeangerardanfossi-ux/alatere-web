@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 
 /** Corps de l'article « Domicilier son entreprise à Antibes ». Rendu dans <article class="g-prose">. */
 export default function DomicilierEntrepriseAntibes() {

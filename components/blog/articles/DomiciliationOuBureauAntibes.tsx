@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 
 /** Corps de l'article « Domiciliation ou location de bureau à Antibes ». */
 export default function DomiciliationOuBureauAntibes() {

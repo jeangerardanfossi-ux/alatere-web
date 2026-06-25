@@ -2,7 +2,7 @@
 
 /** Index du blog « Ressources » (liste des articles). */
 
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';

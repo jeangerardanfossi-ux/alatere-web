@@ -2,7 +2,7 @@
 
 /** Gabarit d'article de blog (charte Grommet, prose). */
 
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 import type { ReactNode } from 'react';
 import { LangProvider } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';

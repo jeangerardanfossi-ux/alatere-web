@@ -2,7 +2,7 @@
 
 /** Mentions légales — page prose (handoff Grommet, sans accent). */
 
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';

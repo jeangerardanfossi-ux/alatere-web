@@ -2,6 +2,7 @@
 
 /** À propos — page « entreprise familiale » (handoff Grommet, page de contenu). */
 
+import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
@@ -215,9 +216,9 @@ function Body() {
             <h2>{t('cta_t')}</h2>
             <p>{t('cta_p')}</p>
           </div>
-          <a href="/contact" className="g-btn g-btn--light g-btn--lg">
+          <Link href="/contact" className="g-btn g-btn--light g-btn--lg">
             <span>{t('cta_btn')}</span> <span className="g-arrow">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </main>

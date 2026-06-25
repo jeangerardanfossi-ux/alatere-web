@@ -2,6 +2,9 @@ import { company } from './site';
 
 const SITE_URL = 'https://www.alatere-web.com';
 
+/** Date de dernière mise à jour du contenu forMa (signal de fraîcheur AI SEO). */
+export const CONTENT_UPDATED = '2026-06-25';
+
 const address = {
   '@type': 'PostalAddress',
   streetAddress: company.address,
@@ -115,6 +118,63 @@ export const coursesLd = domaines.map((d) => ({
     url: `${SITE_URL}/alatere-forma`,
   },
 }));
+
+/** Course — sous-page « domaine » d'Alatere forMa (enrichi pour l'AI SEO). */
+export function courseLd(opts: {
+  name: string;
+  description: string;
+  path: string;
+  /** Compétences enseignées (alimente le champ schema.org `teaches`). */
+  teaches?: string[];
+  /** Date ISO de dernière mise à jour du contenu (signal de fraîcheur). */
+  dateModified?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: opts.name,
+    description: opts.description,
+    url: `${SITE_URL}${opts.path}`,
+    inLanguage: 'fr-FR',
+    availableLanguage: ['fr', 'en'],
+    isAccessibleForFree: false,
+    ...(opts.teaches && opts.teaches.length ? { teaches: opts.teaches } : {}),
+    ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'Alatere Web SAS',
+      alternateName: 'Alatere forMa',
+      url: `${SITE_URL}/alatere-forma`,
+      sameAs: [company.linkedin, company.facebook, company.mapsForma],
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: ['Onsite', 'Online'],
+      location: {
+        '@type': 'Place',
+        name: 'Alatere forMa — Antibes',
+        address,
+      },
+    },
+  };
+}
+
+/** Person[] — formateurs d'Alatere forMa (entités + E-E-A-T via sameAs LinkedIn). */
+export function formateursLd(people: { name: string; role: string; linkedin: string }[]) {
+  return people.map((p) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: p.name,
+    jobTitle: p.role,
+    worksFor: {
+      '@type': 'EducationalOrganization',
+      name: 'Alatere Web SAS',
+      alternateName: 'Alatere forMa',
+      url: `${SITE_URL}/alatere-forma`,
+    },
+    sameAs: [p.linkedin],
+  }));
+}
 
 /** Blog (page d'index « Ressources »). */
 export const blogLd = {

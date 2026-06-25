@@ -1,19 +1,28 @@
 'use client';
 
 /**
- * Contexte de langue FR/EN partagé (persisté dans localStorage « aw-lang »).
- * Met aussi à jour <html lang> et le <title> de la page.
+ * Contexte de langue FR/EN — désormais piloté par l'URL.
+ * FR au niveau racine (sans préfixe), EN sous /en/… : la route détermine la langue.
+ * `ForcedLangProvider` (posé par app/en/layout.tsx) fixe la langue côté serveur,
+ * de sorte que les pages /en sont rendues en anglais et indexables.
  */
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export type Lang = 'fr' | 'en';
 export type Dict = Record<string, { fr: string; en: string }>;
 
-const LangCtx = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
-  lang: 'fr',
-  setLang: () => {},
-});
+/** Langue imposée par le segment de route (défaut FR à la racine). */
+const ForcedLangCtx = createContext<Lang>('fr');
+
+/** Posé par app/en/layout.tsx pour forcer l'anglais sur tout le sous-arbre /en. */
+export function ForcedLangProvider({ lang, children }: { lang: Lang; children: ReactNode }) {
+  return <ForcedLangCtx.Provider value={lang}>{children}</ForcedLangCtx.Provider>;
+}
+
+const LangCtx = createContext<{ lang: Lang }>({ lang: 'fr' });
 
 export function useLang() {
   return useContext(LangCtx);
@@ -32,43 +41,56 @@ export function LangProvider({
   titles?: { fr: string; en: string };
   children: ReactNode;
 }) {
-  const [lang, setLang] = useState<Lang>('fr');
-
-  useEffect(() => {
-    try {
-      if (localStorage.getItem('aw-lang') === 'en') setLang('en');
-    } catch {
-      /* localStorage indisponible */
-    }
-  }, []);
+  // La langue vient de la route (contexte forcé) — FR par défaut, EN sous /en.
+  const lang = useContext(ForcedLangCtx);
 
   useEffect(() => {
     document.documentElement.lang = lang;
     if (titles) document.title = titles[lang];
-    try {
-      localStorage.setItem('aw-lang', lang);
-    } catch {
-      /* ignore */
-    }
   }, [lang, titles]);
 
-  return <LangCtx.Provider value={{ lang, setLang }}>{children}</LangCtx.Provider>;
+  return <LangCtx.Provider value={{ lang }}>{children}</LangCtx.Provider>;
 }
 
-/** Sélecteur FR/EN réutilisable (header + tiroir mobile). */
+/**
+ * Préfixe un chemin interne selon la langue courante :
+ * FR → inchangé ; EN → /en + chemin (avec gestion de « / » et des ancres « /#x »).
+ */
+export function localizePath(href: string, lang: Lang): string {
+  if (lang !== 'en' || !href.startsWith('/')) return href;
+  if (href === '/') return '/en';
+  if (href.startsWith('/#')) return '/en' + href.slice(1); // '/#contact' → '/en#contact'
+  if (href.startsWith('/en/') || href === '/en') return href;
+  return '/en' + href;
+}
+
+/** Bascule FR/EN : navigue vers l'URL équivalente dans l'autre langue. */
 export function LangToggle({ extra = '' }: { extra?: string }) {
-  const { lang, setLang } = useLang();
+  const { lang } = useLang();
+  const pathname = usePathname() || '/';
+
+  // Chemin « nu » (sans préfixe /en) → on en dérive les deux variantes.
+  const bare = pathname === '/en' ? '/' : pathname.startsWith('/en/') ? pathname.slice(3) : pathname;
+  const frHref = bare;
+  const enHref = bare === '/' ? '/en' : '/en' + bare;
+
+  const items: { l: Lang; href: string }[] = [
+    { l: 'fr', href: frHref },
+    { l: 'en', href: enHref },
+  ];
+
   return (
     <div className={`g-lang ${extra}`.trim()} role="group" aria-label="Langue / Language">
-      {(['fr', 'en'] as Lang[]).map((l) => (
-        <button
+      {items.map(({ l, href }) => (
+        <Link
           key={l}
-          type="button"
+          href={href}
           className={lang === l ? 'is-active' : undefined}
-          onClick={() => setLang(l)}
+          aria-current={lang === l ? 'true' : undefined}
+          hrefLang={l}
         >
           {l.toUpperCase()}
-        </button>
+        </Link>
       ))}
     </div>
   );
