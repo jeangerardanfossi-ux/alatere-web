@@ -47,8 +47,10 @@ const TX: Dict = {
   lab: { fr: 'Notre laboratoire', en: 'Our lab' },
   lab_1: { fr: 'Première boutique', en: 'First store' },
   lab_2: { fr: "D'opération continue", en: 'Of continuous operation' },
+  lab_2_n: { fr: '23 ans', en: '23 years' },
   lab_3: { fr: 'Boutiques en ligne', en: 'Online stores' },
   lab_4: { fr: 'Marchés européens', en: 'European markets' },
+  lab_4_n: { fr: '5 langues', en: '5 languages' },
   shops_label: { fr: 'Nos boutiques', en: 'Our stores' },
   shops_title: {
     fr: "Deux décennies à vendre l'art en ligne",
@@ -240,7 +242,7 @@ function Body() {
                 <span>{t('lab_1')}</span>
               </div>
               <div className="ap-stat">
-                <strong>23 ans</strong>
+                <strong>{t('lab_2_n')}</strong>
                 <span>{t('lab_2')}</span>
               </div>
               <div className="ap-stat">
@@ -248,7 +250,7 @@ function Body() {
                 <span>{t('lab_3')}</span>
               </div>
               <div className="ap-stat">
-                <strong>5 langues</strong>
+                <strong>{t('lab_4_n')}</strong>
                 <span>{t('lab_4')}</span>
               </div>
             </div>
