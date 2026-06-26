@@ -1,7 +1,15 @@
-import Link from '@/components/grommet/LocalizedLink';
+'use client';
 
-/** Corps de l'article « Domiciliation ou location de bureau à Antibes ». */
+import Link from '@/components/grommet/LocalizedLink';
+import { useLang } from '@/components/grommet/lang';
+
+/** Corps de l'article « Domiciliation ou location de bureau à Antibes » — bilingue FR/EN. */
 export default function DomiciliationOuBureauAntibes() {
+  const { lang } = useLang();
+  return lang === 'en' ? <En /> : <Fr />;
+}
+
+function Fr() {
   return (
     <>
       <p>
@@ -144,6 +152,152 @@ export default function DomiciliationOuBureauAntibes() {
           Oui, et c&rsquo;est souvent le plus pratique : domicilier son siège et disposer d&rsquo;un
           poste de coworking au même endroit, à Antibes. Alatere réunit domiciliation, coworking et
           secrétariat externalisé sous un seul interlocuteur.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function En() {
+  return (
+    <>
+      <p>
+        Should you set up a <strong>business address</strong> for your company or{' '}
+        <strong>rent an office</strong>? When forming a company, transferring a head office or
+        starting up an activity in Antibes, the right choice depends on your costs, your need for a
+        physical presence and the image you want to project. Here is a clear comparison.
+      </p>
+
+      <section>
+        <h2>Business address and office: what&rsquo;s the difference?</h2>
+        <p>
+          A <strong>business address</strong> provides a <strong>registered head-office address</strong>{' '}
+          (and mail handling) with no dedicated workspace. <strong>Renting an office</strong> provides
+          a physical space, but with a lease, charges and a commitment. <strong>Coworking</strong>{' '}
+          sits in between: a flexible desk, without a long lease.
+        </p>
+      </section>
+
+      <section>
+        <h2>The comparison</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>Business address</th>
+              <th>Office / coworking</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monthly cost</td><td>From €30</td><td>Higher (rent + charges)</td></tr>
+            <tr><td>Commitment</td><td>Flexible, renewable</td><td>Lease (or coworking subscription)</td></tr>
+            <tr><td>Prestige address</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Workspace</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Mail handling</td><td>Included</td><td>Depending on the offer</td></tr>
+            <tr><td>Ideal for</td><td>Company formation, remote working, head office</td><td>Daily presence, a team</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>The real cost: business address, office or coworking?</h2>
+        <p>
+          The difference in budget is the decisive argument for most company founders. In practical
+          terms, in Antibes:
+        </p>
+        <ul>
+          <li>
+            <strong>Business address</strong>: from <strong>€25 excl. VAT/month</strong> (mailbox) or{' '}
+            <strong>€30 excl. VAT/month</strong> for a registered head-office address, plus a one-off
+            €50 excl. VAT set-up fee. No charges, no lease.
+          </li>
+          <li>
+            <strong>Coworking</strong>: <strong>€30 incl. VAT per day</strong> or{' '}
+            <strong>€360 incl. VAT/month</strong> for unlimited open-space access — a genuine
+            workstation, with no long-term commitment.
+          </li>
+          <li>
+            <strong>Office rental</strong>: a monthly rent (often several hundred euros), on top of
+            which come the charges, insurance, internet and a lease (typically the French 3-6-9). The
+            entry cost and the commitment are on a completely different scale.
+          </li>
+        </ul>
+        <p>
+          In other words: if you don&rsquo;t need a physical space every day, a business address (for
+          the address) possibly supplemented by coworking (for the days you&rsquo;re on site) costs a
+          fraction of an office rented by the year.
+        </p>
+      </section>
+
+      <section>
+        <h2>When should you choose a business address?</h2>
+        <p>
+          A business address is ideal if you <strong>work from home or on the move</strong>, are just
+          starting out, or want a <strong>professional address</strong> separate from your home at low
+          cost. It&rsquo;s also the solution for a <strong>head-office transfer</strong> to Antibes.
+        </p>
+      </section>
+
+      <section>
+        <h2>When is an office (or coworking) the better option?</h2>
+        <p>
+          If you need a <strong>daily physical presence</strong>, to receive the public or to set up a
+          team, a dedicated space is essential. In that case,{' '}
+          <Link className="g-inline" href="/alatere-cowo">
+            coworking
+          </Link>{' '}
+          offers the best compromise: a genuine workplace, yet flexible and without a long lease.
+        </p>
+      </section>
+
+      <section>
+        <h2>The most flexible solution in Antibes</h2>
+        <p>
+          The simplest approach is to <strong>combine the two</strong> in the same place: register your
+          head office <em>and</em> have a coworking desk whenever it&rsquo;s useful. In Antibes,
+          Alatere brings together{' '}
+          <Link className="g-inline" href="/alatere-domo">
+            business address
+          </Link>
+          , coworking and outsourced secretarial services under a single point of contact.
+        </p>
+        <p>
+          Have a question about your situation?{' '}
+          <Link className="g-inline" href="/contact?pole=domo">
+            Contact us
+          </Link>{' '}
+          — reply within 48 hours.
+        </p>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+
+        <h3>What&rsquo;s the difference between a business address and renting an office?</h3>
+        <p>
+          A business address provides a registered head-office address and mail handling, with no
+          dedicated workspace. Renting an office provides a physical space, but with a lease, charges
+          and a commitment. Coworking sits in between: a flexible desk, without a long lease.
+        </p>
+
+        <h3>Which is cheaper, a business address or an office?</h3>
+        <p>
+          A business address, by far: from €30 excl. VAT per month at Alatere doMo, versus rent plus
+          charges for an office. Coworking sits between the two.
+        </p>
+
+        <h3>When should you choose a business address rather than an office?</h3>
+        <p>
+          If you work from home or on the move, are just starting out, or want a professional address
+          separate from your home at low cost. It&rsquo;s also the solution for transferring a head
+          office to Antibes.
+        </p>
+
+        <h3>Can you combine a business address and coworking?</h3>
+        <p>
+          Yes, and it&rsquo;s often the most practical option: register your head office and have a
+          coworking desk in the same place, in Antibes. Alatere brings together business address,
+          coworking and outsourced secretarial services under a single point of contact.
         </p>
       </section>
     </>

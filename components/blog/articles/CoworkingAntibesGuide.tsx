@@ -1,7 +1,15 @@
-import Link from '@/components/grommet/LocalizedLink';
+'use client';
 
-/** Corps de l'article « Coworking à Antibes : guide ». */
+import Link from '@/components/grommet/LocalizedLink';
+import { useLang } from '@/components/grommet/lang';
+
+/** Corps de l'article « Coworking à Antibes : guide » — bilingue FR/EN. */
 export default function CoworkingAntibesGuide() {
+  const { lang } = useLang();
+  return lang === 'en' ? <En /> : <Fr />;
+}
+
+function Fr() {
   return (
     <>
       <p>
@@ -171,6 +179,179 @@ export default function CoworkingAntibesGuide() {
         <p>
           Oui. Chez Alatere coWo, vous pouvez domicilier le siège social de votre entreprise sur place
           via Alatere doMo, avec des conditions avantageuses pour les membres du coworking.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function En() {
+  return (
+    <>
+      <p>
+        <strong>Coworking</strong> appeals to independent workers, remote workers and small teams
+        looking for a professional setting without the constraints of a lease. In Antibes, near Port
+        Vauban, here is who it is for, what it brings and how to choose your space.
+      </p>
+
+      <section>
+        <h2>What is coworking?</h2>
+        <p>
+          Coworking is a <strong>shared workspace</strong>: you rent a desk, an office or a room, by
+          the day or by the month, with services included (fibre wifi, coffee, printing, meeting
+          rooms). It is a flexible alternative to a conventional office and to working from home.
+        </p>
+      </section>
+
+      <section>
+        <h2>Who is coworking for?</h2>
+        <ul>
+          <li><strong>Independent workers and freelancers</strong> who want to get out of the house;</li>
+          <li><strong>Remote workers</strong> looking for a quiet, professional setting;</li>
+          <li><strong>Small teams</strong> and start-ups;</li>
+          <li><strong>Professionals passing through</strong> the Côte d&rsquo;Azur, just for a meeting.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The benefits of coworking</h2>
+        <ul>
+          <li><strong>Flexibility</strong>: no long lease, adjust to suit your activity;</li>
+          <li><strong>Controlled costs</strong>: utilities, internet and coffee included;</li>
+          <li><strong>Productivity</strong>: a dedicated setting, away from the distractions of home;</li>
+          <li><strong>Network</strong>: a community of entrepreneurs and events;</li>
+          <li><strong>Image</strong>: meeting rooms to welcome your clients.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Which plan should you choose?</h2>
+        <ul>
+          <li><strong>Day pass</strong>: for an occasional need;</li>
+          <li><strong>Monthly open space subscription</strong>: for regular use;</li>
+          <li><strong>Private office on a yearly basis</strong>: for a team or more privacy;</li>
+          <li><strong>Meeting-room rental</strong> by the day (subject to availability), member or not.</li>
+        </ul>
+        <p>
+          At Alatere coWo, the five rooms are air-conditioned and fibre is available.
+        </p>
+      </section>
+
+      <section>
+        <h2>How much does coworking cost in Antibes?</h2>
+        <p>
+          For reference, here are the rates at Alatere coWo, near Port Vauban:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Price</th>
+              <th>Ideal for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Day pass</td>
+              <td>€30 incl. VAT / day, coffee included</td>
+              <td>Occasional need, passing through</td>
+            </tr>
+            <tr>
+              <td>Monthly subscription</td>
+              <td>€360 incl. VAT / month, unlimited open space</td>
+              <td>Regular presence in Antibes</td>
+            </tr>
+            <tr>
+              <td>Meeting room</td>
+              <td>€180 incl. VAT / day — €80 incl. VAT after 4 pm</td>
+              <td>Meeting, workshop, interview — by reservation</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="g-callout">
+          <strong>Useful benchmark:</strong>{' '}
+          beyond 12 days per month, the monthly subscription (€360) works out cheaper than the day
+          pass (360 ÷ 30 = 12). Below that, the pass remains the most economical.
+        </p>
+        <p>
+          Coming just for a day? All the details (what is included, how to take a call, how to book)
+          are in our{' '}
+          <Link className="g-inline" href="/blog/coworking-antibes-journee">
+            guide to coworking by the day in Antibes
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>How do you choose your space in Antibes?</h2>
+        <ul>
+          <li><strong>Location</strong>: proximity to the station, the port, parking;</li>
+          <li><strong>The services actually included</strong> (rooms, printing, coffee);</li>
+          <li><strong>The flexibility</strong> of the plans and commitment;</li>
+          <li><strong>The atmosphere</strong> and size of the community;</li>
+          <li><strong>Add-on services</strong>: business address, secretarial support…</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Coworking + business address: the right combination</h2>
+        <p>
+          In Antibes, you can also <strong>register your company&rsquo;s address</strong> on site:
+          working and having your head-office address in the same place simplifies everything.
+          Coworking members enjoy favourable terms on the{' '}
+          <Link className="g-inline" href="/alatere-domo">
+            business address
+          </Link>
+          .
+        </p>
+        <p>
+          Want to discover the space? See{' '}
+          <Link className="g-inline" href="/alatere-cowo">
+            Alatere coWo
+          </Link>{' '}
+          or{' '}
+          <Link className="g-inline" href="/contact?pole=cowo">
+            book a visit
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+
+        <h3>What is coworking?</h3>
+        <p>
+          Coworking is a shared workspace: you rent a desk, an office or a room, by the day or by the
+          month, with services included (fibre wifi, coffee, meeting rooms). It&rsquo;s a flexible
+          alternative to a conventional office and to working from home.
+        </p>
+
+        <h3>Who is coworking useful for?</h3>
+        <p>
+          For independent workers and freelancers, remote workers looking for a professional setting,
+          small teams and start-ups, as well as professionals passing through the Côte d&rsquo;Azur.
+        </p>
+
+        <h3>What coworking plans are available in Antibes?</h3>
+        <p>
+          A day pass for occasional needs, a monthly open-space subscription for regular use, a
+          private office on a yearly basis, and meeting-room rental by the day. At Alatere coWo, the
+          day pass is €30 incl. VAT and the monthly subscription €360 incl. VAT.
+        </p>
+
+        <h3>How do you choose a coworking space in Antibes?</h3>
+        <p>
+          Look at the location (proximity to the station, the port, parking), the services actually
+          included, the flexibility of the plans and commitment, the atmosphere and size of the
+          community, and add-on services such as a business address.
+        </p>
+
+        <h3>Can you register your company&rsquo;s address at a coworking space?</h3>
+        <p>
+          Yes. At Alatere coWo, you can register your company&rsquo;s head office on site through
+          Alatere doMo, with favourable terms for coworking members.
         </p>
       </section>
     </>

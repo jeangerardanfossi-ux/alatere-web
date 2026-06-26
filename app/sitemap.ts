@@ -22,17 +22,17 @@ const BILINGUAL = [
   '/accessibilite-et-handicap',
   '/conditions-generales-de-vente',
   '/plan-du-site',
-];
-
-/** Pages FR uniquement (non traduites : blog long-format, todo, mentions/confidentialité noindex). */
-const FR_ONLY = [
-  '/alatere-todo.html',
   '/blog',
   '/blog/domicilier-entreprise-antibes',
   '/blog/financer-formation-opco-faf',
   '/blog/coworking-antibes-journee',
   '/blog/coworking-antibes-guide',
   '/blog/domiciliation-ou-bureau-antibes',
+];
+
+/** Pages FR uniquement (todo, mentions/confidentialité noindex). */
+const FR_ONLY = [
+  '/alatere-todo.html',
 ];
 
 const frUrl = (p: string) => `${BASE}${p}`;

@@ -176,27 +176,37 @@ export function formateursLd(people: { name: string; role: string; linkedin: str
   }));
 }
 
-/** Blog (page d'index « Ressources »). */
-export const blogLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Blog',
-  name: 'Ressources — Alatere Web',
-  url: `${SITE_URL}/blog`,
-  inLanguage: 'fr-FR',
-  publisher: { '@type': 'Organization', name: company.legalName },
-};
+type Lang = 'fr' | 'en';
+const LANG_TAG: Record<Lang, string> = { fr: 'fr-FR', en: 'en' };
+/** Préfixe d'URL selon la langue (FR à la racine, EN sous /en). */
+const langBase = (lang: Lang) => (lang === 'en' ? `${SITE_URL}/en` : SITE_URL);
 
-/** Article de blog (BlogPosting). */
-export function blogPostingLd(post: {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  updated: string;
-  category: string;
-  keyword: string;
-  author?: { name: string; url: string };
-}) {
+/** Blog (page d'index « Ressources »). */
+export function blogLd(lang: Lang = 'fr') {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: lang === 'en' ? 'Resources — Alatere Web' : 'Ressources — Alatere Web',
+    url: `${langBase(lang)}/blog`,
+    inLanguage: LANG_TAG[lang],
+    publisher: { '@type': 'Organization', name: company.legalName },
+  };
+}
+
+/** Article de blog (BlogPosting). `post` est déjà résolu dans la langue voulue. */
+export function blogPostingLd(
+  post: {
+    slug: string;
+    title: string;
+    excerpt: string;
+    date: string;
+    updated: string;
+    category: string;
+    keyword: string;
+    author?: { name: string; url: string };
+  },
+  lang: Lang = 'fr',
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -204,7 +214,7 @@ export function blogPostingLd(post: {
     description: post.excerpt,
     datePublished: post.date,
     dateModified: post.updated,
-    inLanguage: 'fr-FR',
+    inLanguage: LANG_TAG[lang],
     author: post.author
       ? {
           '@type': 'Person',
@@ -218,7 +228,7 @@ export function blogPostingLd(post: {
       name: company.legalName,
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo-alatere.png` },
     },
-    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    mainEntityOfPage: `${langBase(lang)}/blog/${post.slug}`,
     articleSection: post.category,
     keywords: post.keyword,
   };
@@ -371,122 +381,251 @@ export const cowoFaqLd = faqLd([
   },
 ]);
 
+/**
+ * FAQ d'articles de blog — bilingues. Le contenu DOIT refléter la FAQ visible
+ * de l'article (même langue). Chaque export est une fonction de la langue.
+ */
+const biFaqLd =
+  (fr: { q: string; a: string }[], en: { q: string; a: string }[]) =>
+  (lang: Lang = 'fr') =>
+    faqLd(lang === 'en' ? en : fr);
+
 /** FAQ visible de l'article « coworking à Antibes : guide » (miroir du FAQPage). */
-export const cowoGuideFaqLd = faqLd([
-  {
-    q: "Qu'est-ce que le coworking ?",
-    a: "Le coworking est un espace de travail partagé : on loue un poste, un bureau ou une salle, à la journée ou au mois, avec les services inclus (wifi fibre, café, salles de réunion). C'est une alternative souple au bureau classique et au travail à domicile.",
-  },
-  {
-    q: 'Pour qui le coworking est-il intéressant ?',
-    a: 'Pour les indépendants et freelances, les télétravailleurs en quête d’un cadre professionnel, les petites équipes et entreprises en création, ainsi que les professionnels de passage sur la Côte d’Azur.',
-  },
-  {
-    q: 'Quelles formules de coworking existe-t-il à Antibes ?',
-    a: "Pass à la journée pour un besoin ponctuel, abonnement mensuel en open-space pour un usage régulier, bureau privatif à l'année, et location de salle de réunion à la journée. Chez Alatere coWo, le pass journée est à 30 € TTC et l'abonnement mensuel à 360 € TTC.",
-  },
-  {
-    q: 'Comment choisir son espace de coworking à Antibes ?',
-    a: 'Regardez l’emplacement (proximité gare, port, parking), les services réellement inclus, la flexibilité des formules et de l’engagement, l’ambiance et la taille de la communauté, et les services annexes comme la domiciliation.',
-  },
-  {
-    q: 'Peut-on domicilier son entreprise dans un espace de coworking ?',
-    a: 'Oui. Chez Alatere coWo, vous pouvez domicilier le siège social de votre entreprise sur place via Alatere doMo, avec des conditions avantageuses pour les membres du coworking.',
-  },
-]);
+export const cowoGuideFaqLd = biFaqLd(
+  [
+    {
+      q: "Qu'est-ce que le coworking ?",
+      a: "Le coworking est un espace de travail partagé : on loue un poste, un bureau ou une salle, à la journée ou au mois, avec les services inclus (wifi fibre, café, salles de réunion). C'est une alternative souple au bureau classique et au travail à domicile.",
+    },
+    {
+      q: 'Pour qui le coworking est-il intéressant ?',
+      a: 'Pour les indépendants et freelances, les télétravailleurs en quête d’un cadre professionnel, les petites équipes et entreprises en création, ainsi que les professionnels de passage sur la Côte d’Azur.',
+    },
+    {
+      q: 'Quelles formules de coworking existe-t-il à Antibes ?',
+      a: "Pass à la journée pour un besoin ponctuel, abonnement mensuel en open-space pour un usage régulier, bureau privatif à l'année, et location de salle de réunion à la journée. Chez Alatere coWo, le pass journée est à 30 € TTC et l'abonnement mensuel à 360 € TTC.",
+    },
+    {
+      q: 'Comment choisir son espace de coworking à Antibes ?',
+      a: 'Regardez l’emplacement (proximité gare, port, parking), les services réellement inclus, la flexibilité des formules et de l’engagement, l’ambiance et la taille de la communauté, et les services annexes comme la domiciliation.',
+    },
+    {
+      q: 'Peut-on domicilier son entreprise dans un espace de coworking ?',
+      a: 'Oui. Chez Alatere coWo, vous pouvez domicilier le siège social de votre entreprise sur place via Alatere doMo, avec des conditions avantageuses pour les membres du coworking.',
+    },
+  ],
+  [
+    {
+      q: 'What is coworking?',
+      a: "Coworking is a shared workspace: you rent a desk, an office or a room, by the day or by the month, with services included (fibre wifi, coffee, meeting rooms). It's a flexible alternative to a conventional office and to working from home.",
+    },
+    {
+      q: 'Who is coworking useful for?',
+      a: 'For independent workers and freelancers, remote workers looking for a professional setting, small teams and start-ups, as well as professionals passing through the Côte d’Azur.',
+    },
+    {
+      q: 'What coworking plans are available in Antibes?',
+      a: 'A day pass for occasional needs, a monthly open-space subscription for regular use, a private office on a yearly basis, and meeting-room rental by the day. At Alatere coWo, the day pass is €30 incl. VAT and the monthly subscription €360 incl. VAT.',
+    },
+    {
+      q: 'How do you choose a coworking space in Antibes?',
+      a: 'Look at the location (proximity to the station, the port, parking), the services actually included, the flexibility of the plans and commitment, the atmosphere and size of the community, and add-on services such as a business address.',
+    },
+    {
+      q: "Can you register your company's address at a coworking space?",
+      a: "Yes. At Alatere coWo, you can register your company's head office on site through Alatere doMo, with favourable terms for coworking members.",
+    },
+  ],
+);
 
 /** FAQ visible de l'article « domiciliation ou bureau » (miroir du FAQPage). */
-export const domoBureauFaqLd = faqLd([
-  {
-    q: 'Quelle est la différence entre domiciliation et location de bureau ?',
-    a: 'La domiciliation fournit une adresse de siège social et la gestion du courrier, sans espace de travail dédié. La location de bureau fournit un espace physique, mais avec un bail, des charges et un engagement. Le coworking est intermédiaire : un poste flexible, sans bail long.',
-  },
-  {
-    q: 'Qu’est-ce qui coûte le moins cher, domiciliation ou bureau ?',
-    a: 'La domiciliation, nettement : à partir de 30 € HT par mois chez Alatere doMo, contre un loyer plus charges pour un bureau. Le coworking se situe entre les deux.',
-  },
-  {
-    q: 'Quand choisir la domiciliation plutôt qu’un bureau ?',
-    a: "Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que vous voulez une adresse professionnelle séparée de votre domicile à moindre coût. C'est aussi la solution pour un transfert de siège vers Antibes.",
-  },
-  {
-    q: 'Peut-on combiner domiciliation et coworking ?',
-    a: 'Oui, et c’est souvent le plus pratique : domicilier son siège et disposer d’un poste de coworking au même endroit, à Antibes. Alatere réunit domiciliation, coworking et secrétariat externalisé sous un seul interlocuteur.',
-  },
-]);
+export const domoBureauFaqLd = biFaqLd(
+  [
+    {
+      q: 'Quelle est la différence entre domiciliation et location de bureau ?',
+      a: 'La domiciliation fournit une adresse de siège social et la gestion du courrier, sans espace de travail dédié. La location de bureau fournit un espace physique, mais avec un bail, des charges et un engagement. Le coworking est intermédiaire : un poste flexible, sans bail long.',
+    },
+    {
+      q: 'Qu’est-ce qui coûte le moins cher, domiciliation ou bureau ?',
+      a: 'La domiciliation, nettement : à partir de 30 € HT par mois chez Alatere doMo, contre un loyer plus charges pour un bureau. Le coworking se situe entre les deux.',
+    },
+    {
+      q: 'Quand choisir la domiciliation plutôt qu’un bureau ?',
+      a: "Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que vous voulez une adresse professionnelle séparée de votre domicile à moindre coût. C'est aussi la solution pour un transfert de siège vers Antibes.",
+    },
+    {
+      q: 'Peut-on combiner domiciliation et coworking ?',
+      a: 'Oui, et c’est souvent le plus pratique : domicilier son siège et disposer d’un poste de coworking au même endroit, à Antibes. Alatere réunit domiciliation, coworking et secrétariat externalisé sous un seul interlocuteur.',
+    },
+  ],
+  [
+    {
+      q: "What's the difference between a business address and renting an office?",
+      a: 'A business address provides a registered head-office address and mail handling, with no dedicated workspace. Renting an office provides a physical space, but with a lease, charges and a commitment. Coworking sits in between: a flexible desk, without a long lease.',
+    },
+    {
+      q: 'Which is cheaper, a business address or an office?',
+      a: 'A business address, by far: from €30 excl. VAT per month at Alatere doMo, versus rent plus charges for an office. Coworking sits between the two.',
+    },
+    {
+      q: 'When should you choose a business address rather than an office?',
+      a: "If you work from home or on the move, are just starting out, or want a professional address separate from your home at low cost. It's also the solution for transferring a head office to Antibes.",
+    },
+    {
+      q: 'Can you combine a business address and coworking?',
+      a: 'Yes, and it’s often the most practical option: register your head office and have a coworking desk in the same place, in Antibes. Alatere brings together business address, coworking and outsourced secretarial services under a single point of contact.',
+    },
+  ],
+);
 
 /** FAQ visible de l'article « domicilier son entreprise à Antibes » (miroir du FAQPage). */
-export const domicilierFaqLd = faqLd([
-  {
-    q: "Qu'est-ce que la domiciliation d'entreprise ?",
-    a: "Domicilier une entreprise, c'est lui attribuer une adresse de siège social officielle, distincte du domicile personnel. Cette adresse figure sur le Kbis, les factures et les documents légaux. Seule une société de domiciliation agréée par la préfecture peut délivrer l'attestation exigée par le greffe et le RCS.",
-  },
-  {
-    q: "Combien coûte une domiciliation d'entreprise à Antibes ?",
-    a: "Chez Alatere doMo : offre Dropbox (boîte aux lettres) à 25 € HT/mois, offre Headquarters (adresse de siège social) à 30 € HT/mois, offre Forward (numérisation et réexpédition incluses) à 50 € HT/mois, plus 50 € HT de frais de dossier réglés une seule fois à l'ouverture.",
-  },
-  {
-    q: 'Quels documents faut-il pour domicilier son entreprise ?',
-    a: 'Une pièce d’identité du dirigeant, un justificatif de domicile personnel récent, les statuts ou le Kbis pour une société déjà immatriculée, et un RIB pour le mandat de prélèvement. La liste exacte varie selon la forme juridique et la situation.',
-  },
-  {
-    q: 'Combien de temps faut-il pour domicilier son entreprise ?',
-    a: "Chez Alatere doMo, l'attestation de domiciliation est émise sous 24 à 48 heures une fois le dossier complet. L'adresse est utilisable dès l'attestation émise.",
-  },
-  {
-    q: 'Peut-on transférer le siège d’une entreprise existante ?',
-    a: 'Oui. La domiciliation s’accompagne d’un transfert de siège : nous vous aidons pour les formalités auprès du greffe et la mise à jour de vos statuts.',
-  },
-]);
+export const domicilierFaqLd = biFaqLd(
+  [
+    {
+      q: "Qu'est-ce que la domiciliation d'entreprise ?",
+      a: "Domicilier une entreprise, c'est lui attribuer une adresse de siège social officielle, distincte du domicile personnel. Cette adresse figure sur le Kbis, les factures et les documents légaux. Seule une société de domiciliation agréée par la préfecture peut délivrer l'attestation exigée par le greffe et le RCS.",
+    },
+    {
+      q: "Combien coûte une domiciliation d'entreprise à Antibes ?",
+      a: "Chez Alatere doMo : offre Dropbox (boîte aux lettres) à 25 € HT/mois, offre Headquarters (adresse de siège social) à 30 € HT/mois, offre Forward (numérisation et réexpédition incluses) à 50 € HT/mois, plus 50 € HT de frais de dossier réglés une seule fois à l'ouverture.",
+    },
+    {
+      q: 'Quels documents faut-il pour domicilier son entreprise ?',
+      a: 'Une pièce d’identité du dirigeant, un justificatif de domicile personnel récent, les statuts ou le Kbis pour une société déjà immatriculée, et un RIB pour le mandat de prélèvement. La liste exacte varie selon la forme juridique et la situation.',
+    },
+    {
+      q: 'Combien de temps faut-il pour domicilier son entreprise ?',
+      a: "Chez Alatere doMo, l'attestation de domiciliation est émise sous 24 à 48 heures une fois le dossier complet. L'adresse est utilisable dès l'attestation émise.",
+    },
+    {
+      q: 'Peut-on transférer le siège d’une entreprise existante ?',
+      a: 'Oui. La domiciliation s’accompagne d’un transfert de siège : nous vous aidons pour les formalités auprès du greffe et la mise à jour de vos statuts.',
+    },
+  ],
+  [
+    {
+      q: 'What is company address registration (domiciliation)?',
+      a: "Registering a company's address means giving it an official head-office address, separate from your personal home. This address appears on the Kbis, invoices and legal documents. Only a business-address company approved by the préfecture can issue the certificate required by the commercial court registry and the RCS.",
+    },
+    {
+      q: 'How much does a business address in Antibes cost?',
+      a: 'At Alatere doMo: the Dropbox plan (letterbox) at €25 excl. VAT/month, the Headquarters plan (head-office address) at €30 excl. VAT/month, the Forward plan (scanning and forwarding included) at €50 excl. VAT/month, plus a one-off €50 excl. VAT set-up fee at opening.',
+    },
+    {
+      q: "What documents do you need to register a company's address?",
+      a: 'Proof of ID for the director, a recent proof of personal address, the articles of association or the Kbis for an already-registered company, and bank details (RIB) for the direct-debit mandate. The exact list varies with the legal form and the situation.',
+    },
+    {
+      q: "How long does it take to register a company's address?",
+      a: 'At Alatere doMo, the business-address certificate is issued within 24 to 48 hours once the file is complete. The address can be used as soon as the certificate is issued.',
+    },
+    {
+      q: 'Can you transfer the head office of an existing company?',
+      a: 'Yes. A business address comes with a head-office transfer: we help you with the formalities at the court registry and with updating your articles of association.',
+    },
+  ],
+);
 
 /** FAQ visible de l'article « financer sa formation : OPCO et FAF » (miroir du FAQPage). */
-export const financerFormationFaqLd = faqLd([
-  {
-    q: 'Qui finance ma formation professionnelle ?',
-    a: "Selon votre statut : l'OPCO (opérateur de compétences) pour les salariés, le FAF (Fonds d'Assurance Formation) pour les travailleurs non-salariés, et France Travail pour les demandeurs d'emploi.",
-  },
-  {
-    q: 'Quelle différence entre OPCO et FAF ?',
-    a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés — indépendants, professions libérales (FIF PL, AGEFICE…) — selon des plafonds annuels propres à chaque fonds.",
-  },
-  {
-    q: 'Comment faire financer sa formation sans reste à charge ?',
-    a: 'Obtenez un devis et un programme détaillé, identifiez votre financeur (OPCO de votre branche ou FAF des non-salariés), déposez la demande de prise en charge avant le début de la formation, obtenez l’accord, puis transmettez les justificatifs après la formation.',
-  },
-  {
-    q: 'Faut-il un organisme certifié Qualiopi pour être financé ?',
-    a: 'Oui. Seuls les organismes certifiés Qualiopi ouvrent droit aux financements publics et mutualisés (OPCO, FAF…). Alatere Web SAS (marque Alatere forMa) est certifié Qualiopi, enregistré sous le n° 93.06.07588.06.',
-  },
-  {
-    q: 'Combien de temps prend un dossier de financement ?',
-    a: 'Un dossier OPCO ou FAF demande souvent plusieurs semaines d’instruction. Chez Alatere forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne sous 14 jours une fois le financement validé.',
-  },
-]);
+export const financerFormationFaqLd = biFaqLd(
+  [
+    {
+      q: 'Qui finance ma formation professionnelle ?',
+      a: "Selon votre statut : l'OPCO (opérateur de compétences) pour les salariés, le FAF (Fonds d'Assurance Formation) pour les travailleurs non-salariés, et France Travail pour les demandeurs d'emploi.",
+    },
+    {
+      q: 'Quelle différence entre OPCO et FAF ?',
+      a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés — indépendants, professions libérales (FIF PL, AGEFICE…) — selon des plafonds annuels propres à chaque fonds.",
+    },
+    {
+      q: 'Comment faire financer sa formation sans reste à charge ?',
+      a: 'Obtenez un devis et un programme détaillé, identifiez votre financeur (OPCO de votre branche ou FAF des non-salariés), déposez la demande de prise en charge avant le début de la formation, obtenez l’accord, puis transmettez les justificatifs après la formation.',
+    },
+    {
+      q: 'Faut-il un organisme certifié Qualiopi pour être financé ?',
+      a: 'Oui. Seuls les organismes certifiés Qualiopi ouvrent droit aux financements publics et mutualisés (OPCO, FAF…). Alatere Web SAS (marque Alatere forMa) est certifié Qualiopi, enregistré sous le n° 93.06.07588.06.',
+    },
+    {
+      q: 'Combien de temps prend un dossier de financement ?',
+      a: 'Un dossier OPCO ou FAF demande souvent plusieurs semaines d’instruction. Chez Alatere forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne sous 14 jours une fois le financement validé.',
+    },
+  ],
+  [
+    {
+      q: 'Who funds my professional training?',
+      a: 'It depends on your status: the OPCO (skills operator) for employees, the FAF (training insurance fund) for the self-employed, and France Travail for jobseekers.',
+    },
+    {
+      q: "What's the difference between OPCO and FAF?",
+      a: "The OPCO funds employee training as part of the employer's skills-development plan. The FAF funds the continuing training of the self-employed — sole traders, the liberal professions (FIF PL, AGEFICE, etc.) — within annual ceilings specific to each fund.",
+    },
+    {
+      q: 'How can you get your training funded with nothing to pay out of pocket?',
+      a: "Get a quote and a detailed programme, identify your funder (your sector's OPCO or the self-employed FAF), submit the funding request before the training starts, obtain approval, then send the supporting documents after the training.",
+    },
+    {
+      q: 'Do you need a Qualiopi-certified provider to get funding?',
+      a: 'Yes. Only Qualiopi-certified providers give access to public and pooled funding (OPCO, FAF, etc.). Alatere Web SAS (Alatere forMa brand) is Qualiopi-certified, registered under no. 93.06.07588.06.',
+    },
+    {
+      q: 'How long does a funding application take?',
+      a: 'An OPCO or FAF application often takes several weeks to process. At Alatere forMa, the personalised quote is sent within 48 hours and training starts on average within 14 days once funding is approved.',
+    },
+  ],
+);
 
 /** FAQ visible de l'article « coworking à la journée » (miroir du FAQPage). */
-export const cowoJourneeFaqLd = faqLd([
-  {
-    q: 'Combien coûte une journée de coworking à Antibes ?',
-    a: 'Le pass à la journée est à 30 € TTC chez Alatere coWo : un poste en open-space, café, fibre et Wi-Fi inclus, sans engagement.',
-  },
-  {
-    q: 'Peut-on venir sans abonnement ?',
-    a: "Oui. Le pass journée est sans engagement. Un appel ou un e-mail la veille permet de s'assurer qu'un poste est disponible le jour souhaité.",
-  },
-  {
-    q: 'Y a-t-il le Wi-Fi et de quoi passer des appels ?',
-    a: "Oui : fibre haut-débit et Wi-Fi sécurisé partout. Pour les appels et visios, la grande salle à bureau partagé sert de coin appels (casque recommandé) et le bar de la cuisine permet de s'isoler ; les salles fermées, en majorité louées à l'année, se réservent à l'avance.",
-  },
-  {
-    q: 'Peut-on louer une salle de réunion juste pour la journée ?',
-    a: "Oui, mais la disponibilité est limitée : la plupart de nos salles sont louées à l'année par des entreprises. Mieux vaut réserver quelques jours à l'avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).",
-  },
-  {
-    q: "Où se situe l'espace et comment y accéder ?",
-    a: 'Au 9 boulevard Albert 1er (immeuble La Caravelle), 06600 Antibes, à deux pas du port Vauban et à dix minutes à pied (700 m) de la gare SNCF.',
-  },
-  {
-    q: 'Peut-on aussi y domicilier son entreprise ?',
-    a: 'Oui, via Alatere doMo. Les membres du coworking profitent de conditions avantageuses sur la domiciliation.',
-  },
-]);
+export const cowoJourneeFaqLd = biFaqLd(
+  [
+    {
+      q: 'Combien coûte une journée de coworking à Antibes ?',
+      a: 'Le pass à la journée est à 30 € TTC chez Alatere coWo : un poste en open-space, café, fibre et Wi-Fi inclus, sans engagement.',
+    },
+    {
+      q: 'Peut-on venir sans abonnement ?',
+      a: "Oui. Le pass journée est sans engagement. Un appel ou un e-mail la veille permet de s'assurer qu'un poste est disponible le jour souhaité.",
+    },
+    {
+      q: 'Y a-t-il le Wi-Fi et de quoi passer des appels ?',
+      a: "Oui : fibre haut-débit et Wi-Fi sécurisé partout. Pour les appels et visios, la grande salle à bureau partagé sert de coin appels (casque recommandé) et le bar de la cuisine permet de s'isoler ; les salles fermées, en majorité louées à l'année, se réservent à l'avance.",
+    },
+    {
+      q: 'Peut-on louer une salle de réunion juste pour la journée ?',
+      a: "Oui, mais la disponibilité est limitée : la plupart de nos salles sont louées à l'année par des entreprises. Mieux vaut réserver quelques jours à l'avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).",
+    },
+    {
+      q: "Où se situe l'espace et comment y accéder ?",
+      a: 'Au 9 boulevard Albert 1er (immeuble La Caravelle), 06600 Antibes, à deux pas du port Vauban et à dix minutes à pied (700 m) de la gare SNCF.',
+    },
+    {
+      q: 'Peut-on aussi y domicilier son entreprise ?',
+      a: 'Oui, via Alatere doMo. Les membres du coworking profitent de conditions avantageuses sur la domiciliation.',
+    },
+  ],
+  [
+    {
+      q: 'How much does a day of coworking in Antibes cost?',
+      a: 'The day pass is €30 incl. VAT at Alatere coWo: an open-space desk, coffee, fibre and Wi-Fi included, with no commitment.',
+    },
+    {
+      q: 'Can you come without a subscription?',
+      a: 'Yes. The day pass has no commitment. A call or an email the day before is enough to make sure a desk is available on the day you want.',
+    },
+    {
+      q: 'Is there Wi-Fi and somewhere to take calls?',
+      a: 'Yes: high-speed fibre and secure Wi-Fi everywhere. For calls and video meetings, the large shared-desk room serves as a call corner (headset recommended) and the kitchen bar lets you step aside; the closed rooms, mostly rented by the year, are booked in advance.',
+    },
+    {
+      q: 'Can you rent a meeting room just for the day?',
+      a: "Yes, but availability is limited: most of our rooms are rented by the year by companies. It's best to book a few days ahead. Rate: €180 incl. VAT for the day, or €80 incl. VAT late in the day (after 4 pm).",
+    },
+    {
+      q: 'Where is the space and how do you get there?',
+      a: "At 9 boulevard Albert 1er (La Caravelle building), 06600 Antibes, a stone's throw from Port Vauban and a ten-minute walk (700 m) from the SNCF train station.",
+    },
+    {
+      q: "Can you also register your company's address there?",
+      a: 'Yes, through Alatere doMo. Coworking members enjoy favourable terms on the business address.',
+    },
+  ],
+);

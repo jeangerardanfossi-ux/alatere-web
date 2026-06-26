@@ -1,9 +1,17 @@
+'use client';
+
 import Link from '@/components/grommet/LocalizedLink';
 import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
+import { useLang } from '@/components/grommet/lang';
 
-/** Corps de l'article « Coworking à la journée à Antibes ». */
+/** Corps de l'article « Coworking à la journée à Antibes » — bilingue FR/EN. */
 export default function CoworkingAntibesJournee() {
+  const { lang } = useLang();
+  return lang === 'en' ? <En /> : <Fr />;
+}
+
+function Fr() {
   return (
     <>
       <p>
@@ -262,6 +270,269 @@ export default function CoworkingAntibesJournee() {
         <p>
           Oui, via Alatere doMo. Les membres du coworking profitent de conditions avantageuses sur la
           domiciliation.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function En() {
+  return (
+    <>
+      <p>
+        In Antibes, a <strong>day of coworking</strong>{' '}
+        costs €30 incl. VAT: you book an open space
+        desk, with coffee, fibre and Wi-Fi included, and no commitment. Alatere coWo is located at 9
+        boulevard Albert 1er, a stone&rsquo;s throw from Port Vauban and a ten-minute walk from the SNCF
+        train station — the simple option for working for a single day, between two meetings or
+        away from home.
+      </p>
+
+      <section>
+        <h2>How much does a day of coworking in Antibes cost?</h2>
+        <p>
+          The day pass is <strong>€30 incl. VAT</strong>, coffee included. If you come back
+          regularly, two other plans take over:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Price</th>
+              <th>Ideal for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Day pass</td>
+              <td>€30 incl. VAT / day, coffee included</td>
+              <td>Working occasionally, passing through</td>
+            </tr>
+            <tr>
+              <td>Monthly membership</td>
+              <td>€360 incl. VAT / month, unlimited open space</td>
+              <td>A regular presence in Antibes</td>
+            </tr>
+            <tr>
+              <td>Meeting room</td>
+              <td>€180 incl. VAT / day — €80 incl. VAT after 4 pm</td>
+              <td>Meeting, workshop, interview — by reservation</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="g-callout">
+          <strong>Handy benchmark:</strong>{' '}
+          beyond 12 days a month, the monthly membership
+          (€360) works out cheaper than the day pass (360 ÷ 30 = 12). Below that, the pass
+          remains the most economical.
+        </p>
+        <p className="g-callout">
+          <strong>Meeting room: remember to book.</strong>{' '}
+          Most of our rooms are
+          rented by the year by companies: availability on a day-by-day basis is therefore
+          limited. Let us know a few days ahead to secure your slot — or opt
+          for the late-day slot (after 4 pm) at €80 incl. VAT instead of €180.
+        </p>
+      </section>
+
+      <section>
+        <h2>What&rsquo;s included in the day pass</h2>
+        <p>
+          An open space desk is more than just a chair and a table. The pass gives you access to:
+        </p>
+        <ul>
+          <li>
+            <strong>High-speed fibre and secure Wi-Fi</strong>{' '}
+            throughout the space — enough to hold a video call without dropouts.
+          </li>
+          <li><strong>Unlimited coffee</strong> and a shared break area.</li>
+          <li>
+            <strong>A space for calls</strong>{' '}
+            : the large shared-desk room serves as a call corner, and the kitchen bar lets you
+            step aside (see below).
+          </li>
+          <li>
+            <strong>A community</strong>{' '}
+            of local entrepreneurs and freelancers, with business events every month.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Making a call or a video meeting: how it works, in practice</h2>
+        <p>
+          Most of our closed rooms are rented by the year by companies — the price of
+          success. For an impromptu call or video meeting, our members have two tried-and-tested
+          solutions:
+        </p>
+        <ul>
+          <li>
+            <strong>The large shared-desk room</strong> (up to 5 seats) acts as a
+            call corner: you settle in there to make calls or join a video meeting. Wearing
+            headphones is strongly recommended, out of respect for those at neighbouring desks.
+          </li>
+          <li>
+            <strong>The kitchen bar</strong>, slightly off to the side, lets you step aside for
+            a shorter exchange.
+          </li>
+        </ul>
+        <p>
+          For a genuine closed-door, quiet meeting, it&rsquo;s best to book a room in advance
+          (€180 incl. VAT for the day, or €80 after 4 pm).
+        </p>
+      </section>
+
+      <section>
+        <h2>Coworking, café or hotel lobby: where to work in Antibes when you&rsquo;re passing through?</h2>
+        <p>
+          For a day of work away from the office, three options often come up. Here is how
+          they compare in practice:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>Coworking (day pass)</th>
+              <th>Café</th>
+              <th>Hotel lobby</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cost of a day</td>
+              <td>€30, dedicated desk</td>
+              <td>€5–10 in purchases</td>
+              <td>Variable, for guests only</td>
+            </tr>
+            <tr>
+              <td>Reliable, secure Wi-Fi</td>
+              <td>Yes (fibre)</td>
+              <td>Hit or miss, shared network</td>
+              <td>Hit or miss</td>
+            </tr>
+            <tr>
+              <td>A real table + power sockets</td>
+              <td>Yes</td>
+              <td>Rarely</td>
+              <td>Rarely</td>
+            </tr>
+            <tr>
+              <td>Calls / video meetings</td>
+              <td>Yes — dedicated call corner, headphones advised</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Meeting room available</td>
+              <td>Yes, by reservation</td>
+              <td>No</td>
+              <td>Sometimes, costly</td>
+            </tr>
+            <tr>
+              <td>Meeting other professionals</td>
+              <td>Yes (community)</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          A café will do for an hour; beyond that, coworking offers comfort, a place set up for
+          making calls and a connection you can count on.
+        </p>
+      </section>
+
+      <section>
+        <h2>Who is it for? Freelancers passing through, nomads, employees on the move</h2>
+        <p>
+          The day pass is aimed at <strong>freelancers passing through</strong> on the Côte
+          d&rsquo;Azur, <strong>remote workers</strong> who want to get out of the house, {' '}
+          <strong>employees on a business trip</strong> in Antibes or Sophia Antipolis, and anyone who
+          has a meeting in the area and a few hours to put to good use in between.
+        </p>
+      </section>
+
+      <section>
+        <h2>Come and work at Alatere coWo</h2>
+        <p>
+          The space is at <strong>9 boulevard Albert 1er</strong> (La Caravelle building), 06600
+          Antibes — Port Vauban a stone&rsquo;s throw away, the SNCF train station a ten-minute walk (700 m)
+          away. The pass involves no commitment: a call to <strong>{company.phoneDisplay}</strong> or a message to{' '}
+          <Email className="g-inline" user="coworking" /> is enough to secure a desk for the
+          day you want. Free coffee if you come to visit first.
+        </p>
+        <p>
+          Discover the space:{' '}
+          <Link className="g-inline" href="/alatere-cowo">
+            Alatere coWo
+          </Link>{' '}
+          or{' '}
+          <Link className="g-inline" href="/contact?pole=cowo">
+            book a visit
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>Need an address in Antibes, not just a desk?</h2>
+        <p>
+          If your visit reveals a more lasting need — setting up your company&rsquo;s registered
+          office in Antibes —, the{' '}
+          <Link className="g-inline" href="/alatere-domo">
+            Alatere doMo business address service
+          </Link>{' '}
+          takes over at the same address, and coworking members enjoy favourable
+          terms. A single place to work today and register your address tomorrow.
+        </p>
+        <p>
+          To go further: if you&rsquo;re still hesitating between the plans and want to compare the
+          spaces, read our{' '}
+          <Link className="g-inline" href="/blog/coworking-antibes-guide">
+            guide to choosing a coworking space in Antibes
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>Frequently asked questions</h2>
+
+        <h3>How much does a day of coworking in Antibes cost?</h3>
+        <p>
+          The day pass is €30 incl. VAT at Alatere coWo: an open-space desk, coffee, fibre and Wi-Fi
+          included, with no commitment.
+        </p>
+
+        <h3>Can you come without a subscription?</h3>
+        <p>
+          Yes. The day pass has no commitment. A call or an email the day before is enough to make
+          sure a desk is available on the day you want.
+        </p>
+
+        <h3>Is there Wi-Fi and somewhere to take calls?</h3>
+        <p>
+          Yes: high-speed fibre and secure Wi-Fi everywhere. For calls and video meetings, the large
+          shared-desk room serves as a call corner (headset recommended) and the kitchen bar lets you
+          step aside; the closed rooms, mostly rented by the year, are booked in advance.
+        </p>
+
+        <h3>Can you rent a meeting room just for the day?</h3>
+        <p>
+          Yes, but availability is limited: most of our rooms are rented by the year by companies.
+          It&rsquo;s best to book a few days ahead. Rate: €180 incl. VAT for the day, or €80 incl.
+          VAT late in the day (after 4 pm).
+        </p>
+
+        <h3>Where is the space and how do you get there?</h3>
+        <p>
+          At 9 boulevard Albert 1er (La Caravelle building), 06600 Antibes, a stone&rsquo;s throw from
+          Port Vauban and a ten-minute walk (700 m) from the SNCF train station.
+        </p>
+
+        <h3>Can you also register your company&rsquo;s address there?</h3>
+        <p>
+          Yes, through Alatere doMo. Coworking members enjoy favourable terms on the business address.
         </p>
       </section>
     </>
