@@ -8,12 +8,12 @@ import '../grommet-pages.css';
 export const metadata: Metadata = {
   title: { absolute: 'À propos — Alatere Web, entreprise familiale à Antibes' },
   description:
-    'Alatere Web, entreprise familiale fondée en 2002 à Antibes par Iveta et Jean-Gérard Anfossi. Notre histoire, nos valeurs, nos quatre métiers.',
+    "Alatere Web, entreprise familiale née à Paris en 2002 et installée à Antibes depuis 2008. De repro-tableaux.com à la formation, la domiciliation et le coworking : notre histoire et nos quatre métiers.",
   alternates: { canonical: '/a-propos' },
   openGraph: {
     title: 'À propos — Alatere Web, entreprise familiale à Antibes',
     description:
-      'Entreprise familiale fondée en 2002 à Antibes par Iveta et Jean-Gérard Anfossi. Notre histoire, nos valeurs, nos quatre métiers.',
+      "Entreprise familiale née à Paris en 2002, installée à Antibes depuis 2008. Iveta et Jean-Gérard Anfossi, quatre métiers, une même idée : être à vos côtés.",
   },
 };
 
