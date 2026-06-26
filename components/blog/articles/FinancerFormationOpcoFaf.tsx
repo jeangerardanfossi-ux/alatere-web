@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 

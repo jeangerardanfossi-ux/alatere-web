@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
 

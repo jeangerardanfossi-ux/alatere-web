@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 
 /** Corps de l'article « Coworking à Antibes : guide ». */
 export default function CoworkingAntibesGuide() {

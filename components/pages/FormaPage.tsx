@@ -2,7 +2,7 @@
 
 /** Alatere forMa — page « organisme de formation » (handoff Grommet, accent or). */
 
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
@@ -110,7 +110,18 @@ const TX: Dict = {
     fr: 'Formations professionnelles dédiées au secteur immobilier (obligations de formation continue, outils digitaux).',
     en: 'Professional training dedicated to the real-estate sector (continuing-education requirements, digital tools).',
   },
-  dom_see: { fr: 'Voir les programmes ↗', en: 'View the programs ↗' },
+  dom_see: { fr: 'En savoir plus →', en: 'Learn more →' },
+
+  team_role: { fr: 'L’équipe pédagogique', en: 'The teaching team' },
+  team_h: {
+    fr: 'Des formateurs praticiens, experts de leur domaine',
+    en: 'Practitioner trainers, experts in their field',
+  },
+  team_p: {
+    fr: "Des intervenants choisis pour leur expérience de terrain animent nos parcours. Faites connaissance avec celles et ceux qui vous forment.",
+    en: 'Trainers chosen for their hands-on experience lead our courses. Meet the people who train you.',
+  },
+  team_cta: { fr: 'Voir nos formateurs', en: 'Meet our trainers' },
 
   cat_h: { fr: 'Catalogue complet', en: 'Full catalog' },
   cat_p: {
@@ -392,9 +403,7 @@ function Body() {
               </div>
               <h3>{t('dom1_h')}</h3>
               <p>{t('dom1_p')}</p>
-              <a href={CATALOG} target="_blank" rel="noopener noreferrer">
-                {t('dom_see')}
-              </a>
+              <Link href="/alatere-forma/webmarketing">{t('dom_see')}</Link>
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
@@ -403,9 +412,7 @@ function Body() {
               </div>
               <h3>{t('dom2_h')}</h3>
               <p>{t('dom2_p')}</p>
-              <a href={CATALOG} target="_blank" rel="noopener noreferrer">
-                {t('dom_see')}
-              </a>
+              <Link href="/alatere-forma/intelligence-artificielle">{t('dom_see')}</Link>
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
@@ -414,9 +421,7 @@ function Body() {
               </div>
               <h3>{t('dom3_h')}</h3>
               <p>{t('dom3_p')}</p>
-              <a href={CATALOG} target="_blank" rel="noopener noreferrer">
-                {t('dom_see')}
-              </a>
+              <Link href="/alatere-forma/langues">{t('dom_see')}</Link>
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
@@ -425,9 +430,7 @@ function Body() {
               </div>
               <h3>{t('dom4_h')}</h3>
               <p>{t('dom4_p')}</p>
-              <a href={CATALOG} target="_blank" rel="noopener noreferrer">
-                {t('dom_see')}
-              </a>
+              <Link href="/alatere-forma/communication-digitale">{t('dom_see')}</Link>
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
@@ -436,9 +439,7 @@ function Body() {
               </div>
               <h3>{t('dom5_h')}</h3>
               <p>{t('dom5_p')}</p>
-              <a href={CATALOG} target="_blank" rel="noopener noreferrer">
-                {t('dom_see')}
-              </a>
+              <Link href="/alatere-forma/immobilier">{t('dom_see')}</Link>
             </article>
             <article className="f-domain f-domain--catalog">
               <Icon name="book-open" className="f-domain__icon" />
@@ -454,6 +455,23 @@ function Body() {
                 {t('cat_open')}
               </a>
             </article>
+          </div>
+        </section>
+
+        {/* FORMATEURS (teaser) */}
+        <section className="f-section" style={{ paddingTop: 0 }}>
+          <div className="fd-ref">
+            <div className="fm-avatar fm-avatar--lg" aria-hidden="true">
+              <Icon name="users" />
+            </div>
+            <div className="fd-ref__txt">
+              <div className="fd-ref__role">{t('team_role')}</div>
+              <h3>{t('team_h')}</h3>
+              <p>{t('team_p')}</p>
+            </div>
+            <Link href="/alatere-forma/formateurs" className="g-btn g-btn--primary">
+              {t('team_cta')} <span className="g-arrow">→</span>
+            </Link>
           </div>
         </section>
 

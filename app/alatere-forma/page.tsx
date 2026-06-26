@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import { educationalOrganizationLd, coursesLd, formaFaqLd, breadcrumbLd } from '@/lib/jsonld';
 import '../grommet-home.css';
 import '../grommet-forma.css';
+import '../grommet-forma-pages.css';
 
 export const metadata: Metadata = {
   title: { absolute: 'Alatere forMa — Organisme de formation Qualiopi à Antibes' },

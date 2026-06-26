@@ -2,7 +2,7 @@
 
 /** Plan du site — liste lisible de toutes les pages (FR/EN). */
 
-import Link from 'next/link';
+import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, useLang, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';

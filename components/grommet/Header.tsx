@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useLang, LangToggle } from './lang';
+import { useLang, LangToggle, localizePath } from './lang';
 import { BrandSuffix, type PoleBrand } from './BrandName';
 
 const POLES = new Set<string>(['ecom', 'forma', 'domo', 'cowo']);
@@ -25,6 +25,7 @@ const BADGE = '/alatere-web-badge.webp';
 /** `active` met en valeur le pôle courant (sur les sous-pages). */
 export default function Header({ active }: { active?: string }) {
   const { lang } = useLang();
+  const lp = (h: string) => localizePath(h, lang);
   const [drawer, setDrawer] = useState(false);
 
   useEffect(() => {
@@ -50,12 +51,12 @@ export default function Header({ active }: { active?: string }) {
 
   // Sur une page pôle, « Prendre rendez-vous » pré-sélectionne le sujet
   // correspondant dans le formulaire (/contact lit ?pole=). Ailleurs → #contact accueil.
-  const ctaHref = active && POLES.has(active) ? `/contact?pole=${active}` : '/#contact';
+  const ctaHref = lp(active && POLES.has(active) ? `/contact?pole=${active}` : '/#contact');
 
   return (
     <>
       <header className="g-header">
-        <Link className="g-brand" href="/">
+        <Link className="g-brand" href={lp('/')}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={BADGE} alt="Alatere Web" width={800} height={800} fetchPriority="high" decoding="async" />
           <b>Alatere Web</b>
@@ -64,7 +65,7 @@ export default function Header({ active }: { active?: string }) {
           {NAV.map(([href, label, key, sub]) => (
             <Link
               key={href}
-              href={href}
+              href={lp(href)}
               className={`g-nav__item${key === active ? ' is-active' : ''}`}
             >
               <span className="g-nav__label">
@@ -104,7 +105,7 @@ export default function Header({ active }: { active?: string }) {
           {NAV.map(([href, label, key, sub]) => (
             <Link
               key={href}
-              href={href}
+              href={lp(href)}
               className={`g-drawer__item${key === active ? ' is-active' : ''}`}
               onClick={() => setDrawer(false)}
             >
