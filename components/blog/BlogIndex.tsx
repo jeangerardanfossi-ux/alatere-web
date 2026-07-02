@@ -1,6 +1,6 @@
 'use client';
 
-/** Index du blog « Ressources » (liste des articles) — bilingue FR/EN. */
+/** Index du blog « Ressources » (liste des articles) - bilingue FR/EN. */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang } from '@/components/grommet/lang';
@@ -10,8 +10,8 @@ import { BrandName } from '@/components/grommet/BrandName';
 import { posts, formatDate, localizePost } from '@/lib/blog';
 
 const TITLES = {
-  fr: 'Ressources & guides — Alatere Web',
-  en: 'Resources & guides — Alatere Web',
+  fr: 'Ressources & guides - Alatere Web',
+  en: 'Resources & guides - Alatere Web',
 };
 
 export default function BlogIndex() {

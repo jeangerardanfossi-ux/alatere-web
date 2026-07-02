@@ -1,6 +1,6 @@
 'use client';
 
-/** Plan du site — liste lisible de toutes les pages (FR/EN). */
+/** Plan du site - liste lisible de toutes les pages (FR/EN). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, useLang, type Dict } from '@/components/grommet/lang';
@@ -8,8 +8,8 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 
 const TITLE = {
-  fr: 'Plan du site — Alatere Web',
-  en: 'Sitemap — Alatere Web',
+  fr: 'Plan du site - Alatere Web',
+  en: 'Sitemap - Alatere Web',
 };
 
 const TX: Dict = {
@@ -27,11 +27,11 @@ const TX: Dict = {
   g4: { fr: 'Informations légales', en: 'Legal information' },
 
   // Activités
-  ecom: { fr: 'Alatere ecoM — e-commerce', en: 'Alatere ecoM — e-commerce' },
-  forma: { fr: 'Alatere forMa — formations', en: 'Alatere forMa — training' },
-  domo: { fr: 'Alatere doMo — domiciliation', en: 'Alatere doMo — business address' },
-  cowo: { fr: 'Alatere coWo — coworking', en: 'Alatere coWo — coworking' },
-  todo: { fr: 'Alatere toDo — secrétariat externalisé', en: 'Alatere toDo — outsourced secretariat' },
+  ecom: { fr: 'Alatere ecoM - e-commerce', en: 'Alatere ecoM - e-commerce' },
+  forma: { fr: 'Alatere forMa - formations', en: 'Alatere forMa - training' },
+  domo: { fr: 'Alatere doMo - domiciliation', en: 'Alatere doMo - business address' },
+  cowo: { fr: 'Alatere coWo - coworking', en: 'Alatere coWo - coworking' },
+  todo: { fr: 'Alatere toDo - secrétariat externalisé', en: 'Alatere toDo - outsourced secretariat' },
 
   // Principales
   home: { fr: 'Accueil', en: 'Home' },
@@ -44,7 +44,7 @@ const TX: Dict = {
   blog: { fr: 'Tous les articles', en: 'All articles' },
   art1: { fr: "Domicilier son entreprise à Antibes", en: 'Registering a business address in Antibes' },
   art2: { fr: 'Financer une formation (OPCO, FAF)', en: 'Funding training (OPCO, FAF)' },
-  art3: { fr: 'Coworking à Antibes — le guide', en: 'Coworking in Antibes — the guide' },
+  art3: { fr: 'Coworking à Antibes - le guide', en: 'Coworking in Antibes - the guide' },
   art4: { fr: 'Domiciliation ou bureau à Antibes ?', en: 'Business address or office in Antibes?' },
 
   // Légales

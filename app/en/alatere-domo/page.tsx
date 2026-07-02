@@ -8,7 +8,7 @@ import '../../grommet-domo.css';
 import '../../grommet-todo.css';
 
 const FR = '/alatere-domo';
-const TITLE = 'Company business address in Antibes — Alatere doMo';
+const TITLE = 'Company business address in Antibes - Alatere doMo';
 const DESC =
   'Register your head office in Antibes from €30/month. Préfecture-approved provider: mail handling, scanning, forwarding. Certificate within 48 h.';
 

@@ -5,7 +5,7 @@ import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
 import { useLang } from '@/components/grommet/lang';
 
-/** Corps de l'article « Coworking à la journée à Antibes » — bilingue FR/EN. */
+/** Corps de l'article « Coworking à la journée à Antibes » - bilingue FR/EN. */
 export default function CoworkingAntibesJournee() {
   const { lang } = useLang();
   return lang === 'en' ? <En /> : <Fr />;
@@ -18,7 +18,7 @@ function Fr() {
         À Antibes, un <strong>coworking à la journée</strong>{' '}
         coûte 30 € TTC : vous réservez un poste
         en open-space, café, fibre et Wi-Fi inclus, sans engagement. Alatere coWo se trouve au 9
-        boulevard Albert 1er, à deux pas du port Vauban et à dix minutes à pied de la gare SNCF —
+        boulevard Albert 1er, à deux pas du port Vauban et à dix minutes à pied de la gare SNCF -
         l&rsquo;option simple pour travailler le temps d&rsquo;une journée, entre deux rendez-vous ou
         loin de chez soi.
       </p>
@@ -50,8 +50,8 @@ function Fr() {
             </tr>
             <tr>
               <td>Salle de réunion</td>
-              <td>180 € TTC / jour — 80 € TTC après 16 h</td>
-              <td>Réunion, atelier, entretien — sur réservation</td>
+              <td>180 € TTC / jour - 80 € TTC après 16 h</td>
+              <td>Réunion, atelier, entretien - sur réservation</td>
             </tr>
           </tbody>
         </table>
@@ -65,7 +65,7 @@ function Fr() {
           <strong>Salle de réunion : pensez à réserver.</strong>{' '}
           Nos salles sont, pour la plupart,
           louées à l&rsquo;année par des entreprises : la disponibilité à la journée est donc
-          limitée. Prévenez quelques jours à l&rsquo;avance pour garantir votre créneau — ou optez
+          limitée. Prévenez quelques jours à l&rsquo;avance pour garantir votre créneau - ou optez
           pour le créneau de fin de journée (après 16 h) à 80 € TTC au lieu de 180 €.
         </p>
       </section>
@@ -78,7 +78,7 @@ function Fr() {
         <ul>
           <li>
             <strong>Fibre haut-débit et Wi-Fi sécurisé</strong>{' '}
-            dans tout l&rsquo;espace — de quoi tenir une visio sans coupure.
+            dans tout l&rsquo;espace - de quoi tenir une visio sans coupure.
           </li>
           <li><strong>Café à volonté</strong> et coin pause partagé.</li>
           <li>
@@ -96,7 +96,7 @@ function Fr() {
       <section>
         <h2>Passer un appel ou une visio : comment ça se passe, concrètement</h2>
         <p>
-          La plupart de nos salles fermées sont louées à l&rsquo;année par des entreprises — la
+          La plupart de nos salles fermées sont louées à l&rsquo;année par des entreprises - la
           rançon du succès. Pour un appel ou une visio improvisés, nos membres ont deux solutions
           éprouvées :
         </p>
@@ -153,7 +153,7 @@ function Fr() {
             </tr>
             <tr>
               <td>Appels / visios</td>
-              <td>Oui — coin appels dédié, casque conseillé</td>
+              <td>Oui - coin appels dédié, casque conseillé</td>
               <td>Non</td>
               <td>Non</td>
             </tr>
@@ -191,7 +191,7 @@ function Fr() {
         <h2>Venir travailler chez Alatere coWo</h2>
         <p>
           L&rsquo;espace est au <strong>9 boulevard Albert 1er</strong> (immeuble La Caravelle), 06600
-          Antibes — port Vauban à deux pas, gare SNCF à dix minutes à pied (700 m). Le pass est sans
+          Antibes - port Vauban à deux pas, gare SNCF à dix minutes à pied (700 m). Le pass est sans
           engagement : un appel au <strong>{company.phoneDisplay}</strong> ou un message à{' '}
           <Email className="g-inline" user="coworking" /> suffit à s&rsquo;assurer un poste pour le
           jour voulu. Café offert si vous venez d&rsquo;abord visiter.
@@ -212,8 +212,8 @@ function Fr() {
       <section>
         <h2>Besoin d&rsquo;une adresse à Antibes, pas seulement d&rsquo;un bureau ?</h2>
         <p>
-          Si votre passage révèle un besoin plus durable — installer le siège social de votre
-          entreprise à Antibes —, la{' '}
+          Si votre passage révèle un besoin plus durable - installer le siège social de votre
+          entreprise à Antibes -, la{' '}
           <Link className="g-inline" href="/alatere-domo">
             domiciliation Alatere doMo
           </Link>{' '}
@@ -284,7 +284,7 @@ function En() {
         costs €30 incl. VAT: you book an open space
         desk, with coffee, fibre and Wi-Fi included, and no commitment. Alatere coWo is located at 9
         boulevard Albert 1er, a stone&rsquo;s throw from Port Vauban and a ten-minute walk from the SNCF
-        train station — the simple option for working for a single day, between two meetings or
+        train station - the simple option for working for a single day, between two meetings or
         away from home.
       </p>
 
@@ -315,8 +315,8 @@ function En() {
             </tr>
             <tr>
               <td>Meeting room</td>
-              <td>€180 incl. VAT / day — €80 incl. VAT after 4 pm</td>
-              <td>Meeting, workshop, interview — by reservation</td>
+              <td>€180 incl. VAT / day - €80 incl. VAT after 4 pm</td>
+              <td>Meeting, workshop, interview - by reservation</td>
             </tr>
           </tbody>
         </table>
@@ -330,7 +330,7 @@ function En() {
           <strong>Meeting room: remember to book.</strong>{' '}
           Most of our rooms are
           rented by the year by companies: availability on a day-by-day basis is therefore
-          limited. Let us know a few days ahead to secure your slot — or opt
+          limited. Let us know a few days ahead to secure your slot - or opt
           for the late-day slot (after 4 pm) at €80 incl. VAT instead of €180.
         </p>
       </section>
@@ -343,7 +343,7 @@ function En() {
         <ul>
           <li>
             <strong>High-speed fibre and secure Wi-Fi</strong>{' '}
-            throughout the space — enough to hold a video call without dropouts.
+            throughout the space - enough to hold a video call without dropouts.
           </li>
           <li><strong>Unlimited coffee</strong> and a shared break area.</li>
           <li>
@@ -361,7 +361,7 @@ function En() {
       <section>
         <h2>Making a call or a video meeting: how it works, in practice</h2>
         <p>
-          Most of our closed rooms are rented by the year by companies — the price of
+          Most of our closed rooms are rented by the year by companies - the price of
           success. For an impromptu call or video meeting, our members have two tried-and-tested
           solutions:
         </p>
@@ -418,7 +418,7 @@ function En() {
             </tr>
             <tr>
               <td>Calls / video meetings</td>
-              <td>Yes — dedicated call corner, headphones advised</td>
+              <td>Yes - dedicated call corner, headphones advised</td>
               <td>No</td>
               <td>No</td>
             </tr>
@@ -456,7 +456,7 @@ function En() {
         <h2>Come and work at Alatere coWo</h2>
         <p>
           The space is at <strong>9 boulevard Albert 1er</strong> (La Caravelle building), 06600
-          Antibes — Port Vauban a stone&rsquo;s throw away, the SNCF train station a ten-minute walk (700 m)
+          Antibes - Port Vauban a stone&rsquo;s throw away, the SNCF train station a ten-minute walk (700 m)
           away. The pass involves no commitment: a call to <strong>{company.phoneDisplay}</strong> or a message to{' '}
           <Email className="g-inline" user="coworking" /> is enough to secure a desk for the
           day you want. Free coffee if you come to visit first.
@@ -477,8 +477,8 @@ function En() {
       <section>
         <h2>Need an address in Antibes, not just a desk?</h2>
         <p>
-          If your visit reveals a more lasting need — setting up your company&rsquo;s registered
-          office in Antibes —, the{' '}
+          If your visit reveals a more lasting need - setting up your company&rsquo;s registered
+          office in Antibes -, the{' '}
           <Link className="g-inline" href="/alatere-domo">
             Alatere doMo business address service
           </Link>{' '}

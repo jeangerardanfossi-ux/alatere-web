@@ -17,10 +17,10 @@ export type Post = {
   excerpt: Bi; // chapô / meta description
   keyword: Bi; // mot-clé cible
   category: Bi;
-  date: string; // ISO — publication
-  updated: string; // ISO — dernière mise à jour
+  date: string; // ISO - publication
+  updated: string; // ISO - dernière mise à jour
   readingMin: number;
-  author?: { name: string; url: string; bio?: Bi }; // auteur nommé (E-E-A-T) — sinon Alatere Web
+  author?: { name: string; url: string; bio?: Bi }; // auteur nommé (E-E-A-T) - sinon Alatere Web
 };
 
 /** Article avec les champs de contenu résolus dans une langue (chaînes simples). */
@@ -47,12 +47,12 @@ export const posts: Post[] = [
       en: "Day-pass coworking in Antibes: where to work when you're passing through",
     },
     metaTitle: {
-      fr: 'Coworking à la journée à Antibes — pass dès 30 € | Alatere coWo',
-      en: 'Day-pass coworking in Antibes — from €30 | Alatere coWo',
+      fr: 'Coworking à la journée à Antibes - pass dès 30 € | Alatere coWo',
+      en: 'Day-pass coworking in Antibes - from €30 | Alatere coWo',
     },
     excerpt: {
-      fr: "Travailler à Antibes le temps d'une journée ? Pass coworking à 30 €, café et fibre inclus, à deux pas du port Vauban. Sans engagement — réservez votre poste.",
-      en: "Working in Antibes just for the day? A €30 coworking day pass, coffee and fibre included, a stone's throw from Port Vauban. No commitment — book your desk.",
+      fr: "Travailler à Antibes le temps d'une journée ? Pass coworking à 30 €, café et fibre inclus, à deux pas du port Vauban. Sans engagement - réservez votre poste.",
+      en: "Working in Antibes just for the day? A €30 coworking day pass, coffee and fibre included, a stone's throw from Port Vauban. No commitment - book your desk.",
     },
     keyword: { fr: 'coworking Antibes à la journée', en: 'day-pass coworking Antibes' },
     category: { fr: 'Coworking', en: 'Coworking' },

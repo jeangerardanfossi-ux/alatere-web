@@ -162,16 +162,16 @@ function shell(accent: string, inner: string): string {
 </div>`;
 }
 
-/** Notification interne (équipe) — reply-to = visiteur. */
+/** Notification interne (équipe) - reply-to = visiteur. */
 export async function sendInternal(d: Demande): Promise<boolean> {
   const p = POLES[d.pole];
   const rows = [
     ['Pôle', p.name],
     ['Nom', d.nom],
-    ['Société', d.societe || '—'],
+    ['Société', d.societe || '-'],
     ['E-mail', d.email],
     ['Langue', d.lang.toUpperCase()],
-    ['Page', d.page || '—'],
+    ['Page', d.page || '-'],
     ['Consentement RGPD', d.consent ? 'Oui' : 'Non'],
   ]
     .map(
@@ -190,13 +190,13 @@ export async function sendInternal(d: Demande): Promise<boolean> {
     senderEmail: 'contact@alatere-web.com',
     to: p.notify,
     replyTo: d.email,
-    subject: `Nouvelle demande ${p.name} — ${d.nom}`,
+    subject: `Nouvelle demande ${p.name} - ${d.nom}`,
     html: shell(p.color, inner),
   });
 }
 
 /**
- * Bloc « Pièces à fournir » inséré dans l'accusé de réception — uniquement
+ * Bloc « Pièces à fournir » inséré dans l'accusé de réception - uniquement
  * pour les demandes de domiciliation (doMo).
  */
 function docsBlock(pole: PoleKey, accent: string, en: boolean): string {
@@ -236,8 +236,8 @@ export async function sendAck(d: Demande): Promise<boolean> {
   const p = POLES[d.pole];
   const en = d.lang === 'en';
   const subject = en
-    ? `We received your request — ${p.name}`
-    : `Votre demande a bien été reçue — ${p.name}`;
+    ? `We received your request - ${p.name}`
+    : `Votre demande a bien été reçue - ${p.name}`;
   const inner = en
     ? `
     <p style="margin:0 0 6px;font-size:13px;color:${p.color};font-weight:700;letter-spacing:.04em;text-transform:uppercase">${esc(p.name)}</p>

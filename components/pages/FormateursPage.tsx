@@ -1,6 +1,6 @@
 'use client';
 
-/** Alatere forMa — page « Nos formateurs » (handoff Grommet, accent or). */
+/** Alatere forMa - page « Nos formateurs » (handoff Grommet, accent or). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
@@ -16,8 +16,8 @@ const ACCENT = {
 } as React.CSSProperties;
 
 export const FORMATEURS_TITLE = {
-  fr: 'Alatere forMa — Nos formateurs',
-  en: 'Alatere forMa — Our trainers',
+  fr: 'Alatere forMa - Nos formateurs',
+  en: 'Alatere forMa - Our trainers',
 };
 
 type Formateur = {
@@ -28,7 +28,7 @@ type Formateur = {
   bio: { fr: ReactNode; en: ReactNode };
 };
 
-/** Présentations à compléter — transmises par le client (titre, spécialité, bio courte). */
+/** Présentations à compléter - transmises par le client (titre, spécialité, bio courte). */
 const FORMATEURS: Formateur[] = [
   {
     initials: 'JA',
@@ -118,13 +118,13 @@ const FORMATEURS: Formateur[] = [
     bio: {
       fr: (
         <>
-          Consultant en webmarketing — référent du domaine <strong>Webmarketing</strong> (SEO, SEA,
+          Consultant en webmarketing - référent du domaine <strong>Webmarketing</strong> (SEO, SEA,
           acquisition). <em>Présentation détaillée à compléter.</em>
         </>
       ),
       en: (
         <>
-          Web marketing consultant — lead for the field <strong>Web marketing</strong> (SEO, SEA,
+          Web marketing consultant - lead for the field <strong>Web marketing</strong> (SEO, SEA,
           acquisition). <em>Detailed bio to be completed.</em>
         </>
       ),
@@ -160,8 +160,8 @@ const TX: Dict = {
   hero_tag: { fr: "L'équipe pédagogique", en: 'The teaching team' },
   hero_h1: { fr: 'Nos formateurs', en: 'Our trainers' },
   hero_lead: {
-    fr: "Derrière chaque formation, des praticiens. Notre équipe réunit des intervenants expérimentés, choisis pour leur expertise de terrain et leur sens de la transmission — du webmarketing à l'intelligence artificielle, des langues à l'immobilier.",
-    en: 'Behind every course, practitioners. Our team brings together experienced trainers, chosen for their hands-on expertise and their gift for teaching — from web marketing to artificial intelligence, from languages to real estate.',
+    fr: "Derrière chaque formation, des praticiens. Notre équipe réunit des intervenants expérimentés, choisis pour leur expertise de terrain et leur sens de la transmission - du webmarketing à l'intelligence artificielle, des langues à l'immobilier.",
+    en: 'Behind every course, practitioners. Our team brings together experienced trainers, chosen for their hands-on expertise and their gift for teaching - from web marketing to artificial intelligence, from languages to real estate.',
   },
   hero_cta1: { fr: 'Voir les domaines', en: 'View the fields' },
   hero_cta2: { fr: 'Nous contacter', en: 'Contact us' },

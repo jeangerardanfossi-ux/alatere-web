@@ -12,10 +12,10 @@ const DESC =
   "L'équipe de formateurs d'Alatere forMa : des intervenants praticiens en webmarketing, intelligence artificielle, langues, communication digitale et immobilier.";
 
 export const metadata: Metadata = {
-  title: { absolute: 'Alatere forMa — Nos formateurs' },
+  title: { absolute: 'Alatere forMa - Nos formateurs' },
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { title: 'Alatere forMa — Nos formateurs', description: DESC, url: PATH },
+  openGraph: { title: 'Alatere forMa - Nos formateurs', description: DESC, url: PATH },
 };
 
 export default function Page() {

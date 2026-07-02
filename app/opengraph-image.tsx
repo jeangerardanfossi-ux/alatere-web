@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
-/** Carte sociale OpenGraph/Twitter par défaut (1200×630) — brandée Alatere Web. */
-export const alt = "Alatere Web — Agence, formation Qualiopi & centre d'affaires à Antibes";
+/** Carte sociale OpenGraph/Twitter par défaut (1200×630) - brandée Alatere Web. */
+export const alt = "Alatere Web - Agence, formation Qualiopi & centre d'affaires à Antibes";
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 

@@ -23,7 +23,7 @@ export const organizationLd = {
   telephone: company.phone,
   foundingDate: String(company.since),
   address,
-  // Profils officiels (réseaux + fiches Google Business) — graphe d'entité pour l'IA.
+  // Profils officiels (réseaux + fiches Google Business) - graphe d'entité pour l'IA.
   sameAs: [
     company.facebook,
     company.linkedin,
@@ -54,11 +54,11 @@ export const localBusinessLd = {
   sameAs: [company.facebook, company.linkedin, company.mapsForma],
 };
 
-/** Alatere doMo — domiciliation (entité locale dédiée). */
+/** Alatere doMo - domiciliation (entité locale dédiée). */
 export const domoLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: "Alatere doMo — Domiciliation d'entreprise à Antibes",
+  name: "Alatere doMo - Domiciliation d'entreprise à Antibes",
   url: `${SITE_URL}/alatere-domo`,
   telephone: company.phone,
   priceRange: '€€',
@@ -67,11 +67,11 @@ export const domoLd = {
   sameAs: [company.mapsDomo, company.facebookDomo, company.linkedinDomo],
 };
 
-/** Alatere coWo — coworking (entité locale dédiée). */
+/** Alatere coWo - coworking (entité locale dédiée). */
 export const cowoLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Alatere coWo — Espace de coworking à Antibes',
+  name: 'Alatere coWo - Espace de coworking à Antibes',
   url: `${SITE_URL}/alatere-cowo`,
   telephone: company.phone,
   priceRange: '€€',
@@ -119,7 +119,7 @@ export const coursesLd = domaines.map((d) => ({
   },
 }));
 
-/** Course — sous-page « domaine » d'Alatere forMa (enrichi pour l'AI SEO). */
+/** Course - sous-page « domaine » d'Alatere forMa (enrichi pour l'AI SEO). */
 export function courseLd(opts: {
   name: string;
   description: string;
@@ -152,14 +152,14 @@ export function courseLd(opts: {
       courseMode: ['Onsite', 'Online'],
       location: {
         '@type': 'Place',
-        name: 'Alatere forMa — Antibes',
+        name: 'Alatere forMa - Antibes',
         address,
       },
     },
   };
 }
 
-/** Person[] — formateurs d'Alatere forMa (entités + E-E-A-T via sameAs LinkedIn). */
+/** Person[] - formateurs d'Alatere forMa (entités + E-E-A-T via sameAs LinkedIn). */
 export function formateursLd(people: { name: string; role: string; linkedin: string }[]) {
   return people.map((p) => ({
     '@context': 'https://schema.org',
@@ -186,7 +186,7 @@ export function blogLd(lang: Lang = 'fr') {
   return {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: lang === 'en' ? 'Resources — Alatere Web' : 'Ressources — Alatere Web',
+    name: lang === 'en' ? 'Resources - Alatere Web' : 'Ressources - Alatere Web',
     url: `${langBase(lang)}/blog`,
     inLanguage: LANG_TAG[lang],
     publisher: { '@type': 'Organization', name: company.legalName },
@@ -258,7 +258,7 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
   };
 }
 
-/** FAQPage — le contenu DOIT refléter une FAQ visible sur la page. */
+/** FAQPage - le contenu DOIT refléter une FAQ visible sur la page. */
 export function faqLd(items: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',
@@ -271,11 +271,11 @@ export function faqLd(items: { q: string; a: string }[]) {
   };
 }
 
-/** FAQ visible de l'accueil (sert aussi au FAQPage — FR = version de référence). */
+/** FAQ visible de l'accueil (sert aussi au FAQPage - FR = version de référence). */
 export const homeFaq = [
   {
     q: "Qu'est-ce qu'Alatere Web ?",
-    a: "Alatere Web est une entreprise familiale installée à Antibes depuis 2002. Elle réunit quatre métiers complémentaires — e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) — avec un seul interlocuteur.",
+    a: "Alatere Web est une entreprise familiale installée à Antibes depuis 2002. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
   },
   {
     q: 'Où se situe Alatere Web ?',
@@ -346,11 +346,11 @@ export const formaFaqLd = faqLd([
 export const ecomFaqLd = faqLd([
   {
     q: 'Que fait Alatere ecoM ?',
-    a: "Alatere ecoM conçoit, opère et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com) — un savoir-faire SEO, SEA et opérations que nous mettons au service de nos clients.",
+    a: "Alatere ecoM conçoit, opère et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com) - un savoir-faire SEO, SEA et opérations que nous mettons au service de nos clients.",
   },
   {
     q: 'Proposez-vous du référencement SEO et de la publicité SEA ?',
-    a: 'Oui. Le référencement naturel (SEO), la publicité en ligne (SEA Google, Microsoft, Meta) et l’acquisition sont au cœur de notre métier — éprouvés sur nos propres sites depuis vingt ans.',
+    a: 'Oui. Le référencement naturel (SEO), la publicité en ligne (SEA Google, Microsoft, Meta) et l’acquisition sont au cœur de notre métier - éprouvés sur nos propres sites depuis vingt ans.',
   },
   {
     q: "Travaillez-vous pour l'international ?",
@@ -382,7 +382,7 @@ export const cowoFaqLd = faqLd([
 ]);
 
 /**
- * FAQ d'articles de blog — bilingues. Le contenu DOIT refléter la FAQ visible
+ * FAQ d'articles de blog - bilingues. Le contenu DOIT refléter la FAQ visible
  * de l'article (même langue). Chaque export est une fonction de la langue.
  */
 const biFaqLd =
@@ -535,7 +535,7 @@ export const financerFormationFaqLd = biFaqLd(
     },
     {
       q: 'Quelle différence entre OPCO et FAF ?',
-      a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés — indépendants, professions libérales (FIF PL, AGEFICE…) — selon des plafonds annuels propres à chaque fonds.",
+      a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés - indépendants, professions libérales (FIF PL, AGEFICE…) - selon des plafonds annuels propres à chaque fonds.",
     },
     {
       q: 'Comment faire financer sa formation sans reste à charge ?',
@@ -557,7 +557,7 @@ export const financerFormationFaqLd = biFaqLd(
     },
     {
       q: "What's the difference between OPCO and FAF?",
-      a: "The OPCO funds employee training as part of the employer's skills-development plan. The FAF funds the continuing training of the self-employed — sole traders, the liberal professions (FIF PL, AGEFICE, etc.) — within annual ceilings specific to each fund.",
+      a: "The OPCO funds employee training as part of the employer's skills-development plan. The FAF funds the continuing training of the self-employed - sole traders, the liberal professions (FIF PL, AGEFICE, etc.) - within annual ceilings specific to each fund.",
     },
     {
       q: 'How can you get your training funded with nothing to pay out of pocket?',

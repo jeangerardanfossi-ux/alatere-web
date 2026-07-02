@@ -1,5 +1,5 @@
 /**
- * Données société Alatere Web — source unique de vérité.
+ * Données société Alatere Web - source unique de vérité.
  * Ne rien inventer au-delà de ce fichier (cf. brief « Données société »).
  */
 export const company = {
@@ -41,7 +41,7 @@ export const company = {
   ],
 } as const;
 
-/** Pôles d'activité — clé, libellé de marque, ancre, couleur de thème Grommet. */
+/** Pôles d'activité - clé, libellé de marque, ancre, couleur de thème Grommet. */
 export const poles = [
   { key: 'ecom', brand: 'ecoM', anchor: '#ecom', href: '/alatere-ecom', color: 'ecoM' },
   { key: 'forma', brand: 'forMa', anchor: '#forma', href: '/alatere-forma', color: 'forMa' },

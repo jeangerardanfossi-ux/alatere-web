@@ -7,7 +7,7 @@ import '../../grommet-home.css';
 import '../../grommet-activity.css';
 
 const FR = '/alatere-cowo';
-const TITLE = 'Coworking in Antibes near Port Vauban — Alatere coWo';
+const TITLE = 'Coworking in Antibes near Port Vauban - Alatere coWo';
 const DESC =
   'Coworking space in Antibes: hot desks, private offices, 5 air-conditioned meeting rooms, fibre internet. Steps from Port Vauban.';
 

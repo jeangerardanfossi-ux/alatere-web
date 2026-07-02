@@ -1,6 +1,6 @@
 'use client';
 
-/** Alatere forMa — sous-page « domaine » générique (handoff Grommet, accent or). */
+/** Alatere forMa - sous-page « domaine » générique (handoff Grommet, accent or). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
@@ -39,8 +39,8 @@ const TX: Dict = {
     en: 'A selection of programs. Objectives, durations, prerequisites, prices and dates on the catalog.',
   },
   prog_note: {
-    fr: "Liste non exhaustive — consultez le catalogue pour l'ensemble des sessions.",
-    en: 'Non-exhaustive list — see the catalog for all sessions.',
+    fr: "Liste non exhaustive - consultez le catalogue pour l'ensemble des sessions.",
+    en: 'Non-exhaustive list - see the catalog for all sessions.',
   },
 
   pourqui: { fr: 'Pour qui', en: 'Who for' },

@@ -1,5 +1,5 @@
 /* =========================================================
-   ALATERE forMa — sous-pages domaines & page formateurs
+   ALATERE forMa - sous-pages domaines & page formateurs
    Réutilise grommet-home.css + grommet-forma.css. Accent : or.
    Porté depuis le handoff Grommet (forma-pages.css).
    ========================================================= */
@@ -36,7 +36,7 @@
 .fd-metacard h3 i { width: 18px; height: 18px; stroke-width: 1.9; color: var(--gold-dark); }
 .fd-metacard ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
 .fd-metacard li { font-size: 14px; line-height: 1.45; color: var(--dark-2); display: flex; gap: 9px; }
-.fd-metacard li::before { content: "—"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+.fd-metacard li::before { content: "-"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
 
 /* ---- Carte formateur référent (bas de sous-page) ---- */
 .fd-ref { display: flex; gap: 20px; align-items: center; background: var(--gold-soft); border-radius: var(--round-s); padding: 26px 28px; flex-wrap: wrap; }

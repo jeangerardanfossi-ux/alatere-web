@@ -1,6 +1,6 @@
 'use client';
 
-/** Alatere doMo — page « domiciliation d'entreprise » (handoff Grommet, accent vert). */
+/** Alatere doMo - page « domiciliation d'entreprise » (handoff Grommet, accent vert). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -15,8 +15,8 @@ const MAP_SRC =
   'https://www.google.com/maps?q=9%20Boulevard%20Albert%201er%2C%2006600%20Antibes&z=16&output=embed';
 
 const TITLE = {
-  fr: "Alatere doMo — Domiciliation d'entreprise à Antibes (agréée préfecture)",
-  en: 'Alatere doMo — Business address in Antibes (prefecture-approved)',
+  fr: "Alatere doMo - Domiciliation d'entreprise à Antibes (agréée préfecture)",
+  en: 'Alatere doMo - Business address in Antibes (prefecture-approved)',
 };
 
 const ACCENT = {
@@ -54,8 +54,8 @@ const TX: Dict = {
     en: 'Business address in Antibes',
   },
   hero_lead: {
-    fr: "Une adresse de prestige au 9 Boulevard Albert 1er, en plein cœur d'Antibes, pour le siège social de votre entreprise. Réception du courrier, numérisation et réexpédition — l'adresse idéale pour une création, un transfert de siège ou une implantation sur la Côte d'Azur.",
-    en: "A prestigious address at 9 Boulevard Albert 1er, in the heart of Antibes, for your company's registered office. Mail handling, scanning and forwarding — the ideal address for a new company, a head-office transfer or setting up on the French Riviera.",
+    fr: "Une adresse de prestige au 9 Boulevard Albert 1er, en plein cœur d'Antibes, pour le siège social de votre entreprise. Réception du courrier, numérisation et réexpédition - l'adresse idéale pour une création, un transfert de siège ou une implantation sur la Côte d'Azur.",
+    en: "A prestigious address at 9 Boulevard Albert 1er, in the heart of Antibes, for your company's registered office. Mail handling, scanning and forwarding - the ideal address for a new company, a head-office transfer or setting up on the French Riviera.",
   },
   hero_cta1: { fr: 'Voir les formules', en: 'View the plans' },
   hero_cta2: { fr: 'Être rappelé', en: 'Get a callback' },
@@ -113,8 +113,8 @@ const TX: Dict = {
   plans_label: { fr: 'Nos formules', en: 'Our plans' },
   plans_title: { fr: 'Des offres claires, sans surprise', en: 'Clear offers, no surprises' },
   plans_p: {
-    fr: 'Tarifs HT. Sans engagement de longue durée — vous faites évoluer votre formule à tout moment.',
-    en: 'Prices excl. VAT. No long-term commitment — change your plan at any time.',
+    fr: 'Tarifs HT. Sans engagement de longue durée - vous faites évoluer votre formule à tout moment.',
+    en: 'Prices excl. VAT. No long-term commitment - change your plan at any time.',
   },
   plan0_name: { fr: 'Offre Dropbox', en: 'Dropbox plan' },
   plan0_tag: { fr: 'Boîte aux lettres', en: 'Mailbox' },
@@ -216,8 +216,8 @@ const TX: Dict = {
     en: 'to set up the SEPA direct debit',
   },
   docs_note: {
-    fr: 'Vous pouvez nous transmettre ces pièces par e-mail — nous vous accompagnons à chaque étape.',
-    en: 'You can send us these documents by email — we guide you at every step.',
+    fr: 'Vous pouvez nous transmettre ces pièces par e-mail - nous vous accompagnons à chaque étape.',
+    en: 'You can send us these documents by email - we guide you at every step.',
   },
 
   // FAQ
@@ -302,8 +302,8 @@ const TX: Dict = {
     en: '13 hours for the price of 10',
   },
   todo_p_b: {
-    fr: ' — soit 3 h offertes sur le forfait Starter.',
-    en: ' offer — i.e. 3 free hours on the Starter plan.',
+    fr: ' - soit 3 h offertes sur le forfait Starter.',
+    en: ' offer - i.e. 3 free hours on the Starter plan.',
   },
   todo_cta1: { fr: 'Découvrir Alatere toDo', en: 'Discover Alatere toDo' },
   todo_cta2: { fr: 'Voir les forfaits', en: 'See the plans' },
@@ -705,7 +705,7 @@ function Body() {
               className="d-loc__map"
               src={MAP_SRC}
               loading="lazy"
-              title="Plan — 9 Boulevard Albert 1er, Antibes"
+              title="Plan - 9 Boulevard Albert 1er, Antibes"
             />
             <div className="d-loc__card">
               <span className="g-label" style={{ color: 'var(--green-dark)' }}>

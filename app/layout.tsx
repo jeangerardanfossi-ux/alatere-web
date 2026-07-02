@@ -20,7 +20,7 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.alatere-web.com'),
   title: {
-    default: 'Alatere Web — Agence, formation, domiciliation & coworking à Antibes',
+    default: 'Alatere Web - Agence, formation, domiciliation & coworking à Antibes',
     template: '%s · Alatere Web',
   },
   description:
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'Alatere Web',
-    title: 'Alatere Web — E-commerce, formation, domiciliation & coworking à Antibes',
+    title: 'Alatere Web - E-commerce, formation, domiciliation & coworking à Antibes',
     description:
       "Quatre activités complémentaires, un seul interlocuteur, au cœur d'Antibes.",
   },

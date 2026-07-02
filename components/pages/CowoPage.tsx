@@ -1,6 +1,6 @@
 'use client';
 
-/** Alatere coWo — page « espace de coworking » (handoff Grommet, accent clay/terracotta). */
+/** Alatere coWo - page « espace de coworking » (handoff Grommet, accent clay/terracotta). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -11,8 +11,8 @@ import { Icon, ImageSlot } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
 
 const TITLE = {
-  fr: 'Alatere coWo — Espace de coworking à Antibes',
-  en: 'Alatere coWo — Coworking space in Antibes',
+  fr: 'Alatere coWo - Espace de coworking à Antibes',
+  en: 'Alatere coWo - Coworking space in Antibes',
 };
 
 const ACCENT = {
@@ -35,8 +35,8 @@ const TX: Dict = {
   bc_1: { fr: "Centre d'affaires", en: 'Business center' },
   hero_tag: { fr: 'Espace de coworking à Antibes', en: 'Coworking space in Antibes' },
   hero_lead: {
-    fr: "Un lieu de travail inspirant au cœur d'Antibes, à deux pas du port Vauban. Postes nomades, bureaux fermés et salles de réunion — café, fibre et événements business mensuels, au sein d'une communauté d'entrepreneurs.",
-    en: 'An inspiring workplace in the heart of Antibes, steps from Port Vauban. Hot desks, private offices and meeting rooms — coffee, fiber and monthly business events, within a community of entrepreneurs.',
+    fr: "Un lieu de travail inspirant au cœur d'Antibes, à deux pas du port Vauban. Postes nomades, bureaux fermés et salles de réunion - café, fibre et événements business mensuels, au sein d'une communauté d'entrepreneurs.",
+    en: 'An inspiring workplace in the heart of Antibes, steps from Port Vauban. Hot desks, private offices and meeting rooms - coffee, fiber and monthly business events, within a community of entrepreneurs.',
   },
   hero_cta1: { fr: 'Réserver une visite', en: 'Book a visit' },
   hero_cta2: { fr: 'Voir les offres', en: 'View the offers' },
@@ -128,8 +128,8 @@ const TX: Dict = {
   com_chip4: { fr: 'Écosystème Alatere', en: 'Alatere ecosystem' },
   faq_label: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq_title: {
-    fr: 'Coworking à Antibes — pratique',
-    en: 'Coworking in Antibes — practical info',
+    fr: 'Coworking à Antibes - pratique',
+    en: 'Coworking in Antibes - practical info',
   },
   faq1_q: {
     fr: "Où se situe l'espace de coworking ?",
@@ -164,8 +164,8 @@ const TX: Dict = {
   loc_title: { fr: "Au cœur d'Antibes", en: 'In the heart of Antibes' },
   loc_card_label: { fr: "Alatere coWo · centre d'affaires", en: 'Alatere coWo · business center' },
   loc_map_cap: {
-    fr: 'Plan / carte — 9 Bd Albert 1er, Antibes',
-    en: 'Plan / carte — 9 Bd Albert 1er, Antibes',
+    fr: 'Plan / carte - 9 Bd Albert 1er, Antibes',
+    en: 'Plan / carte - 9 Bd Albert 1er, Antibes',
   },
   loc_addr_l: { fr: 'Adresse', en: 'Address' },
   loc_phone_l: { fr: 'Téléphone', en: 'Phone' },
@@ -450,7 +450,7 @@ function Body() {
                 className="ap-loc__map"
                 src="https://www.google.com/maps?q=9%20Boulevard%20Albert%201er%2C%2006600%20Antibes&z=16&output=embed"
                 loading="lazy"
-                title="Plan — 9 Boulevard Albert 1er, 06600 Antibes"
+                title="Plan - 9 Boulevard Albert 1er, 06600 Antibes"
                 style={{ width: '100%', border: 0, display: 'block' }}
               />
               <div className="ap-loc__card">

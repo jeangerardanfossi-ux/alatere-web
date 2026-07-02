@@ -1,6 +1,6 @@
 'use client';
 
-/** Contact — page dédiée (handoff Grommet). Formulaire câblé sur /api/contact. */
+/** Contact - page dédiée (handoff Grommet). Formulaire câblé sur /api/contact. */
 
 import { useEffect, useState, type FormEvent } from 'react';
 import Link from '@/components/grommet/LocalizedLink';
@@ -20,8 +20,8 @@ const MAPS_LINK =
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
 const TITLE = {
-  fr: 'Contact — Alatere Web, Antibes',
-  en: 'Contact — Alatere Web, Antibes',
+  fr: 'Contact - Alatere Web, Antibes',
+  en: 'Contact - Alatere Web, Antibes',
 };
 
 const TX: Dict = {
@@ -53,13 +53,13 @@ const TX: Dict = {
   form_phone: { fr: 'Téléphone', en: 'Phone' },
   form_phone_ph: { fr: 'Optionnel', en: 'Optional' },
   form_subject: { fr: 'Sujet', en: 'Subject' },
-  form_opt1: { fr: 'E-commerce — Alatere ecoM', en: 'E-commerce — Alatere ecoM' },
-  form_opt2: { fr: 'Formation — Alatere forMa', en: 'Training — Alatere forMa' },
-  form_opt3: { fr: 'Domiciliation — Alatere doMo', en: 'Business address — Alatere doMo' },
-  form_opt4: { fr: 'Coworking — Alatere coWo', en: 'Coworking — Alatere coWo' },
+  form_opt1: { fr: 'E-commerce - Alatere ecoM', en: 'E-commerce - Alatere ecoM' },
+  form_opt2: { fr: 'Formation - Alatere forMa', en: 'Training - Alatere forMa' },
+  form_opt3: { fr: 'Domiciliation - Alatere doMo', en: 'Business address - Alatere doMo' },
+  form_opt4: { fr: 'Coworking - Alatere coWo', en: 'Coworking - Alatere coWo' },
   form_opt_todo: {
-    fr: 'Secrétariat & conciergerie — Alatere toDo',
-    en: 'Secretariat & concierge — Alatere toDo',
+    fr: 'Secrétariat & conciergerie - Alatere toDo',
+    en: 'Secretariat & concierge - Alatere toDo',
   },
   form_opt5: { fr: 'Autre demande', en: 'Other request' },
   form_message: { fr: 'Message', en: 'Message' },
@@ -161,7 +161,7 @@ function Body() {
             className="g-map"
             src={MAP_SRC}
             loading="lazy"
-            title="Plan — 9 Boulevard Albert 1er, Antibes"
+            title="Plan - 9 Boulevard Albert 1er, Antibes"
           />
           <a
             href={MAPS_LINK}
@@ -201,7 +201,7 @@ function ContactForm() {
     ['autre', 'form_opt5'],
   ];
 
-  // Pré-sélection du pôle depuis l'URL (?pole=forma) — liens des pages pôles.
+  // Pré-sélection du pôle depuis l'URL (?pole=forma) - liens des pages pôles.
   useEffect(() => {
     const p = new URLSearchParams(window.location.search).get('pole');
     if (p && POLE_KEYS.includes(p)) setPole(p);

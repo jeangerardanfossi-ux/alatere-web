@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Contexte de langue FR/EN — désormais piloté par l'URL.
+ * Contexte de langue FR/EN - désormais piloté par l'URL.
  * FR au niveau racine (sans préfixe), EN sous /en/… : la route détermine la langue.
  * `ForcedLangProvider` (posé par app/en/layout.tsx) fixe la langue côté serveur,
  * de sorte que les pages /en sont rendues en anglais et indexables.
@@ -42,7 +42,7 @@ export function LangProvider({
   titles?: { fr: string; en: string };
   children: ReactNode;
 }) {
-  // La langue vient de la route (contexte forcé) — FR par défaut, EN sous /en.
+  // La langue vient de la route (contexte forcé) - FR par défaut, EN sous /en.
   const lang = useContext(ForcedLangCtx);
 
   useEffect(() => {

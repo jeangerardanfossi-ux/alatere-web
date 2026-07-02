@@ -23,14 +23,14 @@ export const polesContent: Record<string, PoleContent> = {
     status: 'E-commerce',
     tagline: 'Sites marchands opérés en propre · depuis 2003',
     intro:
-      "Vingt ans à concevoir, opérer et référencer nos propres boutiques d'art en ligne. Notre savoir-faire SEO, SEA et opérations n'est pas une théorie : c'est ce qui fait vivre nos sites au quotidien — et c'est ce que nous mettons au service de nos clients.",
+      "Vingt ans à concevoir, opérer et référencer nos propres boutiques d'art en ligne. Notre savoir-faire SEO, SEA et opérations n'est pas une théorie : c'est ce qui fait vivre nos sites au quotidien - et c'est ce que nous mettons au service de nos clients.",
     blocks: [
       {
         heading: 'Nos boutiques',
         body: 'Un réseau de sites marchands exploités en propre, en France et en Europe.',
         bullets: [
-          'repro-tableaux.com — France',
-          'copia-di-arte.com — Union européenne · 4 langues',
+          'repro-tableaux.com - France',
+          'copia-di-arte.com - Union européenne · 4 langues',
           'reprodart.com',
           'art-prints-on-demand.com',
           'myartprints.cz',
@@ -38,14 +38,14 @@ export const polesContent: Record<string, PoleContent> = {
       },
       {
         heading: 'Référencement SEO & SEA',
-        body: "Acquisition organique et payante, structure technique, contenu et suivi de performance — éprouvés sur nos propres catalogues.",
+        body: "Acquisition organique et payante, structure technique, contenu et suivi de performance - éprouvés sur nos propres catalogues.",
       },
       {
         heading: 'Opérations e-commerce',
         body: 'Gestion de catalogue, production à la demande, logistique et relation client multilingue.',
       },
     ],
-    metaTitle: 'Alatere ecoM — Savoir-faire e-commerce & SEO à Antibes',
+    metaTitle: 'Alatere ecoM - Savoir-faire e-commerce & SEO à Antibes',
     metaDescription:
       "Vingt ans à opérer nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com…). Savoir-faire SEO, SEA et opérations e-commerce, au service de votre projet.",
   },
@@ -78,7 +78,7 @@ export const polesContent: Record<string, PoleContent> = {
         body: "Certification Qualiopi obtenue en 2022, gage de qualité du processus de formation. Programmes détaillés sur notre catalogue dédié.",
       },
     ],
-    metaTitle: 'Alatere forMa — Organisme de formation Qualiopi à Antibes',
+    metaTitle: 'Alatere forMa - Organisme de formation Qualiopi à Antibes',
     metaDescription:
       "Organisme de formation professionnelle certifié Qualiopi (n° 93.06.07588.06). Webmarketing, IA, langues, communication digitale, immobilier. Financement OPCO.",
   },
@@ -110,7 +110,7 @@ export const polesContent: Record<string, PoleContent> = {
         body: 'Agrément préfectoral n° 2022/12 du 20/09/2022. Plus de 50 entreprises domiciliées nous font confiance.',
       },
     ],
-    metaTitle: "Alatere doMo — Domiciliation d'entreprise à Antibes (agréée)",
+    metaTitle: "Alatere doMo - Domiciliation d'entreprise à Antibes (agréée)",
     metaDescription:
       "Domiciliation d'entreprise au 9 Boulevard Albert 1er à Antibes. Agrément préfectoral 2022/12, +50 entreprises domiciliées. Formules dès 30 €. Réception, scan, réexpédition.",
   },
@@ -121,7 +121,7 @@ export const polesContent: Record<string, PoleContent> = {
     status: 'Communauté',
     tagline: 'Espace de coworking à Antibes',
     intro:
-      "Postes nomades, bureaux fermés et salles de réunion à deux pas du port Vauban. Café, fibre et événements business mensuels — au 9 boulevard Albert 1er à Antibes. Venez nous rendre visite.",
+      "Postes nomades, bureaux fermés et salles de réunion à deux pas du port Vauban. Café, fibre et événements business mensuels - au 9 boulevard Albert 1er à Antibes. Venez nous rendre visite.",
     blocks: [
       {
         heading: "L'espace",
@@ -135,14 +135,14 @@ export const polesContent: Record<string, PoleContent> = {
       },
       {
         heading: 'La communauté',
-        body: 'Événements business mensuels, café et networking — pour travailler entouré et développer votre réseau.',
+        body: 'Événements business mensuels, café et networking - pour travailler entouré et développer votre réseau.',
       },
       {
         heading: 'Emplacement',
         body: 'Au 9 boulevard Albert 1er à Antibes, à deux pas du port Vauban et du centre-ville.',
       },
     ],
-    metaTitle: 'Alatere coWo — Espace de coworking à Antibes (port Vauban)',
+    metaTitle: 'Alatere coWo - Espace de coworking à Antibes (port Vauban)',
     metaDescription:
       'Coworking à Antibes : 16 postes, 5 salles de réunion, fibre, salles climatisées, événements business mensuels. À deux pas du port Vauban, 9 boulevard Albert 1er.',
   },

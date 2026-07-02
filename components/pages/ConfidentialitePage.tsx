@@ -1,6 +1,6 @@
 'use client';
 
-/** Politique de confidentialité — page prose (handoff Grommet, sans accent). */
+/** Politique de confidentialité - page prose (handoff Grommet, sans accent). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -9,8 +9,8 @@ import Footer from '@/components/grommet/Footer';
 import { Email } from '@/components/grommet/Email';
 
 const TITLE = {
-  fr: 'Politique de confidentialité — Alatere Web',
-  en: 'Privacy policy — Alatere Web',
+  fr: 'Politique de confidentialité - Alatere Web',
+  en: 'Privacy policy - Alatere Web',
 };
 
 const TX: Dict = {
@@ -241,7 +241,7 @@ function Body() {
             <dt>{t('kv_email')}</dt>
             <dd><Email user="contact" /></dd>
             <dt>{t('kv_post')}</dt>
-            <dd>Alatere Web SAS — 9 Bd Albert 1er, 06600 Antibes</dd>
+            <dd>Alatere Web SAS - 9 Bd Albert 1er, 06600 Antibes</dd>
             <dt>{t('kv_cnil')}</dt>
             <dd>{t('kv_cnil_v')}</dd>
           </dl>

@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Anti-spam du formulaire de contact — trois couches complémentaires :
+ * Anti-spam du formulaire de contact - trois couches complémentaires :
  *  1. Honeypot : un champ caché que seuls les robots remplissent.
  *  2. Piège temporel : horodatage du montage, pour rejeter les envois instantanés.
  *  3. reCAPTCHA v3 (Google) : jeton invisible vérifié côté serveur (si configuré).
@@ -61,7 +61,7 @@ export function useAntispam() {
 
   /**
    * Charge reCAPTCHA à la demande (1re interaction avec le formulaire).
-   * À brancher sur `onFocus`/`onPointerDown` d'un champ — idempotent.
+   * À brancher sur `onFocus`/`onPointerDown` d'un champ - idempotent.
    */
   const prime = useCallback(() => ensureRecaptchaScript(), []);
 
@@ -107,7 +107,7 @@ export function RecaptchaNotice({ lang }: { lang: 'fr' | 'en' }) {
   const en = lang === 'en';
   return (
     <p className="g-recaptcha-notice">
-      {en ? 'Protected by reCAPTCHA — Google ' : 'Protégé par reCAPTCHA — '}
+      {en ? 'Protected by reCAPTCHA - Google ' : 'Protégé par reCAPTCHA - '}
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
         {en ? 'Privacy' : 'Confidentialité'}
       </a>

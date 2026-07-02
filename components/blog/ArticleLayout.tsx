@@ -1,6 +1,6 @@
 'use client';
 
-/** Gabarit d'article de blog (charte Grommet, prose) — bilingue FR/EN. */
+/** Gabarit d'article de blog (charte Grommet, prose) - bilingue FR/EN. */
 
 import Link from '@/components/grommet/LocalizedLink';
 import type { ReactNode } from 'react';
@@ -73,7 +73,7 @@ function ArticleBody({ post, children }: { post: Post; children: ReactNode }) {
         {p.author?.bio && (
           <aside className="article-author">
             <p className="article-author__name">
-              {t('À propos de l’auteur', 'About the author')} — {p.author.name}
+              {t('À propos de l’auteur', 'About the author')} - {p.author.name}
             </p>
             <p>
               {p.author.bio}{' '}

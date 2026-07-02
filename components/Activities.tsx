@@ -59,7 +59,7 @@ export default function Activities() {
             </p>
             <p className={styles.text}>
               Vingt ans à concevoir, opérer et référencer nos propres boutiques
-              d&rsquo;art — notre meilleure démonstration de savoir-faire SEO, SEA
+              d&rsquo;art - notre meilleure démonstration de savoir-faire SEO, SEA
               et opérations.
             </p>
             <div className={styles.vignettes}>
@@ -104,7 +104,7 @@ export default function Activities() {
               )}
             </ul>
             <div className={styles.visual} style={{ background: visualColors.forma }}>
-              <span>Visuel — salle de formation</span>
+              <span>Visuel - salle de formation</span>
             </div>
             <Link className={styles.cardCta} href="/alatere-forma">
               Voir le catalogue ↗
@@ -125,7 +125,7 @@ export default function Activities() {
             <p className={styles.subtitle}>Domiciliation d&rsquo;entreprise à Antibes</p>
             <p className={styles.text}>
               Une adresse de prestige au 9 Boulevard Albert 1<sup>er</sup> pour
-              votre siège social. Réception du courrier, scan, réexpédition —
+              votre siège social. Réception du courrier, scan, réexpédition -
               idéal SIRET et transfert de siège.
             </p>
             <div className={styles.prices}>
@@ -161,7 +161,7 @@ export default function Activities() {
             <p className={styles.subtitle}>Espace de coworking à Antibes</p>
             <p className={styles.text}>
               Postes nomades, bureaux fermés, salles de réunion. Café, fibre et
-              événements business mensuels — à deux pas du port Vauban. Venez nous
+              événements business mensuels - à deux pas du port Vauban. Venez nous
               rendre visite au 9 boulevard Albert 1<sup>er</sup> à Antibes.
             </p>
             <ul className={styles.facts}>
@@ -175,7 +175,7 @@ export default function Activities() {
               )}
             </ul>
             <div className={styles.visual} style={{ background: visualColors.cowo }}>
-              <span>Visuel — espace coworking</span>
+              <span>Visuel - espace coworking</span>
             </div>
             <Link className={styles.cardCta} href="/alatere-cowo">
               Réserver une visite →

@@ -3,7 +3,7 @@
 import Link from '@/components/grommet/LocalizedLink';
 import { useLang } from '@/components/grommet/lang';
 
-/** Corps de l'article « Domicilier son entreprise à Antibes » — bilingue FR/EN. */
+/** Corps de l'article « Domicilier son entreprise à Antibes » - bilingue FR/EN. */
 export default function DomicilierEntrepriseAntibes() {
   const { lang } = useLang();
   return lang === 'en' ? <En /> : <Fr />;
@@ -90,24 +90,24 @@ function Fr() {
         <p>Chez Alatere doMo, les tarifs sont clairs et sans engagement de longue durée :</p>
         <ul>
           <li>
-            <strong>Offre Dropbox — 25 € HT / mois</strong> : boîte aux lettres (réception et
+            <strong>Offre Dropbox - 25 € HT / mois</strong> : boîte aux lettres (réception et
             stockage du courrier), sans utilisation comme siège social ;
           </li>
           <li>
-            <strong>Offre Headquarters — 30 € HT / mois</strong> : adresse de siège social +
+            <strong>Offre Headquarters - 30 € HT / mois</strong> : adresse de siège social +
             réception du courrier ;
           </li>
           <li>
-            <strong>Offre Forward — 50 € HT / mois</strong> : numérisation et réexpédition incluses ;
+            <strong>Offre Forward - 50 € HT / mois</strong> : numérisation et réexpédition incluses ;
           </li>
           <li>
-            <strong>Frais de dossier — 50 € HT</strong>, une seule fois, à l'ouverture du dossier.
+            <strong>Frais de dossier - 50 € HT</strong>, une seule fois, à l'ouverture du dossier.
           </li>
         </ul>
         <p>
           Découvrez le détail sur la page{' '}
           <Link className="g-inline" href="/alatere-domo">
-            Alatere doMo — domiciliation à Antibes
+            Alatere doMo - domiciliation à Antibes
           </Link>
           .
         </p>
@@ -130,7 +130,7 @@ function Fr() {
           <a className="g-inline" href="/alatere-todo.html">
             Alatere toDo
           </a>
-          , une assistante dédiée prend en charge votre secrétariat — avec des conditions
+          , une assistante dédiée prend en charge votre secrétariat - avec des conditions
           avantageuses pour les entreprises domiciliées.
         </p>
         <p>
@@ -265,24 +265,24 @@ function En() {
         <p>At Alatere doMo, pricing is clear, with no long-term commitment:</p>
         <ul>
           <li>
-            <strong>Dropbox plan — €25 excl. VAT / month</strong>: letterbox (mail reception and
+            <strong>Dropbox plan - €25 excl. VAT / month</strong>: letterbox (mail reception and
             storage), without use as a head office;
           </li>
           <li>
-            <strong>Headquarters plan — €30 excl. VAT / month</strong>: head-office address + mail
+            <strong>Headquarters plan - €30 excl. VAT / month</strong>: head-office address + mail
             reception;
           </li>
           <li>
-            <strong>Forward plan — €50 excl. VAT / month</strong>: scanning and forwarding included;
+            <strong>Forward plan - €50 excl. VAT / month</strong>: scanning and forwarding included;
           </li>
           <li>
-            <strong>Set-up fee — €50 excl. VAT</strong>, one-off, when opening the file.
+            <strong>Set-up fee - €50 excl. VAT</strong>, one-off, when opening the file.
           </li>
         </ul>
         <p>
           Find out more on the{' '}
           <Link className="g-inline" href="/alatere-domo">
-            Alatere doMo — company address registration in Antibes
+            Alatere doMo - company address registration in Antibes
           </Link>{' '}
           page.
         </p>
@@ -305,7 +305,7 @@ function En() {
           <a className="g-inline" href="/alatere-todo.html">
             Alatere toDo
           </a>
-          , a dedicated assistant takes care of your secretarial work — with favourable terms for
+          , a dedicated assistant takes care of your secretarial work - with favourable terms for
           companies with a registered business address.
         </p>
         <p>

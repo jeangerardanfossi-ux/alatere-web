@@ -3,7 +3,7 @@
 import Link from '@/components/grommet/LocalizedLink';
 import { useLang } from '@/components/grommet/lang';
 
-/** Corps de l'article « Coworking à Antibes : guide » — bilingue FR/EN. */
+/** Corps de l'article « Coworking à Antibes : guide » - bilingue FR/EN. */
 export default function CoworkingAntibesGuide() {
   const { lang } = useLang();
   return lang === 'en' ? <En /> : <Fr />;
@@ -89,8 +89,8 @@ function Fr() {
             </tr>
             <tr>
               <td>Salle de réunion</td>
-              <td>180 € TTC / jour — 80 € TTC après 16 h</td>
-              <td>Réunion, atelier, entretien — sur réservation</td>
+              <td>180 € TTC / jour - 80 € TTC après 16 h</td>
+              <td>Réunion, atelier, entretien - sur réservation</td>
             </tr>
           </tbody>
         </table>
@@ -263,8 +263,8 @@ function En() {
             </tr>
             <tr>
               <td>Meeting room</td>
-              <td>€180 incl. VAT / day — €80 incl. VAT after 4 pm</td>
-              <td>Meeting, workshop, interview — by reservation</td>
+              <td>€180 incl. VAT / day - €80 incl. VAT after 4 pm</td>
+              <td>Meeting, workshop, interview - by reservation</td>
             </tr>
           </tbody>
         </table>

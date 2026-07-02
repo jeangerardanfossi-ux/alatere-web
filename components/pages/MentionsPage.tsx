@@ -1,6 +1,6 @@
 'use client';
 
-/** Mentions légales — page prose (handoff Grommet, sans accent). */
+/** Mentions légales - page prose (handoff Grommet, sans accent). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -9,8 +9,8 @@ import Footer from '@/components/grommet/Footer';
 import { Email } from '@/components/grommet/Email';
 
 const TITLE = {
-  fr: 'Mentions légales — Alatere Web',
-  en: 'Legal notice — Alatere Web',
+  fr: 'Mentions légales - Alatere Web',
+  en: 'Legal notice - Alatere Web',
 };
 
 const TX: Dict = {

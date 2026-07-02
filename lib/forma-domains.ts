@@ -1,6 +1,6 @@
 /**
  * Contenu des sous-pages « domaines » d'Alatere forMa (bilingue FR/EN).
- * Porté depuis le handoff Grommet — rendu par <FormaDomainPage>.
+ * Porté depuis le handoff Grommet - rendu par <FormaDomainPage>.
  */
 
 export type Bi = { fr: string; en: string };
@@ -9,7 +9,7 @@ export type FormaReferent = {
   /** Initiales affichées dans l'avatar monogramme. */
   initials: string;
   name: string;
-  /** Sous-titre sous le nom (ex. « Consultant webmarketing — SEO… »). */
+  /** Sous-titre sous le nom (ex. « Consultant webmarketing - SEO… »). */
   detail: Bi;
   linkedin: string;
 };
@@ -39,8 +39,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'webmarketing',
     icon: 'bar-chart-3',
     metaTitle: {
-      fr: 'Alatere forMa — Webmarketing : SEO, SEA & acquisition',
-      en: 'Alatere forMa — Web marketing: SEO, SEA & acquisition',
+      fr: 'Alatere forMa - Webmarketing : SEO, SEA & acquisition',
+      en: 'Alatere forMa - Web marketing: SEO, SEA & acquisition',
     },
     metaDescription:
       'Formations webmarketing à Antibes : SEO, SEA, AEO, social ads, analytics et e-commerce. Organisme certifié Qualiopi, financement OPCO.',
@@ -94,8 +94,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       initials: 'RS',
       name: 'Richard Solaro',
       detail: {
-        fr: 'Consultant webmarketing — SEO, SEA & acquisition',
-        en: 'Web marketing consultant — SEO, SEA & acquisition',
+        fr: 'Consultant webmarketing - SEO, SEA & acquisition',
+        en: 'Web marketing consultant - SEO, SEA & acquisition',
       },
       linkedin: 'https://www.linkedin.com/in/richard-solaro-consultant-webmarketing/',
     },
@@ -105,16 +105,16 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'intelligence-artificielle',
     icon: 'sparkles',
     metaTitle: {
-      fr: 'Alatere forMa — Intelligence artificielle pour les pros',
-      en: 'Alatere forMa — Artificial intelligence for professionals',
+      fr: 'Alatere forMa - Intelligence artificielle pour les pros',
+      en: 'Alatere forMa - Artificial intelligence for professionals',
     },
     metaDescription:
       'Formations intelligence artificielle à Antibes : IA générative, prompt engineering, automatisation, intégration métier. Certifié Qualiopi.',
     name: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
     tag: { fr: "Monter à bord de l'IA", en: 'Getting on board with AI' },
     lead: {
-      fr: "L'IA générative transforme le quotidien des entreprises. Nos formations, sans jargon, vous apprennent à l'utiliser concrètement : gagner du temps, produire mieux et intégrer ces outils dans vos métiers — en toute maîtrise.",
-      en: 'Generative AI is transforming everyday business. Our jargon-free courses teach you to use it concretely: save time, produce better and embed these tools into your work — with full control.',
+      fr: "L'IA générative transforme le quotidien des entreprises. Nos formations, sans jargon, vous apprennent à l'utiliser concrètement : gagner du temps, produire mieux et intégrer ces outils dans vos métiers - en toute maîtrise.",
+      en: 'Generative AI is transforming everyday business. Our jargon-free courses teach you to use it concretely: save time, produce better and embed these tools into your work - with full control.',
     },
     facts: [
       { fr: '4 programmes au catalogue', en: '4 programs in the catalog' },
@@ -158,8 +158,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'langues',
     icon: 'languages',
     metaTitle: {
-      fr: 'Alatere forMa — Langues professionnelles',
-      en: 'Alatere forMa — Professional languages',
+      fr: 'Alatere forMa - Langues professionnelles',
+      en: 'Alatere forMa - Professional languages',
     },
     metaDescription:
       'Formations en langues à Antibes : anglais, italien et espagnol professionnels, en individuel ou petit groupe. Certifié Qualiopi, CPF.',
@@ -185,7 +185,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       { fr: 'Préparer un test ou une certification de langue', en: 'Prepare for a language test or certification' },
     ],
     programs: [
-      { fr: 'Anglais professionnel — tous niveaux', en: 'Professional English — all levels' },
+      { fr: 'Anglais professionnel - tous niveaux', en: 'Professional English - all levels' },
       { fr: 'Anglais commercial & relation client', en: 'Business English & customer relations' },
       { fr: 'Anglais technique du web & du marketing', en: 'Technical English for web & marketing' },
       { fr: 'Italien professionnel', en: 'Professional Italian' },
@@ -213,8 +213,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'communication-digitale',
     icon: 'megaphone',
     metaTitle: {
-      fr: 'Alatere forMa — Communication digitale',
-      en: 'Alatere forMa — Digital communication',
+      fr: 'Alatere forMa - Communication digitale',
+      en: 'Alatere forMa - Digital communication',
     },
     metaDescription:
       'Formations communication digitale à Antibes : réseaux sociaux, brand content, stratégie éditoriale, création de contenu. Certifié Qualiopi.',
@@ -267,8 +267,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'immobilier',
     icon: 'building-2',
     metaTitle: {
-      fr: 'Alatere forMa — Formations immobilier (loi ALUR)',
-      en: 'Alatere forMa — Real-estate training (ALUR law)',
+      fr: 'Alatere forMa - Formations immobilier (loi ALUR)',
+      en: 'Alatere forMa - Real-estate training (ALUR law)',
     },
     metaDescription:
       'Formations professionnelles immobilier à Antibes : formation continue loi ALUR, déontologie, marketing digital immobilier. Certifié Qualiopi.',
@@ -320,7 +320,7 @@ export const FORMA_DOMAIN_BY_SLUG: Record<string, FormaDomain> = Object.fromEntr
 
 /**
  * FAQ par domaine (visible + FAQPage JSON-LD). Questions en langage naturel,
- * réponses auto-portantes — format privilégié par les moteurs IA.
+ * réponses auto-portantes - format privilégié par les moteurs IA.
  */
 export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
   webmarketing: [
@@ -436,8 +436,8 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
         en: 'Do we work on my own channels during the course?',
       },
       a: {
-        fr: 'Oui. Les parcours sont concrets : vous travaillez sur vos propres réseaux et contenus — stratégie et ligne éditoriale, visuels avec Canva, formats vidéo courts, community management et e-réputation.',
-        en: 'Yes. The courses are hands-on: you work on your own channels and content — strategy and editorial line, visuals with Canva, short video formats, community management and e-reputation.',
+        fr: 'Oui. Les parcours sont concrets : vous travaillez sur vos propres réseaux et contenus - stratégie et ligne éditoriale, visuels avec Canva, formats vidéo courts, community management et e-réputation.',
+        en: 'Yes. The courses are hands-on: you work on your own channels and content - strategy and editorial line, visuals with Canva, short video formats, community management and e-reputation.',
       },
     },
     {

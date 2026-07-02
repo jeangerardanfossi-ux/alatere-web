@@ -8,7 +8,7 @@ import '../../grommet-forma.css';
 import '../../grommet-forma-pages.css';
 
 const FR = '/alatere-forma';
-const TITLE = 'Alatere forMa — Qualiopi-certified training provider in Antibes';
+const TITLE = 'Alatere forMa - Qualiopi-certified training provider in Antibes';
 const DESC =
   'Qualiopi-certified training provider in Antibes: web marketing, AI, languages, communication, real estate. On-site or remote, OPCO/FAF funding.';
 

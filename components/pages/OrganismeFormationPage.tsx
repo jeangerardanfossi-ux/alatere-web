@@ -1,6 +1,6 @@
 'use client';
 
-/** Organisme de formation — présentation + certificat Qualiopi téléchargeable (FR/EN). */
+/** Organisme de formation - présentation + certificat Qualiopi téléchargeable (FR/EN). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -13,8 +13,8 @@ const CATALOG = 'https://alatere-web.catalogueformpro.com';
 const CERT_PDF = '/documents/Certificat-Qualiopi-Alatere-Web.pdf';
 
 const TITLE = {
-  fr: 'Organisme de formation — Alatere Web (certifié Qualiopi)',
-  en: 'Training provider — Alatere Web (Qualiopi-certified)',
+  fr: 'Organisme de formation - Alatere Web (certifié Qualiopi)',
+  en: 'Training provider - Alatere Web (Qualiopi-certified)',
 };
 
 const TX: Dict = {
@@ -40,8 +40,8 @@ const TX: Dict = {
 
   s2_t: { fr: 'Un formateur formé à la pédagogie', en: 'A trainer trained in pedagogy' },
   s2_p1: {
-    fr: "Jean-Gérard Anfossi réunit une triple expérience : entrepreneur en e-commerce, enseignant dans l'enseignement supérieur et formateur professionnel. Cette double culture — terrain et pédagogie — garantit des formations concrètes, à jour des pratiques du marché et pensées pour une montée en compétences réelle des apprenants.",
-    en: 'Jean-Gérard Anfossi combines a threefold experience: e-commerce entrepreneur, higher-education teacher and professional trainer. This dual culture — field and pedagogy — ensures hands-on training, up to date with market practices and designed for genuine skill development.',
+    fr: "Jean-Gérard Anfossi réunit une triple expérience : entrepreneur en e-commerce, enseignant dans l'enseignement supérieur et formateur professionnel. Cette double culture - terrain et pédagogie - garantit des formations concrètes, à jour des pratiques du marché et pensées pour une montée en compétences réelle des apprenants.",
+    en: 'Jean-Gérard Anfossi combines a threefold experience: e-commerce entrepreneur, higher-education teacher and professional trainer. This dual culture - field and pedagogy - ensures hands-on training, up to date with market practices and designed for genuine skill development.',
   },
   s2_link: { fr: 'Voir le profil LinkedIn', en: 'View the LinkedIn profile' },
 

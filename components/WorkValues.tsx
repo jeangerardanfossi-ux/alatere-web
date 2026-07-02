@@ -22,7 +22,7 @@ const values = [
   },
   {
     title: 'Écosystème complet',
-    text: 'Agence, formation, domiciliation et coworking — tout au même endroit.',
+    text: 'Agence, formation, domiciliation et coworking - tout au même endroit.',
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" {...I}>
         <rect x="3" y="3" width="7.5" height="7.5" rx="1.5" />

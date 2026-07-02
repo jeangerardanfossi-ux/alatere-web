@@ -5,7 +5,7 @@ import '../../grommet-home.css';
 import '../../grommet-pages.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Accessibility & disability — Alatere forMa (Antibes)' },
+  title: { absolute: 'Accessibility & disability - Alatere forMa (Antibes)' },
   description:
     'Alatere forMa makes its training accessible to people with disabilities: dedicated liaison, adapted premises, materials and learning formats.',
   alternates: pageAlternates('/accessibilite-et-handicap', 'en'),

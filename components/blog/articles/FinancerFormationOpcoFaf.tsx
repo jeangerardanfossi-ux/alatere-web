@@ -5,7 +5,7 @@ import { useLang } from '@/components/grommet/lang';
 
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
-/** Corps de l'article « Financer sa formation : OPCO et FAF » — bilingue FR/EN. */
+/** Corps de l'article « Financer sa formation : OPCO et FAF » - bilingue FR/EN. */
 export default function FinancerFormationOpcoFaf() {
   const { lang } = useLang();
   return lang === 'en' ? <En /> : <Fr />;
@@ -16,7 +16,7 @@ function Fr() {
     <>
       <p>
         Faire financer sa <strong>formation professionnelle</strong> est souvent plus simple
-        qu&rsquo;on ne le pense. Selon votre statut — salarié ou travailleur non-salarié — deux
+        qu&rsquo;on ne le pense. Selon votre statut - salarié ou travailleur non-salarié - deux
         dispositifs principaux existent : l&rsquo;<strong>OPCO</strong> et le <strong>FAF</strong>.
         Voici comment ils fonctionnent et comment les mobiliser, idéalement sans reste à charge.
       </p>
@@ -129,7 +129,7 @@ function Fr() {
           <Link className="g-inline" href="/contact?pole=forma">
             demandez un devis
           </Link>{' '}
-          — réponse sous 48 heures.
+          - réponse sous 48 heures.
         </p>
       </section>
 
@@ -147,7 +147,7 @@ function Fr() {
         <p>
           L&rsquo;OPCO finance la formation des salariés dans le cadre du plan de développement des
           compétences de l&rsquo;employeur. Le FAF finance la formation continue des travailleurs
-          non-salariés — indépendants, professions libérales (FIF PL, AGEFICE…) — selon des plafonds
+          non-salariés - indépendants, professions libérales (FIF PL, AGEFICE…) - selon des plafonds
           annuels propres à chaque fonds.
         </p>
 
@@ -181,7 +181,7 @@ function En() {
     <>
       <p>
         Getting your <strong>professional training</strong> funded is often simpler than people
-        think. Depending on your status — employee or self-employed — there are two main schemes:
+        think. Depending on your status - employee or self-employed - there are two main schemes:
         the <strong>OPCO</strong> and the <strong>FAF</strong>. Here is how they work and how to
         draw on them, ideally with no out-of-pocket cost.
       </p>
@@ -292,7 +292,7 @@ function En() {
           <Link className="g-inline" href="/contact?pole=forma">
             request a quote
           </Link>{' '}
-          — reply within 48 hours.
+          - reply within 48 hours.
         </p>
       </section>
 
@@ -308,8 +308,8 @@ function En() {
         <h3>What&rsquo;s the difference between OPCO and FAF?</h3>
         <p>
           The OPCO funds employee training as part of the employer&rsquo;s skills-development plan.
-          The FAF funds the continuing training of the self-employed — sole traders, the liberal
-          professions (FIF PL, AGEFICE, etc.) — within annual ceilings specific to each fund.
+          The FAF funds the continuing training of the self-employed - sole traders, the liberal
+          professions (FIF PL, AGEFICE, etc.) - within annual ceilings specific to each fund.
         </p>
 
         <h3>How can you get your training funded with nothing to pay out of pocket?</h3>

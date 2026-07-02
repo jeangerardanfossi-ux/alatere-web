@@ -7,12 +7,12 @@ import '../grommet-home.css';
 import '../grommet-pages.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Ressources & guides — Alatere Web (Antibes)' },
+  title: { absolute: 'Ressources & guides - Alatere Web (Antibes)' },
   description:
     "Guides pratiques Alatere Web : domiciliation d'entreprise, financement de formation, coworking et e-commerce à Antibes.",
   alternates: pageAlternates('/blog', 'fr'),
   openGraph: {
-    title: 'Ressources & guides — Alatere Web',
+    title: 'Ressources & guides - Alatere Web',
     description:
       "Guides pratiques sur la domiciliation, la formation, le coworking et l'e-commerce à Antibes.",
   },

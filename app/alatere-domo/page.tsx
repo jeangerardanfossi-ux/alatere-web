@@ -7,12 +7,12 @@ import '../grommet-domo.css';
 import '../grommet-todo.css';
 
 export const metadata: Metadata = {
-  title: { absolute: "Domiciliation d'entreprise à Antibes — Alatere doMo" },
+  title: { absolute: "Domiciliation d'entreprise à Antibes - Alatere doMo" },
   description:
     "Domiciliez votre siège social à Antibes dès 30 €/mois. Société agréée préfecture : réception du courrier, scan, réexpédition. Attestation sous 48 h.",
   alternates: { canonical: '/alatere-domo' },
   openGraph: {
-    title: "Domiciliation d'entreprise à Antibes — Alatere doMo",
+    title: "Domiciliation d'entreprise à Antibes - Alatere doMo",
     description:
       "Adresse de siège social à Antibes dès 30 €/mois, société agréée préfecture. Courrier, scan, réexpédition. Attestation sous 48 h.",
   },

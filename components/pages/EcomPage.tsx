@@ -1,6 +1,6 @@
 'use client';
 
-/** Alatere ecoM — page « savoir-faire e-commerce » (handoff Grommet, accent navy). */
+/** Alatere ecoM - page « savoir-faire e-commerce » (handoff Grommet, accent navy). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -12,8 +12,8 @@ import { Icon, ImageSlot } from '@/components/grommet/icons';
 const REPRO = 'https://repro-tableaux.com';
 
 const TITLE = {
-  fr: "Alatere ecoM — E-commerce d'art opéré en propre depuis 2003",
-  en: 'Alatere ecoM — Art e-commerce run in-house since 2003',
+  fr: "Alatere ecoM - E-commerce d'art opéré en propre depuis 2003",
+  en: 'Alatere ecoM - Art e-commerce run in-house since 2003',
 };
 
 const ACCENT = {
@@ -40,7 +40,7 @@ const TX: Dict = {
   },
   hero_lead: {
     fr: "Depuis plus de vingt ans, nous concevons, opérons et référençons nos propres boutiques d'art en ligne. Ce n'est pas une promesse : c'est notre meilleure démonstration de savoir-faire en SEO, SEA, acquisition et opérations e-commerce.",
-    en: "For over twenty years, we have designed, run and ranked our own online art stores. It's not a promise — it's our best proof of expertise in SEO, SEA, acquisition and e-commerce operations.",
+    en: "For over twenty years, we have designed, run and ranked our own online art stores. It's not a promise - it's our best proof of expertise in SEO, SEA, acquisition and e-commerce operations.",
   },
   hero_cta1: { fr: 'Visiter repro-tableaux.com', en: 'Visit repro-tableaux.com' },
   hero_cta2: { fr: "Discuter d'un projet", en: 'Discuss a project' },
@@ -146,16 +146,16 @@ const TX: Dict = {
   faq_title: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq1_q: { fr: 'Que fait Alatere ecoM ?', en: 'What does Alatere ecoM do?' },
   faq1_a: {
-    fr: "Alatere ecoM conçoit, opère et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com) — un savoir-faire SEO, SEA et opérations que nous mettons au service de nos clients.",
-    en: "Alatere ecoM designs, runs and ranks e-commerce sites. Since 2003 we have run our own online art stores (repro-tableaux.com, copia-di-arte.com) — SEO, SEA and operations expertise we put at our clients' service.",
+    fr: "Alatere ecoM conçoit, opère et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com) - un savoir-faire SEO, SEA et opérations que nous mettons au service de nos clients.",
+    en: "Alatere ecoM designs, runs and ranks e-commerce sites. Since 2003 we have run our own online art stores (repro-tableaux.com, copia-di-arte.com) - SEO, SEA and operations expertise we put at our clients' service.",
   },
   faq2_q: {
     fr: 'Proposez-vous du référencement SEO et de la publicité SEA ?',
     en: 'Do you offer SEO and SEA advertising?',
   },
   faq2_a: {
-    fr: 'Oui. Le référencement naturel (SEO), la publicité en ligne (SEA Google, Microsoft, Meta) et l’acquisition sont au cœur de notre métier — éprouvés sur nos propres sites depuis vingt ans.',
-    en: 'Yes. Organic ranking (SEO), online advertising (SEA on Google, Microsoft, Meta) and acquisition are at the core of our business — proven on our own sites for twenty years.',
+    fr: 'Oui. Le référencement naturel (SEO), la publicité en ligne (SEA Google, Microsoft, Meta) et l’acquisition sont au cœur de notre métier - éprouvés sur nos propres sites depuis vingt ans.',
+    en: 'Yes. Organic ranking (SEO), online advertising (SEA on Google, Microsoft, Meta) and acquisition are at the core of our business - proven on our own sites for twenty years.',
   },
   faq3_q: { fr: "Travaillez-vous pour l'international ?", en: 'Do you work internationally?' },
   faq3_a: {

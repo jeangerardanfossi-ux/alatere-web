@@ -108,7 +108,7 @@ export async function POST(request: Request) {
     sendAck(demande).catch(() => false),
   ]);
 
-  // Trace serveur — filet de sécurité si une intégration tombe.
+  // Trace serveur - filet de sécurité si une intégration tombe.
   console.log('[contact]', {
     pole: demande.pole,
     email: demande.email,
@@ -119,7 +119,7 @@ export async function POST(request: Request) {
 
   // La demande est considérée reçue dès qu'elle est captée quelque part :
   // enregistrée dans Notion OU notifiée par e-mail. On n'affiche une erreur au
-  // visiteur que si TOUT a échoué (aucune trace de la demande) — ainsi un
+  // visiteur que si TOUT a échoué (aucune trace de la demande) - ainsi un
   // incident passager Brevo ne bloque pas le visiteur et ne perd aucun lead.
   if (!notionOk && !internalOk) {
     return NextResponse.json({ error: 'Envoi impossible.' }, { status: 502 });

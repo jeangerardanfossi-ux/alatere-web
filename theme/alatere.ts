@@ -1,11 +1,11 @@
 import type { ThemeType } from 'grommet';
 
 /**
- * Charte Alatere Web — extraite du logo officiel.
+ * Charte Alatere Web - extraite du logo officiel.
  * Modifier les couleurs / la typo ici se répercute sur tout le site.
  *
  * A11y : `accent-1` (or), l'or clair et `accent-2` (vert feuille) ont un
- * contraste insuffisant pour du texte sur fond clair — réservés aux
+ * contraste insuffisant pour du texte sur fond clair - réservés aux
  * accents / filets / icônes. Texte courant en `ink`, `brand` ou `forest`.
  */
 export const palette = {

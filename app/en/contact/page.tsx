@@ -7,7 +7,7 @@ import '../../grommet-home.css';
 import '../../grommet-pages.css';
 
 const FR = '/contact';
-const TITLE = 'Contact — Alatere Web, 9 Bd Albert 1er Antibes';
+const TITLE = 'Contact - Alatere Web, 9 Bd Albert 1er Antibes';
 const DESC =
   'Contact Alatere Web in Antibes: e-commerce, training, business address, coworking. Reply within 48 h. 9 Bd Albert 1er, 06600 Antibes.';
 

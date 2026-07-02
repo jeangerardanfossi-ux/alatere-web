@@ -3,7 +3,7 @@
 import Link from '@/components/grommet/LocalizedLink';
 import { useLang } from '@/components/grommet/lang';
 
-/** Corps de l'article « Domiciliation ou location de bureau à Antibes » — bilingue FR/EN. */
+/** Corps de l'article « Domiciliation ou location de bureau à Antibes » - bilingue FR/EN. */
 export default function DomiciliationOuBureauAntibes() {
   const { lang } = useLang();
   return lang === 'en' ? <En /> : <Fr />;
@@ -64,7 +64,7 @@ function Fr() {
           </li>
           <li>
             <strong>Coworking</strong> : <strong>30 € TTC la journée</strong> ou{' '}
-            <strong>360 € TTC/mois</strong> en open-space illimité — un vrai poste de travail, sans
+            <strong>360 € TTC/mois</strong> en open-space illimité - un vrai poste de travail, sans
             engagement long.
           </li>
           <li>
@@ -120,7 +120,7 @@ function Fr() {
           <Link className="g-inline" href="/contact?pole=domo">
             Contactez-nous
           </Link>{' '}
-          — réponse sous 48 heures.
+          - réponse sous 48 heures.
         </p>
       </section>
 
@@ -213,7 +213,7 @@ function En() {
           </li>
           <li>
             <strong>Coworking</strong>: <strong>€30 incl. VAT per day</strong> or{' '}
-            <strong>€360 incl. VAT/month</strong> for unlimited open-space access — a genuine
+            <strong>€360 incl. VAT/month</strong> for unlimited open-space access - a genuine
             workstation, with no long-term commitment.
           </li>
           <li>
@@ -266,7 +266,7 @@ function En() {
           <Link className="g-inline" href="/contact?pole=domo">
             Contact us
           </Link>{' '}
-          — reply within 48 hours.
+          - reply within 48 hours.
         </p>
       </section>
 

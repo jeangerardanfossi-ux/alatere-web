@@ -4,10 +4,10 @@ import { company } from '@/lib/site';
 import styles from './SiteFooter.module.css';
 
 const activites = [
-  { label: 'Alatere ecoM — e-commerce', href: '/alatere-ecom' },
-  { label: 'Alatere forMa — formation', href: '/alatere-forma' },
-  { label: 'Alatere doMo — domiciliation', href: '/alatere-domo' },
-  { label: 'Alatere coWo — coworking', href: '/alatere-cowo' },
+  { label: 'Alatere ecoM - e-commerce', href: '/alatere-ecom' },
+  { label: 'Alatere forMa - formation', href: '/alatere-forma' },
+  { label: 'Alatere doMo - domiciliation', href: '/alatere-domo' },
+  { label: 'Alatere coWo - coworking', href: '/alatere-cowo' },
 ];
 
 const liens = [
@@ -34,7 +34,7 @@ export default function SiteFooter() {
             <br />
             {company.address}
             <br />
-            {company.postalCode} {company.city} — {company.country}
+            {company.postalCode} {company.city} - {company.country}
             <br />
             <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phoneDisplay}</a>
             <br />
@@ -84,7 +84,7 @@ export default function SiteFooter() {
 
       <div className={styles.bottom}>
         <div className={styles.bottomInner}>
-          <span>© 2026 {company.legalName} — Tous droits réservés</span>
+          <span>© 2026 {company.legalName} - Tous droits réservés</span>
           <span>
             SIRET {company.siret} · {company.rcs} · Qualiopi n° {company.qualiopiCert}
           </span>

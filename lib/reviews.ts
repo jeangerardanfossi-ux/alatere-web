@@ -1,5 +1,5 @@
 /**
- * Avis Google via l'API Google Places (New) — côté serveur uniquement.
+ * Avis Google via l'API Google Places (New) - côté serveur uniquement.
  * Importé seulement par la route /api/reviews (la clé ne fuit jamais côté client).
  *
  * Variable d'environnement : GOOGLE_PLACES_API_KEY
@@ -32,7 +32,7 @@ export type PlaceReviews = {
 
 export type PoleKey = 'ecom' | 'forma' | 'domo' | 'cowo';
 
-// Requête texte par activité (nom de la fiche + adresse) — sert à résoudre le Place ID.
+// Requête texte par activité (nom de la fiche + adresse) - sert à résoudre le Place ID.
 const QUERIES: Record<PoleKey, string> = {
   ecom: 'Repro-tableaux 9 Boulevard Albert 1er 06600 Antibes',
   forma: 'Alatere Web formation 9 Boulevard Albert 1er 06600 Antibes',

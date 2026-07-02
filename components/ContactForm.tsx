@@ -13,10 +13,10 @@ import {
 } from 'grommet';
 
 const subjects = [
-  'E-commerce — Alatere ecoM',
-  'Formation — Alatere forMa',
-  'Domiciliation — Alatere doMo',
-  'Coworking — Alatere coWo',
+  'E-commerce - Alatere ecoM',
+  'Formation - Alatere forMa',
+  'Domiciliation - Alatere doMo',
+  'Coworking - Alatere coWo',
   'Autre demande',
 ];
 

@@ -9,7 +9,7 @@ import '../../../grommet-forma.css';
 import '../../../grommet-forma-pages.css';
 
 const FR = '/alatere-forma/formateurs';
-const TITLE = 'Alatere forMa — Our trainers';
+const TITLE = 'Alatere forMa - Our trainers';
 const DESC =
   "Alatere forMa's trainers: practitioner instructors in web marketing, artificial intelligence, languages, digital communication and real estate.";
 

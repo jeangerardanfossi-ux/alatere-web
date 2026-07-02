@@ -6,12 +6,12 @@ import '../grommet-home.css';
 import '../grommet-activity.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Coworking à Antibes près du port Vauban — Alatere coWo' },
+  title: { absolute: 'Coworking à Antibes près du port Vauban - Alatere coWo' },
   description:
     'Espace de coworking à Antibes : postes nomades, bureaux privatifs, 5 salles de réunion climatisées, fibre. À deux pas du port Vauban.',
   alternates: { canonical: '/alatere-cowo' },
   openGraph: {
-    title: 'Coworking à Antibes près du port Vauban — Alatere coWo',
+    title: 'Coworking à Antibes près du port Vauban - Alatere coWo',
     description:
       "Postes, bureaux privatifs et salles de réunion à Antibes, au sein d'une communauté d'entrepreneurs. À deux pas du port Vauban.",
   },

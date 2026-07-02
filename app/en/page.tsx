@@ -5,7 +5,7 @@ import { organizationLd, localBusinessLd, websiteLd } from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../grommet-home.css';
 
-const TITLE = 'Alatere Web — Agency, training, business address & coworking in Antibes';
+const TITLE = 'Alatere Web - Agency, training, business address & coworking in Antibes';
 const DESC =
   'Family business in Antibes since 2002: e-commerce, Qualiopi training, company domiciliation and coworking. Four trades, one single contact.';
 

@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Home « Grommet » — implémentation fidèle du handoff Claude Design
+ * Home « Grommet » - implémentation fidèle du handoff Claude Design
  * (« Home Alatere (Grommet).html »). CSS porté verbatim (app/grommet-home.css) ;
  * header / footer / langue / icônes mutualisés dans components/grommet/*.
  */
@@ -20,8 +20,8 @@ const BADGE = '/alatere-web-badge.webp';
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
 const TITLE = {
-  fr: "Alatere Web — Agence, formation Qualiopi & centre d'affaires à Antibes",
-  en: 'Alatere Web — Agency, Qualiopi training & business center in Antibes',
+  fr: "Alatere Web - Agence, formation Qualiopi & centre d'affaires à Antibes",
+  en: 'Alatere Web - Agency, Qualiopi training & business center in Antibes',
 };
 
 const TX: Dict = {
@@ -45,8 +45,8 @@ const TX: Dict = {
     en: 'Online stores we run ourselves · since 2003',
   },
   ecom_copy: {
-    fr: "Vingt ans à concevoir, opérer et référencer nos propres boutiques d'art — notre meilleure démonstration de savoir-faire SEO, SEA et opérations.",
-    en: 'Twenty years designing, running and ranking our own art stores — our best proof of SEO, SEA and operations expertise.',
+    fr: "Vingt ans à concevoir, opérer et référencer nos propres boutiques d'art - notre meilleure démonstration de savoir-faire SEO, SEA et opérations.",
+    en: 'Twenty years designing, running and ranking our own art stores - our best proof of SEO, SEA and operations expertise.',
   },
   ecom_meta2: { fr: 'UE · 4 langues', en: 'EU · 4 languages' },
   ecom_link: { fr: 'Découvrir le savoir-faire →', en: 'Explore the expertise →' },
@@ -70,8 +70,8 @@ const TX: Dict = {
   domo_tag: { fr: 'Agréé préfecture', en: 'Prefecture-approved' },
   domo_activity: { fr: "Domiciliation d'entreprise à Antibes", en: 'Business address in Antibes' },
   domo_copy: {
-    fr: 'Une adresse de prestige au 9 Boulevard Albert 1er pour votre siège social. Réception du courrier, scan, réexpédition — idéal SIRET et transfert de siège.',
-    en: 'A prestigious address at 9 Boulevard Albert 1er for your registered office. Mail handling, scanning, forwarding — ideal for SIRET registration and head-office transfer.',
+    fr: 'Une adresse de prestige au 9 Boulevard Albert 1er pour votre siège social. Réception du courrier, scan, réexpédition - idéal SIRET et transfert de siège.',
+    en: 'A prestigious address at 9 Boulevard Albert 1er for your registered office. Mail handling, scanning, forwarding - ideal for SIRET registration and head-office transfer.',
   },
   domo_p0: { fr: 'Offre Dropbox · boîte aux lettres', en: 'Dropbox plan · mailbox' },
   domo_p1: { fr: 'Offre Headquarters · siège social', en: 'Headquarters plan · registered office' },
@@ -82,8 +82,8 @@ const TX: Dict = {
   cowo_tag: { fr: 'Communauté', en: 'Community' },
   cowo_activity: { fr: 'Espace de coworking à Antibes', en: 'Coworking space in Antibes' },
   cowo_copy: {
-    fr: "Postes nomades, bureaux fermés, salles de réunion. Café, fibre et événements business mensuels — à deux pas du port Vauban. Venez nous rendre visite au 9 boulevard Albert 1er à Antibes.",
-    en: 'Hot desks, private offices, meeting rooms. Coffee, fiber and monthly business events — steps from Port Vauban. Come visit us at 9 Boulevard Albert 1er in Antibes.',
+    fr: "Postes nomades, bureaux fermés, salles de réunion. Café, fibre et événements business mensuels - à deux pas du port Vauban. Venez nous rendre visite au 9 boulevard Albert 1er à Antibes.",
+    en: 'Hot desks, private offices, meeting rooms. Coffee, fiber and monthly business events - steps from Port Vauban. Come visit us at 9 Boulevard Albert 1er in Antibes.',
   },
   cowo_photo: { fr: "Photo de l'espace de coworking", en: 'Photo of the coworking space' },
   cowo_link: { fr: 'Réserver une visite →', en: 'Book a visit →' },
@@ -99,8 +99,8 @@ const TX: Dict = {
   },
   mani_p2t: { fr: 'Écosystème complet', en: 'Complete ecosystem' },
   mani_p2d: {
-    fr: 'Agence, formation, domiciliation et coworking — tout au même endroit.',
-    en: 'Agency, training, business address and coworking — all in one place.',
+    fr: 'Agence, formation, domiciliation et coworking - tout au même endroit.',
+    en: 'Agency, training, business address and coworking - all in one place.',
   },
   mani_p3t: { fr: 'Ancrage local', en: 'Local roots' },
   mani_p3d: {
@@ -124,13 +124,13 @@ const TX: Dict = {
   form_company_ph: { fr: 'Votre société', en: 'Your company' },
   form_email: { fr: 'E-mail', en: 'Email' },
   form_subject: { fr: 'Sujet', en: 'Subject' },
-  form_opt1: { fr: 'E-commerce — Alatere ecoM', en: 'E-commerce — Alatere ecoM' },
-  form_opt2: { fr: 'Formation — Alatere forMa', en: 'Training — Alatere forMa' },
-  form_opt3: { fr: 'Domiciliation — Alatere doMo', en: 'Business address — Alatere doMo' },
-  form_opt4: { fr: 'Coworking — Alatere coWo', en: 'Coworking — Alatere coWo' },
+  form_opt1: { fr: 'E-commerce - Alatere ecoM', en: 'E-commerce - Alatere ecoM' },
+  form_opt2: { fr: 'Formation - Alatere forMa', en: 'Training - Alatere forMa' },
+  form_opt3: { fr: 'Domiciliation - Alatere doMo', en: 'Business address - Alatere doMo' },
+  form_opt4: { fr: 'Coworking - Alatere coWo', en: 'Coworking - Alatere coWo' },
   form_opt_todo: {
-    fr: 'Secrétariat & conciergerie — Alatere toDo',
-    en: 'Secretariat & concierge — Alatere toDo',
+    fr: 'Secrétariat & conciergerie - Alatere toDo',
+    en: 'Secretariat & concierge - Alatere toDo',
   },
   form_opt5: { fr: 'Autre demande', en: 'Other request' },
   form_message: { fr: 'Message', en: 'Message' },
@@ -163,8 +163,8 @@ const TX: Dict = {
   faq_title: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq1_q: { fr: "Qu'est-ce qu'Alatere Web ?", en: 'What is Alatere Web?' },
   faq1_a: {
-    fr: "Alatere Web est une entreprise familiale installée à Antibes depuis 2002. Elle réunit quatre métiers complémentaires — e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) — avec un seul interlocuteur.",
-    en: 'Alatere Web is a family business based in Antibes since 2002. It brings together four complementary services — e-commerce (Alatere ecoM), Qualiopi-certified training (Alatere forMa), business address (Alatere doMo) and coworking (Alatere coWo) — with a single point of contact.',
+    fr: "Alatere Web est une entreprise familiale installée à Antibes depuis 2002. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
+    en: 'Alatere Web is a family business based in Antibes since 2002. It brings together four complementary services - e-commerce (Alatere ecoM), Qualiopi-certified training (Alatere forMa), business address (Alatere doMo) and coworking (Alatere coWo) - with a single point of contact.',
   },
   faq2_q: { fr: 'Où se situe Alatere Web ?', en: 'Where is Alatere Web located?' },
   faq2_a: {

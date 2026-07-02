@@ -7,7 +7,7 @@ import '../../grommet-home.css';
 import '../../grommet-activity.css';
 
 const FR = '/alatere-ecom';
-const TITLE = 'Alatere ecoM — E-commerce & SEO agency in Antibes';
+const TITLE = 'Alatere ecoM - E-commerce & SEO agency in Antibes';
 const DESC =
   '20 years of in-house e-commerce (repro-tableaux.com, copia-di-arte.com). Our SEO, SEA and acquisition know-how at the service of your online store.';
 

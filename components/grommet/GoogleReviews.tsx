@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Bloc « Avis Google » d'une activité — alimenté par /api/reviews (API Places).
+ * Bloc « Avis Google » d'une activité - alimenté par /api/reviews (API Places).
  * Rendu intégré à la charte ; ne s'affiche pas tant qu'aucun avis n'est disponible
  * (clé API absente, fiche sans avis, ou appel en échec).
  *

@@ -7,7 +7,7 @@ import '../../grommet-home.css';
 import '../../grommet-pages.css';
 
 const FR = '/blog';
-const TITLE = 'Resources & guides — Alatere Web (Antibes)';
+const TITLE = 'Resources & guides - Alatere Web (Antibes)';
 const DESC =
   'Alatere Web practical guides: company address registration, training funding, coworking and e-commerce in Antibes.';
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: pageAlternates(FR, 'en'),
   openGraph: {
-    title: 'Resources & guides — Alatere Web',
+    title: 'Resources & guides - Alatere Web',
     description: DESC,
     url: enPath(FR),
     locale: 'en_US',

@@ -1,6 +1,6 @@
 'use client';
 
-/** Conditions générales de vente — page prose (charte Grommet). Modèle à faire valider. */
+/** Conditions générales de vente - page prose (charte Grommet). Modèle à faire valider. */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -9,8 +9,8 @@ import Footer from '@/components/grommet/Footer';
 import { Email } from '@/components/grommet/Email';
 
 const TITLE = {
-  fr: 'Conditions générales de vente — Alatere Web',
-  en: 'Terms and conditions of sale — Alatere Web',
+  fr: 'Conditions générales de vente - Alatere Web',
+  en: 'Terms and conditions of sale - Alatere Web',
 };
 
 const TX: Dict = {
@@ -25,8 +25,8 @@ const TX: Dict = {
 
   s1_t: { fr: '1. Objet et champ d’application', en: '1. Purpose and scope' },
   s1_p: {
-    fr: "Les présentes conditions générales de vente (CGV) s'appliquent à toute commande de prestations conclue avec Alatere Web SAS (9 Boulevard Albert 1er, 06600 Antibes — SIRET 443 421 334 00030), ci-après « le Prestataire ». Elles prévalent sur tout autre document du client, sauf dérogation écrite. Toute commande implique l'adhésion sans réserve aux présentes CGV.",
-    en: 'These general terms and conditions of sale (GTC) apply to any order of services concluded with Alatere Web SAS (9 Boulevard Albert 1er, 06600 Antibes — SIRET 443 421 334 00030), hereinafter “the Provider”. They prevail over any other client document, save written derogation. Any order implies unreserved acceptance of these GTC.',
+    fr: "Les présentes conditions générales de vente (CGV) s'appliquent à toute commande de prestations conclue avec Alatere Web SAS (9 Boulevard Albert 1er, 06600 Antibes - SIRET 443 421 334 00030), ci-après « le Prestataire ». Elles prévalent sur tout autre document du client, sauf dérogation écrite. Toute commande implique l'adhésion sans réserve aux présentes CGV.",
+    en: 'These general terms and conditions of sale (GTC) apply to any order of services concluded with Alatere Web SAS (9 Boulevard Albert 1er, 06600 Antibes - SIRET 443 421 334 00030), hereinafter “the Provider”. They prevail over any other client document, save written derogation. Any order implies unreserved acceptance of these GTC.',
   },
 
   s2_t: { fr: '2. Inscription et formation du contrat', en: '2. Registration and contract formation' },

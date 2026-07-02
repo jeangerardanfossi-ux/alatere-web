@@ -1,6 +1,6 @@
 'use client';
 
-/** Accessibilité et handicap — page prose (charte Grommet). Exigence Qualiopi. */
+/** Accessibilité et handicap - page prose (charte Grommet). Exigence Qualiopi. */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -9,8 +9,8 @@ import Footer from '@/components/grommet/Footer';
 import { Email } from '@/components/grommet/Email';
 
 const TITLE = {
-  fr: 'Accessibilité et handicap — Alatere forMa',
-  en: 'Accessibility & disability — Alatere forMa',
+  fr: 'Accessibilité et handicap - Alatere forMa',
+  en: 'Accessibility & disability - Alatere forMa',
 };
 
 const TX: Dict = {
@@ -59,8 +59,8 @@ const TX: Dict = {
 
   s4_t: { fr: 'Votre référent handicap', en: 'Your disability liaison' },
   s4_p: {
-    fr: "Un référent handicap dédié est votre interlocuteur pour étudier votre situation, en toute confidentialité, et construire avec vous les aménagements nécessaires — idéalement avant le démarrage de la formation.",
-    en: 'A dedicated disability liaison is your point of contact to review your situation, in full confidentiality, and build the necessary accommodations with you — ideally before the training starts.',
+    fr: "Un référent handicap dédié est votre interlocuteur pour étudier votre situation, en toute confidentialité, et construire avec vous les aménagements nécessaires - idéalement avant le démarrage de la formation.",
+    en: 'A dedicated disability liaison is your point of contact to review your situation, in full confidentiality, and build the necessary accommodations with you - ideally before the training starts.',
   },
   kv_ref: { fr: 'Référente handicap', en: 'Disability liaison' },
   kv_ref_v: { fr: 'Iveta Anfossi', en: 'Iveta Anfossi' },

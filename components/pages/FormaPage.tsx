@@ -1,6 +1,6 @@
 'use client';
 
-/** Alatere forMa — page « organisme de formation » (handoff Grommet, accent or). */
+/** Alatere forMa - page « organisme de formation » (handoff Grommet, accent or). */
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
@@ -13,8 +13,8 @@ import { Email } from '@/components/grommet/Email';
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
 const TITLE = {
-  fr: 'Alatere forMa — Organisme de formation certifié Qualiopi à Antibes',
-  en: 'Alatere forMa — Qualiopi-certified training provider in Antibes',
+  fr: 'Alatere forMa - Organisme de formation certifié Qualiopi à Antibes',
+  en: 'Alatere forMa - Qualiopi-certified training provider in Antibes',
 };
 
 const ACCENT = {
@@ -42,16 +42,16 @@ const TX: Dict = {
     en: 'Professional training provider',
   },
   qualiopi_alt: {
-    fr: 'Qualiopi — Processus certifié — République Française',
-    en: 'Qualiopi — Certified process — French Republic',
+    fr: 'Qualiopi - Processus certifié - République Française',
+    en: 'Qualiopi - Certified process - French Republic',
   },
   qualiopi_mention: {
     fr: "La certification qualité a été délivrée au titre de la catégorie d'action suivante : ACTIONS DE FORMATION",
     en: 'The quality certification has been issued for the following category of action: TRAINING ACTIONS',
   },
   hero_lead: {
-    fr: "Nous concevons des parcours de formation sur mesure, pensés pour développer des compétences opérationnelles. Cinq grands domaines, un accompagnement humain, un financement OPCO facilité — au cœur d'Antibes ou à distance.",
-    en: 'We design tailored training paths built to develop operational skills. Five major fields, human support and facilitated OPCO funding — in the heart of Antibes or remotely.',
+    fr: "Nous concevons des parcours de formation sur mesure, pensés pour développer des compétences opérationnelles. Cinq grands domaines, un accompagnement humain, un financement OPCO facilité - au cœur d'Antibes ou à distance.",
+    en: 'We design tailored training paths built to develop operational skills. Five major fields, human support and facilitated OPCO funding - in the heart of Antibes or remotely.',
   },
   hero_cta1: { fr: 'Voir le catalogue détaillé', en: 'View the detailed catalog' },
   hero_cta2: { fr: 'Demander un devis', en: 'Request a quote' },
@@ -76,8 +76,8 @@ const TX: Dict = {
     en: 'Five major fields of expertise',
   },
   dom_p: {
-    fr: 'Seules les grandes thématiques figurent ici. Le détail de chaque programme — objectifs, prérequis, durée, modalités, tarifs et accessibilité — est publié sur notre catalogue dédié.',
-    en: 'Only the main themes appear here. The details of each program — objectives, prerequisites, duration, terms, prices and accessibility — are published in our dedicated catalog.',
+    fr: 'Seules les grandes thématiques figurent ici. Le détail de chaque programme - objectifs, prérequis, durée, modalités, tarifs et accessibilité - est publié sur notre catalogue dédié.',
+    en: 'Only the main themes appear here. The details of each program - objectives, prerequisites, duration, terms, prices and accessibility - are published in our dedicated catalog.',
   },
 
   dom1_count: { fr: '8 programmes', en: '8 programs' },
@@ -95,8 +95,8 @@ const TX: Dict = {
   dom3_count: { fr: '6 programmes', en: '6 programs' },
   dom3_h: { fr: 'Langues', en: 'Languages' },
   dom3_p: {
-    fr: 'Anglais, italien et espagnol — usage professionnel et technique, en individuel ou petit groupe.',
-    en: 'English, Italian and Spanish — professional and technical use, one-to-one or small group.',
+    fr: 'Anglais, italien et espagnol - usage professionnel et technique, en individuel ou petit groupe.',
+    en: 'English, Italian and Spanish - professional and technical use, one-to-one or small group.',
   },
   dom4_count: { fr: '5 programmes', en: '5 programs' },
   dom4_h: { fr: 'Communication digitale', en: 'Digital communication' },
@@ -150,8 +150,8 @@ const TX: Dict = {
   },
   mod1_r3_b: { fr: 'Individualisé', en: 'Individualized' },
   mod1_r3_t: {
-    fr: '— positionnement initial, rythme adapté, groupes de 1 à 8.',
-    en: '— initial assessment, adapted pace, groups of 1 to 8.',
+    fr: '- positionnement initial, rythme adapté, groupes de 1 à 8.',
+    en: '- initial assessment, adapted pace, groups of 1 to 8.',
   },
 
   mod2_h: { fr: "Délais d'accès", en: 'Access times' },
@@ -170,8 +170,8 @@ const TX: Dict = {
   mod3_h: { fr: 'Financement', en: 'Funding' },
   mod3_r1_b: { fr: 'OPCO', en: 'OPCO' },
   mod3_r1_t: {
-    fr: '— plan de développement des compétences.',
-    en: '— skills development plan.',
+    fr: '- plan de développement des compétences.',
+    en: '- skills development plan.',
   },
   mod3_r2_b: { fr: 'FAF', en: 'FAF' },
   mod3_r2_t: {

@@ -6,7 +6,7 @@ import '../../grommet-pages.css';
 
 export const metadata: Metadata = {
   title: 'Privacy policy',
-  description: 'Privacy policy and data processing — Alatere Web SAS.',
+  description: 'Privacy policy and data processing - Alatere Web SAS.',
   alternates: pageAlternates('/confidentialite', 'en'),
   robots: { index: false },
 };

@@ -7,12 +7,12 @@ import '../grommet-forma.css';
 import '../grommet-forma-pages.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Alatere forMa — Organisme de formation Qualiopi à Antibes' },
+  title: { absolute: 'Alatere forMa - Organisme de formation Qualiopi à Antibes' },
   description:
     'Organisme certifié Qualiopi à Antibes : webmarketing, IA, langues, communication, immobilier. Présentiel ou distanciel, financement OPCO/FAF.',
   alternates: { canonical: '/alatere-forma' },
   openGraph: {
-    title: 'Alatere forMa — Organisme de formation Qualiopi à Antibes',
+    title: 'Alatere forMa - Organisme de formation Qualiopi à Antibes',
     description:
       'Formations professionnelles certifiées Qualiopi à Antibes, en présentiel ou à distance. Financement OPCO/FAF facilité.',
   },

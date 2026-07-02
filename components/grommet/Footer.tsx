@@ -34,8 +34,8 @@ const FOOT: Dict = {
   foot_g3: { fr: 'Certification Qualiopi', en: 'Qualiopi certification' },
   foot_g7: { fr: 'Plan du site', en: 'Sitemap' },
   foot_rights: {
-    fr: '© 2026 Alatere Web SAS — Tous droits réservés',
-    en: '© 2026 Alatere Web SAS — All rights reserved',
+    fr: '© 2026 Alatere Web SAS - Tous droits réservés',
+    en: '© 2026 Alatere Web SAS - All rights reserved',
   },
   foot_legal2: {
     fr: 'SIRET 443 421 334 00030 · RCS Antibes · Organisme de formation enregistré sous le numéro 93.06.07588.06',
@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="g-footer__addr">
               9 Boulevard Albert 1er
               <br />
-              06600 Antibes — {t('foot_country')}
+              06600 Antibes - {t('foot_country')}
               <br />
               07 61 56 45 56 · <Email user="contact" />
             </div>

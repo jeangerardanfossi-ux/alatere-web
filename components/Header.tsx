@@ -13,7 +13,7 @@ export default function SiteHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a href="#top" className={styles.brandLink} aria-label="Alatere Web — accueil">
+        <a href="#top" className={styles.brandLink} aria-label="Alatere Web - accueil">
           <Logo size={46} />
         </a>
 
