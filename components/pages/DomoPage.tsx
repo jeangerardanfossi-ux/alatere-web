@@ -349,7 +349,14 @@ function Body() {
           <span className="d-stripe__badge">
             <Icon name="shield-check" /> {t('stripe_badge')}
           </span>
-          <span>{t('stripe_1')}</span>
+          <a
+            href="/documents/Agrement-prefectoral-2022-12-Alatere-doMo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="d-stripe__link"
+          >
+            {t('stripe_1')}
+          </a>
           <span className="d-stripe__sep">·</span>
           <span>{t('stripe_2')}</span>
         </div>
