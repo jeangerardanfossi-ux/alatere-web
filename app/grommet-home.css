@@ -245,6 +245,8 @@ a.g-tag:hover { transform: translateY(-2px); box-shadow: var(--elev-m); filter: 
 @media (max-width: 640px) {
   .g-hero__inner { padding: 60px 22px 48px; }
   .g-hero--immersive .g-h1 { font-size: 40px; line-height: 1.08; }
+  /* 4 pôles en grille 2 colonnes alignées (au lieu d'un retour ligne 3+1) */
+  .g-hero--immersive .g-hero__chips { display: grid; grid-template-columns: repeat(2, max-content); justify-content: start; gap: 10px; }
 }
 
 /* =========================================================
