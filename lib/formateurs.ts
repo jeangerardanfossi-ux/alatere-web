@@ -17,25 +17,25 @@ export const FORMATEURS: FormateurId[] = [
   {
     initials: 'JA',
     name: 'Jean-Gérard Anfossi',
-    role: { fr: 'Formateur', en: 'Trainer' },
+    role: { fr: 'Fondateur & formateur', en: 'Founder & trainer' },
     linkedin: 'https://www.linkedin.com/in/jeangerardanfossi/',
   },
   {
     initials: 'SB',
     name: 'Simona Ballatore',
-    role: { fr: 'Formatrice', en: 'Trainer' },
+    role: { fr: 'Formatrice réseaux sociaux & Canva', en: 'Social media & Canva trainer' },
     linkedin: 'https://www.linkedin.com/in/simona-ballatore-4287355b/',
   },
   {
     initials: 'HM',
     name: 'Hélène Michailou',
-    role: { fr: 'Formatrice', en: 'Trainer' },
+    role: { fr: 'Juriste & formatrice', en: 'Lawyer & trainer' },
     linkedin: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-michailou-74b1a81/',
   },
   {
     initials: 'BA',
     name: 'Barbara Arcadu',
-    role: { fr: 'Formatrice', en: 'Trainer' },
+    role: { fr: 'Consultante SEA & formatrice', en: 'SEA consultant & trainer' },
     linkedin: 'https://www.linkedin.com/in/barbara-arcadu-58601732/',
   },
   {

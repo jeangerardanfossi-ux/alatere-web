@@ -28,24 +28,28 @@ type Formateur = {
   bio: { fr: ReactNode; en: ReactNode };
 };
 
-/** Présentations à compléter - transmises par le client (titre, spécialité, bio courte). */
+/** Présentations rédigées d'après le profil LinkedIn de chaque formateur. */
 const FORMATEURS: Formateur[] = [
   {
     initials: 'JA',
     name: 'Jean-Gérard Anfossi',
-    role: { fr: 'Formateur', en: 'Trainer' },
+    role: { fr: 'Fondateur & formateur', en: 'Founder & trainer' },
     linkedin: 'https://www.linkedin.com/in/jeangerardanfossi/',
     bio: {
       fr: (
         <>
-          <em>Présentation à compléter :</em> parcours, domaines d&apos;intervention et formations
-          animées au sein d&apos;Alatere forMa.
+          Fondateur d&apos;Alatere Web, Jean-Gérard forme depuis plus de vingt ans dirigeants et
+          équipes à la communication digitale, au webmarketing et à l&apos;intelligence artificielle
+          appliquée à leur métier. Certifié Google Ads et Meta Blueprint, il privilégie des
+          formations concrètes, du référencement à l&apos;usage quotidien des outils IA.
         </>
       ),
       en: (
         <>
-          <em>Bio to be completed:</em> background, fields of work and courses delivered at Alatere
-          forMa.
+          Founder of Alatere Web, Jean-Gérard has spent over twenty years training leaders and teams
+          in digital communication, web marketing and AI applied to their business. Google Ads and
+          Meta Blueprint certified, he favours hands-on courses, from SEO to the everyday use of AI
+          tools.
         </>
       ),
     },
@@ -53,19 +57,21 @@ const FORMATEURS: Formateur[] = [
   {
     initials: 'SB',
     name: 'Simona Ballatore',
-    role: { fr: 'Formatrice', en: 'Trainer' },
+    role: { fr: 'Formatrice réseaux sociaux & Canva', en: 'Social media & Canva trainer' },
     linkedin: 'https://www.linkedin.com/in/simona-ballatore-4287355b/',
     bio: {
       fr: (
         <>
-          <em>Présentation à compléter :</em> parcours, domaines d&apos;intervention et formations
-          animées au sein d&apos;Alatere forMa.
+          Simona forme à la gestion des réseaux sociaux et à la création visuelle avec Canva. Elle
+          aide dirigeants et équipes à gagner en autonomie sur leur communication en ligne :
+          planification des publications, identité visuelle et contenus qui engagent.
         </>
       ),
       en: (
         <>
-          <em>Bio to be completed:</em> background, fields of work and courses delivered at Alatere
-          forMa.
+          Simona trains in social media management and visual content creation with Canva. She helps
+          leaders and teams become self-sufficient in their online communication: content planning,
+          visual identity and engaging posts.
         </>
       ),
     },
@@ -73,19 +79,22 @@ const FORMATEURS: Formateur[] = [
   {
     initials: 'HM',
     name: 'Hélène Michailou',
-    role: { fr: 'Formatrice', en: 'Trainer' },
+    role: { fr: 'Juriste & formatrice', en: 'Lawyer & trainer' },
     linkedin: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-michailou-74b1a81/',
     bio: {
       fr: (
         <>
-          <em>Présentation à compléter :</em> parcours, domaines d&apos;intervention et formations
-          animées au sein d&apos;Alatere forMa.
+          Juriste et formatrice spécialisée en droit immobilier, Hélène transmet à des publics
+          variés, des créateurs d&apos;entreprise aux cadres dirigeants, un socle juridique concret :
+          droit du travail, droit des affaires, propriété intellectuelle, responsabilité civile et
+          pénale.
         </>
       ),
       en: (
         <>
-          <em>Bio to be completed:</em> background, fields of work and courses delivered at Alatere
-          forMa.
+          A lawyer and legal trainer specialising in real estate law, Hélène teaches a wide range of
+          audiences, from business founders to senior managers, a practical legal grounding:
+          employment law, business law, intellectual property, and civil and criminal liability.
         </>
       ),
     },
@@ -93,19 +102,23 @@ const FORMATEURS: Formateur[] = [
   {
     initials: 'BA',
     name: 'Barbara Arcadu',
-    role: { fr: 'Formatrice', en: 'Trainer' },
+    role: { fr: 'Consultante SEA & formatrice', en: 'SEA consultant & trainer' },
     linkedin: 'https://www.linkedin.com/in/barbara-arcadu-58601732/',
     bio: {
       fr: (
         <>
-          <em>Présentation à compléter :</em> parcours, domaines d&apos;intervention et formations
-          animées au sein d&apos;Alatere forMa.
+          Consultante SEA senior, Barbara pilote depuis des années des campagnes Google Ads et
+          Microsoft Ads à forts budgets (voyage, mode, B2B, mobilier). Certifiée Google Ads, Google
+          Analytics et Microsoft Ads, elle forme au référencement payant et à la publicité en ligne
+          avec une exigence de résultats mesurables.
         </>
       ),
       en: (
         <>
-          <em>Bio to be completed:</em> background, fields of work and courses delivered at Alatere
-          forMa.
+          A senior SEA consultant, Barbara has managed high-budget Google Ads and Microsoft Ads
+          campaigns for years (travel, fashion, B2B, furniture). Google Ads, Google Analytics and
+          Microsoft Ads certified, she trains in paid search and online advertising with a focus on
+          measurable results.
         </>
       ),
     },
@@ -118,14 +131,18 @@ const FORMATEURS: Formateur[] = [
     bio: {
       fr: (
         <>
-          Consultant en webmarketing - référent du domaine <strong>Webmarketing</strong> (SEO, SEA,
-          acquisition). <em>Présentation détaillée à compléter.</em>
+          Consultant webmarketing indépendant à Antibes, Richard accompagne depuis 2020 les
+          dirigeants de TPE-PME dans leur visibilité en ligne. Référent du domaine{' '}
+          <strong>Webmarketing</strong> chez Alatere forMa, il forme au référencement naturel (SEO),
+          à la publicité Google (SEA), à Google Business Profile et aux réseaux sociaux.
         </>
       ),
       en: (
         <>
-          Web marketing consultant - lead for the field <strong>Web marketing</strong> (SEO, SEA,
-          acquisition). <em>Detailed bio to be completed.</em>
+          An independent web marketing consultant in Antibes, Richard has supported small-business
+          leaders with their online visibility since 2020. Lead for the{' '}
+          <strong>Web marketing</strong> field at Alatere forMa, he trains in SEO, Google Ads (SEA),
+          Google Business Profile and social media.
         </>
       ),
     },
@@ -138,14 +155,18 @@ const FORMATEURS: Formateur[] = [
     bio: {
       fr: (
         <>
-          Coach professionnel et formateur. <em>Présentation détaillée à compléter :</em> approche,
-          domaines d&apos;intervention et formations animées.
+          Coach professionnel, Vincent accompagne dirigeants et équipes sur la Côte d&apos;Azur.
+          Formé au management, aux sciences humaines et à la PNL, il intervient sur le développement
+          personnel et professionnel : communication, gestion du stress et des conflits, confiance en
+          soi, posture managériale et motivation.
         </>
       ),
       en: (
         <>
-          Professional coach and trainer. <em>Detailed bio to be completed:</em> approach, fields of
-          work and courses delivered.
+          A professional coach, Vincent supports leaders and teams across the French Riviera. Trained
+          in management, human sciences and NLP, he works on personal and professional development:
+          communication, stress and conflict management, self-confidence, managerial posture and
+          motivation.
         </>
       ),
     },
@@ -183,10 +204,6 @@ const TX: Dict = {
     en: 'Six trainers, one shared teaching standard. Click a LinkedIn profile to learn more about their background.',
   },
   linkedin_btn: { fr: 'Profil LinkedIn ↗', en: 'LinkedIn profile ↗' },
-  note: {
-    fr: 'Les présentations ci-dessus sont des emplacements à compléter. Transmettez-nous le titre, la spécialité et une courte biographie de chaque formateur (2 à 3 phrases) et nous les intégrerons.',
-    en: "The bios above are placeholders to be completed. Send us each trainer's title, specialty and a short biography (2–3 sentences) and we'll add them.",
-  },
 
   cta_h: { fr: "Envie de rejoindre l'équipe ?", en: 'Want to join the team?' },
   cta_p: {
@@ -292,11 +309,6 @@ function Body() {
                 </a>
               </article>
             ))}
-          </div>
-
-          <div className="fm-note">
-            <Icon name="pencil" />
-            <span>{t('note')}</span>
           </div>
         </section>
       </main>
