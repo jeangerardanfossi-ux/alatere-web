@@ -36,6 +36,7 @@ const TX: Dict = {
   },
   hero_cta1: { fr: 'Découvrir nos activités', en: 'Explore our activities' },
   hero_cta2: { fr: 'Nous rencontrer', en: 'Meet us' },
+  hero_baseline: { fr: 'Aux côtés de votre entreprise', en: 'Alongside your business' },
   bento_eyebrow: { fr: 'Nos activités', en: 'Our activities' },
   bento_title: { fr: 'Quatre métiers, une même exigence.', en: 'Four businesses, one standard.' },
   bento_link: { fr: 'Un seul interlocuteur →', en: 'A single point of contact →' },
@@ -242,50 +243,63 @@ function Body() {
   const t = useT(TX);
   return (
     <main id="top">
-      {/* ===================== HERO ===================== */}
-      <section className="g-hero">
-        <div>
-          <span className="g-label">
-            <span className="g-tag g-tag--ok" style={{ padding: '2px 10px' }}>
-              {t('hero_eyebrow')}
+      {/* ===================== HERO (immersif — photo salle floutée + voile navy) ===================== */}
+      <section className="g-hero g-hero--immersive g-hero--salle">
+        <div className="g-hero__bg" />
+        <div className="g-hero__veil" />
+        <div className="g-hero__inner">
+          <div className="g-hero__copy">
+            <span className="g-label">
+              <span className="g-tag g-hero__eyebrow" style={{ padding: '3px 12px' }}>
+                {t('hero_eyebrow')}
+              </span>
             </span>
-          </span>
-          <h1 className="g-h1">{t('hero_title')}</h1>
-          <p className="g-lead">{t('hero_lead')}</p>
-          <div className="g-hero__cta">
-            <a href="#bento" className="g-btn g-btn--primary g-btn--lg">
-              <span>{t('hero_cta1')}</span> <span className="g-arrow">→</span>
-            </a>
-            <a href="#contact" className="g-btn g-btn--secondary g-btn--lg">
-              {t('hero_cta2')}
-            </a>
+            <h1 className="g-h1">
+              {(() => {
+                const [first, ...rest] = t('hero_title').split(' ');
+                return (
+                  <>
+                    <span className="g-nowrap">{first}</span> {rest.join(' ')}
+                  </>
+                );
+              })()}
+            </h1>
+            <p className="g-lead">{t('hero_lead')}</p>
+            <div className="g-hero__cta">
+              <a href="#bento" className="g-btn g-btn--gold g-btn--lg">
+                <span>{t('hero_cta1')}</span> <span className="g-arrow">→</span>
+              </a>
+              <a href="#contact" className="g-btn g-btn--ghost-light g-btn--lg">
+                {t('hero_cta2')}
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="g-hero__badge">
-          <div className="g-hero__halo" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={BADGE}
-            alt="Alatere Web"
-            width={800}
-            height={800}
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="g-hero__chips">
-            <Link className="g-tag g-tag--pole" href="/alatere-ecom">
-              <BrandSuffix pole="ecom" />
-            </Link>
-            <Link className="g-tag g-tag--pole" href="/alatere-forma">
-              <BrandSuffix pole="forma" />
-            </Link>
-            <Link className="g-tag g-tag--pole" href="/alatere-domo">
-              <BrandSuffix pole="domo" />
-            </Link>
-            <Link className="g-tag g-tag--pole" href="/alatere-cowo">
-              <BrandSuffix pole="cowo" />
-            </Link>
+          <div className="g-hero__badge">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={BADGE}
+              alt="Alatere Web"
+              width={800}
+              height={800}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+            />
+            <p className="g-hero__baseline">{t('hero_baseline')}</p>
+            <div className="g-hero__chips">
+              <Link className="g-tag g-tag--pole" href="/alatere-ecom">
+                <BrandSuffix pole="ecom" />
+              </Link>
+              <Link className="g-tag g-tag--pole" href="/alatere-forma">
+                <BrandSuffix pole="forma" />
+              </Link>
+              <Link className="g-tag g-tag--pole" href="/alatere-domo">
+                <BrandSuffix pole="domo" />
+              </Link>
+              <Link className="g-tag g-tag--pole" href="/alatere-cowo">
+                <BrandSuffix pole="cowo" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

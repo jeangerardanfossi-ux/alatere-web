@@ -10,6 +10,7 @@ import { BrandSuffix, type PoleBrand } from './BrandName';
 const POLES = new Set<string>(['ecom', 'forma', 'domo', 'cowo']);
 
 const CTA = { fr: 'Prendre rendez-vous', en: 'Book a meeting' };
+const TAG = { fr: 'Aux côtés de votre entreprise', en: 'Alongside your business' };
 
 // [href, libellé, clé active, sous-titre]
 const NAV: [string, string, string, string][] = [
@@ -59,7 +60,10 @@ export default function Header({ active }: { active?: string }) {
         <Link className="g-brand" href={lp('/')}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={BADGE} alt="Alatere Web" width={800} height={800} fetchPriority="high" decoding="async" />
-          <b>Alatere Web</b>
+          <span className="g-brand__text">
+            <b>Alatere Web</b>
+            <span className="g-brand__tag">{TAG[lang]}</span>
+          </span>
         </Link>
         <nav className="g-nav">
           {NAV.map(([href, label, key, sub]) => (

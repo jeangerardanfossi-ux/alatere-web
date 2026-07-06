@@ -308,7 +308,16 @@ function Body() {
           <span className="f-stripe__badge">
             <Icon name="badge-check" /> {t('stripe_badge')}
           </span>
-          <span>{t('stripe_decl')}</span>
+          <span>
+            <a
+              href="/documents/Certificat-Qualiopi-Alatere-Web.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              title={t('doc4')}
+            >
+              {t('stripe_decl')}
+            </a>
+          </span>
           <span className="f-stripe__sep">·</span>
           <span>
             {t('stripe_referent')}{' '}
