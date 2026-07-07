@@ -51,7 +51,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       en: "Web marketing is Alatere Web's founding business, run in-house since 2003. We teach, through practice, the acquisition levers that truly grow a business: search, advertising, measurement and conversion.",
     },
     facts: [
-      { fr: '8 programmes au catalogue', en: '8 programs in the catalog' },
+      { fr: '11 programmes au catalogue', en: '11 programs in the catalog' },
       { fr: 'Présentiel à Antibes ou distanciel', en: 'In person in Antibes or remote' },
       { fr: 'Individuel ou petit groupe (1 à 8)', en: 'One-to-one or small group (1–8)' },
       { fr: 'Finançable OPCO / CPF*', en: 'OPCO / CPF funding*' },
@@ -117,7 +117,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       en: 'Generative AI is transforming everyday business. Our jargon-free courses teach you to use it concretely: save time, produce better and embed these tools into your work - with full control.',
     },
     facts: [
-      { fr: '4 programmes au catalogue', en: '4 programs in the catalog' },
+      { fr: '7 programmes au catalogue', en: '7 programs in the catalog' },
       { fr: 'Présentiel à Antibes ou distanciel', en: 'In person in Antibes or remote' },
       { fr: 'Aucune connaissance technique requise', en: 'No technical knowledge required' },
       { fr: 'Finançable OPCO', en: 'OPCO funding' },
@@ -225,7 +225,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       en: 'Social media, content, editorial line: learn to build a consistent digital presence and create content that engages your audience, with tools accessible to everyone.',
     },
     facts: [
-      { fr: '5 programmes au catalogue', en: '5 programs in the catalog' },
+      { fr: '10 programmes au catalogue', en: '10 programs in the catalog' },
       { fr: 'Présentiel à Antibes ou distanciel', en: 'In person in Antibes or remote' },
       { fr: 'Individuel ou petit groupe (1 à 8)', en: 'One-to-one or small group (1–8)' },
       { fr: 'Finançable OPCO', en: 'OPCO funding' },
@@ -279,7 +279,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       en: 'Training dedicated to real-estate professionals: meet your continuing-education requirements (ALUR law) while developing your digital and commercial skills.',
     },
     facts: [
-      { fr: '3 programmes au catalogue', en: '3 programs in the catalog' },
+      { fr: '35 programmes au catalogue', en: '35 programs in the catalog' },
       { fr: "Conforme à l'obligation loi ALUR", en: 'Compliant with the ALUR law requirement' },
       { fr: 'Présentiel à Antibes ou distanciel', en: 'In person in Antibes or remote' },
       { fr: 'Finançable OPCO', en: 'OPCO funding' },

@@ -80,13 +80,13 @@ const TX: Dict = {
     en: 'Only the main themes appear here. The details of each program - objectives, prerequisites, duration, terms, prices and accessibility - are published in our dedicated catalog.',
   },
 
-  dom1_count: { fr: '8 programmes', en: '8 programs' },
+  dom1_count: { fr: '11 programmes', en: '11 programs' },
   dom1_h: { fr: 'Webmarketing', en: 'Web marketing' },
   dom1_p: {
     fr: 'SEO, SEA, AEO, publicité social ads, analytics et e-commerce. Notre métier historique, transmis par la pratique.',
     en: 'SEO, SEA, AEO, social ads, analytics and e-commerce. Our core business, taught through practice.',
   },
-  dom2_count: { fr: '4 programmes', en: '4 programs' },
+  dom2_count: { fr: '7 programmes', en: '7 programs' },
   dom2_h: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
   dom2_p: {
     fr: "Prompts, IA générative, automatisation, intégration de l'IA dans les métiers et les outils du quotidien.",
@@ -98,13 +98,13 @@ const TX: Dict = {
     fr: 'Anglais, italien et espagnol - usage professionnel et technique, en individuel ou petit groupe.',
     en: 'English, Italian and Spanish - professional and technical use, one-to-one or small group.',
   },
-  dom4_count: { fr: '5 programmes', en: '5 programs' },
+  dom4_count: { fr: '10 programmes', en: '10 programs' },
   dom4_h: { fr: 'Communication digitale', en: 'Digital communication' },
   dom4_p: {
     fr: 'Réseaux sociaux, brand content, création de contenu et stratégie éditoriale pour gagner en visibilité.',
     en: 'Social media, brand content, content creation and editorial strategy to grow visibility.',
   },
-  dom5_count: { fr: '3 programmes', en: '3 programs' },
+  dom5_count: { fr: '35 programmes', en: '35 programs' },
   dom5_h: { fr: 'Immobilier', en: 'Real estate' },
   dom5_p: {
     fr: 'Formations professionnelles dédiées au secteur immobilier (obligations de formation continue, outils digitaux).',
@@ -123,6 +123,7 @@ const TX: Dict = {
   },
   team_cta: { fr: 'Voir nos formateurs', en: 'Meet our trainers' },
 
+  cat_count: { fr: '59 programmes', en: '59 programs' },
   cat_h: { fr: 'Catalogue complet', en: 'Full catalog' },
   cat_p: {
     fr: 'Recherche par mot-clé, filtres par durée, prix et modalité. Toutes les fiches programmes à jour.',
@@ -451,7 +452,10 @@ function Body() {
               <Link href="/alatere-forma/immobilier">{t('dom_see')}</Link>
             </article>
             <article className="f-domain f-domain--catalog">
-              <Icon name="book-open" className="f-domain__icon" />
+              <div className="f-domain__top">
+                <Icon name="book-open" className="f-domain__icon" />
+                <span className="f-domain__count">{t('cat_count')}</span>
+              </div>
               <h3>{t('cat_h')}</h3>
               <p>{t('cat_p')}</p>
               <a

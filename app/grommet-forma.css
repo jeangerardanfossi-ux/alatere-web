@@ -57,6 +57,7 @@
 .f-domain a { font-size: 14px; font-weight: 600; color: var(--gold-dark); text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }
 .f-domain a:hover { text-decoration: underline; }
 .f-domain--catalog { background: var(--brand); color: #fff; border-top-color: var(--brand-dark); justify-content: center; align-items: flex-start; }
+.f-domain--catalog .f-domain__top { width: 100%; }
 .f-domain--catalog h3, .f-domain--catalog p { color: #fff; }
 .f-domain--catalog p { opacity: .82; }
 
