@@ -23,6 +23,7 @@ const BILINGUAL = [
   '/conditions-generales-de-vente',
   '/plan-du-site',
   '/blog',
+  '/blog/4-piliers-ecommerce-durable',
   '/blog/domicilier-entreprise-antibes',
   '/blog/financer-formation-opco-faf',
   '/blog/coworking-antibes-journee',

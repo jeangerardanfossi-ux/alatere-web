@@ -574,6 +574,54 @@ export const financerFormationFaqLd = biFaqLd(
   ],
 );
 
+/** FAQ visible de l'article « 4 piliers du e-commerce » (miroir du FAQPage). */
+export const piliersEcomFaqLd = biFaqLd(
+  [
+    {
+      q: "Quels sont les 4 piliers d'une activité e-commerce ?",
+      a: "Une activité e-commerce durable repose sur quatre piliers : le produit (qualité de la confection à la livraison, emballage compris), le site internet (navigation, performance, conformité aux standards Google), la communication (ciblage, mesure du ROI, réajustement permanent) et le service client (satisfaction avant et après la commande). Ils sont interdépendants : négliger l'un affaiblit les trois autres.",
+    },
+    {
+      q: 'Par quel pilier faut-il commencer quand on lance une boutique en ligne ?',
+      a: "Par le produit. Un article irréprochable, bien emballé et livré dans les délais est la condition de base : sans lui, ni la meilleure publicité ni le meilleur service client ne suffisent à fidéliser. Une fois le produit maîtrisé, on solidifie le site, puis on active la communication, en gardant le service client présent à chaque étape.",
+    },
+    {
+      q: 'Le e-commerce a-t-il vraiment changé depuis les années 2000 ?',
+      a: "Oui, radicalement, sur les outils - mais pas sur les fondamentaux. En 2003, il n'existait ni réseaux sociaux, ni retargeting, ni IA, et Google AdWords démarrait tout juste. Aujourd'hui s'ajoutent l'AI SEO, la publicité programmatique et l'analyse de données en temps réel. Les quatre piliers, eux, sont restés identiques.",
+    },
+    {
+      q: "Comment l'intelligence artificielle transforme-t-elle le e-commerce en 2026 ?",
+      a: "L'IA agit surtout sur le pilier communication : elle déplace l'enjeu du référencement classique vers l'AI SEO, c'est-à-dire être cité comme source dans les réponses de ChatGPT, Perplexity, Google AI Overviews ou Claude. Elle transforme aussi la relation client (assistance, recommandations) et la production de contenu. Mais elle ne remplace pas la qualité produit ni un service client humain.",
+    },
+    {
+      q: "Pourquoi le service client est-il un pilier et pas un simple « détail » ?",
+      a: "Parce qu'il agit avant la vente (lever les doutes, conseiller sur le bon support ou format) autant qu'après (traiter un incident). Sur des produits fabriqués sur mesure, c'est souvent le service client qui transforme une réclamation en preuve de fiabilité - et un acheteur ponctuel en client fidèle.",
+    },
+  ],
+  [
+    {
+      q: 'What are the 4 pillars of an e-commerce business?',
+      a: 'A lasting e-commerce business rests on four pillars: the product (quality from crafting to delivery, packaging included), the website (navigation, performance, compliance with Google standards), marketing (targeting, ROI measurement, constant readjustment) and customer service (satisfaction before and after the order). They are interdependent: neglecting one weakens the other three.',
+    },
+    {
+      q: 'Which pillar should you start with when launching an online shop?',
+      a: 'The product. A flawless item, well packaged and delivered on time, is the baseline: without it, neither the best advertising nor the best customer service is enough to build loyalty. Once the product is mastered, strengthen the website, then activate marketing, keeping customer service present at every step.',
+    },
+    {
+      q: 'Has e-commerce really changed since the 2000s?',
+      a: 'Yes, radically, in its tools - but not in its fundamentals. In 2003 there were no social networks, no retargeting, no AI, and Google AdWords was just getting started. Today AI SEO, programmatic advertising and real-time data analysis have been added. The four pillars, though, have stayed the same.',
+    },
+    {
+      q: 'How is artificial intelligence transforming e-commerce in 2026?',
+      a: 'AI mainly affects the marketing pillar: it shifts the focus from classic search rankings to AI SEO - being cited as a source in the answers of ChatGPT, Perplexity, Google AI Overviews or Claude. It also transforms customer relations (assistance, recommendations) and content production. But it does not replace product quality or human customer service.',
+    },
+    {
+      q: 'Why is customer service a pillar and not just a "detail"?',
+      a: 'Because it acts before the sale (clearing up doubts, advising on the right medium or format) as much as after (handling an incident). With made-to-order products, it is often customer service that turns a complaint into proof of reliability - and a one-off buyer into a loyal customer.',
+    },
+  ],
+);
+
 /** FAQ visible de l'article « coworking à la journée » (miroir du FAQPage). */
 export const cowoJourneeFaqLd = biFaqLd(
   [

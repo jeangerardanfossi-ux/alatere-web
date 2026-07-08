@@ -40,6 +40,35 @@ export type LocalPost = {
 
 export const posts: Post[] = [
   {
+    slug: '4-piliers-ecommerce-durable',
+    pole: 'ecom',
+    title: {
+      fr: "Les 4 piliers d'une activité e-commerce qui dure : 20 ans de leçons terrain",
+      en: 'The 4 pillars of a lasting e-commerce business: 20 years of hands-on lessons',
+    },
+    metaTitle: {
+      fr: "Les 4 piliers d'une activité e-commerce qui dure | Alatere ecoM",
+      en: 'The 4 pillars of a lasting e-commerce business | Alatere ecoM',
+    },
+    excerpt: {
+      fr: "Produit, site, communication, service client : les 4 piliers d'un e-commerce durable, expliqués par un e-commerçant actif depuis 2003 (Repro-Tableaux.com, Copia-di-Arte.com) et illustrés par 20 ans d'avis clients vérifiés.",
+      en: 'Product, website, marketing, customer service: the 4 pillars of a lasting e-commerce business, explained by an online retailer active since 2003 (Repro-Tableaux.com, Copia-di-Arte.com) and illustrated by 20 years of verified customer reviews.',
+    },
+    keyword: { fr: 'piliers du e-commerce', en: 'pillars of e-commerce' },
+    category: { fr: 'E-commerce', en: 'E-commerce' },
+    date: '2026-07-08',
+    updated: '2026-07-08',
+    readingMin: 7,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes (pôle Alatere ecoM). E-commerçant depuis septembre 2003, il conçoit et opère ses propres boutiques d'art en ligne, Repro-Tableaux.com et Copia-di-Arte.com.",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes (Alatere ecoM division). An online retailer since September 2003, he designs and operates his own online art shops, Repro-Tableaux.com and Copia-di-Arte.com.',
+      },
+    },
+  },
+  {
     slug: 'coworking-antibes-journee',
     pole: 'cowo',
     title: {
