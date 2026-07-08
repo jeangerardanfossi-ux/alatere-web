@@ -4,6 +4,8 @@ import Link from '@/components/grommet/LocalizedLink';
 import { useLang } from '@/components/grommet/lang';
 
 const REPRO = 'https://www.repro-tableaux.com';
+const REPRO_GMAPS = 'https://maps.app.goo.gl/j4NBQ2m7p529wLZ29';
+const REPRO_FACEBOOK = 'https://www.facebook.com/reprotableaux';
 
 /** Corps de l'article « Les 4 piliers d'une activité e-commerce qui dure » - bilingue FR/EN. */
 export default function QuatrePiliersEcommerce() {
@@ -121,13 +123,25 @@ function Fr() {
               <td><strong>4 étoiles</strong>{' '}sur <strong>plus de 370 avis</strong></td>
             </tr>
             <tr>
+              <td>Avis Google (<a className="g-inline" href={REPRO_GMAPS} target="_blank" rel="noopener noreferrer">fiche Repro-tableaux.FR, Antibes</a>)</td>
+              <td><strong>4,7 / 5</strong>{' '}sur <strong>88 avis</strong></td>
+            </tr>
+            <tr>
+              <td>Recommandations <a className="g-inline" href={REPRO_FACEBOOK} target="_blank" rel="noopener noreferrer">Facebook</a></td>
+              <td>Recommandé par <strong>92 %</strong>{' '}(<strong>63 avis</strong>)</td>
+            </tr>
+            <tr>
               <td>Indice de confiance ScamDoc</td>
               <td><strong>97 %</strong>{' '}(« excellent »)</td>
             </tr>
           </tbody>
         </table>
         <p>
-          Les points forts cités par les clients se répartissent presque exactement sur les quatre piliers : <strong>qualité de la reproduction</strong>{' '}(pilier produit), <strong>site clair et suivi de commande</strong>{' '}(pilier site), <strong>rapport qualité-prix et fidélité</strong>{' '}(fruit d&rsquo;une communication bien ciblée), et <strong>service client réactif</strong>{' '}(pilier service). Quand les quatre piliers tiennent, ce ne sont pas des slogans que l&rsquo;on écrit - ce sont les clients qui les écrivent pour vous.
+          Les points forts cités par les clients - sur Trusted Shops comme sur{' '}
+          <a className="g-inline" href={REPRO_GMAPS} target="_blank" rel="noopener noreferrer">Google</a>{' '}
+          ou{' '}
+          <a className="g-inline" href={REPRO_FACEBOOK} target="_blank" rel="noopener noreferrer">Facebook</a>{' '}
+          - se répartissent presque exactement sur les quatre piliers : <strong>qualité de la reproduction</strong>{' '}(pilier produit), <strong>site clair et suivi de commande</strong>{' '}(pilier site), <strong>rapport qualité-prix et fidélité</strong>{' '}(fruit d&rsquo;une communication bien ciblée), et <strong>service client réactif</strong>{' '}(pilier service). Sur Facebook, les recommandations spontanées évoquent une « très belle copie » à l&rsquo;huile, des « échanges parfaits » et un « envoi rapide et parfaitement sécurisé » ; sur Google, les mots-clés les plus fréquents des avis sont « reproduction », « commande », « livraison » et « emballage » - les piliers, encore. Quand les quatre tiennent, ce ne sont pas des slogans que l&rsquo;on écrit - ce sont les clients qui les écrivent pour vous.
         </p>
       </section>
 
@@ -288,13 +302,25 @@ function En() {
               <td><strong>4 stars</strong>{' '}across <strong>more than 370 reviews</strong></td>
             </tr>
             <tr>
+              <td>Google reviews (<a className="g-inline" href={REPRO_GMAPS} target="_blank" rel="noopener noreferrer">Repro-tableaux.FR listing, Antibes</a>)</td>
+              <td><strong>4.7 / 5</strong>{' '}across <strong>88 reviews</strong></td>
+            </tr>
+            <tr>
+              <td><a className="g-inline" href={REPRO_FACEBOOK} target="_blank" rel="noopener noreferrer">Facebook</a>{' '}recommendations</td>
+              <td>Recommended by <strong>92%</strong>{' '}(<strong>63 reviews</strong>)</td>
+            </tr>
+            <tr>
               <td>ScamDoc trust score</td>
               <td><strong>97%</strong>{' '}(&ldquo;excellent&rdquo;)</td>
             </tr>
           </tbody>
         </table>
         <p>
-          The strengths cited by customers map almost exactly onto the four pillars: <strong>quality of the reproduction</strong>{' '}(product pillar), <strong>clear site and order tracking</strong>{' '}(website pillar), <strong>value for money and loyalty</strong>{' '}(the fruit of well-targeted marketing), and <strong>responsive customer service</strong>{' '}(service pillar). When the four pillars hold, these are not slogans you write - they are what your customers write for you.
+          The strengths cited by customers - on Trusted Shops as well as on{' '}
+          <a className="g-inline" href={REPRO_GMAPS} target="_blank" rel="noopener noreferrer">Google</a>{' '}
+          or{' '}
+          <a className="g-inline" href={REPRO_FACEBOOK} target="_blank" rel="noopener noreferrer">Facebook</a>{' '}
+          - map almost exactly onto the four pillars: <strong>quality of the reproduction</strong>{' '}(product pillar), <strong>clear site and order tracking</strong>{' '}(website pillar), <strong>value for money and loyalty</strong>{' '}(the fruit of well-targeted marketing), and <strong>responsive customer service</strong>{' '}(service pillar). On Facebook, spontaneous recommendations mention a &ldquo;beautiful copy&rdquo; in oils, &ldquo;perfect exchanges&rdquo; and a &ldquo;fast and perfectly secure shipment&rdquo;; on Google, the most frequent keywords in the reviews are &ldquo;reproduction&rdquo;, &ldquo;order&rdquo;, &ldquo;delivery&rdquo; and &ldquo;packaging&rdquo; - the pillars, once again. When the four hold, these are not slogans you write - they are what your customers write for you.
         </p>
       </section>
 
