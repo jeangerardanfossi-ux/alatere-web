@@ -90,8 +90,8 @@ const TX: Dict = {
 
   s6_t: { fr: 'Activité de formation', en: 'Training activity' },
   s6_p_a: {
-    fr: "Au titre de son activité Alatere forMa, Alatere Web SAS est enregistrée comme organisme de formation (déclaration d'activité n° XXXXXXXX auprès de la préfecture de région) et certifiée ",
-    en: 'For its Alatere forMa activity, Alatere Web SAS is registered as a training provider (activity declaration no. XXXXXXXX with the regional prefecture) and ',
+    fr: "Au titre de son activité Alatere forMa, Alatere Web SAS est enregistrée comme organisme de formation (déclaration d'activité n° 93.06.07588.06 auprès de la préfecture de la région Provence-Alpes-Côte d'Azur) et certifiée ",
+    en: "For its Alatere forMa activity, Alatere Web SAS is registered as a training provider (activity declaration no. 93.06.07588.06 with the Provence-Alpes-Côte d'Azur regional prefecture) and ",
   },
   s6_p_strong: { fr: 'Qualiopi', en: 'Qualiopi' },
   s6_p_b: {
