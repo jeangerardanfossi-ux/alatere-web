@@ -38,11 +38,6 @@ const TX: Dict = {
   kv_rcs_v: { fr: 'Antibes', en: 'Antibes (France)' },
   kv_tva: { fr: 'N° TVA', en: 'VAT number' },
   kv_contact: { fr: 'Contact', en: 'Contact' },
-  s1_note: {
-    fr: "Les informations marquées « XX » sont à compléter avec les données officielles définitives.",
-    en: 'Items marked “XX” are to be completed with the final official data.',
-  },
-
   s2_t: { fr: 'Direction de la publication', en: 'Publication management' },
   s2_p_a: {
     fr: "Le directeur de la publication est le représentant légal d'Alatere Web SAS, ",
@@ -165,11 +160,10 @@ function Body() {
             <dt>{t('kv_rcs')}</dt>
             <dd>{t('kv_rcs_v')}</dd>
             <dt>{t('kv_tva')}</dt>
-            <dd>FR XX 443 421 334</dd>
+            <dd>FR 00 443 421 334</dd>
             <dt>{t('kv_contact')}</dt>
             <dd>07 61 56 45 56 · <Email user="contact" /></dd>
           </dl>
-          <p className="g-updated">{t('s1_note')}</p>
         </section>
 
         <section>

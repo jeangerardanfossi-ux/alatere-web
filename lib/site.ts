@@ -13,6 +13,7 @@ export const company = {
   phoneDisplay: '07 61 56 45 56',
   email: 'contact@alatere-web.com',
   siret: '443 421 334 00030',
+  vat: 'FR 00 443 421 334',
   naf: '7311Z',
   rcs: 'RCS Antibes',
   since: 2002,
