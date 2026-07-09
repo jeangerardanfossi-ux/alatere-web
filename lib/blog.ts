@@ -85,8 +85,8 @@ export const posts: Post[] = [
     },
     keyword: { fr: 'coworking Antibes à la journée', en: 'day-pass coworking Antibes' },
     category: { fr: 'Coworking', en: 'Coworking' },
-    date: '2026-07-08',
-    updated: '2026-07-08',
+    date: '2026-06-23',
+    updated: '2026-06-23',
     readingMin: 4,
     author: {
       name: 'Jean-Gérard Anfossi',
