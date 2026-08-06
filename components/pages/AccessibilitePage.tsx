@@ -57,13 +57,13 @@ const TX: Dict = {
     en: 'assessment methods (adjustments suited to the disability).',
   },
 
-  s4_t: { fr: 'Votre référent handicap', en: 'Your disability liaison' },
+  s4_t: { fr: 'Votre référente handicap', en: 'Your disability liaison' },
   s4_p: {
-    fr: "Un référent handicap dédié est votre interlocuteur pour étudier votre situation, en toute confidentialité, et construire avec vous les aménagements nécessaires - idéalement avant le démarrage de la formation.",
-    en: 'A dedicated disability liaison is your point of contact to review your situation, in full confidentiality, and build the necessary accommodations with you - ideally before the training starts.',
+    fr: "Simona Ballatore, notre référente handicap dédiée, est votre interlocutrice pour étudier votre situation, en toute confidentialité, et construire avec vous les aménagements nécessaires - idéalement avant le démarrage de la formation.",
+    en: 'Simona Ballatore, our dedicated disability liaison, is your point of contact to review your situation, in full confidentiality, and build the necessary accommodations with you - ideally before the training starts.',
   },
   kv_ref: { fr: 'Référente handicap', en: 'Disability liaison' },
-  kv_ref_v: { fr: 'Iveta Anfossi', en: 'Iveta Anfossi' },
+  kv_ref_v: { fr: 'Simona Ballatore', en: 'Simona Ballatore' },
   kv_mail: { fr: 'E-mail', en: 'Email' },
   kv_phone: { fr: 'Téléphone', en: 'Phone' },
 
@@ -85,7 +85,7 @@ const TX: Dict = {
 
   cta_t: { fr: 'Un besoin spécifique ? Parlons-en.', en: 'A specific need? Let’s talk.' },
   cta_p: {
-    fr: 'Notre référent handicap revient vers vous sous 48 heures.',
+    fr: 'Notre référente handicap revient vers vous sous 48 heures.',
     en: 'Our disability liaison gets back to you within 48 hours.',
   },
   cta_b: { fr: 'Nous contacter', en: 'Contact us' },

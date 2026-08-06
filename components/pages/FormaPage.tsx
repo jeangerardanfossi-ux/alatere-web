@@ -32,8 +32,8 @@ const TX: Dict = {
     fr: 'Organisme de formation enregistré sous le n° 93.06.07588.06',
     en: 'Registered training provider no. 93.06.07588.06',
   },
-  stripe_referent: { fr: 'Référent handicap :', en: 'Disability liaison:' },
-  stripe_psh: { fr: 'accessibilité PSH', en: 'accessibility (PRM)' },
+  stripe_referent: { fr: 'Référente handicap :', en: 'Disability liaison:' },
+  stripe_psh: { fr: 'Simona Ballatore', en: 'Simona Ballatore' },
 
   bc_root: { fr: 'Alatere Web', en: 'Alatere Web' },
 
@@ -189,8 +189,8 @@ const TX: Dict = {
     en: 'Accessibility for people with disabilities',
   },
   access_p_a: {
-    fr: 'Nos locaux sont accessibles et nos parcours adaptables. Un référent handicap dédié étudie chaque situation pour proposer les aménagements nécessaires. Contact : ',
-    en: 'Our premises are accessible and our courses adaptable. A dedicated disability liaison reviews each situation to offer the necessary adjustments. Contact: ',
+    fr: 'Nos locaux sont accessibles et nos parcours adaptables. Notre référente handicap, Simona Ballatore, étudie chaque situation pour proposer les aménagements nécessaires. Contact : ',
+    en: 'Our premises are accessible and our courses adaptable. Our disability liaison, Simona Ballatore, reviews each situation to offer the necessary adjustments. Contact: ',
   },
   access_p_b: {
     fr: '.',
