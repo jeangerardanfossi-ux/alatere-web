@@ -90,7 +90,11 @@
 .pt-member__role { font-size: 15.5px; color: var(--dark-3); margin: 0 0 14px; }
 .pt-member ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 32px; }
 .pt-member li { font-size: 15.5px; line-height: 1.45; color: var(--dark-2); }
-.pt-member__langs { display: inline-flex; margin-top: 16px; font-size: 13.5px; font-weight: 600; color: var(--accent-dark); background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; }
+.pt-member__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 16px; }
+.pt-member__langs { display: inline-flex; font-size: 13.5px; font-weight: 600; color: var(--accent-dark); background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; }
+.pt-member__li { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--dark-2); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; transition: color 160ms, border-color 160ms, box-shadow 160ms; }
+.pt-member__li:hover { color: var(--accent-dark); border-color: var(--accent); box-shadow: var(--elev-xs); }
+.pt-member__li svg { width: 15px; height: 15px; flex: none; }
 
 /* ---- Cartes de réassurance ---- */
 .pt-trust { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s); }

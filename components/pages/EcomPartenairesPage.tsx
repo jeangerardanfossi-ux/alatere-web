@@ -12,6 +12,7 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon, BrandIcon } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
+import { company } from '@/lib/site';
 
 export const PARTENAIRES_TITLE = {
   fr: 'Alatere ecoM - Partenaire e-commerce en marque blanche pour agences',
@@ -50,12 +51,27 @@ const MARKETS = ['fr', 'it', 'es', 'cz', 'de'];
 /** Modalités de collaboration. */
 const MODES = ['wl', 'regie', 'forfait', 'cotraitance'];
 
-type Member = { photo: string; k: string; skills: number };
+type Member = { photo: string; k: string; skills: number; linkedin: string };
 
 const TEAM: Member[] = [
-  { photo: '/photos/jean-gerard.webp', k: 'jga', skills: 4 },
-  { photo: '/photos/iveta.webp', k: 'isa', skills: 4 },
-  { photo: '/photos/simona.webp', k: 'sb', skills: 6 },
+  {
+    photo: '/photos/jean-gerard.webp',
+    k: 'jga',
+    skills: 4,
+    linkedin: 'https://www.linkedin.com/in/jeangerardanfossi/',
+  },
+  {
+    photo: '/photos/iveta.webp',
+    k: 'isa',
+    skills: 4,
+    linkedin: 'https://www.linkedin.com/in/iveta-siskova-office-manager/',
+  },
+  {
+    photo: '/photos/simona.webp',
+    k: 'sb',
+    skills: 6,
+    linkedin: 'https://www.linkedin.com/in/simona-ballatore/',
+  },
 ];
 
 const TX: Dict = {
@@ -171,10 +187,10 @@ const TX: Dict = {
   it_d: { fr: 'vente et service client', en: 'sales and customer care' },
   es_n: { fr: 'Espagne', en: 'Spain' },
   es_d: { fr: 'vente et service client', en: 'sales and customer care' },
-  cz_n: { fr: 'Rép. tchèque et Slovaquie', en: 'Czech Republic and Slovakia' },
-  cz_d: { fr: 'langues natives', en: 'native languages' },
+  cz_n: { fr: 'Tchéquie et Slovaquie', en: 'Czechia and Slovakia' },
+  cz_d: { fr: 'vente et service client', en: 'sales and customer care' },
   de_n: { fr: 'Allemagne', en: 'Germany' },
-  de_d: { fr: 'expédition et support', en: 'shipping and support' },
+  de_d: { fr: 'supply chain et expédition', en: 'supply chain and shipping' },
 
   modes_label: { fr: 'Modalités', en: 'Terms' },
   modes_h2: {
@@ -277,14 +293,28 @@ const TX: Dict = {
     en: 'Native Italian · fluent French and English · professional Spanish',
   },
 
-  trust1_t: { fr: 'SAS établie', en: 'Established SAS' },
-  trust1_s: { fr: 'Contrats, assurance, continuité', en: 'Contracts, insurance, continuity' },
-  trust2_t: { fr: 'Qualiopi', en: 'Qualiopi' },
-  trust2_s: { fr: 'Formations finançables', en: 'Fundable training' },
+  linkedin_btn: { fr: 'Profil LinkedIn', en: 'LinkedIn profile' },
+
+  trust1_t: { fr: 'Alatere Web SAS', en: 'Alatere Web SAS' },
+  trust1_s: {
+    fr: 'Contrat de sous-traitance, RC pro',
+    en: 'Subcontracting agreement, insured',
+  },
+  trust2_t: { fr: 'Organisme Qualiopi', en: 'Qualiopi-certified provider' },
+  trust2_s: {
+    fr: `OF n° ${company.formationNumber} · financement OPCO`,
+    en: `Provider no. ${company.formationNumber} · OPCO funding`,
+  },
   trust3_t: { fr: 'Google Partner', en: 'Google Partner' },
-  trust3_s: { fr: 'Certification à jour', en: 'Certification up to date' },
+  trust3_s: {
+    fr: 'Certification Google Ads à jour',
+    en: 'Google Ads certification up to date',
+  },
   trust4_t: { fr: 'Antibes', en: 'Antibes' },
-  trust4_s: { fr: 'Sophia Antipolis', en: 'Sophia Antipolis' },
+  trust4_s: {
+    fr: 'Centre-ville, à proximité de Sophia Antipolis',
+    en: 'City centre, close to Sophia Antipolis',
+  },
 
   contact_h2: {
     fr: 'Un projet, un pic de charge, un marché à ouvrir ?',
@@ -472,7 +502,19 @@ function Body() {
                         <li key={i}>{t(`${m.k}_s${i + 1}`)}</li>
                       ))}
                     </ul>
-                    <span className="pt-member__langs">{t(`${m.k}_l`)}</span>
+                    <div className="pt-member__foot">
+                      <span className="pt-member__langs">{t(`${m.k}_l`)}</span>
+                      <a
+                        className="pt-member__li"
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BrandIcon name="linkedin" />
+                        {t('linkedin_btn')}
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
                   </div>
                 </article>
               ))}
