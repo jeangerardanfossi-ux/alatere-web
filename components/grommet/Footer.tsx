@@ -19,6 +19,7 @@ const FOOT: Dict = {
   foot_a3: { fr: 'Alatere doMo', en: 'Alatere doMo' },
   foot_a4: { fr: 'Alatere coWo', en: 'Alatere coWo' },
   foot_a5: { fr: 'Alatere toDo', en: 'Alatere toDo' },
+  foot_a6: { fr: 'Partenariat', en: 'Partnership' },
   foot_col2: { fr: 'Liens utiles', en: 'Useful links' },
   foot_l1: { fr: 'Catalogue formations', en: 'Training catalog' },
   foot_l3: { fr: 'Nos formateurs', en: 'Our trainers' },
@@ -134,6 +135,9 @@ export default function Footer() {
             <a href="/alatere-todo.html">
               <Icon name="clipboard-check" /> <span>{t('foot_a5')}</span>
             </a>
+            <Link href={lp('/alatere-ecom/partenaires')}>
+              <Icon name="handshake" /> <span>{t('foot_a6')}</span>
+            </Link>
           </div>
           <div>
             <span className="g-label">{t('foot_col2')}</span>
