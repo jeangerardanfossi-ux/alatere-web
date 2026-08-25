@@ -140,6 +140,7 @@ const TX: Dict = {
   },
   cta_b1: { fr: 'Nous contacter', en: 'Contact us' },
   cta_b2: { fr: 'Voir nos formations', en: 'See our training' },
+  cta_b3: { fr: 'Un partenaire pour votre développement', en: 'A partner for your growth' },
   maps_label: { fr: 'Voir sur Google Maps', en: 'View on Google Maps' },
 
   faq_label: { fr: 'FAQ', en: 'FAQ' },
@@ -411,6 +412,12 @@ function Body() {
           <div className="ap-cta__btns">
             <Link href="/contact?pole=ecom" className="g-btn g-btn--light g-btn--lg">
               {t('cta_b1')} <span className="g-arrow">→</span>
+            </Link>
+            <Link
+              href="/alatere-ecom/partenaires"
+              className="g-btn g-btn--ghost-light g-btn--lg"
+            >
+              {t('cta_b3')}
             </Link>
             <Link href="/#forma" className="g-btn g-btn--ghost-light g-btn--lg">
               {t('cta_b2')}

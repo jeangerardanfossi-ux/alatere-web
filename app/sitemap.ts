@@ -7,6 +7,7 @@ const BASE = 'https://www.alatere-web.com';
 const BILINGUAL = [
   '',
   '/alatere-ecom',
+  '/alatere-ecom/partenaires',
   '/alatere-forma',
   '/alatere-forma/webmarketing',
   '/alatere-forma/intelligence-artificielle',
