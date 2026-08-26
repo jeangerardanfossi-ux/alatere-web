@@ -1,11 +1,14 @@
 import type { MetadataRoute } from 'next';
 import { enPath } from '@/lib/i18n';
+import { REALISATIONS_READY } from '@/lib/realisations';
 
 const BASE = 'https://www.alatere-web.com';
 
 /** Pages disponibles en FR (racine) et EN (/en) → hreflang réciproques. */
 const BILINGUAL = [
   '',
+  // Publiée seulement quand les vraies études de cas sont saisies (cf. lib/realisations.ts).
+  ...(REALISATIONS_READY ? ['/clients-et-realisations'] : []),
   '/alatere-ecom',
   '/alatere-ecom/partenaires',
   '/alatere-forma',

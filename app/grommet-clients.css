@@ -1,0 +1,184 @@
+/* =========================================================
+   ALATERE WEB - page « Clients & Réalisations »
+   Portée du wireframe Claude Design « Clients & Réalisations -
+   Wireframes.dc.html » (turn 3 / 3a — direction A « éditorial sobre »).
+   Réutilise grommet-home.css (tokens + .g-*). Classes .cr-*.
+   Un seul accent actif (bouton = marque) ; la couleur de pôle ne sert
+   qu'à identifier : filet haut, pastille, puce, numéro de résultat.
+   Accent de pôle piloté par --accent / --accent-soft / --accent-ink.
+   ========================================================= */
+
+.cr-page { --hdr: 72px; --anchors: 60px; }
+
+/* ---- Fil d'ariane ---- */
+.cr-bcbar { background: var(--background-contrast); border-bottom: 1px solid var(--border); }
+.cr-bc { max-width: 1240px; margin: 0 auto; padding: 12px 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13.5px; color: var(--dark-3); }
+.cr-bc a { color: var(--dark-3); text-decoration: none; }
+.cr-bc a:hover { color: var(--brand-dark); }
+.cr-bc__sep { color: var(--border-strong); }
+.cr-bc__leaf { color: var(--dark-1); font-weight: 600; }
+
+/* ---- Hero (volontairement court : pas de visuel) ---- */
+.cr-hero { max-width: 1240px; margin: 0 auto; padding: 64px 40px 48px; }
+.cr-hero .g-label { color: var(--brand-dark); margin-bottom: 14px; }
+.cr-hero h1 { font-size: 53px; line-height: 1.08; font-weight: 700; letter-spacing: -0.014em; color: var(--dark-1); margin: 0 0 18px; max-width: 20ch; text-wrap: pretty; }
+.cr-hero__lead { font-size: 21px; line-height: 1.5; color: var(--dark-2); margin: 0; max-width: 64ch; text-wrap: pretty; }
+
+/* ---- Bandeau de statistiques ---- */
+.cr-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 44px; }
+.cr-stat { background: var(--background); border: 1px solid var(--border); border-radius: var(--round-s); padding: 22px 24px; }
+.cr-stat__n { font-size: 42px; line-height: 1; font-weight: 700; color: var(--dark-1); margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.cr-stat--todo .cr-stat__n { color: var(--dark-3); }
+.cr-stat__l { font-size: 15px; line-height: 1.3; font-weight: 600; color: var(--dark-1); }
+.cr-stat__h { font-size: 12.5px; line-height: 1.3; color: var(--dark-3); margin-top: 3px; }
+
+/* ---- Mur de logos ---- */
+.cr-logos { background: var(--background-back); border-top: 1px solid var(--border); }
+.cr-logos__in { max-width: 1240px; margin: 0 auto; padding: 52px 40px; }
+.cr-logos__hd { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.cr-logos__hd h2 { font-size: 26px; line-height: 1.28; font-weight: 700; color: var(--dark-1); margin: 0; text-wrap: pretty; }
+.cr-logos__all { flex: none; font-size: 14px; font-weight: 600; color: var(--dark-1); text-decoration: underline; text-underline-offset: 3px; }
+.cr-logogrid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.cr-logo { background: var(--background); border: 1px solid var(--border); border-radius: var(--round-s); height: 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px; }
+.cr-logo img { max-width: 78%; max-height: 54%; object-fit: contain; filter: grayscale(1); opacity: 0.8; transition: filter 180ms, opacity 180ms; }
+a.cr-logo:hover img { filter: none; opacity: 1; }
+.cr-logo--empty { border-style: dashed; border-color: var(--border-strong); background: var(--background-contrast); }
+.cr-logo--empty i { width: 26px; height: 26px; color: var(--dark-3); opacity: 0.5; }
+.cr-logo--empty span { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark-3); }
+.cr-logos__note { margin-top: 14px; font-size: 12.5px; color: var(--dark-3); }
+
+/* ---- Barre d'ancres (colonne vertébrale, collante) ---- */
+.cr-anchors { position: sticky; top: var(--hdr); z-index: 30; background: var(--background); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border-strong); box-shadow: var(--elev-xs); }
+.cr-anchors__in { max-width: 1240px; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; gap: 4px; height: var(--anchors); overflow-x: auto; scrollbar-width: none; }
+.cr-anchors__in::-webkit-scrollbar { display: none; }
+.cr-anchors__lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dark-3); margin-right: 18px; white-space: nowrap; }
+.cr-anchor { display: flex; align-items: center; gap: 9px; padding: 9px 16px; border-bottom: 3px solid transparent; text-decoration: none; white-space: nowrap; transition: background-color 160ms, border-color 160ms; }
+.cr-anchor__dot { width: 9px; height: 9px; border-radius: 999px; background: var(--accent); flex: none; }
+.cr-anchor__name { font-size: 15px; font-weight: 500; color: var(--dark-3); }
+.cr-anchor__tag { font-size: 11px; color: var(--dark-3); }
+.cr-anchor:hover .cr-anchor__name { color: var(--dark-1); }
+.cr-anchor.is-current { background: var(--accent-soft); border-bottom-color: var(--accent); }
+.cr-anchor.is-current .cr-anchor__name { color: var(--dark-1); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* =========================================================
+   Bloc de pôle — un seul gabarit répété quatre fois
+   ========================================================= */
+.cr-pole { background: var(--accent-soft); border-top: 4px solid var(--accent); scroll-margin-top: calc(var(--hdr) + var(--anchors)); }
+.cr-band { max-width: 1240px; margin: 0 auto; padding: 40px 40px 30px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+.cr-chip { display: inline-flex; align-items: center; gap: 9px; padding: 5px 11px; border-radius: 999px; background: var(--background); margin-bottom: 12px; }
+.cr-chip__dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); }
+.cr-chip span { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); }
+.cr-band h2 { font-size: 32px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; color: var(--dark-1); margin: 0 0 10px; }
+.cr-band__base { font-size: 18px; line-height: 1.45; color: var(--dark-2); margin: 0; max-width: 66ch; text-wrap: pretty; }
+.cr-band__link { flex: none; font-size: 14px; font-weight: 600; color: var(--dark-1); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---- Cartes d'étude de cas ---- */
+.cr-cards { max-width: 1240px; margin: 0 auto; padding: 28px 40px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.cr-case { background: var(--background); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: var(--round-s); box-shadow: var(--elev-s); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+.cr-case__hd { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cr-case__n { font-size: 22px; line-height: 1; font-weight: 700; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.cr-case__kind { font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark-3); }
+.cr-case__client { font-size: 20px; line-height: 1.25; font-weight: 600; color: var(--dark-1); }
+.cr-case__meta { font-size: 13px; color: var(--dark-3); margin-top: 3px; }
+.cr-case__ctx { font-size: 15px; line-height: 1.5; color: var(--dark-2); margin: 0; }
+.cr-case .g-label { color: var(--dark-3); margin-bottom: 7px; }
+.cr-bullets { display: flex; flex-direction: column; gap: 6px; }
+.cr-bullet { display: flex; gap: 9px; font-size: 14px; line-height: 1.45; color: var(--dark-2); }
+.cr-bullet::before { content: ''; width: 5px; height: 5px; background: var(--accent); flex: none; margin-top: 7px; }
+.cr-res { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.cr-res__v { font-size: 22px; line-height: 1.1; font-weight: 700; color: var(--accent-ink); }
+.cr-res__l { font-size: 12px; line-height: 1.35; color: var(--dark-3); margin-top: 4px; }
+.cr-case .g-img-slot { min-height: 130px; flex: none; }
+.cr-quote { background: var(--background-back); border-left: 3px solid var(--accent); padding: 14px; margin: 0; }
+.cr-quote blockquote { margin: 0; }
+.cr-quote p { font-size: 15px; line-height: 1.5; color: var(--dark-1); margin: 0 0 9px; }
+.cr-quote__who { display: flex; align-items: center; gap: 10px; }
+.cr-quote__av { width: 34px; height: 34px; border-radius: 999px; object-fit: cover; background: var(--background-contrast); border: 1px solid var(--border); flex: none; }
+.cr-quote__n { display: block; font-size: 13px; line-height: 1.25; font-weight: 600; color: var(--dark-1); }
+.cr-quote__f { display: block; font-size: 12px; line-height: 1.25; color: var(--dark-3); }
+.cr-case__more { margin-top: auto; font-size: 15px; font-weight: 600; color: var(--dark-1); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Repli de la 3e carte en mobile (bouton masqué au-dessus de 720 px). */
+.cr-fold { display: none; }
+
+/* ---- CTA de fin de bloc ---- */
+.cr-polecta { max-width: 1240px; margin: 0 auto; padding: 32px 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px 30px; flex-wrap: wrap; }
+.cr-polecta__hint { font-size: 15px; color: var(--dark-2); }
+.cr-polecta__btns { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+/* =========================================================
+   Bandeau de confiance (seule inversion de la page)
+   ========================================================= */
+.cr-trust { background: var(--dark-1); }
+.cr-trust__in { max-width: 1240px; margin: 0 auto; padding: 34px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px 32px; flex-wrap: wrap; }
+.cr-trust__item { display: flex; align-items: center; gap: 14px; }
+.cr-trust__item i { width: 26px; height: 26px; stroke-width: 1.6; color: #fff; opacity: 0.8; flex: none; }
+.cr-trust__item--gold i { color: var(--gold); opacity: 1; }
+.cr-trust__t { font-size: 15px; line-height: 1.3; font-weight: 600; color: #fff; }
+.cr-trust__s { font-size: 12.5px; line-height: 1.3; color: rgba(255, 255, 255, 0.62); }
+.cr-trust__sep { width: 1px; height: 44px; background: rgba(255, 255, 255, 0.22); }
+
+/* =========================================================
+   Conversion — quatre sorties, pas une
+   ========================================================= */
+.cr-conv { background: var(--background); }
+.cr-conv__in { max-width: 1240px; margin: 0 auto; padding: 60px 40px 68px; }
+.cr-conv h2 { font-size: 32px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; color: var(--dark-1); margin: 0 0 10px; }
+.cr-conv__p { font-size: 18px; line-height: 1.45; color: var(--dark-2); margin: 0 0 32px; max-width: 70ch; }
+.cr-convgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.cr-convcard { background: var(--background); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: var(--round-s); box-shadow: var(--elev-xs); padding: 22px; display: flex; flex-direction: column; gap: 11px; }
+.cr-convcard__hd { display: flex; align-items: center; gap: 8px; }
+.cr-convcard__hd span:last-child { font-size: 14px; font-weight: 600; letter-spacing: 0.01em; color: var(--dark-1); }
+.cr-convcard__t { font-size: 20px; line-height: 1.25; font-weight: 600; color: var(--dark-1); }
+.cr-convcard__l { font-size: 14px; line-height: 1.45; color: var(--dark-3); flex: 1; }
+.cr-convcard .g-btn { justify-content: center; text-align: center; }
+.cr-conv__foot { display: flex; flex-wrap: wrap; gap: 12px 36px; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 15px; color: var(--dark-2); }
+.cr-conv__foot a { color: inherit; text-decoration: none; }
+.cr-conv__foot a:hover { color: var(--brand-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+/* =========================================================
+   Adaptatif
+   ========================================================= */
+@media (max-width: 1080px) {
+  .cr-hero h1 { font-size: 44px; }
+  .cr-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cr-logogrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cr-band { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .cr-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cr-convgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cr-trust__sep { display: none; }
+}
+@media (max-width: 720px) {
+  .cr-bc, .cr-hero, .cr-logos__in, .cr-anchors__in, .cr-band, .cr-cards, .cr-polecta, .cr-trust__in, .cr-conv__in { padding-left: 22px; padding-right: 22px; }
+  .cr-hero { padding-top: 44px; padding-bottom: 36px; }
+  .cr-hero h1 { font-size: 32px; }
+  .cr-hero__lead { font-size: 18px; }
+  .cr-stats { gap: 12px; margin-top: 32px; }
+  .cr-stat { padding: 18px; }
+  .cr-stat__n { font-size: 34px; }
+  .cr-logogrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cr-logos__hd { flex-direction: column; gap: 8px; }
+  .cr-logos__hd h2 { font-size: 22px; }
+  /* Barre d'ancres : défilement horizontal + dégradé de débordement. */
+  .cr-anchors { position: sticky; }
+  .cr-anchors__in { gap: 0; -webkit-overflow-scrolling: touch; }
+  .cr-anchors__lbl { display: none; }
+  .cr-anchor { padding: 9px 14px; }
+  .cr-anchors::after { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%; pointer-events: none; background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--background)); }
+  .cr-band h2 { font-size: 26px; }
+  .cr-band__base { font-size: 16.5px; }
+  .cr-cards { grid-template-columns: 1fr; }
+  /* La 3e réalisation est repliée : le contenu reste dans le DOM. */
+  .cr-cards.is-folded .cr-case:nth-child(n + 3) { display: none; }
+  .cr-fold { display: inline-flex; justify-content: center; width: 100%; margin-top: 16px; }
+  .cr-polecta { flex-direction: column; align-items: stretch; }
+  .cr-polecta__btns { flex-direction: column; align-items: stretch; }
+  .cr-polecta .g-btn { justify-content: center; min-height: 48px; }
+  .cr-trust__in { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .cr-conv h2 { font-size: 26px; }
+  .cr-conv__p { font-size: 16.5px; }
+  .cr-convgrid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cr-anchor, .cr-logo img { transition: none !important; }
+}

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useT, useLang, localizePath, type Dict } from './lang';
 import { Icon, BrandIcon } from './icons';
 import { company } from '@/lib/site';
+import { REALISATIONS_READY } from '@/lib/realisations';
 import { Email } from '@/components/grommet/Email';
 
 const BADGE = '/alatere-web-badge.webp';
@@ -24,6 +25,7 @@ const FOOT: Dict = {
   foot_l1: { fr: 'Catalogue formations', en: 'Training catalog' },
   foot_l3: { fr: 'Nos formateurs', en: 'Our trainers' },
   foot_l2: { fr: 'À propos', en: 'About' },
+  foot_l7: { fr: 'Clients & Réalisations', en: 'Clients & Case Studies' },
   foot_l6: { fr: 'Ressources (blog)', en: 'Resources (blog)' },
   foot_l5: { fr: 'Secrétariat externalisé', en: 'Outsourced secretariat' },
   foot_l4: { fr: 'Nous contacter', en: 'Contact us' },
@@ -147,6 +149,11 @@ export default function Footer() {
             <Link href={lp('/alatere-forma/formateurs')}>
               <Icon name="users" /> <span>{t('foot_l3')}</span>
             </Link>
+            {REALISATIONS_READY ? (
+              <Link href={lp('/clients-et-realisations')}>
+                <Icon name="award" /> <span>{t('foot_l7')}</span>
+              </Link>
+            ) : null}
             <Link href={lp('/a-propos')}>
               <Icon name="info" /> <span>{t('foot_l2')}</span>
             </Link>

@@ -18,6 +18,7 @@ export const EN_SLUG: Record<string, string> = {
   '/organisme-de-formation': '/training-provider',
   '/accessibilite-et-handicap': '/accessibility',
   '/alatere-ecom/partenaires': '/alatere-ecom/partners',
+  '/clients-et-realisations': '/clients-and-case-studies',
   '/alatere-forma/intelligence-artificielle': '/alatere-forma/artificial-intelligence',
   '/alatere-forma/langues': '/alatere-forma/languages',
   '/alatere-forma/communication-digitale': '/alatere-forma/digital-communication',

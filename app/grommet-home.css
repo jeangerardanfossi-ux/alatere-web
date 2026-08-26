@@ -438,6 +438,22 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
   .g-contact__card { grid-template-columns: 1fr; gap: var(--m); padding: 32px; }
   .g-footer__top { grid-template-columns: 1fr; gap: var(--m); }
 }
+/* En-tête à 6 entrées : on allège (sous-titres + baseline) avant le burger. */
+@media (max-width: 1180px) {
+  .g-header { padding: 14px 26px; gap: var(--s); }
+  .g-nav { gap: 20px; }
+  .g-nav .g-nav__sub { display: none; }
+}
+@media (max-width: 1080px) {
+  .g-brand__tag { display: none; }
+}
+@media (max-width: 980px) {
+  .g-nav { display: none; }
+  .g-burger { display: flex; }
+  .g-actions { margin-left: auto; }
+  .g-actions .g-btn { display: none; }
+}
+
 @media (max-width: 640px) {
   .g-nav { display: none; }
   .g-burger { display: flex; }

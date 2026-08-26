@@ -12,12 +12,21 @@ const POLES = new Set<string>(['ecom', 'forma', 'domo', 'cowo']);
 const CTA = { fr: 'Prendre rendez-vous', en: 'Book a meeting' };
 const TAG = { fr: 'Aux côtés de votre entreprise', en: 'Alongside your business' };
 
+/** Libellés FR/EN des entrées qui ne sont pas un pôle (les pôles gardent leur nom de marque). */
+const LABELS: Record<string, { fr: string; en: string }> = {
+  clients: { fr: 'Réalisations', en: 'Case studies' },
+  contact: { fr: 'Contact', en: 'Contact' },
+};
+
+type NavItem = [href: string, label: string, key: string, sub: string];
+
 // [href, libellé, clé active, sous-titre]
-const NAV: [string, string, string, string][] = [
+const NAV: NavItem[] = [
   ['/alatere-ecom', 'ecoM', 'ecom', 'e-commerce'],
   ['/alatere-forma', 'forMa', 'forma', 'formations'],
   ['/alatere-domo', 'doMo', 'domo', 'domiciliation'],
   ['/alatere-cowo', 'coWo', 'cowo', 'coworking'],
+  ['/clients-et-realisations', 'Réalisations', 'clients', ''],
   ['/#contact', 'Contact', 'contact', ''],
 ];
 
@@ -73,7 +82,7 @@ export default function Header({ active }: { active?: string }) {
               className={`g-nav__item${key === active ? ' is-active' : ''}`}
             >
               <span className="g-nav__label">
-                {POLES.has(key) ? <BrandSuffix pole={key as PoleBrand} /> : label}
+                {POLES.has(key) ? <BrandSuffix pole={key as PoleBrand} /> : LABELS[key]?.[lang] ?? label}
               </span>
               {sub ? <span className="g-nav__sub">{sub}</span> : null}
             </Link>
@@ -114,7 +123,7 @@ export default function Header({ active }: { active?: string }) {
               onClick={() => setDrawer(false)}
             >
               <span className="g-nav__label">
-                {POLES.has(key) ? <BrandSuffix pole={key as PoleBrand} /> : label}
+                {POLES.has(key) ? <BrandSuffix pole={key as PoleBrand} /> : LABELS[key]?.[lang] ?? label}
               </span>
               {sub ? <span className="g-nav__sub">{sub}</span> : null}
             </Link>
