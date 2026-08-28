@@ -12,16 +12,13 @@
  * Pour publier :
  *   1. remplacer chaque `CaseStudy` par une vraie étude de cas (FR + EN) ;
  *   2. renseigner `CLIENT_LOGOS` (logos affichés avec l'accord des clients) ;
- *   3. renseigner les chiffres de `STATS` (retirer la tuile si non sourçable) ;
- *   4. passer `REALISATIONS_READY` à `true` — cette seule bascule retire le
+ *   3. passer `REALISATIONS_READY` à `true` — cette seule bascule retire le
  *      `noindex` des deux routes, ajoute la page au sitemap et affiche le lien
  *      « Clients & Réalisations » dans le pied de page (colonne « Liens utiles »).
  *
  * NB : l'entrée « Réalisations » du MENU PRINCIPAL, elle, est permanente
  * (choix client du 2026-08-26) — voir `NAV` dans components/grommet/Header.tsx.
  */
-
-import { company } from '@/lib/site';
 
 /** Texte bilingue (FR par défaut, EN sous /en). */
 export type Bi = { fr: string; en: string };
@@ -258,9 +255,65 @@ const datalinxCowo: CaseStudy = {
   },
 };
 
+/**
+ * ecoM — repro-tableaux.com, notre propre boutique.
+ * Lancée en 2003 par la SARL MesRecherches (devenue Alatere Web), en partenariat
+ * avec l'atelier hambourgeois KunstKopie.de : eux fabriquent les toiles et
+ * tiennent le catalogue d'art, nous concevons, référençons et exploitons le site.
+ * Le modèle a ensuite donné copia-di-arte.com (2007), reprodart.com,
+ * art-prints-on-demand.com et myartprints.cz (2011) — cf. `AProposPage`.
+ * Ce n'est pas une étude de cas client : la carte le dit explicitement.
+ */
+const REPRO_SINCE = 2003;
+
+const reproTableaux: CaseStudy = {
+  client: 'Repro-Tableaux.com',
+  secteur: {
+    fr: "Boutique en propre · reproductions d'art sur toile",
+    en: 'Our own store · art reproductions on canvas',
+  },
+  annee: { fr: `Depuis ${REPRO_SINCE}`, en: `Since ${REPRO_SINCE}` },
+  contexte: {
+    fr: `Notre propre boutique, lancée en ${REPRO_SINCE} avec l'atelier hambourgeois KunstKopie.de : ils fabriquent les toiles et tiennent le catalogue d'art, nous concevons, référençons et exploitons le site pour le marché francophone.`,
+    en: `Our own store, launched in ${REPRO_SINCE} with the Hamburg workshop KunstKopie.de: they make the canvases and maintain the art catalogue, we design, rank and run the site for the French-speaking market.`,
+  },
+  bullets: [
+    {
+      fr: 'Conception, exploitation quotidienne et référencement du site marchand',
+      en: 'Design, day-to-day operations and search ranking of the store',
+    },
+    {
+      fr: 'SEO et SEA tenus en propre sur un marché européen concurrentiel',
+      en: 'SEO and SEA run in-house on a competitive European market',
+    },
+    {
+      fr: "Modèle décliné ensuite sur quatre autres boutiques d'Europe",
+      en: 'Model then rolled out to four more European stores',
+    },
+  ],
+  results: [
+    {
+      v: { fr: `${YEARS_SINCE(REPRO_SINCE)} ans`, en: `${YEARS_SINCE(REPRO_SINCE)} years` },
+      l: { fr: "d'exploitation continue", en: 'of continuous operation' },
+    },
+    { v: '5', l: { fr: 'boutiques nées du modèle', en: 'stores grown from the model' } },
+    {
+      v: String(REPRO_SINCE),
+      l: { fr: 'partenaire de KunstKopie.de depuis', en: 'partnered with KunstKopie.de since' },
+    },
+  ],
+  // Capture faite le 2026-08-28 sur la version en ligne (la précédente,
+  // /photos/ecom-repro.webp, date de l'ancienne charte du site).
+  image: '/photos/ecom-repro-tableaux.webp',
+  imageCaption: {
+    fr: "Capture — la page d'accueil de repro-tableaux.com",
+    en: 'Screenshot — the repro-tableaux.com home page',
+  },
+};
+
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
 export const CASES: Record<PoleKey, CaseStudy[]> = {
-  ecom: slots(),
+  ecom: [reproTableaux, slot('02'), slot('03')],
   forma: [laforet, slot('02'), slot('03')],
   domo: [datalinxDomo, slot('02'), slot('03')],
   cowo: [datalinxCowo, slot('02'), slot('03')],
@@ -280,39 +333,10 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: 'K Management - Property & Wealth', src: '/logos/pwkm.png' },
   { name: 'AXEO Services Antibes - Cagnes-sur-Mer', src: '/logos/axeo-services.png' },
   { name: 'Kiwanis Antibes Juan-les-Pins', src: '/logos/kiwanis-antibes.png' },
+  { name: 'Logic Santé', src: '/logos/logic-sante.png' },
+  // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
+  { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
 
 /** Nombre minimal d'emplacements affichés : les logos manquants restent en pointillés. */
 export const LOGO_SLOTS = 18;
-
-/**
- * Bandeau de chiffres du hero. `value: null` = chiffre non sourçable :
- * la tuile affiche « [00] » en attente, et doit être retirée si le chiffre
- * ne peut pas être justifié (règle de la maquette).
- */
-export type Stat = { value: string | null; label: Bi; hint: Bi };
-
-const YEARS = new Date().getFullYear() - company.since;
-
-export const STATS: Stat[] = [
-  {
-    value: String(YEARS),
-    label: { fr: "Années d'activité", en: 'Years in business' },
-    hint: { fr: `depuis ${company.since}`, en: `since ${company.since}` },
-  },
-  {
-    value: null,
-    label: { fr: 'Entreprises accompagnées', en: 'Companies supported' },
-    hint: { fr: 'tous pôles confondus', en: 'across all four divisions' },
-  },
-  {
-    value: null,
-    label: { fr: 'Stagiaires formés', en: 'Trainees taught' },
-    hint: { fr: 'depuis la certification', en: 'since certification' },
-  },
-  {
-    value: null,
-    label: { fr: 'Taux de satisfaction', en: 'Satisfaction rate' },
-    hint: { fr: 'source à préciser', en: 'source to be confirmed' },
-  },
-];

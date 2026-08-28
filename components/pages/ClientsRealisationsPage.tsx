@@ -24,7 +24,6 @@ import {
   CASES,
   CLIENT_LOGOS,
   LOGO_SLOTS,
-  STATS,
   type Bi,
   type ClientLogo,
   type PoleKey,
@@ -292,19 +291,6 @@ function Inner() {
         <span className="g-label">{t('hero_eyebrow')}</span>
         <h1>{t('hero_h1')}</h1>
         <p className="cr-hero__lead">{t('hero_lead')}</p>
-
-        <div className="cr-stats">
-          {STATS.map((s) => (
-            <div
-              key={s.label.fr}
-              className={`cr-stat${s.value === null ? ' cr-stat--todo' : ''}`}
-            >
-              <div className="cr-stat__n">{s.value ?? '[00]'}</div>
-              <div className="cr-stat__l">{L(s.label)}</div>
-              <div className="cr-stat__h">{L(s.hint)}</div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* MUR DE LOGOS */}

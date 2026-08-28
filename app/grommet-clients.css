@@ -25,12 +25,6 @@
 .cr-hero__lead { font-size: 21px; line-height: 1.5; color: var(--dark-2); margin: 0; max-width: 64ch; text-wrap: pretty; }
 
 /* ---- Bandeau de statistiques ---- */
-.cr-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 44px; }
-.cr-stat { background: var(--background); border: 1px solid var(--border); border-radius: var(--round-s); padding: 22px 24px; }
-.cr-stat__n { font-size: 42px; line-height: 1; font-weight: 700; color: var(--dark-1); margin-bottom: 10px; font-variant-numeric: tabular-nums; }
-.cr-stat--todo .cr-stat__n { color: var(--dark-3); }
-.cr-stat__l { font-size: 15px; line-height: 1.3; font-weight: 600; color: var(--dark-1); }
-.cr-stat__h { font-size: 12.5px; line-height: 1.3; color: var(--dark-3); margin-top: 3px; }
 
 /* ---- Mur de logos ---- */
 .cr-logos { background: var(--background-back); border-top: 1px solid var(--border); }
@@ -142,7 +136,6 @@
    ========================================================= */
 @media (max-width: 1080px) {
   .cr-hero h1 { font-size: 44px; }
-  .cr-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cr-logogrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .cr-band { flex-direction: column; align-items: flex-start; gap: 18px; }
   .cr-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -154,9 +147,6 @@
   .cr-hero { padding-top: 44px; padding-bottom: 36px; }
   .cr-hero h1 { font-size: 32px; }
   .cr-hero__lead { font-size: 18px; }
-  .cr-stats { gap: 12px; margin-top: 32px; }
-  .cr-stat { padding: 18px; }
-  .cr-stat__n { font-size: 34px; }
   .cr-logogrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .cr-logos__hd { flex-direction: column; gap: 8px; }
   .cr-logos__hd h2 { font-size: 22px; }
