@@ -269,9 +269,12 @@ function Inner() {
     return () => io.disconnect();
   }, []);
 
-  const logos: (ClientLogo | null)[] = CLIENT_LOGOS.length
-    ? CLIENT_LOGOS
-    : Array.from({ length: LOGO_SLOTS }, () => null);
+  // Le mur garde ses dix-huit cases tant que les logos ne les remplissent pas :
+  // les emplacements restants s'affichent en pointillés.
+  const logos: (ClientLogo | null)[] = [
+    ...CLIENT_LOGOS,
+    ...Array.from({ length: Math.max(0, LOGO_SLOTS - CLIENT_LOGOS.length) }, () => null),
+  ];
 
   return (
     <>
@@ -316,10 +319,23 @@ function Inner() {
           <div className="cr-logogrid">
             {logos.map((logo, i) =>
               logo ? (
-                <div className="cr-logo" key={logo.name}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
-                </div>
+                logo.href ? (
+                  <a
+                    className="cr-logo"
+                    key={logo.name}
+                    href={logo.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
+                  </a>
+                ) : (
+                  <div className="cr-logo" key={logo.name}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
+                  </div>
+                )
               ) : (
                 <div className="cr-logo cr-logo--empty" key={i}>
                   <Icon name="image" />
@@ -436,6 +452,8 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
   const t = useT(TX);
   const { lang } = useLang();
   const L = (b: Bi) => b[lang];
+  /** Champ qui peut être neutre (« 2024 ») ou bilingue (« Depuis 2019 », « 7 ans »). */
+  const LV = (x: string | Bi) => (typeof x === 'string' ? x : L(x));
   const [open, setOpen] = useState(false);
   const cases = CASES[pole.key];
 
@@ -468,11 +486,15 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
             <div>
               <div className="cr-case__client">{c.client}</div>
               <div className="cr-case__meta">
-                {L(c.secteur)} · {c.annee}
+                {L(c.secteur)} · {LV(c.annee)}
               </div>
             </div>
 
-            <ImageSlot variant="photo" cap={L(pole.imageCaption)} src={c.image} />
+            <ImageSlot
+              variant="photo"
+              cap={L(c.imageCaption ?? pole.imageCaption)}
+              src={c.image}
+            />
 
             <p className="cr-case__ctx">{L(c.contexte)}</p>
 
@@ -490,7 +512,7 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
             <div className="cr-res">
               {c.results.map((r, j) => (
                 <div key={j}>
-                  <div className="cr-res__v">{r.v}</div>
+                  <div className="cr-res__v">{LV(r.v)}</div>
                   <div className="cr-res__l">{L(r.l)}</div>
                 </div>
               ))}

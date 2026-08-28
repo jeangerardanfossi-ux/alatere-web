@@ -40,8 +40,9 @@
 .cr-logos__all { flex: none; font-size: 14px; font-weight: 600; color: var(--dark-1); text-decoration: underline; text-underline-offset: 3px; }
 .cr-logogrid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
 .cr-logo { background: var(--background); border: 1px solid var(--border); border-radius: var(--round-s); height: 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px; }
-.cr-logo img { max-width: 78%; max-height: 54%; object-fit: contain; filter: grayscale(1); opacity: 0.8; transition: filter 180ms, opacity 180ms; }
-a.cr-logo:hover img { filter: none; opacity: 1; }
+.cr-logo img { max-width: 78%; max-height: 54%; object-fit: contain; filter: grayscale(1); opacity: 0.92; transition: filter 180ms, opacity 180ms; }
+/* La couleur se révèle au survol, que le logo soit lié ou non. */
+.cr-logo:hover img { filter: none; opacity: 1; }
 .cr-logo--empty { border-style: dashed; border-color: var(--border-strong); background: var(--background-contrast); }
 .cr-logo--empty i { width: 26px; height: 26px; color: var(--dark-3); opacity: 0.5; }
 .cr-logo--empty span { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark-3); }
