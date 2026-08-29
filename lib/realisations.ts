@@ -336,6 +336,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: 'Kiwanis Antibes Juan-les-Pins', src: '/logos/kiwanis-antibes.png' },
   { name: 'Logic Santé', src: '/logos/logic-sante.png' },
   { name: 'Best of Brain', src: '/logos/best-of-brain.png' },
+  { name: 'Julien de Savignac', src: '/logos/julien-de-savignac.png' },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
