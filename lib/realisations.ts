@@ -393,6 +393,16 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   // signe + logotype. Recoloré en noir : le SVG publié est blanc, destiné à un
   // fond sombre, et disparaîtrait sur le fond clair du mur.
   { name: 'Vernassa Électricité', src: '/logos/vernassa.svg', href: 'https://www.vernassa.fr' },
+  // Logo repris de la page publique du client ; l'habillage carré gris ajouté par
+  // Facebook autour du disque a été remplacé par du blanc, le logo n'est pas retouché.
+  { name: 'Bohême Assurances - MMA Antibes', src: '/logos/boheme-assurances.png' },
+  // Marque officielle reprise de lunetierducap.com/favicon.svg : leur site ne
+  // publie pas de logotype, seulement ce monogramme.
+  {
+    name: 'Lunetier du Cap',
+    src: '/logos/lunetier-du-cap.png',
+    href: 'https://lunetierducap.com/',
+  },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
