@@ -389,6 +389,10 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: 'Best of Brain', src: '/logos/best-of-brain.png' },
   { name: 'Julien de Savignac', src: '/logos/julien-de-savignac.png' },
   { name: 'ASNOV - Assistante virtuelle', src: '/logos/asnov.png', href: 'https://www.asnov.fr' },
+  // Logo vectoriel officiel repris du site du client (vernassa.fr/images/logo.svg),
+  // signe + logotype. Recoloré en noir : le SVG publié est blanc, destiné à un
+  // fond sombre, et disparaîtrait sur le fond clair du mur.
+  { name: 'Vernassa Électricité', src: '/logos/vernassa.svg', href: 'https://www.vernassa.fr' },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
