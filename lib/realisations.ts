@@ -406,6 +406,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   // Logotype officiel repris de logeazur.fr, recoloré en sombre : la version
   // publiée est blanche, faite pour leur en-tête, et disparaîtrait sur le mur.
   { name: 'Logéazur', src: '/logos/logeazur.png', href: 'https://www.logeazur.fr/' },
+  { name: 'AS Elec by Tony', src: '/logos/as-elec.png', href: 'https://www.aselec06.fr/' },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
