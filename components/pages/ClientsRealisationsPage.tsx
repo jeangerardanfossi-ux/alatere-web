@@ -194,8 +194,8 @@ const TX: Dict = {
   },
 
   logos_h2: {
-    fr: 'Plus de cent entreprises de la Côte d’Azur',
-    en: 'More than a hundred companies on the French Riviera',
+    fr: 'Plus de cent entreprises sur la Côte d’Azur (et ailleurs)',
+    en: 'More than a hundred companies on the French Riviera (and beyond)',
   },
   logos_all: { fr: 'Voir tous nos clients', en: 'See all our clients' },
   logos_note: {
