@@ -312,10 +312,61 @@ const reproTableaux: CaseStudy = {
   },
 };
 
+/**
+ * forMa — ASNOV (asnov.fr), assistante virtuelle sur la Côte d'Azur.
+ * Deux parcours en 2026 : « Maîtriser Claude — de l'organisation à l'autonomie »
+ * (10 modules, 4 demi-journées, 14 h 30 nettes — chiffres repris du support de
+ * présentation BNI du 27/05/2026) et un parcours webmarketing / Google Ads,
+ * dont la durée n'est pas documentée : aucun chiffre affiché pour celui-là.
+ * La stagiaire n'est pas nommée sur la page.
+ */
+const asnov: CaseStudy = {
+  client: 'ASNOV',
+  secteur: {
+    fr: 'Assistante virtuelle · gestion administrative et digitale',
+    en: 'Virtual assistant · admin and digital support',
+  },
+  annee: '2026',
+  contexte: {
+    fr: "Assistante virtuelle installée sur la Côte d'Azur : elle prend en charge l'administratif, le commercial et le digital de ses clients. Deux parcours pour outiller son activité — l'IA au quotidien, puis l'acquisition en ligne.",
+    en: 'A virtual assistant based on the French Riviera, handling her clients’ admin, sales and digital work. Two programmes to equip her business — AI for daily work, then online acquisition.',
+  },
+  bullets: [
+    {
+      fr: "« Maîtriser Claude » : de l'organisation à l'autonomie, en quatre demi-journées",
+      en: '“Mastering Claude”: from organisation to autonomy, over four half-days',
+    },
+    {
+      fr: 'Webmarketing et Google Ads : acquisition et pilotage des campagnes',
+      en: 'Digital marketing and Google Ads: acquisition and campaign management',
+    },
+    {
+      fr: 'Formation individuelle, sur ses propres outils et ses propres dossiers',
+      en: 'One-to-one training, on her own tools and her own files',
+    },
+  ],
+  results: [
+    { v: '2', l: { fr: 'parcours de formation', en: 'training programmes' } },
+    {
+      v: { fr: '14 h 30', en: '14.5 hrs' },
+      l: { fr: 'sur le parcours IA', en: 'on the AI programme' },
+    },
+    {
+      v: '10',
+      l: { fr: 'modules, du paramétrage aux connecteurs', en: 'modules, from setup to connectors' },
+    },
+  ],
+  image: '/photos/forma-asnov.webp',
+  imageCaption: {
+    fr: 'Photo — séance de formation, sur le poste de travail de la stagiaire',
+    en: 'Photo — training session, at the trainee’s own workstation',
+  },
+};
+
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
 export const CASES: Record<PoleKey, CaseStudy[]> = {
   ecom: [reproTableaux, slot('02'), slot('03')],
-  forma: [laforet, slot('02'), slot('03')],
+  forma: [laforet, asnov, slot('03')],
   domo: [datalinxDomo, slot('02'), slot('03')],
   cowo: [datalinxCowo, slot('02'), slot('03')],
 };
@@ -337,6 +388,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: 'Logic Santé', src: '/logos/logic-sante.png' },
   { name: 'Best of Brain', src: '/logos/best-of-brain.png' },
   { name: 'Julien de Savignac', src: '/logos/julien-de-savignac.png' },
+  { name: 'ASNOV - Assistante virtuelle', src: '/logos/asnov.png', href: 'https://www.asnov.fr' },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
