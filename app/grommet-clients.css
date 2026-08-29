@@ -84,6 +84,9 @@
 .cr-res__v { font-size: 22px; line-height: 1.1; font-weight: 700; color: var(--accent-ink); }
 .cr-res__l { font-size: 12px; line-height: 1.35; color: var(--dark-3); margin-top: 4px; }
 .cr-case .g-img-slot { min-height: 130px; flex: none; }
+/* Visuel de type logo : affiché en entier sur fond blanc, pas recadré. */
+.cr-case .cr-case__imglogo { background: var(--background); }
+.cr-case .cr-case__imglogo img { object-fit: contain; box-sizing: border-box; padding: 22px; }
 .cr-quote { background: var(--background-back); border-left: 3px solid var(--accent); padding: 14px; margin: 0; }
 .cr-quote blockquote { margin: 0; }
 .cr-quote p { font-size: 15px; line-height: 1.5; color: var(--dark-1); margin: 0 0 9px; }

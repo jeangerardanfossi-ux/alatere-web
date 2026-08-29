@@ -47,6 +47,8 @@ export type CaseStudy = {
   image?: string;
   /** Légende propre à la réalisation ; à défaut, celle du pôle est utilisée. */
   imageCaption?: Bi;
+  /** `logo` = visuel affiché en entier sur fond blanc, au lieu du cadrage photo. */
+  imageMode?: 'photo' | 'logo';
   /** Étude de cas détaillée — le lien « Lire l'étude de cas » n'apparaît que si renseigné. */
   href?: string;
 };
@@ -205,11 +207,9 @@ const datalinxDomo: CaseStudy = {
       l: { fr: 'coworkeur chez coWo depuis', en: 'a coWo member since' },
     },
   ],
-  image: '/photos/domo.webp',
-  imageCaption: {
-    fr: 'Photo — les boîtes aux lettres des sociétés domiciliées, à Antibes',
-    en: 'Photo — the mailboxes of the companies registered here, in Antibes',
-  },
+  image: '/logos/datalinx.png',
+  imageMode: 'logo',
+  imageCaption: { fr: 'Logo Datalinx', en: 'Datalinx logo' },
 };
 
 const datalinxCowo: CaseStudy = {
@@ -259,7 +259,8 @@ const datalinxCowo: CaseStudy = {
  * ecoM — repro-tableaux.com, notre propre boutique.
  * Lancée en 2003 par la SARL MesRecherches (devenue Alatere Web), en partenariat
  * avec l'atelier hambourgeois KunstKopie.de : eux fabriquent les toiles et
- * tiennent le catalogue d'art, nous concevons, référençons et exploitons le site.
+ * tiennent le catalogue d'art, nous exploitons le site, le référençons et
+ * assurons le service client.
  * Le modèle a ensuite donné copia-di-arte.com (2007), reprodart.com,
  * art-prints-on-demand.com et myartprints.cz (2011) — cf. `AProposPage`.
  * Ce n'est pas une étude de cas client : la carte le dit explicitement.
@@ -274,13 +275,13 @@ const reproTableaux: CaseStudy = {
   },
   annee: { fr: `Depuis ${REPRO_SINCE}`, en: `Since ${REPRO_SINCE}` },
   contexte: {
-    fr: `Notre propre boutique, lancée en ${REPRO_SINCE} avec l'atelier hambourgeois KunstKopie.de : ils fabriquent les toiles et tiennent le catalogue d'art, nous concevons, référençons et exploitons le site pour le marché francophone.`,
-    en: `Our own store, launched in ${REPRO_SINCE} with the Hamburg workshop KunstKopie.de: they make the canvases and maintain the art catalogue, we design, rank and run the site for the French-speaking market.`,
+    fr: `Notre propre boutique, lancée en ${REPRO_SINCE} avec l'atelier hambourgeois KunstKopie.de : ils fabriquent les toiles et tiennent le catalogue d'art, nous exploitons et référençons le site pour le marché francophone, service client compris.`,
+    en: `Our own store, launched in ${REPRO_SINCE} with the Hamburg workshop KunstKopie.de: they make the canvases and maintain the art catalogue, we run and rank the site for the French-speaking market, customer service included.`,
   },
   bullets: [
     {
-      fr: 'Conception, exploitation quotidienne et référencement du site marchand',
-      en: 'Design, day-to-day operations and search ranking of the store',
+      fr: 'Service client complet, exploitation quotidienne et référencement du site',
+      en: 'Full customer service, day-to-day operations and search ranking of the store',
     },
     {
       fr: 'SEO et SEA tenus en propre sur un marché européen concurrentiel',

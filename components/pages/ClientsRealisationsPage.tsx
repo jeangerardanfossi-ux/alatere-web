@@ -478,6 +478,7 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
 
             <ImageSlot
               variant="photo"
+              className={c.imageMode === 'logo' ? 'cr-case__imglogo' : ''}
               cap={L(c.imageCaption ?? pole.imageCaption)}
               src={c.image}
             />
