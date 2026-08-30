@@ -454,7 +454,7 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: 'Logéazur', src: '/logos/logeazur.png', href: 'https://www.logeazur.fr/' },
   { name: 'AS Elec by Tony', src: '/logos/as-elec.png', href: 'https://www.aselec06.fr/' },
   {
-    name: 'CPY - Christel Pocachard Yachting',
+    name: 'Christel Pocachard Yachting',
     src: '/logos/cpy-yachting.svg',
     href: 'https://www.christelpocachardyachting.com/',
   },
