@@ -268,11 +268,13 @@ function Inner() {
     return () => io.disconnect();
   }, []);
 
-  // Le mur garde ses dix-huit cases tant que les logos ne les remplissent pas :
-  // les emplacements restants s'affichent en pointillés.
+  // Le mur garde des rangées pleines : on complète jusqu'au prochain multiple de
+  // six (la grille en aligne six par rangée sur grand écran), avec un minimum de
+  // dix-huit cases. Les emplacements restants s'affichent en pointillés.
+  const slots = Math.max(LOGO_SLOTS, Math.ceil(CLIENT_LOGOS.length / 6) * 6);
   const logos: (ClientLogo | null)[] = [
     ...CLIENT_LOGOS,
-    ...Array.from({ length: Math.max(0, LOGO_SLOTS - CLIENT_LOGOS.length) }, () => null),
+    ...Array.from({ length: slots - CLIENT_LOGOS.length }, () => null),
   ];
 
   return (

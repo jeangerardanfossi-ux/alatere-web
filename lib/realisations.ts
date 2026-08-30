@@ -413,12 +413,58 @@ const cpyYachting: CaseStudy = {
   },
 };
 
+/**
+ * coWo — Scape Design (scapedesign.com), l'agence de paysagisme de James Basson.
+ * Équipe installée dans une salle privative depuis six mois (durée communiquée
+ * par le client, accompagnement en cours). Visuel : capture de leur page
+ * « Projects », faite le 2026-08-30.
+ */
+const scapeDesign: CaseStudy = {
+  client: 'Scape Design',
+  secteur: {
+    fr: 'Paysagisme · jardins et espaces publics',
+    en: 'Landscape design · gardens and public spaces',
+  },
+  annee: { fr: 'Depuis six mois', en: 'For six months' },
+  contexte: {
+    fr: "L'agence de paysagisme de James Basson, installée dans le sud de la France et primée sur les grands concours internationaux, conçoit des jardins méditerranéens du petit terrain au parc public. Son équipe travaille depuis six mois dans une salle privative de l'espace.",
+    en: 'James Basson’s landscape practice, based in the South of France and awarded at the major international shows, designs Mediterranean gardens from small plots to public parks. His team has been working from a private room in the space for six months.',
+  },
+  bullets: [
+    {
+      fr: 'Salle privative pour toute l’équipe, fermée et dédiée',
+      en: 'A private room for the whole team, closed and dedicated',
+    },
+    {
+      fr: 'Installation immédiate, sans travaux ni bail commercial',
+      en: 'Moved in straight away, no fit-out and no commercial lease',
+    },
+    {
+      fr: 'Salle de réunion et services de l’espace en complément',
+      en: 'Meeting room and the space’s services on top',
+    },
+  ],
+  results: [
+    { v: { fr: '6 mois', en: '6 months' }, l: { fr: 'de présence à ce jour', en: 'on site so far' } },
+    { v: '1', l: { fr: 'salle privative dédiée', en: 'dedicated private room' } },
+    {
+      v: { fr: '0', en: '0' },
+      l: { fr: 'bail commercial, zéro travaux', en: 'commercial leases, zero fit-out' },
+    },
+  ],
+  image: '/photos/cowo-scape-design.webp',
+  imageCaption: {
+    fr: 'Capture — la page « Projects » de scapedesign.com',
+    en: 'Screenshot — the “Projects” page of scapedesign.com',
+  },
+};
+
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
 export const CASES: Record<PoleKey, CaseStudy[]> = {
   ecom: [reproTableaux, slot('02'), slot('03')],
   forma: [laforet, asnov, slot('03')],
   domo: [datalinxDomo, slot('02'), slot('03')],
-  cowo: [datalinxCowo, cpyYachting, slot('03')],
+  cowo: [datalinxCowo, cpyYachting, scapeDesign],
 };
 
 /**
@@ -462,6 +508,9 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     src: '/logos/cpy-yachting.svg',
     href: 'https://www.christelpocachardyachting.com/',
   },
+  // Logotype officiel repris de scapedesign.com, recoloré en sombre : la version
+  // publiée est blanche, prévue pour leur en-tête photo.
+  { name: 'Scape Design', src: '/logos/scape-design.png', href: 'https://www.scapedesign.com/en/' },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
