@@ -363,12 +363,59 @@ const asnov: CaseStudy = {
   },
 };
 
+/**
+ * coWo — CPY, Christel Pocachard Yachting (christelpocachardyachting.com).
+ * Venue pour deux mois, restée plus de deux ans, équipe montée à six
+ * collaborateurs. Dates exactes non documentées : la carte ne donne donc
+ * ni année d'arrivée ni année de départ, seulement les durées.
+ */
+const cpyYachting: CaseStudy = {
+  client: 'CPY - Christel Pocachard Yachting',
+  secteur: {
+    fr: 'Yachting · gestion, location et vente',
+    en: 'Yachting · management, charter and sales',
+  },
+  annee: { fr: 'Plus de deux ans', en: 'Over two years' },
+  contexte: {
+    fr: "Une société de yachting arrive pour deux mois, le temps d'un projet. Elle est restée plus de deux ans, et son équipe est montée à six collaborateurs sur place : l'espace a suivi la croissance, sans bail commercial ni déménagement.",
+    en: 'A yachting company arrived for two months, just for one project. It stayed more than two years, and its team grew to six people on site: the space followed the growth, with no commercial lease and no move.',
+  },
+  bullets: [
+    {
+      fr: 'Arrivée pour deux mois, installée finalement plus de deux ans',
+      en: 'Arrived for two months, ended up staying more than two years',
+    },
+    {
+      fr: "Postes ajoutés au fil de la croissance, jusqu'à six collaborateurs",
+      en: 'Desks added as the team grew, up to six people',
+    },
+    {
+      fr: 'Ni bail commercial, ni engagement de longue durée',
+      en: 'No commercial lease, no long-term commitment',
+    },
+  ],
+  results: [
+    { v: '6', l: { fr: 'collaborateurs sur place', en: 'team members on site' } },
+    {
+      v: { fr: '2 mois', en: '2 months' },
+      l: { fr: 'de séjour prévu au départ', en: 'originally planned' },
+    },
+    {
+      v: { fr: '> 2 ans', en: '> 2 years' },
+      l: { fr: 'de présence réelle', en: 'actually stayed' },
+    },
+  ],
+  image: '/logos/cpy-yachting.svg',
+  imageMode: 'logo',
+  imageCaption: { fr: 'Logo CPY Yachting', en: 'CPY Yachting logo' },
+};
+
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
 export const CASES: Record<PoleKey, CaseStudy[]> = {
   ecom: [reproTableaux, slot('02'), slot('03')],
   forma: [laforet, asnov, slot('03')],
   domo: [datalinxDomo, slot('02'), slot('03')],
-  cowo: [datalinxCowo, slot('02'), slot('03')],
+  cowo: [datalinxCowo, cpyYachting, slot('03')],
 };
 
 /**
@@ -407,6 +454,11 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   // publiée est blanche, faite pour leur en-tête, et disparaîtrait sur le mur.
   { name: 'Logéazur', src: '/logos/logeazur.png', href: 'https://www.logeazur.fr/' },
   { name: 'AS Elec by Tony', src: '/logos/as-elec.png', href: 'https://www.aselec06.fr/' },
+  {
+    name: 'CPY - Christel Pocachard Yachting',
+    src: '/logos/cpy-yachting.svg',
+    href: 'https://www.christelpocachardyachting.com/',
+  },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
