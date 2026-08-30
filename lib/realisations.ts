@@ -369,7 +369,7 @@ const asnov: CaseStudy = {
  * par le client), équipe montée à six collaborateurs.
  */
 const cpyYachting: CaseStudy = {
-  client: 'CPY - Christel Pocachard Yachting',
+  client: 'Christel Pocachard Yachting',
   secteur: {
     fr: 'Yachting · gestion, location et vente',
     en: 'Yachting · management, charter and sales',
