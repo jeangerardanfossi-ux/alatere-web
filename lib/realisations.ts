@@ -511,6 +511,11 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   // Logotype officiel repris de scapedesign.com, recoloré en sombre : la version
   // publiée est blanche, prévue pour leur en-tête photo.
   { name: 'Scape Design', src: '/logos/scape-design.png', href: 'https://www.scapedesign.com/en/' },
+  {
+    name: 'Pergola Riviera',
+    src: '/logos/pergola-riviera.png',
+    href: 'https://www.pergolariviera.com/',
+  },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
