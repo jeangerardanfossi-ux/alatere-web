@@ -321,7 +321,7 @@ const reproTableaux: CaseStudy = {
  * La stagiaire n'est pas nommée sur la page.
  */
 const asnov: CaseStudy = {
-  client: 'ASNOV',
+  client: 'ASNOV.FR',
   secteur: {
     fr: 'Assistante virtuelle · gestion administrative et digitale',
     en: 'Virtual assistant · admin and digital support',
