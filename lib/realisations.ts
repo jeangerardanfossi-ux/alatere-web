@@ -404,9 +404,13 @@ const cpyYachting: CaseStudy = {
       l: { fr: 'de présence réelle', en: 'actually stayed' },
     },
   ],
-  image: '/logos/cpy-yachting.svg',
-  imageMode: 'logo',
-  imageCaption: { fr: 'Logo CPY Yachting', en: 'CPY Yachting logo' },
+  // Photo reprise du site du client : le Sanlorenzo 78 « Triple L » de leur
+  // flotte de location, recadré au format des cartes.
+  image: '/photos/cowo-pocachard-yachting.webp',
+  imageCaption: {
+    fr: 'Photo — un yacht de la flotte Christel Pocachard Yachting',
+    en: 'Photo — a yacht from the Christel Pocachard Yachting fleet',
+  },
 };
 
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
