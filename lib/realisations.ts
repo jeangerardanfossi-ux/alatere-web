@@ -365,9 +365,8 @@ const asnov: CaseStudy = {
 
 /**
  * coWo — CPY, Christel Pocachard Yachting (christelpocachardyachting.com).
- * Venue pour deux mois, restée plus de deux ans, équipe montée à six
- * collaborateurs. Dates exactes non documentées : la carte ne donne donc
- * ni année d'arrivée ni année de départ, seulement les durées.
+ * Venue pour deux mois, restée de fin 2022 à début 2025 (période communiquée
+ * par le client), équipe montée à six collaborateurs.
  */
 const cpyYachting: CaseStudy = {
   client: 'CPY - Christel Pocachard Yachting',
@@ -375,10 +374,10 @@ const cpyYachting: CaseStudy = {
     fr: 'Yachting · gestion, location et vente',
     en: 'Yachting · management, charter and sales',
   },
-  annee: { fr: 'Plus de deux ans', en: 'Over two years' },
+  annee: { fr: 'Fin 2022 - début 2025', en: 'Late 2022 - early 2025' },
   contexte: {
-    fr: "Une société de yachting arrive pour deux mois, le temps d'un projet. Elle est restée plus de deux ans, et son équipe est montée à six collaborateurs sur place : l'espace a suivi la croissance, sans bail commercial ni déménagement.",
-    en: 'A yachting company arrived for two months, just for one project. It stayed more than two years, and its team grew to six people on site: the space followed the growth, with no commercial lease and no move.',
+    fr: "Une société de yachting arrive pour deux mois, le temps d'un projet. Elle est restée de fin 2022 à début 2025, et son équipe est montée à six collaborateurs sur place : l'espace a suivi la croissance, sans bail commercial ni déménagement.",
+    en: 'A yachting company arrived for two months, just for one project. It stayed from late 2022 to early 2025, and its team grew to six people on site: the space followed the growth, with no commercial lease and no move.',
   },
   bullets: [
     {
