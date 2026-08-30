@@ -516,6 +516,16 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     src: '/logos/pergola-riviera.png',
     href: 'https://www.pergolariviera.com/',
   },
+  {
+    name: 'Nice Fenêtres',
+    src: '/logos/nice-fenetres.svg',
+    href: 'https://www.nicefenetres-avis.com/',
+  },
+  {
+    name: 'La Dimension Créative',
+    src: '/logos/la-dimension-creative.png',
+    href: 'https://www.la-dimension-creative.com/',
+  },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
 ];
