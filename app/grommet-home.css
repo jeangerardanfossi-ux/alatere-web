@@ -178,10 +178,12 @@ a.g-tag:hover { transform: translateY(-2px); box-shadow: var(--elev-m); filter: 
 .g-drawer.is-open .g-drawer__panel { transform: translateX(0); }
 .g-drawer__panel a { font-size: 17px; font-weight: 600; color: var(--dark-1); text-decoration: none; padding: 13px 8px; border-bottom: 1px solid var(--border); }
 .g-drawer__panel a:hover { color: var(--brand); }
+.g-drawer__panel a.g-drawer__cta:hover { color: #fff; }
 .g-drawer__lang { align-self: flex-start; margin: 16px 0 8px; border: 1.5px solid var(--border-strong); border-radius: 999px; overflow: hidden; display: inline-flex; }
 .g-drawer__lang button { font-family: var(--font); font-size: 14px; font-weight: 600; padding: 8px 18px; border: none; background: transparent; color: var(--dark-3); cursor: pointer; }
 .g-drawer__lang button.is-active { background: var(--brand); color: #fff; }
-.g-drawer__cta { border-bottom: none !important; justify-content: center; margin-top: 8px; }
+.g-drawer__panel a.g-drawer__cta { border-bottom: none !important; justify-content: center; margin-top: 8px;
+  color: #fff; /* prime sur .g-drawer__panel a (sinon texte sombre sur fond marine) */ }
 /* Items du tiroir : titres de pôles colorés + sous-titre (comme le menu desktop) */
 .g-drawer__panel a.g-drawer__item { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1.12; }
 .g-drawer__item .g-nav__label { font-size: 17px; font-weight: 700; }
