@@ -603,9 +603,14 @@ const axeo: CaseStudy = {
       l: { fr: 'formations finançables OPCO', en: 'training eligible for OPCO funding' },
     },
   ],
-  image: '/logos/axeo-services.png',
-  imageMode: 'logo',
-  imageCaption: { fr: 'Logo AXEO Services', en: 'AXEO Services logo' },
+  // Photo de l'agence de Cagnes-sur-Mer, reprise du dossier client
+  // (05-FORMATIONS-ALATERE/.../2025_dossiers-clients/axeo-services/),
+  // recadrée au format des cartes. Remplace le logo qui servait de visuel.
+  image: '/photos/forma-axeo-services.webp',
+  imageCaption: {
+    fr: "Photo — l'agence AXEO Services de Cagnes-sur-Mer",
+    en: 'Photo — the AXEO Services agency in Cagnes-sur-Mer',
+  },
 };
 
 /**
