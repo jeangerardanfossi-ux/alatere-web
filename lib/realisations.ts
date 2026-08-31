@@ -473,17 +473,47 @@ export const CASES: Record<PoleKey, CaseStudy[]> = {
  */
 export type ClientLogo = { name: string; src: string; href?: string };
 export const CLIENT_LOGOS: ClientLogo[] = [
-  // `href` absent = logo non cliquable : on ne lie que les URL vérifiées.
-  { name: 'Laforêt Immobilier Antibes', src: '/logos/laforet.png' },
+  // Chaque logo pointe vers le site officiel du client, ouvert dans un nouvel onglet
+  // (voir le rendu du mur dans `ClientsRealisationsPage`). `href` absent = logo non
+  // cliquable : on ne lie que les URL vérifiées.
+  {
+    name: 'Laforêt Immobilier Antibes',
+    src: '/logos/laforet.png',
+    href: 'https://www.laforet.com/agence-immobiliere/antibes',
+  },
   { name: 'Datalinx', src: '/logos/datalinx.png', href: 'https://www.datalinx.fr/' },
-  { name: 'MAV Développement Immobilier', src: '/logos/mav.png' },
-  { name: '2i Architecture', src: '/logos/2i-architecture.png' },
+  {
+    name: 'MAV Développement Immobilier',
+    src: '/logos/mav.png',
+    href: 'https://mav-developpement-immobilier.fr/fr/',
+  },
+  // URL reprise du logotype lui-même, qui porte la mention « www.2iarchitecture.com ».
+  {
+    name: '2i Architecture',
+    src: '/logos/2i-architecture.png',
+    href: 'https://2iarchitecture.com/',
+  },
+  // Seul logo non lié du mur : aucun site officiel vérifiable à ce jour pour
+  // « K management - Property & Wealth ». À lier dès que l'URL est confirmée.
   { name: 'K Management - Property & Wealth', src: '/logos/pwkm.png' },
-  { name: 'AXEO Services Antibes - Cagnes-sur-Mer', src: '/logos/axeo-services.png' },
-  { name: 'Kiwanis Antibes Juan-les-Pins', src: '/logos/kiwanis-antibes.png' },
-  { name: 'Logic Santé', src: '/logos/logic-sante.png' },
-  { name: 'Best of Brain', src: '/logos/best-of-brain.png' },
-  { name: 'Julien de Savignac', src: '/logos/julien-de-savignac.png' },
+  {
+    name: 'AXEO Services Antibes - Cagnes-sur-Mer',
+    src: '/logos/axeo-services.png',
+    href: 'https://www.axeoservices.fr/agency/400-axeo-services-antibes',
+  },
+  {
+    name: 'Kiwanis Antibes Juan-les-Pins',
+    src: '/logos/kiwanis-antibes.png',
+    href: 'https://www.kiwanis.fr/club/antibes-juan-les-pins/',
+  },
+  { name: 'Logic Santé', src: '/logos/logic-sante.png', href: 'https://www.logicsante.com/' },
+  // bestofbrain.fr redirige vers le domaine .eu : on pointe directement la cible.
+  { name: 'Best of Brain', src: '/logos/best-of-brain.png', href: 'https://bestofbrain.eu/' },
+  {
+    name: 'Julien de Savignac',
+    src: '/logos/julien-de-savignac.png',
+    href: 'https://www.julien-de-savignac.com/fr/',
+  },
   { name: 'ASNOV - Assistante virtuelle', src: '/logos/asnov.png', href: 'https://www.asnov.fr' },
   // Logo vectoriel officiel repris du site du client (vernassa.fr/images/logo.svg),
   // signe + logotype. Recoloré en noir : le SVG publié est blanc, destiné à un
@@ -491,7 +521,12 @@ export const CLIENT_LOGOS: ClientLogo[] = [
   { name: 'Vernassa Électricité', src: '/logos/vernassa.svg', href: 'https://www.vernassa.fr' },
   // Logo repris de la page publique du client ; l'habillage carré gris ajouté par
   // Facebook autour du disque a été remplacé par du blanc, le logo n'est pas retouché.
-  { name: 'Bohême Assurances - MMA Antibes', src: '/logos/boheme-assurances.png' },
+  // Agence MMA de Nicolas Bohême : sa vitrine est la page d'agence du réseau MMA.
+  {
+    name: 'Bohême Assurances - MMA Antibes',
+    src: '/logos/boheme-assurances.png',
+    href: 'https://agence.mma.fr/antibes/',
+  },
   // Marque officielle reprise de lunetierducap.com/favicon.svg : leur site ne
   // publie pas de logotype, seulement ce monogramme.
   {
