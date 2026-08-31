@@ -163,6 +163,12 @@ const DATALINX_COWO_SINCE = 2019;
 const DATALINX_DOMO_SINCE = 2022;
 const YEARS_SINCE = (y: number) => new Date().getFullYear() - y;
 
+/** Mois écoulés depuis un mois donné (m = 1 pour janvier) — pour les domiciliations récentes. */
+const MONTHS_SINCE = (y: number, m: number) => {
+  const now = new Date();
+  return (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m);
+};
+
 const datalinxSecteur: Bi = {
   fr: 'Agence e-commerce & web',
   en: 'E-commerce & web agency',
@@ -253,6 +259,120 @@ const datalinxCowo: CaseStudy = {
     fr: "Photo — l'équipe Datalinx à son poste, espace Alatere coWo",
     en: 'Photo — the Datalinx team at work, Alatere coWo space',
   },
+};
+
+/**
+ * doMo — AZ Chef Signature (azchef-signature.eatbu.com), chef privé et traiteur
+ * événementiel d'Alexandre Zohar. Siège social domicilié au 9 boulevard Albert 1er
+ * depuis décembre 2025 (date communiquée par le client). L'entreprise intervient
+ * de Londres à Monaco : l'adresse est le seul point fixe de l'activité.
+ * Pas de verbatim : aucun témoignage relu et validé à ce jour.
+ */
+const AZCHEF_SINCE_Y = 2025;
+const AZCHEF_SINCE_M = 12;
+
+const azChef: CaseStudy = {
+  client: 'AZ Chef Signature',
+  secteur: {
+    fr: 'Chef privé & traiteur · événements privés et professionnels',
+    en: 'Private chef & caterer · private and corporate events',
+  },
+  annee: { fr: 'Depuis décembre 2025', en: 'Since December 2025' },
+  contexte: {
+    fr: "Chef privé et traiteur événementiel, Alexandre Zohar travaille sur les lieux de ses clients, de Londres à Monaco. Son entreprise n'a pas de local : le siège social est domicilié chez nous depuis décembre 2025, en centre-ville d'Antibes.",
+    en: 'A private chef and event caterer, Alexandre Zohar works at his clients’ own venues, from London to Monaco. His business has no premises: the registered office has been with us since December 2025, in central Antibes.',
+  },
+  bullets: [
+    {
+      fr: "Adresse de siège social agréée préfecture, en centre-ville d'Antibes",
+      en: 'Prefecture-approved registered-office address in central Antibes',
+    },
+    {
+      fr: 'Courrier reçu, trié et numérisé ; réexpédition à la demande',
+      en: 'Mail received, sorted and scanned; forwarded on request',
+    },
+    {
+      fr: "Un point fixe pour une activité qui se déplace de site en site",
+      en: 'A fixed address for a business that moves from venue to venue',
+    },
+  ],
+  results: [
+    {
+      v: {
+        fr: `${MONTHS_SINCE(AZCHEF_SINCE_Y, AZCHEF_SINCE_M)} mois`,
+        en: `${MONTHS_SINCE(AZCHEF_SINCE_Y, AZCHEF_SINCE_M)} months`,
+      },
+      l: { fr: 'de domiciliation continue', en: 'of continuous registered office' },
+    },
+    {
+      v: { fr: 'Agréée', en: 'Approved' },
+      l: { fr: 'préfecture des Alpes-Maritimes', en: 'by the Alpes-Maritimes prefecture' },
+    },
+    {
+      v: 'Antibes',
+      l: { fr: 'siège social en centre-ville', en: 'registered office in the town centre' },
+    },
+  ],
+  image: '/logos/az-chef.png',
+  imageMode: 'logo',
+  imageCaption: { fr: 'Logo AZ Chef Signature', en: 'AZ Chef Signature logo' },
+};
+
+/**
+ * doMo — TerraBella Inspiration (terrabella-inspiration.fr), bougies artisanales
+ * coulées à la main sur la Côte d'Azur, parfums créés à Grasse. Siège social
+ * domicilié au 9 boulevard Albert 1er depuis juin 2025 (date communiquée par le
+ * client) — l'adresse figure d'ailleurs sur leur boutique en ligne.
+ * Pas de verbatim relu et validé à ce jour.
+ */
+const TERRABELLA_SINCE_Y = 2025;
+const TERRABELLA_SINCE_M = 6;
+
+const terraBella: CaseStudy = {
+  client: 'TerraBella Inspiration',
+  secteur: {
+    fr: 'Artisanat · bougies parfumées coulées à la main',
+    en: 'Craft manufacturing · hand-poured scented candles',
+  },
+  annee: { fr: 'Depuis juin 2025', en: 'Since June 2025' },
+  contexte: {
+    fr: "Bougies parfumées coulées à la main sur la Côte d'Azur, avec des parfums créés à Grasse, vendues aux hôtels, spas et architectes d'intérieur. La marque a domicilié son siège chez nous en juin 2025 et affiche l'adresse sur sa boutique en ligne.",
+    en: 'Scented candles hand-poured on the French Riviera, with fragrances created in Grasse, sold to hotels, spas and interior designers. The brand moved its registered office here in June 2025 and shows the address on its online store.',
+  },
+  bullets: [
+    {
+      fr: "Adresse de siège social agréée préfecture, en centre-ville d'Antibes",
+      en: 'Prefecture-approved registered-office address in central Antibes',
+    },
+    {
+      fr: 'Courrier reçu, trié et numérisé ; réexpédition à la demande',
+      en: 'Mail received, sorted and scanned; forwarded on request',
+    },
+    {
+      fr: 'Adresse professionnelle affichée sur la boutique et les documents commerciaux',
+      en: 'A business address shown on the store and on commercial paperwork',
+    },
+  ],
+  results: [
+    {
+      v: {
+        fr: `${MONTHS_SINCE(TERRABELLA_SINCE_Y, TERRABELLA_SINCE_M)} mois`,
+        en: `${MONTHS_SINCE(TERRABELLA_SINCE_Y, TERRABELLA_SINCE_M)} months`,
+      },
+      l: { fr: 'de domiciliation continue', en: 'of continuous registered office' },
+    },
+    {
+      v: { fr: 'Agréée', en: 'Approved' },
+      l: { fr: 'préfecture des Alpes-Maritimes', en: 'by the Alpes-Maritimes prefecture' },
+    },
+    {
+      v: String(TERRABELLA_SINCE_Y),
+      l: { fr: 'siège social domicilié depuis juin', en: 'registered office here since June' },
+    },
+  ],
+  image: '/logos/terrabella.png',
+  imageMode: 'logo',
+  imageCaption: { fr: 'Logo TerraBella Inspiration', en: 'TerraBella Inspiration logo' },
 };
 
 /**
@@ -463,7 +583,7 @@ const scapeDesign: CaseStudy = {
 export const CASES: Record<PoleKey, CaseStudy[]> = {
   ecom: [reproTableaux, slot('02'), slot('03')],
   forma: [laforet, asnov, slot('03')],
-  domo: [datalinxDomo, slot('02'), slot('03')],
+  domo: [datalinxDomo, terraBella, azChef],
   cowo: [datalinxCowo, cpyYachting, scapeDesign],
 };
 
@@ -560,6 +680,19 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     name: 'La Dimension Créative',
     src: '/logos/la-dimension-creative.png',
     href: 'https://www.la-dimension-creative.com/',
+  },
+  // Logotype officiel repris de la boutique du client, détouré du fond blanc.
+  {
+    name: 'TerraBella Inspiration',
+    src: '/logos/terrabella.png',
+    href: 'https://www.terrabella-inspiration.fr/',
+  },
+  // Logo repris du site du client, publié en clair sur fond noir : détouré et
+  // recoloré en sombre pour le fond clair du mur, l'or de la lettre Z est conservé.
+  {
+    name: 'AZ Chef Signature',
+    src: '/logos/az-chef.png',
+    href: 'https://azchef-signature.eatbu.com/',
   },
   // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
   { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
