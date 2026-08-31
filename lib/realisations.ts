@@ -559,7 +559,12 @@ const asnov: CaseStudy = {
  * forMa — AXEO Services Antibes - Cagnes-sur-Mer, franchise de services à domicile
  * et aux entreprises (groupe La Poste). Accompagnement en formation depuis trois ans
  * (durée communiquée par le client), sur trois terrains : webmarketing, réseaux
- * sociaux et langues. Pas de verbatim relu et validé à ce jour.
+ * sociaux et langues.
+ *
+ * Chiffres et verbatim repris du support de témoignage BNI du 25/03/2026,
+ * préparé avec le client : 11 600 € HT de formation sur 2025-2026, financés à
+ * 100 % par l'OPCO AKTO, zéro reste à charge. Les tuiles portent bien la
+ * mention « 2025-2026 » : le montant ne couvre que deux des trois années.
  */
 const axeo: CaseStudy = {
   client: 'AXEO Services Antibes - Cagnes-sur-Mer',
@@ -588,21 +593,30 @@ const axeo: CaseStudy = {
   ],
   results: [
     {
-      v: { fr: '3 ans', en: '3 years' },
-      l: { fr: "d'accompagnement continu", en: 'of continuous training' },
-    },
-    {
-      v: '3',
+      v: { fr: '11 600 €', en: '€11,600' },
       l: {
-        fr: 'domaines : webmarketing, réseaux sociaux, langues',
-        en: 'fields: digital marketing, social media, languages',
+        fr: 'de formation financée en 2025-2026',
+        en: 'of training funded across 2025-2026',
       },
     },
     {
-      v: 'Qualiopi',
-      l: { fr: 'formations finançables OPCO', en: 'training eligible for OPCO funding' },
+      v: '0 €',
+      l: { fr: "de reste à charge pour l'agence", en: 'left for the agency to pay' },
+    },
+    {
+      v: '100 %',
+      l: { fr: "pris en charge par l'OPCO AKTO", en: 'covered by the AKTO OPCO' },
     },
   ],
+  quote: {
+    fr: "On pensait que c'était compliqué… en réalité, on a juste suivi le rythme.",
+    en: 'We thought it would be complicated… in the end, we just followed the pace.',
+  },
+  nom: 'Alexandre Bry',
+  fonction: {
+    fr: 'Président de Neatworks (AXEO Services)',
+    en: 'President of Neatworks (AXEO Services)',
+  },
   // Photo de l'agence de Cagnes-sur-Mer, reprise du dossier client
   // (05-FORMATIONS-ALATERE/.../2025_dossiers-clients/axeo-services/),
   // recadrée au format des cartes. Remplace le logo qui servait de visuel.
