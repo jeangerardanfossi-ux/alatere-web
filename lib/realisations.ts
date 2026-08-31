@@ -4,17 +4,14 @@
  * (turn 3 / option 3a — direction A « éditorial sobre », page complète,
  * trois réalisations par pôle).
  *
- * ⚠️ CONTENUS À COMPLÉTER — les entrées ci-dessous reprennent volontairement les
- * textes entre crochets du wireframe : elles calent la densité réelle de la
- * maquette mais ne sont PAS publiables. Tant que `REALISATIONS_READY` vaut
- * `false`, les deux routes sont en `noindex` et absentes du sitemap.
+ * Les douze `CaseStudy` sont désormais réelles (FR + EN) et `CLIENT_LOGOS` est
+ * renseigné : le gabarit d'attente entre crochets a été retiré.
  *
- * Pour publier :
- *   1. remplacer chaque `CaseStudy` par une vraie étude de cas (FR + EN) ;
- *   2. renseigner `CLIENT_LOGOS` (logos affichés avec l'accord des clients) ;
- *   3. passer `REALISATIONS_READY` à `true` — cette seule bascule retire le
- *      `noindex` des deux routes, ajoute la page au sitemap et affiche le lien
- *      « Clients & Réalisations » dans le pied de page (colonne « Liens utiles »).
+ * Reste une seule chose à faire pour publier : passer `REALISATIONS_READY` à
+ * `true`. Cette bascule retire le `noindex` des deux routes, ajoute la page au
+ * sitemap et affiche le lien « Clients & Réalisations » dans le pied de page
+ * (colonne « Liens utiles »). Tant qu'elle vaut `false`, la page reste en ligne
+ * mais invisible des moteurs.
  *
  * NB : l'entrée « Réalisations » du MENU PRINCIPAL, elle, est permanente
  * (choix client du 2026-08-26) — voir `NAV` dans components/grommet/Header.tsx.
@@ -55,46 +52,8 @@ export type CaseStudy = {
 
 export type PoleKey = 'ecom' | 'forma' | 'domo' | 'cowo';
 
-/** Passer à `true` une fois les vraies études de cas saisies (voir en-tête). */
+/** Seule bascule restante avant publication (voir en-tête). */
 export const REALISATIONS_READY = false;
-
-/* =========================================================
-   Gabarit d'attente — copie exacte des crochets du wireframe.
-   À supprimer quand les vraies études de cas sont saisies.
-   ========================================================= */
-const slot = (n: string): CaseStudy => ({
-  client: `[Nom du client ${n}]`,
-  secteur: { fr: '[Secteur]', en: '[Sector]' },
-  annee: '[20XX]',
-  contexte: {
-    fr: "[Deux lignes de contexte : l'entreprise, son marché, le point de départ du projet. Environ cent quatre-vingts signes pour caler la densité réelle de la maquette.]",
-    en: '[Two lines of context: the company, its market, the starting point of the project. Around one hundred and eighty characters, to match the real density of the layout.]',
-  },
-  bullets: [
-    {
-      fr: '[Action réalisée — environ soixante signes de description]',
-      en: '[Work delivered — about sixty characters of description]',
-    },
-    {
-      fr: '[Deuxième action, même longueur pour équilibrer la carte]',
-      en: '[Second item, same length so the card stays balanced]',
-    },
-    { fr: '[Troisième action, la plus courte des trois]', en: '[Third item, the shortest of the three]' },
-  ],
-  results: [
-    { v: '[00 %]', l: { fr: '[Libellé du résultat]', en: '[Result label]' } },
-    { v: '[0 000]', l: { fr: '[Libellé du résultat]', en: '[Result label]' } },
-    { v: '[×0]', l: { fr: '[Libellé]', en: '[Label]' } },
-  ],
-  quote: {
-    fr: '[Verbatim client de deux à trois lignes, relu et validé par le client avant publication.]',
-    en: '[Two to three lines of client testimonial, reviewed and approved by the client before publication.]',
-  },
-  nom: '[Prénom Nom]',
-  fonction: { fr: '[Fonction, société]', en: '[Role, company]' },
-});
-
-const slots = (): CaseStudy[] => [slot('01'), slot('02'), slot('03')];
 
 /* =========================================================
    Études de cas réelles.
@@ -433,6 +392,119 @@ const reproTableaux: CaseStudy = {
 };
 
 /**
+ * ecoM — copia-di-arte.com et art-prints-on-demand.com, deux boutiques du groupe.
+ * Nées en 2007 du modèle repro-tableaux, avec KunstKopie.de (cf. la frise de la page
+ * « À propos »). Ce ne sont pas des études de cas clients : les cartes le disent.
+ * Captures faites le 2026-08-31 sur les versions en ligne ; l'ancienne
+ * /photos/ecom-copia.webp date de la charte précédente du site.
+ */
+const SHOPS_INTL_SINCE = 2007;
+
+const copiaDiArte: CaseStudy = {
+  client: 'Copia-di-Arte.com',
+  secteur: {
+    fr: "Boutique en propre · reproductions d'art, marché italien",
+    en: 'Our own store · art reproductions, Italian market',
+  },
+  annee: { fr: `Depuis ${SHOPS_INTL_SINCE}`, en: `Since ${SHOPS_INTL_SINCE}` },
+  contexte: {
+    fr: `La déclinaison italienne de notre modèle, ouverte en ${SHOPS_INTL_SINCE} avec KunstKopie.de. Boutique traduite et adaptée chez nous, service client assuré en propre et acquisition menée sur place — la même organisation que sur les autres versions du réseau.`,
+    en: `The Italian version of our model, opened in ${SHOPS_INTL_SINCE} with KunstKopie.de. The store is translated and adapted in-house, customer service is ours, and acquisition is run on the ground — the same setup as on the other stores in the network.`,
+  },
+  bullets: [
+    {
+      fr: "Traduction et adaptation du catalogue en italien, en anglais et en espagnol",
+      en: 'Catalogue translated and adapted into Italian, English and Spanish',
+    },
+    {
+      fr: 'Service client assuré en propre, dans la langue du marché',
+      en: 'Customer service handled in-house, in the language of the market',
+    },
+    {
+      fr: "Marketing et acquisition menés en Italie, aux États-Unis et en Espagne",
+      en: 'Marketing and acquisition run in Italy, the United States and Spain',
+    },
+  ],
+  results: [
+    {
+      v: {
+        fr: `${YEARS_SINCE(SHOPS_INTL_SINCE)} ans`,
+        en: `${YEARS_SINCE(SHOPS_INTL_SINCE)} years`,
+      },
+      l: { fr: "d'exploitation continue", en: 'of continuous operation' },
+    },
+    {
+      v: '3',
+      l: {
+        fr: 'langues traduites : italien, anglais, espagnol',
+        en: 'languages translated: Italian, English, Spanish',
+      },
+    },
+    {
+      v: { fr: 'Italie', en: 'Italy' },
+      l: { fr: 'marché couvert, service client compris', en: 'market covered, customer service included' },
+    },
+  ],
+  image: '/photos/ecom-copia-di-arte.webp',
+  imageCaption: {
+    fr: "Capture — la page d'accueil de copia-di-arte.com",
+    en: 'Screenshot — the copia-di-arte.com home page',
+  },
+};
+
+const artPrintsOnDemand: CaseStudy = {
+  client: 'Art-Prints-on-Demand.com',
+  secteur: {
+    fr: "Boutique en propre · reproductions d'art, marché américain",
+    en: 'Our own store · art reproductions, US market',
+  },
+  annee: { fr: `Depuis ${SHOPS_INTL_SINCE}`, en: `Since ${SHOPS_INTL_SINCE}` },
+  contexte: {
+    fr: `La version américaine du modèle, lancée elle aussi en ${SHOPS_INTL_SINCE} avec KunstKopie.de. Traduction, service client et marketing sont tenus depuis Antibes, pour les États-Unis comme pour les marchés italien et espagnol.`,
+    en: `The US version of the model, also launched in ${SHOPS_INTL_SINCE} with KunstKopie.de. Translation, customer service and marketing are all run from Antibes, for the United States as well as the Italian and Spanish markets.`,
+  },
+  bullets: [
+    {
+      fr: "Traduction et adaptation du catalogue en anglais, en italien et en espagnol",
+      en: 'Catalogue translated and adapted into English, Italian and Spanish',
+    },
+    {
+      fr: 'Service client assuré en propre, dans la langue du marché',
+      en: 'Customer service handled in-house, in the language of the market',
+    },
+    {
+      fr: "Marketing et acquisition menés aux États-Unis, en Italie et en Espagne",
+      en: 'Marketing and acquisition run in the United States, Italy and Spain',
+    },
+  ],
+  results: [
+    {
+      v: {
+        fr: `${YEARS_SINCE(SHOPS_INTL_SINCE)} ans`,
+        en: `${YEARS_SINCE(SHOPS_INTL_SINCE)} years`,
+      },
+      l: { fr: "d'exploitation continue", en: 'of continuous operation' },
+    },
+    {
+      v: '3',
+      l: {
+        fr: 'marchés menés : États-Unis, Italie, Espagne',
+        en: 'markets run: United States, Italy, Spain',
+      },
+    },
+    {
+      v: { fr: 'En propre', en: 'In-house' },
+      l: { fr: 'service client et marketing', en: 'customer service and marketing' },
+    },
+  ],
+  image: '/photos/ecom-art-prints-on-demand.webp',
+  imageCaption: {
+    fr: "Capture — la page d'accueil de art-prints-on-demand.com",
+    en: 'Screenshot — the art-prints-on-demand.com home page',
+  },
+};
+
+/**
  * forMa — ASNOV (asnov.fr), assistante virtuelle sur la Côte d'Azur.
  * Deux parcours en 2026 : « Maîtriser Claude — de l'organisation à l'autonomie »
  * (10 modules, 4 demi-journées, 14 h 30 nettes — chiffres repris du support de
@@ -481,6 +553,59 @@ const asnov: CaseStudy = {
     fr: 'Photo — séance de formation, sur le poste de travail de la stagiaire',
     en: 'Photo — training session, at the trainee’s own workstation',
   },
+};
+
+/**
+ * forMa — AXEO Services Antibes - Cagnes-sur-Mer, franchise de services à domicile
+ * et aux entreprises (groupe La Poste). Accompagnement en formation depuis trois ans
+ * (durée communiquée par le client), sur trois terrains : webmarketing, réseaux
+ * sociaux et langues. Pas de verbatim relu et validé à ce jour.
+ */
+const axeo: CaseStudy = {
+  client: 'AXEO Services Antibes - Cagnes-sur-Mer',
+  secteur: {
+    fr: 'Services à domicile et aux entreprises',
+    en: 'Home and business services',
+  },
+  annee: { fr: 'Depuis trois ans', en: 'For three years' },
+  contexte: {
+    fr: "Agence de services à domicile et aux entreprises, installée à Antibes puis à Cagnes-sur-Mer : ménage, entretien des locaux, espaces verts, petits travaux. Nous formons son équipe depuis trois ans, sur trois terrains qui se complètent.",
+    en: 'A home and business services agency, first in Antibes then in Cagnes-sur-Mer: cleaning, premises upkeep, green spaces, small works. We have been training its team for three years, across three complementary fields.',
+  },
+  bullets: [
+    {
+      fr: 'Webmarketing : acquisition en ligne et visibilité locale',
+      en: 'Digital marketing: online acquisition and local visibility',
+    },
+    {
+      fr: 'Réseaux sociaux : animation des pages et publication au quotidien',
+      en: 'Social media: running the pages and posting day to day',
+    },
+    {
+      fr: "Langues : montée en compétences face à une clientèle internationale",
+      en: 'Languages: upskilling for an international clientele',
+    },
+  ],
+  results: [
+    {
+      v: { fr: '3 ans', en: '3 years' },
+      l: { fr: "d'accompagnement continu", en: 'of continuous training' },
+    },
+    {
+      v: '3',
+      l: {
+        fr: 'domaines : webmarketing, réseaux sociaux, langues',
+        en: 'fields: digital marketing, social media, languages',
+      },
+    },
+    {
+      v: 'Qualiopi',
+      l: { fr: 'formations finançables OPCO', en: 'training eligible for OPCO funding' },
+    },
+  ],
+  image: '/logos/axeo-services.png',
+  imageMode: 'logo',
+  imageCaption: { fr: 'Logo AXEO Services', en: 'AXEO Services logo' },
 };
 
 /**
@@ -581,8 +706,8 @@ const scapeDesign: CaseStudy = {
 
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
 export const CASES: Record<PoleKey, CaseStudy[]> = {
-  ecom: [reproTableaux, slot('02'), slot('03')],
-  forma: [laforet, asnov, slot('03')],
+  ecom: [reproTableaux, copiaDiArte, artPrintsOnDemand],
+  forma: [laforet, asnov, axeo],
   domo: [datalinxDomo, terraBella, azChef],
   cowo: [datalinxCowo, cpyYachting, scapeDesign],
 };
