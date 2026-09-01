@@ -483,6 +483,7 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
               className={c.imageMode === 'logo' ? 'cr-case__imglogo' : ''}
               cap={L(c.imageCaption ?? pole.imageCaption)}
               src={c.image}
+              objectPosition={c.objectPosition}
             />
 
             <p className="cr-case__ctx">{L(c.contexte)}</p>
@@ -516,9 +517,7 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
                   {c.portrait ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img className="cr-quote__av" src={c.portrait} alt={c.nom ?? ''} loading="lazy" />
-                  ) : (
-                    <span className="cr-quote__av" />
-                  )}
+                  ) : null}
                   <span>
                     <span className="cr-quote__n">{c.nom}</span>
                     <span className="cr-quote__f">{c.fonction ? L(c.fonction) : null}</span>

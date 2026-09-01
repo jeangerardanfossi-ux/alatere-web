@@ -46,6 +46,8 @@ export type CaseStudy = {
   imageCaption?: Bi;
   /** `logo` = visuel affiché en entier sur fond blanc, au lieu du cadrage photo. */
   imageMode?: 'photo' | 'logo';
+  /** Cadrage de la photo, ex. « 50% 22% » pour remonter sur le sujet. */
+  objectPosition?: string;
   /** Étude de cas détaillée — le lien « Lire l'étude de cas » n'apparaît que si renseigné. */
   href?: string;
 };
@@ -69,8 +71,8 @@ export const REALISATIONS_READY = false;
  * Effectif affiché : 6 collaborateurs formés (chiffre communiqué par le client,
  * les conventions archivées ne nomment que deux stagiaires).
  * Les deux sessions se sont tenues en présentiel dans l'espace Alatere coWo,
- * à la même adresse que l'agence. Pas de verbatim : aucun témoignage n'a été
- * relu et validé par le client à ce jour.
+ * à la même adresse que l'agence — ce que le verbatim du gérant confirme
+ * (« locaux au centre d'Antibes… proche de nos lieux de travail »).
  */
 const laforet: CaseStudy = {
   client: 'Laforêt Immobilier — Antibes',
@@ -105,6 +107,13 @@ const laforet: CaseStudy = {
     { v: '6', l: { fr: 'collaborateurs formés', en: 'team members trained' } },
     { v: 'OPCO', l: { fr: 'financement en subrogation', en: 'funding paid directly' } },
   ],
+  // Verbatim du gérant, repris mot pour mot (orthographe d'origine conservée).
+  quote: {
+    fr: "Excellent formation Immobilier en Anglais. Lancement avec succès et bien sur découverte intensive du vocabulaire. Locaux au centre d'Antibes, cela permettant d'être proche de nos lieux de travail. Bonne pédagogie de l'équipe de formation.",
+    en: 'Excellent English-for-real-estate training. A successful start and, of course, an intensive dive into the vocabulary. The rooms are in central Antibes, which keeps us close to where we work. The training team teaches well.',
+  },
+  nom: 'Julien Janser',
+  fonction: { fr: 'Gérant', en: 'Managing director' },
   image: '/photos/forma-laforet-antibes.webp',
   imageCaption: {
     fr: "Photo — l'agence Laforêt, 9 boulevard Albert 1er à Antibes",
@@ -342,6 +351,9 @@ const terraBella: CaseStudy = {
  * assurons le service client.
  * Le modèle a ensuite donné copia-di-arte.com (2007), reprodart.com,
  * art-prints-on-demand.com et myartprints.cz (2011) — cf. `AProposPage`.
+ * Depuis que les cartes Copia-di-Arte et Art-Prints-on-Demand ont laissé la
+ * place à des clients (Rocher Mistral, VinAzur), c'est cette carte qui porte
+ * le réseau complet : les cinq boutiques sont nommées, pays par pays.
  * Ce n'est pas une étude de cas client : la carte le dit explicitement.
  */
 const REPRO_SINCE = 2003;
@@ -354,8 +366,8 @@ const reproTableaux: CaseStudy = {
   },
   annee: { fr: `Depuis ${REPRO_SINCE}`, en: `Since ${REPRO_SINCE}` },
   contexte: {
-    fr: `Notre propre boutique, lancée en ${REPRO_SINCE} avec l'atelier hambourgeois KunstKopie.de : ils fabriquent les toiles et tiennent le catalogue d'art, nous exploitons et référençons le site pour le marché francophone, service client compris.`,
-    en: `Our own store, launched in ${REPRO_SINCE} with the Hamburg workshop KunstKopie.de: they make the canvases and maintain the art catalogue, we run and rank the site for the French-speaking market, customer service included.`,
+    fr: `Notre propre boutique, lancée en ${REPRO_SINCE} avec l'atelier hambourgeois KunstKopie.de : ils fabriquent les toiles et tiennent le catalogue d'art, nous exploitons et référençons le site, service client compris. Le modèle a essaimé sur cinq pays, et les cinq boutiques sont tenues par la même équipe, depuis Antibes.`,
+    en: `Our own store, launched in ${REPRO_SINCE} with the Hamburg workshop KunstKopie.de: they make the canvases and maintain the art catalogue, we run and rank the store, customer service included. The model spread to five countries, and all five stores are run by the same team, from Antibes.`,
   },
   bullets: [
     {
@@ -367,8 +379,8 @@ const reproTableaux: CaseStudy = {
       en: 'SEO and SEA run in-house on a competitive European market',
     },
     {
-      fr: "Modèle décliné ensuite sur quatre autres boutiques d'Europe",
-      en: 'Model then rolled out to four more European stores',
+      fr: 'Cinq boutiques du réseau exploitées : repro-tableaux.com (FR), copia-di-arte.com (IT), reprodart.com (ES), art-prints-on-demand.com (US) et myartprints.cz (CZ)',
+      en: 'Five stores in the network run by us: repro-tableaux.com (FR), copia-di-arte.com (IT), reprodart.com (ES), art-prints-on-demand.com (US) and myartprints.cz (CZ)',
     },
   ],
   results: [
@@ -376,7 +388,10 @@ const reproTableaux: CaseStudy = {
       v: { fr: `${YEARS_SINCE(REPRO_SINCE)} ans`, en: `${YEARS_SINCE(REPRO_SINCE)} years` },
       l: { fr: "d'exploitation continue", en: 'of continuous operation' },
     },
-    { v: '5', l: { fr: 'boutiques nées du modèle', en: 'stores grown from the model' } },
+    {
+      v: '5',
+      l: { fr: 'boutiques exploitées : FR, IT, ES, US, CZ', en: 'stores run by us: FR, IT, ES, US, CZ' },
+    },
     {
       v: String(REPRO_SINCE),
       l: { fr: 'partenaire de KunstKopie.de depuis', en: 'partnered with KunstKopie.de since' },
@@ -392,115 +407,130 @@ const reproTableaux: CaseStudy = {
 };
 
 /**
- * ecoM — copia-di-arte.com et art-prints-on-demand.com, deux boutiques du groupe.
- * Nées en 2007 du modèle repro-tableaux, avec KunstKopie.de (cf. la frise de la page
- * « À propos »). Ce ne sont pas des études de cas clients : les cartes le disent.
- * Captures faites le 2026-08-31 sur les versions en ligne ; l'ancienne
- * /photos/ecom-copia.webp date de la charte précédente du site.
+ * ecoM — Rocher Mistral (rochermistral.com), parc d'attractions à La Barben (13).
+ * « Le parc qui célèbre la Provence », ouvert le 1er juillet 2021 dans le château
+ * millénaire de La Barben, à 20 min d'Aix-en-Provence, à l'initiative de Vianney
+ * Audemard d'Alançon. Spectacles vivants, sur le modèle d'un Puy du Fou provençal.
+ * Sources du portrait : le site du parc (meta description, og:image) et la fiche
+ * Wikipédia FR pour la date d'ouverture et le fondateur.
+ * Mission Alatere Web : le marketing en ligne du lancement, en Google Ads, avec
+ * un double objectif — les ventes de billets en ligne et la venue au parc.
+ * Aucun chiffre de campagne (budget, ROAS, conversions) n'est archivé côté
+ * agence : les « résultats » affichés restent des faits, pas des mesures.
+ * Visuel : l'image de partage du site du parc (le château vu du ciel), reprise
+ * en /photos/ecom-rocher-mistral.webp — ratio 2:1, cadrage centré par défaut.
  */
-const SHOPS_INTL_SINCE = 2007;
-
-const copiaDiArte: CaseStudy = {
-  client: 'Copia-di-Arte.com',
+const rocherMistral: CaseStudy = {
+  client: 'Rocher Mistral',
   secteur: {
-    fr: "Boutique en propre · reproductions d'art, marché italien",
-    en: 'Our own store · art reproductions, Italian market',
+    fr: "Parc d'attractions · spectacles vivants, château de La Barben",
+    en: 'Theme park · live shows, Château de La Barben',
   },
-  annee: { fr: `Depuis ${SHOPS_INTL_SINCE}`, en: `Since ${SHOPS_INTL_SINCE}` },
+  annee: '2021',
   contexte: {
-    fr: `La déclinaison italienne de notre modèle, ouverte en ${SHOPS_INTL_SINCE} avec KunstKopie.de. Boutique traduite et adaptée chez nous, service client assuré en propre et acquisition menée sur place — la même organisation que sur les autres versions du réseau.`,
-    en: `The Italian version of our model, opened in ${SHOPS_INTL_SINCE} with KunstKopie.de. The store is translated and adapted in-house, customer service is ours, and acquisition is run on the ground — the same setup as on the other stores in the network.`,
+    fr: "« Le parc qui célèbre la Provence », ouvert en juillet 2021 dans le château millénaire de La Barben, à 20 minutes d'Aix-en-Provence. Un parc qui ouvre part de zéro en acquisition : ni notoriété en ligne, ni historique de compte, et une première saison à remplir.",
+    en: '“The park that celebrates Provence”, opened in July 2021 in the thousand-year-old château of La Barben, 20 minutes from Aix-en-Provence. A park that opens starts from nothing in acquisition: no online awareness, no account history, and a first season to fill.',
   },
   bullets: [
     {
-      fr: "Traduction et adaptation du catalogue en italien, en anglais et en espagnol",
-      en: 'Catalogue translated and adapted into Italian, English and Spanish',
+      fr: 'Marketing en ligne du lancement du parc, mené en Google Ads',
+      en: 'Online marketing for the park launch, run on Google Ads',
     },
     {
-      fr: 'Service client assuré en propre, dans la langue du marché',
-      en: 'Customer service handled in-house, in the language of the market',
+      fr: 'Campagnes orientées ventes de billets sur la billetterie en ligne',
+      en: 'Campaigns driving ticket sales on the online box office',
     },
     {
-      fr: "Marketing et acquisition menés en Italie, aux États-Unis et en Espagne",
-      en: 'Marketing and acquisition run in Italy, the United States and Spain',
+      fr: 'Campagnes orientées venue au parc, sur sa zone de chalandise',
+      en: 'Campaigns driving actual visits, across the park’s catchment area',
     },
   ],
   results: [
     {
-      v: {
-        fr: `${YEARS_SINCE(SHOPS_INTL_SINCE)} ans`,
-        en: `${YEARS_SINCE(SHOPS_INTL_SINCE)} years`,
-      },
-      l: { fr: "d'exploitation continue", en: 'of continuous operation' },
+      v: 'Google Ads',
+      l: { fr: "levier d'acquisition du lancement", en: 'the acquisition channel at launch' },
     },
     {
-      v: '3',
-      l: {
-        fr: 'langues traduites : italien, anglais, espagnol',
-        en: 'languages translated: Italian, English, Spanish',
-      },
+      v: '2021',
+      l: { fr: "première saison du parc", en: 'the park’s first season' },
     },
     {
-      v: { fr: 'Italie', en: 'Italy' },
-      l: { fr: 'marché couvert, service client compris', en: 'market covered, customer service included' },
+      v: { fr: 'Double objectif', en: 'Two goals' },
+      l: { fr: 'ventes en ligne et venue sur place', en: 'online sales and on-site visits' },
     },
   ],
-  image: '/photos/ecom-copia-di-arte.webp',
+  image: '/photos/ecom-rocher-mistral.webp',
   imageCaption: {
-    fr: "Capture — la page d'accueil de copia-di-arte.com",
-    en: 'Screenshot — the copia-di-arte.com home page',
+    fr: 'Photo — le château de La Barben, écrin du parc Rocher Mistral',
+    en: 'Photo — Château de La Barben, home of the Rocher Mistral park',
   },
 };
 
-const artPrintsOnDemand: CaseStudy = {
-  client: 'Art-Prints-on-Demand.com',
+/**
+ * ecoM — VinAzur (vinazur.fr), négoce en ligne de vins de Provence.
+ * Vraie étude de cas client, contrairement aux deux cartes précédentes.
+ * Société fondée en 2012 par Damien Dubus à Saint-Laurent-du-Var : des vins de
+ * petits producteurs provençaux, le rosé en tête, vendus en direct au prix du
+ * domaine. Source du portrait de l'entreprise : « VinAzur - bringing the wines
+ * of Provence to the USA », shuttersandsunflowers.com.
+ * Mission Alatere Web : promotion en ligne de la boutique, rédaction et refonte
+ * des fiches produits, SEO du site et référencement du catalogue sur les places
+ * de marché (CDiscount).
+ * La société a été revendue en 2016 et n'existe plus : ni la carte ni le mur de
+ * logos ne portent de lien sortant, vinazur.fr ne répondant plus.
+ * Aucun chiffre de trafic ou de ventes n'est archivé côté agence : les trois
+ * « résultats » affichés sont des faits vérifiables, pas des mesures inventées.
+ * Visuel de la carte : la photo d'ambiance (`/photos/ecom-vinazur.webp`).
+ * Le logotype (`/logos/vinazur.png`) sert, lui, au mur de logos `CLIENT_LOGOS`.
+ */
+const vinazur: CaseStudy = {
+  client: 'Vinazur - vins de Provence',
   secteur: {
-    fr: "Boutique en propre · reproductions d'art, marché américain",
-    en: 'Our own store · art reproductions, US market',
+    fr: 'Vins de Provence · boutique en ligne et places de marché',
+    en: 'Provence wines · online store and marketplaces',
   },
-  annee: { fr: `Depuis ${SHOPS_INTL_SINCE}`, en: `Since ${SHOPS_INTL_SINCE}` },
+  annee: { fr: "Jusqu'en 2016", en: 'Until 2016' },
   contexte: {
-    fr: `La version américaine du modèle, lancée elle aussi en ${SHOPS_INTL_SINCE} avec KunstKopie.de. Traduction, service client et marketing sont tenus depuis Antibes, pour les États-Unis comme pour les marchés italien et espagnol.`,
-    en: `The US version of the model, also launched in ${SHOPS_INTL_SINCE} with KunstKopie.de. Translation, customer service and marketing are all run from Antibes, for the United States as well as the Italian and Spanish markets.`,
+    fr: "Négoce de vins de Provence installé à Saint-Laurent-du-Var, né en 2012 : des petits producteurs peu connus, du rosé pour l'essentiel, vendus en direct au prix du domaine. Le catalogue était bon, sa visibilité restait à construire - sur la boutique comme en dehors. La société a été revendue en 2016.",
+    en: 'A Provence wine merchant based in Saint-Laurent-du-Var, started in 2012: little-known small growers, mostly rosé, sold direct at cellar-door prices. The catalogue was good; its visibility was not - neither on the store nor beyond it. The company was sold in 2016.',
   },
   bullets: [
     {
-      fr: "Traduction et adaptation du catalogue en anglais, en italien et en espagnol",
-      en: 'Catalogue translated and adapted into English, Italian and Spanish',
+      fr: 'Promotion en ligne de la boutique : acquisition, contenus et campagnes',
+      en: 'Online promotion of the store: acquisition, content and campaigns',
     },
     {
-      fr: 'Service client assuré en propre, dans la langue du marché',
-      en: 'Customer service handled in-house, in the language of the market',
+      fr: 'Rédaction et refonte des fiches produits, domaine par domaine',
+      en: 'Product pages rewritten and redesigned, estate by estate',
     },
     {
-      fr: "Marketing et acquisition menés aux États-Unis, en Italie et en Espagne",
-      en: 'Marketing and acquisition run in the United States, Italy and Spain',
+      fr: 'SEO du site et référencement du catalogue sur les places de marché, dont CDiscount',
+      en: 'Site SEO and catalogue listed on marketplaces, CDiscount included',
     },
   ],
   results: [
     {
-      v: {
-        fr: `${YEARS_SINCE(SHOPS_INTL_SINCE)} ans`,
-        en: `${YEARS_SINCE(SHOPS_INTL_SINCE)} years`,
-      },
-      l: { fr: "d'exploitation continue", en: 'of continuous operation' },
+      v: { fr: 'Fiches produits', en: 'Product pages' },
+      l: { fr: 'réécrites et optimisées pour le référencement', en: 'rewritten and optimised for search' },
     },
     {
-      v: '3',
-      l: {
-        fr: 'marchés menés : États-Unis, Italie, Espagne',
-        en: 'markets run: United States, Italy, Spain',
-      },
+      // « Marketplace » en un seul mot déborde de sa colonne (137 px pour 102 px
+      // disponibles, et rien où couper) : la forme en deux mots passe à la ligne.
+      v: { fr: 'Places de marché', en: 'Online marketplaces' },
+      l: { fr: 'catalogue référencé hors du site', en: 'catalogue listed beyond the store' },
     },
     {
-      v: { fr: 'En propre', en: 'In-house' },
-      l: { fr: 'service client et marketing', en: 'customer service and marketing' },
+      v: '2016',
+      l: { fr: 'société revendue, mission close', en: 'company sold, engagement closed' },
     },
   ],
-  image: '/photos/ecom-art-prints-on-demand.webp',
+  // Photo carrée (554 x 554) dans un slot bien plus large que haut (327 x 130) :
+  // le cadrage est calé en bas de l'image, sur le logotype et sa baseline.
+  image: '/photos/ecom-vinazur.webp',
+  objectPosition: '50% 100%',
   imageCaption: {
-    fr: "Capture — la page d'accueil de art-prints-on-demand.com",
-    en: 'Screenshot — the art-prints-on-demand.com home page',
+    fr: 'Photo — VinAzur, « De la Vigne au Verre… »',
+    en: 'Photo — VinAzur, “De la Vigne au Verre…”',
   },
 };
 
@@ -510,7 +540,7 @@ const artPrintsOnDemand: CaseStudy = {
  * (10 modules, 4 demi-journées, 14 h 30 nettes — chiffres repris du support de
  * présentation BNI du 27/05/2026) et un parcours webmarketing / Google Ads,
  * dont la durée n'est pas documentée : aucun chiffre affiché pour celui-là.
- * La stagiaire n'est pas nommée sur la page.
+ * La stagiaire est nommée sur la page depuis qu'elle a transmis son verbatim.
  */
 const asnov: CaseStudy = {
   client: 'ASNOV.FR',
@@ -548,6 +578,13 @@ const asnov: CaseStudy = {
       l: { fr: 'modules, du paramétrage aux connecteurs', en: 'modules, from setup to connectors' },
     },
   ],
+  // Verbatim transmis par la stagiaire, repris mot pour mot.
+  quote: {
+    fr: "Formation sur Claude AI, un vrai plaisir ! À l'écoute et pédagogue, Jean-Gérard a su adapter ses explications à mon métier d'assistante virtuelle. Je repars avec des outils concrets et directement utilisables au quotidien.",
+    en: 'Training on Claude AI, a real pleasure! Attentive and a good teacher, Jean-Gérard tailored his explanations to my work as a virtual assistant. I come away with concrete tools I can use straight away, day to day.',
+  },
+  nom: 'Delfine Jama',
+  fonction: { fr: 'Assistante virtuelle, ASNOV', en: 'Virtual assistant, ASNOV' },
   image: '/photos/forma-asnov.webp',
   imageCaption: {
     fr: 'Photo — séance de formation, sur le poste de travail de la stagiaire',
@@ -725,7 +762,7 @@ const scapeDesign: CaseStudy = {
 
 /** Études de cas par pôle — trois par pôle dans la maquette retenue. */
 export const CASES: Record<PoleKey, CaseStudy[]> = {
-  ecom: [reproTableaux, copiaDiArte, artPrintsOnDemand],
+  ecom: [reproTableaux, rocherMistral, vinazur],
   forma: [laforet, asnov, axeo],
   domo: [datalinxDomo, terraBella, azChef],
   cowo: [datalinxCowo, cpyYachting, scapeDesign],
@@ -757,9 +794,11 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     src: '/logos/2i-architecture.png',
     href: 'https://2iarchitecture.com/',
   },
-  // Seul logo non lié du mur : aucun site officiel vérifiable à ce jour pour
-  // « K management - Property & Wealth ». À lier dès que l'URL est confirmée.
-  { name: 'K Management - Property & Wealth', src: '/logos/pwkm.png' },
+  {
+    name: 'Rocher Mistral',
+    src: '/logos/rocher-mistral.png',
+    href: 'https://www.rochermistral.com',
+  },
   {
     name: 'AXEO Services Antibes - Cagnes-sur-Mer',
     src: '/logos/axeo-services.png',
@@ -838,8 +877,9 @@ export const CLIENT_LOGOS: ClientLogo[] = [
     src: '/logos/az-chef.png',
     href: 'https://azchef-signature.eatbu.com/',
   },
-  // Boutique du groupe, pas un client : affichée au titre du savoir-faire ecoM.
-  { name: 'Repro-Tableaux.com', src: '/logos/repro-tableaux.png', href: 'https://www.repro-tableaux.com' },
+  // Client ecoM. Pas de `href` : la société a été revendue en 2016 et vinazur.fr
+  // ne répond plus — on ne lie que des URL vérifiées.
+  { name: 'Vinazur - vins de Provence', src: '/logos/vinazur.png' },
 ];
 
 /** Nombre minimal d'emplacements affichés : les logos manquants restent en pointillés. */
