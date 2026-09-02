@@ -765,7 +765,7 @@ export const CASES: Record<PoleKey, CaseStudy[]> = {
   ecom: [reproTableaux, rocherMistral, vinazur],
   forma: [laforet, asnov, axeo],
   domo: [datalinxDomo, terraBella, azChef],
-  cowo: [datalinxCowo, cpyYachting, scapeDesign],
+  cowo: [scapeDesign, cpyYachting, datalinxCowo],
 };
 
 /**
