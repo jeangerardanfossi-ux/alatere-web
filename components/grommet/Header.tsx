@@ -33,7 +33,7 @@ const NAV: NavItem[] = [
 const BADGE = '/alatere-web-badge.webp';
 
 /** `active` met en valeur le pôle courant (sur les sous-pages). */
-export default function Header({ active }: { active?: string }) {
+export default function Header({ active, frOnly }: { active?: string; frOnly?: boolean }) {
   const { lang } = useLang();
   const lp = (h: string) => localizePath(h, lang);
   const [drawer, setDrawer] = useState(false);
@@ -89,7 +89,7 @@ export default function Header({ active }: { active?: string }) {
           ))}
         </nav>
         <div className="g-actions">
-          <LangToggle />
+          <LangToggle frOnly={frOnly} />
           <Link href={ctaHref} className="g-btn g-btn--primary g-btn--sm">
             {cta}
           </Link>
@@ -128,7 +128,7 @@ export default function Header({ active }: { active?: string }) {
               {sub ? <span className="g-nav__sub">{sub}</span> : null}
             </Link>
           ))}
-          <LangToggle extra="g-drawer__lang" />
+          <LangToggle extra="g-drawer__lang" frOnly={frOnly} />
           <Link
             href={ctaHref}
             className="g-btn g-btn--primary g-drawer__cta"

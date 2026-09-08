@@ -38,6 +38,10 @@ const BILINGUAL = [
 /** Pages FR uniquement (todo, mentions/confidentialité noindex). */
 const FR_ONLY = [
   '/alatere-todo.html',
+  // Articles publiés en français uniquement (cf. frOnly dans lib/blog.ts).
+  '/blog/comparatif-domiciliation-antibes',
+  '/blog/financement-formation-independant-fifpl-agefice',
+  '/blog/creer-son-entreprise-antibes',
 ];
 
 const frUrl = (p: string) => `${BASE}${p}`;

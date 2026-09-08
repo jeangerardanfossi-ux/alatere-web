@@ -47,7 +47,9 @@ function BlogList() {
       </div>
 
       <div className="blog-list">
-        {posts.map((post) => {
+        {posts
+          .filter((post) => !(post.frOnly && lang === 'en'))
+          .map((post) => {
           const p = localizePost(post, lang);
           return (
             <Link key={p.slug} href={`/blog/${p.slug}`} className="blog-card">

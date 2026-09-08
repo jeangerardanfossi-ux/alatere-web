@@ -101,7 +101,7 @@ function Fr() {
             <strong>Offre Forward - 50 € HT / mois</strong> : numérisation et réexpédition incluses ;
           </li>
           <li>
-            <strong>Frais de dossier - 50 € HT</strong>, une seule fois, à l'ouverture du dossier.
+            <strong>Frais de dossier - 50 € HT</strong>, une seule fois, à l&rsquo;ouverture du dossier.
           </li>
         </ul>
         <p>

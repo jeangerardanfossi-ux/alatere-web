@@ -70,7 +70,16 @@ export function localizePath(href: string, lang: Lang): string {
 }
 
 /** Bascule FR/EN : navigue vers l'URL équivalente dans l'autre langue. */
-export function LangToggle({ extra = '' }: { extra?: string }) {
+export function LangToggle({
+  extra = '',
+  frOnly = false,
+  enFallback = '/en/blog',
+}: {
+  extra?: string;
+  /** Page publiée en français uniquement : l'onglet EN renvoie vers `enFallback`. */
+  frOnly?: boolean;
+  enFallback?: string;
+}) {
   const { lang } = useLang();
   const pathname = usePathname() || '/';
 
@@ -81,7 +90,7 @@ export function LangToggle({ extra = '' }: { extra?: string }) {
       : pathname.startsWith('/en/')
         ? FR_FROM_EN[pathname.slice(3)] ?? pathname.slice(3)
         : pathname;
-  const enHref = localizePath(frHref, 'en');
+  const enHref = frOnly ? enFallback : localizePath(frHref, 'en');
 
   const items: { l: Lang; href: string }[] = [
     { l: 'fr', href: frHref },

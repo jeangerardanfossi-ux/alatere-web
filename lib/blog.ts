@@ -21,6 +21,8 @@ export type Post = {
   updated: string; // ISO - dernière mise à jour
   readingMin: number;
   author?: { name: string; url: string; bio?: Bi }; // auteur nommé (E-E-A-T) - sinon Alatere Web
+  /** Article publié en français uniquement : masqué de l'index EN, absent des hreflang. */
+  frOnly?: boolean;
 };
 
 /** Article avec les champs de contenu résolus dans une langue (chaînes simples). */
@@ -36,6 +38,7 @@ export type LocalPost = {
   updated: string;
   readingMin: number;
   author?: { name: string; url: string; bio?: string };
+  frOnly?: boolean;
 };
 
 export const posts: Post[] = [
@@ -219,6 +222,105 @@ export const posts: Post[] = [
       },
     },
   },
+  {
+    slug: 'comparatif-domiciliation-antibes',
+    pole: 'domo',
+    frOnly: true,
+    title: {
+      fr: 'Domiciliation d’entreprise à Antibes : le comparatif des prestataires',
+      en: 'Business address in Antibes: provider comparison',
+    },
+    metaTitle: {
+      fr: 'Comparatif domiciliation d’entreprise à Antibes et alentours (2026)',
+      en: 'Business address providers in Antibes: 2026 comparison',
+    },
+    excerpt: {
+      fr: 'Quatorze prestataires comparés à Antibes, Sophia Antipolis, Vallauris et Villeneuve-Loubet : adresses, tarifs affichés, services et engagement. Y compris les cas où un autre que nous vous conviendra mieux.',
+      en: 'Fourteen providers compared in Antibes, Sophia Antipolis, Vallauris and Villeneuve-Loubet: addresses, published prices, services and commitment terms.',
+    },
+    keyword: {
+      fr: 'comparatif domiciliation Antibes',
+      en: 'business address comparison Antibes',
+    },
+    category: { fr: 'Domiciliation', en: 'Business address' },
+    date: '2026-09-22',
+    updated: '2026-09-22',
+    readingMin: 9,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, où il opère le service de domiciliation d'entreprise Alatere doMo, agréé par la préfecture, à deux pas du port Vauban.",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, where he operates the Alatere doMo business-address service, approved by the préfecture, a stone’s throw from Port Vauban.',
+      },
+    },
+  },
+  {
+    slug: 'financement-formation-independant-fifpl-agefice',
+    pole: 'forma',
+    frOnly: true,
+    title: {
+      fr: 'Travailleur indépendant : qui finance votre formation ?',
+      en: 'Self-employed: who funds your training?',
+    },
+    metaTitle: {
+      fr: 'FIFPL, AGEFICE, FAFCEA : financer sa formation en indépendant (2026)',
+      en: 'FIFPL, AGEFICE, FAFCEA: funding training as a freelancer (2026)',
+    },
+    excerpt: {
+      fr: 'Vous cotisez déjà pour votre formation. Reste à savoir quel fonds gère votre enveloppe et comment la mobiliser : FIFPL, AGEFICE, FAFCEA, FAF-PM, mode d’emploi et erreurs à éviter.',
+      en: 'You already contribute to your own training budget. Which fund holds it and how to claim it: FIFPL, AGEFICE, FAFCEA, FAF-PM explained.',
+    },
+    keyword: {
+      fr: 'financement formation travailleur indépendant',
+      en: 'training funding for the self-employed',
+    },
+    category: { fr: 'Formation', en: 'Training' },
+    date: '2026-10-13',
+    updated: '2026-10-13',
+    readingMin: 8,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, organisme de formation certifié Qualiopi, et accompagne les indépendants de la Côte d'Azur dans le montage de leurs dossiers de financement.",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, a Qualiopi-certified training provider, and helps self-employed professionals on the French Riviera put together their funding applications.',
+      },
+    },
+  },
+  {
+    slug: 'creer-son-entreprise-antibes',
+    pole: 'domo',
+    frOnly: true,
+    title: {
+      fr: 'Créer son entreprise à Antibes : les 6 étapes et le choix du siège social',
+      en: 'Starting a business in Antibes: the 6 steps and choosing your registered office',
+    },
+    metaTitle: {
+      fr: 'Créer son entreprise à Antibes : les 6 étapes (guide 2026)',
+      en: 'Starting a business in Antibes: the 6 steps (2026 guide)',
+    },
+    excerpt: {
+      fr: 'Forme juridique, siège social, statuts, capital, annonce légale, guichet unique : le parcours réel de la création d’entreprise à Antibes, et pourquoi l’adresse se décide en premier.',
+      en: 'Legal form, registered office, articles, capital, legal notice, one-stop shop: the real path to starting a business in Antibes.',
+    },
+    keyword: {
+      fr: 'création entreprise Antibes',
+      en: 'starting a business in Antibes',
+    },
+    category: { fr: 'Création d’entreprise', en: 'Starting a business' },
+    date: '2026-11-03',
+    updated: '2026-11-03',
+    readingMin: 9,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, où il opère le service de domiciliation d'entreprise Alatere doMo, agréé par la préfecture, à deux pas du port Vauban.",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, where he operates the Alatere doMo business-address service, approved by the préfecture, a stone’s throw from Port Vauban.',
+      },
+    },
+  },
 ];
 
 /** Résout les champs bilingues d'un article dans une langue donnée. */
@@ -229,6 +331,7 @@ export function localizePost(post: Post, lang: Lang): LocalPost {
     date: post.date,
     updated: post.updated,
     readingMin: post.readingMin,
+    frOnly: post.frOnly,
     title: post.title[lang],
     metaTitle: post.metaTitle[lang],
     excerpt: post.excerpt[lang],
