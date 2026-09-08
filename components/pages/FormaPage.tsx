@@ -38,8 +38,8 @@ const TX: Dict = {
   bc_root: { fr: 'Alatere Web', en: 'Alatere Web' },
 
   hero_tag: {
-    fr: 'Organisme de formation professionnelle',
-    en: 'Professional training provider',
+    fr: 'Organisme de formation Qualiopi à Antibes',
+    en: 'Qualiopi-certified training provider in Antibes',
   },
   qualiopi_alt: {
     fr: 'Qualiopi - Processus certifié - République Française',
@@ -334,10 +334,10 @@ function Body() {
             <div className="f-breadcrumb">
               <Link href="/">{t('bc_root')}</Link> <span>›</span> <span>Alatere forMa</span>
             </div>
-            <span className="g-label">
+            <h1 className="g-label" style={{ margin: 0 }}>
               <span className="g-tag g-tag--gold">{t('hero_tag')}</span>
-            </span>
-            <h1 className="g-h1" style={{ marginTop: 14 }}>
+            </h1>
+            <div className="g-h1" style={{ marginTop: 14 }}>
               Alatere{' '}
               <span className="g-subword">
                 <span className="lg-gold">f</span>
@@ -346,7 +346,7 @@ function Body() {
                 <span className="lg-teal">M</span>
                 <span className="lg-green">a</span>
               </span>
-            </h1>
+            </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="f-hero__cta">
               <a

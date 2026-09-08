@@ -35,8 +35,8 @@ const TX: Dict = {
   bc_root: { fr: 'Alatere Web', en: 'Alatere Web' },
   bc_1: { fr: 'Savoir-faire', en: 'Expertise' },
   hero_tag: {
-    fr: 'E-commerce · sites marchands opérés en propre',
-    en: 'E-commerce · online stores run in-house',
+    fr: 'Agence web, e-commerce & SEO à Antibes',
+    en: 'Web, e-commerce & SEO agency in Antibes',
   },
   hero_lead: {
     fr: "Depuis plus de vingt ans, nous concevons, opérons et référençons nos propres boutiques d'art en ligne. Ce n'est pas une promesse : c'est notre meilleure démonstration de savoir-faire en SEO, SEA, acquisition et opérations e-commerce.",
@@ -208,10 +208,10 @@ function Body() {
               <Link href="/">{t('bc_root')}</Link> <span>›</span> <span>{t('bc_1')}</span>{' '}
               <span>›</span> <span>Alatere ecoM</span>
             </div>
-            <span className="g-label">
+            <h1 className="g-label" style={{ margin: 0 }}>
               <span className="g-tag g-tag--brand">{t('hero_tag')}</span>
-            </span>
-            <h1 className="g-h1" style={{ marginTop: 14 }}>
+            </h1>
+            <div className="g-h1" style={{ marginTop: 14 }}>
               Alatere{' '}
               <span className="g-subword">
                 <span className="lg-navy">e</span>
@@ -219,7 +219,7 @@ function Body() {
                 <span className="lg-gold">o</span>
                 <span className="lg-clay">M</span>
               </span>
-            </h1>
+            </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="ap-hero__cta">
               <a

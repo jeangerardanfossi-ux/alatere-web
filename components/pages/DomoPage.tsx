@@ -370,10 +370,10 @@ function Body() {
               <Link href="/">{t('bc_root')}</Link> <span>›</span> <span>{t('bc_1')}</span>{' '}
               <span>›</span> <span>Alatere doMo</span>
             </div>
-            <span className="g-label">
+            <h1 className="g-label" style={{ margin: 0 }}>
               <span className="g-tag g-tag--green">{t('hero_tag')}</span>
-            </span>
-            <h1 className="g-h1 g-titlelogo" style={{ marginTop: 14 }}>
+            </h1>
+            <div className="g-h1 g-titlelogo" style={{ marginTop: 14 }}>
               Alatere{' '}
               <span className="g-subword">
                 <span className="lg-teal">d</span>
@@ -383,7 +383,7 @@ function Body() {
               </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/domo-cowo-badge.webp" alt="Alatere doMo · coWo" className="g-titlebadge" width={400} height={400} decoding="async" />
-            </h1>
+            </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="d-hero__cta">
               <a href="#formules" className="g-btn d-btn-green g-btn--lg">
