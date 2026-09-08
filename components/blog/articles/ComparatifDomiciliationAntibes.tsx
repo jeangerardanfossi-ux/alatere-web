@@ -204,6 +204,57 @@ const ROWS_EN: Row[] = [
   },
 ];
 
+/**
+ * Carte des zones comparées (public/blog/carte-domiciliation-antibes*.svg).
+ * ⚠️ Les compteurs et la légende de la carte reprennent le tableau ci-dessous :
+ * toute modification de ROWS_FR doit être répercutée dans les deux SVG.
+ */
+function MapFigure({ lang }: { lang: 'fr' | 'en' }) {
+  const fr = lang === 'fr';
+  const src = fr ? '/blog/carte-domiciliation-antibes.svg' : '/blog/carte-domiciliation-antibes-en.svg';
+  return (
+    <figure className="g-figure">
+      <div className="g-figure__frame">
+        {/* SVG statique servi depuis public/ : next/image n'apporte rien (cf. « unoptimized » pour les SVG). */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          width={1300}
+          height={900}
+          loading="lazy"
+          decoding="async"
+          alt={
+            fr
+              ? 'Carte d’Antibes, Vallauris, Biot, Valbonne, Villeneuve-Loubet et Cagnes-sur-Mer situant les quinze prestataires de domiciliation comparés, répartis en cinq zones.'
+              : 'Map of Antibes, Vallauris, Biot, Valbonne, Villeneuve-Loubet and Cagnes-sur-Mer showing the fifteen business-address providers compared, grouped into five areas.'
+          }
+        />
+      </div>
+      <figcaption>
+        {fr ? (
+          <>
+            Les quinze prestataires comparés, répartis en cinq zones autour d’Antibes. Alatere doMo,
+            notre propre service, est au 9 boulevard Albert 1er. Relevé du 8 septembre 2026 - fond
+            de carte : contours communaux IGN / Etalab.{' '}
+            <a href={src} target="_blank" rel="noopener noreferrer" className="g-inline">
+              Ouvrir la carte en grand
+            </a>
+          </>
+        ) : (
+          <>
+            The fifteen providers compared, grouped into five areas around Antibes. Alatere doMo,
+            our own service, is at 9 boulevard Albert 1er. Surveyed 8 September 2026 - base map:
+            French commune boundaries, IGN / Etalab.{' '}
+            <a href={src} target="_blank" rel="noopener noreferrer" className="g-inline">
+              Open the full-size map
+            </a>
+          </>
+        )}
+      </figcaption>
+    </figure>
+  );
+}
+
 /** Tableau comparatif - défilement horizontal sur mobile. */
 function Table({ rows, headers }: { rows: Row[]; headers: [string, string, string, string] }) {
   return (
@@ -322,6 +373,7 @@ function Fr() {
 
       <section>
         <h2>Le comparatif, prestataire par prestataire</h2>
+        <MapFigure lang="fr" />
         <p>
           Tarifs relevés le 8 septembre 2026 auprès des sources publiques de chaque prestataire.
           Lorsque le prix n&rsquo;est pas affiché publiquement, nous l&rsquo;indiquons comme non
@@ -692,6 +744,7 @@ function En() {
 
       <section>
         <h2>The comparison, provider by provider</h2>
+        <MapFigure lang="en" />
         <p>
           Prices recorded on 8 September 2026 from each provider&rsquo;s public sources. Where a
           price is not published, we say so rather than estimate it. Always check with the provider

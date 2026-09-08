@@ -148,6 +148,25 @@
 .g-prose ol li { font-size: 16px; line-height: 1.6; color: var(--dark-2); margin-bottom: 6px; }
 @media (max-width: 640px) { .blog-list { padding: 8px 20px 56px; } .blog-card { padding: 20px; } }
 
+/* Figure illustrée dans la prose (carte du comparatif).
+   Le cadre déborde de la colonne de texte pour que la légende de la carte reste lisible. */
+.g-prose .g-figure { margin: 4px 0 22px; }
+.g-prose .g-figure__frame {
+  --fig-w: min(1180px, calc(100vw - 48px));
+  width: var(--fig-w);
+  margin-left: calc(50% - var(--fig-w) / 2);
+  border: 1px solid var(--border);
+  border-radius: var(--round-s);
+  overflow: hidden;
+  box-shadow: var(--elev-xs);
+  background: #0F2A52;
+}
+.g-prose .g-figure__frame img { display: block; width: 100%; height: auto; }
+.g-prose .g-figure figcaption {
+  font-size: 13.5px; line-height: 1.55; color: var(--dark-3); margin-top: 10px;
+}
+@media (max-width: 640px) { .g-prose .g-figure__frame { --fig-w: min(1180px, calc(100vw - 40px)); } }
+
 /* Tableaux dans la prose (articles comparatifs) */
 .g-prose table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
 .g-prose th, .g-prose td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
