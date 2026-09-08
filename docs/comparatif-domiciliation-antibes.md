@@ -135,7 +135,6 @@ Oui. C’est un transfert de siège social : décision de l’associé unique ou
 
 - [Domicilier son entreprise à Antibes : les étapes](/blog/domicilier-entreprise-antibes)
 - [Domiciliation ou bureau : comment choisir](/blog/domiciliation-ou-bureau-antibes)
-- [Créer son entreprise à Antibes : les 6 étapes](/blog/creer-son-entreprise-antibes)
 - [Notre service de domiciliation au 9 bd Albert 1er](/alatere-domo)
 
 ---

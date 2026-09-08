@@ -736,11 +736,8 @@ function Fr() {
               Domiciliation ou bureau : comment choisir
             </Link>
           </li>
-          <li>
-            <Link href="/blog/creer-son-entreprise-antibes" className="g-inline">
-              Créer son entreprise à Antibes : les 6 étapes
-            </Link>
-          </li>
+          {/* À rétablir le 3 novembre 2026, date de diffusion de l'article :
+              <Link href="/blog/creer-son-entreprise-antibes">Créer son entreprise à Antibes : les 6 étapes</Link> */}
           <li>
             <Link href="/alatere-domo" className="g-inline">
               Notre service de domiciliation au 9 bd Albert 1er

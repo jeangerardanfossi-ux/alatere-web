@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import ArticleLayout from '@/components/blog/ArticleLayout';
 import Body from '@/components/blog/articles/CreerSonEntrepriseAntibes';
 import JsonLd from '@/components/JsonLd';
 import { blogPostingLd, breadcrumbLd } from '@/lib/jsonld';
-import { postBySlug, localizePost } from '@/lib/blog';
+import { postBySlug, localizePost, isPublished } from '@/lib/blog';
 import '../../grommet-home.css';
 import '../../grommet-pages.css';
 
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  // Article programmé : hors ligne (404 + noindex) jusqu'à sa date de diffusion.
+  if (!isPublished(post)) notFound();
+
   return (
     <>
       <JsonLd

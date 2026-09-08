@@ -9,7 +9,7 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { BrandName } from '@/components/grommet/BrandName';
 import type { PoleBrand } from '@/components/grommet/BrandName';
-import { posts, formatDate, localizePost } from '@/lib/blog';
+import { publishedPosts, formatDate, localizePost } from '@/lib/blog';
 
 const TITLES = {
   fr: 'Ressources & guides - Alatere Web',
@@ -36,10 +36,8 @@ function BlogList() {
   const [pole, setPole] = useState<PoleBrand | 'all'>('all');
   const t = (fr: string, en: string) => (lang === 'en' ? en : fr);
 
-  // Articles visibles dans la langue courante, du plus récent au plus ancien.
-  const visible = posts
-    .filter((post) => !(post.frOnly && lang === 'en'))
-    .sort((a, b) => b.date.localeCompare(a.date));
+  // Articles en ligne dans la langue courante, du plus récent au plus ancien.
+  const visible = publishedPosts(lang);
 
   // Un onglet n'est proposé que s'il reste au moins un article dans cette langue.
   const available = FILTERS.filter((f) => visible.some((post) => post.pole === f));

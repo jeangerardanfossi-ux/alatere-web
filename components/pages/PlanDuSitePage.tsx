@@ -4,7 +4,7 @@
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, useLang, type Dict } from '@/components/grommet/lang';
-import { posts, localizePost } from '@/lib/blog';
+import { publishedPosts, localizePost } from '@/lib/blog';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 
@@ -70,11 +70,8 @@ function Body() {
   const { lang } = useLang();
   const ext = lang === 'fr' ? 'nouvel onglet' : 'new tab';
 
-  // Articles du blog visibles dans la langue courante, du plus récent au plus ancien.
-  const articles = posts
-    .filter((post) => !(post.frOnly && lang === 'en'))
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .map((post) => localizePost(post, lang));
+  // Articles du blog en ligne dans la langue courante, du plus récent au plus ancien.
+  const articles = publishedPosts(lang).map((post) => localizePost(post, lang));
 
   return (
     <main>

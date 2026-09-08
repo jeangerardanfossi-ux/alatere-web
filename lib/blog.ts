@@ -344,6 +344,25 @@ export function localizePost(post: Post, lang: Lang): LocalPost {
 
 export const postBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 
+/**
+ * `date` fait office de date de diffusion : un article daté du futur est écrit et
+ * committé, mais reste hors ligne jusqu'à cette date (index, plan du site, sitemap,
+ * et 404 + noindex sur sa propre route).
+ *
+ * ⚠️ La comparaison a lieu au build, le site étant entièrement statique : un article
+ * programmé n'apparaît qu'au premier déploiement postérieur à sa date.
+ */
+export function isPublished(post: Post, now = new Date()): boolean {
+  return post.date <= now.toISOString().slice(0, 10);
+}
+
+/** Articles en ligne, du plus récent au plus ancien, filtrés selon la langue. */
+export function publishedPosts(lang: Lang, now = new Date()): Post[] {
+  return posts
+    .filter((p) => isPublished(p, now) && !(p.frOnly && lang === 'en'))
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
 const MONTHS_FR = [
   'janvier', 'février', 'mars', 'avril', 'mai', 'juin',
   'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre',
