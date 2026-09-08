@@ -205,6 +205,91 @@ const ROWS_EN: Row[] = [
 ];
 
 /**
+ * Sources publiques consultées pour le relevé du 8 septembre 2026.
+ * `url: null` = aucune source publique atteignable à cette date : on le dit,
+ * plutôt que de publier un lien mort ou une source de seconde main.
+ */
+const SOURCES: { name: string; url: string | null; noteFr?: string; noteEn?: string }[] = [
+  { name: 'Riviera Secrétariat', url: 'https://rivierasecretariat.fr/domiciliation/' },
+  { name: 'Centre d’Affaires Antibes', url: 'https://centre-affaires-antibes.com/' },
+  {
+    name: 'Centre d’Affaires Wilson',
+    url: 'https://workin.space/fr/france/antibes/centre-d-affaires-wilson',
+    noteFr: 'fiche Workin.space',
+    noteEn: 'Workin.space listing',
+  },
+  { name: 'SelfBuro', url: 'https://www.selfburo.fr/' },
+  {
+    name: 'Na&Co',
+    url: 'https://domiciliation-antibes.fr/',
+    noteFr: 'Fontonne et Sophia',
+    noteEn: 'Fontonne and Sophia sites',
+  },
+  { name: 'Mail Boxes Etc. Antibes', url: 'https://www.domiciliationantibes.fr/nos-tarifs' },
+  { name: 'Baya Axess', url: 'https://www.baya-axess.com/' },
+  { name: 'Pearl Partner', url: 'https://www.pearlpartner.com/' },
+  { name: 'Starter Business Center', url: 'https://starter-business.fr/' },
+  {
+    name: 'Dom Box Services',
+    url: null,
+    noteFr: 'domboxservices.com, injoignable au 8 septembre 2026 ; tarifs relevés sur la version indexée du site',
+    noteEn: 'domboxservices.com, unreachable on 8 September 2026; prices taken from the indexed version of the site',
+  },
+  {
+    name: 'Centre d’Affaires du Loup',
+    url: 'https://www.centre-affaires-du-loup.fr/domiciliation.php',
+  },
+  {
+    name: 'Acceptis',
+    url: null,
+    noteFr: 'aucune source publique trouvée à cette date',
+    noteEn: 'no public source found at that date',
+  },
+  { name: 'Azur Secrétariat Services', url: 'https://azur-secretariat-services.fr/' },
+];
+
+/** Liste des sources du relevé, en fin de section « Méthodologie ». */
+function Sources({ lang }: { lang: 'fr' | 'en' }) {
+  const fr = lang === 'fr';
+  return (
+    <>
+      <h3>{fr ? 'Sources du relevé' : 'Sources of the survey'}</h3>
+      <ul className="g-sources">
+        <li>
+          Alatere doMo -{' '}
+          <Link href="/alatere-domo" className="g-inline">
+            {fr ? 'notre page tarifs' : 'our own pricing page'}
+          </Link>
+        </li>
+        {SOURCES.map((src) => {
+          const note = fr ? src.noteFr : src.noteEn;
+          return (
+            <li key={src.name}>
+              {src.name} -{' '}
+              {src.url ? (
+                <>
+                  <a
+                    href={src.url}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="g-inline"
+                  >
+                    {src.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                  </a>
+                  {note ? ` (${note})` : null}
+                </>
+              ) : (
+                <em>{note}</em>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+}
+
+/**
  * Carte des zones comparées (public/blog/carte-domiciliation-antibes*.svg).
  * ⚠️ Les compteurs et la légende de la carte reprennent le tableau ci-dessous :
  * toute modification de ROWS_FR doit être répercutée dans les deux SVG.
@@ -589,6 +674,7 @@ function Fr() {
           une information inexacte concernant votre établissement,{' '}
           <Link href="/contact" className="g-inline">écrivez-nous</Link> et nous la corrigerons.
         </p>
+        <Sources lang="fr" />
       </section>
 
       <section>
@@ -948,6 +1034,7 @@ function En() {
           be worthless to you. If you spot inaccurate information about your own business,{' '}
           <Link href="/contact" className="g-inline">write to us</Link> and we will correct it.
         </p>
+        <Sources lang="en" />
       </section>
 
       <section>

@@ -167,6 +167,11 @@
 }
 @media (max-width: 640px) { .g-prose .g-figure__frame { --fig-w: min(1180px, calc(100vw - 40px)); } }
 
+/* Liste des sources en fin d'article : plus dense et plus discrète que la prose */
+.g-prose ul.g-sources { margin: 4px 0 8px; }
+.g-prose ul.g-sources li { font-size: 14.5px; line-height: 1.5; color: var(--dark-3); margin-bottom: 4px; }
+.g-prose ul.g-sources em { font-style: normal; color: var(--dark-3); opacity: 0.85; }
+
 /* Tableaux dans la prose (articles comparatifs) */
 .g-prose table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
 .g-prose th, .g-prose td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
