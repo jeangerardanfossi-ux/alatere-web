@@ -23,6 +23,18 @@ export default function ComparatifDomiciliationAntibes() {
         meilleur choix que le nôtre.
       </p>
 
+      <p>
+        <strong>L&rsquo;essentiel.</strong> Quatorze prestataires proposent une domiciliation
+        d&rsquo;entreprise à Antibes et dans un rayon d&rsquo;une quinzaine de kilomètres. Parmi
+        ceux qui affichent leur grille, une adresse de siège social se situe entre 27,50 et
+        42 &euro; HT par mois selon la formule et le statut ; les offres de simple boîte aux
+        lettres descendent à 25 &euro;. Plusieurs centres d&rsquo;affaires ne publient pas leurs
+        prix. Le critère qui départage n&rsquo;est presque jamais le montant mensuel,
+        mais la localisation - centre-ville, axe routier ou technopole - et la présence ou non de
+        services sur place. Tous doivent être agréés par la préfecture pour délivrer une
+        attestation acceptée par le greffe.
+      </p>
+
       <section>
         <h2>Les six critères qui comptent vraiment</h2>
         <p>
@@ -101,7 +113,13 @@ export default function ComparatifDomiciliationAntibes() {
               <tr>
                 <td><strong>Alatere doMo</strong></td>
                 <td>9 bd Albert 1er, Antibes (immeuble La Caravelle)</td>
-                <td>à partir de 25 &euro; HT / mois</td>
+                <td>
+                  30 &euro; HT / mois (siège social)
+                  <br />
+                  25 &euro; HT (boîte aux lettres seule)
+                  <br />
+                  50 &euro; HT (scan et réexpédition inclus)
+                </td>
                 <td>Hyper-centre, sans engagement, frais de dossier de 50 &euro;, coworking et salle de réunion sur place, équipe multilingue</td>
               </tr>
               <tr>
@@ -198,9 +216,10 @@ export default function ComparatifDomiciliationAntibes() {
         <p>
           <strong>Alatere doMo</strong> occupe le 9 boulevard Albert 1er, dans l&rsquo;immeuble Art
           nouveau La Caravelle, à cent mètres de la place de Gaulle et à un quart d&rsquo;heure à
-          pied de la gare. Trois formules sans engagement, des frais de dossier annoncés à 50
-          &euro;, la réception et le stockage du courrier, le scan quotidien et la réexpédition en
-          option, un espace de coworking et une salle de réunion accessibles sur place.
+          pied de la gare. Trois formules sans engagement : 25 &euro; HT pour une boîte aux
+          lettres seule, 30 &euro; HT pour une adresse de siège social avec réception du courrier,
+          50 &euro; HT avec numérisation et réexpédition incluses. Frais de dossier de 50 &euro; en
+          une seule fois. Espace de coworking et salle de réunion accessibles sur place.
         </p>
         <p>
           <strong>Riviera Secrétariat</strong>, au 46 boulevard du Président Wilson, joue une autre
@@ -363,6 +382,51 @@ export default function ComparatifDomiciliationAntibes() {
           un comparatif qui conclurait invariablement en notre faveur n&rsquo;aurait aucune valeur
           pour vous. Si vous constatez une information inexacte concernant votre établissement,{' '}
           <Link href="/contact" className="g-inline">écrivez-nous</Link> et nous la corrigerons.
+        </p>
+      </section>
+
+      <section>
+        <h2>Questions fréquentes</h2>
+
+        <h3>Quel est le prix d&rsquo;une domiciliation d&rsquo;entreprise à Antibes ?</h3>
+        <p>
+          Parmi les prestataires dont le tarif est affiché publiquement, une adresse de siège
+          social se situe entre 27,50 et 42 &euro; HT par mois selon la formule et le statut
+          juridique ; les offres de simple boîte aux lettres, qui ne permettent pas d&rsquo;y
+          domicilier un siège, descendent à 25 &euro;. Plusieurs centres d&rsquo;affaires ne publient pas leur grille. À ce montant
+          s&rsquo;ajoutent parfois des frais de dossier et des options facturées séparément :
+          numérisation, réexpédition, gestion des recommandés.
+        </p>
+
+        <h3>Une société de domiciliation doit-elle être agréée par la préfecture ?</h3>
+        <p>
+          Oui. La domiciliation d&rsquo;entreprise est une activité réglementée : seule une société
+          agréée peut délivrer l&rsquo;attestation de domiciliation exigée par le greffe du tribunal
+          de commerce. Demandez le numéro d&rsquo;agrément avant de signer - une adresse fournie par
+          un prestataire non agréé sera refusée au greffe.
+        </p>
+
+        <h3>Quelle est la durée minimale d&rsquo;un contrat de domiciliation ?</h3>
+        <p>
+          Trois mois, renouvelable par tacite reconduction. Certains prestataires imposent un
+          engagement plus long ou une facturation annuelle : c&rsquo;est un point à vérifier avant
+          de signer, en même temps que les conditions de sortie si vous transférez votre siège.
+        </p>
+
+        <h3>Vaut-il mieux domicilier à Antibes centre ou à Sophia Antipolis ?</h3>
+        <p>
+          Le droit ne fait aucune différence, le signal commercial oui. Une adresse en centre-ville
+          d&rsquo;Antibes parle à une clientèle locale et facilite le passage pour récupérer le
+          courrier. Une adresse à Sophia Antipolis associe votre entreprise à l&rsquo;écosystème
+          technologique, ce qui compte pour une activité tech ou une levée de fonds.
+        </p>
+
+        <h3>Peut-on changer de société de domiciliation en cours de route ?</h3>
+        <p>
+          Oui. C&rsquo;est un transfert de siège social : décision de l&rsquo;associé unique ou de
+          l&rsquo;assemblée, publication d&rsquo;une annonce légale, dépôt au guichet unique de
+          l&rsquo;INPI. Comptez quelques jours et un coût de formalité. Vérifiez au préalable les
+          conditions de résiliation de votre contrat en cours.
         </p>
       </section>
 

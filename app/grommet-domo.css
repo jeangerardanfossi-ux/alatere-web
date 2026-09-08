@@ -130,3 +130,6 @@
   .d-hero, .d-section, .d-section--alt > .d-inner, .d-docs-band > .d-inner, .d-cta__in, .d-stripe__in { padding-left: 22px; padding-right: 22px; }
   .d-benefits, .d-steps { grid-template-columns: 1fr; }
 }
+
+/* Lien vers le comparatif, sous la FAQ doMo */
+.d-faq__more { margin: 18px 0 0; font-size: 15px; text-align: center; }

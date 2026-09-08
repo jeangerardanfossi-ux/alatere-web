@@ -109,7 +109,8 @@ function Fr() {
           <Link className="g-inline" href="/alatere-domo">
             Alatere doMo - domiciliation à Antibes
           </Link>
-          .
+          , et pour situer ces tarifs dans le marché local, notre{' '}
+          <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparatif des prestataires de domiciliation à Antibes</Link>.
         </p>
       </section>
 

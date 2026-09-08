@@ -231,11 +231,11 @@ export const posts: Post[] = [
       en: 'Business address in Antibes: provider comparison',
     },
     metaTitle: {
-      fr: 'Comparatif domiciliation d’entreprise à Antibes et alentours (2026)',
+      fr: 'Comparatif domiciliation à Antibes : 14 prestataires (2026)',
       en: 'Business address providers in Antibes: 2026 comparison',
     },
     excerpt: {
-      fr: 'Quatorze prestataires comparés à Antibes, Sophia Antipolis, Vallauris et Villeneuve-Loubet : adresses, tarifs affichés, services et engagement. Y compris les cas où un autre que nous vous conviendra mieux.',
+      fr: 'Adresses, tarifs affichés, services et engagement : 14 prestataires de domiciliation comparés à Antibes, Sophia Antipolis et alentours. Relevé 2026.',
       en: 'Fourteen providers compared in Antibes, Sophia Antipolis, Vallauris and Villeneuve-Loubet: addresses, published prices, services and commitment terms.',
     },
     keyword: {

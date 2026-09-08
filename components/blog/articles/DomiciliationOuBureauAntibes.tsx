@@ -116,6 +116,11 @@ function Fr() {
           , coworking et secrétariat externalisé sous un seul interlocuteur.
         </p>
         <p>
+          Si vous penchez pour la domiciliation, notre{' '}
+          <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparatif des prestataires de domiciliation à Antibes</Link> passe en revue quatorze prestataires du secteur, adresses et tarifs
+          affichés à l&rsquo;appui.
+        </p>
+        <p>
           Une question sur votre cas ?{' '}
           <Link className="g-inline" href="/contact?pole=domo">
             Contactez-nous

@@ -222,6 +222,10 @@ const TX: Dict = {
 
   // FAQ
   faq_label: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
+  faq_compare: {
+    fr: 'Comparer les 14 services de domiciliation d’Antibes et des environs →',
+    en: 'Compare the 14 business-address providers in and around Antibes →',
+  },
   faq_title: { fr: 'Tout ce que vous devez savoir', en: 'Everything you need to know' },
   faq1_q: {
     fr: "Combien coûte une domiciliation d'entreprise à Antibes ?",
@@ -696,6 +700,11 @@ function Body() {
                 <div className="d-ans">{t('faq5_a')}</div>
               </details>
             </div>
+            <p className="d-faq__more">
+              <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">
+                {t('faq_compare')}
+              </Link>
+            </p>
           </div>
         </section>
 

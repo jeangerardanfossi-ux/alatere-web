@@ -677,3 +677,82 @@ export const cowoJourneeFaqLd = biFaqLd(
     },
   ],
 );
+
+/* ------------------------------------------------------------------------- *
+ * Article « Comparatif domiciliation Antibes » (FR uniquement)
+ * ------------------------------------------------------------------------- */
+
+/** FAQ visible de l'article comparatif (miroir exact du FAQPage). */
+export const comparatifDomiciliationFaqLd = faqLd([
+  {
+    q: "Quel est le prix d'une domiciliation d'entreprise à Antibes ?",
+    a: "Parmi les prestataires dont le tarif est affiché publiquement, une adresse de siège social se situe entre 27,50 et 42 € HT par mois selon la formule et le statut juridique ; les offres de simple boîte aux lettres, qui ne permettent pas d'y domicilier un siège, descendent à 25 €. Plusieurs centres d'affaires ne publient pas leur grille. À ce montant s'ajoutent parfois des frais de dossier et des options facturées séparément : numérisation, réexpédition, gestion des recommandés.",
+  },
+  {
+    q: 'Une société de domiciliation doit-elle être agréée par la préfecture ?',
+    a: "Oui. La domiciliation d'entreprise est une activité réglementée : seule une société agréée peut délivrer l'attestation de domiciliation exigée par le greffe du tribunal de commerce. Demandez le numéro d'agrément avant de signer - une adresse fournie par un prestataire non agréé sera refusée au greffe.",
+  },
+  {
+    q: "Quelle est la durée minimale d'un contrat de domiciliation ?",
+    a: "Trois mois, renouvelable par tacite reconduction. Certains prestataires imposent un engagement plus long ou une facturation annuelle : c'est un point à vérifier avant de signer, en même temps que les conditions de sortie si vous transférez votre siège.",
+  },
+  {
+    q: 'Vaut-il mieux domicilier à Antibes centre ou à Sophia Antipolis ?',
+    a: "Le droit ne fait aucune différence, le signal commercial oui. Une adresse en centre-ville d'Antibes parle à une clientèle locale et facilite le passage pour récupérer le courrier. Une adresse à Sophia Antipolis associe votre entreprise à l'écosystème technologique, ce qui compte pour une activité tech ou une levée de fonds.",
+  },
+  {
+    q: 'Peut-on changer de société de domiciliation en cours de route ?',
+    a: "Oui. C'est un transfert de siège social : décision de l'associé unique ou de l'assemblée, publication d'une annonce légale, dépôt au guichet unique de l'INPI. Comptez quelques jours et un coût de formalité. Vérifiez au préalable les conditions de résiliation de votre contrat en cours.",
+  },
+]);
+
+/**
+ * Liste des prestataires comparés dans l'article.
+ * Nom et adresse uniquement : aucun tarif, aucune note, aucun avis n'est balisé
+ * pour les tiers - le balisage doit refléter ce que la page affiche, et Google
+ * sanctionne les avis auto-attribués.
+ */
+const comparatifDomiciliationItems: { name: string; street: string; city: string; zip: string }[] =
+  [
+    { name: 'Alatere doMo', street: '9 boulevard Albert 1er', city: 'Antibes', zip: '06600' },
+    { name: 'Riviera Secrétariat', street: '46 boulevard du Président Wilson', city: 'Antibes', zip: '06600' },
+    { name: 'SelfBuro', street: '92 boulevard du Président Wilson', city: 'Antibes', zip: '06600' },
+    { name: 'Na&Co Antibes Fontonne', street: '256 route de Nice', city: 'Antibes', zip: '06600' },
+    { name: 'Mail Boxes Etc. Antibes', street: '2793 chemin de Saint-Claude', city: 'Antibes', zip: '06600' },
+    { name: 'Na&Co Sophia Antipolis', street: '1856 chemin de Saint-Bernard', city: 'Vallauris', zip: '06220' },
+    { name: 'Baya Axess Sophia Antipolis', street: '400 avenue de Roumanille', city: 'Biot', zip: '06410' },
+    { name: 'Pearl Partner Sophia Antipolis', street: '535 route des Lucioles', city: 'Valbonne', zip: '06560' },
+    { name: 'Starter Business Center', street: '2000 route des Lucioles', city: 'Biot', zip: '06410' },
+    { name: 'Dom Box Services', street: '1609 chemin de Saint-Bernard', city: 'Vallauris', zip: '06220' },
+    { name: 'Gestériat', street: "4 avenue de l'Est", city: 'Golfe-Juan', zip: '06220' },
+    { name: "Centre d'Affaires du Loup", street: '806 avenue des Plans', city: 'Villeneuve-Loubet', zip: '06270' },
+    { name: 'Acceptis', street: '240 chemin des Prés', city: 'Villeneuve-Loubet', zip: '06270' },
+    { name: 'Azur Secrétariat Services', street: '60 avenue de Nice', city: 'Cagnes-sur-Mer', zip: '06800' },
+  ];
+
+/** ItemList des prestataires comparés - lisible par les moteurs de réponse IA. */
+export const comparatifDomiciliationItemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: "Services de domiciliation d'entreprise à Antibes et alentours",
+  description:
+    "Prestataires de domiciliation commerciale comparés à Antibes, Sophia Antipolis, Vallauris, Golfe-Juan, Villeneuve-Loubet et Cagnes-sur-Mer.",
+  numberOfItems: comparatifDomiciliationItems.length,
+  itemListOrder: 'https://schema.org/ItemListUnordered',
+  itemListElement: comparatifDomiciliationItems.map((it, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'LocalBusiness',
+      name: it.name,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: it.street,
+        addressLocality: it.city,
+        postalCode: it.zip,
+        addressRegion: 'Alpes-Maritimes',
+        addressCountry: 'FR',
+      },
+    },
+  })),
+};
