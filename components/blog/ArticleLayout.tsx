@@ -14,7 +14,7 @@ export default function ArticleLayout({ post, children }: { post: Post; children
   return (
     <div className="g-home">
       <LangProvider titles={post.metaTitle}>
-        <Header frOnly={post.frOnly} />
+        <Header active="blog" frOnly={post.frOnly} />
         <ArticleBody post={post}>{children}</ArticleBody>
         <Footer />
       </LangProvider>

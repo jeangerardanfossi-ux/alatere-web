@@ -15,6 +15,7 @@ const TAG = { fr: 'Aux côtés de votre entreprise', en: 'Alongside your busines
 /** Libellés FR/EN des entrées qui ne sont pas un pôle (les pôles gardent leur nom de marque). */
 const LABELS: Record<string, { fr: string; en: string }> = {
   clients: { fr: 'Réalisations', en: 'Case studies' },
+  blog: { fr: 'Blog', en: 'Blog' },
   contact: { fr: 'Contact', en: 'Contact' },
 };
 
@@ -27,6 +28,7 @@ const NAV: NavItem[] = [
   ['/alatere-domo', 'doMo', 'domo', 'domiciliation'],
   ['/alatere-cowo', 'coWo', 'cowo', 'coworking'],
   ['/clients-et-realisations', 'Réalisations', 'clients', ''],
+  ['/blog', 'Blog', 'blog', ''],
   ['/#contact', 'Contact', 'contact', ''],
 ];
 

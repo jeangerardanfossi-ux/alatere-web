@@ -23,7 +23,7 @@ export default function BlogIndex() {
   return (
     <div className="g-home">
       <LangProvider titles={TITLES}>
-        <Header />
+        <Header active="blog" />
         <BlogList />
         <Footer />
       </LangProvider>
