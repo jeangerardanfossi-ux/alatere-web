@@ -1,8 +1,7 @@
 import { ImageResponse } from 'next/og';
 
-/** Carte sociale dédiée à l'article comparatif (1200×630). */
-export const alt =
-  "Comparatif des services de domiciliation d'entreprise à Antibes et alentours";
+/** Carte sociale de la version anglaise de l'article comparatif (1200×630). */
+export const alt = 'Business-address providers in and around Antibes, compared';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -31,10 +30,10 @@ export default function OpengraphImage() {
             marginBottom: 28,
           }}
         >
-          Alatere doMo · Ressources
+          Alatere doMo · Resources
         </div>
         <div style={{ fontSize: 66, fontWeight: 700, lineHeight: 1.1, marginBottom: 28 }}>
-          15 services de domiciliation comparés
+          15 business-address providers compared
         </div>
         <div style={{ fontSize: 34, color: '#c8d6ee', lineHeight: 1.35 }}>
           Antibes · Sophia Antipolis · Vallauris · Villeneuve-Loubet

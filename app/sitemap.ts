@@ -33,13 +33,13 @@ const BILINGUAL = [
   '/blog/coworking-antibes-journee',
   '/blog/coworking-antibes-guide',
   '/blog/domiciliation-ou-bureau-antibes',
+  '/blog/comparatif-domiciliation-antibes',
 ];
 
 /** Pages FR uniquement (todo, mentions/confidentialité noindex). */
 const FR_ONLY = [
   '/alatere-todo.html',
   // Articles publiés en français uniquement (cf. frOnly dans lib/blog.ts).
-  '/blog/comparatif-domiciliation-antibes',
   '/blog/financement-formation-independant-fifpl-agefice',
   '/blog/creer-son-entreprise-antibes',
 ];

@@ -223,8 +223,8 @@ const TX: Dict = {
   // FAQ
   faq_label: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq_compare: {
-    fr: 'Comparer les 14 services de domiciliation d’Antibes et des environs →',
-    en: 'Compare the 14 business-address providers in and around Antibes →',
+    fr: 'Comparer les 15 services de domiciliation d’Antibes et des environs →',
+    en: 'Compare the 15 business-address providers in and around Antibes →',
   },
   faq_title: { fr: 'Tout ce que vous devez savoir', en: 'Everything you need to know' },
   faq1_q: {

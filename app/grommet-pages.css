@@ -117,6 +117,23 @@
   text-transform: uppercase; color: var(--brand); background: var(--brand-soft);
   border-radius: 999px; padding: 3px 12px;
 }
+/* Filtres par pôle de l'index du blog */
+.blog-filters {
+  max-width: 860px; margin: 0 auto; padding: 0 40px 4px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.blog-filters button {
+  font: inherit; font-size: 15px; cursor: pointer;
+  background: var(--background); color: var(--dark-2);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 7px 16px; transition: border-color 200ms, color 200ms, background 200ms;
+}
+.blog-filters button:hover { border-color: var(--brand); color: var(--dark-1); }
+.blog-filters button.is-active {
+  background: var(--background-back); border-color: var(--brand); color: var(--dark-1); font-weight: 600;
+}
+@media (max-width: 640px) { .blog-filters { padding: 0 20px 4px; } }
+
 .blog-list { max-width: 860px; margin: 0 auto; padding: 8px 40px 80px; display: flex; flex-direction: column; gap: 18px; }
 .blog-card {
   display: block; text-decoration: none; color: inherit;

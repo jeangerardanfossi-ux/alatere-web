@@ -285,7 +285,8 @@ function En() {
           <Link className="g-inline" href="/alatere-domo">
             Alatere doMo - company address registration in Antibes
           </Link>{' '}
-          page.
+          page, and to place those prices in the local market, in our{' '}
+          <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparison of business-address providers in Antibes</Link>.
         </p>
       </section>
 

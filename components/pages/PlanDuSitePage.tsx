@@ -4,6 +4,7 @@
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, useLang, type Dict } from '@/components/grommet/lang';
+import { posts, localizePost } from '@/lib/blog';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 
@@ -42,10 +43,6 @@ const TX: Dict = {
 
   // Blog
   blog: { fr: 'Tous les articles', en: 'All articles' },
-  art1: { fr: "Domicilier son entreprise à Antibes", en: 'Registering a business address in Antibes' },
-  art2: { fr: 'Financer une formation (OPCO, FAF)', en: 'Funding training (OPCO, FAF)' },
-  art3: { fr: 'Coworking à Antibes - le guide', en: 'Coworking in Antibes - the guide' },
-  art4: { fr: 'Domiciliation ou bureau à Antibes ?', en: 'Business address or office in Antibes?' },
 
   // Légales
   mentions: { fr: 'Mentions légales', en: 'Legal notice' },
@@ -72,6 +69,12 @@ function Body() {
   const t = useT(TX);
   const { lang } = useLang();
   const ext = lang === 'fr' ? 'nouvel onglet' : 'new tab';
+
+  // Articles du blog visibles dans la langue courante, du plus récent au plus ancien.
+  const articles = posts
+    .filter((post) => !(post.frOnly && lang === 'en'))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((post) => localizePost(post, lang));
 
   return (
     <main>
@@ -114,10 +117,11 @@ function Body() {
           <h2>{t('g3')}</h2>
           <ul className="g-sitemap">
             <li><Link href="/blog">{t('blog')}</Link></li>
-            <li><Link href="/blog/domicilier-entreprise-antibes">{t('art1')}</Link></li>
-            <li><Link href="/blog/financer-formation-opco-faf">{t('art2')}</Link></li>
-            <li><Link href="/blog/coworking-antibes-guide">{t('art3')}</Link></li>
-            <li><Link href="/blog/domiciliation-ou-bureau-antibes">{t('art4')}</Link></li>
+            {articles.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/blog/${a.slug}`}>{a.title}</Link>
+              </li>
+            ))}
           </ul>
         </section>
 

@@ -2,17 +2,22 @@
 
 /** Index du blog « Ressources » (liste des articles) - bilingue FR/EN. */
 
+import { useState } from 'react';
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { BrandName } from '@/components/grommet/BrandName';
+import type { PoleBrand } from '@/components/grommet/BrandName';
 import { posts, formatDate, localizePost } from '@/lib/blog';
 
 const TITLES = {
   fr: 'Ressources & guides - Alatere Web',
   en: 'Resources & guides - Alatere Web',
 };
+
+/** Filtres par pôle, dans l'ordre d'affichage. « all » = tous les articles. */
+const FILTERS: PoleBrand[] = ['domo', 'forma', 'cowo', 'ecom'];
 
 export default function BlogIndex() {
   return (
@@ -28,7 +33,17 @@ export default function BlogIndex() {
 
 function BlogList() {
   const { lang } = useLang();
+  const [pole, setPole] = useState<PoleBrand | 'all'>('all');
   const t = (fr: string, en: string) => (lang === 'en' ? en : fr);
+
+  // Articles visibles dans la langue courante, du plus récent au plus ancien.
+  const visible = posts
+    .filter((post) => !(post.frOnly && lang === 'en'))
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  // Un onglet n'est proposé que s'il reste au moins un article dans cette langue.
+  const available = FILTERS.filter((f) => visible.some((post) => post.pole === f));
+  const shown = pole === 'all' ? visible : visible.filter((post) => post.pole === pole);
 
   return (
     <main>
@@ -46,10 +61,30 @@ function BlogList() {
         </p>
       </div>
 
+      <div className="blog-filters" role="group" aria-label={t('Filtrer par pôle', 'Filter by division')}>
+        <button
+          type="button"
+          className={pole === 'all' ? 'is-active' : undefined}
+          aria-pressed={pole === 'all'}
+          onClick={() => setPole('all')}
+        >
+          {t('Tous', 'All')}
+        </button>
+        {available.map((f) => (
+          <button
+            key={f}
+            type="button"
+            className={pole === f ? 'is-active' : undefined}
+            aria-pressed={pole === f}
+            onClick={() => setPole(f)}
+          >
+            <BrandName pole={f} />
+          </button>
+        ))}
+      </div>
+
       <div className="blog-list">
-        {posts
-          .filter((post) => !(post.frOnly && lang === 'en'))
-          .map((post) => {
+        {shown.map((post) => {
           const p = localizePost(post, lang);
           return (
             <Link key={p.slug} href={`/blog/${p.slug}`} className="blog-card">

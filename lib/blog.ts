@@ -225,26 +225,25 @@ export const posts: Post[] = [
   {
     slug: 'comparatif-domiciliation-antibes',
     pole: 'domo',
-    frOnly: true,
     title: {
       fr: 'Domiciliation d’entreprise à Antibes : le comparatif des prestataires',
-      en: 'Business address in Antibes: provider comparison',
+      en: 'Business address in Antibes: the provider comparison',
     },
     metaTitle: {
-      fr: 'Comparatif domiciliation à Antibes : 14 prestataires (2026)',
-      en: 'Business address providers in Antibes: 2026 comparison',
+      fr: 'Comparatif domiciliation à Antibes : 15 prestataires (2026)',
+      en: 'Business address in Antibes: 15 providers compared (2026)',
     },
     excerpt: {
-      fr: 'Adresses, tarifs affichés, services et engagement : 14 prestataires de domiciliation comparés à Antibes, Sophia Antipolis et alentours. Relevé 2026.',
-      en: 'Fourteen providers compared in Antibes, Sophia Antipolis, Vallauris and Villeneuve-Loubet: addresses, published prices, services and commitment terms.',
+      fr: 'Adresses, tarifs affichés, services et engagement : 15 prestataires de domiciliation comparés à Antibes, Sophia Antipolis et alentours. Relevé 2026.',
+      en: 'Addresses, published prices, services and terms: 15 business-address providers compared in Antibes, Sophia Antipolis and nearby. 2026 survey.',
     },
     keyword: {
       fr: 'comparatif domiciliation Antibes',
       en: 'business address comparison Antibes',
     },
     category: { fr: 'Domiciliation', en: 'Business address' },
-    date: '2026-09-22',
-    updated: '2026-09-22',
+    date: '2026-09-08',
+    updated: '2026-09-08',
     readingMin: 9,
     author: {
       name: 'Jean-Gérard Anfossi',

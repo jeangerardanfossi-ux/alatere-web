@@ -9,29 +9,29 @@ import {
   comparatifDomiciliationItemListLd,
 } from '@/lib/jsonld';
 import { postBySlug, localizePost } from '@/lib/blog';
-import { pageAlternates } from '@/lib/i18n';
-import '../../grommet-home.css';
-import '../../grommet-pages.css';
+import { pageAlternates, enPath } from '@/lib/i18n';
+import '../../../grommet-home.css';
+import '../../../grommet-pages.css';
 
 const post = postBySlug('comparatif-domiciliation-antibes')!;
 const FR = `/blog/${post.slug}`;
-const p = localizePost(post, 'fr');
+const p = localizePost(post, 'en');
 
-// metadataBase, og:locale et og:site_name sont hérités de app/layout.tsx.
 export const metadata: Metadata = {
   title: { absolute: p.metaTitle },
   description: p.excerpt,
-  alternates: pageAlternates(FR, 'fr'),
+  alternates: pageAlternates(FR, 'en'),
   openGraph: {
     type: 'article',
-    url: FR,
+    url: enPath(FR),
+    locale: 'en_US',
     title: p.metaTitle,
     description: p.excerpt,
     publishedTime: post.date,
     modifiedTime: post.updated,
     authors: ['https://www.linkedin.com/in/jeangerardanfossi/'],
     section: p.category,
-    tags: ['domiciliation', 'Antibes', 'Sophia Antipolis', 'siège social', 'centre d’affaires'],
+    tags: ['business address', 'Antibes', 'Sophia Antipolis', 'registered office'],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -41,13 +41,13 @@ export default function Page() {
     <>
       <JsonLd
         data={[
-          blogPostingLd(p, 'fr'),
-          comparatifDomiciliationFaqLd('fr'),
+          blogPostingLd(p, 'en'),
+          comparatifDomiciliationFaqLd('en'),
           comparatifDomiciliationItemListLd,
           breadcrumbLd([
-            { name: 'Accueil', path: '/' },
-            { name: 'Ressources', path: '/blog' },
-            { name: p.title, path: FR },
+            { name: 'Home', path: '/en' },
+            { name: 'Resources', path: enPath('/blog') },
+            { name: p.title, path: enPath(FR) },
           ]),
         ]}
       />

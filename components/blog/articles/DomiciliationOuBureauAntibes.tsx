@@ -117,7 +117,7 @@ function Fr() {
         </p>
         <p>
           Si vous penchez pour la domiciliation, notre{' '}
-          <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparatif des prestataires de domiciliation à Antibes</Link> passe en revue quatorze prestataires du secteur, adresses et tarifs
+          <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparatif des prestataires de domiciliation à Antibes</Link> passe en revue quinze prestataires du secteur, adresses et tarifs
           affichés à l&rsquo;appui.
         </p>
         <p>
@@ -265,6 +265,11 @@ function En() {
             business address
           </Link>
           , coworking and outsourced secretarial services under a single point of contact.
+        </p>
+        <p>
+          If you are leaning towards a business address, our{' '}
+          <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparison of business-address providers in Antibes</Link> reviews fifteen providers in the area,
+          with their addresses and published prices.
         </p>
         <p>
           Have a question about your situation?{' '}
