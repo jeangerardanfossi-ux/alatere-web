@@ -22,6 +22,7 @@ const FOOT: Dict = {
   foot_a5: { fr: 'Alatere toDo', en: 'Alatere toDo' },
   foot_a6: { fr: 'Partenariat', en: 'Partnership' },
   foot_col2: { fr: 'Liens utiles', en: 'Useful links' },
+  foot_l_reserver: { fr: 'Réserver un poste', en: 'Book a desk' },
   foot_l1: { fr: 'Catalogue formations', en: 'Training catalog' },
   foot_l3: { fr: 'Nos formateurs', en: 'Our trainers' },
   foot_l2: { fr: 'À propos', en: 'About' },
@@ -143,6 +144,13 @@ export default function Footer() {
           </div>
           <div>
             <span className="g-label">{t('foot_col2')}</span>
+            <a
+              href="https://reservations.alatere-web.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="calendar-check" /> <span>{t('foot_l_reserver')}</span>
+            </a>
             <a href={CATALOG} target="_blank" rel="noopener noreferrer">
               <Icon name="external-link" /> <span>{t('foot_l1')}</span>
             </a>
