@@ -3,7 +3,7 @@
 /** Alatere coWo - page « espace de coworking » (handoff Grommet, accent clay/terracotta). */
 
 import Link from '@/components/grommet/LocalizedLink';
-import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
+import { LangProvider, useReservations, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
@@ -40,7 +40,13 @@ const TX: Dict = {
   },
   hero_cta1: { fr: 'Réserver une visite', en: 'Book a visit' },
   hero_cta2: { fr: 'Voir les offres', en: 'View the offers' },
+  hero_cta_poste: { fr: 'Réserver un poste', en: 'Book a desk' },
+  hero_app: {
+    fr: "Installer l'application de réservation sur votre téléphone",
+    en: 'Install the booking app on your phone',
+  },
   brief: { fr: "L'espace en bref", en: 'The space at a glance' },
+  brief_dispo: { fr: 'Voir les places libres', en: 'See available desks' },
   brief_1: { fr: 'Salles de travail', en: 'Work rooms' },
   brief_2: { fr: 'Postes de travail', en: 'Workstations' },
   brief_3: { fr: 'Internet haut-débit', en: 'High-speed internet' },
@@ -71,14 +77,14 @@ const TX: Dict = {
     fr: 'Un poste en open-space pour la journée, café inclus.',
     en: 'An open-area desk for the day, coffee included.',
   },
-  plan1_cta: { fr: 'Nous consulter', en: 'Contact us' },
+  plan1_cta: { fr: 'Réserver en ligne', en: 'Book online' },
   plan2_ribbon: { fr: 'Le plus flexible', en: 'Most flexible' },
   plan2_name: { fr: 'Abonnement mensuel', en: 'Monthly membership' },
   plan2_p: {
     fr: "Accès illimité à l'open-space et tarifs préférentiels sur les salles.",
     en: 'Unlimited open-area access and preferential rates on meeting rooms.',
   },
-  plan2_cta: { fr: 'Nous consulter', en: 'Contact us' },
+  plan2_cta: { fr: 'Réserver en ligne', en: 'Book online' },
   plan3_name: { fr: 'Bureau privatif', en: 'Private office' },
   plan3_p: {
     fr: "Un bureau fermé pour une à plusieurs personnes, à l'année.",
@@ -182,6 +188,7 @@ const TX: Dict = {
     fr: "Venez visiter l'espace et rencontrer la communauté. Café offert.",
     en: "Come visit the space and meet the community. Coffee's on us.",
   },
+  cta_b0: { fr: 'Réserver en ligne', en: 'Book online' },
   cta_b1: { fr: 'Nous contacter', en: 'Contact us' },
   cta_b2: { fr: 'Voir la domiciliation', en: 'See business address service' },
 };
@@ -200,6 +207,7 @@ export default function CowoPage() {
 
 function Body() {
   const t = useT(TX);
+  const resa = useReservations();
   return (
     <>
       <div className="ap-stripe">
@@ -244,13 +252,21 @@ function Body() {
             </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="ap-hero__cta">
-              <a href="#contact" className="g-btn ap-btn g-btn--lg">
-                {t('hero_cta1')} <span className="g-arrow">→</span>
+              <a href={resa()} className="g-btn ap-btn g-btn--lg">
+                {t('hero_cta_poste')} <span className="g-arrow">→</span>
+              </a>
+              <a href={resa('/visite')} className="g-btn g-btn--secondary g-btn--lg">
+                {t('hero_cta1')}
               </a>
               <a href="#offres" className="g-btn g-btn--secondary g-btn--lg">
                 {t('hero_cta2')}
               </a>
             </div>
+            <p className="ap-hero__note">
+              <a href={resa('/installer')} style={{ color: 'inherit' }}>
+                {t('hero_app')} →
+              </a>
+            </p>
           </div>
           <aside className="ap-aside">
             <span className="g-label">{t('brief')}</span>
@@ -272,6 +288,9 @@ function Body() {
                 <span>{t('brief_4')}</span>
               </div>
             </div>
+            <a href={resa()} className="g-anchor" style={{ display: 'inline-block', marginTop: 14, color: 'var(--accent-dark)' }}>
+              {t('brief_dispo')} →
+            </a>
           </aside>
         </section>
 
@@ -309,7 +328,7 @@ function Body() {
                   30&nbsp;€ <span>{t('price_ttc')}</span>
                 </div>
                 <p>{t('plan1_p')}</p>
-                <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
+                <a href={resa('/reserver')} className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan1_cta')}
                 </a>
               </div>
@@ -320,7 +339,7 @@ function Body() {
                   360&nbsp;€ <span>{t('price_ttc')}</span>
                 </div>
                 <p>{t('plan2_p')}</p>
-                <a href="#contact" className="g-btn ap-btn g-btn--sm">
+                <a href={resa('/reserver')} className="g-btn ap-btn g-btn--sm">
                   {t('plan2_cta')}
                 </a>
               </div>
@@ -341,7 +360,7 @@ function Body() {
                   180&nbsp;€ <span>{t('price_ttc')} {t('per_day')}</span>
                 </div>
                 <p>{t('plan4_p')}</p>
-                <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
+                <a href={resa('/reserver')} className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan4_cta')}
                 </a>
               </div>
@@ -484,7 +503,7 @@ function Body() {
                     </span>
                   </div>
                 </div>
-                <a href="#contact" className="g-btn ap-btn g-btn--sm" style={{ marginTop: 18 }}>
+                <a href={resa('/visite')} className="g-btn ap-btn g-btn--sm" style={{ marginTop: 18 }}>
                   {t('loc_cta')} <span className="g-arrow">→</span>
                 </a>
                 <div style={{ marginTop: 12 }}>
@@ -514,8 +533,11 @@ function Body() {
             <p>{t('cta_p')}</p>
           </div>
           <div className="ap-cta__btns">
-            <Link href="/contact?pole=cowo" className="g-btn g-btn--light g-btn--lg">
-              {t('cta_b1')} <span className="g-arrow">→</span>
+            <a href={resa('/reserver')} className="g-btn g-btn--light g-btn--lg">
+              {t('cta_b0')} <span className="g-arrow">→</span>
+            </a>
+            <Link href="/contact?pole=cowo" className="g-btn g-btn--ghost-light g-btn--lg">
+              {t('cta_b1')}
             </Link>
             <Link href="/#domo" className="g-btn g-btn--ghost-light g-btn--lg">
               {t('cta_b2')}

@@ -8,7 +8,7 @@
 
 import { useState, type FormEvent } from 'react';
 import Link from '@/components/grommet/LocalizedLink';
-import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
+import { LangProvider, useLang, useReservations, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
@@ -87,7 +87,8 @@ const TX: Dict = {
     en: 'Hot desks, private offices, meeting rooms. Coffee, fiber and monthly business events - steps from Port Vauban. Come visit us at 9 Boulevard Albert 1er in Antibes.',
   },
   cowo_photo: { fr: "Photo de l'espace de coworking", en: 'Photo of the coworking space' },
-  cowo_link: { fr: 'Réserver une visite →', en: 'Book a visit →' },
+  cowo_link: { fr: 'Réserver un poste →', en: 'Book a desk →' },
+  cowo_link2: { fr: 'Découvrir l’espace', en: 'Discover the space' },
   mani_eyebrow: { fr: 'Notre façon de travailler', en: 'The way we work' },
   mani_title: {
     fr: 'Un service sur mesure, pour un nombre limité de clients.',
@@ -241,6 +242,7 @@ export default function HomeGrommet() {
 
 function Body() {
   const t = useT(TX);
+  const resa = useReservations();
   return (
     <main id="top">
       {/* ===================== HERO (immersif — photo salle floutée + voile navy) ===================== */}
@@ -461,10 +463,13 @@ function Body() {
               <p className="g-card__activity">{t('cowo_activity')}</p>
               <p className="g-card__copy">{t('cowo_copy')}</p>
               <ImageSlot variant="photo" cap={t('cowo_photo')} src="/photos/cowo.webp" />
-              <div className="g-card__footer">
-                <a href="#contact" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
+              <div className="g-card__footer" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 20px' }}>
+                <a href={resa()} className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
                   {t('cowo_link')}
                 </a>
+                <Link href="/alatere-cowo" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
+                  {t('cowo_link2')}
+                </Link>
               </div>
             </div>
           </section>

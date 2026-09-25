@@ -4,12 +4,13 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useLang, LangToggle, localizePath } from './lang';
+import { useLang, useReservations, LangToggle, localizePath } from './lang';
 import { BrandSuffix, type PoleBrand } from './BrandName';
 
 const POLES = new Set<string>(['ecom', 'forma', 'domo', 'cowo']);
 
 const CTA = { fr: 'Prendre rendez-vous', en: 'Book a meeting' };
+const CTA_COWO = { fr: 'Réserver un poste', en: 'Book a desk' };
 const TAG = { fr: 'Aux côtés de votre entreprise', en: 'Alongside your business' };
 
 /** Libellés FR/EN des entrées qui ne sont pas un pôle (les pôles gardent leur nom de marque). */
@@ -37,6 +38,7 @@ const BADGE = '/alatere-web-badge.webp';
 /** `active` met en valeur le pôle courant (sur les sous-pages). */
 export default function Header({ active, frOnly }: { active?: string; frOnly?: boolean }) {
   const { lang } = useLang();
+  const resa = useReservations();
   const lp = (h: string) => localizePath(h, lang);
   const [drawer, setDrawer] = useState(false);
 
@@ -57,13 +59,17 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
 
   const cta = (
     <>
-      <span>{CTA[lang]}</span> <span className="g-arrow">→</span>
+      <span>{(active === 'cowo' ? CTA_COWO : CTA)[lang]}</span> <span className="g-arrow">→</span>
     </>
   );
 
   // Sur une page pôle, « Prendre rendez-vous » pré-sélectionne le sujet
   // correspondant dans le formulaire (/contact lit ?pole=). Ailleurs → #contact accueil.
-  const ctaHref = lp(active && POLES.has(active) ? `/contact?pole=${active}` : '/#contact');
+  // Sur coWo, il mène directement à l'application de réservation.
+  const ctaHref =
+    active === 'cowo'
+      ? resa()
+      : lp(active && POLES.has(active) ? `/contact?pole=${active}` : '/#contact');
 
   return (
     <>

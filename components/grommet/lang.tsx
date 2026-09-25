@@ -69,6 +69,17 @@ export function localizePath(href: string, lang: Lang): string {
   return `/en${EN_SLUG[path] ?? path}${suffix}`;
 }
 
+const RESERVATIONS = 'https://reservations.alatere-web.com';
+
+/**
+ * Adresse de l'application de réservation coWo dans la langue de la page :
+ * en anglais, `?lang=en` fait ouvrir l'application en anglais.
+ */
+export function useReservations() {
+  const { lang } = useLang();
+  return (path = '') => `${RESERVATIONS}${path}${lang === 'en' ? '?lang=en' : ''}`;
+}
+
 /** Bascule FR/EN : navigue vers l'URL équivalente dans l'autre langue. */
 export function LangToggle({
   extra = '',
