@@ -252,10 +252,10 @@ function Body() {
             </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="ap-hero__cta">
-              <a href={resa()} className="g-btn ap-btn g-btn--lg">
+              <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--lg">
                 {t('hero_cta_poste')} <span className="g-arrow">→</span>
               </a>
-              <a href={resa('/visite')} className="g-btn g-btn--secondary g-btn--lg">
+              <a href={resa('/visite')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--secondary g-btn--lg">
                 {t('hero_cta1')}
               </a>
               <a href="#offres" className="g-btn g-btn--secondary g-btn--lg">
@@ -263,7 +263,7 @@ function Body() {
               </a>
             </div>
             <p className="ap-hero__note">
-              <a href={resa('/installer')} style={{ color: 'inherit' }}>
+              <a href={resa('/installer')} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                 {t('hero_app')} →
               </a>
             </p>
@@ -288,7 +288,7 @@ function Body() {
                 <span>{t('brief_4')}</span>
               </div>
             </div>
-            <a href={resa()} className="g-anchor" style={{ display: 'inline-block', marginTop: 14, color: 'var(--accent-dark)' }}>
+            <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-anchor" style={{ display: 'inline-block', marginTop: 14, color: 'var(--accent-dark)' }}>
               {t('brief_dispo')} →
             </a>
           </aside>
@@ -328,7 +328,7 @@ function Body() {
                   30&nbsp;€ <span>{t('price_ttc')}</span>
                 </div>
                 <p>{t('plan1_p')}</p>
-                <a href={resa('/reserver')} className="g-btn g-btn--secondary g-btn--sm">
+                <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan1_cta')}
                 </a>
               </div>
@@ -339,7 +339,7 @@ function Body() {
                   360&nbsp;€ <span>{t('price_ttc')}</span>
                 </div>
                 <p>{t('plan2_p')}</p>
-                <a href={resa('/reserver')} className="g-btn ap-btn g-btn--sm">
+                <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--sm">
                   {t('plan2_cta')}
                 </a>
               </div>
@@ -360,7 +360,7 @@ function Body() {
                   180&nbsp;€ <span>{t('price_ttc')} {t('per_day')}</span>
                 </div>
                 <p>{t('plan4_p')}</p>
-                <a href={resa('/reserver')} className="g-btn g-btn--secondary g-btn--sm">
+                <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan4_cta')}
                 </a>
               </div>
@@ -503,7 +503,7 @@ function Body() {
                     </span>
                   </div>
                 </div>
-                <a href={resa('/visite')} className="g-btn ap-btn g-btn--sm" style={{ marginTop: 18 }}>
+                <a href={resa('/visite')} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--sm" style={{ marginTop: 18 }}>
                   {t('loc_cta')} <span className="g-arrow">→</span>
                 </a>
                 <div style={{ marginTop: 12 }}>
@@ -533,7 +533,7 @@ function Body() {
             <p>{t('cta_p')}</p>
           </div>
           <div className="ap-cta__btns">
-            <a href={resa('/reserver')} className="g-btn g-btn--light g-btn--lg">
+            <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--light g-btn--lg">
               {t('cta_b0')} <span className="g-arrow">→</span>
             </a>
             <Link href="/contact?pole=cowo" className="g-btn g-btn--ghost-light g-btn--lg">

@@ -70,6 +70,8 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
     active === 'cowo'
       ? resa()
       : lp(active && POLES.has(active) ? `/contact?pole=${active}` : '/#contact');
+  // L'application de réservation s'ouvre dans un nouvel onglet.
+  const ctaCible = active === 'cowo' ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (
     <>
@@ -98,7 +100,7 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
         </nav>
         <div className="g-actions">
           <LangToggle frOnly={frOnly} />
-          <Link href={ctaHref} className="g-btn g-btn--primary g-btn--sm">
+          <Link href={ctaHref} {...ctaCible} className="g-btn g-btn--primary g-btn--sm">
             {cta}
           </Link>
         </div>
@@ -139,6 +141,7 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
           <LangToggle extra="g-drawer__lang" frOnly={frOnly} />
           <Link
             href={ctaHref}
+            {...ctaCible}
             className="g-btn g-btn--primary g-drawer__cta"
             onClick={() => setDrawer(false)}
           >

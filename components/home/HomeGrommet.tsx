@@ -464,7 +464,7 @@ function Body() {
               <p className="g-card__copy">{t('cowo_copy')}</p>
               <ImageSlot variant="photo" cap={t('cowo_photo')} src="/photos/cowo.webp" />
               <div className="g-card__footer" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 20px' }}>
-                <a href={resa()} className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
+                <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
                   {t('cowo_link')}
                 </a>
                 <Link href="/alatere-cowo" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
