@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alatere Web · démonstration</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Page de démonstration construite pour montrer une mise en page pilotée au défilement. Le contenu est celui d'Alatere Web, 9 boulevard Albert 1er à Antibes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Bandeau d'honnêteté : cette page n'est pas le site de production. -->
+<aside class="flag" aria-label="Nature de cette page">
+  <span class="flag__dot" aria-hidden="true"></span>
+  <p>Page de démonstration. Le site en service est <a href="https://alatere-web.com">alatere-web.com</a>.</p>
+</aside>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Lecture de progression, purement décorative -->
+<div class="readout" aria-hidden="true">
+  <span class="readout__label">défilement</span>
+  <span class="readout__bar"><i></i></span>
+  <span class="readout__pct">00</span>
+</div>
+
+<main>
+
+<!-- ─────────────────────────────  OUVERTURE  ───────────────────────────── -->
+<section class="hero" id="ouverture">
+  <div class="hero__plate" data-slot="01" data-ratio="21:9" aria-hidden="true">
+    <div class="plate__crosshair"></div>
+    <p class="plate__tag">seedream · 01 · façade 9 bd Albert 1er · 21:9</p>
+  </div>
+
+  <div class="hero__body">
+    <p class="eyebrow">Antibes · 43.5805 N, 7.1251 E</p>
+    <h1>Quatre activités au 9 boulevard Albert&nbsp;1<sup>er</sup> à Antibes.</h1>
+    <p class="lede">
+      Iveta et Jean-Gérard Anfossi exploitent leurs propres boutiques en ligne depuis 2003,
+      forment des dirigeants, domicilient des entreprises et louent des bureaux. Les quatre
+      métiers tiennent dans le même immeuble.
+    </p>
+    <ul class="hero__index">
+      <li><a href="#ecom"><span>01</span> ecoM<em>e-commerce</em></a></li>
+      <li><a href="#forma"><span>02</span> forMa<em>formation</em></a></li>
+      <li><a href="#domo"><span>03</span> doMo<em>domiciliation</em></a></li>
+      <li><a href="#cowo"><span>04</span> coWo<em>coworking</em></a></li>
+    </ul>
+  </div>
+
+  <p class="hero__scroll" aria-hidden="true">défiler</p>
+</section>
+
+<!-- ─────────────────────────────  ACTE 01 · ecoM  ───────────────────────── -->
+<section class="act act--ecom" id="ecom" data-act="01">
+  <header class="act__head">
+    <p class="eyebrow">Acte 01 · depuis 2003</p>
+    <h2>ecoM<span>Nous vendons sur nos propres boutiques.</span></h2>
+  </header>
+
+  <div class="act__grid">
+    <div class="act__media" data-slot="02" data-ratio="4:5" aria-hidden="true">
+      <div class="plate__crosshair"></div>
+      <p class="plate__tag">seedream · 02 · atelier d'impression, tirage d'art · 4:5</p>
+    </div>
+
+    <div class="act__text">
+      <p class="act__intro">
+        Le référencement et la gestion que nous proposons sont ceux qui font tourner nos
+        sites chaque jour. Cinq boutiques, en France et en Europe.
+      </p>
+      <ul class="shops">
+        <li><b>repro-tableaux.com</b><span>France</span></li>
+        <li><b>copia-di-arte.com</b><span>Union européenne, 4 langues</span></li>
+        <li><b>reprodart.com</b><span>Allemagne</span></li>
+        <li><b>art-prints-on-demand.com</b><span>International</span></li>
+        <li><b>myartprints.cz</b><span>République tchèque</span></li>
+      </ul>
+      <dl class="figures">
+        <div><dt data-count="2003" data-plain>2003</dt><dd>première boutique en ligne</dd></div>
+        <div><dt data-count="5">5</dt><dd>sites marchands opérés en propre</dd></div>
+        <div><dt data-count="4">4</dt><dd>langues sur copia-di-arte.com</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  ACTE 02 · forMa  ──────────────────────── -->
+<section class="act act--forma" id="forma" data-act="02">
+  <header class="act__head">
+    <p class="eyebrow">Acte 02 · organisme n° 93.06.07588.06</p>
+    <h2>forMa<span>Organisme de formation certifié Qualiopi.</span></h2>
+  </header>
+
+  <div class="act__grid act__grid--reverse">
+    <div class="act__media" data-slot="03" data-ratio="4:5" aria-hidden="true">
+      <div class="plate__crosshair"></div>
+      <p class="plate__tag">seedream · 03 · salle de formation, six adultes · 4:5</p>
+    </div>
+
+    <div class="act__text">
+      <p class="act__intro">
+        Certification obtenue en 2022. Cinq domaines, pour les dirigeants, leurs équipes et
+        les indépendants. Vos formations peuvent être prises en charge par votre OPCO, et
+        nous montons le dossier avec vous.
+      </p>
+      <ul class="domains">
+        <li>Webmarketing</li>
+        <li>Intelligence artificielle</li>
+        <li>Langues</li>
+        <li>Communication digitale</li>
+        <li>Immobilier</li>
+      </ul>
+      <dl class="figures">
+        <div><dt data-count="2022" data-plain>2022</dt><dd>certification Qualiopi</dd></div>
+        <div><dt data-count="5">5</dt><dd>domaines de formation</dd></div>
+      </dl>
+      <p class="badge-line"><img src="assets/qualiopi.png" alt="Logo de la certification Qualiopi" width="120" height="60" loading="lazy"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  ACTE 03 · doMo  ───────────────────────── -->
+<section class="act act--domo" id="domo" data-act="03">
+  <header class="act__head">
+    <p class="eyebrow">Acte 03 · agrément préfectoral n° 2022/12 du 20/09/2022</p>
+    <h2>doMo<span>Votre siège social à notre adresse.</span></h2>
+  </header>
+
+  <div class="act__grid">
+    <div class="act__media" data-slot="04" data-ratio="4:5" aria-hidden="true">
+      <div class="plate__crosshair"></div>
+      <p class="plate__tag">seedream · 04 · casiers de courrier, étiquettes · 4:5</p>
+    </div>
+
+    <div class="act__text">
+      <p class="act__intro">
+        L'adresse vaut pour une immatriculation comme pour un transfert de siège. Nous
+        recevons votre courrier, nous le scannons, nous vous prévenons et nous le
+        réexpédions.
+      </p>
+      <table class="tariffs">
+        <caption>Formules de domiciliation</caption>
+        <tbody>
+          <tr><th scope="row">Headquarters</th><td>30 €</td></tr>
+          <tr><th scope="row">Pro</th><td>50 € / mois</td></tr>
+          <tr><th scope="row">Frais de dossier</th><td>79 €</td></tr>
+        </tbody>
+      </table>
+      <dl class="figures">
+        <div><dt data-count="50" data-suffix="+">50</dt><dd>entreprises domiciliées</dd></div>
+        <div><dt data-count="30" data-prefix="dès " data-suffix=" €">30</dt><dd>offre Headquarters</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  ACTE 04 · coWo  ───────────────────────── -->
+<section class="act act--cowo" id="cowo" data-act="04">
+  <header class="act__head">
+    <p class="eyebrow">Acte 04 · à deux pas du port Vauban</p>
+    <h2>coWo<span>Des bureaux et une communauté.</span></h2>
+  </header>
+
+  <div class="act__grid act__grid--reverse">
+    <div class="act__media" data-slot="05" data-ratio="4:5" aria-hidden="true">
+      <div class="plate__crosshair"></div>
+      <p class="plate__tag">seedream · 05 · plateau de coworking, lumière du matin · 4:5</p>
+    </div>
+
+    <div class="act__text">
+      <p class="act__intro">
+        Postes nomades, bureaux fermés et salles de réunion, dans un espace climatisé relié
+        à la fibre. Un événement business par mois : vous travaillez à côté d'autres
+        indépendants.
+      </p>
+      <dl class="figures figures--wide">
+        <div><dt data-count="16">16</dt><dd>postes de travail</dd></div>
+        <div><dt data-count="5">5</dt><dd>salles de réunion</dd></div>
+        <div><dt data-count="1">1</dt><dd>événement business par mois</dd></div>
+      </dl>
+      <p class="act__note">9 boulevard Albert 1<sup>er</sup>, 06600 Antibes. Fibre, salles climatisées, café partagé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────  CLIENTS  ──────────────────────────────── -->
+<section class="clients" id="clients">
+  <header class="clients__head">
+    <p class="eyebrow">Références · Antibes et Côte d'Azur</p>
+    <h2>Ils travaillent avec nous.</h2>
+  </header>
+
+  <ul class="wall" aria-label="Logos de clients">
+    <li><img src="assets/logos/laforet.png" alt="Laforêt Immobilier Antibes" loading="lazy"></li>
+    <li><img src="assets/logos/az-chef.png" alt="AZ Chef Signature" loading="lazy"></li>
+    <li><img src="assets/logos/terrabella.png" alt="TerraBella Inspiration" loading="lazy"></li>
+    <li><img src="assets/logos/rocher-mistral.png" alt="Rocher Mistral" loading="lazy"></li>
+    <li><img src="assets/logos/vinazur.png" alt="Vinazur, vins de Provence" loading="lazy"></li>
+    <li><img src="assets/logos/asnov.png" alt="ASNOV.FR" loading="lazy"></li>
+    <li><img src="assets/logos/axeo-services.png" alt="AXEO Services Antibes Cagnes-sur-Mer" loading="lazy"></li>
+    <li><img src="assets/logos/cpy-yachting.svg" alt="Christel Pocachard Yachting" loading="lazy"></li>
+    <li><img src="assets/logos/scape-design.png" alt="Scape Design" loading="lazy"></li>
+    <li><img src="assets/logos/boheme-assurances.png" alt="Bohème Assurances" loading="lazy"></li>
+    <li><img src="assets/logos/logic-sante.png" alt="Logic Santé" loading="lazy"></li>
+    <li><img src="assets/logos/2i-architecture.png" alt="2i Architecture" loading="lazy"></li>
+    <li><img src="assets/logos/best-of-brain.png" alt="Best of Brain" loading="lazy"></li>
+    <li><img src="assets/logos/nice-fenetres.svg" alt="Nice Fenêtres" loading="lazy"></li>
+    <li><img src="assets/logos/pergola-riviera.png" alt="Pergola Riviera" loading="lazy"></li>
+    <li><img src="assets/logos/lunetier-du-cap.png" alt="Le Lunetier du Cap" loading="lazy"></li>
+  </ul>
+</section>
+
+<!-- ─────────────────────────────  CLÔTURE  ─────────────────────────────── -->
+<section class="outro" id="contact">
+  <div class="outro__body">
+    <p class="eyebrow">Fin de la démonstration</p>
+    <h2>Ce que vous venez de voir.</h2>
+    <p>
+      Une page unique, quatre actes, une animation pilotée par le défilement. Les textes,
+      les prix, les numéros d'agrément et les logos sont ceux d'Alatere Web. Les images
+      sont des emplacements en attente : elles seront produites avec Seedream.
+    </p>
+    <p class="outro__addr">
+      Alatere Web · 9 boulevard Albert 1<sup>er</sup>, 06600 Antibes ·
+      <a href="https://alatere-web.com">alatere-web.com</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<script src="scroll.js" defer></script>
+</body>
+</html>
