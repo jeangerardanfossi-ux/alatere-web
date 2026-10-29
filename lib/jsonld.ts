@@ -63,7 +63,7 @@ export const domoLd = {
   telephone: company.phone,
   priceRange: '€€',
   address,
-  areaServed: 'Antibes, Alpes-Maritimes, Côte d’Azur',
+  areaServed: ['Antibes', 'Juan-les-Pins', 'Sophia Antipolis', 'Mougins', 'Vallauris', 'Biot', 'Alpes-Maritimes'],
   sameAs: [company.mapsDomo, company.facebookDomo, company.linkedinDomo],
 };
 
@@ -317,6 +317,22 @@ export const domoFaqLd = faqLd([
   {
     q: 'Y a-t-il un engagement de durée ?',
     a: 'Le contrat est renouvelable et résiliable avec préavis. Vous pouvez faire évoluer votre formule à tout moment, sans pénalité.',
+  },
+  {
+    q: 'Une micro-entreprise peut-elle se domicilier chez vous ?',
+    a: "Oui. Les micro-entrepreneurs et entrepreneurs individuels peuvent domicilier leur activité à notre adresse avec l'offre Headquarters ou Forward. Cela évite de faire figurer votre adresse personnelle sur vos factures et dans les annuaires d'entreprises.",
+  },
+  {
+    q: 'Comment récupérer mon courrier ?',
+    a: "Votre courrier est conservé à l'accueil, où vous pouvez le retirer du lundi au vendredi, de 9 h à 17 h. Avec l'offre Forward, il est aussi numérisé et réexpédié chaque semaine à l'adresse de votre choix.",
+  },
+  {
+    q: "Puis-je recevoir mes clients à l'adresse de domiciliation ?",
+    a: "Oui, sur réservation. Les salles de réunion climatisées de notre espace de coworking se louent à la journée ou en fin de journée, et vous pouvez réserver un poste de travail à la journée.",
+  },
+  {
+    q: 'Quelle différence entre domiciliation commerciale et boîte aux lettres ?',
+    a: "La domiciliation commerciale (offres Headquarters et Forward) vous donne une adresse de siège social inscrite au registre du commerce. L'offre Dropbox est une simple boîte aux lettres : elle reçoit votre courrier mais ne peut pas servir de siège social.",
   },
 ]);
 
