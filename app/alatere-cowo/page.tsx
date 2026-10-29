@@ -2,14 +2,15 @@ import type { Metadata } from 'next';
 import CowoPage from '@/components/pages/CowoPage';
 import JsonLd from '@/components/JsonLd';
 import { cowoLd, cowoFaqLd, breadcrumbLd } from '@/lib/jsonld';
+import { pageAlternates } from '@/lib/i18n';
 import '../grommet-home.css';
 import '../grommet-activity.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Coworking à Antibes près du port Vauban - Alatere coWo' },
+  title: { absolute: 'Coworking Antibes dès 30 €/jour, salles de réunion - Alatere coWo' },
   description:
-    'Espace de coworking à Antibes : postes nomades, bureaux privatifs, 5 salles de réunion climatisées, fibre. À deux pas du port Vauban.',
-  alternates: { canonical: '/alatere-cowo' },
+    "Coworking en centre-ville d'Antibes, près du port Vauban : pass journée 30 € TTC, abonnement mensuel, salles de réunion climatisées, fibre. Réservation en ligne.",
+  alternates: pageAlternates('/alatere-cowo', 'fr'),
   openGraph: {
     title: 'Coworking à Antibes près du port Vauban - Alatere coWo',
     description:

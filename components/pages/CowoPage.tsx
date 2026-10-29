@@ -53,6 +53,30 @@ const TX: Dict = {
   brief_4: { fr: 'Salles climatisées', en: 'Air-conditioned rooms' },
   brief_3_v: { fr: 'Fibre', en: 'Fiber' },
   brief_4_v: { fr: 'Climatisation', en: 'Air conditioning' },
+  why_label: { fr: 'Pourquoi Antibes centre', en: 'Why central Antibes' },
+  why_title: {
+    fr: "Une adresse professionnelle en plein centre-ville d'Antibes",
+    en: 'A professional address in the heart of Antibes',
+  },
+  why_p: {
+    fr: "Travailler au centre-ville, c'est avoir les commerces, les restaurants et les services à portée de main, et une adresse sérieuse pour recevoir vos clients.",
+    en: 'Working downtown means shops, restaurants and services within reach, and a credible address to welcome your clients.',
+  },
+  why1_h: { fr: 'Un immeuble Art nouveau', en: 'An Art Nouveau building' },
+  why1_p: {
+    fr: "L'espace occupe l'immeuble La Caravelle, au 9 boulevard Albert 1er, à 100 m de la place de Gaulle et à deux pas du port Vauban.",
+    en: 'The space is in the La Caravelle building, 9 Boulevard Albert 1er, 100 m from Place de Gaulle and steps from Port Vauban.',
+  },
+  why2_h: { fr: 'Accessible sans voiture', en: 'Easy to reach without a car' },
+  why2_p: {
+    fr: 'Gare SNCF à 700 m (environ 10 min à pied) et gare routière à 200 m : les lignes de bus desservent tout le quartier.',
+    en: 'Train station 700 m away (about a 10-minute walk) and bus station 200 m away: bus lines serve the whole area.',
+  },
+  why3_h: { fr: 'À 20 min de Sophia Antipolis', en: '20 minutes from Sophia Antipolis' },
+  why3_p: {
+    fr: "Le technopôle de Sophia Antipolis est à une vingtaine de minutes en voiture : pratique pour vos rendez-vous clients et partenaires.",
+    en: 'The Sophia Antipolis technology park is about twenty minutes away by car: handy for client and partner meetings.',
+  },
   gal_label: { fr: 'Découvrir les lieux', en: 'Discover the space' },
   gal_title: { fr: 'Un cadre de travail soigné', en: 'A carefully designed workspace' },
   gal_p: {
@@ -70,6 +94,7 @@ const TX: Dict = {
     en: 'From occasional visits to long-term setup. Clear plans, tailored to your needs.',
   },
   price_ttc: { fr: 'TTC', en: 'incl. VAT' },
+  per_month: { fr: '/ mois', en: '/ month' },
   per_day: { fr: '/ jour', en: '/ day' },
   plan_na: { fr: 'Actuellement indisponible', en: 'Currently unavailable' },
   plan1_name: { fr: 'Pass journée', en: 'Day pass' },
@@ -97,6 +122,34 @@ const TX: Dict = {
     en: 'Limited availability: most of our rooms are rented yearly. Best to book a few days ahead.',
   },
   plan4_cta: { fr: 'Réserver', en: 'Book' },
+  rent_label: { fr: 'Location de bureau', en: 'Office rental' },
+  rent_title: {
+    fr: 'Louer un bureau à Antibes, sans bail ni engagement',
+    en: 'Rent an office in Antibes, with no lease or commitment',
+  },
+  rent_p: {
+    fr: "Vous cherchez un bureau à louer à Antibes ? Plutôt qu'un bail commercial de plusieurs années, le coworking vous permet de louer un espace de travail à la journée ou au mois, charges, fibre et café compris. Vous ne payez que ce que vous utilisez.",
+    en: "Looking for an office to rent in Antibes? Instead of a multi-year commercial lease, coworking lets you rent a workspace by the day or by the month, with utilities, fiber and coffee included. You only pay for what you use.",
+  },
+  rent1_h: { fr: 'Un poste à la journée', en: 'A desk for the day' },
+  rent1_p: {
+    fr: "Pour une journée de travail au calme ou de passage sur la Côte d'Azur : 30 € TTC, réservation en ligne, de 9 h à 18 h du lundi au vendredi.",
+    en: 'For a quiet working day or when passing through the Riviera: €30 incl. VAT, online booking, 9 am to 6 pm, Monday to Friday.',
+  },
+  rent2_h: { fr: 'Un poste au mois', en: 'A desk by the month' },
+  rent2_p: {
+    fr: "Pour les indépendants et télétravailleurs réguliers : abonnement à 360 € TTC par mois, accès illimité à l'open-space et tarifs préférentiels sur les salles de réunion.",
+    en: 'For freelancers and regular remote workers: €360 incl. VAT per month, unlimited open-area access and preferential meeting-room rates.',
+  },
+  rent3_h: { fr: 'Une salle de réunion', en: 'A meeting room' },
+  rent3_p: {
+    fr: 'Pour recevoir des clients, animer une formation ou faire passer des entretiens : 180 € TTC la journée, ou 80 € TTC après 16 h, ouverte aux non-membres.',
+    en: 'To welcome clients, run a training session or hold interviews: €180 incl. VAT per day, or €80 after 4 pm, open to non-members.',
+  },
+  rent_note: {
+    fr: "Bureaux privatifs à l'année : actuellement complets. Contactez-nous pour être prévenu de la prochaine disponibilité.",
+    en: 'Yearly private offices: currently full. Contact us to hear about the next availability.',
+  },
   eq_label: { fr: 'Équipements & services', en: 'Amenities & services' },
   eq_title: {
     fr: 'Tout est pensé pour bien travailler',
@@ -147,8 +200,8 @@ const TX: Dict = {
   },
   faq2_q: { fr: 'Quelles formules proposez-vous ?', en: 'What plans do you offer?' },
   faq2_a: {
-    fr: "Pass à la journée, abonnement mensuel en open-space, bureau privatif à l'année et location de salles de réunion. Les tarifs sont communiqués sur demande, selon votre besoin.",
-    en: 'Day passes, monthly open-area membership, yearly private offices and meeting-room rentals. Pricing is provided on request, based on your needs.',
+    fr: "Pass à la journée (30 € TTC), abonnement mensuel en open-space (360 € TTC par mois), location de salles de réunion (180 € TTC la journée) et bureau privatif à l'année, selon disponibilité. Le pass, l'abonnement et les salles se réservent en ligne.",
+    en: 'Day pass (€30 incl. VAT), monthly open-area membership (€360 incl. VAT per month), meeting-room rental (€180 incl. VAT per day) and yearly private offices, subject to availability. Passes, memberships and rooms can be booked online.',
   },
   faq3_q: {
     fr: 'Puis-je réserver une salle de réunion sans être abonné ?',
@@ -165,6 +218,21 @@ const TX: Dict = {
   faq4_a: {
     fr: 'Oui, via notre offre Alatere doMo. Les membres du coworking bénéficient de conditions avantageuses sur la domiciliation.',
     en: 'Yes, through our Alatere doMo service. Coworking members enjoy preferential terms on business address services.',
+  },
+  faq5_q: { fr: "Quels sont les horaires d'accès ?", en: 'What are the opening hours?' },
+  faq5_a: {
+    fr: "Le pass journée donne accès à l'espace de 9 h à 18 h, du lundi au vendredi. Les abonnés mensuels disposent d'un badge d'accès à l'immeuble et peuvent venir travailler 24 h/24, 7 j/7.",
+    en: 'The day pass gives access from 9 am to 6 pm, Monday to Friday. Monthly members get a building access badge and can work 24/7.',
+  },
+  faq6_q: { fr: 'Combien de personnes travaillent dans l’espace ?', en: 'How many people work in the space?' },
+  faq6_a: {
+    fr: "L'espace compte 15 postes de travail répartis dans 5 salles : une ambiance calme et à taille humaine, loin des grands plateaux bruyants.",
+    en: 'The space has 15 workstations across 5 rooms: a calm, human-scale setting, far from large noisy open floors.',
+  },
+  faq7_q: { fr: 'Peut-on déjeuner sur place ?', en: 'Can I have lunch on site?' },
+  faq7_a: {
+    fr: 'Oui. Une cuisine équipée avec un comptoir est à la disposition de tous les coworkers : vous pouvez y conserver votre repas au frais et déjeuner sur place.',
+    en: 'Yes. An equipped kitchen with a counter is available to all coworkers: you can keep your lunch in the fridge and eat on site.',
   },
   loc_label: { fr: 'Nous situer', en: 'Find us' },
   loc_title: { fr: "Au cœur d'Antibes", en: 'In the heart of Antibes' },
@@ -294,6 +362,40 @@ function Body() {
           </aside>
         </section>
 
+        {/* POURQUOI LE CENTRE-VILLE */}
+        <section className="ap-section">
+          <div className="ap-head">
+            <span className="g-label">
+              <span className="g-tag g-tag--clay">{t('why_label')}</span>
+            </span>
+            <h2 className="g-h2">{t('why_title')}</h2>
+            <p>{t('why_p')}</p>
+          </div>
+          <div className="ap-grid ap-grid--3">
+            <div className="ap-card">
+              <div className="ap-card__ic">
+                <Icon name="map-pin" />
+              </div>
+              <h3>{t('why1_h')}</h3>
+              <p>{t('why1_p')}</p>
+            </div>
+            <div className="ap-card">
+              <div className="ap-card__ic">
+                <Icon name="navigation" />
+              </div>
+              <h3>{t('why2_h')}</h3>
+              <p>{t('why2_p')}</p>
+            </div>
+            <div className="ap-card">
+              <div className="ap-card__ic">
+                <Icon name="users-round" />
+              </div>
+              <h3>{t('why3_h')}</h3>
+              <p>{t('why3_p')}</p>
+            </div>
+          </div>
+        </section>
+
         {/* GALERIE */}
         <section className="ap-section">
           <div className="ap-head">
@@ -336,7 +438,7 @@ function Body() {
                 <div className="ap-plan__ribbon">{t('plan2_ribbon')}</div>
                 <div className="ap-plan__name">{t('plan2_name')}</div>
                 <div className="ap-plan__price">
-                  360&nbsp;€ <span>{t('price_ttc')}</span>
+                  360&nbsp;€ <span>{t('price_ttc')} {t('per_month')}</span>
                 </div>
                 <p>{t('plan2_p')}</p>
                 <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--sm">
@@ -366,6 +468,35 @@ function Body() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* LOUER UN BUREAU */}
+        <section className="ap-section">
+          <div className="ap-head">
+            <span className="g-label">
+              <span className="g-tag g-tag--clay">{t('rent_label')}</span>
+            </span>
+            <h2 className="g-h2">{t('rent_title')}</h2>
+            <p>{t('rent_p')}</p>
+          </div>
+          <div className="ap-grid ap-grid--3">
+            <div className="ap-card">
+              <h3>{t('rent1_h')}</h3>
+              <p>{t('rent1_p')}</p>
+            </div>
+            <div className="ap-card">
+              <h3>{t('rent2_h')}</h3>
+              <p>{t('rent2_p')}</p>
+            </div>
+            <div className="ap-card">
+              <h3>{t('rent3_h')}</h3>
+              <p>{t('rent3_p')}</p>
+            </div>
+          </div>
+          <p className="ap-hero__note" style={{ marginTop: 18 }}>
+            {t('rent_note')}{' '}
+            <Link href="/contact?pole=cowo">{t('plan3_cta')} →</Link>
+          </p>
         </section>
 
         {/* ÉQUIPEMENTS */}
@@ -451,6 +582,18 @@ function Body() {
             <details>
               <summary>{t('faq4_q')}</summary>
               <div className="ap-ans">{t('faq4_a')}</div>
+            </details>
+            <details>
+              <summary>{t('faq5_q')}</summary>
+              <div className="ap-ans">{t('faq5_a')}</div>
+            </details>
+            <details>
+              <summary>{t('faq6_q')}</summary>
+              <div className="ap-ans">{t('faq6_a')}</div>
+            </details>
+            <details>
+              <summary>{t('faq7_q')}</summary>
+              <div className="ap-ans">{t('faq7_a')}</div>
             </details>
           </div>
         </section>
