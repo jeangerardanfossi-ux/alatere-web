@@ -369,7 +369,7 @@ export const cowoFaqLd = faqLd([
   },
   {
     q: 'Quelles formules proposez-vous ?',
-    a: "Pass à la journée, abonnement mensuel en open-space, bureau privatif à l'année et location de salles de réunion. Les tarifs sont communiqués sur demande, selon votre besoin.",
+    a: "Pass à la journée (30 € TTC), abonnement mensuel en open-space (360 € TTC par mois), location de salles de réunion (180 € TTC la journée) et bureau privatif à l'année, selon disponibilité. Le pass, l'abonnement et les salles se réservent en ligne.",
   },
   {
     q: 'Puis-je réserver une salle de réunion sans être abonné ?',
@@ -378,6 +378,18 @@ export const cowoFaqLd = faqLd([
   {
     q: 'Puis-je aussi y domicilier mon entreprise ?',
     a: 'Oui, via notre offre Alatere doMo. Les membres du coworking bénéficient de conditions avantageuses sur la domiciliation.',
+  },
+  {
+    q: "Quels sont les horaires d'accès ?",
+    a: "Le pass journée donne accès à l'espace de 9 h à 18 h, du lundi au vendredi. Les abonnés mensuels disposent d'un badge d'accès à l'immeuble et peuvent venir travailler 24 h/24, 7 j/7.",
+  },
+  {
+    q: 'Combien de personnes travaillent dans l’espace ?',
+    a: "L'espace compte 15 postes de travail répartis dans 5 salles : une ambiance calme et à taille humaine, loin des grands plateaux bruyants.",
+  },
+  {
+    q: 'Peut-on déjeuner sur place ?',
+    a: 'Oui. Une cuisine équipée avec un comptoir est à la disposition de tous les coworkers : vous pouvez y conserver votre repas au frais et déjeuner sur place.',
   },
 ]);
 
