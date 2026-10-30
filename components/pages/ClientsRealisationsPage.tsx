@@ -17,7 +17,7 @@ import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lan
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
-import { BrandName, BrandSuffix } from '@/components/grommet/BrandName';
+import { BrandSuffix, BrandTitle } from '@/components/grommet/BrandName';
 import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
 import {
@@ -454,7 +454,7 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
             <span>{L(pole.tag)}</span>
           </span>
           <h2>
-            <BrandName pole={pole.key} />
+            <BrandTitle pole={pole.key} />
           </h2>
           <p className="cr-band__base">{L(pole.baseline)}</p>
         </div>
