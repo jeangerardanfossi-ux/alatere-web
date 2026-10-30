@@ -479,8 +479,8 @@ function Fr() {
           que les écarts de prix sont les plus faibles.
         </p>
         <p>
-          <strong>Alatere doMo</strong> occupe le 9 boulevard Albert 1er, dans l&rsquo;immeuble Art
-          nouveau La Caravelle, à cent mètres de la place de Gaulle et à un quart d&rsquo;heure à
+          <strong>Alatere doMo</strong> occupe le 9 boulevard Albert 1er, dans La Caravelle,
+          immeuble Art déco aux influences néoclassiques et méditerranéennes, à cent mètres de la place de Gaulle et à un quart d&rsquo;heure à
           pied de la gare. Trois formules sans engagement : 25 &euro; HT pour une boîte aux
           lettres seule, 30 &euro; HT pour une adresse de siège social avec réception du courrier,
           50 &euro; HT avec numérisation et réexpédition incluses. Frais de dossier de 50 &euro; en
@@ -844,8 +844,8 @@ function En() {
           offer the most on-site services, and where price gaps are narrowest.
         </p>
         <p>
-          <strong>Alatere doMo</strong> occupies 9 boulevard Albert 1er, in the Art Nouveau La
-          Caravelle building, a hundred metres from place de Gaulle and fifteen minutes&rsquo; walk
+          <strong>Alatere doMo</strong> occupies 9 boulevard Albert 1er, in La Caravelle, an Art
+          Deco building with neoclassical and Mediterranean influences, a hundred metres from place de Gaulle and fifteen minutes&rsquo; walk
           from the station. Three plans, no commitment: &euro;25 excl. VAT for a mailbox only,
           &euro;30 for a registered office address with mail reception, &euro;50 with scanning and
           forwarding included. A one-off &euro;50 set-up fee. Coworking space and meeting room

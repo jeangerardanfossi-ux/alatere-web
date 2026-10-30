@@ -37,33 +37,34 @@ const wpRedirects = [
   { from: "/nos-dernieres-formations", to: "/alatere-forma" },
   { from: "/planning-des-formations-professionnelles", to: "/alatere-forma" },
   { from: "/formation-professionnelle-sur-mesure", to: "/alatere-forma" },
-  { from: "/formations-en-webmarketing-communication-digitale", to: "/alatere-forma" },
-  { from: "/formations-en-webmarketing-documentation", to: "/alatere-forma" },
-  { from: "/formations-en-immobilier", to: "/alatere-forma" },
+  { from: "/formations-en-webmarketing-communication-digitale", to: "/alatere-forma/webmarketing" },
+  { from: "/formations-en-webmarketing-documentation", to: "/alatere-forma/webmarketing" },
+  { from: "/formations-en-immobilier", to: "/alatere-forma/immobilier" },
   { from: "/partenariat-ecoles-centres-et-organismes-de-formation", to: "/alatere-forma" },
-  { from: "/formateurs-en-webmarketig-communication-digitale", to: "/alatere-forma" },
+  { from: "/formateurs-en-webmarketig-communication-digitale", to: "/alatere-forma/formateurs" },
   { from: "/devenir-plus-productif-grace-formation-notion", to: "/alatere-forma" },
-  { from: "/formation-canva-creation-de-contenu-visuel", to: "/alatere-forma" },
-  { from: "/photoshop-initiation-a-la-retouche-montage-photo", to: "/alatere-forma" },
-  { from: "/photoshop-creer-des-supports-de-communication", to: "/alatere-forma" },
-  { from: "/ameliorer-sa-visibilite-grace-aux-reseaux-sociaux", to: "/alatere-forma" },
-  { from: "/utiliser-les-fonctionnalites-automatisees-de-google-ads", to: "/alatere-forma" },
-  { from: "/se-promouvoir-avec-facebook-ads", to: "/alatere-forma" },
-  { from: "/se-promouvoir-sur-google-avec-google-ads", to: "/alatere-forma" },
-  { from: "/les-principes-de-bases-du-referencement-et-seo", to: "/alatere-forma" },
-  { from: "/mettre-en-place-une-strategie-web-to-store", to: "/alatere-forma" },
+  { from: "/formation-wordpress-avec-richard-solaro", to: "/alatere-forma/webmarketing" },
+  { from: "/formation-canva-creation-de-contenu-visuel", to: "/alatere-forma/communication-digitale" },
+  { from: "/photoshop-initiation-a-la-retouche-montage-photo", to: "/alatere-forma/communication-digitale" },
+  { from: "/photoshop-creer-des-supports-de-communication", to: "/alatere-forma/communication-digitale" },
+  { from: "/ameliorer-sa-visibilite-grace-aux-reseaux-sociaux", to: "/alatere-forma/communication-digitale" },
+  { from: "/utiliser-les-fonctionnalites-automatisees-de-google-ads", to: "/alatere-forma/webmarketing" },
+  { from: "/se-promouvoir-avec-facebook-ads", to: "/alatere-forma/webmarketing" },
+  { from: "/se-promouvoir-sur-google-avec-google-ads", to: "/alatere-forma/webmarketing" },
+  { from: "/les-principes-de-bases-du-referencement-et-seo", to: "/alatere-forma/webmarketing" },
+  { from: "/mettre-en-place-une-strategie-web-to-store", to: "/alatere-forma/webmarketing" },
   // Immobilier
-  { from: "/demembrement-de-la-propriete", to: "/alatere-forma" },
-  { from: "/copropriete-charges-travaux-et-contentieux", to: "/alatere-forma" },
-  { from: "/les-fondamentaux-reglementaires-de-la-profession-dagent-immobilier-reviser-et-actualiser-ses-connaissances", to: "/alatere-forma" },
-  { from: "/lessentiel-juridique-de-la-vente-immobiliere", to: "/alatere-forma" },
-  { from: "/reglementation-et-deontologie-des-professions-de-limmobilier", to: "/alatere-forma" },
-  { from: "/la-cession-dun-fonds-de-commerce", to: "/alatere-forma" },
-  { from: "/la-gestion-des-revenus-locatifs-de-la-conclusion-du-bail-au-recouvrement-des-loyers-et-contentieux", to: "/alatere-forma" },
-  { from: "/maitriser-le-cadre-juridique-de-la-location-meublee-et-de-la-location-saisonniere", to: "/alatere-forma" },
+  { from: "/demembrement-de-la-propriete", to: "/alatere-forma/immobilier" },
+  { from: "/copropriete-charges-travaux-et-contentieux", to: "/alatere-forma/immobilier" },
+  { from: "/les-fondamentaux-reglementaires-de-la-profession-dagent-immobilier-reviser-et-actualiser-ses-connaissances", to: "/alatere-forma/immobilier" },
+  { from: "/lessentiel-juridique-de-la-vente-immobiliere", to: "/alatere-forma/immobilier" },
+  { from: "/reglementation-et-deontologie-des-professions-de-limmobilier", to: "/alatere-forma/immobilier" },
+  { from: "/la-cession-dun-fonds-de-commerce", to: "/alatere-forma/immobilier" },
+  { from: "/la-gestion-des-revenus-locatifs-de-la-conclusion-du-bail-au-recouvrement-des-loyers-et-contentieux", to: "/alatere-forma/immobilier" },
+  { from: "/maitriser-le-cadre-juridique-de-la-location-meublee-et-de-la-location-saisonniere", to: "/alatere-forma/immobilier" },
   // Slugs avec ligatures typographiques (ﬁ / ﬀ)
-  { from: "/tracﬁn-la-lutte-contre-le-blanchiment-dargent-et-le-ﬁnancement-du-terrorisme-en-immobilier-lab-ft", to: "/alatere-forma" },
-  { from: "/la-fiscalite-des-revenus-fonciers-lies-aux-biens-aﬀectes-a-lhabitation", to: "/alatere-forma" },
+  { from: "/tracﬁn-la-lutte-contre-le-blanchiment-dargent-et-le-ﬁnancement-du-terrorisme-en-immobilier-lab-ft", to: "/alatere-forma/immobilier" },
+  { from: "/la-fiscalite-des-revenus-fonciers-lies-aux-biens-aﬀectes-a-lhabitation", to: "/alatere-forma/immobilier" },
 ];
 
 const nextConfig: NextConfig = {
@@ -73,14 +74,26 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
 
+  // SEO : on désactive la redirection automatique « /page/ → /page » de
+  // Next.js pour qu'une ancienne URL WordPress (qui finissait par « / »)
+  // atteigne sa nouvelle page en UN SEUL saut, au lieu de deux
+  // (/ancienne/ → /ancienne → /nouvelle). La règle générique en fin de
+  // liste rétablit ensuite le comportement normal pour toutes les autres URL.
+  skipTrailingSlashRedirect: true,
+
   async redirects() {
-    const rules = wpRedirects.map((r) => ({
-      source: r.from,
-      destination: r.to,
-      permanent: true,
-    }));
-    // Catégories WordPress → page forMa (wildcard)
+    const rules: { source: string; destination: string; permanent: boolean }[] = [];
+    for (const r of wpRedirects) {
+      // Les deux variantes (avec et sans « / » final) vont directement à la cible.
+      rules.push({ source: r.from, destination: r.to, permanent: true });
+      rules.push({ source: `${r.from}/`, destination: r.to, permanent: true });
+    }
+    // Catégories WordPress → page forMa (wildcard, avec ou sans « / » final)
+    rules.push({ source: "/category/:slug*/", destination: "/alatere-forma", permanent: true });
     rules.push({ source: "/category/:slug*", destination: "/alatere-forma", permanent: true });
+    // Règle générique (doit rester la dernière) : « /page/ » → « /page »,
+    // équivalent de la redirection par défaut de Next.js désactivée ci-dessus.
+    rules.push({ source: "/:path+/", destination: "/:path+", permanent: true });
     return rules;
   },
 };

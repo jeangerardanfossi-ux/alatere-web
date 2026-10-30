@@ -110,6 +110,54 @@ const TX: Dict = {
     en: 'Signed contract and address certificate within 24 to 48 hours.',
   },
 
+  // Pour qui
+  who_label: { fr: 'Pour qui ?', en: 'Who is it for?' },
+  who_title: {
+    fr: 'Une domiciliation adaptée à chaque situation',
+    en: 'A business address for every situation',
+  },
+  who_p: {
+    fr: "Société, entreprise individuelle ou profession libérale : la domiciliation commerciale vous donne une adresse de siège social à Antibes, sans louer de bureau.",
+    en: 'Company, sole trader or self-employed professional: a business address gives you a registered office in Antibes without renting an office.',
+  },
+  who1_h: { fr: "Création d'entreprise", en: 'Starting a company' },
+  who1_p: {
+    fr: "SAS, SASU, SARL, EURL ou micro-entreprise : nous vous remettons l'attestation de domiciliation à joindre à votre dossier d'immatriculation, sous 24 à 48 h.",
+    en: 'SAS, SASU, SARL, EURL or micro-enterprise: we provide the address certificate for your registration file within 24 to 48 hours.',
+  },
+  who2_h: { fr: 'Transfert de siège social', en: 'Head-office transfer' },
+  who2_p: {
+    fr: "Vous déménagez, vous quittez un bureau trop cher ou vous ne voulez plus utiliser votre adresse personnelle : transférez votre siège au centre d'Antibes.",
+    en: 'Moving, leaving an expensive office or no longer wanting to use your home address: transfer your head office to central Antibes.',
+  },
+  who3_h: { fr: 'Professions libérales et de santé', en: 'Liberal & healthcare professions' },
+  who3_p: {
+    fr: "Consultants, avocats, architectes, professionnels de santé : domiciliez le siège de votre société d'exercice, SCM ou holding. Les consultations et les soins restent exercés dans votre cabinet, selon les règles de votre ordre.",
+    en: 'Consultants, lawyers, architects, healthcare professionals: register the seat of your practice company, SCM or holding. Consultations and care remain in your practice, under your professional body rules.',
+  },
+  who4_h: { fr: 'Indépendants nomades', en: 'Mobile freelancers' },
+  who4_p: {
+    fr: "Vous travaillez chez vos clients, à domicile ou en déplacement : votre courrier est réceptionné, numérisé et réexpédié selon votre formule.",
+    en: 'You work at client sites, from home or on the road: your mail is received, scanned and forwarded depending on your plan.',
+  },
+
+  // Sophia / Mougins
+  near_label: { fr: 'Sophia Antipolis, Mougins, Juan-les-Pins', en: 'Sophia Antipolis, Mougins, Juan-les-Pins' },
+  near_title: {
+    fr: 'Vous travaillez à Sophia Antipolis ou à Mougins ? Domiciliez-vous à Antibes',
+    en: 'Working in Sophia Antipolis or Mougins? Register your business in Antibes',
+  },
+  near_p1: {
+    fr: "Nous n'avons pas de bureau à Sophia Antipolis ni à Mougins, et votre adresse sera bien à Antibes : 9 Boulevard Albert 1er. Pour beaucoup d'entrepreneurs de la technopole, c'est un choix pratique : le centre-ville est à une vingtaine de minutes en voiture, et vous passez récupérer votre courrier quand vous venez en ville.",
+    en: "We have no office in Sophia Antipolis or Mougins, and your address will be in Antibes: 9 Boulevard Albert 1er. For many entrepreneurs from the technology park it is a practical choice: the town centre is about twenty minutes away by car, and you pick up your mail whenever you come into town.",
+  },
+  near_p2: {
+    fr: "Sur place, vous profitez aussi des salles de réunion et du coworking Alatere coWo pour recevoir vos clients. Les entreprises de Juan-les-Pins, Vallauris, Biot ou Villeneuve-Loubet sont à quelques minutes.",
+    en: 'On site, you can also use the Alatere coWo meeting rooms and coworking space to meet your clients. Businesses from Juan-les-Pins, Vallauris, Biot or Villeneuve-Loubet are a few minutes away.',
+  },
+  near_l1: { fr: 'Guide : domicilier son entreprise à Antibes', en: 'Guide: registering your business in Antibes' },
+  near_l3: { fr: 'Domiciliation ou location de bureau ?', en: 'Business address or office rental?' },
+
   // Formules
   plans_label: { fr: 'Nos formules', en: 'Our plans' },
   plans_title: { fr: 'Trois formules, de 25 à 50 € HT par mois', en: 'Three plans, from €25 to €50 excl. VAT per month' },
@@ -261,6 +309,39 @@ const TX: Dict = {
   faq5_a: {
     fr: 'Le contrat est renouvelable et résiliable avec préavis. Vous pouvez faire évoluer votre formule à tout moment, sans pénalité.',
     en: 'The contract is renewable and can be cancelled with notice. You can change your plan at any time, with no penalty.',
+  },
+
+  faq6_q: {
+    fr: 'Une micro-entreprise peut-elle se domicilier chez vous ?',
+    en: 'Can a micro-enterprise use your address?',
+  },
+  faq6_a: {
+    fr: "Oui. Les micro-entrepreneurs et entrepreneurs individuels peuvent domicilier leur activité à notre adresse avec l'offre Headquarters ou Forward. Cela évite de faire figurer votre adresse personnelle sur vos factures et dans les annuaires d'entreprises.",
+    en: 'Yes. Micro-entrepreneurs and sole traders can register their business at our address with the Headquarters or Forward plan. This keeps your home address off your invoices and business directories.',
+  },
+  faq7_q: {
+    fr: 'Comment récupérer mon courrier ?',
+    en: 'How do I collect my mail?',
+  },
+  faq7_a: {
+    fr: "Votre courrier est conservé à l'accueil, où vous pouvez le retirer du lundi au vendredi, de 9 h à 17 h. Avec l'offre Forward, il est aussi numérisé et réexpédié chaque semaine à l'adresse de votre choix.",
+    en: 'Your mail is kept at reception, where you can collect it Monday to Friday, 9 am to 5 pm. With the Forward plan, it is also scanned and forwarded weekly to the address of your choice.',
+  },
+  faq8_q: {
+    fr: "Puis-je recevoir mes clients à l'adresse de domiciliation ?",
+    en: 'Can I meet clients at the business address?',
+  },
+  faq8_a: {
+    fr: "Oui, sur réservation. Les salles de réunion climatisées de notre espace de coworking se louent à la journée ou en fin de journée, et vous pouvez réserver un poste de travail à la journée.",
+    en: 'Yes, by booking. The air-conditioned meeting rooms of our coworking space can be rented by the day or late afternoon, and you can book a desk by the day.',
+  },
+  faq9_q: {
+    fr: 'Quelle différence entre domiciliation commerciale et boîte aux lettres ?',
+    en: 'What is the difference between a business address and a mailbox?',
+  },
+  faq9_a: {
+    fr: "La domiciliation commerciale (offres Headquarters et Forward) vous donne une adresse de siège social inscrite au registre du commerce. L'offre Dropbox est une simple boîte aux lettres : elle reçoit votre courrier mais ne peut pas servir de siège social.",
+    en: 'A business address (Headquarters and Forward plans) gives you a registered-office address recorded in the trade register. The Dropbox plan is a simple mailbox: it receives your mail but cannot be used as a registered office.',
   },
 
   // Localisation
@@ -476,6 +557,47 @@ function Body() {
           </div>
         </section>
 
+        {/* POUR QUI */}
+        <section className="d-section" style={{ paddingTop: 0 }}>
+          <div className="d-head">
+            <span className="g-label">
+              <span className="g-tag g-tag--green">{t('who_label')}</span>
+            </span>
+            <h2 className="g-h2">{t('who_title')}</h2>
+            <p>{t('who_p')}</p>
+          </div>
+          <div className="d-benefits">
+            <div className="d-benefit">
+              <div className="d-benefit__ic">
+                <Icon name="zap" />
+              </div>
+              <h3>{t('who1_h')}</h3>
+              <p>{t('who1_p')}</p>
+            </div>
+            <div className="d-benefit">
+              <div className="d-benefit__ic">
+                <Icon name="building-2" />
+              </div>
+              <h3>{t('who2_h')}</h3>
+              <p>{t('who2_p')}</p>
+            </div>
+            <div className="d-benefit">
+              <div className="d-benefit__ic">
+                <Icon name="user-round-check" />
+              </div>
+              <h3>{t('who3_h')}</h3>
+              <p>{t('who3_p')}</p>
+            </div>
+            <div className="d-benefit">
+              <div className="d-benefit__ic">
+                <Icon name="navigation" />
+              </div>
+              <h3>{t('who4_h')}</h3>
+              <p>{t('who4_p')}</p>
+            </div>
+          </div>
+        </section>
+
         {/* FORMULES */}
         <section className="d-section--alt" id="formules">
           <div className="d-inner">
@@ -618,6 +740,27 @@ function Body() {
           </div>
         </section>
 
+        {/* SOPHIA ANTIPOLIS / MOUGINS */}
+        <section className="d-section" style={{ paddingTop: 0 }}>
+          <div className="d-head" style={{ maxWidth: 820 }}>
+            <span className="g-label">
+              <span className="g-tag g-tag--green">{t('near_label')}</span>
+            </span>
+            <h2 className="g-h2">{t('near_title')}</h2>
+            <p>{t('near_p1')}</p>
+            <p style={{ marginTop: 12 }}>{t('near_p2')}</p>
+            <p style={{ marginTop: 12 }}>
+              <Link className="g-inline" href="/blog/domicilier-entreprise-antibes">
+                {t('near_l1')}
+              </Link>
+              {' · '}
+              <Link className="g-inline" href="/blog/domiciliation-ou-bureau-antibes">
+                {t('near_l3')}
+              </Link>
+            </p>
+          </div>
+        </section>
+
         {/* PIÈCES À FOURNIR */}
         <section className="d-docs-band" id="pieces">
           <div className="d-inner">
@@ -693,6 +836,22 @@ function Body() {
               <details>
                 <summary>{t('faq5_q')}</summary>
                 <div className="d-ans">{t('faq5_a')}</div>
+              </details>
+              <details>
+                <summary>{t('faq6_q')}</summary>
+                <div className="d-ans">{t('faq6_a')}</div>
+              </details>
+              <details>
+                <summary>{t('faq7_q')}</summary>
+                <div className="d-ans">{t('faq7_a')}</div>
+              </details>
+              <details>
+                <summary>{t('faq8_q')}</summary>
+                <div className="d-ans">{t('faq8_a')}</div>
+              </details>
+              <details>
+                <summary>{t('faq9_q')}</summary>
+                <div className="d-ans">{t('faq9_a')}</div>
               </details>
             </div>
             <p className="d-faq__more">

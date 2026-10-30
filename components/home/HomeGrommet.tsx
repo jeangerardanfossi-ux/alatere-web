@@ -597,6 +597,9 @@ function Body() {
                 <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--clay">
                   {t('cowo_link')}
                 </a>
+                <Link href="/alatere-cowo" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
+                  {t('cowo_link2')}
+                </Link>
               </div>
             </div>
           </article>
