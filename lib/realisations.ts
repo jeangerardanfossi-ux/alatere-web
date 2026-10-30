@@ -7,11 +7,10 @@
  * Les douze `CaseStudy` sont désormais réelles (FR + EN) et `CLIENT_LOGOS` est
  * renseigné : le gabarit d'attente entre crochets a été retiré.
  *
- * Reste une seule chose à faire pour publier : passer `REALISATIONS_READY` à
- * `true`. Cette bascule retire le `noindex` des deux routes, ajoute la page au
- * sitemap et affiche le lien « Clients & Réalisations » dans le pied de page
- * (colonne « Liens utiles »). Tant qu'elle vaut `false`, la page reste en ligne
- * mais invisible des moteurs.
+ * La page est publiée : `REALISATIONS_READY` vaut `true`, donc les deux routes
+ * sont indexables, figurent au sitemap et le lien « Clients & Réalisations »
+ * apparaît dans le pied de page (colonne « Liens utiles »). Repasser le drapeau
+ * à `false` remet la page hors des moteurs sans la retirer du site.
  *
  * NB : l'entrée « Réalisations » du MENU PRINCIPAL, elle, est permanente
  * (choix client du 2026-08-26) — voir `NAV` dans components/grommet/Header.tsx.
@@ -54,8 +53,8 @@ export type CaseStudy = {
 
 export type PoleKey = 'ecom' | 'forma' | 'domo' | 'cowo';
 
-/** Seule bascule restante avant publication (voir en-tête). */
-export const REALISATIONS_READY = false;
+/** Publication de la page (voir en-tête). */
+export const REALISATIONS_READY = true;
 
 /* =========================================================
    Études de cas réelles.
