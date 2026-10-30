@@ -24,6 +24,7 @@ export const EN_SLUG: Record<string, string> = {
   '/alatere-forma/communication-digitale': '/alatere-forma/digital-communication',
   '/alatere-forma/immobilier': '/alatere-forma/real-estate',
   '/alatere-forma/formateurs': '/alatere-forma/trainers',
+  '/alatere-cowo/bureaux-a-louer-antibes': '/alatere-cowo/offices-to-rent-antibes',
 };
 
 /** Correspondance inverse : chemin EN nu → chemin FR. */

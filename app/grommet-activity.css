@@ -139,3 +139,14 @@ a.ap-chip:hover { color: var(--brand); border-color: var(--brand); transform: tr
 /* SHIM React : recentrer les placeholders (ImageSlot = div, état vide) */
 .ap-gallery .g-img-slot, .ap-shop .g-img-slot,
 .ap-loc__map.g-img-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* Tableau comparatif (page Bureaux à louer) */
+.ap-tablewrap { overflow-x: auto; background: var(--background); border-radius: var(--round-s); box-shadow: var(--elev-s); }
+.ap-table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 560px; }
+.ap-table th, .ap-table td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.ap-table th { font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--accent-dark); }
+.ap-table td:first-child { font-weight: 600; color: var(--dark-1); }
+.ap-table td:last-child { color: var(--accent-dark); font-weight: 600; }
+.ap-table tr:last-child td { border-bottom: 0; }
+.ap-prose { font-size: 16px; line-height: 1.6; color: var(--dark-2); max-width: 860px; margin: 0; }
+.ap-section a.g-inline, .ap-section--alt a.g-inline { color: var(--accent-dark); font-weight: 600; text-underline-offset: 3px; }

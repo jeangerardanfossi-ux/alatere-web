@@ -320,6 +320,39 @@ export const posts: Post[] = [
       },
     },
   },
+  {
+    slug: 'louer-bureau-antibes-bail',
+    pole: 'cowo',
+    frOnly: true,
+    title: {
+      fr: 'Louer un bureau à Antibes : bail commercial, professionnel ou bureau flexible ?',
+      en: 'Renting an office in Antibes: commercial lease, professional lease or flexible office?',
+    },
+    metaTitle: {
+      fr: 'Louer un bureau à Antibes : quel bail choisir ? (guide 2026)',
+      en: 'Renting an office in Antibes: which lease? (2026 guide)',
+    },
+    excerpt: {
+      fr: 'Bail 3-6-9, bail professionnel, bail dérogatoire ou coworking : durée, sortie, coûts d’entrée et prix du marché à Antibes pour louer un bureau sans se tromper.',
+      en: 'Commercial, professional or short-term lease, or coworking: term, exit, upfront costs and market prices in Antibes.',
+    },
+    keyword: {
+      fr: 'louer un bureau Antibes',
+      en: 'rent an office in Antibes',
+    },
+    category: { fr: 'Bureaux & coworking', en: 'Offices & coworking' },
+    date: '2026-10-30',
+    updated: '2026-10-30',
+    readingMin: 7,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, où il gère depuis 2019 l'espace de coworking Alatere coWo, au 9 boulevard Albert 1er.",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, where he has managed the Alatere coWo coworking space at 9 Boulevard Albert 1er since 2019.',
+      },
+    },
+  },
 ];
 
 /** Résout les champs bilingues d'un article dans une langue donnée. */
