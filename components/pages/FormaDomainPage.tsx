@@ -39,8 +39,8 @@ const TX: Dict = {
     en: 'A selection of programs. Objectives, durations, prerequisites, prices and dates on the catalog.',
   },
   prog_note: {
-    fr: "Liste non exhaustive - consultez le catalogue pour l'ensemble des sessions.",
-    en: 'Non-exhaustive list - see the catalog for all sessions.',
+    fr: 'Liste non exhaustive : toutes les sessions sont sur le catalogue.',
+    en: 'Non-exhaustive list: all sessions are in the catalog.',
   },
 
   pourqui: { fr: 'Pour qui', en: 'Who for' },
@@ -53,12 +53,12 @@ const TX: Dict = {
   votreform: { fr: 'Votre formateur sur ce domaine', en: 'Your trainer in this field' },
   ref_role_team: { fr: 'Équipe pédagogique', en: 'Teaching team' },
   ref_h_team: {
-    fr: 'Des formateurs experts de leur domaine',
-    en: 'Trainers who are experts in their field',
+    fr: 'Des formateurs praticiens',
+    en: 'Practitioner trainers',
   },
   ref_p_team: {
-    fr: "Ce domaine est animé par des intervenants praticiens, sélectionnés pour leur expérience de terrain. Découvrez l'équipe qui vous accompagne.",
-    en: 'This field is led by practitioner trainers, chosen for their hands-on experience. Meet the team supporting you.',
+    fr: 'Les formations de ce domaine sont assurées par des formateurs qui exercent dans ce secteur. Leurs parcours sont présentés sur la page formateurs.',
+    en: 'Courses in this field are taught by trainers who work in it. Their backgrounds are on the trainers page.',
   },
   voir_formateurs: { fr: 'Voir nos formateurs', en: 'Meet our trainers' },
   ref_role_lead: { fr: 'Formateur référent', en: 'Lead trainer' },
@@ -67,8 +67,8 @@ const TX: Dict = {
 
   cta_h: { fr: 'Un besoin de formation ?', en: 'Need training?' },
   cta_p: {
-    fr: 'Devis sous 48 heures, démarrage sous 14 jours. Financement OPCO accompagné.',
-    en: 'Quote within 48 hours, start within 14 days. OPCO funding supported.',
+    fr: 'Devis sous 48 heures, démarrage sous 14 jours. Nous montons avec vous le dossier de financement OPCO.',
+    en: 'Quote within 48 hours, start within 14 days. We prepare the OPCO funding file with you.',
   },
   cta_b1: { fr: 'Demander un devis', en: 'Request a quote' },
   cta_b2: { fr: 'Voir le catalogue ↗', en: 'View the catalog ↗' },

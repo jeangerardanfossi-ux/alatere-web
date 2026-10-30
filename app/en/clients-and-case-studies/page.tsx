@@ -10,7 +10,7 @@ import '../../grommet-clients.css';
 const FR = '/clients-et-realisations';
 const TITLE = 'Clients & Case Studies - Alatere Web, Antibes';
 const DESC =
-  'E-commerce, training, business address, coworking: our work division by division, for French Riviera companies supported since 2002.';
+  'E-commerce, training, business address, coworking: our work division by division, for French Riviera companies.';
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

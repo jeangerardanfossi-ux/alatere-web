@@ -13,10 +13,9 @@ function Fr() {
   return (
     <>
       <p>
-        Le <strong>coworking</strong> séduit indépendants, télétravailleurs et petites équipes à la
-        recherche d&rsquo;un cadre professionnel sans les contraintes d&rsquo;un bail. À Antibes, près
-        du port Vauban, voici pour qui c&rsquo;est fait, ce que ça apporte et comment choisir son
-        espace.
+        Le <strong>coworking</strong> permet de travailler dans un vrai bureau sans signer de bail.
+        Voici pour qui c&rsquo;est fait, ce que ça coûte à Antibes, près du port Vauban, et comment
+        choisir son espace.
       </p>
 
       <section>
@@ -42,11 +41,11 @@ function Fr() {
       <section>
         <h2>Les avantages du coworking</h2>
         <ul>
-          <li><strong>Flexibilité</strong> : pas de bail long, on adapte selon l&rsquo;activité ;</li>
-          <li><strong>Coûts maîtrisés</strong> : charges, internet et café inclus ;</li>
-          <li><strong>Productivité</strong> : un cadre dédié, loin des distractions du domicile ;</li>
-          <li><strong>Réseau</strong> : une communauté d&rsquo;entrepreneurs et des événements ;</li>
-          <li><strong>Image</strong> : des salles de réunion pour recevoir vos clients.</li>
+          <li>Pas de bail long : vous ajustez la formule à votre activité ;</li>
+          <li>Charges, internet et café sont compris dans le prix ;</li>
+          <li>Vous travaillez hors de chez vous, sans les distractions de la maison ;</li>
+          <li>Vous croisez d&rsquo;autres entrepreneurs ;</li>
+          <li>Vous recevez vos clients dans une salle de réunion.</li>
         </ul>
       </section>
 
@@ -73,7 +72,7 @@ function Fr() {
             <tr>
               <th>Formule</th>
               <th>Tarif</th>
-              <th>Idéal pour</th>
+              <th>Pour qui</th>
             </tr>
           </thead>
           <tbody>
@@ -89,8 +88,8 @@ function Fr() {
             </tr>
             <tr>
               <td>Salle de réunion</td>
-              <td>180 € TTC / jour - 80 € TTC après 16 h</td>
-              <td>Réunion, atelier, entretien - sur réservation</td>
+              <td>180 € TTC / jour ; 80 € TTC après 16 h</td>
+              <td>Réunion, atelier, entretien (sur réservation)</td>
             </tr>
           </tbody>
         </table>
@@ -98,6 +97,13 @@ function Fr() {
           <strong>Repère utile :</strong>{' '}
           au-delà de 12 journées par mois, l&rsquo;abonnement mensuel (360 €) revient moins cher que le
           pass à la journée (360 ÷ 30 = 12). En dessous, le pass reste le plus économique.
+        </p>
+        <p>
+          Les deux se réservent et se paient en ligne sur{' '}
+          <a className="g-inline" href="https://reservations.alatere-web.com/reserver" target="_blank" rel="noopener noreferrer">
+            reservations.alatere-web.com
+          </a>
+          , en choisissant la date et le poste.
         </p>
         <p>
           Vous venez juste pour une journée ? Tous les détails (ce qui est inclus, comment passer un
@@ -112,19 +118,19 @@ function Fr() {
       <section>
         <h2>Comment choisir son espace à Antibes ?</h2>
         <ul>
-          <li><strong>L&rsquo;emplacement</strong> : proximité gare, port, parking ;</li>
-          <li><strong>Les services réellement inclus</strong> (salles, impression, café) ;</li>
-          <li><strong>La flexibilité</strong> des formules et de l&rsquo;engagement ;</li>
-          <li><strong>L&rsquo;ambiance</strong> et la taille de la communauté ;</li>
-          <li><strong>Les services annexes</strong> : domiciliation, secrétariat…</li>
+          <li>L&rsquo;emplacement : distance de la gare et du port, parking ;</li>
+          <li>Les services réellement inclus (salles, impression, café) ;</li>
+          <li>La durée d&rsquo;engagement de chaque formule ;</li>
+          <li>L&rsquo;ambiance et le nombre de membres ;</li>
+          <li>Les services proposés à côté : domiciliation, secrétariat.</li>
         </ul>
       </section>
 
       <section>
-        <h2>Coworking + domiciliation : le bon combo</h2>
+        <h2>Coworking et domiciliation au même endroit</h2>
         <p>
-          À Antibes, vous pouvez aussi <strong>domicilier votre entreprise</strong> sur place :
-          travailler et avoir son adresse de siège au même endroit simplifie tout. Les membres du
+          Vous pouvez aussi <strong>domicilier votre entreprise</strong> à l&rsquo;adresse où vous
+          travaillez. Les membres du
           coworking bénéficient de conditions avantageuses sur la{' '}
           <Link className="g-inline" href="/alatere-domo">
             domiciliation
@@ -132,13 +138,13 @@ function Fr() {
           .
         </p>
         <p>
-          Envie de découvrir l&rsquo;espace ? Voir{' '}
+          Pour voir l&rsquo;espace : la page{' '}
           <Link className="g-inline" href="/alatere-cowo">
             Alatere coWo
-          </Link>{' '}
-          ou{' '}
+          </Link>
+          , ou{' '}
           <Link className="g-inline" href="/contact?pole=cowo">
-            réserver une visite
+            réservez une visite
           </Link>
           .
         </p>
@@ -189,9 +195,8 @@ function En() {
   return (
     <>
       <p>
-        <strong>Coworking</strong> appeals to independent workers, remote workers and small teams
-        looking for a professional setting without the constraints of a lease. In Antibes, near Port
-        Vauban, here is who it is for, what it brings and how to choose your space.
+        <strong>Coworking</strong> lets you work in a proper office without signing a lease. Here is
+        who it suits, what it costs in Antibes, near Port Vauban, and how to choose a space.
       </p>
 
       <section>
@@ -216,11 +221,11 @@ function En() {
       <section>
         <h2>The benefits of coworking</h2>
         <ul>
-          <li><strong>Flexibility</strong>: no long lease, adjust to suit your activity;</li>
-          <li><strong>Controlled costs</strong>: utilities, internet and coffee included;</li>
-          <li><strong>Productivity</strong>: a dedicated setting, away from the distractions of home;</li>
-          <li><strong>Network</strong>: a community of entrepreneurs and events;</li>
-          <li><strong>Image</strong>: meeting rooms to welcome your clients.</li>
+          <li>No long lease: you change plans as your activity changes;</li>
+          <li>Utilities, internet and coffee are included in the price;</li>
+          <li>You work away from home and its distractions;</li>
+          <li>You meet other entrepreneurs;</li>
+          <li>You see clients in a meeting room.</li>
         </ul>
       </section>
 
@@ -247,7 +252,7 @@ function En() {
             <tr>
               <th>Plan</th>
               <th>Price</th>
-              <th>Ideal for</th>
+              <th>Who it suits</th>
             </tr>
           </thead>
           <tbody>
@@ -263,8 +268,8 @@ function En() {
             </tr>
             <tr>
               <td>Meeting room</td>
-              <td>€180 incl. VAT / day - €80 incl. VAT after 4 pm</td>
-              <td>Meeting, workshop, interview - by reservation</td>
+              <td>€180 incl. VAT / day; €80 incl. VAT after 4 pm</td>
+              <td>Meeting, workshop, interview (booking required)</td>
             </tr>
           </tbody>
         </table>
@@ -286,19 +291,18 @@ function En() {
       <section>
         <h2>How do you choose your space in Antibes?</h2>
         <ul>
-          <li><strong>Location</strong>: proximity to the station, the port, parking;</li>
-          <li><strong>The services actually included</strong> (rooms, printing, coffee);</li>
-          <li><strong>The flexibility</strong> of the plans and commitment;</li>
-          <li><strong>The atmosphere</strong> and size of the community;</li>
-          <li><strong>Add-on services</strong>: business address, secretarial support…</li>
+          <li>Location: distance to the station and the port, parking;</li>
+          <li>The services actually included (rooms, printing, coffee);</li>
+          <li>How long each plan commits you for;</li>
+          <li>The atmosphere and the number of members;</li>
+          <li>Other services on offer: business address, secretarial support.</li>
         </ul>
       </section>
 
       <section>
-        <h2>Coworking + business address: the right combination</h2>
+        <h2>Coworking and a business address in one place</h2>
         <p>
-          In Antibes, you can also <strong>register your company&rsquo;s address</strong> on site:
-          working and having your head-office address in the same place simplifies everything.
+          You can also <strong>register your company&rsquo;s address</strong> where you work.
           Coworking members enjoy favourable terms on the{' '}
           <Link className="g-inline" href="/alatere-domo">
             business address
@@ -306,11 +310,11 @@ function En() {
           .
         </p>
         <p>
-          Want to discover the space? See{' '}
+          To see the space: the{' '}
           <Link className="g-inline" href="/alatere-cowo">
             Alatere coWo
           </Link>{' '}
-          or{' '}
+          page, or{' '}
           <Link className="g-inline" href="/contact?pole=cowo">
             book a visit
           </Link>

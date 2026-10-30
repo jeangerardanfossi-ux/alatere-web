@@ -64,6 +64,10 @@
 .cr-chip__dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); }
 .cr-chip span { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-ink); }
 .cr-band h2 { font-size: 32px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; color: var(--dark-1); margin: 0 0 10px; }
+/* Le nom du pôle est une image : `multiply` (cf. grommet-home.css) efface son
+   fond blanc dans le pastel du bandeau. */
+.cr-band h2 { line-height: 0; }
+.cr-band h2 .g-marque--titre { height: 30px; }
 .cr-band__base { font-size: 18px; line-height: 1.45; color: var(--dark-2); margin: 0; max-width: 66ch; text-wrap: pretty; }
 .cr-band__link { flex: none; font-size: 14px; font-weight: 600; color: var(--dark-1); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -159,7 +163,7 @@
   .cr-anchors__lbl { display: none; }
   .cr-anchor { padding: 9px 14px; }
   .cr-anchors::after { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%; pointer-events: none; background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--background)); }
-  .cr-band h2 { font-size: 26px; }
+  .cr-band h2 .g-marque--titre { height: 26px; }
   .cr-band__base { font-size: 16.5px; }
   .cr-cards { grid-template-columns: 1fr; }
   /* La 3e réalisation est repliée : le contenu reste dans le DOM. */

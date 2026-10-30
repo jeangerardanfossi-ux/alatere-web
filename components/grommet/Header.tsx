@@ -5,13 +5,13 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useLang, useReservations, LangToggle, localizePath } from './lang';
-import { BrandSuffix, type PoleBrand } from './BrandName';
+import { BrandChip, type PoleBrand } from './BrandName';
 
 const POLES = new Set<string>(['ecom', 'forma', 'domo', 'cowo']);
 
 const CTA = { fr: 'Prendre rendez-vous', en: 'Book a meeting' };
 const CTA_COWO = { fr: 'Réserver un poste', en: 'Book a desk' };
-const TAG = { fr: 'Aux côtés de votre entreprise', en: 'Alongside your business' };
+const TAG = { fr: 'Aux côtés des entreprises', en: 'Alongside businesses' };
 
 /** Libellés FR/EN des entrées qui ne sont pas un pôle (les pôles gardent leur nom de marque). */
 const LABELS: Record<string, { fr: string; en: string }> = {
@@ -20,17 +20,17 @@ const LABELS: Record<string, { fr: string; en: string }> = {
   contact: { fr: 'Contact', en: 'Contact' },
 };
 
-type NavItem = [href: string, label: string, key: string, sub: string];
+type NavItem = [href: string, label: string, key: string];
 
-// [href, libellé, clé active, sous-titre]
+// [href, libellé, clé active]
 const NAV: NavItem[] = [
-  ['/alatere-ecom', 'ecoM', 'ecom', 'e-commerce'],
-  ['/alatere-forma', 'forMa', 'forma', 'formations'],
-  ['/alatere-domo', 'doMo', 'domo', 'domiciliation'],
-  ['/alatere-cowo', 'coWo', 'cowo', 'coworking'],
-  ['/clients-et-realisations', 'Réalisations', 'clients', ''],
-  ['/blog', 'Blog', 'blog', ''],
-  ['/#contact', 'Contact', 'contact', ''],
+  ['/alatere-ecom', 'ecoM', 'ecom'],
+  ['/alatere-forma', 'forMa', 'forma'],
+  ['/alatere-domo', 'doMo', 'domo'],
+  ['/alatere-cowo', 'coWo', 'cowo'],
+  ['/clients-et-realisations', 'Réalisations', 'clients'],
+  ['/blog', 'Blog', 'blog'],
+  ['/#contact', 'Contact', 'contact'],
 ];
 
 const BADGE = '/alatere-web-badge.webp';
@@ -85,16 +85,15 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
           </span>
         </Link>
         <nav className="g-nav">
-          {NAV.map(([href, label, key, sub]) => (
+          {NAV.map(([href, label, key]) => (
             <Link
               key={href}
               href={lp(href)}
               className={`g-nav__item${key === active ? ' is-active' : ''}`}
             >
               <span className="g-nav__label">
-                {POLES.has(key) ? <BrandSuffix pole={key as PoleBrand} /> : LABELS[key]?.[lang] ?? label}
+                {POLES.has(key) ? <BrandChip pole={key as PoleBrand} /> : LABELS[key]?.[lang] ?? label}
               </span>
-              {sub ? <span className="g-nav__sub">{sub}</span> : null}
             </Link>
           ))}
         </nav>
@@ -125,7 +124,7 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
         }}
       >
         <nav className="g-drawer__panel">
-          {NAV.map(([href, label, key, sub]) => (
+          {NAV.map(([href, label, key]) => (
             <Link
               key={href}
               href={lp(href)}
@@ -133,9 +132,8 @@ export default function Header({ active, frOnly }: { active?: string; frOnly?: b
               onClick={() => setDrawer(false)}
             >
               <span className="g-nav__label">
-                {POLES.has(key) ? <BrandSuffix pole={key as PoleBrand} /> : LABELS[key]?.[lang] ?? label}
+                {POLES.has(key) ? <BrandChip pole={key as PoleBrand} /> : LABELS[key]?.[lang] ?? label}
               </span>
-              {sub ? <span className="g-nav__sub">{sub}</span> : null}
             </Link>
           ))}
           <LangToggle extra="g-drawer__lang" frOnly={frOnly} />

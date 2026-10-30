@@ -6,18 +6,18 @@
  * header / footer / langue / icônes mutualisés dans components/grommet/*.
  */
 
-import { useState, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useReservations, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import { Icon, ImageSlot } from '@/components/grommet/icons';
+import { Icon } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
-import { BrandSuffix } from '@/components/grommet/BrandName';
+import { BrandChip, BrandTitle } from '@/components/grommet/BrandName';
+import { CLIENT_LOGOS } from '@/lib/client-logos';
 import { useAntispam, Honeypot, RecaptchaNotice } from '@/components/grommet/antispam';
 
 const BADGE = '/alatere-web-badge.webp';
-const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
 const TITLE = {
   fr: "Alatere Web - Agence, formation Qualiopi & centre d'affaires à Antibes",
@@ -25,100 +25,131 @@ const TITLE = {
 };
 
 const TX: Dict = {
-  hero_eyebrow: { fr: 'Antibes · depuis 2002', en: 'Antibes · since 2002' },
+  hero_eyebrow: { fr: 'Fondée en 2002 · à Antibes depuis 2008', en: 'Founded 2002 · in Antibes since 2008' },
   hero_title: {
     fr: "E-commerce, formations et centre d'affaires",
     en: 'E-commerce, training and business center',
   },
   hero_lead: {
-    fr: "Au cœur d'Antibes, nous accompagnons dirigeants de PME et entrepreneurs avec un service sur mesure et un nombre limité de clients. Quatre activités complémentaires, un seul interlocuteur.",
-    en: 'In the heart of Antibes, we support SME leaders and entrepreneurs with a tailored service and a limited number of clients. Four complementary activities, a single point of contact.',
+    fr: "Nous travaillons pour des dirigeants de PME et des entrepreneurs, avec un nombre limité de clients à la fois. La même personne suit votre dossier dans nos quatre activités.",
+    en: 'We work for SME owners and entrepreneurs, with a limited number of clients at a time. The same person handles your file across all four of our activities.',
   },
-  hero_cta1: { fr: 'Découvrir nos activités', en: 'Explore our activities' },
+  hero_cta1: { fr: 'Voir nos activités', en: 'See our activities' },
   hero_cta2: { fr: 'Nous rencontrer', en: 'Meet us' },
-  hero_baseline: { fr: 'Aux côtés de votre entreprise', en: 'Alongside your business' },
-  bento_eyebrow: { fr: 'Nos activités', en: 'Our activities' },
-  bento_title: { fr: 'Quatre métiers, une même exigence.', en: 'Four businesses, one standard.' },
-  bento_link: { fr: 'Un seul interlocuteur →', en: 'A single point of contact →' },
+  hero_baseline: { fr: '9 boulevard Albert 1er, Antibes', en: '9 Boulevard Albert 1er, Antibes' },
+  bento_eyebrow: { fr: 'ecoM · forMa · doMo · coWo', en: 'ecoM · forMa · doMo · coWo' },
+  bento_title: { fr: 'Quatre activités sous le même toit, à Antibes.', en: 'Four activities under one roof in Antibes.' },
+  bento_link: { fr: 'Nous écrire →', en: 'Write to us →' },
   ecom_tag: { fr: 'E-commerce', en: 'E-commerce' },
   ecom_activity: {
     fr: 'Sites marchands opérés en propre · depuis 2003',
     en: 'Online stores we run ourselves · since 2003',
   },
   ecom_copy: {
-    fr: "Vingt ans à concevoir, opérer et référencer nos propres boutiques d'art - notre meilleure démonstration de savoir-faire SEO, SEA et opérations.",
-    en: 'Twenty years designing, running and ranking our own art stores - our best proof of SEO, SEA and operations expertise.',
+    fr: "Depuis 2003 nous concevons, exploitons et référençons nos propres boutiques d'art. Le SEO et la gestion vendus à nos clients tournent d'abord chez nous.",
+    en: 'Since 2003 we have designed, run and ranked our own art stores. The SEO and operations we sell to clients run on our own sites first.',
   },
-  ecom_meta2: { fr: 'UE · 4 langues', en: 'EU · 4 languages' },
-  ecom_link: { fr: 'Découvrir le savoir-faire →', en: 'Explore the expertise →' },
+  ecom_k1: { fr: 'Boutiques en propre', en: 'Own online stores' },
+  ecom_v1: { fr: '5', en: '5' },
+  ecom_k2: { fr: 'Première boutique', en: 'First store' },
+  ecom_v2: { fr: '2003', en: '2003' },
+  ecom_k3: { fr: 'Marchés', en: 'Markets' },
+  ecom_v3: { fr: 'France et UE', en: 'France & EU' },
+  ecom_link: { fr: 'Voir le pôle e-commerce →', en: 'See the e-commerce page →' },
+  ecom_alt: {
+    fr: 'Illustration : travail sur la boutique repro-tableaux.com, entouré de reproductions encadrées',
+    en: 'Illustration: working on the repro-tableaux.com store, surrounded by framed reproductions',
+  },
   forma_tag: { fr: 'Certifié Qualiopi', en: 'Qualiopi-certified' },
   forma_activity: {
     fr: 'Organisme de formation professionnelle',
     en: 'Professional training provider',
   },
   forma_copy: {
-    fr: 'Cinq grands domaines de compétences, parcours sur mesure et financement OPCO. Programmes détaillés sur notre catalogue dédié.',
-    en: 'Five major fields of expertise, tailored programs and OPCO funding. Detailed programs on our dedicated catalog.',
+    fr: 'Webmarketing, intelligence artificielle, langues, communication digitale, immobilier et bureautique. Chaque formation démarre par un positionnement.',
+    en: 'Web marketing, artificial intelligence, languages, digital communication, real estate and office software. Each course starts with an assessment.',
   },
-  forma_d1: { fr: 'Webmarketing', en: 'Web marketing' },
-  forma_d2: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
-  forma_d3: { fr: 'Langues', en: 'Languages' },
-  forma_d4: { fr: 'Communication digitale', en: 'Digital communication' },
-  forma_d5: { fr: 'Immobilier', en: 'Real estate' },
-  forma_d6: { fr: 'Bureautique', en: 'Office software' },
   forma_photo: { fr: 'Photo paysage (formation)', en: 'Landscape photo (training)' },
-  forma_link: { fr: 'Voir le catalogue ↗', en: 'View the catalog ↗' },
+  forma_k1: { fr: 'Catalogue', en: 'Catalog' },
+  forma_v1: { fr: '59 programmes', en: '59 programs' },
+  forma_k2: { fr: 'Modalités', en: 'Formats' },
+  forma_v2: { fr: 'Antibes ou à distance', en: 'Antibes or remote' },
+  forma_k3: { fr: 'Financement', en: 'Funding' },
+  forma_v3: { fr: 'OPCO ou FAF', en: 'OPCO or FAF' },
+  forma_link: { fr: 'Découvrir notre organisme →', en: 'Discover our training provider →' },
+  forma_alt: {
+    fr: 'Illustration : une personne anime une session de formation devant un écran de statistiques',
+    en: 'Illustration: someone leading a training session in front of a screen of charts',
+  },
   domo_tag: { fr: 'Agréé préfecture', en: 'Prefecture-approved' },
   domo_activity: { fr: "Domiciliation d'entreprise à Antibes", en: 'Business address in Antibes' },
   domo_copy: {
-    fr: 'Une adresse de prestige au 9 Boulevard Albert 1er pour votre siège social. Réception du courrier, scan, réexpédition - idéal SIRET et transfert de siège.',
-    en: 'A prestigious address at 9 Boulevard Albert 1er for your registered office. Mail handling, scanning, forwarding - ideal for SIRET registration and head-office transfer.',
+    fr: 'Votre siège social au 9 Boulevard Albert 1er. Nous recevons, numérisons et réexpédions votre courrier. Tarifs mensuels HT, sans engagement.',
+    en: 'Your registered office at 9 Boulevard Albert 1er. We receive, scan and forward your mail. Monthly prices excl. VAT, no commitment.',
   },
-  domo_p0: { fr: 'Offre Dropbox · boîte aux lettres', en: 'Dropbox plan · mailbox' },
-  domo_p1: { fr: 'Offre Headquarters · siège social', en: 'Headquarters plan · registered office' },
-  domo_p2: { fr: 'Offre Forward · scan & réexpédition', en: 'Forward plan · scan & forwarding' },
-  domo_p3: { fr: 'Frais de dossier · une fois', en: 'Setup fee · one-time' },
   domo_photo: { fr: 'Photo carrée', en: 'Square photo' },
+  domo_k1: { fr: 'Boîte aux lettres', en: 'Mailbox' },
+  domo_v1: { fr: '25 € / mois', en: '€25 / mo' },
+  domo_k2: { fr: 'Siège social', en: 'Registered office' },
+  domo_v2: { fr: '30 € / mois', en: '€30 / mo' },
+  domo_k3: { fr: 'Scan et réexpédition', en: 'Scan & forwarding' },
+  domo_v3: { fr: '50 € / mois', en: '€50 / mo' },
   domo_link: { fr: 'Voir les formules →', en: 'View the plans →' },
+  domo_alt: {
+    fr: 'Illustration : tri du courrier devant les boîtes aux lettres de la domiciliation',
+    en: 'Illustration: sorting mail at the business-address letterboxes',
+  },
   cowo_tag: { fr: 'Communauté', en: 'Community' },
   cowo_activity: { fr: 'Espace de coworking à Antibes', en: 'Coworking space in Antibes' },
   cowo_copy: {
-    fr: "Postes nomades, bureaux fermés, salles de réunion. Café, fibre et événements business mensuels - à deux pas du port Vauban. Venez nous rendre visite au 9 boulevard Albert 1er à Antibes.",
-    en: 'Hot desks, private offices, meeting rooms. Coffee, fiber and monthly business events - steps from Port Vauban. Come visit us at 9 Boulevard Albert 1er in Antibes.',
+    fr: 'Postes nomades, bureaux fermés et salles de réunion à deux pas du port Vauban, avec café, fibre et un événement business par mois. Tarifs TTC.',
+    en: 'Hot desks, private offices and meeting rooms steps from Port Vauban, with coffee, fiber and a monthly business event. Prices incl. VAT.',
   },
   cowo_photo: { fr: "Photo de l'espace de coworking", en: 'Photo of the coworking space' },
+  cowo_k1: { fr: 'Pass journée', en: 'Day pass' },
+  cowo_v1: { fr: '30 €', en: '€30' },
+  cowo_k2: { fr: 'Abonnement mensuel', en: 'Monthly membership' },
+  cowo_v2: { fr: '360 €', en: '€360' },
+  cowo_k3: { fr: 'Salle de réunion', en: 'Meeting room' },
+  cowo_v3: { fr: '180 € / jour', en: '€180 / day' },
   cowo_link: { fr: 'Réserver un poste →', en: 'Book a desk →' },
-  cowo_link2: { fr: 'Découvrir l’espace', en: 'Discover the space' },
-  mani_eyebrow: { fr: 'Notre façon de travailler', en: 'The way we work' },
+  cowo_alt: {
+    fr: "Illustration : plusieurs personnes au travail dans l'espace de coworking",
+    en: 'Illustration: several people working in the coworking space',
+  },
+  clients_aria: { fr: 'Nos clients', en: 'Our clients' },
+  clients_prev: { fr: 'Logos précédents', en: 'Previous logos' },
+  clients_next: { fr: 'Logos suivants', en: 'Next logos' },
+  mani_eyebrow: { fr: 'Iveta et Jean-Gérard Anfossi', en: 'Iveta and Jean-Gérard Anfossi' },
   mani_title: {
-    fr: 'Un service sur mesure, pour un nombre limité de clients.',
-    en: 'A tailored service, for a limited number of clients.',
+    fr: 'Nous suivons un nombre limité de clients.',
+    en: 'We take on a limited number of clients.',
   },
-  mani_p1t: { fr: 'Accompagnement humain', en: 'Human support' },
+  mani_p1t: { fr: 'Le même contact', en: 'The same contact' },
   mani_p1d: {
-    fr: "Un interlocuteur dédié qui connaît votre dossier, pas un centre d'appels.",
-    en: 'A dedicated contact who knows your case, not a call center.',
+    fr: 'La personne qui vous répond connaît votre dossier.',
+    en: 'The person who answers knows your file.',
   },
-  mani_p2t: { fr: 'Écosystème complet', en: 'Complete ecosystem' },
+  mani_p2t: { fr: 'Une seule adresse', en: 'One address' },
   mani_p2d: {
-    fr: 'Agence, formation, domiciliation et coworking - tout au même endroit.',
-    en: 'Agency, training, business address and coworking - all in one place.',
+    fr: 'Agence, formation, domiciliation et coworking au 9 boulevard Albert 1er.',
+    en: 'Agency, training, business address and coworking at 9 Boulevard Albert 1er.',
   },
-  mani_p3t: { fr: 'Ancrage local', en: 'Local roots' },
+  mani_p3t: { fr: 'À Antibes depuis 2008', en: 'In Antibes since 2008' },
   mani_p3d: {
-    fr: 'Implantés à Antibes, engagés dans le tissu économique et associatif.',
-    en: 'Based in Antibes, committed to the local economy and community.',
+    fr: 'Nous participons à la vie économique et associative de la ville.',
+    en: "We take part in the town's business and community life.",
   },
-  mani_p4t: { fr: 'Expertise éprouvée', en: 'Proven expertise' },
+  mani_p4t: { fr: "Vingt ans d'e-commerce", en: 'Twenty years of e-commerce' },
   mani_p4d: {
-    fr: 'Vingt ans à opérer nos propres sites e-commerce, au bénéfice de nos clients.',
-    en: "Twenty years running our own e-commerce sites, for our clients' benefit.",
+    fr: 'Nous gérons nos propres boutiques en ligne depuis 2003. Nos clients profitent de ce que nous y apprenons.',
+    en: 'We have run our own online stores since 2003. Our clients benefit from what we learn there.',
   },
-  contact_eyebrow: { fr: 'Contact', en: 'Contact' },
-  contact_title: { fr: 'Parlons de votre projet.', en: "Let's talk about your project." },
+  contact_eyebrow: { fr: 'Réponse sous 48 h', en: 'Reply within 48 hours' },
+  contact_title: { fr: 'Nous contacter', en: 'Contact us' },
   contact_lead: {
-    fr: 'Webmarketing, formation, domiciliation ou coworking : dites-nous votre besoin, nous revenons vers vous rapidement (48h max).',
-    en: "Web marketing, training, business address or coworking: tell us what you need, we'll get back to you quickly (within 48h).",
+    fr: 'Webmarketing, formation, domiciliation ou coworking : dites-nous ce dont vous avez besoin. Vous pouvez aussi appeler ou passer au bureau.',
+    en: 'Web marketing, training, business address or coworking: tell us what you need. You can also call or come by the office.',
   },
   form_name: { fr: 'Nom', en: 'Name' },
   form_name_ph: { fr: 'Votre nom', en: 'Your name' },
@@ -145,7 +176,7 @@ const TX: Dict = {
     fr: "J'accepte que mes données soient utilisées pour traiter ma demande, conformément à la politique de confidentialité.",
     en: 'I agree that my data may be used to process my request, in line with the privacy policy.',
   },
-  form_ok: { fr: 'Merci, votre demande est partie ✔', en: 'Thanks, your request has been sent ✔' },
+  form_ok: { fr: 'Merci, votre demande est partie.', en: 'Thanks, your request has been sent.' },
   form_ok_sub: {
     fr: 'Nous revenons vers vous sous 48 heures à l’adresse indiquée.',
     en: "We'll get back to you within 48 hours at the address provided.",
@@ -165,8 +196,8 @@ const TX: Dict = {
   faq_title: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq1_q: { fr: "Qu'est-ce qu'Alatere Web ?", en: 'What is Alatere Web?' },
   faq1_a: {
-    fr: "Alatere Web est une entreprise familiale installée à Antibes depuis 2002. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
-    en: 'Alatere Web is a family business based in Antibes since 2002. It brings together four complementary services - e-commerce (Alatere ecoM), Qualiopi-certified training (Alatere forMa), business address (Alatere doMo) and coworking (Alatere coWo) - with a single point of contact.',
+    fr: "Alatere Web est une entreprise familiale créée à Paris en 2002 et installée à Antibes depuis 2008. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
+    en: 'Alatere Web is a family business founded in Paris in 2002 and based in Antibes since 2008. It brings together four complementary services - e-commerce (Alatere ecoM), Qualiopi-certified training (Alatere forMa), business address (Alatere doMo) and coworking (Alatere coWo) - with a single point of contact.',
   },
   faq2_q: { fr: 'Où se situe Alatere Web ?', en: 'Where is Alatere Web located?' },
   faq2_a: {
@@ -196,38 +227,6 @@ const TX: Dict = {
   },
 };
 
-/* Déclinaison lettre-par-lettre des suffixes de marque (couleurs du logo). */
-const BRAND: Record<string, [string, string][]> = {
-  ecom: [['e', 'lg-navy'], ['c', 'lg-teal'], ['o', 'lg-gold'], ['M', 'lg-clay']],
-  forma: [['f', 'lg-gold'], ['o', 'lg-clay'], ['r', 'lg-navy'], ['M', 'lg-teal'], ['a', 'lg-green']],
-  domo: [['d', 'lg-teal'], ['o', 'lg-teal'], ['M', 'lg-green'], ['o', 'lg-gold']],
-  cowo: [['c', 'lg-gold'], ['o', 'lg-green'], ['W', 'lg-navy'], ['o', 'lg-clay']],
-};
-
-const BRAND_HREF: Record<string, string> = {
-  ecom: '/alatere-ecom',
-  forma: '/alatere-forma',
-  domo: '/alatere-domo',
-  cowo: '/alatere-cowo',
-};
-
-function BrandName({ k }: { k: keyof typeof BRAND }) {
-  return (
-    <h3 className="g-card__brandname">
-      <Link href={BRAND_HREF[k]} className="g-card__brandlink">
-        Alatere{' '}
-        <span className="g-subword">
-          {BRAND[k].map(([ch, c], i) => (
-            <span key={i} className={c}>
-              {ch}
-            </span>
-          ))}
-        </span>
-      </Link>
-    </h3>
-  );
-}
-
 export default function HomeGrommet() {
   return (
     <div className="g-home">
@@ -240,9 +239,110 @@ export default function HomeGrommet() {
   );
 }
 
+/**
+ * Bande de logos clients. Le défilement n'est plus automatique : il est
+ * actionné par une flèche à chaque extrémité, qui pousse la bande d'environ
+ * une largeur d'écran. Les flèches se désactivent en bout de course.
+ */
+function ClientStrip() {
+  const t = useT(TX);
+  const viewport = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  useEffect(() => {
+    const el = viewport.current;
+    if (!el) return;
+    const update = () => {
+      setAtStart(el.scrollLeft <= 1);
+      setAtEnd(el.scrollLeft >= el.scrollWidth - el.clientWidth - 1);
+    };
+    update();
+    el.addEventListener('scroll', update, { passive: true });
+    // On surveille le conteneur (redimensionnement de la fenêtre) *et* son
+    // contenu : la largeur du conteneur ne bouge pas quand les logos arrivent.
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    if (el.firstElementChild) ro.observe(el.firstElementChild);
+    return () => {
+      el.removeEventListener('scroll', update);
+      ro.disconnect();
+    };
+  }, []);
+
+  const nudge = (direction: 1 | -1) => {
+    const el = viewport.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * Math.max(240, el.clientWidth * 0.8) });
+  };
+
+  return (
+    <section className="g-strip" aria-label={t('clients_aria')}>
+      <button
+        type="button"
+        className="g-strip__arrow"
+        onClick={() => nudge(-1)}
+        aria-label={t('clients_prev')}
+        disabled={atStart}
+      >
+        ←
+      </button>
+      <div className="g-strip__viewport" ref={viewport}>
+        <ul className="g-strip__set">
+          {CLIENT_LOGOS.map((logo) => (
+            <li className="g-strip__item" key={logo.src}>
+              {/* Vignette blanche : elle neutralise les fonds incrustés dans les
+                  fichiers (blancs pour les uns, plaques pleines pour Laforêt et
+                  MAV), comme le mur de logos de la page Réalisations. */}
+              {logo.href ? (
+                <a className="g-strip__cell" href={logo.href} target="_blank" rel="noopener noreferrer">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
+                </a>
+              ) : (
+                <span className="g-strip__cell">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button
+        type="button"
+        className="g-strip__arrow"
+        onClick={() => nudge(1)}
+        aria-label={t('clients_next')}
+        disabled={atEnd}
+      >
+        →
+      </button>
+    </section>
+  );
+}
+
 function Body() {
   const t = useT(TX);
   const resa = useReservations();
+
+  /* Révélation des cartes à leur entrée dans l'écran (le volet sur
+     l'illustration suit la même classe, cf. grommet-home.css). */
+  useEffect(() => {
+    const cards = document.querySelectorAll('.g-poles [data-reveal]');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.12 },
+    );
+    cards.forEach((c) => io.observe(c));
+    return () => io.disconnect();
+  }, []);
   return (
     <main id="top">
       {/* ===================== HERO (immersif — photo salle floutée + voile navy) ===================== */}
@@ -251,7 +351,7 @@ function Body() {
         <div className="g-hero__veil" />
         <div className="g-hero__inner">
           <div className="g-hero__copy">
-            <span className="g-label">
+            <span className="g-label" data-reveal>
               <span className="g-tag g-hero__eyebrow" style={{ padding: '3px 12px' }}>
                 {t('hero_eyebrow')}
               </span>
@@ -266,8 +366,10 @@ function Body() {
                 );
               })()}
             </h1>
-            <p className="g-lead">{t('hero_lead')}</p>
-            <div className="g-hero__cta">
+            <p className="g-lead" data-reveal data-delay="1">
+              {t('hero_lead')}
+            </p>
+            <div className="g-hero__cta" data-reveal data-delay="2">
               <a href="#bento" className="g-btn g-btn--gold g-btn--lg">
                 <span>{t('hero_cta1')}</span> <span className="g-arrow">→</span>
               </a>
@@ -276,7 +378,7 @@ function Body() {
               </a>
             </div>
           </div>
-          <div className="g-hero__badge">
+          <div className="g-hero__badge" data-reveal data-delay="3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={BADGE}
@@ -289,17 +391,17 @@ function Body() {
             />
             <p className="g-hero__baseline">{t('hero_baseline')}</p>
             <div className="g-hero__chips">
-              <Link className="g-tag g-tag--pole" href="/alatere-ecom">
-                <BrandSuffix pole="ecom" />
+              <Link className="g-hero__chip" href="/alatere-ecom">
+                <BrandChip pole="ecom" />
               </Link>
-              <Link className="g-tag g-tag--pole" href="/alatere-forma">
-                <BrandSuffix pole="forma" />
+              <Link className="g-hero__chip" href="/alatere-forma">
+                <BrandChip pole="forma" />
               </Link>
-              <Link className="g-tag g-tag--pole" href="/alatere-domo">
-                <BrandSuffix pole="domo" />
+              <Link className="g-hero__chip" href="/alatere-domo">
+                <BrandChip pole="domo" />
               </Link>
-              <Link className="g-tag g-tag--pole" href="/alatere-cowo">
-                <BrandSuffix pole="cowo" />
+              <Link className="g-hero__chip" href="/alatere-cowo">
+                <BrandChip pole="cowo" />
               </Link>
             </div>
           </div>
@@ -322,159 +424,187 @@ function Body() {
           </a>
         </div>
 
-        <div className="g-bento g-bento--quad">
+        <div className="g-poles">
           {/* ECOM */}
-          <section className="g-card g-card--brand" id="ecom">
-            <div className="g-card__header">
-              <span className="g-card__hash">#savoir-faire-ecommerce</span>
-              <span className="g-tag g-tag--brand">{t('ecom_tag')}</span>
+          <article className="g-pole g-pole--brand" id="ecom" data-reveal>
+            <div className="g-pole__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photos/home-ecom.webp"
+                alt={t('ecom_alt')}
+                width={753}
+                height={497}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-            <div className="g-card__body">
-              <BrandName k="ecom" />
-              <p className="g-card__activity">{t('ecom_activity')}</p>
-              <p className="g-card__copy">{t('ecom_copy')}</p>
-              <div className="g-shots">
-                <div className="g-shot">
-                  <ImageSlot variant="shot" cap="repro-tableaux.com" src="/photos/ecom-repro.webp" />
-                  <div className="g-shot__row">
-                    <span className="g-shot__url">repro-tableaux.com</span>
-                    <span className="g-shot__meta">FR</span>
-                  </div>
-                </div>
-                <div className="g-shot">
-                  <ImageSlot variant="shot" cap="copia-di-arte.com" src="/photos/ecom-copia.webp" />
-                  <div className="g-shot__row">
-                    <span className="g-shot__url">copia-di-arte.com</span>
-                    <span className="g-shot__meta">{t('ecom_meta2')}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="g-card__footer">
-                <Link href="/alatere-ecom" className="g-anchor" style={{ color: 'var(--brand)' }}>
+            <div className="g-pole__body">
+              <span className="g-tag g-tag--brand">{t('ecom_tag')}</span>
+              <h3 className="g-pole__title">
+                <Link href="/alatere-ecom" className="g-card__brandlink">
+                  <BrandTitle pole="ecom" />
+                </Link>
+              </h3>
+              <p className="g-pole__activity">{t('ecom_activity')}</p>
+              <p className="g-pole__copy">{t('ecom_copy')}</p>
+              <ul className="g-pole__meta">
+                <li>
+                  <span className="g-pole__meta-k">{t('ecom_k1')}</span>
+                  <span className="g-pole__meta-v">{t('ecom_v1')}</span>
+                </li>
+                <li>
+                  <span className="g-pole__meta-k">{t('ecom_k2')}</span>
+                  <span className="g-pole__meta-v">{t('ecom_v2')}</span>
+                </li>
+                <li>
+                  <span className="g-pole__meta-k">{t('ecom_k3')}</span>
+                  <span className="g-pole__meta-v">{t('ecom_v3')}</span>
+                </li>
+              </ul>
+              <div className="g-pole__cta">
+                <Link href="/alatere-ecom" className="g-btn g-btn--primary">
                   {t('ecom_link')}
                 </Link>
               </div>
             </div>
-          </section>
+          </article>
 
           {/* FORMA */}
-          <section className="g-card g-card--gold" id="forma">
-            <div className="g-card__header">
-              <span className="g-card__hash">#formations</span>
-              <span className="g-tag g-tag--gold">{t('forma_tag')}</span>
+          <article className="g-pole g-pole--gold" id="forma" data-reveal data-delay="1">
+            <div className="g-pole__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photos/home-forma.webp"
+                alt={t('forma_alt')}
+                width={753}
+                height={497}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-            <div className="g-card__body">
-              <BrandName k="forma" />
-              <p className="g-card__activity">{t('forma_activity')}</p>
-              <p className="g-card__copy">{t('forma_copy')}</p>
-              <ul className="g-list g-list--2col">
+            <div className="g-pole__body">
+              <span className="g-tag g-tag--gold">{t('forma_tag')}</span>
+              <h3 className="g-pole__title">
+                <Link href="/alatere-forma" className="g-card__brandlink">
+                  <BrandTitle pole="forma" />
+                </Link>
+              </h3>
+              <p className="g-pole__activity">{t('forma_activity')}</p>
+              <p className="g-pole__copy">{t('forma_copy')}</p>
+              <ul className="g-pole__meta">
                 <li>
-                  <Icon name="bar-chart-3" /> <span>{t('forma_d1')}</span>
+                  <span className="g-pole__meta-k">{t('forma_k1')}</span>
+                  <span className="g-pole__meta-v">{t('forma_v1')}</span>
                 </li>
                 <li>
-                  <Icon name="sparkles" /> <span>{t('forma_d2')}</span>
+                  <span className="g-pole__meta-k">{t('forma_k2')}</span>
+                  <span className="g-pole__meta-v">{t('forma_v2')}</span>
                 </li>
                 <li>
-                  <Icon name="languages" /> <span>{t('forma_d3')}</span>
-                </li>
-                <li>
-                  <Icon name="megaphone" /> <span>{t('forma_d4')}</span>
-                </li>
-                <li>
-                  <Icon name="building-2" /> <span>{t('forma_d5')}</span>
-                </li>
-                <li>
-                  <Icon name="file-text" /> <span>{t('forma_d6')}</span>
+                  <span className="g-pole__meta-k">{t('forma_k3')}</span>
+                  <span className="g-pole__meta-v">{t('forma_v3')}</span>
                 </li>
               </ul>
-              <ImageSlot
-                variant="land2"
-                cap={t('forma_photo')}
-                src="/photos/forma.webp"
-                objectPosition="50% 15%"
-              />
-              <div className="g-card__footer">
-                <a
-                  href={CATALOG}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="g-anchor"
-                  style={{ color: 'var(--gold-dark)' }}
-                >
+              <div className="g-pole__cta">
+                <Link href="/alatere-forma" className="g-btn g-btn--gold">
                   {t('forma_link')}
-                </a>
+                </Link>
               </div>
             </div>
-          </section>
+          </article>
 
           {/* DOMO */}
-          <section className="g-card g-card--green" id="domo">
-            <div className="g-card__header">
-              <span className="g-card__hash">#domiciliation-antibes</span>
-              <span className="g-tag g-tag--green">{t('domo_tag')}</span>
+          <article className="g-pole g-pole--green" id="domo" data-reveal data-delay="2">
+            <div className="g-pole__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photos/home-domo.webp"
+                alt={t('domo_alt')}
+                width={753}
+                height={497}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-            <div className="g-card__body">
-              <BrandName k="domo" />
-              <p className="g-card__activity">{t('domo_activity')}</p>
-              <p className="g-card__copy">{t('domo_copy')}</p>
-              <div className="g-split g-split--domo">
-                <div className="g-prices g-prices--col">
-                  <div className="g-price">
-                    <strong>
-                      25 € HT <span className="g-price__per">/ mois</span>
-                    </strong>
-                    <span>{t('domo_p0')}</span>
-                  </div>
-                  <div className="g-price">
-                    <strong>
-                      30 € HT <span className="g-price__per">/ mois</span>
-                    </strong>
-                    <span>{t('domo_p1')}</span>
-                  </div>
-                  <div className="g-price is-featured">
-                    <strong>
-                      50 € HT <span className="g-price__per">/ mois</span>
-                    </strong>
-                    <span>{t('domo_p2')}</span>
-                  </div>
-                  <div className="g-price">
-                    <strong>50 € HT</strong>
-                    <span>{t('domo_p3')}</span>
-                  </div>
-                </div>
-                <ImageSlot variant="grow" cap={t('domo_photo')} src="/photos/domo.webp" />
-              </div>
-              <div className="g-card__footer">
-                <Link href="/alatere-domo" className="g-anchor" style={{ color: 'var(--green-dark)' }}>
+            <div className="g-pole__body">
+              <span className="g-tag g-tag--green">{t('domo_tag')}</span>
+              <h3 className="g-pole__title">
+                <Link href="/alatere-domo" className="g-card__brandlink">
+                  <BrandTitle pole="domo" />
+                </Link>
+              </h3>
+              <p className="g-pole__activity">{t('domo_activity')}</p>
+              <p className="g-pole__copy">{t('domo_copy')}</p>
+              <ul className="g-pole__meta">
+                <li>
+                  <span className="g-pole__meta-k">{t('domo_k1')}</span>
+                  <span className="g-pole__meta-v">{t('domo_v1')}</span>
+                </li>
+                <li>
+                  <span className="g-pole__meta-k">{t('domo_k2')}</span>
+                  <span className="g-pole__meta-v">{t('domo_v2')}</span>
+                </li>
+                <li>
+                  <span className="g-pole__meta-k">{t('domo_k3')}</span>
+                  <span className="g-pole__meta-v">{t('domo_v3')}</span>
+                </li>
+              </ul>
+              <div className="g-pole__cta">
+                <Link href="/alatere-domo" className="g-btn g-btn--green">
                   {t('domo_link')}
                 </Link>
               </div>
             </div>
-          </section>
+          </article>
 
           {/* COWO */}
-          <section className="g-card g-card--clay" id="cowo">
-            <div className="g-card__header">
-              <span className="g-card__hash">#coworking-antibes</span>
-              <span className="g-tag g-tag--clay">{t('cowo_tag')}</span>
+          <article className="g-pole g-pole--clay" id="cowo" data-reveal data-delay="3">
+            <div className="g-pole__media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/photos/home-cowo.webp"
+                alt={t('cowo_alt')}
+                width={753}
+                height={497}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-            <div className="g-card__body">
-              <BrandName k="cowo" />
-              <p className="g-card__activity">{t('cowo_activity')}</p>
-              <p className="g-card__copy">{t('cowo_copy')}</p>
-              <ImageSlot variant="photo" cap={t('cowo_photo')} src="/photos/cowo.webp" />
-              <div className="g-card__footer" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 20px' }}>
-                <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
+            <div className="g-pole__body">
+              <span className="g-tag g-tag--clay">{t('cowo_tag')}</span>
+              <h3 className="g-pole__title">
+                <Link href="/alatere-cowo" className="g-card__brandlink">
+                  <BrandTitle pole="cowo" />
+                </Link>
+              </h3>
+              <p className="g-pole__activity">{t('cowo_activity')}</p>
+              <p className="g-pole__copy">{t('cowo_copy')}</p>
+              <ul className="g-pole__meta">
+                <li>
+                  <span className="g-pole__meta-k">{t('cowo_k1')}</span>
+                  <span className="g-pole__meta-v">{t('cowo_v1')}</span>
+                </li>
+                <li>
+                  <span className="g-pole__meta-k">{t('cowo_k2')}</span>
+                  <span className="g-pole__meta-v">{t('cowo_v2')}</span>
+                </li>
+                <li>
+                  <span className="g-pole__meta-k">{t('cowo_k3')}</span>
+                  <span className="g-pole__meta-v">{t('cowo_v3')}</span>
+                </li>
+              </ul>
+              <div className="g-pole__cta">
+                <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--clay">
                   {t('cowo_link')}
                 </a>
-                <Link href="/alatere-cowo" className="g-anchor" style={{ color: 'var(--clay-dark)' }}>
-                  {t('cowo_link2')}
-                </Link>
               </div>
             </div>
-          </section>
+          </article>
         </div>
       </div>
+
+      {/* ===================== BANDE DE LOGOS CLIENTS ===================== */}
+      <ClientStrip />
 
       {/* ===================== MANIFESTO ===================== */}
       <section className="g-manifesto" id="manifesto">

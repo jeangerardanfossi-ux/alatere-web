@@ -12,8 +12,8 @@ import type { PoleBrand } from '@/components/grommet/BrandName';
 import { publishedPosts, formatDate, localizePost } from '@/lib/blog';
 
 const TITLES = {
-  fr: 'Ressources & guides - Alatere Web',
-  en: 'Resources & guides - Alatere Web',
+  fr: 'Ressources & guides | Alatere Web',
+  en: 'Resources & guides | Alatere Web',
 };
 
 /** Filtres par pôle, dans l'ordre d'affichage. « all » = tous les articles. */
@@ -53,8 +53,8 @@ function BlogList() {
         <h1>{t('Ressources & guides', 'Resources & guides')}</h1>
         <p className="g-page-sub">
           {t(
-            'Nos guides pratiques sur l’e-commerce, la formation, la domiciliation et le coworking à Antibes.',
-            'Our practical guides on e-commerce, training, business address services and coworking in Antibes.',
+            'Nos guides sur l’e-commerce, la formation, la domiciliation et le coworking à Antibes.',
+            'Our guides on e-commerce, training, business address services and coworking in Antibes.',
           )}
         </p>
       </div>

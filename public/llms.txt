@@ -1,6 +1,6 @@
 # Alatere Web
 
-> Entreprise familiale basée à Antibes (Côte d'Azur, France) depuis 2002. Quatre métiers complémentaires et un seul interlocuteur : e-commerce (Alatere ecoM), formation professionnelle certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo). Service sur mesure, pour un nombre limité de clients.
+> Entreprise familiale créée à Paris en 2002, installée à Antibes (Côte d'Azur, France) depuis 2008. Quatre métiers complémentaires et un seul interlocuteur : e-commerce (Alatere ecoM), formation professionnelle certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo). Service sur mesure, pour un nombre limité de clients.
 
 ## Identité
 
@@ -8,7 +8,7 @@
 - Adresse : 9 Boulevard Albert 1er, 06600 Antibes, France
 - Téléphone : 07 61 56 45 56
 - Zone desservie : Antibes, Alpes-Maritimes, Côte d'Azur
-- Depuis : 2002
+- Créée : 2002 à Paris ; à Antibes depuis 2008
 - SIRET : 443 421 334 00030 - RCS Antibes
 - Organisme de formation enregistré sous le n° 93.06.07588.06 (cet enregistrement ne vaut pas agrément de l'État)
 

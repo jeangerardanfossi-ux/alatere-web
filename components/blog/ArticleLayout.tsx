@@ -73,7 +73,7 @@ function ArticleBody({ post, children }: { post: Post; children: ReactNode }) {
         {p.author?.bio && (
           <aside className="article-author">
             <p className="article-author__name">
-              {t('À propos de l’auteur', 'About the author')} - {p.author.name}
+              {t('À propos de l’auteur : ', 'About the author: ')}{p.author.name}
             </p>
             <p>
               {p.author.bio}{' '}
@@ -96,8 +96,8 @@ function ArticleBody({ post, children }: { post: Post; children: ReactNode }) {
             <h2>{t('Un projet ou une question ?', 'A project or a question?')}</h2>
             <p>
               {t(
-                'Un seul interlocuteur, une réponse sous 48 heures.',
-                'A single point of contact, a reply within 48 hours.',
+                'Écrivez-nous : nous répondons sous 48 heures.',
+                'Write to us: we reply within 48 hours.',
               )}
             </p>
           </div>

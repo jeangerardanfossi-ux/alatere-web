@@ -90,8 +90,8 @@ const TX: Dict = {
     en: 'The e-commerce partner your clients will never see',
   },
   hero_lead: {
-    fr: "Nous prenons en charge l'acquisition, le contenu et la relation client de vos projets e-commerce, en marque blanche, dans cinq langues. Vingt-trois ans à opérer nos propres boutiques, au service de votre agence.",
-    en: 'We take on the acquisition, content and customer care of your e-commerce projects, white-label, in five languages. Twenty-three years running our own stores, at the service of your agency.',
+    fr: "Nous prenons en charge l'acquisition, le contenu et la relation client de vos projets e-commerce, en marque blanche, dans cinq langues.",
+    en: 'We take on the acquisition, content and customer care of your e-commerce projects, white-label, in five languages.',
   },
   hero_cta1: { fr: 'Prendre rendez-vous', en: 'Book a meeting' },
   hero_cta2: {
@@ -109,16 +109,16 @@ const TX: Dict = {
   badge_qualiopi: { fr: 'Qualiopi', en: 'Qualiopi' },
 
   constat_h2: {
-    fr: 'Vos clients vendent en ligne. Rarement dans une seule langue.',
-    en: 'Your clients sell online. Rarely in a single language.',
+    fr: 'Vos clients vendent souvent dans plusieurs langues',
+    en: 'Your clients often sell in several languages',
   },
   constat_p1: {
-    fr: "Une agence sait concevoir un site. Le faire vivre au quotidien - les campagnes, les fiches produits, les avis, les clients qui écrivent en italien un samedi soir - demande d'autres bras et d'autres langues.",
-    en: 'An agency knows how to build a site. Keeping it alive day to day - the campaigns, the product pages, the reviews, the customer writing in Italian on a Saturday evening - takes other hands and other languages.',
+    fr: "Une agence sait concevoir un site. Le faire tourner au quotidien (campagnes, fiches produits, avis, client qui écrit en italien un samedi soir) demande d'autres bras et d'autres langues.",
+    en: 'An agency knows how to build a site. Running it day to day (campaigns, product pages, reviews, a customer writing in Italian on a Saturday evening) takes other hands and other languages.',
   },
   constat_p2: {
-    fr: "C'est exactement ce que nous faisons pour nos propres boutiques depuis vingt-trois ans. Nous le faisons aussi pour vous, sous votre marque.",
-    en: "That is exactly what we have been doing for our own stores for twenty-three years. We do it for you too, under your brand.",
+    fr: 'Nous le faisons pour nos propres boutiques depuis vingt-trois ans, et nous pouvons le faire pour vos clients, sous votre marque.',
+    en: 'We have done it for our own stores for twenty-three years, and we can do it for your clients, under your brand.',
   },
 
   scope_label: { fr: 'Périmètre', en: 'Scope' },
@@ -138,13 +138,13 @@ const TX: Dict = {
   },
   content_h: { fr: 'Contenu et traduction', en: 'Content and translation' },
   content_p: {
-    fr: 'Fiches produits, pages, newsletters, réseaux sociaux - rédigés ou traduits, pas passés à la machine.',
-    en: 'Product pages, landing pages, newsletters, social media - written or translated, not run through a machine.',
+    fr: 'Fiches produits, pages, newsletters, réseaux sociaux : rédigés ou traduits par notre équipe, sans traduction automatique.',
+    en: 'Product pages, landing pages, newsletters, social media: written or translated by our team, without machine translation.',
   },
   care_h: { fr: 'Relation client', en: 'Customer care' },
   care_p: {
-    fr: "Conseil avant-vente, devis, suivi des commandes, litiges - en français, anglais, italien, espagnol.",
-    en: 'Pre-sales advice, quotes, order follow-up, disputes - in French, English, Italian and Spanish.',
+    fr: 'Conseil avant-vente, devis, suivi des commandes, litiges. En français, anglais, italien et espagnol.',
+    en: 'Pre-sales advice, quotes, order follow-up, disputes. In French, English, Italian and Spanish.',
   },
   reviews_h: { fr: 'Avis et e-réputation', en: 'Reviews and online reputation' },
   reviews_p: {
@@ -157,8 +157,8 @@ const TX: Dict = {
     en: 'Catalogue, stock, carriers, multi-country shipping.',
   },
   forma_h: {
-    fr: 'Formation de vos clients - organisme certifié Qualiopi',
-    en: 'Training your clients - Qualiopi-certified provider',
+    fr: 'Formation de vos clients (organisme certifié Qualiopi)',
+    en: 'Training your clients (Qualiopi-certified provider)',
   },
   forma_p: {
     fr: "Former les équipes de vos clients à leur outil, avec un financement OPCO ou FAF quand il est mobilisable. Vous gardez la relation, nous gérons l'administratif de la formation.",
@@ -171,8 +171,8 @@ const TX: Dict = {
     en: 'Expanding abroad without hiring',
   },
   intl_p: {
-    fr: "Ouvrir un marché ne se réduit pas à traduire un site. Il faut répondre aux clients dans leur langue, adapter les campagnes et connaître les usages locaux. Nos langues sont natives ou courantes, pas approximatives.",
-    en: 'Opening a market is not just translating a site. You have to answer customers in their language, adapt the campaigns and know local habits. Our languages are native or fluent, not approximate.',
+    fr: 'Pour ouvrir un marché, il faut aussi répondre aux clients dans leur langue, adapter les campagnes et connaître les usages locaux. Chaque langue ci-dessous est native ou courante chez l’un de nous.',
+    en: 'Opening a market also means answering customers in their language, adapting the campaigns and knowing local habits. Each language below is native or fluent for one of us.',
   },
   lang_fr: { fr: 'Français', en: 'French' },
   lang_en: { fr: 'Anglais', en: 'English' },
@@ -200,7 +200,7 @@ const TX: Dict = {
   wl_h: { fr: 'Marque blanche', en: 'White label' },
   wl_p: {
     fr: "Nous n'apparaissons nulle part. Vous restez l'interlocuteur unique de votre client, nous livrons sous votre nom.",
-    en: 'We appear nowhere. You remain your client’s single point of contact, we deliver under your name.',
+    en: 'Our name appears nowhere. You remain your client’s single point of contact, and we deliver under your name.',
   },
   regie_h: { fr: 'Régie', en: 'Time and materials' },
   regie_p: {
@@ -219,21 +219,21 @@ const TX: Dict = {
   },
 
   team_label: { fr: "L'équipe", en: 'The team' },
-  team_h2: { fr: 'Une équipe, pas un solo', en: 'A team, not a solo act' },
+  team_h2: { fr: 'Qui fait le travail', en: 'Who does the work' },
   team_p: {
-    fr: 'Structure en SAS : capacité à monter en charge et à co-traiter.',
-    en: 'Set up as a SAS company: able to scale up and to contract jointly.',
+    fr: 'Alatere Web est une SAS : nous pouvons absorber un surcroît de charge et co-traiter.',
+    en: 'Alatere Web is a French SAS company: we can take on extra workload and contract jointly.',
   },
   jga_n: { fr: 'Jean-Gérard Anfossi', en: 'Jean-Gérard Anfossi' },
   jga_r: {
-    fr: 'Dirigeant - acquisition et formation',
-    en: 'Managing director - acquisition and training',
+    fr: 'Dirigeant, acquisition et formation',
+    en: 'Managing director, acquisition and training',
   },
   jga_s1: {
     fr: 'Plus de 25 ans en e-commerce et webmarketing',
     en: '25+ years in e-commerce and web marketing',
   },
-  jga_s2: { fr: 'SEO et SEA - agence Google Partner', en: 'SEO and SEA - Google Partner agency' },
+  jga_s2: { fr: 'SEO et SEA, agence Google Partner', en: 'SEO and SEA, Google Partner agency' },
   jga_s3: {
     fr: 'IA générative appliquée au marketing',
     en: 'Generative AI applied to marketing',
@@ -248,15 +248,15 @@ const TX: Dict = {
   },
   isa_n: { fr: 'Iveta Siskova Anfossi', en: 'Iveta Siskova Anfossi' },
   isa_r: {
-    fr: 'Associée - opérations e-commerce et relation client',
-    en: 'Partner - e-commerce operations and customer care',
+    fr: 'Associée, opérations e-commerce et relation client',
+    en: 'Partner, e-commerce operations and customer care',
   },
   isa_s1: {
     fr: 'Plus de 15 ans en service clients multi-pays',
     en: '15+ years in multi-country customer service',
   },
   isa_s2: { fr: 'Supply chain et logistique', en: 'Supply chain and logistics' },
-  isa_s3: { fr: 'CRM - Emarsys, SAP', en: 'CRM - Emarsys, SAP' },
+  isa_s3: { fr: 'CRM : Emarsys, SAP', en: 'CRM: Emarsys, SAP' },
   isa_s4: { fr: 'MBA Marketing Global', en: 'Global Marketing MBA' },
   isa_l: {
     fr: 'Slovaque et tchèque natifs · allemand bilingue · français et anglais courants',
@@ -268,8 +268,8 @@ const TX: Dict = {
     en: 'Digital marketing and multilingual e-commerce customer care',
   },
   sb_s1: {
-    fr: 'Campagnes Meta Ads et Google Ads - certifiée',
-    en: 'Meta Ads and Google Ads campaigns - certified',
+    fr: 'Campagnes Meta Ads et Google Ads (certifiée)',
+    en: 'Meta Ads and Google Ads campaigns (certified)',
   },
   sb_s2: {
     fr: 'Service client italien, français, espagnol, anglais : conseil, devis, suivi de commandes',
@@ -317,8 +317,8 @@ const TX: Dict = {
   },
 
   contact_h2: {
-    fr: 'Un projet, un pic de charge, un marché à ouvrir ?',
-    en: 'A project, a workload peak, a market to open?',
+    fr: 'Nous contacter',
+    en: 'Contact us',
   },
   contact_p: {
     fr: "Décrivez votre besoin sur le formulaire de contact, en choisissant le sujet « E-commerce - Alatere ecoM ». Nous répondons sous 48 heures.",

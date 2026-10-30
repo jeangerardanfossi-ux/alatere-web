@@ -15,10 +15,10 @@ function Fr() {
   return (
     <>
       <p>
-        Faire financer sa <strong>formation professionnelle</strong> est souvent plus simple
-        qu&rsquo;on ne le pense. Selon votre statut - salarié ou travailleur non-salarié - deux
-        dispositifs principaux existent : l&rsquo;<strong>OPCO</strong> et le <strong>FAF</strong>.
-        Voici comment ils fonctionnent et comment les mobiliser, idéalement sans reste à charge.
+        Pour faire financer votre <strong>formation professionnelle</strong>, deux dispositifs
+        principaux existent selon votre statut : l&rsquo;<strong>OPCO</strong> si vous êtes
+        salarié, le <strong>FAF</strong> si vous êtes travailleur non-salarié. Voici comment ils
+        fonctionnent et comment les mobiliser, idéalement sans reste à charge.
       </p>
 
       <section>
@@ -104,8 +104,8 @@ function Fr() {
         <p>
           Seuls les organismes <strong>certifiés Qualiopi</strong> ouvrent droit aux financements
           publics et mutualisés (OPCO, FAF…). L&rsquo;organisme de formation Alatere Web SAS (marque
-          Alatere forMa) est certifié Qualiopi, enregistré sous le numéro 93.06.07588.06 : vos
-          formations sont donc <strong>finançables</strong>.
+          Alatere forMa) est certifié Qualiopi, enregistré sous le numéro 93.06.07588.06 : les
+          formations suivies chez nous sont donc <strong>finançables</strong>.
         </p>
       </section>
 
@@ -117,19 +117,19 @@ function Fr() {
           intervient en moyenne <strong>sous 14 jours</strong> une fois le financement validé.
         </p>
         <p>
-          Besoin d&rsquo;aide pour monter votre dossier ? Découvrez nos{' '}
+          Nous vous aidons à monter le dossier. Voyez nos{' '}
           <Link className="g-inline" href="/alatere-forma">
             formations certifiées Qualiopi
-          </Link>
-          , consultez le{' '}
+          </Link>{' '}
+          et le{' '}
           <a className="g-inline" href={CATALOG} target="_blank" rel="noopener noreferrer">
             catalogue
-          </a>{' '}
-          ou{' '}
+          </a>
+          , ou{' '}
           <Link className="g-inline" href="/contact?pole=forma">
             demandez un devis
           </Link>{' '}
-          - réponse sous 48 heures.
+          : réponse sous 48 heures.
         </p>
       </section>
 
@@ -147,7 +147,7 @@ function Fr() {
         <p>
           L&rsquo;OPCO finance la formation des salariés dans le cadre du plan de développement des
           compétences de l&rsquo;employeur. Le FAF finance la formation continue des travailleurs
-          non-salariés - indépendants, professions libérales (FIF PL, AGEFICE…) - selon des plafonds
+          non-salariés, indépendants et professions libérales (FIF PL, AGEFICE…), selon des plafonds
           annuels propres à chaque fonds.
         </p>
 
@@ -180,10 +180,10 @@ function En() {
   return (
     <>
       <p>
-        Getting your <strong>professional training</strong> funded is often simpler than people
-        think. Depending on your status - employee or self-employed - there are two main schemes:
-        the <strong>OPCO</strong> and the <strong>FAF</strong>. Here is how they work and how to
-        draw on them, ideally with no out-of-pocket cost.
+        To get your <strong>professional training</strong> funded, there are two main schemes
+        depending on your status: the <strong>OPCO</strong> if you are an employee, the{' '}
+        <strong>FAF</strong> if you are self-employed. Here is how they work and how to draw on
+        them, ideally with no out-of-pocket cost.
       </p>
 
       <section>
@@ -267,8 +267,8 @@ function En() {
         <p>
           Only <strong>Qualiopi-certified</strong> providers give access to public and pooled
           funding (OPCO, FAF, etc.). The training provider Alatere Web SAS (Alatere forMa brand) is
-          Qualiopi-certified, registered under number 93.06.07588.06: your training courses are
-          therefore <strong>fundable</strong>.
+          Qualiopi-certified, registered under number 93.06.07588.06: the courses you take with us
+          are therefore <strong>fundable</strong>.
         </p>
       </section>
 
@@ -280,19 +280,19 @@ function En() {
           <strong>within 14 days</strong> once funding is approved.
         </p>
         <p>
-          Need help putting together your application? Discover our{' '}
+          We help you put the application together. See our{' '}
           <Link className="g-inline" href="/alatere-forma">
             Qualiopi-certified training courses
-          </Link>
-          , browse the{' '}
+          </Link>{' '}
+          and the{' '}
           <a className="g-inline" href={CATALOG} target="_blank" rel="noopener noreferrer">
             catalogue
-          </a>{' '}
-          or{' '}
+          </a>
+          , or{' '}
           <Link className="g-inline" href="/contact?pole=forma">
             request a quote
-          </Link>{' '}
-          - reply within 48 hours.
+          </Link>
+          : we reply within 48 hours.
         </p>
       </section>
 
@@ -308,8 +308,8 @@ function En() {
         <h3>What&rsquo;s the difference between OPCO and FAF?</h3>
         <p>
           The OPCO funds employee training as part of the employer&rsquo;s skills-development plan.
-          The FAF funds the continuing training of the self-employed - sole traders, the liberal
-          professions (FIF PL, AGEFICE, etc.) - within annual ceilings specific to each fund.
+          The FAF funds the continuing training of the self-employed, sole traders and the liberal
+          professions (FIF PL, AGEFICE, etc.), within annual ceilings specific to each fund.
         </p>
 
         <h3>How can you get your training funded with nothing to pay out of pocket?</h3>

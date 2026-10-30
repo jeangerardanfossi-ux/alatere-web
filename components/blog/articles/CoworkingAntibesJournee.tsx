@@ -18,9 +18,7 @@ function Fr() {
         À Antibes, un <strong>coworking à la journée</strong>{' '}
         coûte 30 € TTC : vous réservez un poste
         en open-space, café, fibre et Wi-Fi inclus, sans engagement. Alatere coWo se trouve au 9
-        boulevard Albert 1er, à deux pas du port Vauban et à dix minutes à pied de la gare SNCF -
-        l&rsquo;option simple pour travailler le temps d&rsquo;une journée, entre deux rendez-vous ou
-        loin de chez soi.
+        boulevard Albert 1er, à deux pas du port Vauban et à dix minutes à pied de la gare SNCF.
       </p>
 
       <section>
@@ -34,7 +32,7 @@ function Fr() {
             <tr>
               <th>Formule</th>
               <th>Tarif</th>
-              <th>Idéal pour</th>
+              <th>Pour qui</th>
             </tr>
           </thead>
           <tbody>
@@ -50,8 +48,8 @@ function Fr() {
             </tr>
             <tr>
               <td>Salle de réunion</td>
-              <td>180 € TTC / jour - 80 € TTC après 16 h</td>
-              <td>Réunion, atelier, entretien - sur réservation</td>
+              <td>180 € TTC / jour ; 80 € TTC après 16 h</td>
+              <td>Réunion, atelier, entretien (sur réservation)</td>
             </tr>
           </tbody>
         </table>
@@ -65,20 +63,18 @@ function Fr() {
           <strong>Salle de réunion : pensez à réserver.</strong>{' '}
           Nos salles sont, pour la plupart,
           louées à l&rsquo;année par des entreprises : la disponibilité à la journée est donc
-          limitée. Prévenez quelques jours à l&rsquo;avance pour garantir votre créneau - ou optez
-          pour le créneau de fin de journée (après 16 h) à 80 € TTC au lieu de 180 €.
+          limitée. Prévenez quelques jours à l&rsquo;avance pour garantir votre créneau. Le créneau de fin
+          de journée (après 16 h) coûte 80 € TTC au lieu de 180 €.
         </p>
       </section>
 
       <section>
         <h2>Ce qui est inclus dans le pass journée</h2>
-        <p>
-          Un poste en open-space ne se résume pas à une chaise et une table. Le pass donne accès à :
-        </p>
+        <p>Le pass comprend :</p>
         <ul>
           <li>
             <strong>Fibre haut-débit et Wi-Fi sécurisé</strong>{' '}
-            dans tout l&rsquo;espace - de quoi tenir une visio sans coupure.
+            dans tout l&rsquo;espace, de quoi tenir une visio sans coupure.
           </li>
           <li><strong>Café à volonté</strong> et coin pause partagé.</li>
           <li>
@@ -96,15 +92,14 @@ function Fr() {
       <section>
         <h2>Passer un appel ou une visio : comment ça se passe, concrètement</h2>
         <p>
-          La plupart de nos salles fermées sont louées à l&rsquo;année par des entreprises - la
-          rançon du succès. Pour un appel ou une visio improvisés, nos membres ont deux solutions
-          éprouvées :
+          La plupart de nos salles fermées sont louées à l&rsquo;année par des entreprises. Pour un
+          appel ou une visio imprévus, nos membres utilisent deux endroits :
         </p>
         <ul>
           <li>
             <strong>La grande salle à bureau partagé</strong> (jusqu&rsquo;à 5 places) fait office de
-            coin appels : on s&rsquo;y installe pour téléphoner ou suivre une visio. Le port d&rsquo;un
-            casque audio est vivement recommandé, par respect pour les voisins de table.
+            coin appels : on s&rsquo;y installe pour téléphoner ou suivre une visio. Prenez un casque
+            audio, pour vos voisins de table.
           </li>
           <li>
             <strong>Le bar de la cuisine</strong>, un peu à l&rsquo;écart, permet de s&rsquo;isoler le
@@ -112,17 +107,14 @@ function Fr() {
           </li>
         </ul>
         <p>
-          Pour une vraie réunion fermée et au calme, mieux vaut réserver une salle à l&rsquo;avance
-          (180 € TTC la journée, ou 80 € après 16 h).
+          Pour une réunion au calme, porte fermée, réservez une salle à l&rsquo;avance (180 € TTC la
+          journée, ou 80 € après 16 h).
         </p>
       </section>
 
       <section>
         <h2>Coworking, café ou lobby d&rsquo;hôtel : où travailler à Antibes quand on est de passage ?</h2>
-        <p>
-          Pour une journée de travail loin du bureau, trois options reviennent souvent. Voici comment
-          elles se comparent concrètement :
-        </p>
+        <p>Les trois options habituelles, comparées :</p>
         <table>
           <thead>
             <tr>
@@ -153,7 +145,7 @@ function Fr() {
             </tr>
             <tr>
               <td>Appels / visios</td>
-              <td>Oui - coin appels dédié, casque conseillé</td>
+              <td>Oui, coin appels dédié, casque conseillé</td>
               <td>Non</td>
               <td>Non</td>
             </tr>
@@ -172,13 +164,12 @@ function Fr() {
           </tbody>
         </table>
         <p>
-          Le café dépanne une heure ; au-delà, le coworking offre le confort, un endroit prévu pour
-          téléphoner et une connexion sur laquelle on peut compter.
+          Le café dépanne une heure. Pour une journée entière, le coworking est plus adapté.
         </p>
       </section>
 
       <section>
-        <h2>Pour qui ? Freelances de passage, nomades, salariés en déplacement</h2>
+        <h2>À qui s&rsquo;adresse le pass journée</h2>
         <p>
           Le pass à la journée s&rsquo;adresse aux <strong>freelances de passage</strong> sur la Côte
           d&rsquo;Azur, aux <strong>télétravailleurs</strong> qui veulent sortir de chez eux, aux{' '}
@@ -191,38 +182,41 @@ function Fr() {
         <h2>Venir travailler chez Alatere coWo</h2>
         <p>
           L&rsquo;espace est au <strong>9 boulevard Albert 1er</strong> (immeuble La Caravelle), 06600
-          Antibes - port Vauban à deux pas, gare SNCF à dix minutes à pied (700 m). Le pass est sans
-          engagement : un appel au <strong>{company.phoneDisplay}</strong> ou un message à{' '}
-          <Email className="g-inline" user="coworking" /> suffit à s&rsquo;assurer un poste pour le
-          jour voulu. Café offert si vous venez d&rsquo;abord visiter.
+          Antibes, à deux pas du port Vauban et à dix minutes à pied de la gare SNCF (700 m). Le pass est sans
+          engagement : la date, le poste et le paiement se choisissent en ligne, et un appel au{' '}
+          <strong>{company.phoneDisplay}</strong> ou un message à{' '}
+          <Email className="g-inline" user="coworking" /> reste possible. Café offert si vous venez
+          d&rsquo;abord visiter.
         </p>
         <p>
-          Découvrir l&rsquo;espace :{' '}
+          Réserver votre poste :{' '}
+          <a className="g-inline" href="https://reservations.alatere-web.com/reserver" target="_blank" rel="noopener noreferrer">
+            reservations.alatere-web.com
+          </a>
+          . Voir l&rsquo;espace :{' '}
           <Link className="g-inline" href="/alatere-cowo">
             Alatere coWo
           </Link>{' '}
           ou{' '}
-          <Link className="g-inline" href="/contact?pole=cowo">
+          <a className="g-inline" href="https://reservations.alatere-web.com/visite" target="_blank" rel="noopener noreferrer">
             réserver une visite
-          </Link>
+          </a>
           .
         </p>
       </section>
 
       <section>
-        <h2>Besoin d&rsquo;une adresse à Antibes, pas seulement d&rsquo;un bureau ?</h2>
+        <h2>Domicilier votre entreprise à la même adresse</h2>
         <p>
-          Si votre passage révèle un besoin plus durable - installer le siège social de votre
-          entreprise à Antibes -, la{' '}
+          Si vous voulez installer le siège social de votre entreprise à Antibes, la{' '}
           <Link className="g-inline" href="/alatere-domo">
             domiciliation Alatere doMo
           </Link>{' '}
-          prend le relais à la même adresse, et les membres du coworking bénéficient de conditions
-          avantageuses. Un seul lieu pour travailler aujourd&rsquo;hui et domicilier demain.
+          se fait à la même adresse, et les membres du coworking bénéficient de conditions
+          avantageuses.
         </p>
         <p>
-          Pour aller plus loin : si vous hésitez encore entre les formules et cherchez à comparer les
-          espaces, lisez notre{' '}
+          Pour comparer les formules et les espaces, lisez notre{' '}
           <Link className="g-inline" href="/blog/coworking-antibes-guide">
             guide pour choisir un coworking à Antibes
           </Link>
@@ -284,8 +278,7 @@ function En() {
         costs €30 incl. VAT: you book an open space
         desk, with coffee, fibre and Wi-Fi included, and no commitment. Alatere coWo is located at 9
         boulevard Albert 1er, a stone&rsquo;s throw from Port Vauban and a ten-minute walk from the SNCF
-        train station - the simple option for working for a single day, between two meetings or
-        away from home.
+        train station.
       </p>
 
       <section>
@@ -299,7 +292,7 @@ function En() {
             <tr>
               <th>Plan</th>
               <th>Price</th>
-              <th>Ideal for</th>
+              <th>Who it suits</th>
             </tr>
           </thead>
           <tbody>
@@ -315,8 +308,8 @@ function En() {
             </tr>
             <tr>
               <td>Meeting room</td>
-              <td>€180 incl. VAT / day - €80 incl. VAT after 4 pm</td>
-              <td>Meeting, workshop, interview - by reservation</td>
+              <td>€180 incl. VAT / day; €80 incl. VAT after 4 pm</td>
+              <td>Meeting, workshop, interview (booking required)</td>
             </tr>
           </tbody>
         </table>
@@ -330,20 +323,18 @@ function En() {
           <strong>Meeting room: remember to book.</strong>{' '}
           Most of our rooms are
           rented by the year by companies: availability on a day-by-day basis is therefore
-          limited. Let us know a few days ahead to secure your slot - or opt
-          for the late-day slot (after 4 pm) at €80 incl. VAT instead of €180.
+          limited. Let us know a few days ahead to secure your slot. The late-day
+          slot (after 4 pm) costs €80 incl. VAT instead of €180.
         </p>
       </section>
 
       <section>
         <h2>What&rsquo;s included in the day pass</h2>
-        <p>
-          An open space desk is more than just a chair and a table. The pass gives you access to:
-        </p>
+        <p>The pass includes:</p>
         <ul>
           <li>
             <strong>High-speed fibre and secure Wi-Fi</strong>{' '}
-            throughout the space - enough to hold a video call without dropouts.
+            throughout the space, enough to hold a video call without dropouts.
           </li>
           <li><strong>Unlimited coffee</strong> and a shared break area.</li>
           <li>
@@ -361,15 +352,14 @@ function En() {
       <section>
         <h2>Making a call or a video meeting: how it works, in practice</h2>
         <p>
-          Most of our closed rooms are rented by the year by companies - the price of
-          success. For an impromptu call or video meeting, our members have two tried-and-tested
-          solutions:
+          Most of our closed rooms are rented by the year by companies. For an unplanned call or
+          video meeting, our members use two spots:
         </p>
         <ul>
           <li>
             <strong>The large shared-desk room</strong> (up to 5 seats) acts as a
-            call corner: you settle in there to make calls or join a video meeting. Wearing
-            headphones is strongly recommended, out of respect for those at neighbouring desks.
+            call corner: you settle in there to make calls or join a video meeting. Bring
+            headphones, for the sake of the people at the next desks.
           </li>
           <li>
             <strong>The kitchen bar</strong>, slightly off to the side, lets you step aside for
@@ -377,17 +367,14 @@ function En() {
           </li>
         </ul>
         <p>
-          For a genuine closed-door, quiet meeting, it&rsquo;s best to book a room in advance
-          (€180 incl. VAT for the day, or €80 after 4 pm).
+          For a quiet meeting behind a closed door, book a room in advance (€180 incl. VAT for the
+          day, or €80 after 4 pm).
         </p>
       </section>
 
       <section>
         <h2>Coworking, café or hotel lobby: where to work in Antibes when you&rsquo;re passing through?</h2>
-        <p>
-          For a day of work away from the office, three options often come up. Here is how
-          they compare in practice:
-        </p>
+        <p>The three usual options, compared:</p>
         <table>
           <thead>
             <tr>
@@ -418,7 +405,7 @@ function En() {
             </tr>
             <tr>
               <td>Calls / video meetings</td>
-              <td>Yes - dedicated call corner, headphones advised</td>
+              <td>Yes, dedicated call corner, headphones advised</td>
               <td>No</td>
               <td>No</td>
             </tr>
@@ -437,16 +424,15 @@ function En() {
           </tbody>
         </table>
         <p>
-          A café will do for an hour; beyond that, coworking offers comfort, a place set up for
-          making calls and a connection you can count on.
+          A café will do for an hour. For a full day, coworking is the better fit.
         </p>
       </section>
 
       <section>
-        <h2>Who is it for? Freelancers passing through, nomads, employees on the move</h2>
+        <h2>Who the day pass is for</h2>
         <p>
           The day pass is aimed at <strong>freelancers passing through</strong> on the Côte
-          d&rsquo;Azur, <strong>remote workers</strong> who want to get out of the house, {' '}
+          d&rsquo;Azur, <strong>remote workers</strong> who want to get out of the house,{' '}
           <strong>employees on a business trip</strong> in Antibes or Sophia Antipolis, and anyone who
           has a meeting in the area and a few hours to put to good use in between.
         </p>
@@ -456,13 +442,13 @@ function En() {
         <h2>Come and work at Alatere coWo</h2>
         <p>
           The space is at <strong>9 boulevard Albert 1er</strong> (La Caravelle building), 06600
-          Antibes - Port Vauban a stone&rsquo;s throw away, the SNCF train station a ten-minute walk (700 m)
-          away. The pass involves no commitment: a call to <strong>{company.phoneDisplay}</strong> or a message to{' '}
+          Antibes, a stone&rsquo;s throw from Port Vauban and a ten-minute walk (700 m) from the SNCF
+          train station. The pass involves no commitment: a call to <strong>{company.phoneDisplay}</strong> or a message to{' '}
           <Email className="g-inline" user="coworking" /> is enough to secure a desk for the
           day you want. Free coffee if you come to visit first.
         </p>
         <p>
-          Discover the space:{' '}
+          See the space:{' '}
           <Link className="g-inline" href="/alatere-cowo">
             Alatere coWo
           </Link>{' '}
@@ -475,19 +461,16 @@ function En() {
       </section>
 
       <section>
-        <h2>Need an address in Antibes, not just a desk?</h2>
+        <h2>Registering your company at the same address</h2>
         <p>
-          If your visit reveals a more lasting need - setting up your company&rsquo;s registered
-          office in Antibes -, the{' '}
+          If you want to set up your company&rsquo;s registered office in Antibes, the{' '}
           <Link className="g-inline" href="/alatere-domo">
             Alatere doMo business address service
           </Link>{' '}
-          takes over at the same address, and coworking members enjoy favourable
-          terms. A single place to work today and register your address tomorrow.
+          operates at the same address, and coworking members enjoy favourable terms.
         </p>
         <p>
-          To go further: if you&rsquo;re still hesitating between the plans and want to compare the
-          spaces, read our{' '}
+          To compare the plans and the spaces, read our{' '}
           <Link className="g-inline" href="/blog/coworking-antibes-guide">
             guide to choosing a coworking space in Antibes
           </Link>

@@ -15,8 +15,8 @@ function Fr() {
       <p>
         Faut-il <strong>domicilier</strong> son entreprise ou <strong>louer un bureau</strong> ? Pour
         une création, un transfert de siège ou une activité qui démarre à Antibes, le bon choix dépend
-        de vos coûts, de votre besoin de présence physique et de l&rsquo;image visée. Voici un
-        comparatif clair.
+        surtout de votre budget et du nombre de jours où vous avez besoin d&rsquo;un lieu de
+        travail.
       </p>
 
       <section>
@@ -42,20 +42,17 @@ function Fr() {
           <tbody>
             <tr><td>Coût mensuel</td><td>À partir de 30 €</td><td>Plus élevé (loyer + charges)</td></tr>
             <tr><td>Engagement</td><td>Souple, renouvelable</td><td>Bail (ou abonnement coworking)</td></tr>
-            <tr><td>Adresse de prestige</td><td>Oui</td><td>Oui</td></tr>
+            <tr><td>Adresse professionnelle</td><td>Oui</td><td>Oui</td></tr>
             <tr><td>Espace de travail</td><td>Non</td><td>Oui</td></tr>
             <tr><td>Gestion du courrier</td><td>Incluse</td><td>Selon l&rsquo;offre</td></tr>
-            <tr><td>Idéal pour</td><td>Création, télétravail, siège</td><td>Présence quotidienne, équipe</td></tr>
+            <tr><td>Pour qui</td><td>Création, télétravail, siège</td><td>Présence quotidienne, équipe</td></tr>
           </tbody>
         </table>
       </section>
 
       <section>
         <h2>Le vrai coût : domiciliation, bureau ou coworking ?</h2>
-        <p>
-          L&rsquo;écart de budget est l&rsquo;argument décisif pour la plupart des créateurs
-          d&rsquo;entreprise. Concrètement, à Antibes :
-        </p>
+        <p>Les prix à Antibes :</p>
         <ul>
           <li>
             <strong>Domiciliation</strong> : à partir de <strong>25 € HT/mois</strong> (boîte aux
@@ -64,18 +61,16 @@ function Fr() {
           </li>
           <li>
             <strong>Coworking</strong> : <strong>30 € TTC la journée</strong> ou{' '}
-            <strong>360 € TTC/mois</strong> en open-space illimité - un vrai poste de travail, sans
-            engagement long.
+            <strong>360 € TTC/mois</strong> en open-space illimité, sans engagement long.
           </li>
           <li>
             <strong>Location de bureau</strong> : un loyer mensuel (souvent plusieurs centaines
             d&rsquo;euros), auquel s&rsquo;ajoutent les charges, l&rsquo;assurance, l&rsquo;internet et
-            un bail (généralement 3-6-9). Le coût d&rsquo;entrée et l&rsquo;engagement sont sans commune
-            mesure.
+            un bail (généralement 3-6-9).
           </li>
         </ul>
         <p>
-          Autrement dit : si vous n&rsquo;avez pas besoin d&rsquo;un espace physique tous les jours, la
+          Si vous n&rsquo;avez pas besoin d&rsquo;un espace physique tous les jours, la
           domiciliation (pour l&rsquo;adresse) éventuellement complétée par le coworking (pour les jours
           de présence) coûte une fraction d&rsquo;un bureau loué à l&rsquo;année.
         </p>
@@ -84,9 +79,9 @@ function Fr() {
       <section>
         <h2>Quand choisir la domiciliation ?</h2>
         <p>
-          La domiciliation est idéale si vous <strong>travaillez de chez vous ou en déplacement</strong>,
+          Choisissez la domiciliation si vous <strong>travaillez de chez vous ou en déplacement</strong>,
           que vous démarrez votre activité, ou que vous voulez une <strong>adresse professionnelle</strong>{' '}
-          séparée de votre domicile à moindre coût. C&rsquo;est aussi la solution pour un{' '}
+          séparée de votre domicile à moindre coût. Elle convient aussi à un{' '}
           <strong>transfert de siège</strong> vers Antibes.
         </p>
       </section>
@@ -95,25 +90,24 @@ function Fr() {
         <h2>Quand préférer un bureau (ou le coworking) ?</h2>
         <p>
           Si vous avez besoin d&rsquo;une <strong>présence physique quotidienne</strong>, de recevoir
-          du public ou d&rsquo;installer une équipe, un espace dédié s&rsquo;impose. Le{' '}
+          du public ou d&rsquo;installer une équipe, il vous faut un espace dédié. Le{' '}
           <Link className="g-inline" href="/alatere-cowo">
             coworking
           </Link>{' '}
-          offre alors le meilleur compromis : un vrai lieu de travail, mais flexible et sans bail
-          long.
+          vous donne un poste de travail sans bail long.
         </p>
       </section>
 
       <section>
-        <h2>La solution la plus souple à Antibes</h2>
+        <h2>Combiner domiciliation et coworking</h2>
         <p>
-          Le plus simple est de <strong>combiner les deux</strong> au même endroit : domicilier son
-          siège <em>et</em> disposer d&rsquo;un poste de coworking quand c&rsquo;est utile. À Antibes,
-          Alatere réunit{' '}
+          Vous pouvez <strong>combiner les deux</strong> au même endroit : domicilier votre siège{' '}
+          <em>et</em> prendre un poste de coworking les jours où vous en avez besoin. À Antibes,
+          Alatere propose{' '}
           <Link className="g-inline" href="/alatere-domo">
             domiciliation
           </Link>
-          , coworking et secrétariat externalisé sous un seul interlocuteur.
+          , coworking et secrétariat externalisé avec un seul interlocuteur.
         </p>
         <p>
           Si vous penchez pour la domiciliation, notre{' '}
@@ -125,7 +119,7 @@ function Fr() {
           <Link className="g-inline" href="/contact?pole=domo">
             Contactez-nous
           </Link>{' '}
-          - réponse sous 48 heures.
+          : réponse sous 48 heures.
         </p>
       </section>
 
@@ -149,7 +143,7 @@ function Fr() {
         <p>
           Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que
           vous voulez une adresse professionnelle séparée de votre domicile à moindre coût.
-          C&rsquo;est aussi la solution pour un transfert de siège vers Antibes.
+          Elle convient aussi à un transfert de siège vers Antibes.
         </p>
 
         <h3>Peut-on combiner domiciliation et coworking ?</h3>
@@ -169,8 +163,8 @@ function En() {
       <p>
         Should you set up a <strong>business address</strong> for your company or{' '}
         <strong>rent an office</strong>? When forming a company, transferring a head office or
-        starting up an activity in Antibes, the right choice depends on your costs, your need for a
-        physical presence and the image you want to project. Here is a clear comparison.
+        starting up an activity in Antibes, the right choice depends mostly on your budget and on how
+        many days you need a place to work.
       </p>
 
       <section>
@@ -196,20 +190,17 @@ function En() {
           <tbody>
             <tr><td>Monthly cost</td><td>From €30</td><td>Higher (rent + charges)</td></tr>
             <tr><td>Commitment</td><td>Flexible, renewable</td><td>Lease (or coworking subscription)</td></tr>
-            <tr><td>Prestige address</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Business address</td><td>Yes</td><td>Yes</td></tr>
             <tr><td>Workspace</td><td>No</td><td>Yes</td></tr>
             <tr><td>Mail handling</td><td>Included</td><td>Depending on the offer</td></tr>
-            <tr><td>Ideal for</td><td>Company formation, remote working, head office</td><td>Daily presence, a team</td></tr>
+            <tr><td>Who it suits</td><td>Company formation, remote working, head office</td><td>Daily presence, a team</td></tr>
           </tbody>
         </table>
       </section>
 
       <section>
         <h2>The real cost: business address, office or coworking?</h2>
-        <p>
-          The difference in budget is the decisive argument for most company founders. In practical
-          terms, in Antibes:
-        </p>
+        <p>Prices in Antibes:</p>
         <ul>
           <li>
             <strong>Business address</strong>: from <strong>€25 excl. VAT/month</strong> (mailbox) or{' '}
@@ -218,17 +209,16 @@ function En() {
           </li>
           <li>
             <strong>Coworking</strong>: <strong>€30 incl. VAT per day</strong> or{' '}
-            <strong>€360 incl. VAT/month</strong> for unlimited open-space access - a genuine
-            workstation, with no long-term commitment.
+            <strong>€360 incl. VAT/month</strong> for unlimited open-space access, with no long-term
+            commitment.
           </li>
           <li>
             <strong>Office rental</strong>: a monthly rent (often several hundred euros), on top of
-            which come the charges, insurance, internet and a lease (typically the French 3-6-9). The
-            entry cost and the commitment are on a completely different scale.
+            which come the charges, insurance, internet and a lease (typically the French 3-6-9).
           </li>
         </ul>
         <p>
-          In other words: if you don&rsquo;t need a physical space every day, a business address (for
+          If you don&rsquo;t need a physical space every day, a business address (for
           the address) possibly supplemented by coworking (for the days you&rsquo;re on site) costs a
           fraction of an office rented by the year.
         </p>
@@ -237,9 +227,9 @@ function En() {
       <section>
         <h2>When should you choose a business address?</h2>
         <p>
-          A business address is ideal if you <strong>work from home or on the move</strong>, are just
+          Choose a business address if you <strong>work from home or on the move</strong>, are just
           starting out, or want a <strong>professional address</strong> separate from your home at low
-          cost. It&rsquo;s also the solution for a <strong>head-office transfer</strong> to Antibes.
+          cost. It also suits a <strong>head-office transfer</strong> to Antibes.
         </p>
       </section>
 
@@ -247,24 +237,23 @@ function En() {
         <h2>When is an office (or coworking) the better option?</h2>
         <p>
           If you need a <strong>daily physical presence</strong>, to receive the public or to set up a
-          team, a dedicated space is essential. In that case,{' '}
+          team, you need a dedicated space.{' '}
           <Link className="g-inline" href="/alatere-cowo">
-            coworking
+            Coworking
           </Link>{' '}
-          offers the best compromise: a genuine workplace, yet flexible and without a long lease.
+          gives you a desk without a long lease.
         </p>
       </section>
 
       <section>
-        <h2>The most flexible solution in Antibes</h2>
+        <h2>Combining a business address and coworking</h2>
         <p>
-          The simplest approach is to <strong>combine the two</strong> in the same place: register your
-          head office <em>and</em> have a coworking desk whenever it&rsquo;s useful. In Antibes,
-          Alatere brings together{' '}
+          You can <strong>combine the two</strong> in the same place: register your head office{' '}
+          <em>and</em> take a coworking desk on the days you need one. In Antibes, Alatere offers{' '}
           <Link className="g-inline" href="/alatere-domo">
             business address
           </Link>
-          , coworking and outsourced secretarial services under a single point of contact.
+          , coworking and outsourced secretarial services with a single point of contact.
         </p>
         <p>
           If you are leaning towards a business address, our{' '}
@@ -275,8 +264,8 @@ function En() {
           Have a question about your situation?{' '}
           <Link className="g-inline" href="/contact?pole=domo">
             Contact us
-          </Link>{' '}
-          - reply within 48 hours.
+          </Link>
+          : we reply within 48 hours.
         </p>
       </section>
 
@@ -299,8 +288,7 @@ function En() {
         <h3>When should you choose a business address rather than an office?</h3>
         <p>
           If you work from home or on the move, are just starting out, or want a professional address
-          separate from your home at low cost. It&rsquo;s also the solution for transferring a head
-          office to Antibes.
+          separate from your home at low cost. It also suits a head-office transfer to Antibes.
         </p>
 
         <h3>Can you combine a business address and coworking?</h3>

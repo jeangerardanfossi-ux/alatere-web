@@ -28,7 +28,7 @@ type PoleConf = {
 export const POLES: Record<PoleKey, PoleConf> = {
   ecom: {
     notion: 'ecoM', name: 'Alatere ecoM', notify: 'contact@alatere-web.com', color: '#163a6e',
-    link: { fr: 'Découvrir notre savoir-faire e-commerce', en: 'Discover our e-commerce expertise', url: `${SITE}/alatere-ecom` },
+    link: { fr: 'Voir notre page e-commerce', en: 'See our e-commerce page', url: `${SITE}/alatere-ecom` },
   },
   forma: {
     notion: 'forMa', name: 'Alatere forMa', notify: 'formations@alatere-web.com', color: '#a87f33',
@@ -40,7 +40,7 @@ export const POLES: Record<PoleKey, PoleConf> = {
   },
   cowo: {
     notion: 'coWo', name: 'Alatere coWo', notify: 'coworking@alatere-web.com', color: '#b86137',
-    link: { fr: "Découvrir l'espace de coworking", en: 'Discover the coworking space', url: `${SITE}/alatere-cowo` },
+    link: { fr: "Voir l'espace de coworking", en: 'See the coworking space', url: `${SITE}/alatere-cowo` },
   },
   todo: {
     notion: 'toDo', name: 'Alatere toDo', notify: 'domiciliation@alatere-web.com', color: '#163a6e',
@@ -48,7 +48,7 @@ export const POLES: Record<PoleKey, PoleConf> = {
   },
   autre: {
     notion: 'Autre', name: 'Alatere Web', notify: 'contact@alatere-web.com', color: '#163a6e',
-    link: { fr: 'Découvrir Alatere Web', en: 'Discover Alatere Web', url: SITE },
+    link: { fr: 'Aller sur alatere-web.com', en: 'Go to alatere-web.com', url: SITE },
   },
 };
 
@@ -241,16 +241,16 @@ export async function sendAck(d: Demande): Promise<boolean> {
   const inner = en
     ? `
     <p style="margin:0 0 6px;font-size:13px;color:${p.color};font-weight:700;letter-spacing:.04em;text-transform:uppercase">${esc(p.name)}</p>
-    <h1 style="margin:0 0 14px;font-size:22px">Thank you, ${esc(d.nom)} 👋</h1>
-    <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#404a57">We have received your request and a dedicated contact will get back to you <b>within 48 hours</b>.</p>
+    <h1 style="margin:0 0 14px;font-size:22px">Thank you, ${esc(d.nom)}</h1>
+    <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#404a57">We have received your request and will reply <b>within 48 hours</b>.</p>
     <div style="background:#f7f8f9;border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.55;color:#404a57;margin-bottom:18px"><b>Your message:</b><br>${esc(d.message)}</div>
     ${docsBlock(d.pole, p.color, true)}
     <a href="${p.link.url}" style="display:inline-block;background:${p.color};color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:11px 20px;border-radius:18px">${esc(p.link.en)} →</a>
     <p style="margin:22px 0 0;font-size:14px;color:#404a57">The ${esc(p.name)} team · Alatere Web</p>`
     : `
     <p style="margin:0 0 6px;font-size:13px;color:${p.color};font-weight:700;letter-spacing:.04em;text-transform:uppercase">${esc(p.name)}</p>
-    <h1 style="margin:0 0 14px;font-size:22px">Merci, ${esc(d.nom)} 👋</h1>
-    <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#404a57">Nous avons bien reçu votre demande. Un interlocuteur dédié revient vers vous <b>sous 48 heures</b>.</p>
+    <h1 style="margin:0 0 14px;font-size:22px">Merci, ${esc(d.nom)}</h1>
+    <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#404a57">Nous avons bien reçu votre demande et vous répondrons <b>sous 48 heures</b>.</p>
     <div style="background:#f7f8f9;border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.55;color:#404a57;margin-bottom:18px"><b>Votre message :</b><br>${esc(d.message)}</div>
     ${docsBlock(d.pole, p.color, false)}
     <a href="${p.link.url}" style="display:inline-block;background:${p.color};color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:11px 20px;border-radius:18px">${esc(p.link.fr)} →</a>

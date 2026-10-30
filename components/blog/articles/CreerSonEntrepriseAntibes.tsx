@@ -17,9 +17,9 @@ export default function CreerSonEntrepriseAntibes() {
         Créer une entreprise à Antibes suit la même procédure nationale que partout en France,
         mais deux choses se décident localement : l&rsquo;<strong>adresse de votre siège
         social</strong> et le <strong>greffe</strong> auprès duquel votre société sera
-        immatriculée. La première est la décision la plus structurante du parcours, et c&rsquo;est
-        aussi celle que la plupart des créateurs traitent en dernier - souvent dans
-        l&rsquo;urgence, parce qu&rsquo;elle bloque tout le reste.
+        immatriculée. L&rsquo;adresse est la décision qui engage le plus, et c&rsquo;est aussi
+        celle que la plupart des créateurs règlent en dernier, souvent dans l&rsquo;urgence,
+        parce qu&rsquo;elle bloque tout le reste.
       </p>
 
       <section>
@@ -64,7 +64,7 @@ export default function CreerSonEntrepriseAntibes() {
         <p>
           Le siège social est l&rsquo;adresse administrative et fiscale de l&rsquo;entreprise.
           Elle figure sur le Kbis, sur vos factures, sur vos mentions légales, et elle détermine le
-          greffe compétent. Quatre solutions existent, avec des conséquences très différentes.
+          greffe compétent. Vous avez quatre possibilités.
         </p>
 
         <h3>Domicilier chez soi</h3>
@@ -72,23 +72,23 @@ export default function CreerSonEntrepriseAntibes() {
           C&rsquo;est gratuit et immédiat, et c&rsquo;est ce que font la majorité des créateurs. Il
           faut cependant vérifier trois points : que votre bail ne l&rsquo;interdit pas, que le
           règlement de copropriété l&rsquo;autorise, et que vous acceptez que votre adresse
-          personnelle soit publique - elle apparaîtra sur votre Kbis, consultable par n&rsquo;
-          importe qui. Pour une activité recevant du public ou des livraisons, la solution montre
-          vite ses limites.
+          personnelle soit publique : elle apparaîtra sur votre Kbis, consultable par n&rsquo;
+          importe qui. Si vous recevez du public ou des livraisons, cette solution atteint vite
+          ses limites.
         </p>
 
         <h3>Prendre un bail commercial</h3>
         <p>
-          La solution la plus lourde et la plus engageante : dépôt de garantie, engagement
+          L&rsquo;option la plus lourde : dépôt de garantie, engagement
           pluriannuel, charges, travaux éventuels. Elle n&rsquo;a de sens que si vous avez besoin
           d&rsquo;un local pour exercer, pas seulement d&rsquo;une adresse.
         </p>
 
         <h3>Intégrer une pépinière ou un incubateur</h3>
         <p>
-          Accompagnement, réseau, tarifs progressifs. Les places sont limitées, l&rsquo;entrée est
-          sélective et souvent conditionnée à un profil de projet - innovation, création récente,
-          potentiel de croissance.
+          Vous y trouvez un accompagnement, un réseau et des tarifs progressifs. Mais les places
+          sont limitées et l&rsquo;entrée est sélective, souvent réservée à certains projets
+          (innovation, création récente, potentiel de croissance).
         </p>
 
         <h3>Passer par une société de domiciliation</h3>
@@ -96,14 +96,14 @@ export default function CreerSonEntrepriseAntibes() {
           Vous obtenez une adresse professionnelle distincte de votre domicile, une attestation de
           domiciliation opposable au greffe, et la gestion de votre courrier. C&rsquo;est
           l&rsquo;option la plus souple pour une création : quelques dizaines d&rsquo;euros par
-          mois, sans engagement long, et modifiable si votre situation évolue. Attention, il
+          mois, sans engagement long, et vous changez de formule si votre situation évolue. Attention, il
           s&rsquo;agit d&rsquo;une activité réglementée : seule une société{' '}
           <strong>agréée par la préfecture</strong> peut délivrer une attestation acceptée par le
           greffe.
         </p>
         <p>
-          Nous avons comparé les prestataires du secteur - Antibes, Sophia Antipolis, Vallauris,
-          Villeneuve-Loubet - dans notre{' '}
+          Nous avons comparé les prestataires du secteur (Antibes, Sophia Antipolis, Vallauris,
+          Villeneuve-Loubet) dans notre{' '}
           <Link href="/blog/comparatif-domiciliation-antibes" className="g-inline">
             comparatif de la domiciliation à Antibes
           </Link>
@@ -139,8 +139,7 @@ export default function CreerSonEntrepriseAntibes() {
       <section>
         <h2>Antibes, Sophia Antipolis, Cannes : ce que change l&rsquo;adresse</h2>
         <p>
-          Le choix de la commune n&rsquo;est pas neutre, même si le droit ne fait pas de
-          différence.
+          En droit, la commune ne change rien. Pour vos clients et vos interlocuteurs, si.
         </p>
         <ul>
           <li>
@@ -197,7 +196,7 @@ export default function CreerSonEntrepriseAntibes() {
         </div>
         <p className="g-updated">
           Ordres de grandeur observés sur des dossiers complets. Un dossier incomplet ou une
-          période de forte affluence - janvier notamment - allonge sensiblement les délais.
+          période de forte affluence (janvier notamment) allonge nettement les délais.
         </p>
       </section>
 

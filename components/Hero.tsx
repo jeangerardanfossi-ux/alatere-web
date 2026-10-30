@@ -33,18 +33,18 @@ export default function Hero() {
   return (
     <section id="top" className={styles.hero}>
       <div className={styles.left}>
-        <span className={styles.eyebrow}>Antibes · depuis 2002</span>
+        <span className={styles.eyebrow}>Fondée en 2002 · à Antibes depuis 2008</span>
         <h1 className={styles.title}>
           E-commerce, formations et centre d&rsquo;affaires.
         </h1>
         <p className={styles.lead}>
-          Au cœur d&rsquo;Antibes, nous accompagnons dirigeants de PME et
-          entrepreneurs avec un service sur mesure et un nombre limité de
-          clients. Quatre activités complémentaires, un seul interlocuteur.
+          Nous travaillons pour des dirigeants de PME et des entrepreneurs,
+          avec un nombre limité de clients à la fois. La même personne suit
+          votre dossier dans nos quatre activités.
         </p>
         <div className={styles.cta}>
           <a href="#activites" className={styles.btn}>
-            Découvrir nos activités →
+            Voir nos activités →
           </a>
           <a href="#contact" className={styles.link}>
             Nous rencontrer

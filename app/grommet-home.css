@@ -25,6 +25,7 @@
 
   /* ---- Neutres Grommet (clairs) ---- */
   --background: #ffffff;       /* surface principale (Grommet = blanc) */
+  --paper: #fdfaf1;            /* crème des illustrations - cartes d'activité */
   --background-back: #f2f3f4;  /* fond alterné */
   --background-contrast: #f7f8f9;
   --dark-1: #1a1f27;           /* texte fort */
@@ -47,7 +48,7 @@
   /* ---- rayons ---- */
   --round-s: 12px;     /* cartes (round small) */
   --round-m: 24px;     /* grands conteneurs */
-  --round-btn: 18px;   /* bouton pilule - signature Grommet */
+  --round-btn: 10px;   /* bouton plein à coins doux */
 
   /* ---- type ---- */
   --font: var(--font-work-sans, "Work Sans"), "Helvetica Neue", Arial, sans-serif;
@@ -80,25 +81,50 @@ html, body { margin: 0; padding: 0; }
 }
 
 /* =========================================================
-   BOUTONS Grommet (pilule 18px)
+   BOUTONS - plein, coins doux, ombre portée teintée
+   Chaque variante pose --btn-sh (sa propre couleur d'ombre) ;
+   au survol le bouton se fonce et se soulève de 2 px.
+   Les variantes en contour (secondary / ghost) n'ont pas d'ombre.
+   Tous les couples texte/fond, au repos comme au survol, sont
+   au-dessus de 4,5:1.
    ========================================================= */
 .g-btn {
   font-family: var(--font); font-size: 16px; font-weight: 600;
-  padding: 10px 22px; border-radius: var(--round-btn);
-  border: 2px solid transparent; cursor: pointer; line-height: 1.2;
+  padding: 11px 22px; border-radius: var(--round-btn);
+  border: 1.5px solid transparent; cursor: pointer; line-height: 1.2;
   display: inline-flex; align-items: center; gap: var(--xs); text-decoration: none;
+  --btn-sh: rgba(20, 30, 45, 0.45);
+  box-shadow: 0 1px 2px rgba(20, 30, 45, 0.16), 0 8px 18px -8px var(--btn-sh);
   transition: background-color 180ms, border-color 180ms, box-shadow 180ms, transform 180ms;
 }
-.g-btn--primary { background: var(--brand); color: #fff; border-color: var(--brand); }
-.g-btn--primary:hover { box-shadow: 0 0 0 2px var(--brand); }
-.g-btn--secondary { background: transparent; color: var(--brand); border-color: var(--brand); }
-.g-btn--secondary:hover { box-shadow: 0 0 0 2px var(--brand); }
-.g-btn--light { background: #fff; color: var(--brand); border-color: #fff; }
-.g-btn--light:hover { box-shadow: 0 0 0 2px rgba(255,255,255,0.6); }
-.g-btn--ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.55); }
-.g-btn--ghost-light:hover { border-color: #fff; }
-.g-btn--sm { font-size: 14px; padding: 7px 16px; }
-.g-btn--lg { font-size: 17px; padding: 13px 28px; }
+.g-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(20, 30, 45, 0.18), 0 14px 26px -10px var(--btn-sh);
+}
+.g-btn:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(20, 30, 45, 0.16); }
+/* Liseré blanc + trait navy : l'un des deux reste visible, que le bouton
+   soit posé sur le blanc des pages ou sur le navy du héros. */
+.g-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; box-shadow: 0 0 0 3px #fff; }
+
+.g-btn--primary { background: var(--brand); color: #fff; border-color: var(--brand); --btn-sh: rgba(22, 58, 110, 0.8); }
+.g-btn--primary:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+.g-btn--gold { background: var(--gold); color: #241900; border-color: var(--gold); --btn-sh: rgba(194, 148, 70, 0.9); }
+.g-btn--gold:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #241900; }
+.g-btn--green { background: var(--green); color: #fff; border-color: var(--green); --btn-sh: rgba(47, 125, 82, 0.85); }
+.g-btn--green:hover { background: var(--green-dark); border-color: var(--green-dark); }
+/* --clay sous du blanc ne donne que 4.37:1 : on part du ton foncé (6.06:1). */
+.g-btn--clay { background: var(--clay-dark); color: #fff; border-color: var(--clay-dark); --btn-sh: rgba(154, 77, 38, 0.85); }
+.g-btn--clay:hover { background: #85401d; border-color: #85401d; }
+.g-btn--light { background: #fff; color: var(--brand); border-color: #fff; --btn-sh: rgba(0, 0, 0, 0.55); }
+.g-btn--light:hover { background: var(--brand-soft); border-color: var(--brand-soft); }
+
+.g-btn--secondary { background: transparent; color: var(--brand); border-color: var(--brand); box-shadow: none; }
+.g-btn--secondary:hover { background: var(--brand-soft); box-shadow: none; }
+.g-btn--ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,0.55); box-shadow: none; }
+.g-btn--ghost-light:hover { border-color: #fff; background: rgba(255,255,255,0.12); box-shadow: none; }
+
+.g-btn--sm { font-size: 14px; padding: 8px 16px; }
+.g-btn--lg { font-size: 17px; padding: 14px 28px; }
 .g-arrow { transition: transform 180ms; }
 .g-btn:hover .g-arrow { transform: translateX(3px); }
 
@@ -150,14 +176,24 @@ a.g-tag:hover { transform: translateY(-2px); box-shadow: var(--elev-m); filter: 
   box-shadow: var(--elev-s);
 }
 .g-brand { display: flex; align-items: center; gap: var(--s); text-decoration: none; color: var(--dark-1); }
-.g-brand img { width: 40px; height: 40px; border-radius: 50%; }
+/* Le badge avance légèrement au survol : il signale que la marque est un lien
+   vers l'accueil. Même durée que les boutons et les cartes (180 ms). */
+.g-brand img {
+  width: 40px; height: 40px; border-radius: 50%;
+  transition: transform 180ms cubic-bezier(.2, .7, .2, 1), box-shadow 180ms ease;
+}
+.g-brand:hover img { transform: scale(1.1); box-shadow: 0 6px 16px -4px rgba(20, 30, 45, 0.45); }
+@media (prefers-reduced-motion: reduce) {
+  .g-brand img { transition: none; }
+  .g-brand:hover img { transform: none; }
+}
 .g-brand b { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; }
 .g-brand__text { display: flex; flex-direction: column; line-height: 1.12; }
 .g-brand__tag { font-size: 11.5px; font-weight: 500; color: var(--dark-3); letter-spacing: 0.003em; margin-top: 1px; }
 @media (max-width: 340px) { .g-brand__tag { display: none; } }
 /* baseline : les entrées sans sous-titre (Réalisations, Blog, Contact) s'alignent
    sur la ligne des noms de pôle, pas au milieu du bloc nom + sous-titre. */
-.g-nav { display: flex; gap: var(--m); align-items: baseline; }
+.g-nav { display: flex; gap: var(--m); align-items: center; }
 .g-nav a { font-size: 15px; font-weight: 600; color: var(--dark-2); text-decoration: none; transition: color 160ms; }
 .g-nav a:hover { color: var(--brand); }
 .g-actions { display: flex; align-items: center; gap: var(--s); }
@@ -190,8 +226,7 @@ a.g-tag:hover { transform: translateY(-2px); box-shadow: var(--elev-m); filter: 
 .g-drawer__panel a.g-drawer__item { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; line-height: 1.12; }
 .g-drawer__item .g-nav__label { font-size: 17px; font-weight: 700; }
 .g-drawer__item .g-nav__label .g-subword { font-weight: 700; }
-.g-drawer__item .g-nav__sub { font-size: 12px; font-weight: 400; color: var(--dark-3); }
-.g-drawer__item.is-active .g-nav__label { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.g-drawer__item.is-active .g-nav__label { border-bottom: 2px solid var(--brand); padding-bottom: 3px; }
 
 /* =========================================================
    HERO
@@ -446,7 +481,6 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
 @media (max-width: 1240px) {
   .g-header { padding: 14px 26px; gap: var(--s); }
   .g-nav { gap: 20px; }
-  .g-nav .g-nav__sub { display: none; }
 }
 @media (max-width: 1080px) {
   .g-brand__tag { display: none; }
@@ -475,6 +509,7 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
 }
 @media (prefers-reduced-motion: reduce) {
   .g-btn, .g-card, .g-arrow { transition: none !important; }
+  .g-btn:hover { transform: none; }
 }
 
 /* =========================================================
@@ -568,16 +603,214 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
 .g-card__brandlink { color: inherit; text-decoration: none; display: inline-block; }
 .g-card__brandlink:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 
-/* Menu : sous-titre par pôle (e-commerce / formations / …) */
-.g-nav a.g-nav__item { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.12; gap: 1px; }
+.g-nav a.g-nav__item { position: relative; display: inline-flex; align-items: center; line-height: 1.12; }
 .g-nav__label { font-size: 15px; font-weight: 700; }
 .g-nav__label .g-subword { font-weight: 700; }
-.g-nav__sub { font-size: 11px; font-weight: 400; color: var(--dark-3); }
-.g-nav a.g-nav__item:hover .g-nav__sub { color: var(--brand); }
 /* Pôle courant : soulignement (les couleurs des lettres sont conservées) */
-.g-nav a.g-nav__item.is-active .g-nav__label { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
-.g-nav a.g-nav__item.is-active .g-nav__sub { color: var(--brand); }
+.g-nav a.g-nav__item.is-active::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -7px;
+  height: 2px; border-radius: 2px; background: var(--brand);
+}
 
 /* Mention légale reCAPTCHA sous le formulaire */
 .g-recaptcha-notice { font-size: 11.5px; color: var(--dark-3); line-height: 1.4; margin: 4px 0 0; }
 .g-recaptcha-notice a { color: var(--dark-2); text-decoration: underline; }
+
+/* =========================================================
+   ACTIVITÉS - quatre cartes illustrées (ecoM / forMa / doMo / coWo)
+   L'illustration occupe le haut de la carte, sur le même crème que
+   son fond, puis marque, activité, texte et bouton du pôle.
+   ========================================================= */
+.g-poles { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--m); align-items: stretch; }
+
+.g-pole {
+  display: flex; flex-direction: column;
+  background: var(--paper);
+  border-radius: var(--round-m);
+  box-shadow: var(--elev-s);
+  overflow: hidden;
+  transition: box-shadow 200ms, transform 200ms;
+}
+.g-pole:hover { box-shadow: var(--elev-l); transform: translateY(-3px); }
+
+.g-pole__media { display: block; }
+.g-pole__media img { width: 100%; height: auto; display: block; }
+
+.g-pole__body {
+  padding: 2px 18px 22px; flex: 1;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+}
+.g-pole__title { margin: 4px 0 0; line-height: 0; }
+.g-pole__title a { display: inline-block; }
+/* Deux lignes réservées : une activité courte ne doit pas raccourcir la carte. */
+.g-pole__activity { font-size: 14px; font-weight: 600; line-height: 1.3; color: var(--dark-3);
+  margin: -6px 0 0; min-height: 2.6em; }
+/* Six lignes réservées : les quatre cartes gardent la même hauteur quelle que
+   soit la langue, sans qu'il faille caler les textes au caractère près. */
+.g-pole__copy { font-size: 15px; line-height: 1.5; color: var(--dark-2); margin: 0; min-height: 9em; }
+
+/* Liste clé / valeur (boutiques e-commerce, formules de domiciliation) */
+.g-pole__meta { width: 100%; list-style: none; margin: 2px 0 0; padding: 0; font-size: 12.5px; }
+.g-pole__meta li {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 7px 0; border-top: 1px solid var(--border);
+}
+.g-pole__meta li:first-child { border-top: none; }
+.g-pole__meta-k { color: var(--dark-2); min-width: 0; }
+.g-pole__meta-v { font-weight: 700; color: var(--dark-1); white-space: nowrap; }
+.g-pole--green .g-pole__meta .is-featured .g-pole__meta-v { color: var(--green-dark); }
+
+
+.g-pole__cta {
+  margin-top: auto; padding-top: 18px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+}
+/* En colonne étroite, les libellés les plus longs doivent tenir sur une ligne. */
+.g-pole__cta .g-btn { font-size: 13.5px; padding: 10px 15px; }
+.g-pole__cta .g-anchor { font-size: 15px; }
+
+/* Quatre colonnes seulement quand le conteneur est à sa largeur maximale :
+   en deçà, les cartes deviennent trop étroites pour les libellés de boutons. */
+@media (max-width: 1239px) { .g-poles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px)  { .g-poles { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .g-pole { transition: none; } .g-pole:hover { transform: none; } }
+
+/* =========================================================
+   MARQUES EN IMAGE (menu, chips du héros, titres des cartes)
+   Les fichiers de `public/marques/` remplacent les suffixes colorés rendus
+   lettre par lettre. Deux traitements selon le fond d'origine :
+   — pastilles : stade plein, le border-radius retire les coins navy du JPEG ;
+   — titres : fond blanc, fondu dans le crème de la carte par `multiply`.
+   ========================================================= */
+.g-marque { display: block; width: auto; }
+
+.g-marque--pastille { border-radius: 999px; }
+.g-nav__label .g-marque--pastille { height: 30px; }
+.g-hero__chip { display: inline-flex; border-radius: 999px; box-shadow: var(--elev-s); }
+.g-hero__chip .g-marque--pastille { height: 34px; }
+.g-hero__chip:hover { box-shadow: var(--elev-m); }
+
+/* `multiply` fait disparaître le blanc du fichier : sans effet sur le blanc
+   des pages de pôle, il fond le titre dans le crème des cartes de l'accueil. */
+.g-marque--titre { mix-blend-mode: multiply; }
+.g-pole__title .g-marque--titre { height: 30px; }
+.g-h1 .g-marque--titre { height: 58px; }
+
+@media (max-width: 1080px) { .g-hero__chip .g-marque--pastille { height: 30px; } }
+@media (max-width: 640px) {
+  .g-nav__label .g-marque--pastille { height: 28px; }
+  .g-hero__chip .g-marque--pastille { height: 30px; }
+  .g-pole__title .g-marque--titre { height: 28px; }
+  .g-h1 .g-marque--titre { height: 40px; }
+}
+
+/* =========================================================
+   BANDE DE LOGOS CLIENTS
+   Rien que les logos : pas de titre ni de légende, d'où une bande basse.
+   Le défilement est celui du navigateur (overflow-x), poussé par les deux
+   flèches — donc utilisable aussi à la molette, au trackpad et au clavier,
+   et sans contenu qui bouge tout seul.
+   ========================================================= */
+.g-strip {
+  /* Gris chaud plutôt que le gris froid du thème : il s'accorde au crème des
+     cartes juste au-dessus et aux ocres des illustrations. */
+  background: #f1ede6;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.g-strip__arrow {
+  flex: none; width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid var(--border-strong); background: var(--background);
+  color: var(--dark-1); font-size: 16px; line-height: 1; cursor: pointer;
+  display: grid; place-items: center;
+  transition: background-color 180ms, border-color 180ms, opacity 180ms;
+}
+.g-strip__arrow:hover:not(:disabled) { background: var(--brand-soft); border-color: var(--brand); }
+.g-strip__arrow:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.g-strip__arrow:disabled { opacity: 0.3; cursor: default; }
+
+.g-strip__viewport {
+  flex: 1 1 auto; min-width: 0; overflow-x: auto; overflow-y: hidden;
+  scroll-behavior: smooth; scrollbar-width: none;
+}
+.g-strip__viewport::-webkit-scrollbar { display: none; }
+
+/* `max-content` : la liste prend la largeur de ses logos au lieu de celle du
+   conteneur, sinon sa boîte ne change jamais et le ResizeObserver qui pilote
+   l'état des flèches ne se déclencherait pas. */
+.g-strip__set { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; width: max-content; }
+/* Emplacement de largeur fixe : la bande connaît sa largeur avant le
+   chargement des images, donc les flèches sont justes dès l'affichage et
+   aucun logo ne décale les autres en arrivant. */
+.g-strip__item { flex: none; width: 150px; padding: 0 5px; display: flex; }
+
+/* Vignette blanche. Les fichiers de logos ont des fonds hétérogènes — douze
+   avec un blanc opaque incrusté, deux qui sont des plaques pleines (Laforêt,
+   MAV) — et la vignette les ramène tous au même cadre, comme sur le mur de la
+   page Réalisations. */
+.g-strip__cell {
+  width: 100%; height: 60px; display: flex; align-items: center; justify-content: center;
+  padding: 7px; background: var(--background);
+  border: 1px solid var(--border); border-radius: var(--round-s);
+  transition: border-color 180ms, box-shadow 180ms;
+}
+a.g-strip__cell:hover { border-color: var(--border-strong); box-shadow: var(--elev-s); }
+a.g-strip__cell:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+.g-strip__cell img {
+  max-width: 86%; max-height: 88%; width: auto; height: auto; object-fit: contain; display: block;
+  filter: grayscale(1); opacity: 0.9; transition: filter 180ms, opacity 180ms;
+}
+a.g-strip__cell:hover img, a.g-strip__cell:focus-visible img { filter: none; opacity: 1; }
+
+@media (max-width: 640px) {
+  .g-strip { padding: 12px 8px; gap: 6px; }
+  .g-strip__item { width: 116px; padding: 0 4px; }
+  .g-strip__cell { height: 52px; padding: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-strip__viewport { scroll-behavior: auto; }
+  .g-strip__cell img, .g-strip__cell, .g-strip__arrow { transition: none; }
+}
+
+/* =========================================================
+   RÉVÉLATIONS - héros à l'arrivée, cartes au défilement
+   L'état masqué n'existe que sous [data-js] (posé par le script du layout
+   avant la première peinture) : sans JavaScript, la page reste lisible.
+   Le héros est animé en CSS pur, donc il ne dépend pas de l'hydratation ;
+   seules les cartes, liées au défilement, passent par l'observateur.
+   Le h1 n'est pas animé : c'est l'élément LCP, le retarder dégraderait
+   la mesure de performance pour un gain visuel nul.
+   ========================================================= */
+@keyframes g-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+[data-js] .g-hero [data-reveal] {
+  animation: g-rise 0.85s cubic-bezier(.2, .7, .2, 1) both;
+}
+[data-js] .g-poles [data-reveal] {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity 0.85s cubic-bezier(.2, .7, .2, 1), transform 0.85s cubic-bezier(.2, .7, .2, 1);
+}
+[data-js] .g-poles [data-reveal].is-in { opacity: 1; transform: none; }
+
+[data-js] [data-reveal][data-delay='1'] { animation-delay: 0.09s; transition-delay: 0.09s; }
+[data-js] [data-reveal][data-delay='2'] { animation-delay: 0.18s; transition-delay: 0.18s; }
+[data-js] [data-reveal][data-delay='3'] { animation-delay: 0.27s; transition-delay: 0.27s; }
+
+/* Volet crème qui se lève sur l'illustration, en même temps que la carte. */
+[data-js] .g-pole__media { position: relative; overflow: hidden; }
+[data-js] .g-pole__media::after {
+  content: ''; position: absolute; inset: -1px; z-index: 2; background: var(--paper);
+  transform: scaleY(1); transform-origin: bottom;
+  transition: transform 1.05s cubic-bezier(.2, .7, .2, 1);
+}
+[data-js] .g-pole[data-reveal].is-in .g-pole__media::after { transform: scaleY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-js] .g-hero [data-reveal] { animation: none; }
+  [data-js] .g-poles [data-reveal] { opacity: 1; transform: none; transition: none; }
+  [data-js] .g-pole__media::after { display: none; }
+}

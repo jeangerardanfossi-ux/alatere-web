@@ -38,3 +38,52 @@ export function BrandName({ pole }: { pole: PoleBrand }) {
     </>
   );
 }
+
+/** Libellé affiché par la pastille (identique dans les deux langues). */
+const SUFFIXE: Record<PoleBrand, string> = { ecom: 'ecoM', forma: 'forMa', domo: 'doMo', cowo: 'coWo' };
+
+/** Dimensions natives des visuels de `public/marques/`. */
+const PASTILLE: Record<PoleBrand, [number, number]> = {
+  ecom: [269, 133], forma: [277, 133], domo: [271, 133], cowo: [266, 133],
+};
+const TITRE: Record<PoleBrand, [number, number]> = {
+  ecom: [931, 149], forma: [955, 152], domo: [952, 157], cowo: [956, 149],
+};
+
+/**
+ * Pastille de marque (menu et chips du héros). Le fichier est un stade plein :
+ * les coins navy du JPEG d'origine sont retirés par le `border-radius` du CSS.
+ */
+export function BrandChip({ pole }: { pole: PoleBrand }) {
+  const [w, h] = PASTILLE[pole];
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      className="g-marque g-marque--pastille"
+      src={`/marques/${pole}-pastille.webp`}
+      alt={SUFFIXE[pole]}
+      width={w}
+      height={h}
+      decoding="async"
+    />
+  );
+}
+
+/**
+ * Titre de marque « Alatere xxxX » (cartes de l'accueil). Le visuel est sur
+ * fond blanc : le CSS le fond dans le crème de la carte par `multiply`.
+ */
+export function BrandTitle({ pole }: { pole: PoleBrand }) {
+  const [w, h] = TITRE[pole];
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      className="g-marque g-marque--titre"
+      src={`/marques/${pole}-titre.webp`}
+      alt={`Alatere ${SUFFIXE[pole]}`}
+      width={w}
+      height={h}
+      decoding="async"
+    />
+  );
+}

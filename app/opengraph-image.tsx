@@ -30,7 +30,7 @@ export default function OpengraphImage() {
             fontWeight: 700,
           }}
         >
-          Antibes · depuis 2002
+          Fondée en 2002 · à Antibes depuis 2008
         </div>
         <div style={{ fontSize: 96, fontWeight: 800, marginTop: 18, lineHeight: 1.02 }}>
           Alatere Web

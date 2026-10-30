@@ -68,7 +68,7 @@ export default function ContactForm() {
         role="status"
       >
         <Text weight={700} color="forest" size="large">
-          Merci, votre demande est partie ✔
+          Merci, votre demande est partie.
         </Text>
         <Text color="text-weak">
           Nous revenons vers vous sous 48 heures à l&rsquo;adresse indiquée.

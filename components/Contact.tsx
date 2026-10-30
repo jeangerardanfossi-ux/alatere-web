@@ -16,11 +16,11 @@ export default function Contact({ titleAs = 'h2' }: { titleAs?: 'h1' | 'h2' }) {
     <section id="contact" className={styles.section}>
       <div className={styles.inner}>
         <div>
-          <span className={styles.eyebrow}>Contact</span>
-          <Title className={styles.h2}>Parlons de votre projet.</Title>
+          <span className={styles.eyebrow}>Réponse sous 48 h</span>
+          <Title className={styles.h2}>Nous contacter</Title>
           <p className={styles.text}>
-            Webmarketing, formation, domiciliation ou coworking : dites-nous
-            votre besoin, nous revenons vers vous sous 48 heures.
+            Webmarketing, formation, domiciliation ou coworking : dites-nous ce
+            dont vous avez besoin. Vous pouvez aussi appeler ou passer au bureau.
           </p>
           <ul className={styles.coords}>
             <li>

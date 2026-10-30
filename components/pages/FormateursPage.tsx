@@ -181,8 +181,8 @@ const TX: Dict = {
   hero_tag: { fr: "L'équipe pédagogique", en: 'The teaching team' },
   hero_h1: { fr: 'Nos formateurs', en: 'Our trainers' },
   hero_lead: {
-    fr: "Derrière chaque formation, des praticiens. Notre équipe réunit des intervenants expérimentés, choisis pour leur expertise de terrain et leur sens de la transmission - du webmarketing à l'intelligence artificielle, des langues à l'immobilier.",
-    en: 'Behind every course, practitioners. Our team brings together experienced trainers, chosen for their hands-on expertise and their gift for teaching - from web marketing to artificial intelligence, from languages to real estate.',
+    fr: "Nos six formateurs sont consultants, juriste ou coach, et chacun enseigne la matière qu'il exerce : webmarketing, publicité en ligne, réseaux sociaux, intelligence artificielle, droit immobilier, développement professionnel.",
+    en: 'Our six trainers are consultants, a lawyer and a coach, and each teaches the subject they work in: web marketing, online advertising, social media, artificial intelligence, real estate law, professional development.',
   },
   hero_cta1: { fr: 'Voir les domaines', en: 'View the fields' },
   hero_cta2: { fr: 'Nous contacter', en: 'Contact us' },
@@ -200,15 +200,15 @@ const TX: Dict = {
   team_label: { fr: "L'équipe", en: 'The team' },
   team_h2: { fr: 'Celles et ceux qui vous forment', en: 'The people who train you' },
   team_p: {
-    fr: 'Six intervenants, une même exigence pédagogique. Cliquez sur un profil LinkedIn pour en savoir plus sur leur parcours.',
-    en: 'Six trainers, one shared teaching standard. Click a LinkedIn profile to learn more about their background.',
+    fr: 'Le parcours complet de chacun est sur son profil LinkedIn.',
+    en: "Each trainer's full background is on their LinkedIn profile.",
   },
   linkedin_btn: { fr: 'Profil LinkedIn ↗', en: 'LinkedIn profile ↗' },
 
   cta_h: { fr: "Envie de rejoindre l'équipe ?", en: 'Want to join the team?' },
   cta_p: {
-    fr: 'Vous êtes formateur et notre approche vous parle ? Écrivons la suite ensemble.',
-    en: "Are you a trainer and our approach resonates with you? Let's write the next chapter together.",
+    fr: "Vous êtes formateur dans l'un de nos domaines ? Écrivez-nous en présentant votre parcours.",
+    en: 'Are you a trainer in one of our fields? Write to us with a summary of your background.',
   },
   cta_b1: { fr: 'Nous écrire', en: 'Write to us' },
   cta_b2: { fr: 'Retour à forMa', en: 'Back to forMa' },

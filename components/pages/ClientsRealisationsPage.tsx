@@ -17,7 +17,7 @@ import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lan
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
-import { BrandName, BrandSuffix } from '@/components/grommet/BrandName';
+import { BrandSuffix, BrandTitle } from '@/components/grommet/BrandName';
 import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
 import {
@@ -66,14 +66,14 @@ const POLES: PoleDef[] = [
     tag: { fr: 'E-commerce · SEO / SEA', en: 'E-commerce · SEO / SEA' },
     anchorTag: { fr: 'E-commerce', en: 'E-commerce' },
     baseline: {
-      fr: 'Vingt ans à concevoir, opérer et référencer nos propres boutiques en ligne — et celles de nos clients.',
-      en: 'Twenty years designing, running and ranking our own online stores — and our clients’.',
+      fr: 'Depuis plus de vingt ans, nous concevons, exploitons et référençons nos propres boutiques en ligne, et celles de nos clients.',
+      en: 'For more than twenty years we have designed, run and ranked our own online stores, and our clients’ stores.',
     },
     href: '/alatere-ecom',
     linkLabel: { fr: 'Le savoir-faire ecoM', en: 'The ecoM know-how' },
     imageCaption: {
-      fr: 'Capture — page produit du site livré',
-      en: 'Screenshot — product page of the delivered store',
+      fr: 'Capture : page produit du site livré',
+      en: 'Screenshot: product page of the delivered store',
     },
     ctaHint: {
       fr: 'Un projet de boutique en ligne ou une refonte à chiffrer ?',
@@ -101,8 +101,8 @@ const POLES: PoleDef[] = [
     href: '/alatere-forma',
     linkLabel: { fr: 'Les formations professionnelles', en: 'Professional training courses' },
     imageCaption: {
-      fr: 'Photo — session de formation, salle Antibes',
-      en: 'Photo — training session, Antibes room',
+      fr: 'Photo : session de formation, salle d’Antibes',
+      en: 'Photo: training session, Antibes room',
     },
     ctaHint: {
       fr: 'Webmarketing, IA, langues, immobilier, bureautique.',
@@ -115,8 +115,8 @@ const POLES: PoleDef[] = [
     ctaSecondaryHref: '/contact?pole=forma',
     convTitle: { fr: 'Former mes équipes', en: 'Train my team' },
     convLine: {
-      fr: 'Parcours sur mesure, prise en charge OPCO ou FAF.',
-      en: 'Tailored programmes, OPCO or FAF funding.',
+      fr: 'Groupes de 1 à 8, prise en charge OPCO ou FAF.',
+      en: 'Groups of 1 to 8, OPCO or FAF funding.',
     },
   },
   {
@@ -131,8 +131,8 @@ const POLES: PoleDef[] = [
     href: '/alatere-domo',
     linkLabel: { fr: 'La domiciliation à Antibes', en: 'Business address in Antibes' },
     imageCaption: {
-      fr: 'Photo — courrier client, poste de numérisation',
-      en: 'Photo — client mail, scanning desk',
+      fr: 'Photo : courrier client, poste de numérisation',
+      en: 'Photo: client mail, scanning desk',
     },
     ctaHint: {
       fr: 'Création de société ou transfert de siège.',
@@ -144,8 +144,8 @@ const POLES: PoleDef[] = [
     ctaSecondaryHref: '/contact?pole=domo',
     convTitle: { fr: 'Domicilier ma société', en: 'Register my company' },
     convLine: {
-      fr: 'Adresse agréée, courrier traité, formalités simples.',
-      en: 'Approved address, mail handled, simple paperwork.',
+      fr: 'Adresse agréée préfecture, courrier reçu et numérisé.',
+      en: 'Prefecture-approved address, mail received and scanned.',
     },
   },
   {
@@ -160,8 +160,8 @@ const POLES: PoleDef[] = [
     href: '/alatere-cowo',
     linkLabel: { fr: 'L’espace de coworking à Antibes', en: 'The coworking space in Antibes' },
     imageCaption: {
-      fr: 'Photo — espace coworking, lumière naturelle',
-      en: 'Photo — coworking space, natural light',
+      fr: 'Photo : espace coworking, lumière naturelle',
+      en: 'Photo: coworking space, natural light',
     },
     ctaHint: {
       fr: 'Venez travailler une journée avant de vous décider.',
@@ -183,14 +183,14 @@ const TX: Dict = {
   bc_root: { fr: 'Accueil', en: 'Home' },
   bc_leaf: { fr: 'Clients & Réalisations', en: 'Clients & Case Studies' },
 
-  hero_eyebrow: { fr: 'Clients & réalisations', en: 'Clients & case studies' },
+  hero_eyebrow: { fr: 'Alatere Web · Antibes', en: 'Alatere Web · Antibes' },
   hero_h1: {
-    fr: `Ils nous confient leur croissance depuis ${company.since}.`,
-    en: `They have trusted us with their growth since ${company.since}.`,
+    fr: `Nos clients et nos réalisations depuis ${company.since}`,
+    en: `Our clients and our work since ${company.since}`,
   },
   hero_lead: {
-    fr: 'E-commerce, formation, domiciliation, coworking : nos quatre pôles accompagnent la même entreprise à des moments différents de sa vie. Voici ce que nous avons fait, pôle par pôle.',
-    en: 'E-commerce, training, business address, coworking: our four divisions support the same company at different points in its life. Here is what we have done, division by division.',
+    fr: 'E-commerce, formation, domiciliation, coworking. Certains clients passent par plusieurs pôles : Datalinx travaille dans notre espace de coworking depuis 2019 et y a domicilié son siège en 2022. Voici nos réalisations, pôle par pôle.',
+    en: 'E-commerce, training, business address, coworking. Some clients use more than one: Datalinx has worked from our coworking space since 2019 and moved its registered office here in 2022. Here is our work, division by division.',
   },
 
   logos_h2: {
@@ -223,10 +223,10 @@ const TX: Dict = {
     en: 'Funding reviewed together with you',
   },
 
-  conv_h2: { fr: 'Parlons de votre projet.', en: 'Let’s talk about your project.' },
+  conv_h2: { fr: 'Nous contacter', en: 'Contact us' },
   conv_p: {
-    fr: 'Quatre portes d’entrée, un seul interlocuteur. Choisissez le pôle concerné : nous répondons sous 48 heures.',
-    en: 'Four ways in, one single contact. Pick the division you need: we reply within 48 hours.',
+    fr: 'Choisissez le pôle concerné : nous répondons sous 48 heures.',
+    en: 'Pick the division you need: we reply within 48 hours.',
   },
 };
 
@@ -454,7 +454,7 @@ function PoleBlock({ pole }: { pole: PoleDef }) {
             <span>{L(pole.tag)}</span>
           </span>
           <h2>
-            <BrandName pole={pole.key} />
+            <BrandTitle pole={pole.key} />
           </h2>
           <p className="cr-band__base">{L(pole.baseline)}</p>
         </div>

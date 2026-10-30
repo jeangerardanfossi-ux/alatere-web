@@ -47,8 +47,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     name: { fr: 'Webmarketing', en: 'Web marketing' },
     tag: { fr: 'Notre métier historique', en: 'Our core business' },
     lead: {
-      fr: "Le webmarketing est le métier fondateur d'Alatere Web, opéré en propre depuis 2003. Nous transmettons par la pratique les leviers d'acquisition qui font réellement croître une activité : référencement, publicité, mesure et conversion.",
-      en: "Web marketing is Alatere Web's founding business, run in-house since 2003. We teach, through practice, the acquisition levers that truly grow a business: search, advertising, measurement and conversion.",
+      fr: "Le webmarketing est le premier métier d'Alatere Web, exercé en propre depuis 2003. Nous enseignons ce que nous pratiquons : référencement, publicité en ligne, mesure d'audience et conversion.",
+      en: "Web marketing is Alatere Web's original business, run in-house since 2003. We teach what we practise: search, online advertising, analytics and conversion.",
     },
     facts: [
       { fr: '11 programmes au catalogue', en: '11 programs in the catalog' },
@@ -62,7 +62,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       { fr: 'Créer, optimiser et suivre des campagnes Google Ads (SEA)', en: 'Create, optimize and track Google Ads (SEA) campaigns' },
       { fr: 'Concevoir des campagnes de publicité sur les réseaux sociaux', en: 'Design social media advertising campaigns' },
       { fr: 'Analyser la performance avec Google Analytics 4', en: 'Analyze performance with Google Analytics 4' },
-      { fr: "Adapter son référencement à l'ère de l'IA (AEO / GEO)", en: 'Adapt search to the AI era (AEO / GEO)' },
+      { fr: 'Adapter son référencement aux moteurs de réponse IA (AEO / GEO)', en: 'Adapt search to AI answer engines (AEO / GEO)' },
       { fr: "Améliorer le taux de conversion d'un site e-commerce", en: "Improve an e-commerce site's conversion rate" },
     ],
     programs: [
@@ -111,10 +111,10 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     metaDescription:
       'Formations intelligence artificielle à Antibes : IA générative, prompt engineering, automatisation, intégration métier. Certifié Qualiopi.',
     name: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
-    tag: { fr: "Monter à bord de l'IA", en: 'Getting on board with AI' },
+    tag: { fr: 'Sans prérequis technique', en: 'No technical prerequisite' },
     lead: {
-      fr: "L'IA générative transforme le quotidien des entreprises. Nos formations, sans jargon, vous apprennent à l'utiliser concrètement : gagner du temps, produire mieux et intégrer ces outils dans vos métiers - en toute maîtrise.",
-      en: 'Generative AI is transforming everyday business. Our jargon-free courses teach you to use it concretely: save time, produce better and embed these tools into your work - with full control.',
+      fr: "Des formations sans jargon pour utiliser l'IA générative au travail : rédiger des prompts, automatiser les tâches répétitives, produire textes et visuels, dans le respect de vos données (RGPD).",
+      en: 'Jargon-free courses on using generative AI at work: writing prompts, automating repetitive tasks, producing text and visuals, while protecting your data (GDPR).',
     },
     facts: [
       { fr: '7 programmes au catalogue', en: '7 programs in the catalog' },
@@ -164,10 +164,10 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     metaDescription:
       'Formations en langues à Antibes : anglais, italien et espagnol professionnels, en individuel ou petit groupe. Certifié Qualiopi, CPF.',
     name: { fr: 'Langues', en: 'Languages' },
-    tag: { fr: 'Communiquer sans frontière', en: 'Communicate without borders' },
+    tag: { fr: 'Usage professionnel', en: 'For professional use' },
     lead: {
-      fr: "Anglais, italien, espagnol : nos parcours de langues sont centrés sur l'usage professionnel réel. Positionnement initial, rythme adapté et petits effectifs pour progresser vite et durablement.",
-      en: 'English, Italian, Spanish: our language paths focus on real professional use. Initial assessment, adapted pace and small groups to progress quickly and lastingly.',
+      fr: "Anglais, italien et espagnol pour le travail : réunions, e-mails, négociation, vocabulaire de votre secteur. Un test de positionnement fixe votre point de départ, puis le rythme s'adapte, en individuel ou en groupe de 8 au plus.",
+      en: 'English, Italian and Spanish for work: meetings, emails, negotiation, the vocabulary of your sector. A placement test sets your starting point, then the pace adapts, one-to-one or in groups of up to 8.',
     },
     facts: [
       { fr: '6 programmes au catalogue', en: '6 programs in the catalog' },
@@ -221,8 +221,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     name: { fr: 'Communication digitale', en: 'Digital communication' },
     tag: { fr: 'Gagner en visibilité', en: 'Grow your visibility' },
     lead: {
-      fr: 'Réseaux sociaux, contenus, ligne éditoriale : apprenez à construire une présence digitale cohérente et à créer des contenus qui engagent votre audience, avec des outils accessibles à tous.',
-      en: 'Social media, content, editorial line: learn to build a consistent digital presence and create content that engages your audience, with tools accessible to everyone.',
+      fr: 'Ligne éditoriale, animation des réseaux sociaux, visuels sur Canva, vidéos courtes : pendant la formation, vous travaillez sur vos propres comptes, avec des outils simples.',
+      en: 'Editorial line, running social channels, visuals in Canva, short videos: during the course you work on your own accounts, with simple tools.',
     },
     facts: [
       { fr: '10 programmes au catalogue', en: '10 programs in the catalog' },
@@ -275,8 +275,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     name: { fr: 'Immobilier', en: 'Real estate' },
     tag: { fr: 'Répondre à vos obligations', en: 'Meet your obligations' },
     lead: {
-      fr: "Des formations dédiées aux professionnels de l'immobilier : satisfaites à vos obligations de formation continue (loi ALUR) tout en développant vos compétences digitales et commerciales.",
-      en: 'Training dedicated to real-estate professionals: meet your continuing-education requirements (ALUR law) while developing your digital and commercial skills.',
+      fr: "Formations pour les professionnels de l'immobilier : elles répondent à l'obligation de formation continue (loi ALUR) et couvrent aussi le marketing digital et la relation client.",
+      en: 'Courses for real-estate professionals: they meet the continuing-education requirement (ALUR law) and also cover digital marketing and client relations.',
     },
     facts: [
       { fr: '35 programmes au catalogue', en: '35 programs in the catalog' },
@@ -341,7 +341,7 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
       },
       a: {
         fr: "Non. Un usage courant du web et d'un ordinateur suffit : aucun prérequis en développement n'est demandé. Après un positionnement initial, le parcours est adapté à votre niveau, en individuel ou en petit groupe (1 à 8).",
-        en: 'No. Everyday use of the web and a computer is enough: no development background is required. After an initial assessment, the course is tailored to your level, one-to-one or in a small group (1–8).',
+        en: 'No. Everyday use of the web and a computer is enough: no development background is required. After an initial assessment, the course is adapted to your level, one-to-one or in a small group (1–8).',
       },
     },
     {
@@ -405,7 +405,7 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
       },
       a: {
         fr: "Par un test de positionnement initial. Aucun niveau minimum n'est imposé : le rythme et le contenu sont adaptés à votre niveau et à vos objectifs, en individuel ou en petit groupe (1 à 8).",
-        en: 'Through an initial placement test. No minimum level is required: the pace and content are tailored to your level and goals, one-to-one or in a small group (1–8).',
+        en: 'Through an initial placement test. No minimum level is required: the pace and content are adapted to your level and goals, one-to-one or in a small group (1–8).',
       },
     },
     {
@@ -436,8 +436,8 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
         en: 'Do we work on my own channels during the course?',
       },
       a: {
-        fr: 'Oui. Les parcours sont concrets : vous travaillez sur vos propres réseaux et contenus - stratégie et ligne éditoriale, visuels avec Canva, formats vidéo courts, community management et e-réputation.',
-        en: 'Yes. The courses are hands-on: you work on your own channels and content - strategy and editorial line, visuals with Canva, short video formats, community management and e-reputation.',
+        fr: 'Oui. Vous travaillez sur vos propres réseaux et contenus : stratégie et ligne éditoriale, visuels avec Canva, formats vidéo courts, community management et e-réputation.',
+        en: 'Yes. You work on your own channels and content: strategy and editorial line, visuals with Canva, short video formats, community management and e-reputation.',
       },
     },
     {

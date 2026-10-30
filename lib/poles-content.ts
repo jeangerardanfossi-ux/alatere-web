@@ -23,7 +23,7 @@ export const polesContent: Record<string, PoleContent> = {
     status: 'E-commerce',
     tagline: 'Sites marchands opérés en propre · depuis 2003',
     intro:
-      "Vingt ans à concevoir, opérer et référencer nos propres boutiques d'art en ligne. Notre savoir-faire SEO, SEA et opérations n'est pas une théorie : c'est ce qui fait vivre nos sites au quotidien - et c'est ce que nous mettons au service de nos clients.",
+      "Depuis vingt ans, nous concevons, exploitons et référençons nos propres boutiques d'art en ligne. Le SEO, le SEA et la gestion que nous proposons à nos clients sont ceux qui font tourner nos sites chaque jour.",
     blocks: [
       {
         heading: 'Nos boutiques',
@@ -38,7 +38,7 @@ export const polesContent: Record<string, PoleContent> = {
       },
       {
         heading: 'Référencement SEO & SEA',
-        body: "Acquisition organique et payante, structure technique, contenu et suivi de performance - éprouvés sur nos propres catalogues.",
+        body: "Référencement naturel et payant, structure technique, contenu et suivi des résultats, appliqués d'abord à nos propres catalogues.",
       },
       {
         heading: 'Opérations e-commerce',
@@ -47,7 +47,7 @@ export const polesContent: Record<string, PoleContent> = {
     ],
     metaTitle: 'Alatere ecoM - Savoir-faire e-commerce & SEO à Antibes',
     metaDescription:
-      "Vingt ans à opérer nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com…). Savoir-faire SEO, SEA et opérations e-commerce, au service de votre projet.",
+      "Nous exploitons nos propres boutiques d'art en ligne depuis vingt ans (repro-tableaux.com, copia-di-arte.com…). SEO, SEA et gestion e-commerce pour votre boutique.",
   },
   forma: {
     slug: 'alatere-forma',
@@ -56,11 +56,11 @@ export const polesContent: Record<string, PoleContent> = {
     status: 'Certifié Qualiopi',
     tagline: 'Organisme de formation professionnelle',
     intro:
-      "Organisme de formation enregistré sous le n° 93.06.07588.06, certifié Qualiopi depuis 2022. Cinq grands domaines de compétences, des parcours sur mesure et un financement OPCO possible.",
+      "Organisme de formation enregistré sous le n° 93.06.07588.06, certifié Qualiopi depuis 2022. Cinq domaines de formation, finançables par votre OPCO.",
     blocks: [
       {
-        heading: 'Cinq domaines de compétences',
-        body: 'Des programmes conçus pour les dirigeants, équipes et indépendants.',
+        heading: 'Cinq domaines de formation',
+        body: 'Pour les dirigeants, leurs équipes et les indépendants.',
         bullets: [
           'Webmarketing',
           'Intelligence artificielle',
@@ -71,11 +71,11 @@ export const polesContent: Record<string, PoleContent> = {
       },
       {
         heading: 'Financement OPCO',
-        body: "Nos formations peuvent être prises en charge par votre OPCO. Nous vous accompagnons dans le montage du dossier.",
+        body: "Nos formations peuvent être prises en charge par votre OPCO. Nous vous aidons à monter le dossier.",
       },
       {
-        heading: 'Qualité Qualiopi',
-        body: "Certification Qualiopi obtenue en 2022, gage de qualité du processus de formation. Programmes détaillés sur notre catalogue dédié.",
+        heading: 'Certification Qualiopi',
+        body: "Certification Qualiopi obtenue en 2022. Les programmes détaillés sont sur notre catalogue en ligne.",
       },
     ],
     metaTitle: 'Alatere forMa - Organisme de formation Qualiopi à Antibes',
@@ -89,11 +89,11 @@ export const polesContent: Record<string, PoleContent> = {
     status: 'Agréé préfecture',
     tagline: "Domiciliation d'entreprise à Antibes",
     intro:
-      "Une adresse de prestige au 9 Boulevard Albert 1er pour votre siège social. Agrément préfectoral n° 2022/12 du 20/09/2022, plus de 50 entreprises déjà domiciliées. Idéal pour une création de SIRET ou un transfert de siège.",
+      "Votre siège social au 9 Boulevard Albert 1er. Agrément préfectoral n° 2022/12 du 20/09/2022, plus de 50 entreprises déjà domiciliées. L'adresse vaut pour une immatriculation comme pour un transfert de siège.",
     blocks: [
       {
         heading: 'Services inclus',
-        body: 'Une gestion complète de votre courrier professionnel.',
+        body: 'Nous traitons votre courrier professionnel.',
         bullets: [
           'Réception du courrier',
           'Scan et notification',
@@ -106,8 +106,8 @@ export const polesContent: Record<string, PoleContent> = {
         body: 'Offre Headquarters à 30 € · formule Pro à 50 € / mois · frais de dossier 79 €.',
       },
       {
-        heading: 'Agrément & confiance',
-        body: 'Agrément préfectoral n° 2022/12 du 20/09/2022. Plus de 50 entreprises domiciliées nous font confiance.',
+        heading: 'Agrément préfectoral',
+        body: 'Agrément préfectoral n° 2022/12 du 20/09/2022. Plus de 50 entreprises sont domiciliées chez nous.',
       },
     ],
     metaTitle: "Alatere doMo - Domiciliation d'entreprise à Antibes (agréée)",
@@ -121,11 +121,11 @@ export const polesContent: Record<string, PoleContent> = {
     status: 'Communauté',
     tagline: 'Espace de coworking à Antibes',
     intro:
-      "Postes nomades, bureaux fermés et salles de réunion à deux pas du port Vauban. Café, fibre et événements business mensuels - au 9 boulevard Albert 1er à Antibes. Venez nous rendre visite.",
+      "Postes nomades, bureaux fermés et salles de réunion à deux pas du port Vauban. Café, fibre et un événement business par mois, au 9 boulevard Albert 1er à Antibes.",
     blocks: [
       {
         heading: "L'espace",
-        body: 'Un cadre de travail professionnel et convivial, climatisé.',
+        body: 'Un espace de travail climatisé.',
         bullets: [
           '5 salles de réunion',
           '16 postes de travail',
@@ -135,7 +135,7 @@ export const polesContent: Record<string, PoleContent> = {
       },
       {
         heading: 'La communauté',
-        body: 'Événements business mensuels, café et networking - pour travailler entouré et développer votre réseau.',
+        body: 'Un événement business par mois et un café partagé : vous travaillez à côté d’autres indépendants et vous élargissez votre réseau.',
       },
       {
         heading: 'Emplacement',

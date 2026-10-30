@@ -14,10 +14,8 @@ function Fr() {
     <>
       <p>
         La <strong>domiciliation d&rsquo;entreprise</strong> consiste à attribuer à votre société
-        une adresse de <strong>siège social</strong>, distincte de votre domicile personnel. À
-        Antibes, elle permet d&rsquo;obtenir une adresse professionnelle de prestige tout en
-        déléguant la gestion du courrier. Voici, étape par étape, comment domicilier votre
-        entreprise.
+        une adresse de <strong>siège social</strong>, distincte de votre domicile personnel. Voici les étapes, les pièces à fournir et nos
+        tarifs à Antibes.
       </p>
 
       <section>
@@ -34,24 +32,15 @@ function Fr() {
       <section>
         <h2>Pourquoi domicilier son entreprise à Antibes ?</h2>
         <ul>
+          <li>Une adresse en centre-ville, à deux pas du port Vauban.</li>
           <li>
-            <strong>Une adresse de prestige</strong> en plein centre d&rsquo;Antibes, à deux pas du
-            port Vauban.
+            Votre adresse personnelle reste privée : c&rsquo;est la nôtre qui figure sur le Kbis et
+            vos factures.
           </li>
+          <li>Le courrier est reçu, numérisé ou réexpédié selon l&rsquo;offre choisie.</li>
           <li>
-            <strong>Séparer vie privée et professionnelle</strong> : votre domicile reste
-            confidentiel.
-          </li>
-          <li>
-            <strong>Une image crédible</strong> auprès de vos clients, partenaires et banques.
-          </li>
-          <li>
-            <strong>Des services associés</strong> : réception du courrier, numérisation et
-            réexpédition.
-          </li>
-          <li>
-            <strong>Un écosystème complet</strong> sur place : coworking, salles de réunion et
-            secrétariat externalisé.
+            Sur place, vous avez aussi un coworking, des salles de réunion et un secrétariat
+            externalisé.
           </li>
         </ul>
       </section>
@@ -87,29 +76,29 @@ function Fr() {
 
       <section>
         <h2>Combien coûte une domiciliation à Antibes ?</h2>
-        <p>Chez Alatere doMo, les tarifs sont clairs et sans engagement de longue durée :</p>
+        <p>Nos tarifs chez Alatere doMo :</p>
         <ul>
           <li>
-            <strong>Offre Dropbox - 25 € HT / mois</strong> : boîte aux lettres (réception et
+            <strong>Offre Dropbox (25 € HT / mois)</strong> : boîte aux lettres (réception et
             stockage du courrier), sans utilisation comme siège social ;
           </li>
           <li>
-            <strong>Offre Headquarters - 30 € HT / mois</strong> : adresse de siège social +
+            <strong>Offre Headquarters (30 € HT / mois)</strong> : adresse de siège social +
             réception du courrier ;
           </li>
           <li>
-            <strong>Offre Forward - 50 € HT / mois</strong> : numérisation et réexpédition incluses ;
+            <strong>Offre Forward (50 € HT / mois)</strong> : numérisation et réexpédition incluses ;
           </li>
           <li>
-            <strong>Frais de dossier - 50 € HT</strong>, une seule fois, à l&rsquo;ouverture du dossier.
+            <strong>Frais de dossier (50 € HT)</strong>, une seule fois, à l&rsquo;ouverture du dossier.
           </li>
         </ul>
         <p>
-          Découvrez le détail sur la page{' '}
+          Le détail est sur la page{' '}
           <Link className="g-inline" href="/alatere-domo">
-            Alatere doMo - domiciliation à Antibes
+            Alatere doMo, domiciliation à Antibes
           </Link>
-          , et pour situer ces tarifs dans le marché local, notre{' '}
+          . Pour situer ces prix face aux autres prestataires, lisez notre{' '}
           <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparatif des prestataires de domiciliation à Antibes</Link>.
         </p>
       </section>
@@ -127,12 +116,12 @@ function Fr() {
       <section>
         <h2>Aller plus loin : déléguer aussi l&rsquo;administratif</h2>
         <p>
-          La domiciliation génère naturellement des tâches (courrier, relances, formalités). Avec{' '}
+          La domiciliation amène des tâches : courrier, relances, formalités. Avec{' '}
           <a className="g-inline" href="/alatere-todo.html">
             Alatere toDo
           </a>
-          , une assistante dédiée prend en charge votre secrétariat - avec des conditions
-          avantageuses pour les entreprises domiciliées.
+          , une assistante dédiée prend en charge votre secrétariat, à des conditions
+          avantageuses pour les entreprises domiciliées chez nous.
         </p>
         <p>
           Une question sur votre projet de domiciliation ?{' '}
@@ -190,9 +179,8 @@ function En() {
     <>
       <p>
         <strong>Company address registration (domiciliation)</strong> means giving your company a{' '}
-        <strong>registered office</strong> address, separate from your personal home. In Antibes, it
-        lets you obtain a prestigious business address while delegating the handling of your mail.
-        Here, step by step, is how to register your company&rsquo;s address.
+        <strong>registered office</strong> address, separate from your personal home. Here are the steps, the documents
+        to provide and our prices in Antibes.
       </p>
 
       <section>
@@ -209,23 +197,11 @@ function En() {
       <section>
         <h2>Why register your company&rsquo;s address in Antibes?</h2>
         <ul>
+          <li>A town-centre address, a short walk from Port Vauban.</li>
+          <li>Your home address stays private: ours is the one on the Kbis and your invoices.</li>
+          <li>Your mail is received, scanned or forwarded, depending on the plan.</li>
           <li>
-            <strong>A prestigious address</strong> in the heart of Antibes, a stone&rsquo;s throw
-            from the Port Vauban.
-          </li>
-          <li>
-            <strong>Separate your private and professional life</strong>: your home address stays
-            confidential.
-          </li>
-          <li>
-            <strong>A credible image</strong> in the eyes of your clients, partners and banks.
-          </li>
-          <li>
-            <strong>Associated services</strong>: mail reception, scanning and forwarding.
-          </li>
-          <li>
-            <strong>A complete ecosystem</strong> on site: coworking, meeting rooms and outsourced
-            secretarial support.
+            On site you also have coworking, meeting rooms and outsourced secretarial support.
           </li>
         </ul>
       </section>
@@ -263,29 +239,29 @@ function En() {
 
       <section>
         <h2>How much does company address registration in Antibes cost?</h2>
-        <p>At Alatere doMo, pricing is clear, with no long-term commitment:</p>
+        <p>Our prices at Alatere doMo:</p>
         <ul>
           <li>
-            <strong>Dropbox plan - €25 excl. VAT / month</strong>: letterbox (mail reception and
+            <strong>Dropbox plan (€25 excl. VAT / month)</strong>: letterbox (mail reception and
             storage), without use as a head office;
           </li>
           <li>
-            <strong>Headquarters plan - €30 excl. VAT / month</strong>: head-office address + mail
+            <strong>Headquarters plan (€30 excl. VAT / month)</strong>: head-office address + mail
             reception;
           </li>
           <li>
-            <strong>Forward plan - €50 excl. VAT / month</strong>: scanning and forwarding included;
+            <strong>Forward plan (€50 excl. VAT / month)</strong>: scanning and forwarding included;
           </li>
           <li>
-            <strong>Set-up fee - €50 excl. VAT</strong>, one-off, when opening the file.
+            <strong>Set-up fee (€50 excl. VAT)</strong>, one-off, when opening the file.
           </li>
         </ul>
         <p>
-          Find out more on the{' '}
+          Details are on the{' '}
           <Link className="g-inline" href="/alatere-domo">
-            Alatere doMo - company address registration in Antibes
+            Alatere doMo: business address in Antibes
           </Link>{' '}
-          page, and to place those prices in the local market, in our{' '}
+          page. To see how these prices compare with other providers, read our{' '}
           <Link className="g-inline" href="/blog/comparatif-domiciliation-antibes">comparison of business-address providers in Antibes</Link>.
         </p>
       </section>
@@ -303,18 +279,18 @@ function En() {
       <section>
         <h2>Going further: delegate the admin too</h2>
         <p>
-          A business address naturally generates tasks (mail, follow-ups, formalities). With{' '}
+          A business address brings tasks with it: mail, follow-ups, formalities. With{' '}
           <a className="g-inline" href="/alatere-todo.html">
             Alatere toDo
           </a>
-          , a dedicated assistant takes care of your secretarial work - with favourable terms for
-          companies with a registered business address.
+          , a dedicated assistant takes care of your secretarial work, on favourable terms for
+          companies registered at our address.
         </p>
         <p>
           A question about your company address registration project?{' '}
           <Link className="g-inline" href="/contact?pole=domo">
             Contact us
-          </Link>{' '}
+          </Link>
           : we reply within 48 hours.
         </p>
       </section>

@@ -79,12 +79,12 @@ export const posts: Post[] = [
       en: "Day-pass coworking in Antibes: where to work when you're passing through",
     },
     metaTitle: {
-      fr: 'Coworking à la journée à Antibes - pass dès 30 € | Alatere coWo',
-      en: 'Day-pass coworking in Antibes - from €30 | Alatere coWo',
+      fr: 'Coworking à la journée à Antibes, pass dès 30 € | Alatere coWo',
+      en: 'Day-pass coworking in Antibes, from €30 | Alatere coWo',
     },
     excerpt: {
-      fr: "Travailler à Antibes le temps d'une journée ? Pass coworking à 30 €, café et fibre inclus, à deux pas du port Vauban. Sans engagement - réservez votre poste.",
-      en: "Working in Antibes just for the day? A €30 coworking day pass, coffee and fibre included, a stone's throw from Port Vauban. No commitment - book your desk.",
+      fr: "Pass coworking à 30 € la journée à Antibes, café et fibre inclus, à deux pas du port Vauban. Sans engagement : la date, le poste et le paiement se choisissent en ligne en deux minutes.",
+      en: "A €30 coworking day pass in Antibes, coffee and fibre included, a stone's throw from Port Vauban. No commitment: pick the date, the desk and pay online in two minutes.",
     },
     keyword: { fr: 'coworking Antibes à la journée', en: 'day-pass coworking Antibes' },
     category: { fr: 'Coworking', en: 'Coworking' },
@@ -170,8 +170,8 @@ export const posts: Post[] = [
       en: 'Business address or office in Antibes: how to choose?',
     },
     excerpt: {
-      fr: 'Coûts, flexibilité, image, services : comparatif entre la domiciliation d’entreprise et la location de bureau pour votre siège à Antibes.',
-      en: 'Cost, flexibility, image, services: a comparison between a registered business address and renting an office for your head office in Antibes.',
+      fr: 'Coûts, flexibilité, image, services : la domiciliation d’entreprise et la location de bureau comparées pour votre siège à Antibes.',
+      en: 'Cost, flexibility, image, services: a registered business address and an office rental compared for your head office in Antibes.',
     },
     keyword: {
       fr: 'domiciliation ou location de bureau',
@@ -202,8 +202,8 @@ export const posts: Post[] = [
       en: 'Registering your company address in Antibes: complete guide (2026)',
     },
     excerpt: {
-      fr: "Étapes, documents, prix et avantages : tout ce qu'il faut savoir pour domicilier le siège social de votre entreprise à Antibes.",
-      en: "Steps, documents, prices and benefits: everything you need to know to register your company's head office address in Antibes.",
+      fr: "Étapes, documents, prix et avantages : comment domicilier le siège social de votre entreprise à Antibes.",
+      en: "Steps, documents, prices and benefits: how to register your company's head office address in Antibes.",
     },
     keyword: {
       fr: "domicilier son entreprise à Antibes",
@@ -282,7 +282,7 @@ export const posts: Post[] = [
       name: 'Jean-Gérard Anfossi',
       url: 'https://www.linkedin.com/in/jeangerardanfossi/',
       bio: {
-        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, organisme de formation certifié Qualiopi, et accompagne les indépendants de la Côte d'Azur dans le montage de leurs dossiers de financement.",
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, organisme de formation certifié Qualiopi, et aide les indépendants de la Côte d'Azur à monter leurs dossiers de financement.",
         en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, a Qualiopi-certified training provider, and helps self-employed professionals on the French Riviera put together their funding applications.',
       },
     },

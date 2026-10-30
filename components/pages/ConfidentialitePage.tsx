@@ -241,7 +241,7 @@ function Body() {
             <dt>{t('kv_email')}</dt>
             <dd><Email user="contact" /></dd>
             <dt>{t('kv_post')}</dt>
-            <dd>Alatere Web SAS - 9 Bd Albert 1er, 06600 Antibes</dd>
+            <dd>Alatere Web SAS, 9 Bd Albert 1er, 06600 Antibes</dd>
             <dt>{t('kv_cnil')}</dt>
             <dd>{t('kv_cnil_v')}</dd>
           </dl>
