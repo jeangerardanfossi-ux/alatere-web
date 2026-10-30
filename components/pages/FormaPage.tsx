@@ -9,6 +9,7 @@ import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
+import { BrandTitle } from '@/components/grommet/BrandName';
 
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
@@ -50,8 +51,8 @@ const TX: Dict = {
     en: 'The quality certification has been issued for the following category of action: TRAINING ACTIONS',
   },
   hero_lead: {
-    fr: "Nous concevons des parcours de formation sur mesure, pensés pour développer des compétences opérationnelles. Cinq grands domaines, un accompagnement humain, un financement OPCO facilité - au cœur d'Antibes ou à distance.",
-    en: 'We design tailored training paths built to develop operational skills. Five major fields, human support and facilitated OPCO funding - in the heart of Antibes or remotely.',
+    fr: "Formations professionnelles en webmarketing, intelligence artificielle, langues, communication digitale et immobilier. Chaque formation commence par un positionnement initial. Sessions à Antibes ou à distance, finançables par votre OPCO ou votre FAF.",
+    en: 'Professional training in web marketing, artificial intelligence, languages, digital communication and real estate. Every course starts with an initial assessment. Sessions in Antibes or remotely, fundable by your OPCO or FAF.',
   },
   hero_cta1: { fr: 'Voir le catalogue détaillé', en: 'View the detailed catalog' },
   hero_cta2: { fr: 'Demander un devis', en: 'Request a quote' },
@@ -72,19 +73,19 @@ const TX: Dict = {
 
   dom_label: { fr: 'Nos domaines', en: 'Our fields' },
   dom_title: {
-    fr: 'Cinq grands domaines de compétences',
-    en: 'Five major fields of expertise',
+    fr: 'Cinq domaines de formation',
+    en: 'Five training fields',
   },
   dom_p: {
-    fr: 'Seules les grandes thématiques figurent ici. Le détail de chaque programme - objectifs, prérequis, durée, modalités, tarifs et accessibilité - est publié sur notre catalogue dédié.',
-    en: 'Only the main themes appear here. The details of each program - objectives, prerequisites, duration, terms, prices and accessibility - are published in our dedicated catalog.',
+    fr: 'Seules les grandes thématiques figurent ici. Le détail de chaque programme (objectifs, prérequis, durée, modalités, tarifs, accessibilité) est publié sur notre catalogue.',
+    en: 'Only the main themes appear here. The details of each program (objectives, prerequisites, duration, terms, prices, accessibility) are published in our catalog.',
   },
 
   dom1_count: { fr: '11 programmes', en: '11 programs' },
   dom1_h: { fr: 'Webmarketing', en: 'Web marketing' },
   dom1_p: {
-    fr: 'SEO, SEA, AEO, publicité social ads, analytics et e-commerce. Notre métier historique, transmis par la pratique.',
-    en: 'SEO, SEA, AEO, social ads, analytics and e-commerce. Our core business, taught through practice.',
+    fr: 'SEO, SEA, AEO, publicité social ads, analytics et e-commerce. Notre métier depuis 2003.',
+    en: 'SEO, SEA, AEO, social ads, analytics and e-commerce. Our trade since 2003.',
   },
   dom2_count: { fr: '7 programmes', en: '7 programs' },
   dom2_h: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
@@ -95,47 +96,47 @@ const TX: Dict = {
   dom3_count: { fr: '6 programmes', en: '6 programs' },
   dom3_h: { fr: 'Langues', en: 'Languages' },
   dom3_p: {
-    fr: 'Anglais, italien et espagnol - usage professionnel et technique, en individuel ou petit groupe.',
-    en: 'English, Italian and Spanish - professional and technical use, one-to-one or small group.',
+    fr: 'Anglais, italien et espagnol pour un usage professionnel et technique, en individuel ou en petit groupe.',
+    en: 'English, Italian and Spanish for professional and technical use, one-to-one or in a small group.',
   },
   dom4_count: { fr: '10 programmes', en: '10 programs' },
   dom4_h: { fr: 'Communication digitale', en: 'Digital communication' },
   dom4_p: {
-    fr: 'Réseaux sociaux, brand content, création de contenu et stratégie éditoriale pour gagner en visibilité.',
-    en: 'Social media, brand content, content creation and editorial strategy to grow visibility.',
+    fr: 'Réseaux sociaux, brand content, création de contenu et stratégie éditoriale.',
+    en: 'Social media, brand content, content creation and editorial strategy.',
   },
   dom5_count: { fr: '35 programmes', en: '35 programs' },
   dom5_h: { fr: 'Immobilier', en: 'Real estate' },
   dom5_p: {
-    fr: 'Formations professionnelles dédiées au secteur immobilier (obligations de formation continue, outils digitaux).',
-    en: 'Professional training dedicated to the real-estate sector (continuing-education requirements, digital tools).',
+    fr: "Formations pour les professionnels de l'immobilier : formation continue obligatoire, outils digitaux.",
+    en: 'Courses for real-estate professionals: mandatory continuing education, digital tools.',
   },
   dom_see: { fr: 'En savoir plus →', en: 'Learn more →' },
 
   team_role: { fr: 'L’équipe pédagogique', en: 'The teaching team' },
   team_h: {
-    fr: 'Des formateurs praticiens, experts de leur domaine',
-    en: 'Practitioner trainers, experts in their field',
+    fr: 'Nos six formateurs',
+    en: 'Our six trainers',
   },
   team_p: {
-    fr: "Des intervenants choisis pour leur expérience de terrain animent nos parcours. Faites connaissance avec celles et ceux qui vous forment.",
-    en: 'Trainers chosen for their hands-on experience lead our courses. Meet the people who train you.',
+    fr: "Consultants, juriste, coach : chacun enseigne la matière qu'il exerce. Leurs parcours sont présentés sur la page formateurs.",
+    en: 'Consultants, a lawyer, a coach: each teaches the subject they work in. Their backgrounds are on the trainers page.',
   },
   team_cta: { fr: 'Voir nos formateurs', en: 'Meet our trainers' },
 
   cat_count: { fr: '59 programmes', en: '59 programs' },
   cat_h: { fr: 'Catalogue complet', en: 'Full catalog' },
   cat_p: {
-    fr: 'Recherche par mot-clé, filtres par durée, prix et modalité. Toutes les fiches programmes à jour.',
-    en: 'Keyword search, filters by duration, price and format. All program sheets kept up to date.',
+    fr: 'Recherche par mot-clé, filtres par durée, prix et modalité, fiche détaillée pour chaque programme.',
+    en: 'Keyword search, filters by duration, price and format, a detailed sheet for each program.',
   },
   cat_open: { fr: 'Ouvrir le catalogue ↗', en: 'Open the catalog ↗' },
 
   mod_label: { fr: 'Comment ça se passe', en: 'How it works' },
   mod_title: { fr: 'Modalités, délais et financement', en: 'Terms, timelines and funding' },
   mod_p: {
-    fr: "Conformément au référentiel Qualiopi, voici les informations essentielles avant l'entrée en formation.",
-    en: 'In line with the Qualiopi framework, here is the key information before starting a course.',
+    fr: "Ce qu'il faut savoir avant l'entrée en formation, comme le prévoit le référentiel Qualiopi.",
+    en: 'What you need to know before starting a course, as required by the Qualiopi framework.',
   },
 
   mod1_h: { fr: 'Modalités pédagogiques', en: 'Teaching methods' },
@@ -151,8 +152,8 @@ const TX: Dict = {
   },
   mod1_r3_b: { fr: 'Individualisé', en: 'Individualized' },
   mod1_r3_t: {
-    fr: '- positionnement initial, rythme adapté, groupes de 1 à 8.',
-    en: '- initial assessment, adapted pace, groups of 1 to 8.',
+    fr: ': positionnement initial, rythme adapté, groupes de 1 à 8.',
+    en: 'with an initial assessment, adapted pace, groups of 1 to 8.',
   },
 
   mod2_h: { fr: "Délais d'accès", en: 'Access times' },
@@ -171,8 +172,8 @@ const TX: Dict = {
   mod3_h: { fr: 'Financement', en: 'Funding' },
   mod3_r1_b: { fr: 'OPCO', en: 'OPCO' },
   mod3_r1_t: {
-    fr: '- plan de développement des compétences.',
-    en: '- skills development plan.',
+    fr: '(plan de développement des compétences).',
+    en: '(skills development plan).',
   },
   mod3_r2_b: { fr: 'FAF', en: 'FAF' },
   mod3_r2_t: {
@@ -218,7 +219,7 @@ const TX: Dict = {
   ind3: { fr: 'Objectifs pédagogiques atteints', en: 'Learning objectives achieved' },
   ind4: { fr: 'Taux de recommandation', en: 'Recommendation rate' },
 
-  steps_label: { fr: 'Votre parcours', en: 'Your journey' },
+  steps_label: { fr: 'Les étapes', en: 'The steps' },
   steps_title: {
     fr: 'De la demande à la certification, en quatre étapes',
     en: 'From request to certification, in four steps',
@@ -246,8 +247,8 @@ const TX: Dict = {
 
   cta_title: { fr: 'Un besoin de formation ?', en: 'Need training?' },
   cta_p: {
-    fr: 'Devis sous 48 heures, démarrage sous 14 jours. Financement OPCO accompagné.',
-    en: 'Quote within 48 hours, start within 14 days. OPCO funding supported.',
+    fr: 'Devis sous 48 heures, démarrage sous 14 jours. Nous montons avec vous le dossier de financement OPCO.',
+    en: 'Quote within 48 hours, start within 14 days. We prepare the OPCO funding file with you.',
   },
   cta_b1: { fr: 'Demander un devis', en: 'Request a quote' },
   cta_b2: { fr: 'Voir le catalogue ↗', en: 'View the catalog ↗' },
@@ -338,14 +339,7 @@ function Body() {
               <span className="g-tag g-tag--gold">{t('hero_tag')}</span>
             </h1>
             <div className="g-h1" style={{ marginTop: 14 }}>
-              Alatere{' '}
-              <span className="g-subword">
-                <span className="lg-gold">f</span>
-                <span className="lg-clay">o</span>
-                <span className="lg-navy">r</span>
-                <span className="lg-teal">M</span>
-                <span className="lg-green">a</span>
-              </span>
+              <BrandTitle pole="forma" />
             </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="f-hero__cta">

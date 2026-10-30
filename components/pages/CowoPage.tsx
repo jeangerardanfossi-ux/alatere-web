@@ -3,17 +3,20 @@
 /** Alatere coWo - page « espace de coworking » (handoff Grommet, accent clay/terracotta). */
 
 import Link from '@/components/grommet/LocalizedLink';
-import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
+import { LangProvider, useReservations, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
+import { BrandTitle } from '@/components/grommet/BrandName';
 
 const TITLE = {
   fr: 'Alatere coWo - Espace de coworking à Antibes',
   en: 'Alatere coWo - Coworking space in Antibes',
 };
+
+/** Application de réservation des postes (projet alatere-cowo). */
 
 const ACCENT = {
   '--accent': '#b86137',
@@ -35,33 +38,39 @@ const TX: Dict = {
   bc_1: { fr: "Centre d'affaires", en: 'Business center' },
   hero_tag: { fr: 'Espace de coworking à Antibes', en: 'Coworking space in Antibes' },
   hero_lead: {
-    fr: "Un lieu de travail inspirant au cœur d'Antibes, à deux pas du port Vauban. Postes nomades, bureaux fermés et salles de réunion - café, fibre et événements business mensuels, au sein d'une communauté d'entrepreneurs.",
-    en: 'An inspiring workplace in the heart of Antibes, steps from Port Vauban. Hot desks, private offices and meeting rooms - coffee, fiber and monthly business events, within a community of entrepreneurs.',
+    fr: "Un espace de coworking au 9 Boulevard Albert 1er, à deux pas du port Vauban. Postes nomades, bureaux fermés et salles de réunion, avec café, fibre et des rencontres business chaque mois.",
+    en: 'A coworking space at 9 Boulevard Albert 1er, steps from Port Vauban. Hot desks, private offices and meeting rooms, with coffee, fiber and business meetups every month.',
   },
   hero_cta1: { fr: 'Réserver une visite', en: 'Book a visit' },
   hero_cta2: { fr: 'Voir les offres', en: 'View the offers' },
+  hero_cta_poste: { fr: 'Réserver un poste', en: 'Book a desk' },
+  hero_app: {
+    fr: "Installer l'application de réservation sur votre téléphone",
+    en: 'Install the booking app on your phone',
+  },
   brief: { fr: "L'espace en bref", en: 'The space at a glance' },
+  brief_dispo: { fr: 'Voir les places libres', en: 'See available desks' },
   brief_1: { fr: 'Salles de travail', en: 'Work rooms' },
   brief_2: { fr: 'Postes de travail', en: 'Workstations' },
   brief_3: { fr: 'Internet haut-débit', en: 'High-speed internet' },
   brief_4: { fr: 'Salles climatisées', en: 'Air-conditioned rooms' },
   brief_3_v: { fr: 'Fibre', en: 'Fiber' },
   brief_4_v: { fr: 'Climatisation', en: 'Air conditioning' },
-  gal_label: { fr: 'Découvrir les lieux', en: 'Discover the space' },
-  gal_title: { fr: 'Un cadre de travail soigné', en: 'A carefully designed workspace' },
+  gal_label: { fr: 'Immeuble La Caravelle', en: 'La Caravelle building' },
+  gal_title: { fr: "L'espace en photos", en: 'The space in pictures' },
   gal_p: {
-    fr: "Un cadre de travail lumineux au cœur d'Antibes : open-space, bureaux privatifs et salle de réunion, dans l'immeuble La Caravelle au 9 Boulevard Albert 1er.",
-    en: 'A bright workspace in the heart of Antibes: open area, private offices and meeting room, in the La Caravelle building at 9 Boulevard Albert 1er.',
+    fr: 'Open-space, bureaux privatifs et salle de réunion, au 9 Boulevard Albert 1er.',
+    en: 'Open area, private offices and meeting room, at 9 Boulevard Albert 1er.',
   },
   gal_cap1: { fr: 'Open-space', en: 'Open-space' },
   gal_cap2: { fr: 'Bureau privatif', en: 'Private office' },
   gal_cap3: { fr: 'Salle de réunion', en: 'Meeting room' },
   gal_cap4: { fr: "Notre immeuble à Antibes", en: 'Our building in Antibes' },
   off_label: { fr: 'Nos offres', en: 'Our offers' },
-  off_title: { fr: 'Des formules pour chaque besoin', en: 'Plans for every need' },
+  off_title: { fr: 'Tarifs du coworking', en: 'Coworking prices' },
   off_p: {
-    fr: "Du passage ponctuel à l'installation longue durée. Des formules claires, adaptées à vos besoins.",
-    en: 'From occasional visits to long-term setup. Clear plans, tailored to your needs.',
+    fr: "Du pass journée au bureau privatif à l'année. Tarifs TTC.",
+    en: 'From a day pass to a private office by the year. Prices incl. VAT.',
   },
   price_ttc: { fr: 'TTC', en: 'incl. VAT' },
   per_day: { fr: '/ jour', en: '/ day' },
@@ -71,14 +80,14 @@ const TX: Dict = {
     fr: 'Un poste en open-space pour la journée, café inclus.',
     en: 'An open-area desk for the day, coffee included.',
   },
-  plan1_cta: { fr: 'Nous consulter', en: 'Contact us' },
+  plan1_cta: { fr: 'Réserver en ligne', en: 'Book online' },
   plan2_ribbon: { fr: 'Le plus flexible', en: 'Most flexible' },
   plan2_name: { fr: 'Abonnement mensuel', en: 'Monthly membership' },
   plan2_p: {
     fr: "Accès illimité à l'open-space et tarifs préférentiels sur les salles.",
     en: 'Unlimited open-area access and preferential rates on meeting rooms.',
   },
-  plan2_cta: { fr: 'Nous consulter', en: 'Contact us' },
+  plan2_cta: { fr: 'Réserver en ligne', en: 'Book online' },
   plan3_name: { fr: 'Bureau privatif', en: 'Private office' },
   plan3_p: {
     fr: "Un bureau fermé pour une à plusieurs personnes, à l'année.",
@@ -93,43 +102,43 @@ const TX: Dict = {
   plan4_cta: { fr: 'Réserver', en: 'Book' },
   eq_label: { fr: 'Équipements & services', en: 'Amenities & services' },
   eq_title: {
-    fr: 'Tout est pensé pour bien travailler',
-    en: 'Everything designed for great work',
+    fr: 'Ce que vous trouvez sur place',
+    en: "What you'll find on site",
   },
   eq1_h: { fr: 'Fibre haut-débit', en: 'High-speed fiber' },
   eq1_p: {
-    fr: "Connexion rapide et fiable, Wi-Fi sécurisé dans tout l'espace.",
-    en: 'Fast, reliable connection with secure Wi-Fi throughout the space.',
+    fr: "Wi-Fi sécurisé dans tout l'espace.",
+    en: 'Secure Wi-Fi throughout the space.',
   },
   eq2_h: { fr: 'Salles climatisées', en: 'Air-conditioned rooms' },
   eq2_p: {
-    fr: 'Cinq salles de réunion confortables, été comme hiver.',
-    en: 'Five comfortable meeting rooms, all year round.',
+    fr: 'Cinq salles de réunion climatisées, été comme hiver.',
+    en: 'Five air-conditioned meeting rooms, summer and winter.',
   },
-  eq3_h: { fr: 'Café & convivialité', en: 'Coffee & community' },
+  eq3_h: { fr: 'Café & coin pause', en: 'Coffee & break area' },
   eq3_p: {
-    fr: 'Espace détente, café à volonté et coin pause partagé.',
-    en: 'Lounge area, unlimited coffee and a shared break corner.',
+    fr: 'Café à volonté et coin pause partagé.',
+    en: 'Unlimited coffee and a shared break area.',
   },
   eq4_h: { fr: 'Événements mensuels', en: 'Monthly events' },
   eq4_p: {
-    fr: "Rencontres business et moments d'échange entre membres.",
-    en: 'Business meetups and networking moments between members.',
+    fr: 'Des rencontres business entre membres, chaque mois.',
+    en: 'Business meetups between members, every month.',
   },
   com_label: { fr: 'La communauté', en: 'The community' },
-  com_title: { fr: "Bien plus qu'un bureau", en: 'Much more than an office' },
+  com_title: { fr: 'Qui travaille ici', en: 'Who works here' },
   com_p: {
-    fr: "Travailler chez Alatere coWo, c'est rejoindre un réseau d'entrepreneurs et de freelances locaux. Échanges, entraide et opportunités au quotidien, au cœur d'Antibes.",
-    en: 'Working at Alatere coWo means joining a network of local entrepreneurs and freelancers. Exchange, support and opportunities every day, in the heart of Antibes.',
+    fr: "Des entrepreneurs et des freelances de la région, qui s'échangent contacts et coups de main.",
+    en: 'Local entrepreneurs and freelancers, who share contacts and help each other out.',
   },
   com_chip1: { fr: 'Entrepreneurs & freelances', en: 'Entrepreneurs & freelancers' },
   com_chip2: { fr: 'Événements business', en: 'Business events' },
   com_chip3: { fr: 'Mise en relation', en: 'Networking' },
-  com_chip4: { fr: 'Écosystème Alatere', en: 'Alatere ecosystem' },
+  com_chip4: { fr: 'Autres services Alatere', en: 'Other Alatere services' },
   faq_label: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq_title: {
-    fr: 'Coworking à Antibes - pratique',
-    en: 'Coworking in Antibes - practical info',
+    fr: 'Coworking à Antibes : infos pratiques',
+    en: 'Coworking in Antibes: practical info',
   },
   faq1_q: {
     fr: "Où se situe l'espace de coworking ?",
@@ -161,7 +170,7 @@ const TX: Dict = {
     en: 'Yes, through our Alatere doMo service. Coworking members enjoy preferential terms on business address services.',
   },
   loc_label: { fr: 'Nous situer', en: 'Find us' },
-  loc_title: { fr: "Au cœur d'Antibes", en: 'In the heart of Antibes' },
+  loc_title: { fr: "Centre-ville d'Antibes", en: 'Central Antibes' },
   loc_card_label: { fr: "Alatere coWo · centre d'affaires", en: 'Alatere coWo · business center' },
   loc_map_cap: {
     fr: 'Plan / carte - 9 Bd Albert 1er, Antibes',
@@ -179,9 +188,10 @@ const TX: Dict = {
   loc_maps: { fr: 'Voir sur Google Maps', en: 'View on Google Maps' },
   cta_title: { fr: 'Envie de venir travailler ici ?', en: 'Want to come work here?' },
   cta_p: {
-    fr: "Venez visiter l'espace et rencontrer la communauté. Café offert.",
-    en: "Come visit the space and meet the community. Coffee's on us.",
+    fr: "Passez visiter l'espace, le café est offert.",
+    en: "Drop by to see the space. Coffee's on us.",
   },
+  cta_b0: { fr: 'Réserver en ligne', en: 'Book online' },
   cta_b1: { fr: 'Nous contacter', en: 'Contact us' },
   cta_b2: { fr: 'Voir la domiciliation', en: 'See business address service' },
 };
@@ -200,6 +210,7 @@ export default function CowoPage() {
 
 function Body() {
   const t = useT(TX);
+  const resa = useReservations();
   return (
     <>
       <div className="ap-stripe">
@@ -225,13 +236,7 @@ function Body() {
               <span className="g-tag g-tag--clay">{t('hero_tag')}</span>
             </h1>
             <div className="g-h1 ap-hero__h1 g-titlelogo" style={{ marginTop: 14 }}>
-              Alatere{' '}
-              <span className="g-subword">
-                <span className="lg-gold">c</span>
-                <span className="lg-green">o</span>
-                <span className="lg-navy">W</span>
-                <span className="lg-clay">o</span>
-              </span>
+              <BrandTitle pole="cowo" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/domo-cowo-badge.webp"
@@ -244,13 +249,21 @@ function Body() {
             </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="ap-hero__cta">
-              <a href="#contact" className="g-btn ap-btn g-btn--lg">
-                {t('hero_cta1')} <span className="g-arrow">→</span>
+              <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--lg">
+                {t('hero_cta_poste')} <span className="g-arrow">→</span>
+              </a>
+              <a href={resa('/visite')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--secondary g-btn--lg">
+                {t('hero_cta1')}
               </a>
               <a href="#offres" className="g-btn g-btn--secondary g-btn--lg">
                 {t('hero_cta2')}
               </a>
             </div>
+            <p className="ap-hero__note">
+              <a href={resa('/installer')} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                {t('hero_app')} →
+              </a>
+            </p>
           </div>
           <aside className="ap-aside">
             <span className="g-label">{t('brief')}</span>
@@ -272,6 +285,9 @@ function Body() {
                 <span>{t('brief_4')}</span>
               </div>
             </div>
+            <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-anchor" style={{ display: 'inline-block', marginTop: 14, color: 'var(--accent-dark)' }}>
+              {t('brief_dispo')} →
+            </a>
           </aside>
         </section>
 
@@ -309,7 +325,7 @@ function Body() {
                   30&nbsp;€ <span>{t('price_ttc')}</span>
                 </div>
                 <p>{t('plan1_p')}</p>
-                <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
+                <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan1_cta')}
                 </a>
               </div>
@@ -320,7 +336,7 @@ function Body() {
                   360&nbsp;€ <span>{t('price_ttc')}</span>
                 </div>
                 <p>{t('plan2_p')}</p>
-                <a href="#contact" className="g-btn ap-btn g-btn--sm">
+                <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--sm">
                   {t('plan2_cta')}
                 </a>
               </div>
@@ -341,7 +357,7 @@ function Body() {
                   180&nbsp;€ <span>{t('price_ttc')} {t('per_day')}</span>
                 </div>
                 <p>{t('plan4_p')}</p>
-                <a href="#contact" className="g-btn g-btn--secondary g-btn--sm">
+                <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--secondary g-btn--sm">
                   {t('plan4_cta')}
                 </a>
               </div>
@@ -484,7 +500,7 @@ function Body() {
                     </span>
                   </div>
                 </div>
-                <a href="#contact" className="g-btn ap-btn g-btn--sm" style={{ marginTop: 18 }}>
+                <a href={resa('/visite')} target="_blank" rel="noopener noreferrer" className="g-btn ap-btn g-btn--sm" style={{ marginTop: 18 }}>
                   {t('loc_cta')} <span className="g-arrow">→</span>
                 </a>
                 <div style={{ marginTop: 12 }}>
@@ -514,8 +530,11 @@ function Body() {
             <p>{t('cta_p')}</p>
           </div>
           <div className="ap-cta__btns">
-            <Link href="/contact?pole=cowo" className="g-btn g-btn--light g-btn--lg">
-              {t('cta_b1')} <span className="g-arrow">→</span>
+            <a href={resa('/reserver')} target="_blank" rel="noopener noreferrer" className="g-btn g-btn--light g-btn--lg">
+              {t('cta_b0')} <span className="g-arrow">→</span>
+            </a>
+            <Link href="/contact?pole=cowo" className="g-btn g-btn--ghost-light g-btn--lg">
+              {t('cta_b1')}
             </Link>
             <Link href="/#domo" className="g-btn g-btn--ghost-light g-btn--lg">
               {t('cta_b2')}

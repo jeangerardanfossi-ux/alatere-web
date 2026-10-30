@@ -9,6 +9,7 @@ import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
+import { BrandTitle } from '@/components/grommet/BrandName';
 
 const TODO = '/alatere-todo.html';
 const MAP_SRC =
@@ -54,8 +55,8 @@ const TX: Dict = {
     en: 'Business address in Antibes',
   },
   hero_lead: {
-    fr: "Une adresse de prestige au 9 Boulevard Albert 1er, en plein cœur d'Antibes, pour le siège social de votre entreprise. Réception du courrier, numérisation et réexpédition - l'adresse idéale pour une création, un transfert de siège ou une implantation sur la Côte d'Azur.",
-    en: "A prestigious address at 9 Boulevard Albert 1er, in the heart of Antibes, for your company's registered office. Mail handling, scanning and forwarding - the ideal address for a new company, a head-office transfer or setting up on the French Riviera.",
+    fr: "Le siège social de votre entreprise au 9 Boulevard Albert 1er, dans le centre d'Antibes. Nous recevons, numérisons et réexpédions votre courrier. Pour une création, un transfert de siège ou une implantation sur la Côte d'Azur.",
+    en: "Your company's registered office at 9 Boulevard Albert 1er, in central Antibes. We receive, scan and forward your mail. For a new company, a head-office transfer or a move to the French Riviera.",
   },
   hero_cta1: { fr: 'Voir les formules', en: 'View the plans' },
   hero_cta2: { fr: 'Être rappelé', en: 'Get a callback' },
@@ -81,22 +82,22 @@ const TX: Dict = {
   // Bénéfices
   ben_label: { fr: 'Pourquoi nous choisir', en: 'Why choose us' },
   ben_title: {
-    fr: 'Une adresse qui valorise votre entreprise',
-    en: 'An address that enhances your company',
+    fr: 'Ce que comprend la domiciliation',
+    en: 'What the service includes',
   },
   ben_p: {
-    fr: 'Une domiciliation conforme, rapide à mettre en place, gérée par une équipe locale qui connaît votre dossier.',
-    en: 'A compliant business address, quick to set up, managed by a local team that knows your file.',
+    fr: 'Une équipe locale gère votre dossier et votre courrier.',
+    en: 'A local team handles your file and your mail.',
   },
-  ben1_h: { fr: 'Adresse de prestige', en: 'Prestigious address' },
+  ben1_h: { fr: "Centre d'Antibes", en: 'Central Antibes' },
   ben1_p: {
-    fr: "Le centre d'Antibes sur votre Kbis et vos documents commerciaux.",
-    en: 'Central Antibes on your registration certificate and business documents.',
+    fr: 'Le 9 Boulevard Albert 1er sur votre Kbis et vos documents commerciaux.',
+    en: '9 Boulevard Albert 1er on your registration certificate and business documents.',
   },
   ben2_h: { fr: 'Agréée préfecture', en: 'Prefecture-approved' },
   ben2_p: {
-    fr: 'Société de domiciliation reconnue (agrément n° 2022/12), contrat conforme.',
-    en: 'Recognized business-address provider (approval no. 2022/12), compliant contract.',
+    fr: 'Agrément préfectoral n° 2022/12, contrat conforme à la réglementation.',
+    en: 'Prefecture approval no. 2022/12, contract compliant with regulations.',
   },
   ben3_h: { fr: 'Gestion du courrier', en: 'Mail handling' },
   ben3_p: {
@@ -111,10 +112,10 @@ const TX: Dict = {
 
   // Formules
   plans_label: { fr: 'Nos formules', en: 'Our plans' },
-  plans_title: { fr: 'Des offres claires, sans surprise', en: 'Clear offers, no surprises' },
+  plans_title: { fr: 'Trois formules, de 25 à 50 € HT par mois', en: 'Three plans, from €25 to €50 excl. VAT per month' },
   plans_p: {
-    fr: 'Tarifs HT. Sans engagement de longue durée - vous faites évoluer votre formule à tout moment.',
-    en: 'Prices excl. VAT. No long-term commitment - change your plan at any time.',
+    fr: 'Tarifs HT. Sans engagement de longue durée : vous changez de formule quand vous voulez.',
+    en: 'Prices excl. VAT. No long-term commitment: switch plans whenever you like.',
   },
   plan0_name: { fr: 'Offre Dropbox', en: 'Dropbox plan' },
   plan0_tag: { fr: 'Boîte aux lettres', en: 'Mailbox' },
@@ -139,7 +140,7 @@ const TX: Dict = {
   plan_ribbon: { fr: 'Le plus demandé', en: 'Most popular' },
   plan2_name: { fr: 'Offre Forward', en: 'Forward plan' },
   plan2_tag: { fr: 'Siège social et numérisation du courrier', en: 'Registered office & mail scanning' },
-  plan2_f1: { fr: "Tout l'offre Headquarters", en: 'Everything in Headquarters' },
+  plan2_f1: { fr: "Toute l'offre Headquarters", en: 'Everything in Headquarters' },
   plan2_f2: { fr: 'Numérisation du courrier', en: 'Mail scanning' },
   plan2_f3: { fr: 'Réexpédition hebdomadaire', en: 'Weekly forwarding' },
   plan2_f4: {
@@ -168,7 +169,7 @@ const TX: Dict = {
   chip5: { fr: 'Bureau ponctuel', en: 'Occasional office' },
 
   // Démarches
-  steps_label: { fr: 'Comment ça marche', en: 'How it works' },
+  steps_label: { fr: 'Attestation sous 24 à 48 h', en: 'Certificate within 24 to 48 h' },
   steps_title: {
     fr: 'Domicilier votre entreprise en quatre étapes',
     en: "Register your company's address in four steps",
@@ -195,11 +196,11 @@ const TX: Dict = {
   },
 
   // Pièces à fournir
-  docs_eyebrow: { fr: 'Préparez votre dossier', en: 'Prepare your file' },
+  docs_eyebrow: { fr: '4 pièces', en: '4 documents' },
   docs_title: { fr: 'Les pièces à fournir', en: 'Documents to provide' },
   docs_p: {
-    fr: 'Pour une mise en place rapide de votre domiciliation, réunissez ces quatre documents avant de nous contacter.',
-    en: 'For a quick setup of your business address, gather these four documents before contacting us.',
+    fr: 'À réunir avant de nous contacter.',
+    en: 'Have them ready before you contact us.',
   },
   doc1_t: { fr: 'Extrait Kbis', en: 'Kbis certificate' },
   doc1_s: {
@@ -216,8 +217,8 @@ const TX: Dict = {
     en: 'to set up the SEPA direct debit',
   },
   docs_note: {
-    fr: 'Vous pouvez nous transmettre ces pièces par e-mail - nous vous accompagnons à chaque étape.',
-    en: 'You can send us these documents by email - we guide you at every step.',
+    fr: 'Vous pouvez nous envoyer ces pièces par e-mail.',
+    en: 'You can send us these documents by email.',
   },
 
   // FAQ
@@ -226,7 +227,7 @@ const TX: Dict = {
     fr: 'Comparer les 15 services de domiciliation d’Antibes et des environs →',
     en: 'Compare the 15 business-address providers in and around Antibes →',
   },
-  faq_title: { fr: 'Tout ce que vous devez savoir', en: 'Everything you need to know' },
+  faq_title: { fr: 'Tarifs, délais, transfert de siège', en: 'Prices, timing, head-office transfer' },
   faq1_q: {
     fr: "Combien coûte une domiciliation d'entreprise à Antibes ?",
     en: 'How much does a business address in Antibes cost?',
@@ -264,7 +265,7 @@ const TX: Dict = {
 
   // Localisation
   loc_label: { fr: 'Nous situer', en: 'Find us' },
-  loc_title: { fr: "Au cœur d'Antibes", en: 'In the heart of Antibes' },
+  loc_title: { fr: "Centre-ville d'Antibes", en: 'Central Antibes' },
   loc_card_label: {
     fr: "Alatere doMo · centre d'affaires",
     en: 'Alatere doMo · business center',
@@ -295,21 +296,21 @@ const TX: Dict = {
     fr: 'Exclusif domiciliés · Alatere toDo',
     en: 'Members exclusive · Alatere toDo',
   },
-  todo_h1: { fr: 'Vous déléguez,', en: 'You delegate,' },
-  todo_h2: { fr: "on s'en occupe.", en: 'we handle it.' },
+  todo_h1: { fr: 'Une assistante virtuelle', en: 'A virtual assistant' },
+  todo_h2: { fr: 'pour votre administratif.', en: 'for your admin work.' },
   todo_p_a: {
-    fr: "Alatere toDo, c'est une assistante virtuelle dédiée, basée à Antibes, qui prend en main votre administratif : courrier, relances, factures, agenda. Parce que vous êtes domicilié chez doMo, vous profitez de l'offre ",
-    en: "Alatere toDo is a dedicated virtual assistant, based in Antibes, who takes your admin off your plate: mail, reminders, invoices, calendar. Because you're registered with doMo, you get the ",
+    fr: "Alatere toDo, c'est une assistante basée à Antibes qui gère votre courrier, vos relances, vos factures et votre agenda. Domicilié chez doMo, vous bénéficiez de l'offre ",
+    en: "Alatere toDo is an Antibes-based assistant who handles your mail, reminders, invoices and calendar. As a doMo client, you get the ",
   },
   todo_p_strong: {
     fr: '13 h pour le prix de 10',
     en: '13 hours for the price of 10',
   },
   todo_p_b: {
-    fr: ' - soit 3 h offertes sur le forfait Starter.',
-    en: ' offer - i.e. 3 free hours on the Starter plan.',
+    fr: ' : 3 h offertes sur le forfait Starter.',
+    en: ' offer: 3 free hours on the Starter plan.',
   },
-  todo_cta1: { fr: 'Découvrir Alatere toDo', en: 'Discover Alatere toDo' },
+  todo_cta1: { fr: 'En savoir plus sur Alatere toDo', en: 'About Alatere toDo' },
   todo_cta2: { fr: 'Voir les forfaits', en: 'See the plans' },
   todo_li1: { fr: '13 h pour le prix de 10', en: '13 hours for the price of 10' },
   todo_li2: { fr: 'Courrier & e-mails', en: 'Mail & email' },
@@ -324,11 +325,11 @@ const TX: Dict = {
     en: "Ready to register your company's address?",
   },
   cta_p: {
-    fr: 'Souscription simple, attestation sous 24-48 h. Une équipe locale à votre écoute.',
-    en: 'Simple subscription, certificate within 24–48 h. A local team at your service.',
+    fr: 'Attestation sous 24 à 48 h, une fois le contrat signé et les pièces reçues.',
+    en: 'Certificate within 24 to 48 hours, once the contract is signed and documents received.',
   },
   cta_b1: { fr: 'Nous contacter', en: 'Contact us' },
-  cta_b2: { fr: 'Découvrir le coworking', en: 'Discover coworking' },
+  cta_b2: { fr: 'Voir le coworking', en: 'See the coworking space' },
 };
 
 export default function DomoPage() {
@@ -378,13 +379,7 @@ function Body() {
               <span className="g-tag g-tag--green">{t('hero_tag')}</span>
             </h1>
             <div className="g-h1 g-titlelogo" style={{ marginTop: 14 }}>
-              Alatere{' '}
-              <span className="g-subword">
-                <span className="lg-teal">d</span>
-                <span className="lg-teal">o</span>
-                <span className="lg-green">M</span>
-                <span className="lg-gold">o</span>
-              </span>
+              <BrandTitle pole="domo" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/domo-cowo-badge.webp" alt="Alatere doMo · coWo" className="g-titlebadge" width={400} height={400} decoding="async" />
             </div>

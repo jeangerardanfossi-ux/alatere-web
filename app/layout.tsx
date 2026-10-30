@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s · Alatere Web',
   },
   description:
-    'Entreprise familiale à Antibes depuis 2002 : e-commerce, formation Qualiopi, domiciliation d’entreprise et coworking. Quatre métiers, un seul interlocuteur.',
+    'Entreprise familiale fondée en 2002, au 9 boulevard Albert 1er à Antibes : e-commerce, formation Qualiopi, domiciliation d’entreprise et coworking.',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Alatere Web',
     title: 'Alatere Web - E-commerce, formation, domiciliation & coworking à Antibes',
     description:
-      "Quatre activités complémentaires, un seul interlocuteur, au cœur d'Antibes.",
+      'E-commerce, formation Qualiopi, domiciliation et coworking au 9 boulevard Albert 1er, Antibes.',
   },
 };
 
@@ -42,8 +42,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={workSans.variable}>
-      <body>{children}</body>
+    // `data-js` est posé par le script ci-dessous avant l'hydratation : React
+    // verrait sinon un attribut absent de son rendu serveur et le signalerait.
+    <html lang="fr" className={workSans.variable} suppressHydrationWarning>
+      <body>
+        {/*
+          Garde-fou des révélations au défilement : l'état masqué n'est posé en
+          CSS que sous `[data-js]`. Ce script s'exécute pendant l'analyse du
+          document, donc avant que le contenu soit peint — et s'il ne tourne
+          pas (JavaScript coupé, erreur), la page reste entièrement lisible.
+        */}
+        <script
+          dangerouslySetInnerHTML={{ __html: "document.documentElement.dataset.js=''" }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

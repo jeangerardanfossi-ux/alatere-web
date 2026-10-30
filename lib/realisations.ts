@@ -75,15 +75,15 @@ export const REALISATIONS_READY = false;
  * (« locaux au centre d'Antibes… proche de nos lieux de travail »).
  */
 const laforet: CaseStudy = {
-  client: 'Laforêt Immobilier — Antibes',
+  client: 'Laforêt Immobilier Antibes',
   secteur: {
     fr: 'Agence immobilière · transaction, location, gestion',
     en: 'Real-estate agency · sales, rentals, property management',
   },
   annee: '2024',
   contexte: {
-    fr: "Agence Laforêt du centre-ville d'Antibes, 9 boulevard Albert 1er : une clientèle en partie internationale et une acquisition en ligne à structurer. Deux montées en compétences pour l'équipe, en présentiel, à la même adresse que l'agence.",
-    en: 'A Laforêt agency in central Antibes, 9 boulevard Albert 1er: a partly international clientele and online acquisition to structure. Two upskilling programmes for the team, delivered in person at the very same address.',
+    fr: "Agence Laforêt du centre-ville d'Antibes, 9 boulevard Albert 1er : une clientèle en partie internationale et une acquisition en ligne à structurer. Deux formations pour l'équipe, en présentiel, à la même adresse que l'agence.",
+    en: 'A Laforêt agency in central Antibes, 9 boulevard Albert 1er: a partly international clientele and online acquisition to structure. Two training courses for the team, in person, at the agency’s own address.',
   },
   bullets: [
     {
@@ -116,8 +116,8 @@ const laforet: CaseStudy = {
   fonction: { fr: 'Gérant', en: 'Managing director' },
   image: '/photos/forma-laforet-antibes.webp',
   imageCaption: {
-    fr: "Photo — l'agence Laforêt, 9 boulevard Albert 1er à Antibes",
-    en: 'Photo — the Laforêt agency, 9 boulevard Albert 1er, Antibes',
+    fr: "Photo : l'agence Laforêt, 9 boulevard Albert 1er à Antibes",
+    en: 'Photo: the Laforêt agency, 9 boulevard Albert 1er, Antibes',
   },
 };
 
@@ -147,8 +147,8 @@ const datalinxDomo: CaseStudy = {
   secteur: datalinxSecteur,
   annee: { fr: `Depuis ${DATALINX_DOMO_SINCE}`, en: `Since ${DATALINX_DOMO_SINCE}` },
   contexte: {
-    fr: `Déjà installée dans l'espace coworking depuis ${DATALINX_COWO_SINCE}, l'agence y transfère son siège social en ${DATALINX_DOMO_SINCE} : une adresse en centre-ville d'Antibes, du courrier reçu, trié et numérisé, et une équipe qui reste sur ses clients.`,
-    en: `Already working from the coworking space since ${DATALINX_COWO_SINCE}, the agency moved its registered office here in ${DATALINX_DOMO_SINCE}: a central Antibes address, mail received, sorted and scanned, and a team free to stay on its clients.`,
+    fr: `Déjà installée dans l'espace coworking depuis ${DATALINX_COWO_SINCE}, l'agence y transfère son siège social en ${DATALINX_DOMO_SINCE} : une adresse en centre-ville d'Antibes, et du courrier reçu, trié et numérisé.`,
+    en: `Already working from the coworking space since ${DATALINX_COWO_SINCE}, the agency moved its registered office here in ${DATALINX_DOMO_SINCE}: a central Antibes address, with mail received, sorted and scanned.`,
   },
   bullets: [
     {
@@ -224,8 +224,8 @@ const datalinxCowo: CaseStudy = {
   ],
   image: '/photos/cowo-datalinx.webp',
   imageCaption: {
-    fr: "Photo — l'équipe Datalinx à son poste, espace Alatere coWo",
-    en: 'Photo — the Datalinx team at work, Alatere coWo space',
+    fr: "Photo : l'équipe Datalinx à son poste, espace Alatere coWo",
+    en: 'Photo: the Datalinx team at work, Alatere coWo space',
   },
 };
 
@@ -401,8 +401,8 @@ const reproTableaux: CaseStudy = {
   // /photos/ecom-repro.webp, date de l'ancienne charte du site).
   image: '/photos/ecom-repro-tableaux.webp',
   imageCaption: {
-    fr: "Capture — la page d'accueil de repro-tableaux.com",
-    en: 'Screenshot — the repro-tableaux.com home page',
+    fr: "Capture : la page d'accueil de repro-tableaux.com",
+    en: 'Screenshot: the repro-tableaux.com home page',
   },
 };
 
@@ -448,7 +448,7 @@ const rocherMistral: CaseStudy = {
   results: [
     {
       v: 'Google Ads',
-      l: { fr: "levier d'acquisition du lancement", en: 'the acquisition channel at launch' },
+      l: { fr: "canal d'acquisition du lancement", en: 'the acquisition channel at launch' },
     },
     {
       v: '2021',
@@ -461,8 +461,8 @@ const rocherMistral: CaseStudy = {
   ],
   image: '/photos/ecom-rocher-mistral.webp',
   imageCaption: {
-    fr: 'Photo — le château de La Barben, écrin du parc Rocher Mistral',
-    en: 'Photo — Château de La Barben, home of the Rocher Mistral park',
+    fr: 'Photo : le château de La Barben, qui abrite le parc Rocher Mistral',
+    en: 'Photo: Château de La Barben, home of the Rocher Mistral park',
   },
 };
 
@@ -491,8 +491,8 @@ const vinazur: CaseStudy = {
   },
   annee: { fr: "Jusqu'en 2016", en: 'Until 2016' },
   contexte: {
-    fr: "Négoce de vins de Provence installé à Saint-Laurent-du-Var, né en 2012 : des petits producteurs peu connus, du rosé pour l'essentiel, vendus en direct au prix du domaine. Le catalogue était bon, sa visibilité restait à construire - sur la boutique comme en dehors. La société a été revendue en 2016.",
-    en: 'A Provence wine merchant based in Saint-Laurent-du-Var, started in 2012: little-known small growers, mostly rosé, sold direct at cellar-door prices. The catalogue was good; its visibility was not - neither on the store nor beyond it. The company was sold in 2016.',
+    fr: "Négoce de vins de Provence installé à Saint-Laurent-du-Var, né en 2012 : des petits producteurs peu connus, du rosé pour l'essentiel, vendus en direct au prix du domaine. Le catalogue était bon, mais peu visible, sur la boutique comme ailleurs. La société a été revendue en 2016.",
+    en: 'A Provence wine merchant based in Saint-Laurent-du-Var, started in 2012: little-known small growers, mostly rosé, sold direct at cellar-door prices. The catalogue was good but hard to find, on the store and elsewhere. The company was sold in 2016.',
   },
   bullets: [
     {
@@ -529,8 +529,8 @@ const vinazur: CaseStudy = {
   image: '/photos/ecom-vinazur.webp',
   objectPosition: '50% 100%',
   imageCaption: {
-    fr: 'Photo — VinAzur, « De la Vigne au Verre… »',
-    en: 'Photo — VinAzur, “De la Vigne au Verre…”',
+    fr: 'Photo : VinAzur, « De la Vigne au Verre… »',
+    en: 'Photo: VinAzur, “De la Vigne au Verre…”',
   },
 };
 
@@ -550,8 +550,8 @@ const asnov: CaseStudy = {
   },
   annee: '2026',
   contexte: {
-    fr: "Assistante virtuelle installée sur la Côte d'Azur : elle prend en charge l'administratif, le commercial et le digital de ses clients. Deux parcours pour outiller son activité — l'IA au quotidien, puis l'acquisition en ligne.",
-    en: 'A virtual assistant based on the French Riviera, handling her clients’ admin, sales and digital work. Two programmes to equip her business — AI for daily work, then online acquisition.',
+    fr: "Assistante virtuelle installée sur la Côte d'Azur : elle prend en charge l'administratif, le commercial et le digital de ses clients. Deux parcours pour son activité : l'IA au quotidien, puis l'acquisition en ligne.",
+    en: 'A virtual assistant based on the French Riviera, handling her clients’ admin, sales and digital work. Two programmes for her business: AI for daily work, then online acquisition.',
   },
   bullets: [
     {
@@ -587,8 +587,8 @@ const asnov: CaseStudy = {
   fonction: { fr: 'Assistante virtuelle, ASNOV', en: 'Virtual assistant, ASNOV' },
   image: '/photos/forma-asnov.webp',
   imageCaption: {
-    fr: 'Photo — séance de formation, sur le poste de travail de la stagiaire',
-    en: 'Photo — training session, at the trainee’s own workstation',
+    fr: 'Photo : séance de formation, sur le poste de travail de la stagiaire',
+    en: 'Photo: training session, at the trainee’s own workstation',
   },
 };
 
@@ -611,8 +611,8 @@ const axeo: CaseStudy = {
   },
   annee: { fr: 'Depuis trois ans', en: 'For three years' },
   contexte: {
-    fr: "Agence de services à domicile et aux entreprises, installée à Antibes puis à Cagnes-sur-Mer : ménage, entretien des locaux, espaces verts, petits travaux. Nous formons son équipe depuis trois ans, sur trois terrains qui se complètent.",
-    en: 'A home and business services agency, first in Antibes then in Cagnes-sur-Mer: cleaning, premises upkeep, green spaces, small works. We have been training its team for three years, across three complementary fields.',
+    fr: "Agence de services à domicile et aux entreprises, installée à Antibes puis à Cagnes-sur-Mer : ménage, entretien des locaux, espaces verts, petits travaux. Nous formons son équipe depuis trois ans, en webmarketing, réseaux sociaux et langues.",
+    en: 'A home and business services agency, first in Antibes then in Cagnes-sur-Mer: cleaning, premises upkeep, green spaces, small works. We have been training its team for three years, in digital marketing, social media and languages.',
   },
   bullets: [
     {
@@ -659,8 +659,8 @@ const axeo: CaseStudy = {
   // recadrée au format des cartes. Remplace le logo qui servait de visuel.
   image: '/photos/forma-axeo-services.webp',
   imageCaption: {
-    fr: "Photo — l'agence AXEO Services de Cagnes-sur-Mer",
-    en: 'Photo — the AXEO Services agency in Cagnes-sur-Mer',
+    fr: "Photo : l'agence AXEO Services de Cagnes-sur-Mer",
+    en: 'Photo: the AXEO Services agency in Cagnes-sur-Mer',
   },
 };
 
@@ -709,8 +709,8 @@ const cpyYachting: CaseStudy = {
   // flotte de location, recadré au format des cartes.
   image: '/photos/cowo-pocachard-yachting.webp',
   imageCaption: {
-    fr: 'Photo — un yacht de la flotte Christel Pocachard Yachting',
-    en: 'Photo — a yacht from the Christel Pocachard Yachting fleet',
+    fr: 'Photo : un yacht de la flotte Christel Pocachard Yachting',
+    en: 'Photo: a yacht from the Christel Pocachard Yachting fleet',
   },
 };
 
@@ -755,8 +755,8 @@ const scapeDesign: CaseStudy = {
   ],
   image: '/photos/cowo-scape-design.webp',
   imageCaption: {
-    fr: 'Capture — la page « Projects » de scapedesign.com',
-    en: 'Screenshot — the “Projects” page of scapedesign.com',
+    fr: 'Capture : la page « Projects » de scapedesign.com',
+    en: 'Screenshot: the “Projects” page of scapedesign.com',
   },
 };
 
@@ -768,119 +768,5 @@ export const CASES: Record<PoleKey, CaseStudy[]> = {
   cowo: [scapeDesign, cpyYachting, datalinxCowo],
 };
 
-/**
- * Mur de logos — « affichés avec l'accord de nos clients ».
- * Tant que la liste est vide, la maquette affiche des emplacements vides.
- */
-export type ClientLogo = { name: string; src: string; href?: string };
-export const CLIENT_LOGOS: ClientLogo[] = [
-  // Chaque logo pointe vers le site officiel du client, ouvert dans un nouvel onglet
-  // (voir le rendu du mur dans `ClientsRealisationsPage`). `href` absent = logo non
-  // cliquable : on ne lie que les URL vérifiées.
-  {
-    name: 'Laforêt Immobilier Antibes',
-    src: '/logos/laforet.png',
-    href: 'https://www.laforet.com/agence-immobiliere/antibes',
-  },
-  { name: 'Datalinx', src: '/logos/datalinx.png', href: 'https://www.datalinx.fr/' },
-  {
-    name: 'MAV Développement Immobilier',
-    src: '/logos/mav.png',
-    href: 'https://mav-developpement-immobilier.fr/fr/',
-  },
-  // URL reprise du logotype lui-même, qui porte la mention « www.2iarchitecture.com ».
-  {
-    name: '2i Architecture',
-    src: '/logos/2i-architecture.png',
-    href: 'https://2iarchitecture.com/',
-  },
-  {
-    name: 'Rocher Mistral',
-    src: '/logos/rocher-mistral.png',
-    href: 'https://www.rochermistral.com',
-  },
-  {
-    name: 'AXEO Services Antibes - Cagnes-sur-Mer',
-    src: '/logos/axeo-services.png',
-    href: 'https://www.axeoservices.fr/agency/400-axeo-services-antibes',
-  },
-  {
-    name: 'Kiwanis Antibes Juan-les-Pins',
-    src: '/logos/kiwanis-antibes.png',
-    href: 'https://www.kiwanis.fr/club/antibes-juan-les-pins/',
-  },
-  { name: 'Logic Santé', src: '/logos/logic-sante.png', href: 'https://www.logicsante.com/' },
-  // bestofbrain.fr redirige vers le domaine .eu : on pointe directement la cible.
-  { name: 'Best of Brain', src: '/logos/best-of-brain.png', href: 'https://bestofbrain.eu/' },
-  {
-    name: 'Julien de Savignac',
-    src: '/logos/julien-de-savignac.png',
-    href: 'https://www.julien-de-savignac.com/fr/',
-  },
-  { name: 'ASNOV - Assistante virtuelle', src: '/logos/asnov.png', href: 'https://www.asnov.fr' },
-  // Logo vectoriel officiel repris du site du client (vernassa.fr/images/logo.svg),
-  // signe + logotype. Recoloré en noir : le SVG publié est blanc, destiné à un
-  // fond sombre, et disparaîtrait sur le fond clair du mur.
-  { name: 'Vernassa Électricité', src: '/logos/vernassa.svg', href: 'https://www.vernassa.fr' },
-  // Logo repris de la page publique du client ; l'habillage carré gris ajouté par
-  // Facebook autour du disque a été remplacé par du blanc, le logo n'est pas retouché.
-  // Agence MMA de Nicolas Bohême : sa vitrine est la page d'agence du réseau MMA.
-  {
-    name: 'Bohême Assurances - MMA Antibes',
-    src: '/logos/boheme-assurances.png',
-    href: 'https://agence.mma.fr/antibes/',
-  },
-  // Marque officielle reprise de lunetierducap.com/favicon.svg : leur site ne
-  // publie pas de logotype, seulement ce monogramme.
-  {
-    name: 'Lunetier du Cap',
-    src: '/logos/lunetier-du-cap.png',
-    href: 'https://lunetierducap.com/',
-  },
-  // Logotype officiel repris de logeazur.fr, recoloré en sombre : la version
-  // publiée est blanche, faite pour leur en-tête, et disparaîtrait sur le mur.
-  { name: 'Logéazur', src: '/logos/logeazur.png', href: 'https://www.logeazur.fr/' },
-  { name: 'AS Elec by Tony', src: '/logos/as-elec.png', href: 'https://www.aselec06.fr/' },
-  {
-    name: 'Christel Pocachard Yachting',
-    src: '/logos/cpy-yachting.svg',
-    href: 'https://www.christelpocachardyachting.com/',
-  },
-  // Logotype officiel repris de scapedesign.com, recoloré en sombre : la version
-  // publiée est blanche, prévue pour leur en-tête photo.
-  { name: 'Scape Design', src: '/logos/scape-design.png', href: 'https://www.scapedesign.com/en/' },
-  {
-    name: 'Pergola Riviera',
-    src: '/logos/pergola-riviera.png',
-    href: 'https://www.pergolariviera.com/',
-  },
-  {
-    name: 'Nice Fenêtres',
-    src: '/logos/nice-fenetres.svg',
-    href: 'https://www.nicefenetres-avis.com/',
-  },
-  {
-    name: 'La Dimension Créative',
-    src: '/logos/la-dimension-creative.png',
-    href: 'https://www.la-dimension-creative.com/',
-  },
-  // Logotype officiel repris de la boutique du client, détouré du fond blanc.
-  {
-    name: 'TerraBella Inspiration',
-    src: '/logos/terrabella.png',
-    href: 'https://www.terrabella-inspiration.fr/',
-  },
-  // Logo repris du site du client, publié en clair sur fond noir : détouré et
-  // recoloré en sombre pour le fond clair du mur, l'or de la lettre Z est conservé.
-  {
-    name: 'AZ Chef Signature',
-    src: '/logos/az-chef.png',
-    href: 'https://azchef-signature.eatbu.com/',
-  },
-  // Client ecoM. Pas de `href` : la société a été revendue en 2016 et vinazur.fr
-  // ne répond plus — on ne lie que des URL vérifiées.
-  { name: 'Vinazur - vins de Provence', src: '/logos/vinazur.png' },
-];
-
-/** Nombre minimal d'emplacements affichés : les logos manquants restent en pointillés. */
-export const LOGO_SLOTS = 18;
+export { CLIENT_LOGOS, LOGO_SLOTS } from './client-logos';
+export type { ClientLogo } from './client-logos';

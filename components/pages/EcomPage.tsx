@@ -8,6 +8,7 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
+import { BrandTitle } from '@/components/grommet/BrandName';
 
 const REPRO = 'https://repro-tableaux.com';
 
@@ -39,8 +40,8 @@ const TX: Dict = {
     en: 'Web, e-commerce & SEO agency in Antibes',
   },
   hero_lead: {
-    fr: "Depuis plus de vingt ans, nous concevons, opérons et référençons nos propres boutiques d'art en ligne. Ce n'est pas une promesse : c'est notre meilleure démonstration de savoir-faire en SEO, SEA, acquisition et opérations e-commerce.",
-    en: "For over twenty years, we have designed, run and ranked our own online art stores. It's not a promise - it's our best proof of expertise in SEO, SEA, acquisition and e-commerce operations.",
+    fr: "Depuis plus de vingt ans, nous concevons, exploitons et référençons nos propres boutiques d'art en ligne. C'est là que nous avons appris le SEO, le SEA, l'acquisition et l'exploitation d'une boutique, et c'est ce que nous faisons pour nos clients.",
+    en: 'For over twenty years, we have designed, run and ranked our own online art stores. That is where we learned SEO, SEA, acquisition and day-to-day store operations, and it is what we do for our clients.',
   },
   hero_cta1: { fr: 'Visiter repro-tableaux.com', en: 'Visit repro-tableaux.com' },
   hero_cta2: { fr: "Discuter d'un projet", en: 'Discuss a project' },
@@ -57,8 +58,8 @@ const TX: Dict = {
     en: 'Two decades selling art online',
   },
   shops_p: {
-    fr: "Déposez des captures de chaque boutique. Ce sont nos terrains d'apprentissage, dont les enseignements bénéficient directement à nos clients.",
-    en: 'Add screenshots of each store. They are our learning grounds, whose lessons directly benefit our clients.',
+    fr: "Nous exploitons ces boutiques nous-mêmes. Ce que nous y testons, nous l'appliquons ensuite chez nos clients.",
+    en: 'We run these stores ourselves. What we test on them, we then apply for our clients.',
   },
   shop1_cap: { fr: 'Capture repro-tableaux.com', en: 'repro-tableaux.com screenshot' },
   shop1_h: {
@@ -66,23 +67,23 @@ const TX: Dict = {
     en: 'Canvas reproductions of paintings',
   },
   shop1_p: {
-    fr: 'Notre première boutique, lancée en 2003. Marché français, pivot de notre apprentissage SEO et acquisition.',
-    en: 'Our first store, launched in 2003. French market, the pivot of our SEO and acquisition learning.',
+    fr: "Notre première boutique, lancée en 2003 sur le marché français. C'est sur elle que nous avons appris le SEO et l'acquisition.",
+    en: 'Our first store, launched in 2003 for the French market. It is where we learned SEO and acquisition.',
   },
   shop2_cap: { fr: 'Capture copia-di-arte.com', en: 'copia-di-arte.com screenshot' },
   shop2_h: { fr: 'Déclinaison européenne multilingue', en: 'Multilingual European version' },
   shop2_p: {
-    fr: "Ouverture à l'Italie, l'Espagne et le Royaume-Uni. Apprentissage du multilingue, du SEO international et de la logistique UE.",
-    en: 'Expansion to Italy, Spain and the UK. Learning multilingual SEO, international SEO and EU logistics.',
+    fr: "Ouverture à l'Italie, l'Espagne et le Royaume-Uni. Nous y avons appris le site multilingue, le SEO international et la logistique UE.",
+    en: 'Expansion to Italy, Spain and the UK. This is where we learned multilingual sites, international SEO and EU logistics.',
   },
   skills_label: { fr: 'Notre savoir-faire', en: 'Our expertise' },
   skills_title: {
-    fr: 'Ce que nous maîtrisons, prouvé sur nos propres sites',
-    en: 'What we master, proven on our own sites',
+    fr: 'Ce que nous faisons sur nos propres sites',
+    en: 'What we do on our own sites',
   },
   skills_p: {
-    fr: "Chaque compétence mobilisée sur nos boutiques nourrit nos prestations d'agence et nos formations Alatere forMa.",
-    en: 'Every skill used on our stores feeds our agency services and our Alatere forMa training.',
+    fr: "Nous appliquons ces compétences pour nos clients et les enseignons dans nos formations Alatere forMa.",
+    en: 'We apply these skills for our clients and teach them in our Alatere forMa courses.',
   },
   sk1_h: { fr: 'SEO & contenu', en: 'SEO & content' },
   sk1_p: {
@@ -91,8 +92,8 @@ const TX: Dict = {
   },
   sk2_h: { fr: 'SEA & acquisition', en: 'SEA & acquisition' },
   sk2_p: {
-    fr: 'Campagnes Google, Microsoft et Meta, pilotage de la performance.',
-    en: 'Google, Microsoft and Meta campaigns, performance management.',
+    fr: 'Campagnes Google, Microsoft et Meta, suivi des résultats.',
+    en: 'Google, Microsoft and Meta campaigns, results tracking.',
   },
   sk3_h: { fr: 'International', en: 'International' },
   sk3_p: {
@@ -104,10 +105,10 @@ const TX: Dict = {
     fr: "Optimisation pour les moteurs génératifs et intégration de l'IA aux opérations.",
     en: 'Optimization for generative engines and AI integration into operations.',
   },
-  tl_label: { fr: 'Notre parcours', en: 'Our journey' },
+  tl_label: { fr: 'Historique', en: 'Timeline' },
   tl_title: {
-    fr: "Vingt ans d'apprentissage continu",
-    en: 'Twenty years of continuous learning',
+    fr: "De 2003 à aujourd'hui",
+    en: 'From 2003 to today',
   },
   tl_2003: {
     fr: 'Lancement de repro-tableaux.com. Première boutique marchande et premières campagnes d’acquisition en France.',
@@ -135,28 +136,28 @@ const TX: Dict = {
     en: 'An e-commerce or acquisition project?',
   },
   cta_p: {
-    fr: "Profitez de vingt ans d'expérience opérationnelle. Un appel suffit pour cadrer votre besoin.",
-    en: 'Tap into twenty years of operational experience. One call is enough to scope your need.',
+    fr: 'Un premier appel pour cadrer votre besoin, puis une proposition sous 48 heures.',
+    en: 'A first call to scope your need, then a proposal within 48 hours.',
   },
   cta_b1: { fr: 'Nous contacter', en: 'Contact us' },
   cta_b2: { fr: 'Voir nos formations', en: 'See our training' },
-  cta_b3: { fr: 'Un partenaire pour votre développement', en: 'A partner for your growth' },
+  cta_b3: { fr: 'Offre partenaires agences', en: 'Agency partner offer' },
   maps_label: { fr: 'Voir sur Google Maps', en: 'View on Google Maps' },
 
   faq_label: { fr: 'FAQ', en: 'FAQ' },
   faq_title: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
   faq1_q: { fr: 'Que fait Alatere ecoM ?', en: 'What does Alatere ecoM do?' },
   faq1_a: {
-    fr: "Alatere ecoM conçoit, opère et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com) - un savoir-faire SEO, SEA et opérations que nous mettons au service de nos clients.",
-    en: "Alatere ecoM designs, runs and ranks e-commerce sites. Since 2003 we have run our own online art stores (repro-tableaux.com, copia-di-arte.com) - SEO, SEA and operations expertise we put at our clients' service.",
+    fr: "Alatere ecoM conçoit, exploite et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com). Le SEO, le SEA et les méthodes d'exploitation rodés sur ces sites, nous les appliquons à ceux de nos clients.",
+    en: "Alatere ecoM designs, runs and ranks e-commerce sites. Since 2003 we have run our own online art stores (repro-tableaux.com, copia-di-arte.com). The SEO, SEA and operating methods tested on those sites are the ones we apply to our clients' sites.",
   },
   faq2_q: {
     fr: 'Proposez-vous du référencement SEO et de la publicité SEA ?',
     en: 'Do you offer SEO and SEA advertising?',
   },
   faq2_a: {
-    fr: 'Oui. Le référencement naturel (SEO), la publicité en ligne (SEA Google, Microsoft, Meta) et l’acquisition sont au cœur de notre métier - éprouvés sur nos propres sites depuis vingt ans.',
-    en: 'Yes. Organic ranking (SEO), online advertising (SEA on Google, Microsoft, Meta) and acquisition are at the core of our business - proven on our own sites for twenty years.',
+    fr: 'Oui : référencement naturel (SEO), publicité en ligne (SEA sur Google, Microsoft et Meta) et acquisition. Nous les pratiquons sur nos propres sites depuis vingt ans.',
+    en: 'Yes: organic search (SEO), online advertising (SEA on Google, Microsoft and Meta) and acquisition. We have been doing this on our own sites for twenty years.',
   },
   faq3_q: { fr: "Travaillez-vous pour l'international ?", en: 'Do you work internationally?' },
   faq3_a: {
@@ -212,13 +213,7 @@ function Body() {
               <span className="g-tag g-tag--brand">{t('hero_tag')}</span>
             </h1>
             <div className="g-h1" style={{ marginTop: 14 }}>
-              Alatere{' '}
-              <span className="g-subword">
-                <span className="lg-navy">e</span>
-                <span className="lg-teal">c</span>
-                <span className="lg-gold">o</span>
-                <span className="lg-clay">M</span>
-              </span>
+              <BrandTitle pole="ecom" />
             </div>
             <p className="g-lead">{t('hero_lead')}</p>
             <div className="ap-hero__cta">
