@@ -30,7 +30,7 @@ export default function Logo({
       {withWordmark && (
         <span className={styles.words}>
           <span className={styles.name}>Alatere&nbsp;Web</span>
-          <span className={styles.tagline}>Antibes · depuis 2002</span>
+          <span className={styles.tagline}>Antibes · depuis 2008</span>
         </span>
       )}
     </span>

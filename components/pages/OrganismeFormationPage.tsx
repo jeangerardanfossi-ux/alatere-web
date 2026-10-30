@@ -40,8 +40,8 @@ const TX: Dict = {
 
   s2_t: { fr: 'Un formateur formé à la pédagogie', en: 'A trainer trained in pedagogy' },
   s2_p1: {
-    fr: "Jean-Gérard Anfossi réunit une triple expérience : entrepreneur en e-commerce, enseignant dans l'enseignement supérieur et formateur professionnel. Cette double culture - terrain et pédagogie - garantit des formations concrètes, à jour des pratiques du marché et pensées pour une montée en compétences réelle des apprenants.",
-    en: 'Jean-Gérard Anfossi combines a threefold experience: e-commerce entrepreneur, higher-education teacher and professional trainer. This dual culture - field and pedagogy - ensures hands-on training, up to date with market practices and designed for genuine skill development.',
+    fr: "Jean-Gérard Anfossi est entrepreneur en e-commerce, enseignant dans le supérieur et formateur professionnel. Ses formations partent de ce qu'il applique sur le terrain et suivent l'évolution des pratiques du marché.",
+    en: 'Jean-Gérard Anfossi is an e-commerce entrepreneur, a higher-education lecturer and a professional trainer. His courses draw on what he applies in the field and keep pace with market practice.',
   },
   s2_link: { fr: 'Voir le profil LinkedIn', en: 'View the LinkedIn profile' },
 
@@ -71,7 +71,7 @@ const TX: Dict = {
     en: 'Programs, durations, prerequisites, prices and dates are published in our dedicated catalog.',
   },
   cta_btn: { fr: 'Voir le catalogue de formations', en: 'See the training catalog' },
-  cta_btn2: { fr: 'Découvrir Alatere forMa', en: 'Discover Alatere forMa' },
+  cta_btn2: { fr: 'Voir la page Alatere forMa', en: 'Go to Alatere forMa' },
 };
 
 export default function OrganismeFormationPage() {

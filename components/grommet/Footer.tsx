@@ -3,7 +3,7 @@
 /** Pied de page « Grommet » partagé (FR/EN). */
 
 import Link from 'next/link';
-import { useT, useLang, localizePath, type Dict } from './lang';
+import { useT, useLang, useReservations, localizePath, type Dict } from './lang';
 import { Icon, BrandIcon } from './icons';
 import { company } from '@/lib/site';
 import { REALISATIONS_READY } from '@/lib/realisations';
@@ -66,6 +66,7 @@ const SOCIALS = [
 export default function Footer() {
   const t = useT(FOOT);
   const { lang } = useLang();
+  const resa = useReservations();
   const lp = (h: string) => localizePath(h, lang);
   return (
     <footer className="g-footer">
@@ -145,7 +146,7 @@ export default function Footer() {
           <div>
             <span className="g-label">{t('foot_col2')}</span>
             <a
-              href="https://reservations.alatere-web.com"
+              href={resa()}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -89,7 +89,7 @@ const ROWS_FR: Row[] = [
     name: 'Dom Box Services',
     address: '1609 chemin de Saint-Bernard, Vallauris',
     price: ['30 € HT / mois', '50 € HT (réexpédition hebdomadaire)'],
-    note: 'Structure à taille humaine, ouverture de compte bancaire et démarches d’immatriculation accompagnées',
+    note: 'Petite structure, ouverture de compte bancaire et démarches d’immatriculation accompagnées',
   },
   {
     name: 'Centre d’Affaires du Loup',
@@ -256,7 +256,7 @@ function Sources({ lang }: { lang: 'fr' | 'en' }) {
       <h3>{fr ? 'Sources du relevé' : 'Sources of the survey'}</h3>
       <ul className="g-sources">
         <li>
-          Alatere doMo -{' '}
+          Alatere doMo{fr ? ' : ' : ': '}
           <Link href="/alatere-domo" className="g-inline">
             {fr ? 'notre page tarifs' : 'our own pricing page'}
           </Link>
@@ -265,7 +265,8 @@ function Sources({ lang }: { lang: 'fr' | 'en' }) {
           const note = fr ? src.noteFr : src.noteEn;
           return (
             <li key={src.name}>
-              {src.name} -{' '}
+              {src.name}
+              {fr ? ' : ' : ': '}
               {src.url ? (
                 <>
                   <a
@@ -319,7 +320,7 @@ function MapFigure({ lang }: { lang: 'fr' | 'en' }) {
         {fr ? (
           <>
             Les quinze prestataires comparés, répartis en cinq zones autour d’Antibes. Alatere doMo,
-            notre propre service, est au 9 boulevard Albert 1er. Relevé du 8 septembre 2026 - fond
+            notre propre service, est au 9 boulevard Albert 1er. Relevé du 8 septembre 2026. Fond
             de carte : contours communaux IGN / Etalab.{' '}
             <a href={src} target="_blank" rel="noopener noreferrer" className="g-inline">
               Ouvrir la carte en grand
@@ -328,7 +329,7 @@ function MapFigure({ lang }: { lang: 'fr' | 'en' }) {
         ) : (
           <>
             The fifteen providers compared, grouped into five areas around Antibes. Alatere doMo,
-            our own service, is at 9 boulevard Albert 1er. Surveyed 8 September 2026 - base map:
+            our own service, is at 9 boulevard Albert 1er. Surveyed 8 September 2026. Base map:
             French commune boundaries, IGN / Etalab.{' '}
             <a href={src} target="_blank" rel="noopener noreferrer" className="g-inline">
               Open the full-size map
@@ -379,10 +380,9 @@ function Fr() {
     <>
       <p>
         Choisir une <strong>société de domiciliation</strong> autour d&rsquo;Antibes, c&rsquo;est
-        arbitrer entre une adresse qui parle à vos clients, une accessibilité quotidienne et un
-        budget mensuel. Nous exploitons nous-mêmes un service de domiciliation en centre-ville,
-        et nous avons relevé l&rsquo;offre de quinze prestataires du secteur - Antibes centre,
-        Fontonne, Saint-Claude, Sophia Antipolis, Vallauris et Villeneuve-Loubet. Voici ce que
+        arbitrer entre l&rsquo;emplacement, l&rsquo;accès au quotidien et le prix mensuel. Nous exploitons nous-mêmes un service de domiciliation en centre-ville,
+        et nous avons relevé l&rsquo;offre de quinze prestataires du secteur (Antibes centre,
+        Fontonne, Saint-Claude, Sophia Antipolis, Vallauris et Villeneuve-Loubet). Voici ce que
         nous avons trouvé, y compris les cas où un autre prestataire sera un meilleur choix que le
         nôtre.
       </p>
@@ -395,27 +395,26 @@ function Fr() {
         45 &euro; pour une société étrangère ; les offres de simple boîte aux lettres démarrent au
         même niveau, autour de 25 &euro;. Plusieurs centres d&rsquo;affaires ne publient pas leurs
         prix. Le critère qui départage n&rsquo;est presque jamais le montant mensuel, mais la
-        localisation - centre-ville, axe routier ou technopole - et la présence ou non de services
+        localisation (centre-ville, axe routier ou technopole) et la présence ou non de services
         sur place. Tous doivent être agréés par la préfecture pour délivrer une attestation
         acceptée par le greffe.
       </p>
 
       <section>
-        <h2>Les six critères qui comptent vraiment</h2>
+        <h2>Six critères pour choisir</h2>
         <p>
-          Une adresse de siège social se garde plusieurs années et se change au prix d&rsquo;une
-          formalité au greffe. Mieux vaut arbitrer sur les bons critères dès le départ.
+          Une adresse de siège social se garde plusieurs années, et en changer impose une
+          formalité au greffe.
         </p>
         <ul>
           <li>
             <strong>L&rsquo;emplacement et l&rsquo;image</strong> : une adresse en centre-ville, en
-            technopole ou en zone d&rsquo;activités ne raconte pas la même histoire sur votre
+            technopole ou en zone d&rsquo;activités ne produit pas le même effet sur votre
             Kbis, vos devis et vos factures.
           </li>
           <li>
             <strong>L&rsquo;accessibilité</strong> : y passerez-vous chercher votre courrier ?
-            Alors la question du bus, de la gare, de l&rsquo;A8 et du stationnement devient
-            centrale. Si tout passe par la réexpédition, elle ne compte plus.
+            Alors le bus, la gare, l&rsquo;A8 et le stationnement comptent. Si tout passe par la réexpédition, elle ne compte plus.
           </li>
           <li>
             <strong>L&rsquo;environnement immédiat</strong> : recevoir un client dans un quartier
@@ -450,7 +449,7 @@ function Fr() {
           transmettre le courrier de l&rsquo;administration.
         </p>
         <p>
-          Concrètement : demandez systématiquement le <strong>numéro d&rsquo;agrément
+          Demandez toujours le <strong>numéro d&rsquo;agrément
           préfectoral</strong> avant de signer. Une adresse fournie par un prestataire non agréé
           sera refusée au greffe, et vous perdrez des semaines sur votre immatriculation.
         </p>
@@ -474,11 +473,10 @@ function Fr() {
       <section>
         <h2>Antibes centre : l&rsquo;image et la logistique du quotidien</h2>
         <p>
-          Domicilier au c&oelig;ur d&rsquo;Antibes, c&rsquo;est une adresse que vos clients situent
-          immédiatement, et une logistique fluide : banques, administrations, restaurants et
-          transports à quelques minutes à pied. C&rsquo;est aussi le segment où les prestataires
-          proposent le plus de services sur place - et celui où les écarts de prix sont les plus
-          faibles.
+          Une adresse en centre-ville d&rsquo;Antibes, vos clients la situent tout de suite, et
+          banques, administrations, restaurants et transports sont à quelques minutes à pied.
+          C&rsquo;est aussi là que les prestataires proposent le plus de services sur place, et
+          que les écarts de prix sont les plus faibles.
         </p>
         <p>
           <strong>Alatere doMo</strong> occupe le 9 boulevard Albert 1er, dans l&rsquo;immeuble Art
@@ -489,12 +487,12 @@ function Fr() {
           une seule fois. Espace de coworking et salle de réunion accessibles sur place.
         </p>
         <p>
-          <strong>Riviera Secrétariat</strong>, au 46 boulevard du Président Wilson, joue une autre
-          partition : la domiciliation y vient avec un vrai secrétariat externalisé - permanence
-          téléphonique, assistance administrative, rédaction de documents. Sa grille est publique
+          <strong>Riviera Secrétariat</strong>, au 46 boulevard du Président Wilson, ajoute à la
+          domiciliation un secrétariat externalisé : permanence téléphonique, assistance
+          administrative, rédaction de documents. Sa grille est publique
           et segmentée par statut, de 30 &euro; HT pour une entreprise individuelle à 45 &euro; HT
           pour une société étrangère, avec un agrément préfectoral n&deg; 2020/13. Si votre besoin
-          est autant administratif que postal, c&rsquo;est un choix cohérent.
+          est autant administratif que postal, c&rsquo;est le prestataire à regarder.
         </p>
         <p>
           Le <strong>Centre d&rsquo;Affaires Antibes</strong>, au 540 de la 1ère Avenue, affiche
@@ -517,19 +515,19 @@ function Fr() {
       <section>
         <h2>Fontonne et Saint-Claude : le budget et la voiture</h2>
         <p>
-          Plus excentré, mais redoutablement efficace si vous êtes souvent en déplacement ou si vos
-          clients viennent en voiture.
+          Plus excentré, mais pratique si vous êtes souvent en déplacement ou si vos clients
+          viennent en voiture.
         </p>
         <p>
-          <strong>Na&amp;Co</strong>, au 256 route de Nice, affiche l&rsquo;un des meilleurs
-          rapports prix-services du secteur, avec un parking gratuit, un accès direct à la RN7 et à
+          <strong>Na&amp;Co</strong>, au 256 route de Nice, propose à partir de 27,50 &euro; HT par
+          mois un parking gratuit, un accès direct à la RN7 et à
           l&rsquo;A8, une boîte accessible 24h/24 et la gestion des colis et recommandés. Détail
           utile si vous mettez une structure en veille plutôt que de la fermer : les sociétés en
           sommeil bénéficient de 50 % de remise, soit 13,75 &euro; HT par mois.
         </p>
         <p>
-          <strong>Mail Boxes Etc.</strong>, chemin de Saint-Claude, ajoute l&rsquo;infrastructure
-          d&rsquo;un réseau international et une équipe bilingue - un atout réel si vous recevez
+          <strong>Mail Boxes Etc.</strong>, chemin de Saint-Claude, s&rsquo;appuie sur un réseau
+          international et une équipe bilingue, utile si vous recevez
           des envois de l&rsquo;étranger ou si vos interlocuteurs ne parlent pas français. Le tarif
           affiché est de 30 &euro; HT par mois, mais contre un engagement de six ou douze mois,
           avec deux mois offerts en paiement annuel.
@@ -539,25 +537,24 @@ function Fr() {
       <section>
         <h2>Sophia Antipolis : l&rsquo;adresse technopole</h2>
         <p>
-          Si votre enjeu est d&rsquo;être associé à l&rsquo;écosystème innovation, l&rsquo;adresse
-          06410 a une valeur de signal que le centre d&rsquo;Antibes n&rsquo;a pas. Trois profils
-          distincts s&rsquo;y côtoient, et aucun ne publie de grille de domiciliation : comptez un
-          devis personnalisé.
+          Si vous voulez que votre entreprise soit associée à la technopole, l&rsquo;adresse 06410
+          envoie un signal que le centre d&rsquo;Antibes n&rsquo;envoie pas. Trois prestataires
+          très différents s&rsquo;y trouvent, et aucun ne publie de grille de domiciliation : il
+          faut demander un devis.
         </p>
         <p>
-          <strong>Baya Axess</strong>, au village d&rsquo;entreprises Green Side à Biot, propose un
-          lieu de travail complet - bureaux de 10 à 150 m&sup2;, salles équipées, coworking, 160
-          places de parking - dans un environnement verdoyant proche du centre de vie
-          Saint-Philippe.
+          <strong>Baya Axess</strong>, au village d&rsquo;entreprises Green Side à Biot, propose des
+          bureaux de 10 à 150 m&sup2;, des salles équipées, un coworking et 160 places de parking,
+          près du centre de vie Saint-Philippe.
         </p>
         <p>
           <strong>Pearl Partner</strong>, route des Lucioles à Valbonne, occupe un smart building à
-          énergie positive et propose des packs administratifs complets, jusqu&rsquo;au scan
+          énergie positive et propose des packs administratifs qui vont jusqu&rsquo;au scan
           quotidien et à la permanence téléphonique.
         </p>
         <p>
           <strong>Starter Business Center</strong>, dans le parc des Algorithmes, est plus
-          fonctionnel que prestigieux, mais l&rsquo;adresse est au c&oelig;ur de la technopole, au
+          fonctionnel que prestigieux, mais l&rsquo;adresse est en pleine technopole, au
           voisinage de grands groupes, avec parking gratuit.
         </p>
         <p>
@@ -570,17 +567,17 @@ function Fr() {
       <section>
         <h2>Vallauris et Villeneuve-Loubet</h2>
         <p>
-          <strong>Dom Box Services</strong>, chemin de Saint-Bernard à Vallauris, est une structure
-          à taille humaine dans une zone d&rsquo;activités, adaptée aux entreprises locales qui
-          veulent une adresse simple et des services de base fiables : 30 &euro; HT par mois pour
+          <strong>Dom Box Services</strong>, chemin de Saint-Bernard à Vallauris, est une petite
+          structure installée en zone d&rsquo;activités, pour les entreprises locales qui veulent
+          une adresse simple et les services de base : 30 &euro; HT par mois pour
           la domiciliation et la réception du courrier, 50 &euro; HT avec réexpédition
           hebdomadaire.
         </p>
         <p>
           Le <strong>Centre d&rsquo;Affaires du Loup</strong>, à Villeneuve-Loubet, est le
           principal acteur de la zone : agréé sous le n&deg; 2021/13, tarifé selon le statut
-          juridique - 30 &euro; HT pour une association, une SCI ou un micro-entrepreneur, de 37 à
-          43 &euro; HT pour une société selon que vous payez à l&rsquo;année ou au trimestre - avec
+          juridique (30 &euro; HT pour une association, une SCI ou un micro-entrepreneur, de 37 à
+          43 &euro; HT pour une société selon que vous payez à l&rsquo;année ou au trimestre), avec
           numérisation incluse, secrétariat, permanence téléphonique, aide à la création
           d&rsquo;entreprise et location de bureaux, en bordure de RN7 et à proximité de
           l&rsquo;A8. À Villeneuve-Loubet et Cagnes-sur-Mer existent aussi{' '}
@@ -623,8 +620,8 @@ function Fr() {
           </li>
           <li>
             <strong>Vous voulez une adresse en centre-ville, sans engagement, et pouvoir
-            travailler sur place</strong> : c&rsquo;est notre créneau, et c&rsquo;est là que nous
-            sommes objectivement les mieux placés à Antibes.
+            travailler sur place</strong> : c&rsquo;est notre créneau, et là, nous sommes les mieux
+            placés à Antibes.
           </li>
         </ul>
       </section>
@@ -642,7 +639,7 @@ function Fr() {
           </li>
           <li>
             Que couvre exactement le tarif mensuel, et qu&rsquo;est-ce qui est{' '}
-            <strong>facturé en supplément</strong> - scan, réexpédition, recommandés, colis
+            <strong>facturé en supplément</strong> : scan, réexpédition, recommandés, colis
             volumineux ?
           </li>
           <li>
@@ -657,10 +654,10 @@ function Fr() {
       </section>
 
       <section>
-        <h2>Méthodologie et transparence</h2>
+        <h2>Méthodologie</h2>
         <p>
-          Ce comparatif a été établi à partir des informations publiques de chaque prestataire -
-          sites web, grilles tarifaires affichées, annuaires professionnels - complétées par notre
+          Ce comparatif a été établi à partir des informations publiques de chaque prestataire
+          (sites web, grilles tarifaires affichées, annuaires professionnels), complétées par notre
           connaissance du terrain à Antibes. Les tarifs ont été relevés le 8 septembre 2026 et
           peuvent avoir évolué depuis ; ceux qui ne sont pas publiés ne sont pas estimés, ils sont
           signalés comme non communiqués. Un prestataire de Golfe-Juan figurant dans notre
@@ -695,7 +692,7 @@ function Fr() {
         <p>
           Oui. La domiciliation d&rsquo;entreprise est une activité réglementée : seule une société
           agréée peut délivrer l&rsquo;attestation de domiciliation exigée par le greffe du tribunal
-          de commerce. Demandez le numéro d&rsquo;agrément avant de signer - une adresse fournie par
+          de commerce. Demandez le numéro d&rsquo;agrément avant de signer : une adresse fournie par
           un prestataire non agréé sera refusée au greffe.
         </p>
 
@@ -710,8 +707,8 @@ function Fr() {
         <p>
           Le droit ne fait aucune différence, le signal commercial oui. Une adresse en centre-ville
           d&rsquo;Antibes parle à une clientèle locale et facilite le passage pour récupérer le
-          courrier. Une adresse à Sophia Antipolis associe votre entreprise à l&rsquo;écosystème
-          technologique, ce qui compte pour une activité tech ou une levée de fonds.
+          courrier. Une adresse à Sophia Antipolis associe votre entreprise à la technopole, ce qui
+          compte pour une activité tech ou une levée de fonds.
         </p>
 
         <h3>Peut-on changer de société de domiciliation en cours de route ?</h3>
@@ -753,11 +750,11 @@ function En() {
   return (
     <>
       <p>
-        Choosing a <strong>registered-office provider</strong> around Antibes means balancing an
-        address your clients recognise, day-to-day access and a monthly budget. We run a
+        Choosing a <strong>registered-office provider</strong> around Antibes means weighing
+        location, day-to-day access and the monthly price. We run a
         town-centre business-address service ourselves, and we surveyed fifteen providers across
-        the area - central Antibes, La Fontonne, Saint-Claude, Sophia Antipolis, Vallauris and
-        Villeneuve-Loubet. Here is what we found, including the cases where another provider suits
+        the area (central Antibes, La Fontonne, Saint-Claude, Sophia Antipolis, Vallauris and
+        Villeneuve-Loubet). Here is what we found, including the cases where another provider suits
         you better than we do.
       </p>
 
@@ -765,28 +762,28 @@ function En() {
         <strong>In short.</strong> Fifteen providers offer a registered business address in Antibes
         and within about fifteen kilometres. Among those that publish their rates, a registered
         office costs between &euro;25 and &euro;43 excl. VAT per month depending on the package and
-        your legal form - up to &euro;45 for a foreign company; plain mailbox plans start at around
+        your legal form, and up to &euro;45 for a foreign company; plain mailbox plans start at around
         the same &euro;25. Several business centres do not publish prices at all. What usually
-        decides the matter is not the monthly figure but the location - town centre, main road or
-        technology park - and whether services are available on site. All providers must hold
+        decides the matter is not the monthly figure but the location (town centre, main road or
+        technology park) and whether services are available on site. All providers must hold
         prefectural approval to issue a certificate the commercial court registry will accept.
       </p>
 
       <section>
-        <h2>The six criteria that actually matter</h2>
+        <h2>Six criteria for choosing</h2>
         <p>
-          A registered office address tends to stay with you for years, and changing it costs a
-          registry formality. Better to weigh the right criteria from the start.
+          A registered office address tends to stay with you for years, and changing it means a
+          registry formality.
         </p>
         <ul>
           <li>
             <strong>Location and image</strong>: a town-centre address, a technology-park address
-            and an industrial-estate address do not tell the same story on your company registration
-            extract, quotes and invoices.
+            and an industrial-estate address do not come across the same way on your company
+            registration extract, quotes and invoices.
           </li>
           <li>
             <strong>Access</strong>: will you collect your own mail? Then buses, the railway
-            station, the A8 and parking matter a great deal. If everything is forwarded, they do
+            station, the A8 and parking matter. If everything is forwarded, they do
             not matter at all.
           </li>
           <li>
@@ -819,7 +816,7 @@ function En() {
           provider must keep your supporting documents and pass on official correspondence.
         </p>
         <p>
-          In practice: always ask for the <strong>prefectural approval number</strong> before you
+          Always ask for the <strong>prefectural approval number</strong> before you
           sign. An address supplied by an unapproved provider will be rejected by the registry, and
           you will lose weeks on your registration.
         </p>
@@ -842,10 +839,9 @@ function En() {
       <section>
         <h2>Central Antibes: image and everyday logistics</h2>
         <p>
-          A registered address in the heart of Antibes is one your clients place immediately, with
-          smooth logistics: banks, public offices, restaurants and transport a few minutes&rsquo;
-          walk away. It is also the segment where providers offer the most on-site services - and
-          where price gaps are narrowest.
+          Your clients place a central Antibes address straight away, and banks, public offices,
+          restaurants and transport are a few minutes&rsquo; walk away. It is also where providers
+          offer the most on-site services, and where price gaps are narrowest.
         </p>
         <p>
           <strong>Alatere doMo</strong> occupies 9 boulevard Albert 1er, in the Art Nouveau La
@@ -856,12 +852,12 @@ function En() {
           available on site.
         </p>
         <p>
-          <strong>Riviera Secrétariat</strong>, at 46 boulevard du Président Wilson, plays a
-          different tune: the address comes with genuine outsourced secretarial services - call
-          answering, administrative support, document drafting. Its rates are public and tiered by
+          <strong>Riviera Secrétariat</strong>, at 46 boulevard du Président Wilson, adds
+          outsourced secretarial services to the address: call answering, administrative support,
+          document drafting. Its rates are public and tiered by
           legal form, from &euro;30 excl. VAT for a sole trader to &euro;45 for a foreign company,
           under prefectural approval no. 2020/13. If your need is as much administrative as postal,
-          it is a coherent choice.
+          this is the provider to look at.
         </p>
         <p>
           <strong>Centre d&rsquo;Affaires Antibes</strong>, at 540 1ère Avenue, advertises
@@ -882,19 +878,19 @@ function En() {
       <section>
         <h2>La Fontonne and Saint-Claude: budget and the car</h2>
         <p>
-          Further out, but highly effective if you are often on the road or if your clients arrive
-          by car.
+          Further out, but practical if you are often on the road or if your clients arrive by
+          car.
         </p>
         <p>
-          <strong>Na&amp;Co</strong>, at 256 route de Nice, offers one of the best price-to-service
-          ratios in the area: free parking, direct access to the RN7 and the A8, 24/7 mailbox
+          <strong>Na&amp;Co</strong>, at 256 route de Nice, offers from &euro;27.50 excl. VAT a month
+          free parking, direct access to the RN7 and the A8, 24/7 mailbox
           access and handling of parcels and registered mail. A useful detail if you are mothballing
           a company rather than closing it: dormant companies get a 50 % discount, i.e. &euro;13.75
           excl. VAT a month.
         </p>
         <p>
-          <strong>Mail Boxes Etc.</strong>, on chemin de Saint-Claude, adds the infrastructure of an
-          international network and a bilingual team - a real advantage if you receive shipments
+          <strong>Mail Boxes Etc.</strong>, on chemin de Saint-Claude, relies on an international
+          network and a bilingual team, useful if you receive shipments
           from abroad or your contacts do not speak French. The advertised rate is &euro;30 excl.
           VAT a month, but against a six- or twelve-month term, with two months free when paid
           annually.
@@ -904,23 +900,23 @@ function En() {
       <section>
         <h2>Sophia Antipolis: the technology-park address</h2>
         <p>
-          If what matters is being associated with the innovation ecosystem, the 06410 postcode
-          carries a signal that central Antibes does not. Three distinct profiles sit side by side,
-          and none publishes business-address rates: expect a bespoke quote.
+          If you want your company associated with the technology park, the 06410 postcode sends a
+          signal that central Antibes does not. Three very different providers operate there, and
+          none publishes business-address rates: you will need to ask for a quote.
         </p>
         <p>
-          <strong>Baya Axess</strong>, in the Green Side business village in Biot, offers a complete
-          workplace - offices from 10 to 150 m&sup2;, equipped rooms, coworking, 160 parking spaces
-          - in green surroundings close to the Saint-Philippe amenities centre.
+          <strong>Baya Axess</strong>, in the Green Side business village in Biot, offers offices from
+          10 to 150 m&sup2;, equipped rooms, coworking and 160 parking spaces, close to the
+          Saint-Philippe amenities centre.
         </p>
         <p>
           <strong>Pearl Partner</strong>, on route des Lucioles in Valbonne, occupies an
-          energy-positive smart building and offers full administrative packages, up to daily
+          energy-positive smart building and offers administrative packages that go as far as daily
           scanning and call answering.
         </p>
         <p>
           <strong>Starter Business Center</strong>, in the Algorithmes park, is more functional than
-          prestigious, but the address sits at the heart of the technology park, among major
+          prestigious, but the address is right inside the technology park, among major
           corporate neighbours, with free parking.
         </p>
         <p>
@@ -934,15 +930,15 @@ function En() {
         <h2>Vallauris and Villeneuve-Loubet</h2>
         <p>
           <strong>Dom Box Services</strong>, on chemin de Saint-Bernard in Vallauris, is a small
-          operator on a business estate, suited to local companies wanting a simple address and
-          reliable basic services: &euro;30 excl. VAT a month for the address and mail reception,
+          operator on a business estate, for local companies wanting a simple address and the basic
+          services: &euro;30 excl. VAT a month for the address and mail reception,
           &euro;50 with weekly forwarding.
         </p>
         <p>
           <strong>Centre d&rsquo;Affaires du Loup</strong>, in Villeneuve-Loubet, is the main player
-          in the area: approved under no. 2021/13 and priced by legal form - &euro;30 excl. VAT for
+          in the area: approved under no. 2021/13 and priced by legal form (&euro;30 excl. VAT for
           an association, an SCI or a micro-entrepreneur, &euro;37 to &euro;43 for a company
-          depending on whether you pay annually or quarterly - with scanning included, secretarial
+          depending on whether you pay annually or quarterly), with scanning included, secretarial
           services, call answering, company-formation support and office rental, beside the RN7 and
           close to the A8. <strong>Acceptis</strong> and{' '}
           <strong>Azur Secrétariat Services</strong> also operate in Villeneuve-Loubet and
@@ -983,8 +979,7 @@ function En() {
           </li>
           <li>
             <strong>You want a town-centre address, no commitment, and somewhere to work on
-            site</strong>: that is our niche, and it is where we are objectively best placed in
-            Antibes.
+            site</strong>: that is our niche, and there we are the best placed in Antibes.
           </li>
         </ul>
       </section>
@@ -1000,7 +995,7 @@ function En() {
             registered office before it ends?
           </li>
           <li>
-            What exactly does the monthly rate cover, and what is <strong>billed on top</strong> -
+            What exactly does the monthly rate cover, and what is <strong>billed on top</strong>:
             scanning, forwarding, registered letters, bulky parcels?
           </li>
           <li>
@@ -1015,10 +1010,10 @@ function En() {
       </section>
 
       <section>
-        <h2>Method and transparency</h2>
+        <h2>Method</h2>
         <p>
-          This comparison was built from each provider&rsquo;s public information - websites,
-          published price lists, business directories - together with our own knowledge of the
+          This comparison was built from each provider&rsquo;s public information (websites,
+          published price lists, business directories), together with our own knowledge of the
           ground in Antibes. Prices were recorded on 8 September 2026 and may have changed since;
           those that are not published are not estimated, they are marked as not published. One
           Golfe-Juan provider listed in our first version has been removed, for lack of a verifiable
@@ -1043,7 +1038,7 @@ function En() {
           &euro;43 excl. VAT per month depending on the package and legal form, and up to &euro;45
           for a foreign company; plain mailbox plans, which cannot host a registered office, also
           start at around &euro;25. Several business centres do not publish a price list. Set-up
-          fees and separately billed options - scanning, forwarding, registered-mail handling - are
+          fees and separately billed options (scanning, forwarding, registered-mail handling) are
           sometimes added on top.
         </p>
 
@@ -1051,7 +1046,7 @@ function En() {
         <p>
           Yes. Providing a registered business address is a regulated activity: only an approved
           company can issue the certificate of domiciliation required by the commercial court
-          registry. Ask for the approval number before signing - an address supplied by an
+          registry. Ask for the approval number before signing: an address supplied by an
           unapproved provider will be rejected by the registry.
         </p>
 
@@ -1066,7 +1061,7 @@ function En() {
         <p>
           The law draws no distinction; the commercial signal does. A central Antibes address speaks
           to local clients and makes collecting mail easy. A Sophia Antipolis address associates
-          your company with the technology ecosystem, which counts for a tech business or a
+          your company with the technology park, which counts for a tech business or a
           fundraising round.
         </p>
 

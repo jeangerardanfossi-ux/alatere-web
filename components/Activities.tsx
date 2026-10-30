@@ -35,11 +35,11 @@ export default function Activities() {
     <section id="activites" className={styles.section}>
       <div className={styles.head}>
         <div>
-          <span className={styles.eyebrow}>Nos activités</span>
-          <h2 className={styles.h2}>Quatre métiers, une même exigence.</h2>
+          <span className={styles.eyebrow}>ecoM · forMa · doMo · coWo</span>
+          <h2 className={styles.h2}>Quatre activités sous le même toit, à Antibes.</h2>
         </div>
         <a className={styles.headLink} href="#contact">
-          Un seul interlocuteur →
+          Nous écrire →
         </a>
       </div>
 
@@ -58,9 +58,9 @@ export default function Activities() {
               Sites marchands opérés en propre · depuis 2003
             </p>
             <p className={styles.text}>
-              Vingt ans à concevoir, opérer et référencer nos propres boutiques
-              d&rsquo;art - notre meilleure démonstration de savoir-faire SEO, SEA
-              et opérations.
+              Depuis vingt ans, nous concevons, exploitons et référençons nos
+              propres boutiques d&rsquo;art. Le SEO, le SEA et la gestion que nous
+              proposons à nos clients, nous les pratiquons d&rsquo;abord chez nous.
             </p>
             <div className={styles.vignettes}>
               <a className={styles.vignette} href="https://repro-tableaux.com" target="_blank" rel="noopener noreferrer">
@@ -73,7 +73,7 @@ export default function Activities() {
               </a>
             </div>
             <Link className={styles.cardCta} href="/alatere-ecom">
-              Découvrir le savoir-faire →
+              Voir le pôle e-commerce →
             </Link>
           </div>
         </article>
@@ -90,8 +90,8 @@ export default function Activities() {
             </h3>
             <p className={styles.subtitle}>Organisme de formation professionnelle</p>
             <p className={styles.text}>
-              Cinq grands domaines de compétences, parcours sur mesure et
-              financement OPCO. Programmes détaillés sur notre catalogue dédié.
+              Formations finançables par votre OPCO, dans les domaines
+              ci-dessous. Les programmes détaillés sont sur notre catalogue en ligne.
             </p>
             <ul className={styles.list}>
               {['Webmarketing', 'Intelligence artificielle', 'Langues', 'Communication digitale', 'Immobilier'].map(
@@ -124,9 +124,10 @@ export default function Activities() {
             </h3>
             <p className={styles.subtitle}>Domiciliation d&rsquo;entreprise à Antibes</p>
             <p className={styles.text}>
-              Une adresse de prestige au 9 Boulevard Albert 1<sup>er</sup> pour
-              votre siège social. Réception du courrier, scan, réexpédition -
-              idéal SIRET et transfert de siège.
+              Votre siège social au 9 Boulevard Albert 1<sup>er</sup>. Nous
+              recevons votre courrier, le numérisons et le réexpédions.
+              L&rsquo;adresse vaut pour une immatriculation comme pour un
+              transfert de siège.
             </p>
             <div className={styles.prices}>
               <div className={styles.price}>
@@ -161,8 +162,8 @@ export default function Activities() {
             <p className={styles.subtitle}>Espace de coworking à Antibes</p>
             <p className={styles.text}>
               Postes nomades, bureaux fermés, salles de réunion. Café, fibre et
-              événements business mensuels - à deux pas du port Vauban. Venez nous
-              rendre visite au 9 boulevard Albert 1<sup>er</sup> à Antibes.
+              un événement business par mois, à deux pas du port Vauban. Passez
+              nous voir au 9 boulevard Albert 1<sup>er</sup>.
             </p>
             <ul className={styles.facts}>
               {['5 salles de réunion', '16 postes de travail', 'Internet haut-débit', 'Salles climatisées'].map(

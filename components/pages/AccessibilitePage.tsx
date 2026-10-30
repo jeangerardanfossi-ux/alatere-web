@@ -19,20 +19,20 @@ const TX: Dict = {
   bc_self: { fr: 'Accessibilité et handicap', en: 'Accessibility & disability' },
   page_title: { fr: 'Accessibilité et handicap', en: 'Accessibility & disability' },
   page_sub: {
-    fr: "Alatere forMa s'engage à rendre ses formations accessibles à toutes et tous, y compris aux personnes en situation de handicap.",
-    en: 'Alatere forMa is committed to making its training accessible to everyone, including people with disabilities.',
+    fr: "Alatere forMa adapte ses formations aux personnes en situation de handicap. Cette page explique comment, et qui contacter.",
+    en: 'Alatere forMa adapts its training for people with disabilities. This page explains how, and who to contact.',
   },
 
   s1_t: { fr: 'Notre engagement', en: 'Our commitment' },
   s1_p: {
-    fr: "Conformément au référentiel national qualité (Qualiopi) et à la loi du 11 février 2005, nous mettons tout en œuvre pour que chaque personne, quelle que soit sa situation, puisse suivre nos formations dans les meilleures conditions. Aucune candidature n'est écartée en raison d'un handicap : nous recherchons systématiquement les adaptations possibles.",
-    en: 'In line with the national quality framework (Qualiopi) and the French law of 11 February 2005, we do everything possible so that every person, whatever their situation, can attend our training under the best conditions. No application is rejected because of a disability: we systematically look for possible adjustments.',
+    fr: "Conformément au référentiel national qualité (Qualiopi) et à la loi du 11 février 2005, nous faisons en sorte que chaque personne puisse suivre nos formations, quelle que soit sa situation. Aucune candidature n'est écartée en raison d'un handicap : nous recherchons systématiquement les adaptations possibles.",
+    en: 'In line with the national quality framework (Qualiopi) and the French law of 11 February 2005, we make sure every person can attend our training, whatever their situation. No application is rejected because of a disability: we systematically look for possible adjustments.',
   },
 
   s2_t: { fr: 'Accessibilité des locaux', en: 'Premises accessibility' },
   s2_p: {
-    fr: "Nos sessions en présentiel se tiennent au 9 Boulevard Albert 1er, 06600 Antibes, en centre-ville, à proximité de la gare SNCF et du port Vauban. Pour toute question sur l'accès aux locaux ou un besoin d'aménagement spécifique (stationnement, accès, salle), contactez-nous en amont : nous étudions chaque demande et proposons, si nécessaire, une solution alternative (autre salle accessible ou modalité à distance).",
-    en: 'Our in-person sessions take place at 9 Boulevard Albert 1er, 06600 Antibes, in the town centre, near the SNCF station and Port Vauban. For any question about access to the premises or a specific accommodation need (parking, access, room), contact us beforehand: we review each request and, if needed, offer an alternative solution (another accessible room or a remote format).',
+    fr: "Nos sessions en présentiel se tiennent au 9 Boulevard Albert 1er, 06600 Antibes, en centre-ville, à proximité de la gare SNCF et du port Vauban. Pour toute question sur l'accès aux locaux ou un besoin d'aménagement spécifique (stationnement, accès, salle), contactez-nous en amont : nous étudions chaque demande et proposons, si nécessaire, une autre solution (autre salle accessible ou modalité à distance).",
+    en: 'Our in-person sessions take place at 9 Boulevard Albert 1er, 06600 Antibes, in the town centre, near the SNCF station and Port Vauban. For any question about access to the premises or a specific accommodation need (parking, access, room), contact us beforehand: we review each request and, if needed, offer another option (another accessible room or a remote format).',
   },
 
   s3_t: { fr: 'Adaptation des formations', en: 'Adapting the training' },
@@ -59,8 +59,8 @@ const TX: Dict = {
 
   s4_t: { fr: 'Votre référente handicap', en: 'Your disability liaison' },
   s4_p: {
-    fr: "Simona Ballatore, notre référente handicap dédiée, est votre interlocutrice pour étudier votre situation, en toute confidentialité, et construire avec vous les aménagements nécessaires - idéalement avant le démarrage de la formation.",
-    en: 'Simona Ballatore, our dedicated disability liaison, is your point of contact to review your situation, in full confidentiality, and build the necessary accommodations with you - ideally before the training starts.',
+    fr: "Simona Ballatore, notre référente handicap, étudie votre situation avec vous de façon confidentielle et met en place les aménagements nécessaires, si possible avant le démarrage de la formation.",
+    en: 'Simona Ballatore, our disability liaison, reviews your situation with you in confidence and puts the necessary accommodations in place, ideally before the training starts.',
   },
   kv_ref: { fr: 'Référente handicap', en: 'Disability liaison' },
   kv_ref_v: { fr: 'Simona Ballatore', en: 'Simona Ballatore' },
@@ -73,8 +73,8 @@ const TX: Dict = {
     en: 'Tell us about your need from first contact or during the assessment interview, by email at ',
   },
   s5_p_b: {
-    fr: ' ou par téléphone. Plus la demande est anticipée, plus nous pouvons mobiliser les ressources et partenaires adaptés dans de bonnes conditions.',
-    en: ' or by phone. The earlier the request, the better we can mobilize the right resources and partners under good conditions.',
+    fr: ' ou par téléphone. Plus la demande arrive tôt, plus nous avons le temps de mobiliser les ressources et partenaires adaptés.',
+    en: ' or by phone. The earlier the request, the more time we have to bring in the right resources and partners.',
   },
 
   s6_t: { fr: 'Ressources et partenaires', en: 'Resources and partners' },
@@ -83,7 +83,7 @@ const TX: Dict = {
     en: 'When needed, we rely on specialized stakeholders: Agefiph and the regional Disability Training Resources (RHF), the Cap emploi network, and the departmental disability office (MDPH) of the Alpes-Maritimes.',
   },
 
-  cta_t: { fr: 'Un besoin spécifique ? Parlons-en.', en: 'A specific need? Let’s talk.' },
+  cta_t: { fr: 'Signaler un besoin spécifique', en: 'Flag a specific need' },
   cta_p: {
     fr: 'Notre référente handicap revient vers vous sous 48 heures.',
     en: 'Our disability liaison gets back to you within 48 hours.',

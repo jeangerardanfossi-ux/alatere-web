@@ -7,7 +7,7 @@ import '../grommet-home.css';
 
 const TITLE = 'Alatere Web - Agency, training, business address & coworking in Antibes';
 const DESC =
-  'Family business in Antibes since 2002: e-commerce, Qualiopi training, company domiciliation and coworking. Four trades, one single contact.';
+  'Family business founded in 2002, at 9 Boulevard Albert 1er in Antibes: e-commerce, Qualiopi training, company domiciliation and coworking.';
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

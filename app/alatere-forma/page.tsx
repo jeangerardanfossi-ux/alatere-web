@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Organisme de formation Qualiopi à Antibes - Alatere forMa',
     description:
-      'Formations professionnelles certifiées Qualiopi à Antibes, en présentiel ou à distance. Financement OPCO/FAF facilité.',
+      'Formations professionnelles certifiées Qualiopi à Antibes, en présentiel ou à distance, finançables par votre OPCO ou votre FAF.',
   },
 };
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'À propos - Alatere Web, entreprise familiale à Antibes',
     description:
-      "Entreprise familiale née à Paris en 2002, installée à Antibes depuis 2008. Iveta et Jean-Gérard Anfossi, quatre métiers, une même idée : être à vos côtés.",
+      "Entreprise familiale d'Iveta et Jean-Gérard Anfossi, née à Paris en 2002 et installée à Antibes depuis 2008 : e-commerce, formation, domiciliation et coworking.",
   },
 };
 

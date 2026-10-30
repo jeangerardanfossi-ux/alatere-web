@@ -11,7 +11,7 @@ const POLES = new Set<string>(['ecom', 'forma', 'domo', 'cowo']);
 
 const CTA = { fr: 'Prendre rendez-vous', en: 'Book a meeting' };
 const CTA_COWO = { fr: 'Réserver un poste', en: 'Book a desk' };
-const TAG = { fr: 'Entreprise familiale à Antibes', en: 'Family business in Antibes' };
+const TAG = { fr: 'Aux côtés des entreprises', en: 'Alongside businesses' };
 
 /** Libellés FR/EN des entrées qui ne sont pas un pôle (les pôles gardent leur nom de marque). */
 const LABELS: Record<string, { fr: string; en: string }> = {

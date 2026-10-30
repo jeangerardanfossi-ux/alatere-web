@@ -275,7 +275,7 @@ export function faqLd(items: { q: string; a: string }[]) {
 export const homeFaq = [
   {
     q: "Qu'est-ce qu'Alatere Web ?",
-    a: "Alatere Web est une entreprise familiale installée à Antibes depuis 2002. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
+    a: "Alatere Web est une entreprise familiale créée à Paris en 2002 et installée à Antibes depuis 2008. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
   },
   {
     q: 'Où se situe Alatere Web ?',
@@ -346,11 +346,11 @@ export const formaFaqLd = faqLd([
 export const ecomFaqLd = faqLd([
   {
     q: 'Que fait Alatere ecoM ?',
-    a: "Alatere ecoM conçoit, opère et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com) - un savoir-faire SEO, SEA et opérations que nous mettons au service de nos clients.",
+    a: "Alatere ecoM conçoit, exploite et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com). Le SEO, le SEA et les méthodes d'exploitation rodés sur ces sites, nous les appliquons à ceux de nos clients.",
   },
   {
     q: 'Proposez-vous du référencement SEO et de la publicité SEA ?',
-    a: 'Oui. Le référencement naturel (SEO), la publicité en ligne (SEA Google, Microsoft, Meta) et l’acquisition sont au cœur de notre métier - éprouvés sur nos propres sites depuis vingt ans.',
+    a: 'Oui : référencement naturel (SEO), publicité en ligne (SEA sur Google, Microsoft et Meta) et acquisition. Nous les pratiquons sur nos propres sites depuis vingt ans.',
   },
   {
     q: "Travaillez-vous pour l'international ?",
@@ -451,7 +451,7 @@ export const domoBureauFaqLd = biFaqLd(
     },
     {
       q: 'Quand choisir la domiciliation plutôt qu’un bureau ?',
-      a: "Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que vous voulez une adresse professionnelle séparée de votre domicile à moindre coût. C'est aussi la solution pour un transfert de siège vers Antibes.",
+      a: "Si vous travaillez de chez vous ou en déplacement, que vous démarrez votre activité, ou que vous voulez une adresse professionnelle séparée de votre domicile à moindre coût. Elle convient aussi à un transfert de siège vers Antibes.",
     },
     {
       q: 'Peut-on combiner domiciliation et coworking ?',
@@ -469,7 +469,7 @@ export const domoBureauFaqLd = biFaqLd(
     },
     {
       q: 'When should you choose a business address rather than an office?',
-      a: "If you work from home or on the move, are just starting out, or want a professional address separate from your home at low cost. It's also the solution for transferring a head office to Antibes.",
+      a: "If you work from home or on the move, are just starting out, or want a professional address separate from your home at low cost. It also suits a head-office transfer to Antibes.",
     },
     {
       q: 'Can you combine a business address and coworking?',
@@ -535,7 +535,7 @@ export const financerFormationFaqLd = biFaqLd(
     },
     {
       q: 'Quelle différence entre OPCO et FAF ?',
-      a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés - indépendants, professions libérales (FIF PL, AGEFICE…) - selon des plafonds annuels propres à chaque fonds.",
+      a: "L'OPCO finance la formation des salariés dans le cadre du plan de développement des compétences de l'employeur. Le FAF finance la formation continue des travailleurs non-salariés, indépendants et professions libérales (FIF PL, AGEFICE…), selon des plafonds annuels propres à chaque fonds.",
     },
     {
       q: 'Comment faire financer sa formation sans reste à charge ?',
@@ -557,7 +557,7 @@ export const financerFormationFaqLd = biFaqLd(
     },
     {
       q: "What's the difference between OPCO and FAF?",
-      a: "The OPCO funds employee training as part of the employer's skills-development plan. The FAF funds the continuing training of the self-employed - sole traders, the liberal professions (FIF PL, AGEFICE, etc.) - within annual ceilings specific to each fund.",
+      a: "The OPCO funds employee training as part of the employer's skills-development plan. The FAF funds the continuing training of the self-employed, sole traders and the liberal professions (FIF PL, AGEFICE, etc.), within annual ceilings specific to each fund.",
     },
     {
       q: 'How can you get your training funded with nothing to pay out of pocket?',
@@ -587,7 +587,7 @@ export const piliersEcomFaqLd = biFaqLd(
     },
     {
       q: 'Le e-commerce a-t-il vraiment changé depuis les années 2000 ?',
-      a: "Oui, radicalement, sur les outils - mais pas sur les fondamentaux. En 2003, il n'existait ni réseaux sociaux, ni retargeting, ni IA, et Google AdWords démarrait tout juste. Aujourd'hui s'ajoutent l'AI SEO, la publicité programmatique et l'analyse de données en temps réel. Les quatre piliers, eux, sont restés identiques.",
+      a: "Les outils, oui, radicalement ; les fondamentaux, non. En 2003, il n'existait ni réseaux sociaux, ni retargeting, ni IA, et Google AdWords démarrait tout juste. Aujourd'hui s'ajoutent l'AI SEO, la publicité programmatique et l'analyse de données en temps réel. Les quatre piliers, eux, sont restés identiques.",
     },
     {
       q: "Comment l'intelligence artificielle transforme-t-elle le e-commerce en 2026 ?",
@@ -595,7 +595,7 @@ export const piliersEcomFaqLd = biFaqLd(
     },
     {
       q: "Pourquoi le service client est-il un pilier et pas un simple « détail » ?",
-      a: "Parce qu'il agit avant la vente (lever les doutes, conseiller sur le bon support ou format) autant qu'après (traiter un incident). Sur des produits fabriqués sur mesure, c'est souvent le service client qui transforme une réclamation en preuve de fiabilité - et un acheteur ponctuel en client fidèle.",
+      a: "Parce qu'il agit avant la vente (lever les doutes, conseiller sur le bon support ou format) autant qu'après (traiter un incident). Sur des produits fabriqués sur mesure, c'est souvent le service client qui transforme une réclamation en preuve de fiabilité, et un acheteur ponctuel en client fidèle.",
     },
   ],
   [
@@ -609,15 +609,15 @@ export const piliersEcomFaqLd = biFaqLd(
     },
     {
       q: 'Has e-commerce really changed since the 2000s?',
-      a: 'Yes, radically, in its tools - but not in its fundamentals. In 2003 there were no social networks, no retargeting, no AI, and Google AdWords was just getting started. Today AI SEO, programmatic advertising and real-time data analysis have been added. The four pillars, though, have stayed the same.',
+      a: 'In its tools, yes, radically; in its fundamentals, no. In 2003 there were no social networks, no retargeting, no AI, and Google AdWords was just getting started. Today AI SEO, programmatic advertising and real-time data analysis have been added. The four pillars, though, have stayed the same.',
     },
     {
       q: 'How is artificial intelligence transforming e-commerce in 2026?',
-      a: 'AI mainly affects the marketing pillar: it shifts the focus from classic search rankings to AI SEO - being cited as a source in the answers of ChatGPT, Perplexity, Google AI Overviews or Claude. It also transforms customer relations (assistance, recommendations) and content production. But it does not replace product quality or human customer service.',
+      a: 'AI mainly affects the marketing pillar: it shifts the focus from classic search rankings to AI SEO, meaning being cited as a source in the answers of ChatGPT, Perplexity, Google AI Overviews or Claude. It also transforms customer relations (assistance, recommendations) and content production. But it does not replace product quality or human customer service.',
     },
     {
       q: 'Why is customer service a pillar and not just a "detail"?',
-      a: 'Because it acts before the sale (clearing up doubts, advising on the right medium or format) as much as after (handling an incident). With made-to-order products, it is often customer service that turns a complaint into proof of reliability - and a one-off buyer into a loyal customer.',
+      a: 'Because it acts before the sale (clearing up doubts, advising on the right medium or format) as much as after (handling an incident). With made-to-order products, it is often customer service that turns a complaint into proof of reliability, and a one-off buyer into a loyal customer.',
     },
   ],
 );
@@ -690,7 +690,7 @@ export const comparatifDomiciliationFaqLd = biFaqLd(
     },
     {
       q: 'Une société de domiciliation doit-elle être agréée par la préfecture ?',
-      a: "Oui. La domiciliation d'entreprise est une activité réglementée : seule une société agréée peut délivrer l'attestation de domiciliation exigée par le greffe du tribunal de commerce. Demandez le numéro d'agrément avant de signer - une adresse fournie par un prestataire non agréé sera refusée au greffe.",
+      a: "Oui. La domiciliation d'entreprise est une activité réglementée : seule une société agréée peut délivrer l'attestation de domiciliation exigée par le greffe du tribunal de commerce. Demandez le numéro d'agrément avant de signer : une adresse fournie par un prestataire non agréé sera refusée au greffe.",
     },
     {
       q: "Quelle est la durée minimale d'un contrat de domiciliation ?",
@@ -698,7 +698,7 @@ export const comparatifDomiciliationFaqLd = biFaqLd(
     },
     {
       q: 'Vaut-il mieux domicilier à Antibes centre ou à Sophia Antipolis ?',
-      a: "Le droit ne fait aucune différence, le signal commercial oui. Une adresse en centre-ville d'Antibes parle à une clientèle locale et facilite le passage pour récupérer le courrier. Une adresse à Sophia Antipolis associe votre entreprise à l'écosystème technologique, ce qui compte pour une activité tech ou une levée de fonds.",
+      a: "Le droit ne fait aucune différence, le signal commercial oui. Une adresse en centre-ville d'Antibes parle à une clientèle locale et facilite le passage pour récupérer le courrier. Une adresse à Sophia Antipolis associe votre entreprise à la technopole, ce qui compte pour une activité tech ou une levée de fonds.",
     },
     {
       q: 'Peut-on changer de société de domiciliation en cours de route ?',
@@ -708,11 +708,11 @@ export const comparatifDomiciliationFaqLd = biFaqLd(
   [
     {
       q: 'How much does a registered business address in Antibes cost?',
-      a: 'Among providers that publish their rates, a registered office costs between €25 and €43 excl. VAT per month depending on the package and legal form, and up to €45 for a foreign company; plain mailbox plans, which cannot host a registered office, also start at around €25. Several business centres do not publish a price list. Set-up fees and separately billed options - scanning, forwarding, registered-mail handling - are sometimes added on top.',
+      a: 'Among providers that publish their rates, a registered office costs between €25 and €43 excl. VAT per month depending on the package and legal form, and up to €45 for a foreign company; plain mailbox plans, which cannot host a registered office, also start at around €25. Several business centres do not publish a price list. Set-up fees and separately billed options (scanning, forwarding, registered-mail handling) are sometimes added on top.',
     },
     {
       q: 'Must a business-address provider be approved by the préfecture?',
-      a: 'Yes. Providing a registered business address is a regulated activity: only an approved company can issue the certificate of domiciliation required by the commercial court registry. Ask for the approval number before signing - an address supplied by an unapproved provider will be rejected by the registry.',
+      a: 'Yes. Providing a registered business address is a regulated activity: only an approved company can issue the certificate of domiciliation required by the commercial court registry. Ask for the approval number before signing: an address supplied by an unapproved provider will be rejected by the registry.',
     },
     {
       q: 'What is the minimum term of a domiciliation contract?',
@@ -720,7 +720,7 @@ export const comparatifDomiciliationFaqLd = biFaqLd(
     },
     {
       q: 'Is it better to register in central Antibes or in Sophia Antipolis?',
-      a: 'The law draws no distinction; the commercial signal does. A central Antibes address speaks to local clients and makes collecting mail easy. A Sophia Antipolis address associates your company with the technology ecosystem, which counts for a tech business or a fundraising round.',
+      a: 'The law draws no distinction; the commercial signal does. A central Antibes address speaks to local clients and makes collecting mail easy. A Sophia Antipolis address associates your company with the technology park, which counts for a tech business or a fundraising round.',
     },
     {
       q: 'Can you change business-address provider along the way?',

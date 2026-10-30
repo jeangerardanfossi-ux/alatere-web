@@ -27,10 +27,10 @@ const TITLE = {
 const TX: Dict = {
   bc_home: { fr: 'Accueil', en: 'Home' },
   bc_self: { fr: 'Contact', en: 'Contact' },
-  page_title: { fr: 'Parlons de votre projet.', en: "Let's talk about your project." },
+  page_title: { fr: 'Nous contacter', en: 'Contact us' },
   page_sub: {
-    fr: 'E-commerce, formation, domiciliation ou coworking : un seul interlocuteur, une réponse sous 48 heures.',
-    en: 'E-commerce, training, business address or coworking: a single point of contact, a reply within 48 hours.',
+    fr: 'E-commerce, formation, domiciliation ou coworking : écrivez-nous, appelez ou passez au bureau. Nous répondons sous 48 heures.',
+    en: 'E-commerce, training, business address or coworking: write, call or drop by the office. We reply within 48 hours.',
   },
   info_t: { fr: 'Nous trouver', en: 'Find us' },
   info_addr_l: { fr: 'Adresse', en: 'Address' },

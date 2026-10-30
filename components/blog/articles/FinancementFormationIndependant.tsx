@@ -25,21 +25,21 @@ export default function FinancementFormationIndependant() {
       <section>
         <h2>OPCO, FAF : deux mots qu&rsquo;on confond tout le temps</h2>
         <p>
-          Un <strong>OPCO</strong> - opérateur de compétences - finance la formation des{' '}
+          Un <strong>OPCO</strong> (opérateur de compétences) finance la formation des{' '}
           <strong>salariés</strong> d&rsquo;une entreprise. C&rsquo;est l&rsquo;employeur qui monte
           le dossier, et c&rsquo;est le plan de développement des compétences de la société qui est
           engagé.
         </p>
         <p>
-          Un <strong>FAF</strong> - fonds d&rsquo;assurance formation - finance la formation des{' '}
+          Un <strong>FAF</strong> (fonds d&rsquo;assurance formation) finance la formation des{' '}
           <strong>travailleurs non salariés</strong> : professions libérales, artisans,
           commerçants, dirigeants non salariés. C&rsquo;est vous qui déposez la demande, en votre
           nom propre.
         </p>
         <p>
           Si vous êtes gérant majoritaire, profession libérale ou micro-entrepreneur, c&rsquo;est
-          donc un FAF qui vous concerne, pas un OPCO - même si les moteurs de recherche vous
-          renvoient massivement vers le second. Nous détaillons la logique générale des deux
+          donc un FAF qui vous concerne, même si les moteurs de recherche vous renvoient surtout
+          vers les OPCO. Nous détaillons la logique générale des deux
           dispositifs dans notre{' '}
           <Link href="/blog/financer-formation-opco-faf" className="g-inline">
             guide du financement de la formation
@@ -51,9 +51,9 @@ export default function FinancementFormationIndependant() {
       <section>
         <h2>Trouver votre fonds : cela dépend de votre activité, pas de votre statut juridique</h2>
         <p>
-          C&rsquo;est le point qui fait perdre le plus de temps. Ce n&rsquo;est ni votre forme
-          sociale ni votre régime fiscal qui détermine votre fonds, mais la nature de votre
-          activité, telle qu&rsquo;elle est enregistrée - votre code APE et votre affiliation.
+          Votre fonds dépend de la nature de votre activité telle qu&rsquo;elle est enregistrée
+          (code APE et affiliation), et non de votre forme sociale ou de votre régime fiscal.
+          C&rsquo;est le point qui fait perdre le plus de temps.
         </p>
         <div style={{ overflowX: 'auto' }}>
           <table>
@@ -67,7 +67,7 @@ export default function FinancementFormationIndependant() {
             <tbody>
               <tr>
                 <td>Profession libérale (hors médicale) : consultant, architecte, avocat, kiné, ostéopathe, traducteur&hellip;</td>
-                <td><strong>FIFPL</strong> - Fonds interprofessionnel de formation des professionnels libéraux</td>
+                <td><strong>FIFPL</strong> (Fonds interprofessionnel de formation des professionnels libéraux)</td>
                 <td>à confirmer (millésime 2026)</td>
               </tr>
               <tr>
@@ -101,8 +101,8 @@ export default function FinancementFormationIndependant() {
         <p>
           Deux cas particuliers reviennent souvent. Le <strong>micro-entrepreneur</strong> relève du
           même fonds que les autres indépendants de son secteur, à condition d&rsquo;avoir
-          effectivement versé la CFP - donc d&rsquo;avoir déclaré du chiffre d&rsquo;affaires. Le{' '}
-          <strong>dirigeant assimilé salarié</strong> - président de SAS, gérant minoritaire -
+          effectivement versé la CFP, donc d&rsquo;avoir déclaré du chiffre d&rsquo;affaires. Le{' '}
+          <strong>dirigeant assimilé salarié</strong> (président de SAS, gérant minoritaire)
           relève de l&rsquo;OPCO de son entreprise, comme n&rsquo;importe quel salarié.
         </p>
       </section>
@@ -126,7 +126,7 @@ export default function FinancementFormationIndependant() {
           </li>
           <li>
             <strong>Déposer la demande sur le portail du fonds</strong>, en respectant le délai
-            imposé. C&rsquo;est ici que se joue l&rsquo;essentiel : la plupart des fonds exigent le
+            imposé. C&rsquo;est l&rsquo;étape décisive : la plupart des fonds exigent le
             dépôt <strong>avant le début de la formation</strong>.
           </li>
           <li>
@@ -184,7 +184,7 @@ export default function FinancementFormationIndependant() {
         <p>
           Inscrit au répertoire des métiers, il relève du FAFCEA pour les formations techniques
           liées à son métier, et du Conseil de la formation de sa chambre de métiers pour les
-          formations transversales - gestion, commercial, numérique. La distinction compte : le
+          formations transversales (gestion, commercial, numérique). La distinction compte : le
           même artisan ne dépose pas au même endroit selon le thème de sa formation.
         </p>
       </section>
@@ -213,7 +213,7 @@ export default function FinancementFormationIndependant() {
         <p>
           C&rsquo;est la question que l&rsquo;on nous pose le plus souvent, et elle se règle en
           quelques minutes à partir de votre statut et de votre code APE. Dites-nous les deux, et
-          nous vous indiquons votre fonds, le délai de dépôt applicable et les pièces à réunir -
+          nous vous indiquons votre fonds, le délai de dépôt applicable et les pièces à réunir,
           que vous vous formiez avec nous ou ailleurs.
         </p>
         <p>

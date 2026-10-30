@@ -10,7 +10,7 @@ import '../grommet-clients.css';
 const PATH = '/clients-et-realisations';
 const TITLE = 'Clients & Réalisations - Alatere Web, Antibes';
 const DESC =
-  "E-commerce, formation, domiciliation, coworking : nos réalisations pôle par pôle, pour des entreprises de la Côte d'Azur accompagnées depuis 2002.";
+  "E-commerce, formation, domiciliation, coworking : nos réalisations pôle par pôle, pour des entreprises de la Côte d'Azur.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

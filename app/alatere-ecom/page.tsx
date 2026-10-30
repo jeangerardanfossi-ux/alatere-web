@@ -8,12 +8,12 @@ import '../grommet-activity.css';
 export const metadata: Metadata = {
   title: { absolute: 'Agence web, e-commerce & SEO à Antibes - Alatere ecoM' },
   description:
-    "20 ans d'e-commerce opéré en propre (repro-tableaux.com, copia-di-arte.com). Notre savoir-faire SEO, SEA et acquisition au service de votre boutique.",
+    "20 ans d'e-commerce opéré en propre (repro-tableaux.com, copia-di-arte.com). Nous appliquons à votre boutique le SEO, le SEA et l'acquisition que nous pratiquons sur nos sites.",
   alternates: { canonical: '/alatere-ecom' },
   openGraph: {
     title: 'Agence web, e-commerce & SEO à Antibes - Alatere ecoM',
     description:
-      "20 ans d'e-commerce opéré en propre. Savoir-faire SEO, SEA et acquisition au service de votre boutique en ligne.",
+      "20 ans d'e-commerce opéré en propre. SEO, SEA et acquisition pour votre boutique en ligne, testés d'abord sur nos sites.",
   },
 };
 
