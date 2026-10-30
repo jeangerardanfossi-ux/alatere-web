@@ -808,3 +808,35 @@ export const comparatifDomiciliationItemListLd = {
     },
   })),
 };
+
+/** Page « Bureaux à louer à Antibes » : offre de location de bureaux flexibles (prix TTC visibles sur la page). */
+export function bureauxLd(lang: 'fr' | 'en', path: string) {
+  const fr = lang === 'fr';
+  const offer = (name: string, price: number, unit: string) => ({
+    '@type': 'Offer',
+    name,
+    price,
+    priceCurrency: 'EUR',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price,
+      priceCurrency: 'EUR',
+      unitCode: unit,
+      valueAddedTaxIncluded: true,
+    },
+  });
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: fr ? 'Bureaux à louer à Antibes - Alatere coWo' : 'Offices to rent in Antibes - Alatere coWo',
+    serviceType: fr ? 'Location de bureaux flexibles' : 'Flexible office rental',
+    url: `${SITE_URL}${path}`,
+    provider: { '@type': 'LocalBusiness', name: cowoLd.name, url: cowoLd.url, address },
+    areaServed: ['Antibes', 'Juan-les-Pins', 'Sophia Antipolis', 'Vallauris', 'Biot', 'Alpes-Maritimes'],
+    offers: [
+      offer(fr ? 'Bureau à la journée' : 'Office by the day', 30, 'DAY'),
+      offer(fr ? 'Bureau au mois' : 'Office by the month', 360, 'MON'),
+      offer(fr ? 'Salle de réunion à la journée' : 'Meeting room by the day', 180, 'DAY'),
+    ],
+  };
+}

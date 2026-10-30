@@ -146,6 +146,10 @@ const TX: Dict = {
     fr: 'Pour recevoir des clients, animer une formation ou faire passer des entretiens : 180 € TTC la journée, ou 80 € TTC après 16 h, ouverte aux non-membres.',
     en: 'To welcome clients, run a training session or hold interviews: €180 incl. VAT per day, or €80 after 4 pm, open to non-members.',
   },
+  rent_more: {
+    fr: 'Tarifs, comparatif avec un bail classique et questions fréquentes : bureaux à louer à Antibes',
+    en: 'Prices, comparison with a conventional lease and FAQ: offices to rent in Antibes',
+  },
   rent_note: {
     fr: "Bureaux privatifs à l'année : actuellement complets. Contactez-nous pour être prévenu de la prochaine disponibilité.",
     en: 'Yearly private offices: currently full. Contact us to hear about the next availability.',
@@ -493,7 +497,12 @@ function Body() {
               <p>{t('rent3_p')}</p>
             </div>
           </div>
-          <p className="ap-hero__note" style={{ marginTop: 18 }}>
+          <p style={{ marginTop: 18 }}>
+            <Link className="g-inline" href="/alatere-cowo/bureaux-a-louer-antibes">
+              {t('rent_more')} →
+            </Link>
+          </p>
+          <p className="ap-hero__note" style={{ marginTop: 12 }}>
             {t('rent_note')}{' '}
             <Link href="/contact?pole=cowo">{t('plan3_cta')} →</Link>
           </p>

@@ -21,6 +21,7 @@ const BILINGUAL = [
   '/alatere-forma/formateurs',
   '/alatere-domo',
   '/alatere-cowo',
+  '/alatere-cowo/bureaux-a-louer-antibes',
   '/contact',
   '/a-propos',
   '/organisme-de-formation',
