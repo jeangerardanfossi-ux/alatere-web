@@ -480,7 +480,7 @@ function Fr() {
         </p>
         <p>
           <strong>Alatere doMo</strong> occupe le 9 boulevard Albert 1er, dans La Caravelle,
-          immeuble Art déco aux influences néoclassiques et méditerranéennes, à cent mètres de la place de Gaulle et à un quart d&rsquo;heure à
+          immeuble bourgeois de style Art déco méditerranéen de l&rsquo;entre-deux-guerres, à cent mètres de la place de Gaulle et à un quart d&rsquo;heure à
           pied de la gare. Trois formules sans engagement : 25 &euro; HT pour une boîte aux
           lettres seule, 30 &euro; HT pour une adresse de siège social avec réception du courrier,
           50 &euro; HT avec numérisation et réexpédition incluses. Frais de dossier de 50 &euro; en
