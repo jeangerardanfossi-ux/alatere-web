@@ -65,10 +65,10 @@ const TX: Dict = {
     fr: "Travailler au centre-ville, c'est avoir les commerces, les restaurants et les services à portée de main, et une adresse sérieuse pour recevoir vos clients.",
     en: 'Working downtown means shops, restaurants and services within reach, and a credible address to welcome your clients.',
   },
-  why1_h: { fr: 'Un immeuble Art déco', en: 'An Art Deco building' },
+  why1_h: { fr: 'Un immeuble Art déco de l’entre-deux-guerres', en: 'An interwar Art Deco building' },
   why1_p: {
-    fr: "L'espace occupe La Caravelle, un immeuble Art déco aux influences néoclassiques et méditerranéennes, au 9 boulevard Albert 1er, à 100 m de la place de Gaulle et à deux pas du port Vauban.",
-    en: 'The space is in La Caravelle, an Art Deco building with neoclassical and Mediterranean influences, at 9 Boulevard Albert 1er, 100 m from Place de Gaulle and steps from Port Vauban.',
+    fr: "L'espace occupe La Caravelle, un immeuble bourgeois de style Art déco méditerranéen de l’entre-deux-guerres, au 9 boulevard Albert 1er, à 100 m de la place de Gaulle et à deux pas du port Vauban.",
+    en: 'The space is in La Caravelle, a Mediterranean Art Deco residential building from the interwar years, at 9 Boulevard Albert 1er, 100 m from Place de Gaulle and steps from Port Vauban.',
   },
   why2_h: { fr: 'Accessible sans voiture', en: 'Easy to reach without a car' },
   why2_p: {
