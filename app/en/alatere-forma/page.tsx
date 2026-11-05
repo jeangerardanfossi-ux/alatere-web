@@ -8,9 +8,9 @@ import '../../grommet-forma.css';
 import '../../grommet-forma-pages.css';
 
 const FR = '/alatere-forma';
-const TITLE = 'Alatere forMa - Qualiopi-certified training provider in Antibes';
+const TITLE = 'Qualiopi training funded by your OPCO | Alatere forMa';
 const DESC =
-  'Qualiopi-certified training provider in Antibes: web marketing, AI, languages, communication, real estate. On-site or remote, OPCO/FAF funding.';
+  'Qualiopi-certified provider in Antibes: AI, web marketing, real estate, languages. OPCO funding: we prepare the application with you. Ask for a quote.';
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

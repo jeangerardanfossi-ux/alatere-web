@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['communication-digitale'];
 const FR = '/alatere-forma/communication-digitale';
 const DESC_EN =
-  'Digital communication courses in Antibes: social media, brand content, editorial strategy and content creation. Qualiopi-certified.';
+  'Social media and content in Antibes: editorial line, Canva visuals, short video. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },

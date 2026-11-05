@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['intelligence-artificielle'];
 const FR = '/alatere-forma/intelligence-artificielle';
 const DESC_EN =
-  'Artificial intelligence courses in Antibes: generative AI, prompt engineering, automation, business integration. Qualiopi-certified.';
+  'Artificial intelligence courses in Antibes: generative AI, prompts, automation. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },
