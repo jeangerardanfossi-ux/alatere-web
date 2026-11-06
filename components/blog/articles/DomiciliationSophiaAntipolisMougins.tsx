@@ -251,7 +251,10 @@ export default function DomiciliationSophiaAntipolisMougins() {
           </table>
         </div>
         <p>
-          Des frais de dossier de 50 € HT s&rsquo;appliquent une seule fois, à l&rsquo;ouverture.
+          Dès que votre dossier est déposé chez nous, nous déclarons votre domiciliation au
+          greffe et aux services des impôts : vous n&rsquo;avez pas à faire cette démarche
+          vous-même. Des frais de dossier de 50 € HT s&rsquo;appliquent une seule fois, à
+          l&rsquo;ouverture.
           Il n&rsquo;y a pas d&rsquo;engagement au-delà de la durée minimale légale de trois mois,
           et vous changez de formule quand vous voulez.
         </p>

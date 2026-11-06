@@ -136,10 +136,10 @@ export default function Activities() {
               </div>
               <div className={`${styles.price} ${styles.priceFeatured}`}>
                 <div className={styles.priceAmount}>50 €</div>
-                <span className={styles.priceLabel}>Pro / mois</span>
+                <span className={styles.priceLabel}>Forward / mois</span>
               </div>
               <div className={styles.price}>
-                <div className={styles.priceAmount}>79 €</div>
+                <div className={styles.priceAmount}>50 €</div>
                 <span className={styles.priceLabel}>Frais de dossier</span>
               </div>
             </div>

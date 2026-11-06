@@ -103,7 +103,7 @@ export const polesContent: Record<string, PoleContent> = {
       },
       {
         heading: 'Nos formules',
-        body: 'Offre Headquarters à 30 € · formule Pro à 50 € / mois · frais de dossier 79 €.',
+        body: 'Offre Headquarters à 30 € HT / mois · offre Forward à 50 € HT / mois · frais de dossier 50 € HT (une seule fois).',
       },
       {
         heading: 'Agrément préfectoral',
