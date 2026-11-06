@@ -7,14 +7,14 @@ import '../grommet-forma.css';
 import '../grommet-forma-pages.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Organisme de formation Qualiopi à Antibes - Alatere forMa' },
+  title: { absolute: 'Formations Qualiopi financées par votre OPCO | Alatere forMa' },
   description:
-    'Organisme certifié Qualiopi à Antibes : webmarketing, IA, langues, communication, immobilier. Présentiel ou distanciel, financement OPCO/FAF.',
+    'Organisme Qualiopi à Antibes : IA, webmarketing, immobilier, langues. Prise en charge OPCO : nous montons le dossier avec vous. Demandez un devis.',
   alternates: { canonical: '/alatere-forma' },
   openGraph: {
-    title: 'Organisme de formation Qualiopi à Antibes - Alatere forMa',
+    title: 'Formations Qualiopi à Antibes, financées par votre OPCO - Alatere forMa',
     description:
-      'Formations professionnelles certifiées Qualiopi à Antibes, en présentiel ou à distance, finançables par votre OPCO ou votre FAF.',
+      'Organisme Qualiopi à Antibes : IA, webmarketing, immobilier, langues. Prise en charge OPCO : nous montons le dossier avec vous. Demandez un devis.',
   },
 };
 

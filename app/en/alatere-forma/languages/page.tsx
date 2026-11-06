@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['langues'];
 const FR = '/alatere-forma/langues';
 const DESC_EN =
-  'Language courses in Antibes: professional English, Italian and Spanish, one-to-one or in small groups. Qualiopi-certified, CPF.';
+  'Professional English, Italian and Spanish in Antibes, one-to-one or in groups of 8. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },

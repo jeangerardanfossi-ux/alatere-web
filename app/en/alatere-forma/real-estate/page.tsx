@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['immobilier'];
 const FR = '/alatere-forma/immobilier';
 const DESC_EN =
-  'Professional real-estate courses in Antibes: ALUR-law continuing education, ethics and real-estate digital marketing. Qualiopi-certified.';
+  'ALUR-law continuing education in Antibes: ethics, real-estate marketing, client relations. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },

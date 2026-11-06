@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['webmarketing'];
 const FR = '/alatere-forma/webmarketing';
 const DESC_EN =
-  'Web marketing courses in Antibes: SEO, SEA, AEO, social ads, analytics and e-commerce. Qualiopi-certified provider, OPCO funding.';
+  'Web marketing courses in Antibes: SEO, SEA, social ads, analytics. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },
