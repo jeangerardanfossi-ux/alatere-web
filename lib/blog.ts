@@ -320,6 +320,39 @@ export const posts: Post[] = [
       },
     },
   },
+  {
+    slug: 'domiciliation-sophia-antipolis-mougins',
+    pole: 'domo',
+    frOnly: true,
+    title: {
+      fr: 'Domicilier son entreprise à Sophia Antipolis ou à Mougins : pourquoi choisir une adresse à Antibes',
+      en: 'Registering your business in Sophia Antipolis or Mougins: why choose an Antibes address',
+    },
+    metaTitle: {
+      fr: 'Domiciliation Sophia Antipolis ou Mougins : l’option Antibes',
+      en: 'Business address in Sophia Antipolis or Mougins: the Antibes option',
+    },
+    excerpt: {
+      fr: 'Sophia Antipolis n’est pas une commune : ce que dit votre Kbis, les 4 options de siège social pour la technopole et Mougins, et quand une adresse à Antibes centre est le bon choix.',
+      en: 'Sophia Antipolis is not a municipality: what your Kbis says, the 4 registered-office options, and when an address in central Antibes is the right choice.',
+    },
+    keyword: {
+      fr: 'domiciliation Sophia Antipolis',
+      en: 'business address Sophia Antipolis',
+    },
+    category: { fr: 'Domiciliation', en: 'Business address' },
+    date: '2026-11-06',
+    updated: '2026-11-06',
+    readingMin: 7,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, où il opère le service de domiciliation d'entreprise Alatere doMo, agréé par la préfecture, à deux pas du port Vauban.",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, where he operates the Alatere doMo business-address service, approved by the préfecture, a stone’s throw from Port Vauban.',
+      },
+    },
+  },
 ];
 
 /** Résout les champs bilingues d'un article dans une langue donnée. */

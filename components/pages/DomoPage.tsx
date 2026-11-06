@@ -3,7 +3,7 @@
 /** Alatere doMo - page « domiciliation d'entreprise » (handoff Grommet, accent vert). */
 
 import Link from '@/components/grommet/LocalizedLink';
-import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
+import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
@@ -156,6 +156,7 @@ const TX: Dict = {
     en: 'On site, you can also use the Alatere coWo meeting rooms and coworking space to meet your clients. Businesses from Juan-les-Pins, Vallauris, Biot or Villeneuve-Loubet are a few minutes away.',
   },
   near_l1: { fr: 'Guide : domicilier son entreprise à Antibes', en: 'Guide: registering your business in Antibes' },
+  near_l2: { fr: 'Sophia Antipolis ou Mougins : pourquoi une adresse à Antibes', en: 'Sophia Antipolis or Mougins: why an Antibes address' },
   near_l3: { fr: 'Domiciliation ou location de bureau ?', en: 'Business address or office rental?' },
 
   // Formules
@@ -427,6 +428,7 @@ export default function DomoPage() {
 
 function Body() {
   const t = useT(TX);
+  const { lang } = useLang();
   return (
     <>
       {/* BANDEAU AGRÉMENT */}
@@ -753,6 +755,15 @@ function Body() {
               <Link className="g-inline" href="/blog/domicilier-entreprise-antibes">
                 {t('near_l1')}
               </Link>
+              {/* Article publié en français uniquement : lien masqué en anglais. */}
+              {lang === 'fr' && (
+                <>
+                  {' · '}
+                  <Link className="g-inline" href="/blog/domiciliation-sophia-antipolis-mougins">
+                    {t('near_l2')}
+                  </Link>
+                </>
+              )}
               {' · '}
               <Link className="g-inline" href="/blog/domiciliation-ou-bureau-antibes">
                 {t('near_l3')}

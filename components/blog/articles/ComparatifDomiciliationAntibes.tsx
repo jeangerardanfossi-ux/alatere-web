@@ -388,7 +388,7 @@ function Fr() {
       </p>
 
       <p>
-        <strong>L&rsquo;essentiel.</strong> Quinze prestataires proposent une domiciliation
+        <strong>L&rsquo;essentiel.</strong>{' '}Quinze prestataires proposent une domiciliation
         d&rsquo;entreprise à Antibes et dans un rayon d&rsquo;une quinzaine de kilomètres. Parmi
         ceux qui affichent leur grille, une adresse de siège social se situe entre 25 et
         43 &euro; HT par mois selon la formule et le statut juridique, et jusqu&rsquo;à
