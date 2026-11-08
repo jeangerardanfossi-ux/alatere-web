@@ -7,14 +7,16 @@ import '../grommet-forma.css';
 import '../grommet-forma-pages.css';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Formations Qualiopi financées par votre OPCO | Alatere forMa' },
+  title: {
+    absolute: 'Formation IA, webmarketing & anglais professionnel à Antibes | Alatere forMa',
+  },
   description:
-    'Organisme Qualiopi à Antibes : IA, webmarketing, immobilier, langues. Prise en charge OPCO : nous montons le dossier avec vous. Demandez un devis.',
+    'Organisme de formation Qualiopi à Antibes : formation IA, webmarketing, anglais professionnel, immobilier. Financement OPCO ou FAF : nous montons le dossier avec vous.',
   alternates: { canonical: '/alatere-forma' },
   openGraph: {
-    title: 'Formations Qualiopi à Antibes, financées par votre OPCO - Alatere forMa',
+    title: 'Formation IA, webmarketing & anglais professionnel à Antibes - Alatere forMa',
     description:
-      'Organisme Qualiopi à Antibes : IA, webmarketing, immobilier, langues. Prise en charge OPCO : nous montons le dossier avec vous. Demandez un devis.',
+      'Organisme de formation Qualiopi à Antibes : formation IA, webmarketing, anglais professionnel, immobilier. Financement OPCO ou FAF, dossier monté avec vous.',
   },
 };
 
@@ -25,7 +27,7 @@ export default function Page() {
         data={[
           educationalOrganizationLd,
           ...coursesLd,
-          formaFaqLd,
+          formaFaqLd('fr'),
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Alatere forMa', path: '/alatere-forma' },

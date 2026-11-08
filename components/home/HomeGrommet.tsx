@@ -9,6 +9,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useReservations, useT, type Dict } from '@/components/grommet/lang';
+import { homeFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon } from '@/components/grommet/icons';
@@ -194,37 +195,7 @@ const TX: Dict = {
 
   faq_eyebrow: { fr: 'FAQ', en: 'FAQ' },
   faq_title: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
-  faq1_q: { fr: "Qu'est-ce qu'Alatere Web ?", en: 'What is Alatere Web?' },
-  faq1_a: {
-    fr: "Alatere Web est une entreprise familiale créée à Paris en 2002 et installée à Antibes depuis 2008. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
-    en: 'Alatere Web is a family business founded in Paris in 2002 and based in Antibes since 2008. It brings together four complementary services - e-commerce (Alatere ecoM), Qualiopi-certified training (Alatere forMa), business address (Alatere doMo) and coworking (Alatere coWo) - with a single point of contact.',
-  },
-  faq2_q: { fr: 'Où se situe Alatere Web ?', en: 'Where is Alatere Web located?' },
-  faq2_a: {
-    fr: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
-    en: 'At 9 Boulevard Albert 1er, 06600 Antibes, steps from Port Vauban and about a ten-minute walk (700 m) from the SNCF station.',
-  },
-  faq3_q: {
-    fr: 'Alatere forMa est-il un organisme de formation certifié Qualiopi ?',
-    en: 'Is Alatere forMa a Qualiopi-certified training provider?',
-  },
-  faq3_a: {
-    fr: "Oui. L'organisme de formation est Alatere Web SAS, dont Alatere forMa est la marque : il est certifié Qualiopi et enregistré sous le numéro 93.06.07588.06. Les formations peuvent être financées par votre OPCO ou, pour les travailleurs non-salariés, par votre FAF (Fonds d'Assurance Formation).",
-    en: 'Yes. The training provider is Alatere Web SAS, of which Alatere forMa is the brand: it is Qualiopi-certified and registered under number 93.06.07588.06. Courses can be funded by your OPCO or, for self-employed workers, by your FAF (training insurance fund).',
-  },
-  faq4_q: {
-    fr: "Combien coûte la domiciliation d'entreprise à Antibes ?",
-    en: 'How much does business domiciliation in Antibes cost?',
-  },
-  faq4_a: {
-    fr: "La domiciliation commence à 25 € HT par mois (offre Dropbox, boîte aux lettres), 30 € HT par mois (offre Headquarters, adresse de siège social) et 50 € HT par mois (offre Forward, numérisation et réexpédition incluses), avec 50 € HT de frais de dossier réglés une seule fois à l'ouverture. L'adresse est agréée par la préfecture.",
-    en: 'Domiciliation starts at €25 excl. VAT per month (Dropbox plan, mailbox only), €30 excl. VAT per month (Headquarters plan, registered-office address) and €50 excl. VAT per month (Forward plan, scanning and forwarding included), with a €50 excl. VAT setup fee paid once when the file is opened. The address is prefecture-approved.',
-  },
-  faq5_q: { fr: 'Comment contacter Alatere Web ?', en: 'How do I contact Alatere Web?' },
-  faq5_a: {
-    fr: 'Par le formulaire de contact du site ou au 07 61 56 45 56. Nous répondons sous 48 heures.',
-    en: 'Through the website contact form or at +33 7 61 56 45 56. We reply within 48 hours.',
-  },
+  ...homeFaqTx,
 };
 
 export default function HomeGrommet() {

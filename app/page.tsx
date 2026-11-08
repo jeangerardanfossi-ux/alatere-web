@@ -6,7 +6,7 @@ import './grommet-home.css';
 export default function Home() {
   return (
     <>
-      <JsonLd data={[websiteLd, organizationLd, localBusinessLd, homeFaqLd]} />
+      <JsonLd data={[websiteLd, organizationLd, localBusinessLd, homeFaqLd('fr')]} />
       <HomeGrommet />
     </>
   );

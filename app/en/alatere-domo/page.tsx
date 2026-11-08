@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import DomoPage from '@/components/pages/DomoPage';
 import JsonLd from '@/components/JsonLd';
-import { domoLd, breadcrumbLd } from '@/lib/jsonld';
+import { domoLd, domoFaqLd, breadcrumbLd } from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../../grommet-home.css';
 import '../../grommet-domo.css';
@@ -25,6 +25,7 @@ export default function Page() {
       <JsonLd
         data={[
           domoLd,
+          domoFaqLd('en'),
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere doMo', path: `/en${FR}` },
