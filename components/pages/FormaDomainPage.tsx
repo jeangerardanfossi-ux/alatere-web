@@ -70,6 +70,10 @@ const TX: Dict = {
     fr: 'Devis sous 48 heures, démarrage sous 14 jours. Nous montons avec vous le dossier de financement OPCO.',
     en: 'Quote within 48 hours, start within 14 days. We prepare the OPCO funding file with you.',
   },
+  cta_more: {
+    fr: 'Comment fonctionne le financement OPCO et FAF',
+    en: 'How OPCO and FAF funding works',
+  },
   cta_b1: { fr: 'Demander un devis', en: 'Request a quote' },
   cta_b2: { fr: 'Voir le catalogue ↗', en: 'View the catalog ↗' },
 
@@ -299,6 +303,11 @@ function Body({ domain }: { domain: FormaDomain }) {
           <div>
             <h2>{t('cta_h')}</h2>
             <p>{t('cta_p')}</p>
+            <p className="f-cta__more">
+              <Link href="/blog/financer-formation-opco-faf">
+                {t('cta_more')} <span className="g-arrow">→</span>
+              </Link>
+            </p>
           </div>
           <div className="f-cta__btns">
             <Link href="/contact?pole=forma" className="g-btn g-btn--light g-btn--lg">

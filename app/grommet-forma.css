@@ -97,6 +97,9 @@
 .f-cta__in { max-width: 1240px; margin: 0 auto; padding: 56px 40px; display: flex; align-items: center; justify-content: space-between; gap: var(--m); flex-wrap: wrap; }
 .f-cta h2 { font-size: 34px; font-weight: 700; margin: 0 0 6px; color: #fff; }
 .f-cta p { margin: 0; color: rgba(255,255,255,.82); font-size: 16px; }
+.f-cta p.f-cta__more { margin-top: 10px; font-size: 15px; }
+.f-cta__more a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.f-cta__more a:hover { text-decoration: none; }
 .f-cta__btns { display: flex; gap: var(--s); flex-wrap: wrap; }
 
 /* Documents téléchargeables */

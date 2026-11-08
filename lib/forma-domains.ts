@@ -39,11 +39,11 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'webmarketing',
     icon: 'bar-chart-3',
     metaTitle: {
-      fr: 'Alatere forMa - Webmarketing : SEO, SEA & acquisition',
-      en: 'Alatere forMa - Web marketing: SEO, SEA & acquisition',
+      fr: "Formation webmarketing financée par l'OPCO | Alatere forMa",
+      en: 'Web marketing training funded by your OPCO | Alatere forMa',
     },
     metaDescription:
-      'Formations webmarketing à Antibes : SEO, SEA, AEO, social ads, analytics et e-commerce. Organisme certifié Qualiopi, financement OPCO.',
+      'Formations webmarketing à Antibes : SEO, SEA, social ads, analytics. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
     name: { fr: 'Webmarketing', en: 'Web marketing' },
     tag: { fr: 'Notre métier historique', en: 'Our core business' },
     lead: {
@@ -105,11 +105,11 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'intelligence-artificielle',
     icon: 'sparkles',
     metaTitle: {
-      fr: 'Alatere forMa - Intelligence artificielle pour les pros',
-      en: 'Alatere forMa - Artificial intelligence for professionals',
+      fr: 'Formation IA financée par votre OPCO | Alatere forMa',
+      en: 'AI training funded by your OPCO | Alatere forMa',
     },
     metaDescription:
-      'Formations intelligence artificielle à Antibes : IA générative, prompt engineering, automatisation, intégration métier. Certifié Qualiopi.',
+      'Formations intelligence artificielle à Antibes : IA générative, prompts, automatisation. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
     name: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
     tag: { fr: 'Sans prérequis technique', en: 'No technical prerequisite' },
     lead: {
@@ -158,11 +158,11 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'langues',
     icon: 'languages',
     metaTitle: {
-      fr: 'Alatere forMa - Langues professionnelles',
-      en: 'Alatere forMa - Professional languages',
+      fr: "Formations en langues financées par l'OPCO | Alatere forMa",
+      en: 'Language courses funded by your OPCO | Alatere forMa',
     },
     metaDescription:
-      'Formations en langues à Antibes : anglais, italien et espagnol professionnels, en individuel ou petit groupe. Certifié Qualiopi, CPF.',
+      'Anglais, italien et espagnol professionnels à Antibes, en individuel ou en groupe de 8. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
     name: { fr: 'Langues', en: 'Languages' },
     tag: { fr: 'Usage professionnel', en: 'For professional use' },
     lead: {
@@ -213,11 +213,11 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'communication-digitale',
     icon: 'megaphone',
     metaTitle: {
-      fr: 'Alatere forMa - Communication digitale',
-      en: 'Alatere forMa - Digital communication',
+      fr: "Communication digitale financée par l'OPCO | Alatere forMa",
+      en: 'Digital communication funded by your OPCO | Alatere forMa',
     },
     metaDescription:
-      'Formations communication digitale à Antibes : réseaux sociaux, brand content, stratégie éditoriale, création de contenu. Certifié Qualiopi.',
+      'Réseaux sociaux et contenu à Antibes : ligne éditoriale, visuels Canva, vidéo courte. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
     name: { fr: 'Communication digitale', en: 'Digital communication' },
     tag: { fr: 'Gagner en visibilité', en: 'Grow your visibility' },
     lead: {
@@ -267,11 +267,11 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'immobilier',
     icon: 'building-2',
     metaTitle: {
-      fr: 'Alatere forMa - Formations immobilier (loi ALUR)',
-      en: 'Alatere forMa - Real-estate training (ALUR law)',
+      fr: 'Formation loi ALUR financée par votre OPCO | Alatere forMa',
+      en: 'ALUR-law training funded by your OPCO | Alatere forMa',
     },
     metaDescription:
-      'Formations professionnelles immobilier à Antibes : formation continue loi ALUR, déontologie, marketing digital immobilier. Certifié Qualiopi.',
+      'Formation continue immobilier loi ALUR à Antibes : déontologie, marketing, relation client. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
     name: { fr: 'Immobilier', en: 'Real estate' },
     tag: { fr: 'Répondre à vos obligations', en: 'Meet your obligations' },
     lead: {

@@ -39,6 +39,12 @@ const wpRedirects = [
   { from: "/formation-professionnelle-sur-mesure", to: "/alatere-forma" },
   { from: "/formations-en-webmarketing-communication-digitale", to: "/alatere-forma/webmarketing" },
   { from: "/formations-en-webmarketing-documentation", to: "/alatere-forma/webmarketing" },
+  { from: "/formations-en-langues", to: "/alatere-forma/langues" },
+  { from: "/formations-en-communication-digitale", to: "/alatere-forma/communication-digitale" },
+  { from: "/formations-en-intelligence-artificielle", to: "/alatere-forma/intelligence-artificielle" },
+  { from: "/formations", to: "/alatere-forma" },
+  { from: "/nos-formations", to: "/alatere-forma" },
+  { from: "/catalogue-des-formations", to: "/alatere-forma" },
   { from: "/formations-en-immobilier", to: "/alatere-forma/immobilier" },
   { from: "/partenariat-ecoles-centres-et-organismes-de-formation", to: "/alatere-forma" },
   { from: "/formateurs-en-webmarketig-communication-digitale", to: "/alatere-forma/formateurs" },
@@ -62,9 +68,13 @@ const wpRedirects = [
   { from: "/la-cession-dun-fonds-de-commerce", to: "/alatere-forma/immobilier" },
   { from: "/la-gestion-des-revenus-locatifs-de-la-conclusion-du-bail-au-recouvrement-des-loyers-et-contentieux", to: "/alatere-forma/immobilier" },
   { from: "/maitriser-le-cadre-juridique-de-la-location-meublee-et-de-la-location-saisonniere", to: "/alatere-forma/immobilier" },
-  // Slugs avec ligatures typographiques (ﬁ / ﬀ)
-  { from: "/tracﬁn-la-lutte-contre-le-blanchiment-dargent-et-le-ﬁnancement-du-terrorisme-en-immobilier-lab-ft", to: "/alatere-forma/immobilier" },
-  { from: "/la-fiscalite-des-revenus-fonciers-lies-aux-biens-aﬀectes-a-lhabitation", to: "/alatere-forma/immobilier" },
+  // Slugs avec ligatures typographiques (ﬁ = U+FB01, ﬀ = U+FB00).
+  // Le `source` doit être écrit **percent-encodé** : le navigateur et les
+  // crawlers envoient ces caractères sous la forme %EF%AC%81 / %EF%AC%80, et
+  // Next.js compare le chemin brut. Avec la ligature littérale, la règle ne
+  // matchait jamais et l'URL tombait en 404.
+  { from: "/trac%EF%AC%81n-la-lutte-contre-le-blanchiment-dargent-et-le-%EF%AC%81nancement-du-terrorisme-en-immobilier-lab-ft", to: "/alatere-forma/immobilier" },
+  { from: "/la-fiscalite-des-revenus-fonciers-lies-aux-biens-a%EF%AC%80ectes-a-lhabitation", to: "/alatere-forma/immobilier" },
 ];
 
 const nextConfig: NextConfig = {
@@ -82,18 +92,38 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
 
   async redirects() {
-    const rules: { source: string; destination: string; permanent: boolean }[] = [];
+    // On force le code **301** au lieu du 308 renvoyé par `permanent: true`.
+    // Les deux disent « déménagement définitif » et Google les traite à
+    // l'identique, mais 301 est le seul que lisent sans ambiguïté tous les
+    // crawlers, outils d'audit SEO et clients HTTP anciens.
+    // `statusCode` et `permanent` sont mutuellement exclusifs.
+    const rules: { source: string; destination: string; statusCode: 301 }[] = [];
+    const to301 = (source: string, destination: string) => {
+      rules.push({ source, destination, statusCode: 301 });
+    };
+
     for (const r of wpRedirects) {
       // Les deux variantes (avec et sans « / » final) vont directement à la cible.
-      rules.push({ source: r.from, destination: r.to, permanent: true });
-      rules.push({ source: `${r.from}/`, destination: r.to, permanent: true });
+      to301(r.from, r.to);
+      to301(`${r.from}/`, r.to);
     }
+
     // Catégories WordPress → page forMa (wildcard, avec ou sans « / » final)
-    rules.push({ source: "/category/:slug*/", destination: "/alatere-forma", permanent: true });
-    rules.push({ source: "/category/:slug*", destination: "/alatere-forma", permanent: true });
+    to301("/category/:slug*/", "/alatere-forma");
+    to301("/category/:slug*", "/alatere-forma");
+
+    // Filet de sécurité SEO : toute ancienne URL de type « /formation(s)-… »
+    // non listée plus haut (variantes, slugs oubliés du sitemap WordPress)
+    // part sur le pôle forMa au lieu de renvoyer un 404. Un 404 laisse l'URL
+    // vivre dans l'index et concurrencer /alatere-forma ; un 301 lui transfère
+    // son référencement. Les règles explicites ci-dessus restent prioritaires
+    // car elles sont déclarées avant.
+    to301("/:slug(formations?-.*)/", "/alatere-forma");
+    to301("/:slug(formations?-.*)", "/alatere-forma");
+
     // Règle générique (doit rester la dernière) : « /page/ » → « /page »,
     // équivalent de la redirection par défaut de Next.js désactivée ci-dessus.
-    rules.push({ source: "/:path+/", destination: "/:path+", permanent: true });
+    to301("/:path+/", "/:path+");
     return rules;
   },
 };

@@ -50,9 +50,16 @@ async redirects() {
 }
 ```
 
-> `permanent: true` = 301. **✅ FAIT** : les redirections ci-dessous sont déjà
-> codées dans `next.config.ts` (elles s'activeront automatiquement au déploiement
-> Vercel). Testées en local : `/ancienne-url` → 308 vers la bonne page.
+> ⚠️ **Attention** : `permanent: true` ne renvoie **pas** un 301 mais un **308**.
+> Google traite les deux à l'identique, mais plusieurs outils d'audit SEO et les
+> vieux clients HTTP ne reconnaissent que le 301. On déclare donc
+> `statusCode: 301` (exclusif avec `permanent`) — voir le helper `to301()` dans
+> `next.config.ts`.
+>
+> **✅ FAIT** : les redirections ci-dessous sont codées dans `next.config.ts` et
+> actives en production. Vérifiées en local sur les 50 règles :
+> `/ancienne-url` et `/ancienne-url/` → **301** vers la bonne page, en un seul
+> saut, sans chaîne ni boucle.
 
 ### Table de correspondance réalisée (sitemap WordPress du 18/06/2026)
 
@@ -71,9 +78,24 @@ async redirects() {
 | `/financement-formation-professionnelle` · `/diagnostic-financements-formation` · `/calcul-buget-de-formation-entreprise-opco` | `/blog/financer-formation-opco-faf` |
 | **~30 pages de formations individuelles** (Notion, Canva, Photoshop, SEO, Google/Facebook Ads, web-to-store, immobilier : LAB-FT, location meublée, fiscalité foncière, copropriété, démembrement, cession de fonds, gestion locative…), `/nos-dernieres-formations`, `/planning-…`, `/partenariat-…`, `/formateurs-…` | `/alatere-forma` |
 | `/category/immobilier` · `/category/langues` · `/category/webmarketing` · `/category/outils-numeriques` | `/alatere-forma` (wildcard `/category/:slug*`) |
+| `/formations-en-langues` | `/alatere-forma/langues` |
+| `/formations-en-communication-digitale` | `/alatere-forma/communication-digitale` |
+| `/formations-en-intelligence-artificielle` | `/alatere-forma/intelligence-artificielle` |
+| `/formations` · `/nos-formations` · `/catalogue-des-formations` | `/alatere-forma` |
+| **Filet de sécurité** : toute autre `/formation-…` ou `/formations-…` | `/alatere-forma` (regex `/:slug(formations?-.*)`) |
 
 > Détail des cours individuels regroupé sur `/alatere-forma` car le détail de
 > chaque formation vit désormais sur le **catalogue externe** (catalogueformpro.com).
+
+#### Deux pièges rencontrés (à ne pas réintroduire)
+
+1. **Slugs à ligatures typographiques** (`ﬁ` = U+FB01, `ﬀ` = U+FB00, présents
+   dans deux slugs immobilier du sitemap WordPress) : le `source` doit être
+   écrit **percent-encodé** (`%EF%AC%81`, `%EF%AC%80`). Avec la ligature
+   littérale, Next.js ne matche jamais et l'URL tombe en **404**.
+2. **Un 404 n'est pas neutre pour le SEO** : l'ancienne URL reste dans l'index
+   et continue de concurrencer la page de référence. D'où le filet de sécurité
+   regex sur `/formation(s)-…` : mieux vaut un 301 vers le pôle forMa qu'un 404.
 
 ## 3. www vs sans-www (une seule version canonique)
 
