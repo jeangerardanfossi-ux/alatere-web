@@ -14,8 +14,23 @@ export type FormaReferent = {
   linkedin: string;
 };
 
+/** Programme lié à sa fiche du catalogue (durée affichée en badge). */
+export type FormaProgram = Bi & { url?: string; hours?: string };
+
+/** Groupe thématique de programmes (pages domaines riches). */
+export type FormaProgramGroup = { title: Bi; intro?: Bi; items: FormaProgram[] };
+
+/** Bloc éditorial optionnel (ex. obligation réglementaire). */
+export type FormaExplainer = { tag: Bi; title: Bi; paras: Bi[]; bullets?: Bi[]; after?: Bi[] };
+
 export type FormaDomain = {
   slug: string;
+  /** H1 si différent du nom court (fil d'Ariane). */
+  h1?: Bi;
+  /** Bloc éditorial affiché après le hero. */
+  explainer?: FormaExplainer;
+  /** Si présent : programmes par thème, à la place de la liste simple. */
+  programGroups?: FormaProgramGroup[];
   /** Nom d'icône (composant <Icon>). */
   icon: string;
   metaTitle: Bi;
@@ -33,6 +48,8 @@ export type FormaDomain = {
   /** Si présent : bloc « formateur référent » nominatif (sinon bloc équipe générique). */
   referent?: FormaReferent;
 };
+
+const CAT = 'https://alatere-web.catalogueformpro.com';
 
 export const FORMA_DOMAINS: FormaDomain[] = [
   {
@@ -267,50 +284,161 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'immobilier',
     icon: 'building-2',
     metaTitle: {
-      fr: 'Formation loi ALUR financée par votre OPCO | Alatere forMa',
-      en: 'ALUR-law training funded by your OPCO | Alatere forMa',
+      fr: 'Formation loi ALUR et droit immobilier à Antibes | Alatere forMa',
+      en: 'ALUR-law and real-estate law training in Antibes | Alatere forMa',
     },
     metaDescription:
-      'Formation continue immobilier loi ALUR à Antibes : déontologie, marketing, relation client. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
+      '35 formations pour agents immobiliers : formation continue loi ALUR, droit immobilier, contentieux, marketing digital. Qualiopi, finançables OPCO, à Antibes.',
     name: { fr: 'Immobilier', en: 'Real estate' },
-    tag: { fr: 'Répondre à vos obligations', en: 'Meet your obligations' },
+    h1: {
+      fr: "Formations pour les professionnels de l'immobilier à Antibes",
+      en: 'Training for real-estate professionals in Antibes',
+    },
+    tag: { fr: 'Formation continue loi ALUR', en: 'ALUR-law continuing education' },
     lead: {
-      fr: "Formations pour les professionnels de l'immobilier : elles répondent à l'obligation de formation continue (loi ALUR) et couvrent aussi le marketing digital et la relation client.",
-      en: 'Courses for real-estate professionals: they meet the continuing-education requirement (ALUR law) and also cover digital marketing and client relations.',
+      fr: "Agents immobiliers, négociateurs, gestionnaires locatifs et syndics : 35 formations pour valider votre formation continue obligatoire, sécuriser vos actes et développer votre agence. Chaque programme est adapté à votre activité et à votre niveau, dans nos locaux ou directement dans votre agence.",
+      en: 'Estate agents, negotiators, letting managers and co-ownership managers: 35 courses to meet your mandatory continuing education, secure your transactions and grow your agency. Each program is adapted to your business and level, at our premises or in your agency.',
     },
     facts: [
       { fr: '35 programmes au catalogue', en: '35 programs in the catalog' },
-      { fr: "Conforme à l'obligation loi ALUR", en: 'Compliant with the ALUR law requirement' },
-      { fr: 'Présentiel à Antibes ou distanciel', en: 'In person in Antibes or remote' },
-      { fr: 'Finançable OPCO', en: 'OPCO funding' },
-      { fr: 'Attestation de formation continue', en: 'Continuing-education certificate' },
+      { fr: '14 h par an exigées pour la carte professionnelle', en: '14 h a year required for the professional card' },
+      { fr: 'Présentiel à Antibes, en intra ou en format mixte', en: 'In person in Antibes, in-house or blended' },
+      { fr: 'Finançable OPCO ou FAF', en: 'OPCO or FAF funding' },
+      { fr: 'Attestation de formation continue remise', en: 'Continuing-education certificate provided' },
     ],
+    explainer: {
+      tag: { fr: 'Obligation légale', en: 'Legal requirement' },
+      title: {
+        fr: 'La formation continue obligatoire des agents immobiliers',
+        en: 'Mandatory continuing education for estate agents',
+      },
+      paras: [
+        {
+          fr: 'Depuis la loi ALUR et le décret n° 2016-173 du 18 février 2016, le renouvellement de la carte professionnelle (transaction, gestion, syndic) est conditionné à une formation continue :',
+          en: 'Since the ALUR law and decree no. 2016-173 of 18 February 2016, renewing the professional card (transactions, property management, co-ownership management) requires continuing education:',
+        },
+      ],
+      bullets: [
+        {
+          fr: '14 heures par an, ou 42 heures sur trois années consécutives d\'exercice ;',
+          en: '14 hours a year, or 42 hours over three consecutive years of practice;',
+        },
+        {
+          fr: "dont, sur ces trois ans, au moins 2 heures de déontologie et au moins 2 heures sur la non-discrimination dans l'accès au logement (décret n° 2020-1259 du 14 octobre 2020) ;",
+          en: 'including, over those three years, at least 2 hours of professional ethics and at least 2 hours on non-discrimination in access to housing (decree no. 2020-1259 of 14 October 2020);',
+        },
+        {
+          fr: "pour les titulaires de la carte, mais aussi pour les personnes qu'ils habilitent : négociateurs salariés et agents commerciaux.",
+          en: 'for card holders, and also for the people they authorize: salaried negotiators and commercial agents.',
+        },
+      ],
+      after: [
+        {
+          fr: 'À l\'issue de chaque formation, nous remettons une attestation précisant les heures suivies et les thèmes traités, à joindre à votre demande de renouvellement auprès de la CCI.',
+          en: 'After each course we issue a certificate stating the hours and topics covered, to attach to your renewal application with the CCI.',
+        },
+        {
+          fr: 'Notre module Déontologie et non-discrimination (4 h) couvre en une demi-journée les deux thèmes obligatoires. Complété par un programme juridique de 7 h ou de 14 h, il vous permet de boucler vos heures de l\'année.',
+          en: 'Our Ethics and non-discrimination module (4 h) covers both mandatory topics in half a day. Combined with a 7 h or 14 h legal course, it completes your hours for the year.',
+        },
+      ],
+    },
     skills: [
-      { fr: 'Actualiser ses connaissances juridiques et déontologiques', en: 'Update your legal and ethical knowledge' },
-      { fr: 'Maîtriser le cadre légal de la transaction', en: 'Master the legal framework of transactions' },
-      { fr: 'Déployer un marketing digital immobilier efficace', en: 'Deploy effective real-estate digital marketing' },
-      { fr: 'Utiliser les outils numériques (visite virtuelle, CRM)', en: 'Use digital tools (virtual tours, CRM)' },
-      { fr: 'Renforcer sa relation client et sa négociation', en: 'Strengthen client relations and negotiation' },
+      { fr: 'Valider ses heures de formation continue pour le renouvellement de la carte', en: 'Complete your continuing-education hours for card renewal' },
+      { fr: 'Actualiser ses connaissances en droit immobilier et en déontologie', en: 'Update your knowledge of real-estate law and ethics' },
+      { fr: 'Sécuriser ses mandats, ventes et baux', en: 'Secure your mandates, sales and leases' },
+      { fr: 'Prévenir et gérer le contentieux locatif et de copropriété', en: 'Prevent and handle lettings and co-ownership disputes' },
+      { fr: 'Respecter ses obligations LAB/FT (Tracfin)', en: 'Meet your AML/CFT (Tracfin) obligations' },
+      { fr: "Développer son agence avec le marketing digital et l'IA", en: 'Grow your agency with digital marketing and AI' },
     ],
-    programs: [
-      { fr: 'Formation continue loi ALUR (14 h)', en: 'ALUR-law continuing education (14 h)' },
-      { fr: "Déontologie & cadre légal de l'agent immobilier", en: 'Ethics & legal framework for estate agents' },
-      { fr: "Marketing digital pour l'immobilier", en: 'Digital marketing for real estate' },
+    programs: [],
+    programGroups: [
+      {
+        title: { fr: 'Réglementation et déontologie', en: 'Regulation and professional ethics' },
+        items: [
+          { fr: "Les fondamentaux réglementaires de la profession d'agent immobilier", en: 'Regulatory fundamentals of the estate-agent profession', hours: '14 h', url: `${CAT}/8/immobilier/1512452/les-fondamentaux-reglementaires-de-la-profession-dagent-immobilier` },
+          { fr: 'Déontologie et non-discrimination', en: 'Professional ethics and non-discrimination', hours: '4 h', url: `${CAT}/8/immobilier/1604576/formation-de-deontologie-et-non-discrimination` },
+          { fr: 'Lutte contre le blanchiment et le financement du terrorisme (LAB/FT)', en: 'Anti-money-laundering and counter-terrorist financing (AML/CFT)', hours: '4 h', url: `${CAT}/8/immobilier/2333592/lutte-contre-le-blanchiment-dargent-et-le-financement-du-terrorisme-labft-immobilier` },
+          { fr: 'Tracfin : vos obligations de vigilance LAB/FT en immobilier', en: 'Tracfin: your AML/CFT due-diligence duties in real estate', hours: '7 h', url: `${CAT}/8/immobilier/1522104/tracn-la-lutte-contre-le-blanchiment-dargent-et-le-nancement-du-terrorisme-en-immobilier-lab-ft` },
+        ],
+      },
+      {
+        title: { fr: 'Droit immobilier et transaction', en: 'Real-estate law and transactions' },
+        items: [
+          { fr: "Droit des contrats appliqué à l'immobilier", en: 'Contract law applied to real estate', hours: '14 h', url: `${CAT}/8/immobilier/1513918/droit-des-contrats-en-droit-immobilier-maitriser-les-fondamentaux-appliques-a-limmobilier` },
+          { fr: "Les essentiels des contrats de vente, de location et d'urbanisme", en: 'Essentials of sale, lease and planning contracts', hours: '14 h', url: `${CAT}/8/immobilier/1512485/les-essentiels-des-contrats-de-vente-de-location-et-durbanisme` },
+          { fr: "L'essentiel juridique de la vente immobilière", en: 'Legal essentials of property sales', hours: '7 h', url: `${CAT}/8/immobilier/1589997/lessentiel-juridique-de-la-vente-immobiliere` },
+          { fr: "Vente en état futur d'achèvement (VEFA)", en: 'Off-plan sales (VEFA)', hours: '7 h', url: `${CAT}/8/immobilier/1590429/maitriser-les-fondamentaux-de-la-vente-en-etat-futur-dachevement-vefa` },
+          { fr: 'La vente en viager', en: 'Life-annuity sales (viager)', hours: '7 h', url: `${CAT}/8/immobilier/1512495/la-vente-en-viager` },
+          { fr: 'Le démembrement de propriété', en: 'Split ownership (usufruct and bare ownership)', hours: '7 h', url: `${CAT}/8/immobilier/1506382/demembrement-de-la-propriete` },
+          { fr: 'Transmission de patrimoine immobilier et droits de succession', en: 'Passing on real-estate assets and inheritance tax', hours: '7 h', url: `${CAT}/8/immobilier/1590149/connaitre-les-fondamentaux-de-la-transmission-de-patrimoine-immobilier-a-titre-gratuit-et-des-droits` },
+          { fr: 'Les diagnostics immobiliers', en: 'Property surveys and diagnostics', hours: '7 h', url: `${CAT}/8/immobilier/1451149/les-diagnostics-immobiliers` },
+          { fr: "Les documents d'urbanisme à l'échelle communale", en: 'Local planning documents', hours: '7 h', url: `${CAT}/8/immobilier/1512435/lessentiel-des-documents-durbanisme-a-lechelle-communale` },
+        ],
+      },
+      {
+        title: { fr: 'Gestion locative, copropriété et contentieux', en: 'Lettings, co-ownership and disputes' },
+        intro: { fr: "Sur la Côte d'Azur, la location saisonnière et la copropriété concentrent une grande partie des litiges : ces formations donnent les réflexes pour prévenir un impayé, conduire un recouvrement et gérer un désaccord en assemblée générale.", en: "On the Côte d'Azur, holiday lets and co-ownership account for many disputes: these courses give you the reflexes to prevent unpaid rent, run a recovery procedure and handle disagreements at general meetings." },
+        items: [
+          { fr: 'Gestion des revenus locatifs : du bail au recouvrement et au contentieux', en: 'Rental income: from the lease to rent recovery and disputes', hours: '7 h', url: `${CAT}/8/immobilier/1453141/la-gestion-des-revenus-locatifs-de-la-conclusion-du-bail-au-recouvrement-des-loyers-et-contentieux` },
+          { fr: 'Copropriété : charges, travaux et contentieux', en: 'Co-ownership: service charges, works and disputes', hours: '7 h', url: `${CAT}/8/immobilier/1506372/copropriete-charges-travaux-et-contentieux` },
+          { fr: 'Location meublée et location saisonnière : le cadre juridique', en: 'Furnished and holiday lets: the legal framework', hours: '7 h', url: `${CAT}/8/immobilier/1512491/maitriser-le-cadre-juridique-de-la-location-meublee-et-de-la-location-saisonniere` },
+        ],
+      },
+      {
+        title: { fr: 'Marketing digital et intelligence artificielle', en: 'Digital marketing and artificial intelligence' },
+        items: [
+          { fr: "Google Ads pour l'immobilier - niveau débutant", en: 'Google Ads for real estate - beginner', hours: '7 h', url: `${CAT}/0/webmarketing/1611369/promouvoir-une-agence-immobiliere-sur-google-avec-google-ads-niveau-debutant` },
+          { fr: "Google Ads pour l'immobilier - niveau avancé", en: 'Google Ads for real estate - advanced', hours: '7 h', url: `${CAT}/0/webmarketing/1645440/promouvoir-une-agence-immobiliere-sur-google-avec-google-ads-niveau-avance` },
+          { fr: 'Attirer de nouveaux clients avec Google Ads - parcours complet', en: 'Win new clients with Google Ads - full course', hours: '21 h', url: `${CAT}/0/webmarketing/3213846/attirer-de-nouveaux-clients-dans-limmobilier-avec-google-ads` },
+          { fr: "Facebook et Instagram Ads pour l'activité immobilière", en: 'Facebook and Instagram Ads for real estate', hours: '7 h', url: `${CAT}/0/webmarketing/1645421/promouvoir-son-activite-immobiliere-sur-facebook-et-instagram-avec-facebook-ads-et-meta-business-man` },
+          { fr: "Référencement SEO pour l'immobilier - débutant", en: 'SEO for real estate - beginner', hours: '7 h', url: `${CAT}/0/webmarketing/1611197/les-principes-de-bases-du-referencement-et-seo-pour-le-secteur-de-limmobilier-niveau-debutant` },
+          { fr: 'SEO local et fiche Google Business Profile pour une agence', en: 'Local SEO and Google Business Profile for an agency', hours: '7 h', url: `${CAT}/8/immobilier/1974769/optimisation-du-seo-local-et-google-my-business-pour-le-secteur-immobilier` },
+          { fr: 'Réseaux sociaux pour le secteur immobilier', en: 'Social media for real estate', hours: '7 h', url: `${CAT}/8/immobilier/1974699/reseaux-sociaux-pour-le-secteur-immobilier` },
+          { fr: 'Photographie immobilière au smartphone', en: 'Real-estate photography with a smartphone', hours: '7 h', url: `${CAT}/6/outils-numeriques/1746708/reussir-ses-photographies-immobilieres-avec-son-smartphone` },
+          { fr: 'Photos immobilières au smartphone et diffusion sur les réseaux', en: 'Smartphone property photos and social-media publishing', hours: '14 h', url: `${CAT}/0/webmarketing/1746753/reussir-ses-photographies-immobilier-avec-son-smartphone-et-les-diffuser-sur-les-reseaux-sociaux` },
+          { fr: 'Canva : créer les visuels de votre agence', en: "Canva: create your agency's visuals", hours: '7 h', url: `${CAT}/8/immobilier/1953198/canva-et-immobilier-creation-de-visuels-attractifs-pour-votre-agence` },
+          { fr: "Booster vos annonces et votre trafic web avec l'IA", en: 'Boost your listings and web traffic with AI', hours: '10 h', url: `${CAT}/8/immobilier/1988812/revolutionnez-votre-marketing-immobilier-boostez-annonces-et-trafic-web-avec-lia` },
+          { fr: "Déployer l'intelligence artificielle dans votre agence", en: 'Deploying AI in your agency', hours: '7 h', url: `${CAT}/6/outils-numeriques/1629708/deployer-lintelligence-artificielle-au-sein-de-son-agence-immobiliere` },
+          { fr: "L'intelligence artificielle au cœur de votre agence immobilière", en: 'AI at the heart of your real-estate agency', url: `${CAT}/8/immobilier/1645657/deployer-lintelligence-artificielle-au-coeur-de-votre-agence-immobiliere` },
+          { fr: 'Claude AI pour la gestion immobilière, la relation client et le syndic', en: 'Claude AI for property management, client relations and co-ownership management', hours: '10 h', url: `${CAT}/1/management/3079755/maitriser-claude-ai-pour-optimiser-la-gestion-immobiliere-la-relation-client-et-les-taches-de-syndic` },
+          { fr: 'Organiser votre agence avec Notion', en: 'Organizing your agency with Notion', hours: '25 h', url: `${CAT}/8/immobilier/2287297/optimisez-la-gestion-de-votre-agence-immobiliere-avec-notion` },
+        ],
+      },
+      {
+        title: { fr: 'Langues et relation client', en: 'Languages and client relations' },
+        items: [
+          { fr: 'Anglais immobilier pour une clientèle internationale', en: 'Real-estate English for international clients', hours: '32 h', url: `${CAT}/8/immobilier/2002916/anglais-immobilier-maitrisez-la-langue-pour-reussir-avec-une-clientele-internationale` },
+          { fr: "Anglais professionnel pour l'immobilier", en: 'Professional English for real estate', hours: '7 h', url: `${CAT}/2/langues/1645428/anglais-professionnel-pour-limmobilier` },
+          { fr: "Italien professionnel pour l'immobilier", en: 'Professional Italian for real estate', hours: '7 h', url: `${CAT}/8/immobilier/1977428/italien-professionnel-pour-limmobilier` },
+          { fr: 'Mieux gérer la communication et les conflits avec vos clients', en: 'Better handling of communication and conflict with clients', hours: '7 h', url: `${CAT}/8/immobilier/1820759/mieux-gerer-la-communication-et-les-conflits-pour-les-agents-immobiliers-par-le-bien-etre-et-lhypnos` },
+        ],
+      },
     ],
     audiences: [
-      { fr: 'Agents et négociateurs immobiliers', en: 'Estate agents and negotiators' },
-      { fr: 'Mandataires et conseillers', en: 'Sales agents and advisors' },
-      { fr: "Responsables d'agence", en: 'Agency managers' },
+      { fr: 'Agents immobiliers et responsables d\'agence', en: 'Estate agents and agency managers' },
+      { fr: 'Négociateurs salariés et agents commerciaux', en: 'Salaried negotiators and commercial agents' },
+      { fr: 'Gestionnaires locatifs et syndics de copropriété', en: 'Letting managers and co-ownership managers' },
+      { fr: 'Assistants et collaborateurs d\'agence', en: 'Agency assistants and staff' },
     ],
     prereqs: [
       { fr: "Exercer une activité dans l'immobilier", en: 'Working in the real-estate sector' },
       { fr: 'Aucun prérequis technique', en: 'No technical prerequisite' },
     ],
     outcomes: [
-      { fr: 'Valider son obligation de formation ALUR', en: 'Validate your ALUR training obligation' },
-      { fr: 'Sécuriser ses pratiques professionnelles', en: 'Make your professional practices more secure' },
+      { fr: 'Renouveler sa carte professionnelle sereinement', en: 'Renew your professional card with peace of mind' },
+      { fr: 'Sécuriser ses pratiques et ses dossiers', en: 'Make your practices and files more secure' },
       { fr: 'Moderniser son approche commerciale', en: 'Modernize your commercial approach' },
     ],
+    referent: {
+      initials: 'HM',
+      name: 'Hélène Michailou',
+      detail: {
+        fr: 'Juriste - formatrice en droit immobilier et déontologie',
+        en: 'Lawyer - trainer in real-estate law and professional ethics',
+      },
+      linkedin: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-michailou-74b1a81/',
+    },
   },
 ];
 
@@ -453,34 +581,28 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
   ],
   immobilier: [
     {
-      q: {
-        fr: "Vos formations répondent-elles à l'obligation de formation loi ALUR ?",
-        en: 'Do your courses meet the ALUR-law training requirement?',
-      },
-      a: {
-        fr: "Oui. Nos formations immobilier permettent de satisfaire à votre obligation de formation continue (loi ALUR) et donnent lieu à une attestation de formation continue.",
-        en: 'Yes. Our real-estate courses help you meet your continuing-education requirement (ALUR law) and lead to a continuing-education certificate.',
-      },
+      q: { fr: "Combien d'heures de formation un agent immobilier doit-il suivre ?", en: 'How many hours of training must an estate agent complete?' },
+      a: { fr: "14 heures par an ou 42 heures sur trois années consécutives d'exercice, dont au moins 2 heures de déontologie et 2 heures sur la non-discrimination dans l'accès au logement sur la période (décret n° 2016-173 modifié).", en: '14 hours a year or 42 hours over three consecutive years of practice, including at least 2 hours of professional ethics and 2 hours on non-discrimination in access to housing over the period (amended decree no. 2016-173).' },
     },
     {
-      q: {
-        fr: "À qui s'adressent ces formations immobilier ?",
-        en: 'Who are these real-estate courses for?',
-      },
-      a: {
-        fr: "Aux agents et négociateurs immobiliers, mandataires, conseillers et responsables d'agence. Le seul prérequis est d'exercer une activité dans l'immobilier ; aucun prérequis technique n'est demandé.",
-        en: 'Estate agents and negotiators, sales agents, advisors and agency managers. The only prerequisite is working in the real-estate sector; no technical prerequisite is required.',
-      },
+      q: { fr: "Qui est concerné par l'obligation de formation continue ?", en: 'Who is subject to the continuing-education requirement?' },
+      a: { fr: "Les titulaires de la carte professionnelle (transaction, gestion immobilière, syndic) et les personnes qu'ils habilitent à négocier pour leur compte : négociateurs salariés et agents commerciaux.", en: 'Holders of the professional card (transactions, property management, co-ownership management) and the people they authorize to negotiate on their behalf: salaried negotiators and commercial agents.' },
     },
     {
-      q: {
-        fr: 'Les formations sont-elles finançables et où ont-elles lieu ?',
-        en: 'Can the courses be funded and where do they take place?',
-      },
-      a: {
-        fr: 'Elles sont finançables par votre OPCO, en présentiel à Antibes ou en distanciel. Organisme certifié Qualiopi sous le n° 93.06.07588.06.',
-        en: 'They can be funded by your OPCO, in person in Antibes or remotely. Qualiopi-certified provider under no. 93.06.07588.06.',
-      },
+      q: { fr: 'Vos formations sont-elles prises en compte pour le renouvellement de ma carte ?', en: 'Do your courses count towards renewing my card?' },
+      a: { fr: "Nos programmes portent sur l'activité des professionnels de l'immobilier. Chaque participant reçoit une attestation mentionnant la durée et les thèmes traités, à joindre au dossier de renouvellement déposé auprès de la CCI.", en: 'Our programs cover the work of real-estate professionals. Each participant receives a certificate stating the duration and topics covered, to attach to the renewal application filed with the CCI.' },
+    },
+    {
+      q: { fr: 'Comment faire financer ma formation immobilier ?', en: 'How can I get my real-estate training funded?' },
+      a: { fr: "Pour un salarié, par l'OPCO de l'agence ; pour un indépendant ou un agent commercial, par le fonds d'assurance formation dont il dépend. Alatere forMa (Alatere Web SAS) est certifié Qualiopi sous le n° 93.06.07588.06, condition de cette prise en charge, et nous préparons la demande avec vous.", en: "For employees, through the agency's OPCO; for freelancers and commercial agents, through their training insurance fund (FAF). Alatere forMa (Alatere Web SAS) is Qualiopi-certified under no. 93.06.07588.06, a condition for this funding, and we prepare the application with you." },
+    },
+    {
+      q: { fr: 'Pouvez-vous former toute mon équipe dans mon agence ?', en: 'Can you train my whole team at my agency?' },
+      a: { fr: 'Oui. En intra, nous adaptons le programme, les exemples et le calendrier à votre agence, sur un ou plusieurs thèmes. Les sessions inter-entreprises ont lieu dans nos locaux au 9 boulevard Albert 1er à Antibes, et plusieurs programmes existent en format mixte.', en: 'Yes. In-house, we adapt the program, examples and schedule to your agency, on one or several topics. Inter-company sessions take place at our premises, 9 boulevard Albert 1er in Antibes, and several programs are available in blended format.' },
+    },
+    {
+      q: { fr: 'Proposez-vous des formations en droit immobilier et en contentieux ?', en: 'Do you offer training in real-estate law and disputes?' },
+      a: { fr: "Oui : droit des contrats, vente, VEFA, viager, démembrement, succession, ainsi que le contentieux locatif et de copropriété. Ces programmes, animés par notre formatrice juriste, s'adressent aux agents, gestionnaires et syndics qui veulent sécuriser leurs dossiers.", en: 'Yes: contract law, sales, off-plan sales, life annuities, split ownership, inheritance, as well as lettings and co-ownership disputes. These programs, taught by our lawyer trainer, are for agents, managers and co-ownership managers who want to secure their files.' },
     },
   ],
 };

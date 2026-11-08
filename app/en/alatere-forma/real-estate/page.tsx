@@ -26,7 +26,7 @@ export default function Page() {
       <JsonLd
         data={[
           courseLd({
-            name: D.name.en,
+            name: D.h1?.en ?? D.name.en,
             description: DESC_EN,
             path: enPath(FR),
             teaches: D.skills.map((s) => s.en),
@@ -36,7 +36,7 @@ export default function Page() {
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere forMa', path: '/en/alatere-forma' },
-            { name: D.name.en, path: enPath(FR) },
+            { name: D.h1?.en ?? D.name.en, path: enPath(FR) },
           ]),
         ]}
       />

@@ -115,7 +115,7 @@ function Body({ domain }: { domain: FormaDomain }) {
               <span className="g-tag g-tag--gold">{L(domain.tag)}</span>
             </span>
             <h1 className="g-h1" style={{ marginTop: 10 }}>
-              {L(domain.name)}
+              {L(domain.h1 ?? domain.name)}
             </h1>
             <p className="g-lead">{L(domain.lead)}</p>
             <div className="f-hero__cta">
@@ -145,6 +145,31 @@ function Body({ domain }: { domain: FormaDomain }) {
           </aside>
         </section>
 
+        {/* BLOC ÉDITORIAL (ex. obligation réglementaire) */}
+        {domain.explainer && (
+          <section className="f-section--alt">
+            <div className="f-inner fd-explainer">
+              <span className="g-label">
+                <span className="g-tag g-tag--gold">{L(domain.explainer.tag)}</span>
+              </span>
+              <h2 className="g-h2">{L(domain.explainer.title)}</h2>
+              {domain.explainer.paras.map((p) => (
+                <p key={p.fr}>{L(p)}</p>
+              ))}
+              {domain.explainer.bullets && (
+                <ul>
+                  {domain.explainer.bullets.map((b) => (
+                    <li key={b.fr}>{L(b)}</li>
+                  ))}
+                </ul>
+              )}
+              {domain.explainer.after?.map((p) => (
+                <p key={p.fr}>{L(p)}</p>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* COMPÉTENCES / PROGRAMMES */}
         <section className="f-section">
           <div className="fd-split">
@@ -168,6 +193,31 @@ function Body({ domain }: { domain: FormaDomain }) {
               </span>
               <h2>{t('prog_h')}</h2>
               <p>{t('prog_p')}</p>
+              {domain.programGroups ? (
+                domain.programGroups.map((g) => (
+                  <div className="fd-pgroup" key={g.title.fr}>
+                    <h3>{L(g.title)}</h3>
+                    {g.intro && <p>{L(g.intro)}</p>}
+                    <ul className="fd-progs">
+                      {g.items.map((p) => (
+                        <li key={p.fr}>
+                          <a
+                            className="fd-prog"
+                            href={p.url ?? CATALOG}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span>{L(p)}</span>
+                            {p.hours && <em className="fd-prog__h">{p.hours}</em>}
+                            <Icon name="external-link" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))
+              ) : (
+              <>
               <ul className="fd-progs">
                 {domain.programs.map((p) => (
                   <a
@@ -183,6 +233,8 @@ function Body({ domain }: { domain: FormaDomain }) {
                 ))}
               </ul>
               <p className="fd-progs__note">{t('prog_note')}</p>
+              </>
+              )}
             </div>
           </div>
         </section>
