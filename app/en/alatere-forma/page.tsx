@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import FormaPage from '@/components/pages/FormaPage';
 import JsonLd from '@/components/JsonLd';
-import { educationalOrganizationLd, formaFaqLd, breadcrumbLd } from '@/lib/jsonld';
+import { educationalOrganizationLd, coursesLd, formaFaqLd, breadcrumbLd } from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../../grommet-home.css';
 import '../../grommet-forma.css';
@@ -25,6 +25,7 @@ export default function Page() {
       <JsonLd
         data={[
           educationalOrganizationLd,
+          ...coursesLd('en'),
           formaFaqLd('en'),
           breadcrumbLd([
             { name: 'Home', path: '/en' },

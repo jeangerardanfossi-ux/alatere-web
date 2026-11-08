@@ -8,6 +8,8 @@ import {
   cowoFaqTx,
   type FaqDict,
 } from './faq';
+import { FORMA_DOMAINS } from './forma-domains';
+import { enPath } from './i18n';
 
 const SITE_URL = 'https://www.alatere-web.com';
 
@@ -204,27 +206,54 @@ export const educationalOrganizationLd = {
   sameAs: [company.mapsForma, company.facebook, company.linkedin],
 };
 
-/** Intitulés qualifiés « formation » : ce sont des noms de `Course`, pas des
- *  domaines d'activité - ils doivent lever l'ambiguïté avec le pôle agence. */
-const domaines = [
-  'Formation webmarketing',
-  'Formation IA (intelligence artificielle)',
-  'Anglais professionnel et langues',
-  'Formation communication digitale',
-  'Formation immobilier',
-];
-
-export const coursesLd = domaines.map((d) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: d,
-  description: `${d} : formation professionnelle dispensée à Antibes ou à distance par Alatere Web SAS (marque Alatere forMa), organisme de formation certifié Qualiopi.`,
-  provider: {
-    '@type': 'EducationalOrganization',
-    name: 'Alatere Web SAS',
-    url: `${SITE_URL}/alatere-forma`,
+/**
+ * Intitulés qualifiés « formation » : ce sont des noms de `Course`, pas des
+ * domaines d'activité - ils doivent lever l'ambiguïté avec le pôle agence.
+ * Clés = slugs de FORMA_DOMAINS, pour que noms, ordre et URL restent en phase.
+ */
+const COURSE_NAMES: Record<string, { fr: string; en: string }> = {
+  webmarketing: { fr: 'Formation webmarketing', en: 'Web marketing training' },
+  'intelligence-artificielle': {
+    fr: 'Formation IA (intelligence artificielle)',
+    en: 'AI (artificial intelligence) training',
   },
-}));
+  langues: {
+    fr: 'Anglais professionnel et langues',
+    en: 'Business English and languages',
+  },
+  'communication-digitale': {
+    fr: 'Formation communication digitale',
+    en: 'Digital communication training',
+  },
+  immobilier: { fr: 'Formation immobilier', en: 'Real-estate training' },
+};
+
+/**
+ * Catalogue `Course` de la page forMa, dans la langue de la page. Chaque cours
+ * pointe vers sa sous-page « domaine », au slug localisé (`enPath`).
+ */
+export function coursesLd(lang: Lang = 'fr') {
+  return FORMA_DOMAINS.map((d) => {
+    const frPath = `/alatere-forma/${d.slug}`;
+    const name = COURSE_NAMES[d.slug]?.[lang] ?? d.name[lang];
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name,
+      description:
+        lang === 'en'
+          ? `${name}: professional training delivered in Antibes or remotely by Alatere Web SAS (Alatere forMa brand), a Qualiopi-certified training provider.`
+          : `${name} : formation professionnelle dispensée à Antibes ou à distance par Alatere Web SAS (marque Alatere forMa), organisme de formation certifié Qualiopi.`,
+      url: `${SITE_URL}${lang === 'en' ? enPath(frPath) : frPath}`,
+      inLanguage: LANG_TAG[lang],
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: 'Alatere Web SAS',
+        url: `${langBase(lang)}/alatere-forma`,
+      },
+    };
+  });
+}
 
 /** Course - sous-page « domaine » d'Alatere forMa (enrichi pour l'AI SEO). */
 export function courseLd(opts: {

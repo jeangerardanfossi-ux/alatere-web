@@ -26,7 +26,7 @@ export default function Page() {
       <JsonLd
         data={[
           educationalOrganizationLd,
-          ...coursesLd,
+          ...coursesLd('fr'),
           formaFaqLd('fr'),
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
