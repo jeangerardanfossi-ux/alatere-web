@@ -172,7 +172,7 @@ function Body({ domain }: { domain: FormaDomain }) {
 
         {/* COMPÉTENCES / PROGRAMMES */}
         <section className="f-section">
-          <div className="fd-split">
+          <div className={domain.programGroups ? 'fd-split fd-split--stack' : 'fd-split'}>
             <div className="fd-block">
               <span className="g-label">
                 <span className="g-tag g-tag--gold">{t('comp_tag')}</span>
@@ -194,7 +194,8 @@ function Body({ domain }: { domain: FormaDomain }) {
               <h2>{t('prog_h')}</h2>
               <p>{t('prog_p')}</p>
               {domain.programGroups ? (
-                domain.programGroups.map((g) => (
+                <div className="fd-pgroups">
+                {domain.programGroups.map((g) => (
                   <div className="fd-pgroup" key={g.title.fr}>
                     <h3>{L(g.title)}</h3>
                     {g.intro && <p>{L(g.intro)}</p>}
@@ -215,7 +216,8 @@ function Body({ domain }: { domain: FormaDomain }) {
                       ))}
                     </ul>
                   </div>
-                ))
+                ))}
+                </div>
               ) : (
               <>
               <ul className="fd-progs">

@@ -84,8 +84,19 @@
 .fd-explainer p, .fd-explainer li { font-size: 16px; line-height: 1.65; color: var(--dark-2); }
 .fd-explainer ul { margin: 6px 0 16px; padding-left: 22px; }
 .fd-explainer li { margin-bottom: 6px; }
-.fd-pgroup + .fd-pgroup { margin-top: 26px; }
 .fd-pgroup h3 { font-size: 17px; margin: 0 0 10px; color: var(--dark-1); }
 .fd-pgroup > p { font-size: 14px; color: var(--dark-3); margin: 0 0 10px; }
 .fd-pgroup .fd-progs li { list-style: none; }
 .fd-prog__h { margin-left: auto; font-style: normal; font-size: 12px; font-weight: 600; color: var(--gold-dark); background: var(--gold-soft); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+
+/* Variante empilée (pages à programmes groupés) : compétences puis programmes, pleine largeur */
+.fd-split--stack { grid-template-columns: 1fr; gap: 56px; }
+.fd-split--stack .fd-skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 40px; }
+.fd-pgroups { columns: 2; column-gap: 40px; }
+.fd-pgroup { break-inside: avoid; margin: 0 0 28px; }
+.fd-split--stack .fd-prog { padding: 11px 14px; }
+.fd-split--stack .fd-prog span { font-size: 14px; }
+@media (max-width: 900px) {
+  .fd-split--stack .fd-skills { grid-template-columns: 1fr; }
+  .fd-pgroups { columns: 1; }
+}
