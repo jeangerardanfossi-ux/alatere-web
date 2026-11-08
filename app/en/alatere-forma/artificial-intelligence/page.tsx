@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['intelligence-artificielle'];
 const FR = '/alatere-forma/intelligence-artificielle';
 const DESC_EN =
-  'Artificial intelligence courses in Antibes: generative AI, prompts, automation. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
+  'AI training in Antibes: Claude, ChatGPT, prompts, automation, building your website with AI. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },
@@ -26,7 +26,7 @@ export default function Page() {
       <JsonLd
         data={[
           courseLd({
-            name: D.name.en,
+            name: D.h1?.en ?? D.name.en,
             description: DESC_EN,
             path: enPath(FR),
             teaches: D.skills.map((s) => s.en),
@@ -36,7 +36,7 @@ export default function Page() {
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere forMa', path: '/en/alatere-forma' },
-            { name: D.name.en, path: enPath(FR) },
+            { name: D.h1?.en ?? D.name.en, path: enPath(FR) },
           ]),
         ]}
       />

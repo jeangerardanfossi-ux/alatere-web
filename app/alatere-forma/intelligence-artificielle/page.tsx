@@ -23,7 +23,7 @@ export default function Page() {
       <JsonLd
         data={[
           courseLd({
-            name: D.name.fr,
+            name: D.h1?.fr ?? D.name.fr,
             description: D.metaDescription,
             path: PATH,
             teaches: D.skills.map((s) => s.fr),
@@ -33,7 +33,7 @@ export default function Page() {
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Alatere forMa', path: '/alatere-forma' },
-            { name: D.name.fr, path: PATH },
+            { name: D.h1?.fr ?? D.name.fr, path: PATH },
           ]),
         ]}
       />

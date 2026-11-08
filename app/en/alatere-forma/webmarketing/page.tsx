@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['webmarketing'];
 const FR = '/alatere-forma/webmarketing';
 const DESC_EN =
-  'Web marketing courses in Antibes: SEO, SEA, social ads, analytics. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
+  'SEO, Google Ads and digital marketing training in Antibes, on your own website. Qualiopi-certified, OPCO or FAF funding. Quote within 48 hours.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },
@@ -26,7 +26,7 @@ export default function Page() {
       <JsonLd
         data={[
           courseLd({
-            name: D.name.en,
+            name: D.h1?.en ?? D.name.en,
             description: DESC_EN,
             path: `/en${FR}`,
             teaches: D.skills.map((s) => s.en),
@@ -36,7 +36,7 @@ export default function Page() {
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere forMa', path: '/en/alatere-forma' },
-            { name: D.name.en, path: `/en${FR}` },
+            { name: D.h1?.en ?? D.name.en, path: `/en${FR}` },
           ]),
         ]}
       />
