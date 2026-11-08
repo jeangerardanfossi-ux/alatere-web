@@ -252,12 +252,12 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     slug: 'langues',
     icon: 'languages',
     metaTitle: {
-      fr: "Formations en langues financées par l'OPCO | Alatere forMa",
-      en: 'Language courses funded by your OPCO | Alatere forMa',
+      fr: 'Formation anglais professionnel à Antibes | Alatere forMa',
+      en: 'Business English training in Antibes | Alatere forMa',
     },
     metaDescription:
-      'Anglais, italien et espagnol professionnels à Antibes, en individuel ou en groupe de 8. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
-    name: { fr: 'Langues', en: 'Languages' },
+      'Anglais professionnel, italien et espagnol à Antibes, en individuel ou en groupe de 8. Organisme Qualiopi, prise en charge OPCO. Devis sous 48 h.',
+    name: { fr: 'Anglais professionnel et langues', en: 'Business English and languages' },
     tag: { fr: 'Usage professionnel', en: 'For professional use' },
     lead: {
       fr: "Anglais, italien et espagnol pour le travail : réunions, e-mails, négociation, vocabulaire de votre secteur. Un test de positionnement fixe votre point de départ, puis le rythme s'adapte, en individuel ou en groupe de 8 au plus.",
