@@ -119,3 +119,11 @@
   .f-domains, .f-mods, .f-steps, .f-inds, .f-statgrid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .f-domain { transition: none !important; } }
+
+/* ---- Icônes illustrées multicolores (ColorIcons) ---- */
+.f-domain svg.f-domain__icon { width: 50px; height: 50px; }
+.f-mod__ic--color { background: transparent; width: 40px; height: 40px; }
+.f-mod__ic--color svg { width: 36px; height: 36px; }
+.fm-avatar.f-avatar--color { background: #fff; box-shadow: var(--elev-s); }
+.fm-avatar.f-avatar--color svg { width: 58%; height: 58%; }
+.f-step__n { display: inline-flex; align-items: center; justify-content: center; min-width: 58px; height: 44px; padding: 0 10px; border-radius: 12px; font-size: 30px; font-weight: 800; color: #fff; background: linear-gradient(120deg, #1f5fae 0%, #6fae4a 52%, #e8913a 100%); box-shadow: 0 4px 12px rgba(12, 48, 108, .18); margin-bottom: 8px; }

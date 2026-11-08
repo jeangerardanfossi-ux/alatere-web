@@ -7,6 +7,17 @@ import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
+import {
+  IcChart,
+  IcAi,
+  IcLanguages,
+  IcMegaphone,
+  IcHouse,
+  IcBook,
+  IcPeople,
+  IcClock,
+  IcWallet,
+} from '@/components/grommet/ColorIcons';
 import { Icon } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
 import { BrandTitle } from '@/components/grommet/BrandName';
@@ -402,7 +413,7 @@ function Body() {
           <div className="f-domains">
             <article className="f-domain">
               <div className="f-domain__top">
-                <Icon name="bar-chart-3" className="f-domain__icon" />
+                <IcChart className="f-domain__icon" />
                 <span className="f-domain__count">{t('dom1_count')}</span>
               </div>
               <h3>{t('dom1_h')}</h3>
@@ -411,7 +422,7 @@ function Body() {
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
-                <Icon name="sparkles" className="f-domain__icon" />
+                <IcAi className="f-domain__icon" />
                 <span className="f-domain__count">{t('dom2_count')}</span>
               </div>
               <h3>{t('dom2_h')}</h3>
@@ -420,7 +431,7 @@ function Body() {
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
-                <Icon name="languages" className="f-domain__icon" />
+                <IcLanguages className="f-domain__icon" />
                 <span className="f-domain__count">{t('dom3_count')}</span>
               </div>
               <h3>{t('dom3_h')}</h3>
@@ -429,7 +440,7 @@ function Body() {
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
-                <Icon name="megaphone" className="f-domain__icon" />
+                <IcMegaphone className="f-domain__icon" />
                 <span className="f-domain__count">{t('dom4_count')}</span>
               </div>
               <h3>{t('dom4_h')}</h3>
@@ -438,7 +449,7 @@ function Body() {
             </article>
             <article className="f-domain">
               <div className="f-domain__top">
-                <Icon name="building-2" className="f-domain__icon" />
+                <IcHouse className="f-domain__icon" />
                 <span className="f-domain__count">{t('dom5_count')}</span>
               </div>
               <h3>{t('dom5_h')}</h3>
@@ -447,7 +458,7 @@ function Body() {
             </article>
             <article className="f-domain f-domain--catalog">
               <div className="f-domain__top">
-                <Icon name="book-open" className="f-domain__icon" />
+                <IcBook className="f-domain__icon" />
                 <span className="f-domain__count">{t('cat_count')}</span>
               </div>
               <h3>{t('cat_h')}</h3>
@@ -468,8 +479,8 @@ function Body() {
         {/* FORMATEURS (teaser) */}
         <section className="f-section" style={{ paddingTop: 0 }}>
           <div className="fd-ref">
-            <div className="fm-avatar fm-avatar--lg" aria-hidden="true">
-              <Icon name="users" />
+            <div className="fm-avatar fm-avatar--lg f-avatar--color" aria-hidden="true">
+              <IcPeople />
             </div>
             <div className="fd-ref__txt">
               <div className="fd-ref__role">{t('team_role')}</div>
@@ -495,8 +506,8 @@ function Body() {
             <div className="f-mods">
               <div className="f-mod">
                 <div className="f-mod__h">
-                  <span className="f-mod__ic">
-                    <Icon name="users" />
+                  <span className="f-mod__ic f-mod__ic--color">
+                    <IcPeople />
                   </span>
                   <h3>{t('mod1_h')}</h3>
                 </div>
@@ -523,8 +534,8 @@ function Body() {
               </div>
               <div className="f-mod">
                 <div className="f-mod__h">
-                  <span className="f-mod__ic">
-                    <Icon name="clock" />
+                  <span className="f-mod__ic f-mod__ic--color">
+                    <IcClock />
                   </span>
                   <h3>{t('mod2_h')}</h3>
                 </div>
@@ -548,8 +559,8 @@ function Body() {
               </div>
               <div className="f-mod">
                 <div className="f-mod__h">
-                  <span className="f-mod__ic">
-                    <Icon name="wallet" />
+                  <span className="f-mod__ic f-mod__ic--color">
+                    <IcWallet />
                   </span>
                   <h3>{t('mod3_h')}</h3>
                 </div>
