@@ -267,7 +267,7 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       { fr: '6 programmes au catalogue', en: '6 programs in the catalog' },
       { fr: 'Test de positionnement initial', en: 'Initial placement test' },
       { fr: 'Individuel ou petit groupe (1 à 8)', en: 'One-to-one or small group (1–8)' },
-      { fr: 'Finançable OPCO / CPF*', en: 'OPCO / CPF funding*' },
+      { fr: 'Finançable OPCO ou FAF', en: 'OPCO or FAF funding' },
       { fr: 'Présentiel à Antibes ou en visio', en: 'In person in Antibes or video' },
     ],
     skills: [
@@ -644,12 +644,12 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
     },
     {
       q: {
-        fr: 'Les formations en langues sont-elles éligibles au CPF ?',
-        en: 'Are the language courses CPF-eligible?',
+        fr: 'Comment financer une formation en langues ?',
+        en: 'How can language training be funded?',
       },
       a: {
-        fr: 'Selon le programme : nos formations en langues sont finançables par votre OPCO et certaines sont éligibles au CPF. Organisme certifié Qualiopi (déclaration d\'activité n° 93.06.07588.06).',
-        en: 'Depending on the program: our language courses can be funded by your OPCO and some are CPF-eligible. Qualiopi-certified provider (training-provider registration no. 93.06.07588.06).',
+        fr: "Par l'OPCO de votre entreprise pour les salariés, ou par votre fonds d'assurance formation (FAF) si vous êtes indépendant ou dirigeant non salarié. Alatere Web SAS (marque Alatere forMa, déclaration d'activité n° 93.06.07588.06) est certifié Qualiopi. Nos formations ne sont pas éligibles au CPF.",
+        en: "Through your company's OPCO for employees, or your training insurance fund (FAF) if you are a freelancer or non-salaried director. Alatere Web SAS (Alatere forMa brand, training-provider registration no. 93.06.07588.06) is Qualiopi-certified. Our courses are not CPF-eligible.",
       },
     },
   ],
