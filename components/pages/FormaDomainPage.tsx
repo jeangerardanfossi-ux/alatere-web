@@ -7,15 +7,15 @@ import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lan
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon } from '@/components/grommet/icons';
-import { IcChart, IcAi, IcLanguages, IcMegaphone, IcHouse } from '@/components/grommet/ColorIcons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 
 /** Icône illustrée du domaine (même jeu que la page forMa). */
-const DOMAIN_ICON: Record<string, (p: { className?: string }) => React.ReactElement> = {
-  'bar-chart-3': IcChart,
-  sparkles: IcAi,
-  languages: IcLanguages,
-  megaphone: IcMegaphone,
-  'building-2': IcHouse,
+const DOMAIN_ICON: Record<string, string> = {
+  'bar-chart-3': 'chart',
+  sparkles: 'ia',
+  languages: 'langues',
+  megaphone: 'megaphone',
+  'building-2': 'maison',
 };
 import { FORMA_FAQ, type FormaDomain, type Bi } from '@/lib/forma-domains';
 
@@ -121,8 +121,8 @@ function Body({ domain }: { domain: FormaDomain }) {
               <span>{L(domain.name)}</span>
             </div>
             {(() => {
-              const C = DOMAIN_ICON[domain.icon];
-              return C ? <C className="fd-hero__ic fd-hero__ic--color" /> : <Icon name={domain.icon} className="fd-hero__ic" />;
+              const n = DOMAIN_ICON[domain.icon];
+              return n ? <ImgIcon name={n} className="fd-hero__ic--color" /> : <Icon name={domain.icon} className="fd-hero__ic" />;
             })()}
             <span className="g-label">
               <span className="g-tag g-tag--gold">{L(domain.tag)}</span>

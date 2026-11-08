@@ -100,4 +100,4 @@
   .fd-split--stack .fd-skills { grid-template-columns: 1fr; }
   .fd-pgroups { columns: 1; }
 }
-.fd-hero__ic--color { width: 52px; height: 52px; margin-bottom: 10px; }
+.fd-hero__ic--color { display: block; height: 50px; width: auto; margin-bottom: 10px; }
