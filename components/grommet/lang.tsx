@@ -45,10 +45,13 @@ export function LangProvider({
   // La langue vient de la route (contexte forcé) - FR par défaut, EN sous /en.
   const lang = useContext(ForcedLangCtx);
 
+  // Le <title> vient uniquement des metadata de chaque route (rendu serveur) : ne pas le
+  // réécrire côté client, sinon Google, qui exécute le JavaScript, indexe ce titre-ci à la
+  // place du titre SEO. `titles` est conservé pour compatibilité, sans effet sur le <title>.
+  void titles;
   useEffect(() => {
     document.documentElement.lang = lang;
-    if (titles) document.title = titles[lang];
-  }, [lang, titles]);
+  }, [lang]);
 
   return <LangCtx.Provider value={{ lang }}>{children}</LangCtx.Provider>;
 }
