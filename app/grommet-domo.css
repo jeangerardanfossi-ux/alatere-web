@@ -133,3 +133,13 @@
 
 /* Lien vers le comparatif, sous la FAQ doMo */
 .d-faq__more { margin: 18px 0 0; font-size: 15px; text-align: center; }
+
+/* ---- Icônes illustrées multicolores (ImgIcon, jeu domo-icons) ----
+   Variantes « --color » : la pastille verte laisse place à l'icône illustrée. */
+.d-benefit__ic--color, .d-doc__ic--color { width: auto; border-radius: 0; background: transparent; justify-items: start; }
+.d-benefit__ic--color { height: 46px; }
+.d-doc__ic--color { height: 50px; }
+.d-benefit__ic--color img { height: 46px; width: auto; max-width: 56px; object-fit: contain; }
+.d-doc__ic--color img { height: 50px; width: auto; max-width: 60px; object-fit: contain; }
+.d-nap__rows img.d-nap__ic { width: 21px; height: 21px; object-fit: contain; flex-shrink: 0; margin-top: 1px; }
+img.d-link__ic { width: 17px; height: 17px; object-fit: contain; vertical-align: -3px; margin-right: 2px; }

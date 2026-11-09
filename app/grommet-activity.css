@@ -139,3 +139,18 @@ a.ap-chip:hover { color: var(--brand); border-color: var(--brand); transform: tr
 /* SHIM React : recentrer les placeholders (ImageSlot = div, état vide) */
 .ap-gallery .g-img-slot, .ap-shop .g-img-slot,
 .ap-loc__map.g-img-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* ---- Icônes illustrées multicolores (ImgIcon, jeu cowo-icons) ----
+   Modificateurs : la page ecoM partage ces classes et garde ses icônes Lucide. */
+.ap-card__ic--color { width: auto; height: 46px; border-radius: 0; background: transparent; justify-items: start; }
+.ap-card__ic--color img { height: 46px; width: auto; max-width: 56px; object-fit: contain; }
+.ap-rows img.ap-rows__ic { width: 21px; height: 21px; object-fit: contain; flex-shrink: 0; margin-top: 1px; }
+img.ap-link__ic { width: 17px; height: 17px; object-fit: contain; vertical-align: -3px; margin-right: 2px; }
+
+/* ---- Panneau « formules » (bloc location de bureau, page coWo) ---- */
+.ap-panel { background: var(--accent-soft); border-radius: var(--round-m); padding: 36px; }
+.ap-panel .ap-head { margin-bottom: 24px; }
+.ap-panel__terms { font-size: 13px; color: var(--dark-3); margin: 10px 0 0; }
+.ap-panel__more { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; font-size: 14px; font-weight: 600; color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+.ap-panel__more:hover { text-decoration-thickness: 2px; }
+@media (max-width: 720px) { .ap-panel { padding: 22px; border-radius: var(--round-s); } }
