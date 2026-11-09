@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import ArticleLayout from '@/components/blog/ArticleLayout';
 import Body from '@/components/blog/articles/CreerSonEntrepriseAntibes';
 import JsonLd from '@/components/JsonLd';
-import { blogPostingLd, breadcrumbLd } from '@/lib/jsonld';
+import { blogPostingLd, breadcrumbLd, creerEntrepriseFaqLd } from '@/lib/jsonld';
 import { postBySlug, localizePost, isPublished } from '@/lib/blog';
 import '../../grommet-home.css';
 import '../../grommet-pages.css';
@@ -28,6 +28,7 @@ export default function Page() {
       <JsonLd
         data={[
           blogPostingLd(p, 'fr'),
+          creerEntrepriseFaqLd,
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Ressources', path: '/blog' },

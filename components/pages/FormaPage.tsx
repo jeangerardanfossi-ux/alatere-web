@@ -4,6 +4,7 @@
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
+import { formaFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
@@ -15,8 +16,8 @@ import { BrandTitle } from '@/components/grommet/BrandName';
 const CATALOG = 'https://alatere-web.catalogueformpro.com';
 
 const TITLE = {
-  fr: 'Alatere forMa - Organisme de formation certifié Qualiopi à Antibes',
-  en: 'Alatere forMa - Qualiopi-certified training provider in Antibes',
+  fr: 'Alatere forMa - Formation IA, webmarketing et anglais professionnel à Antibes',
+  en: 'Alatere forMa - AI, web marketing and business English training in Antibes',
 };
 
 const ACCENT = {
@@ -52,8 +53,8 @@ const TX: Dict = {
     en: 'The quality certification has been issued for the following category of action: TRAINING ACTIONS',
   },
   hero_lead: {
-    fr: "Formations professionnelles en webmarketing, intelligence artificielle, langues, communication digitale et immobilier. Chaque formation commence par un positionnement initial. Sessions à Antibes ou à distance, finançables par votre OPCO ou votre FAF.",
-    en: 'Professional training in web marketing, artificial intelligence, languages, digital communication and real estate. Every course starts with an initial assessment. Sessions in Antibes or remotely, fundable by your OPCO or FAF.',
+    fr: "Formation IA, formation webmarketing, anglais professionnel, communication digitale et immobilier : nos sessions se tiennent à Antibes ou à distance, et sont finançables par votre OPCO ou votre FAF. Chaque parcours commence par un positionnement initial.",
+    en: 'AI training, web marketing training, business English, digital communication and real estate: our sessions run in Antibes or remotely, and can be funded by your OPCO or FAF. Every path starts with an initial assessment.',
   },
   hero_cta1: { fr: 'Voir le catalogue détaillé', en: 'View the detailed catalog' },
   hero_cta2: { fr: 'Demander un devis', en: 'Request a quote' },
@@ -61,6 +62,15 @@ const TX: Dict = {
     fr: 'Programmes, durées, prérequis, tarifs et dates sur alatere-web.catalogueformpro.com',
     en: 'Programs, durations, prerequisites, prices and dates on alatere-web.catalogueformpro.com',
   },
+  switch_a: {
+    fr: "Vous cherchez une agence web - création de site internet, référencement SEO, e-commerce ? C'est le métier de notre autre pôle : ",
+    en: 'Looking for a web agency - website design, SEO, e-commerce? That is what our other division does: ',
+  },
+  switch_link: {
+    fr: 'Alatere ecoM, agence web à Antibes',
+    en: 'Alatere ecoM, web agency in Antibes',
+  },
+  switch_b: { fr: '.', en: '.' },
 
   stats_label: { fr: 'Indicateurs publiés', en: 'Published indicators' },
   stat1: { fr: 'Satisfaction stagiaires', en: 'Trainee satisfaction' },
@@ -74,8 +84,8 @@ const TX: Dict = {
 
   dom_label: { fr: 'Nos domaines', en: 'Our fields' },
   dom_title: {
-    fr: 'Cinq domaines de formation',
-    en: 'Five training fields',
+    fr: 'Cinq domaines de formation, à Antibes ou à distance',
+    en: 'Five training fields, in Antibes or remotely',
   },
   dom_p: {
     fr: 'Seules les grandes thématiques figurent ici. Le détail de chaque programme (objectifs, prérequis, durée, modalités, tarifs, accessibilité) est publié sur notre catalogue.',
@@ -83,31 +93,31 @@ const TX: Dict = {
   },
 
   dom1_count: { fr: '11 programmes', en: '11 programs' },
-  dom1_h: { fr: 'Webmarketing', en: 'Web marketing' },
+  dom1_h: { fr: 'Formation webmarketing', en: 'Web marketing training' },
   dom1_p: {
-    fr: 'SEO, SEA, AEO, publicité social ads, analytics et e-commerce. Notre métier depuis 2003.',
-    en: 'SEO, SEA, AEO, social ads, analytics and e-commerce. Our trade since 2003.',
+    fr: "Apprendre le SEO, le SEA, l'AEO, les social ads, l'analytics et l'e-commerce. Notre métier depuis 2003, transmis à vos équipes.",
+    en: 'Learn SEO, SEA, AEO, social ads, analytics and e-commerce. Our trade since 2003, passed on to your teams.',
   },
   dom2_count: { fr: '7 programmes', en: '7 programs' },
-  dom2_h: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
+  dom2_h: { fr: 'Formation IA', en: 'AI training' },
   dom2_p: {
-    fr: "Prompts, IA générative, automatisation, intégration de l'IA dans les métiers et les outils du quotidien.",
-    en: 'Prompts, generative AI, automation and integrating AI into jobs and everyday tools.',
+    fr: "Prompts, IA générative, automatisation, intégration de l'intelligence artificielle dans les métiers et les outils du quotidien.",
+    en: 'Prompts, generative AI, automation and integrating artificial intelligence into jobs and everyday tools.',
   },
   dom3_count: { fr: '6 programmes', en: '6 programs' },
-  dom3_h: { fr: 'Langues', en: 'Languages' },
+  dom3_h: { fr: 'Anglais professionnel et langues', en: 'Business English and languages' },
   dom3_p: {
-    fr: 'Anglais, italien et espagnol pour un usage professionnel et technique, en individuel ou en petit groupe.',
-    en: 'English, Italian and Spanish for professional and technical use, one-to-one or in a small group.',
+    fr: "Anglais professionnel, italien et espagnol pour un usage courant et technique, en individuel ou en petit groupe, à Antibes ou en visio.",
+    en: 'Business English, Italian and Spanish for everyday and technical use, one-to-one or in a small group, in Antibes or by video.',
   },
   dom4_count: { fr: '10 programmes', en: '10 programs' },
-  dom4_h: { fr: 'Communication digitale', en: 'Digital communication' },
+  dom4_h: { fr: 'Formation communication digitale', en: 'Digital communication training' },
   dom4_p: {
     fr: 'Réseaux sociaux, brand content, création de contenu et stratégie éditoriale.',
     en: 'Social media, brand content, content creation and editorial strategy.',
   },
   dom5_count: { fr: '35 programmes', en: '35 programs' },
-  dom5_h: { fr: 'Immobilier', en: 'Real estate' },
+  dom5_h: { fr: 'Formation immobilier', en: 'Real estate training' },
   dom5_p: {
     fr: "Formations pour les professionnels de l'immobilier : formation continue obligatoire, outils digitaux.",
     en: 'Courses for real-estate professionals: mandatory continuing education, digital tools.',
@@ -259,34 +269,11 @@ const TX: Dict = {
     fr: 'Questions fréquentes sur nos formations',
     en: 'Frequently asked questions about our training',
   },
-  faq1_q: { fr: 'Alatere forMa est-il certifié Qualiopi ?', en: 'Is Alatere forMa Qualiopi-certified?' },
-  faq1_a: {
-    fr: "Oui. L'organisme de formation est Alatere Web SAS (marque Alatere forMa), certifié Qualiopi et enregistré sous le numéro 93.06.07588.06. La certification Qualiopi atteste de la qualité de nos processus et conditionne l'accès aux financements publics et mutualisés.",
-    en: 'Yes. The training provider is Alatere Web SAS (Alatere forMa brand), Qualiopi-certified and registered under number 93.06.07588.06. Qualiopi certification attests to the quality of our processes and is required to access public and pooled funding.',
+  faq6_link: {
+    fr: 'Voir Alatere ecoM, agence web à Antibes →',
+    en: 'See Alatere ecoM, web agency in Antibes →',
   },
-  faq2_q: { fr: 'Mes formations peuvent-elles être financées ?', en: 'Can my training be funded?' },
-  faq2_a: {
-    fr: "Oui. Selon votre situation, nos formations sont finançables par votre OPCO (plan de développement des compétences) ou, pour les travailleurs non-salariés, par votre FAF (Fonds d'Assurance Formation). Nous vous accompagnons dans le montage du dossier de financement.",
-    en: 'Yes. Depending on your situation, our courses can be funded by your OPCO (skills development plan) or, for self-employed workers, by your FAF (training insurance fund). We help you set up the funding file.',
-  },
-  faq3_q: { fr: 'Quels domaines de formation proposez-vous ?', en: 'What training fields do you offer?' },
-  faq3_a: {
-    fr: 'Cinq grands domaines : webmarketing (SEO, SEA, e-commerce), intelligence artificielle, langues, communication digitale et immobilier. Le détail des programmes est publié sur notre catalogue dédié.',
-    en: 'Five major fields: web marketing (SEO, SEA, e-commerce), artificial intelligence, languages, digital communication and real estate. Program details are published in our dedicated catalog.',
-  },
-  faq4_q: {
-    fr: 'Les formations sont-elles en présentiel ou à distance ?',
-    en: 'Are courses in person or remote?',
-  },
-  faq4_a: {
-    fr: "Les deux. Nous proposons du présentiel à Antibes (9 Bd Albert 1er), de l'intra-entreprise et du distanciel synchrone. Les parcours sont individualisés, en groupes de 1 à 8 personnes.",
-    en: 'Both. We offer in-person training in Antibes (9 Bd Albert 1er), on-site company training and synchronous remote courses. Paths are individualized, in groups of 1 to 8.',
-  },
-  faq5_q: { fr: 'Quel est le délai pour démarrer une formation ?', en: 'How long before a course starts?' },
-  faq5_a: {
-    fr: 'Comptez en moyenne 14 jours entre la demande et le démarrage, selon le dossier de financement et les disponibilités. Le devis personnalisé est envoyé sous 48 heures.',
-    en: 'On average 14 days between request and start, depending on the funding file and availability. The personalized quote is sent within 48 hours.',
-  },
+  ...formaFaqTx,
 };
 
 export default function FormaPage() {
@@ -357,6 +344,11 @@ function Body() {
               </a>
             </div>
             <div className="f-hero__cat">{t('hero_cat')}</div>
+            <p className="f-hero__switch">
+              {t('switch_a')}
+              <Link href="/alatere-ecom">{t('switch_link')}</Link>
+              {t('switch_b')}
+            </p>
           </div>
           <aside className="f-hero__stats">
             <figure className="f-qualiopi">
@@ -687,12 +679,25 @@ function Body() {
             <h2 className="g-h2">{t('faq_title')}</h2>
           </div>
           <div className="g-faq">
-            {['faq1', 'faq2', 'faq3', 'faq4', 'faq5'].map((k) => (
-              <details key={k}>
-                <summary>{t(`${k}_q`)}</summary>
-                <div className="g-faq__a">{t(`${k}_a`)}</div>
-              </details>
-            ))}
+            {Object.keys(formaFaqTx)
+              .filter((k) => k.endsWith('_q'))
+              .map((k) => k.slice(0, -2))
+              .map((k) => (
+                <details key={k}>
+                  <summary>{t(`${k}_q`)}</summary>
+                  <div className="g-faq__a">
+                    {t(`${k}_a`)}
+                    {k === 'faq6' && (
+                      <>
+                        {' '}
+                        <Link href="/alatere-ecom" style={{ color: 'var(--gold-dark)' }}>
+                          {t('faq6_link')}
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                </details>
+              ))}
           </div>
         </section>
       </main>

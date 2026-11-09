@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import CowoPage from '@/components/pages/CowoPage';
 import JsonLd from '@/components/JsonLd';
-import { cowoLd, breadcrumbLd } from '@/lib/jsonld';
+import { cowoLd, cowoFaqLd, breadcrumbLd } from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../../grommet-home.css';
 import '../../grommet-activity.css';
@@ -24,6 +24,7 @@ export default function Page() {
       <JsonLd
         data={[
           cowoLd,
+          cowoFaqLd('en'),
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere coWo', path: `/en${FR}` },

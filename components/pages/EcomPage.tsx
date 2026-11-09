@@ -4,6 +4,7 @@
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
+import { ecomFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
@@ -146,32 +147,7 @@ const TX: Dict = {
 
   faq_label: { fr: 'FAQ', en: 'FAQ' },
   faq_title: { fr: 'Questions fréquentes', en: 'Frequently asked questions' },
-  faq1_q: { fr: 'Que fait Alatere ecoM ?', en: 'What does Alatere ecoM do?' },
-  faq1_a: {
-    fr: "Alatere ecoM conçoit, exploite et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com). Le SEO, le SEA et les méthodes d'exploitation rodés sur ces sites, nous les appliquons à ceux de nos clients.",
-    en: "Alatere ecoM designs, runs and ranks e-commerce sites. Since 2003 we have run our own online art stores (repro-tableaux.com, copia-di-arte.com). The SEO, SEA and operating methods tested on those sites are the ones we apply to our clients' sites.",
-  },
-  faq2_q: {
-    fr: 'Proposez-vous du référencement SEO et de la publicité SEA ?',
-    en: 'Do you offer SEO and SEA advertising?',
-  },
-  faq2_a: {
-    fr: 'Oui : référencement naturel (SEO), publicité en ligne (SEA sur Google, Microsoft et Meta) et acquisition. Nous les pratiquons sur nos propres sites depuis vingt ans.',
-    en: 'Yes: organic search (SEO), online advertising (SEA on Google, Microsoft and Meta) and acquisition. We have been doing this on our own sites for twenty years.',
-  },
-  faq3_q: { fr: "Travaillez-vous pour l'international ?", en: 'Do you work internationally?' },
-  faq3_a: {
-    fr: 'Oui. Nous opérons des sites multilingues (hreflang, ciblage géographique, fiscalité UE), notamment via copia-di-arte.com pour les marchés européens.',
-    en: 'Yes. We run multilingual sites (hreflang, geo-targeting, EU taxation), notably via copia-di-arte.com for European markets.',
-  },
-  faq4_q: {
-    fr: 'Comment démarrer un projet e-commerce avec vous ?',
-    en: 'How do I start an e-commerce project with you?',
-  },
-  faq4_a: {
-    fr: 'Contactez-nous via le formulaire ou au 07 61 56 45 56. Nous échangeons sur votre besoin et revenons vers vous sous 48 heures avec une première proposition.',
-    en: 'Contact us via the form or at +33 7 61 56 45 56. We discuss your need and get back to you within 48 hours with a first proposal.',
-  },
+  ...ecomFaqTx,
 };
 
 export default function EcomPage() {

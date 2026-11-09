@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import EcomPage from '@/components/pages/EcomPage';
 import JsonLd from '@/components/JsonLd';
-import { organizationLd, breadcrumbLd } from '@/lib/jsonld';
+import { organizationLd, ecomFaqLd, breadcrumbLd } from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../../grommet-home.css';
 import '../../grommet-activity.css';
@@ -24,6 +24,7 @@ export default function Page() {
       <JsonLd
         data={[
           organizationLd,
+          ecomFaqLd('en'),
           breadcrumbLd([
             { name: 'Home', path: '/en' },
             { name: 'Alatere ecoM', path: `/en${FR}` },

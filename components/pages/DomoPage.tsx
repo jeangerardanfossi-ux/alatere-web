@@ -4,6 +4,7 @@
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
+import { domoFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
@@ -277,73 +278,7 @@ const TX: Dict = {
     en: 'Compare the 15 business-address providers in and around Antibes →',
   },
   faq_title: { fr: 'Tarifs, délais, transfert de siège', en: 'Prices, timing, head-office transfer' },
-  faq1_q: {
-    fr: "Combien coûte une domiciliation d'entreprise à Antibes ?",
-    en: 'How much does a business address in Antibes cost?',
-  },
-  faq1_a: {
-    fr: "L'offre Dropbox (boîte aux lettres) démarre à 25 € HT par mois. L'offre Headquarters est à 30 € HT par mois (adresse de siège social + courrier) et l'offre Forward à 50 € HT par mois (numérisation et réexpédition incluses). Des frais de dossier de 50 € HT s'appliquent une seule fois, à l'ouverture du dossier.",
-    en: 'The Dropbox plan (mailbox only) starts at €25 excl. VAT per month. The Headquarters plan is €30 excl. VAT per month (registered-office address + mail) and the Forward plan €50 excl. VAT per month (scanning and forwarding included). A €50 excl. VAT setup fee applies once, when the file is opened.',
-  },
-  faq2_q: {
-    fr: 'Puis-je domicilier le siège social de ma société chez vous ?',
-    en: "Can I register my company's head office with you?",
-  },
-  faq2_a: {
-    fr: "Oui. En tant que société de domiciliation agréée par la préfecture (n° 2022/12 du 20/09/2022), nous délivrons une attestation conforme aux exigences du greffe et du RCS d'Antibes.",
-    en: 'Yes. As a prefecture-approved business-address provider (no. 2022/12 of 20/09/2022), we issue a certificate compliant with the requirements of the Antibes trade registry.',
-  },
-  faq3_q: { fr: 'Quel est le délai de mise en place ?', en: 'How long does setup take?' },
-  faq3_a: {
-    fr: 'Une fois le contrat signé et les pièces transmises, votre attestation de domiciliation est émise sous 24 à 48 heures.',
-    en: 'Once the contract is signed and documents provided, your address certificate is issued within 24 to 48 hours.',
-  },
-  faq4_q: {
-    fr: 'Puis-je transférer le siège de mon entreprise existante ?',
-    en: 'Can I transfer the head office of my existing company?',
-  },
-  faq4_a: {
-    fr: 'Oui. Nous vous accompagnons dans les formalités de transfert de siège auprès du greffe et la mise à jour de vos statuts.',
-    en: 'Yes. We support you with the head-office transfer formalities at the registry and the update of your articles of association.',
-  },
-  faq5_q: { fr: 'Y a-t-il un engagement de durée ?', en: 'Is there a minimum commitment?' },
-  faq5_a: {
-    fr: 'Le contrat est renouvelable et résiliable avec préavis. Vous pouvez faire évoluer votre formule à tout moment, sans pénalité.',
-    en: 'The contract is renewable and can be cancelled with notice. You can change your plan at any time, with no penalty.',
-  },
-
-  faq6_q: {
-    fr: 'Une micro-entreprise peut-elle se domicilier chez vous ?',
-    en: 'Can a micro-enterprise use your address?',
-  },
-  faq6_a: {
-    fr: "Oui. Les micro-entrepreneurs et entrepreneurs individuels peuvent domicilier leur activité à notre adresse avec l'offre Headquarters ou Forward. Cela évite de faire figurer votre adresse personnelle sur vos factures et dans les annuaires d'entreprises.",
-    en: 'Yes. Micro-entrepreneurs and sole traders can register their business at our address with the Headquarters or Forward plan. This keeps your home address off your invoices and business directories.',
-  },
-  faq7_q: {
-    fr: 'Comment récupérer mon courrier ?',
-    en: 'How do I collect my mail?',
-  },
-  faq7_a: {
-    fr: "Votre courrier est conservé à l'accueil, où vous pouvez le retirer du lundi au vendredi, de 9 h à 17 h. Avec l'offre Forward, il est aussi numérisé et réexpédié chaque semaine à l'adresse de votre choix.",
-    en: 'Your mail is kept at reception, where you can collect it Monday to Friday, 9 am to 5 pm. With the Forward plan, it is also scanned and forwarded weekly to the address of your choice.',
-  },
-  faq8_q: {
-    fr: "Puis-je recevoir mes clients à l'adresse de domiciliation ?",
-    en: 'Can I meet clients at the business address?',
-  },
-  faq8_a: {
-    fr: "Oui, sur réservation. Les salles de réunion climatisées de notre espace de coworking se louent à la journée ou en fin de journée, et vous pouvez réserver un poste de travail à la journée.",
-    en: 'Yes, by booking. The air-conditioned meeting rooms of our coworking space can be rented by the day or late afternoon, and you can book a desk by the day.',
-  },
-  faq9_q: {
-    fr: 'Quelle différence entre domiciliation commerciale et boîte aux lettres ?',
-    en: 'What is the difference between a business address and a mailbox?',
-  },
-  faq9_a: {
-    fr: "La domiciliation commerciale (offres Headquarters et Forward) vous donne une adresse de siège social inscrite au registre du commerce. L'offre Dropbox est une simple boîte aux lettres : elle reçoit votre courrier mais ne peut pas servir de siège social.",
-    en: 'A business address (Headquarters and Forward plans) gives you a registered-office address recorded in the trade register. The Dropbox plan is a simple mailbox: it receives your mail but cannot be used as a registered office.',
-  },
+  ...domoFaqTx,
 
   // Localisation
   loc_label: { fr: 'Nous situer', en: 'Find us' },
