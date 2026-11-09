@@ -11,11 +11,13 @@ const PATH = '/alatere-forma/formateurs';
 const DESC =
   "L'équipe de formateurs d'Alatere forMa : des intervenants praticiens en webmarketing, intelligence artificielle, langues, communication digitale et immobilier.";
 
+const TITLE = 'Nos formateurs à Antibes : consultants, juriste et coach | Alatere forMa';
+
 export const metadata: Metadata = {
-  title: { absolute: 'Alatere forMa - Nos formateurs' },
+  title: { absolute: TITLE },
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { title: 'Alatere forMa - Nos formateurs', description: DESC, url: PATH },
+  openGraph: { title: TITLE, description: DESC, url: PATH },
 };
 
 export default function Page() {
