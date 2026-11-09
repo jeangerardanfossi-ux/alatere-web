@@ -9,6 +9,7 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { BrandTitle } from '@/components/grommet/BrandName';
 
@@ -415,35 +416,35 @@ function Body() {
             <span className="g-label">{t('nap_label')}</span>
             <div className="d-nap__rows">
               <div>
-                <Icon name="map-pin" />
+                <ImgIcon name="localisation" ext="svg" dir="domo-icons" className="d-nap__ic" />
                 <span>
                   <strong>{t('nap_addr_l')}</strong>
                   {t('nap_addr_v')}
                 </span>
               </div>
               <div>
-                <Icon name="phone" />
+                <ImgIcon name="telephone" ext="svg" dir="domo-icons" className="d-nap__ic" />
                 <span>
                   <strong>{t('nap_phone_l')}</strong>
                   {t('nap_phone_v')}
                 </span>
               </div>
               <div>
-                <Icon name="mail" />
+                <ImgIcon name="email" ext="svg" dir="domo-icons" className="d-nap__ic" />
                 <span>
                   <strong>{t('nap_mail_l')}</strong>
                   <Email user="domiciliation" />
                 </span>
               </div>
               <div>
-                <Icon name="clock" />
+                <ImgIcon name="horaires" ext="png" dir="domo-icons" className="d-nap__ic" />
                 <span>
                   <strong>{t('nap_hours_l')}</strong>
                   {t('nap_hours_v')}
                 </span>
               </div>
               <div>
-                <Icon name="navigation" />
+                <ImgIcon name="acces" ext="svg" dir="domo-icons" className="d-nap__ic" />
                 <span>
                   <strong>{t('nap_access_l')}</strong>
                   {t('nap_access_v')}
@@ -464,29 +465,29 @@ function Body() {
           </div>
           <div className="d-benefits">
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="landmark" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="siege" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('ben1_h')}</h3>
               <p>{t('ben1_p')}</p>
             </div>
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="shield-check" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="agrement" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('ben2_h')}</h3>
               <p>{t('ben2_p')}</p>
             </div>
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="mailbox" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="courrier" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('ben3_h')}</h3>
               <p>{t('ben3_p')}</p>
             </div>
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="zap" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="rapide" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('ben4_h')}</h3>
               <p>{t('ben4_p')}</p>
@@ -505,29 +506,29 @@ function Body() {
           </div>
           <div className="d-benefits">
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="zap" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="rapide" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('who1_h')}</h3>
               <p>{t('who1_p')}</p>
             </div>
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="building-2" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="immeuble" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('who2_h')}</h3>
               <p>{t('who2_p')}</p>
             </div>
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="user-round-check" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="accompagnement" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('who3_h')}</h3>
               <p>{t('who3_p')}</p>
             </div>
             <div className="d-benefit">
-              <div className="d-benefit__ic">
-                <Icon name="navigation" />
+              <div className="d-benefit__ic d-benefit__ic--color">
+                <ImgIcon name="acces" ext="svg" dir="domo-icons" />
               </div>
               <h3>{t('who4_h')}</h3>
               <p>{t('who4_p')}</p>
@@ -719,29 +720,29 @@ function Body() {
             </div>
             <div className="d-docs-grid">
               <div className="d-doc">
-                <div className="d-doc__ic">
-                  <Icon name="landmark" />
+                <div className="d-doc__ic d-doc__ic--color">
+                  <ImgIcon name="siege" ext="svg" dir="domo-icons" />
                 </div>
                 <h3>{t('doc1_t')}</h3>
                 <p>{t('doc1_s')}</p>
               </div>
               <div className="d-doc">
-                <div className="d-doc__ic">
-                  <Icon name="user-round-check" />
+                <div className="d-doc__ic d-doc__ic--color">
+                  <ImgIcon name="accompagnement" ext="svg" dir="domo-icons" />
                 </div>
                 <h3>{t('doc2_t')}</h3>
                 <p>{t('doc2_s')}</p>
               </div>
               <div className="d-doc">
-                <div className="d-doc__ic">
-                  <Icon name="map-pin" />
+                <div className="d-doc__ic d-doc__ic--color">
+                  <ImgIcon name="localisation" ext="svg" dir="domo-icons" />
                 </div>
                 <h3>{t('doc3_t')}</h3>
                 <p>{t('doc3_s')}</p>
               </div>
               <div className="d-doc">
-                <div className="d-doc__ic">
-                  <Icon name="wallet" />
+                <div className="d-doc__ic d-doc__ic--color">
+                  <ImgIcon name="tarifs" ext="png" dir="domo-icons" />
                 </div>
                 <h3>{t('doc4_t')}</h3>
                 <p>{t('doc4_s')}</p>
@@ -829,35 +830,35 @@ function Body() {
               </span>
               <div className="d-nap__rows" style={{ marginTop: 14 }}>
                 <div>
-                  <Icon name="map-pin" />
+                  <ImgIcon name="localisation" ext="svg" dir="domo-icons" className="d-nap__ic" />
                   <span>
                     <strong>{t('loc_addr_l')}</strong>
                     {t('loc_addr_v')}
                   </span>
                 </div>
                 <div>
-                  <Icon name="phone" />
+                  <ImgIcon name="telephone" ext="svg" dir="domo-icons" className="d-nap__ic" />
                   <span>
                     <strong>{t('loc_phone_l')}</strong>
                     {t('loc_phone_v')}
                   </span>
                 </div>
                 <div>
-                  <Icon name="mail" />
+                  <ImgIcon name="email" ext="svg" dir="domo-icons" className="d-nap__ic" />
                   <span>
                     <strong>{t('loc_mail_l')}</strong>
                     <Email user="domiciliation" />
                   </span>
                 </div>
                 <div>
-                  <Icon name="building-2" />
+                  <ImgIcon name="immeuble" ext="svg" dir="domo-icons" className="d-nap__ic" />
                   <span>
                     <strong>{t('loc_siret_l')}</strong>
                     {t('loc_siret_v')}
                   </span>
                 </div>
                 <div>
-                  <Icon name="shield-check" />
+                  <ImgIcon name="agrement" ext="svg" dir="domo-icons" className="d-nap__ic" />
                   <span>
                     <strong>{t('loc_appr_l')}</strong>
                     {t('loc_appr_v')}
@@ -879,7 +880,7 @@ function Body() {
                   className="g-anchor"
                   style={{ color: 'var(--green-dark)', fontSize: 14 }}
                 >
-                  <Icon name="map-pin" /> {t('loc_maps')}
+                  <ImgIcon name="localisation" ext="svg" dir="domo-icons" className="d-link__ic" /> {t('loc_maps')}
                 </a>
               </div>
             </div>

@@ -9,6 +9,7 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { BrandTitle } from '@/components/grommet/BrandName';
 
@@ -126,7 +127,7 @@ const TX: Dict = {
     en: 'Limited availability: most of our rooms are rented yearly. Best to book a few days ahead.',
   },
   plan4_cta: { fr: 'Réserver', en: 'Book' },
-  rent_label: { fr: 'Location de bureau', en: 'Office rental' },
+  rent_label: { fr: 'Formules', en: 'Plans' },
   rent_title: {
     fr: 'Louer un bureau à Antibes, sans bail ni engagement',
     en: 'Rent an office in Antibes, with no lease or commitment',
@@ -135,20 +136,33 @@ const TX: Dict = {
     fr: "Vous cherchez un bureau à louer à Antibes ? Plutôt qu'un bail commercial de plusieurs années, le coworking vous permet de louer un espace de travail à la journée ou au mois, charges, fibre et café compris. Vous ne payez que ce que vous utilisez.",
     en: "Looking for an office to rent in Antibes? Instead of a multi-year commercial lease, coworking lets you rent a workspace by the day or by the month, with utilities, fiber and coffee included. You only pay for what you use.",
   },
-  rent1_h: { fr: 'Un poste à la journée', en: 'A desk for the day' },
+  rent_terms: {
+    fr: "Tarifs TTC, sans frais de dossier ni engagement de durée pour le poste de travail.",
+    en: 'Prices incl. VAT, no admin fee and no minimum term for desks.',
+  },
+  rent1_h: { fr: 'Un poste à la journée · 30 €', en: 'A desk for the day · €30' },
   rent1_p: {
-    fr: "Pour une journée de travail au calme ou de passage sur la Côte d'Azur : 30 € TTC, réservation en ligne, de 9 h à 18 h du lundi au vendredi.",
-    en: 'For a quiet working day or when passing through the Riviera: €30 incl. VAT, online booking, 9 am to 6 pm, Monday to Friday.',
+    fr: "Une journée de travail au calme dans notre espace de coworking, du lundi au vendredi de 9 h à 18 h, café compris. Réservation en ligne.",
+    en: 'A quiet working day in our coworking space, Monday to Friday from 9 am to 6 pm, coffee included. Book online.',
   },
-  rent2_h: { fr: 'Un poste au mois', en: 'A desk by the month' },
+  rent2_h: { fr: 'Un poste au mois · 360 €', en: 'A desk by the month · €360' },
   rent2_p: {
-    fr: "Pour les indépendants et télétravailleurs réguliers : abonnement à 360 € TTC par mois, accès illimité à l'open-space et tarifs préférentiels sur les salles de réunion.",
-    en: 'For freelancers and regular remote workers: €360 incl. VAT per month, unlimited open-area access and preferential meeting-room rates.',
+    fr: "Votre poste au quotidien : accès illimité à l'open-space 24 h/24 avec badge, fibre et café, et tarifs préférentiels sur les salles de réunion.",
+    en: 'Your everyday desk: unlimited 24/7 open-area access with a badge, fiber and coffee, and preferential meeting-room rates.',
   },
-  rent3_h: { fr: 'Une salle de réunion', en: 'A meeting room' },
+  rent3_h: { fr: "Un bureau privatif à l'année", en: 'A private office by the year' },
   rent3_p: {
-    fr: 'Pour recevoir des clients, animer une formation ou faire passer des entretiens : 180 € TTC la journée, ou 80 € TTC après 16 h, ouverte aux non-membres.',
-    en: 'To welcome clients, run a training session or hold interviews: €180 incl. VAT per day, or €80 after 4 pm, open to non-members.',
+    fr: "Un bureau fermé pour une à plusieurs personnes, dans un environnement professionnel, avec tous les services de l'espace à disposition.",
+    en: "A closed office for one or more people, in a professional setting, with all of the space's services available.",
+  },
+  rent4_h: { fr: 'Une salle de réunion · 180 €', en: 'A meeting room · €180' },
+  rent4_p: {
+    fr: "Réunions, formations, entretiens : salle modulable de 10 à 12 personnes, équipée écran et Wi-Fi, ouverte aux non-membres. 80 € TTC après 16 h.",
+    en: 'Meetings, training sessions, interviews: a modular room for 10 to 12 people with a screen and Wi-Fi, open to non-members. €80 incl. VAT after 4 pm.',
+  },
+  rent_plans: {
+    fr: 'Découvrir toutes nos formules et tarifs',
+    en: 'See all our plans and prices',
   },
   rent_note: {
     fr: "Bureaux privatifs à l'année : actuellement complets. Contactez-nous pour être prévenu de la prochaine disponibilité.",
@@ -332,22 +346,22 @@ function Body() {
           </div>
           <div className="ap-grid ap-grid--3">
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="map-pin" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="localisation" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('why1_h')}</h3>
               <p>{t('why1_p')}</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="navigation" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="acces" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('why2_h')}</h3>
               <p>{t('why2_p')}</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="users-round" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="communaute" dir="cowo-icons" />
               </div>
               <h3>{t('why3_h')}</h3>
               <p>{t('why3_p')}</p>
@@ -429,35 +443,57 @@ function Body() {
           </div>
         </section>
 
-        {/* LOUER UN BUREAU */}
+        {/* LOUER UN BUREAU - les formules, en panneau teinté */}
         <section className="ap-section">
-          <div className="ap-head">
-            <span className="g-label">
-              <span className="g-tag g-tag--clay">{t('rent_label')}</span>
-            </span>
-            <h2 className="g-h2">{t('rent_title')}</h2>
-            <p>{t('rent_p')}</p>
+          <div className="ap-panel">
+            <div className="ap-head">
+              <span className="g-label">
+                <span className="g-tag g-tag--clay">{t('rent_label')}</span>
+              </span>
+              <h2 className="g-h2">{t('rent_title')}</h2>
+              <p>{t('rent_p')}</p>
+              <p className="ap-panel__terms">{t('rent_terms')}</p>
+            </div>
+            <div className="ap-grid">
+              <div className="ap-card">
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="agenda" ext="svg" dir="cowo-icons" />
+                </div>
+                <h3>{t('rent1_h')}</h3>
+                <p>{t('rent1_p')}</p>
+              </div>
+              <div className="ap-card">
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="communaute" dir="cowo-icons" />
+                </div>
+                <h3>{t('rent2_h')}</h3>
+                <p>{t('rent2_p')}</p>
+              </div>
+              <div className="ap-card">
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="localisation" ext="svg" dir="cowo-icons" />
+                </div>
+                <h3>{t('rent3_h')}</h3>
+                <p>{t('rent3_p')}</p>
+              </div>
+              <div className="ap-card">
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="reunion" ext="svg" dir="cowo-icons" />
+                </div>
+                <h3>{t('rent4_h')}</h3>
+                <p>{t('rent4_p')}</p>
+              </div>
+            </div>
+            <a href="#offres" className="ap-panel__more">
+              {t('rent_plans')} <span className="g-arrow">→</span>
+            </a>
+            <p className="ap-hero__note" style={{ marginTop: 14 }}>
+              {t('rent_note')}{' '}
+              <Link href="/contact?pole=cowo">{t('plan3_cta')} →</Link>
+              {' · '}
+              <a href="/bureaux-a-louer-antibes">{t('rent_more')} →</a>
+            </p>
           </div>
-          <div className="ap-grid ap-grid--3">
-            <div className="ap-card">
-              <h3>{t('rent1_h')}</h3>
-              <p>{t('rent1_p')}</p>
-            </div>
-            <div className="ap-card">
-              <h3>{t('rent2_h')}</h3>
-              <p>{t('rent2_p')}</p>
-            </div>
-            <div className="ap-card">
-              <h3>{t('rent3_h')}</h3>
-              <p>{t('rent3_p')}</p>
-            </div>
-          </div>
-          <p className="ap-hero__note" style={{ marginTop: 18 }}>
-            {t('rent_note')}{' '}
-            <Link href="/contact?pole=cowo">{t('plan3_cta')} →</Link>
-            {' · '}
-            <a href="/bureaux-a-louer-antibes">{t('rent_more')} →</a>
-          </p>
         </section>
 
         {/* ÉQUIPEMENTS */}
@@ -470,29 +506,29 @@ function Body() {
           </div>
           <div className="ap-grid">
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="wifi" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="wifi" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('eq1_h')}</h3>
               <p>{t('eq1_p')}</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="snowflake" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="clim" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('eq2_h')}</h3>
               <p>{t('eq2_p')}</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="coffee" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="cafe" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('eq3_h')}</h3>
               <p>{t('eq3_p')}</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="calendar-days" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="agenda" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('eq4_h')}</h3>
               <p>{t('eq4_p')}</p>
@@ -582,25 +618,25 @@ function Body() {
                 </span>
                 <div className="ap-rows" style={{ marginTop: 14 }}>
                   <div>
-                    <Icon name="map-pin" />
+                    <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                     <span>
                       <strong>{t('loc_addr_l')}</strong>9 Boulevard Albert 1er, 06600 Antibes
                     </span>
                   </div>
                   <div>
-                    <Icon name="phone" />
+                    <ImgIcon name="telephone" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                     <span>
                       <strong>{t('loc_phone_l')}</strong>07 61 56 45 56
                     </span>
                   </div>
                   <div>
-                    <Icon name="mail" />
+                    <ImgIcon name="email" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                     <span>
                       <strong>{t('loc_mail_l')}</strong><Email user="coworking" />
                     </span>
                   </div>
                   <div>
-                    <Icon name="navigation" />
+                    <ImgIcon name="acces" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                     <span>
                       <strong>{t('loc_acc_l')}</strong>
                       {t('loc_acc_v')}
@@ -618,7 +654,7 @@ function Body() {
                     className="g-anchor"
                     style={{ color: 'var(--clay-dark)', fontSize: 14 }}
                   >
-                    <Icon name="map-pin" /> {t('loc_maps')}
+                    <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="ap-link__ic" /> {t('loc_maps')}
                   </a>
                 </div>
               </div>
