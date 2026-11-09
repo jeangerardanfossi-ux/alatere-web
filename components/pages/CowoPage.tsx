@@ -153,6 +153,10 @@ const TX: Dict = {
     fr: "Bureaux privatifs à l'année : actuellement complets. Contactez-nous pour être prévenu de la prochaine disponibilité.",
     en: 'Yearly private offices: currently full. Contact us to hear about the next availability.',
   },
+  rent_more: {
+    fr: 'Toutes les solutions pour louer un bureau à Antibes',
+    en: 'All the ways to rent an office in Antibes (in French)',
+  },
   eq_label: { fr: 'Équipements & services', en: 'Amenities & services' },
   eq_title: {
     fr: 'Ce que vous trouvez sur place',
@@ -493,6 +497,8 @@ function Body() {
           <p className="ap-hero__note" style={{ marginTop: 18 }}>
             {t('rent_note')}{' '}
             <Link href="/contact?pole=cowo">{t('plan3_cta')} →</Link>
+            {' · '}
+            <a href="/bureaux-a-louer-antibes">{t('rent_more')} →</a>
           </p>
         </section>
 

@@ -108,17 +108,17 @@ export const posts: Post[] = [
       en: 'Funding your professional training: OPCO and FAF explained',
     },
     metaTitle: {
-      fr: 'Financer sa formation : OPCO et FAF (guide 2026)',
+      fr: 'OPCO ou FAF : qui finance votre formation selon votre statut (2026)',
       en: 'Funding your training: OPCO and FAF (2026 guide)',
     },
     excerpt: {
-      fr: 'OPCO pour les salariés, FAF pour les travailleurs non-salariés : à quoi sert chaque dispositif, qui peut en bénéficier et comment faire financer sa formation sans reste à charge.',
+      fr: 'Salarié, dirigeant, libéral, artisan, micro-entrepreneur : le tableau pour savoir si votre formation relève d’un OPCO, du FIFPL, de l’AGEFICE ou du FAFCEA.',
       en: 'OPCO for employees, FAF for the self-employed: what each scheme is for, who qualifies, and how to get your training funded with nothing to pay out of pocket.',
     },
     keyword: { fr: 'financer sa formation professionnelle', en: 'funding professional training' },
     category: { fr: 'Formation', en: 'Training' },
     date: '2026-06-17',
-    updated: '2026-06-17',
+    updated: '2026-11-09',
     readingMin: 6,
     author: {
       name: 'Jean-Gérard Anfossi',
@@ -259,24 +259,24 @@ export const posts: Post[] = [
     pole: 'forma',
     frOnly: true,
     title: {
-      fr: 'Travailleur indépendant : qui finance votre formation ?',
+      fr: 'FIFPL ou OPCO ? Qui finance la formation d’un travailleur indépendant',
       en: 'Self-employed: who funds your training?',
     },
     metaTitle: {
-      fr: 'FIFPL, AGEFICE, FAFCEA : financer sa formation en indépendant (2026)',
+      fr: 'FIFPL ou OPCO ? Qui finance la formation d’un indépendant (2026)',
       en: 'FIFPL, AGEFICE, FAFCEA: funding training as a freelancer (2026)',
     },
     excerpt: {
-      fr: 'Vous cotisez déjà pour votre formation. Reste à savoir quel fonds gère votre enveloppe et comment la mobiliser : FIFPL, AGEFICE, FAFCEA, FAF-PM, mode d’emploi et erreurs à éviter.',
+      fr: 'Profession libérale : votre formation relève du FIFPL, celle de vos salariés de l’OPCO. AGEFICE, FAFCEA, micro-entrepreneur : le bon fonds et comment déposer la demande.',
       en: 'You already contribute to your own training budget. Which fund holds it and how to claim it: FIFPL, AGEFICE, FAFCEA, FAF-PM explained.',
     },
     keyword: {
-      fr: 'financement formation travailleur indépendant',
+      fr: 'opco fifpl',
       en: 'training funding for the self-employed',
     },
     category: { fr: 'Formation', en: 'Training' },
     date: '2026-10-13',
-    updated: '2026-10-13',
+    updated: '2026-11-09',
     readingMin: 8,
     author: {
       name: 'Jean-Gérard Anfossi',
