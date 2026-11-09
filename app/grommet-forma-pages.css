@@ -101,3 +101,32 @@
   .fd-pgroups { columns: 1; }
 }
 .fd-hero__ic--color { display: block; height: 50px; width: auto; margin-bottom: 10px; }
+
+/* ---- Page formateurs : encadré « L'équipe en bref » en icônes illustrées ---- */
+.fd-fact__ic { width: auto; height: 26px; max-width: 32px; object-fit: contain; flex-shrink: 0; margin-top: -3px; }
+
+/* ---- Pastilles d'initiales multicolores (page formateurs uniquement) ----
+   Dégradé conique repris de la palette des maquettes (etape-01 à 04), pivoté
+   carte par carte. Les sous-pages domaines gardent l'avatar doré. */
+.fm-card .fm-avatar {
+  --av-rot: 0deg;
+  background:
+    conic-gradient(
+      from var(--av-rot) at 50% 50%,
+      #eaa93d 0deg,
+      #c96226 52deg,
+      #c9ab3c 104deg,
+      #5d812e 152deg,
+      #3f7f55 200deg,
+      #2b5f94 248deg,
+      #356ea3 292deg,
+      #7f8c33 336deg,
+      #eaa93d 360deg
+    );
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.3);
+}
+.fm-card:nth-child(2) .fm-avatar { --av-rot: 128deg; }
+.fm-card:nth-child(3) .fm-avatar { --av-rot: 252deg; }
+.fm-card:nth-child(4) .fm-avatar { --av-rot: 64deg; }
+.fm-card:nth-child(5) .fm-avatar { --av-rot: 196deg; }
+.fm-card:nth-child(6) .fm-avatar { --av-rot: 310deg; }
