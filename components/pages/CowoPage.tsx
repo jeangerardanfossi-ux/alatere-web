@@ -4,6 +4,7 @@
 
 import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useReservations, useT, type Dict } from '@/components/grommet/lang';
+import { cowoFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
@@ -159,13 +160,17 @@ const TX: Dict = {
     fr: "Réunions, formations, entretiens : salle modulable de 10 à 12 personnes, équipée écran et Wi-Fi, ouverte aux non-membres. 80 € TTC après 16 h.",
     en: 'Meetings, training sessions, interviews: a modular room for 10 to 12 people with a screen and Wi-Fi, open to non-members. €80 incl. VAT after 4 pm.',
   },
-  rent_more: {
+  rent_plans: {
     fr: 'Découvrir toutes nos formules et tarifs',
     en: 'See all our plans and prices',
   },
   rent_note: {
     fr: "Bureaux privatifs à l'année : actuellement complets. Contactez-nous pour être prévenu de la prochaine disponibilité.",
     en: 'Yearly private offices: currently full. Contact us to hear about the next availability.',
+  },
+  rent_more: {
+    fr: 'Toutes les solutions pour louer un bureau à Antibes',
+    en: 'All the ways to rent an office in Antibes (in French)',
   },
   eq_label: { fr: 'Équipements & services', en: 'Amenities & services' },
   eq_title: {
@@ -207,50 +212,7 @@ const TX: Dict = {
     fr: 'Coworking à Antibes : infos pratiques',
     en: 'Coworking in Antibes: practical info',
   },
-  faq1_q: {
-    fr: "Où se situe l'espace de coworking ?",
-    en: 'Where is the coworking space located?',
-  },
-  faq1_a: {
-    fr: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
-    en: 'At 9 Boulevard Albert 1er, 06600 Antibes, steps from Port Vauban and about a ten-minute walk (700 m) from the train station.',
-  },
-  faq2_q: { fr: 'Quelles formules proposez-vous ?', en: 'What plans do you offer?' },
-  faq2_a: {
-    fr: "Pass à la journée (30 € TTC), abonnement mensuel en open-space (360 € TTC par mois), location de salles de réunion (180 € TTC la journée) et bureau privatif à l'année, selon disponibilité. Le pass, l'abonnement et les salles se réservent en ligne.",
-    en: 'Day pass (€30 incl. VAT), monthly open-area membership (€360 incl. VAT per month), meeting-room rental (€180 incl. VAT per day) and yearly private offices, subject to availability. Passes, memberships and rooms can be booked online.',
-  },
-  faq3_q: {
-    fr: 'Puis-je réserver une salle de réunion sans être abonné ?',
-    en: 'Can I book a meeting room without a membership?',
-  },
-  faq3_a: {
-    fr: 'Oui, que vous soyez membre ou non. La disponibilité est toutefois limitée : la plupart de nos salles sont louées à l’année par des entreprises, mieux vaut donc réserver quelques jours à l’avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).',
-    en: 'Yes, member or not. Availability is limited, though: most of our rooms are rented yearly by companies, so it’s best to book a few days ahead. Rate: €180 incl. VAT per day, or €80 incl. VAT for the late slot (after 4 pm).',
-  },
-  faq4_q: {
-    fr: 'Puis-je aussi y domicilier mon entreprise ?',
-    en: "Can I also register my company's address here?",
-  },
-  faq4_a: {
-    fr: 'Oui, via notre offre Alatere doMo. Les membres du coworking bénéficient de conditions avantageuses sur la domiciliation.',
-    en: 'Yes, through our Alatere doMo service. Coworking members enjoy preferential terms on business address services.',
-  },
-  faq5_q: { fr: "Quels sont les horaires d'accès ?", en: 'What are the opening hours?' },
-  faq5_a: {
-    fr: "Le pass journée donne accès à l'espace de 9 h à 18 h, du lundi au vendredi. Les abonnés mensuels disposent d'un badge d'accès à l'immeuble et peuvent venir travailler 24 h/24, 7 j/7.",
-    en: 'The day pass gives access from 9 am to 6 pm, Monday to Friday. Monthly members get a building access badge and can work 24/7.',
-  },
-  faq6_q: { fr: 'Combien de personnes travaillent dans l’espace ?', en: 'How many people work in the space?' },
-  faq6_a: {
-    fr: "L'espace compte 15 postes de travail répartis dans 5 salles : une ambiance calme et à taille humaine, loin des grands plateaux bruyants.",
-    en: 'The space has 15 workstations across 5 rooms: a calm, human-scale setting, far from large noisy open floors.',
-  },
-  faq7_q: { fr: 'Peut-on déjeuner sur place ?', en: 'Can I have lunch on site?' },
-  faq7_a: {
-    fr: 'Oui. Une cuisine équipée avec un comptoir est à la disposition de tous les coworkers : vous pouvez y conserver votre repas au frais et déjeuner sur place.',
-    en: 'Yes. An equipped kitchen with a counter is available to all coworkers: you can keep your lunch in the fridge and eat on site.',
-  },
+  ...cowoFaqTx,
   loc_label: { fr: 'Nous situer', en: 'Find us' },
   loc_title: { fr: "Centre-ville d'Antibes", en: 'Central Antibes' },
   loc_card_label: { fr: "Alatere coWo · centre d'affaires", en: 'Alatere coWo · business center' },
@@ -523,11 +485,13 @@ function Body() {
               </div>
             </div>
             <a href="#offres" className="ap-panel__more">
-              {t('rent_more')} <span className="g-arrow">→</span>
+              {t('rent_plans')} <span className="g-arrow">→</span>
             </a>
             <p className="ap-hero__note" style={{ marginTop: 14 }}>
               {t('rent_note')}{' '}
               <Link href="/contact?pole=cowo">{t('plan3_cta')} →</Link>
+              {' · '}
+              <a href="/bureaux-a-louer-antibes">{t('rent_more')} →</a>
             </p>
           </div>
         </section>

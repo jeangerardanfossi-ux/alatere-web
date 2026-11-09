@@ -24,7 +24,7 @@ export default function Page() {
       <JsonLd
         data={[
           cowoLd,
-          cowoFaqLd,
+          cowoFaqLd('fr'),
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Alatere coWo', path: '/alatere-cowo' },

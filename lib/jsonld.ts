@@ -1,4 +1,15 @@
 import { company } from './site';
+import {
+  faqPairs,
+  homeFaqTx,
+  domoFaqTx,
+  formaFaqTx,
+  ecomFaqTx,
+  cowoFaqTx,
+  type FaqDict,
+} from './faq';
+import { FORMA_DOMAINS } from './forma-domains';
+import { enPath } from './i18n';
 
 const SITE_URL = 'https://www.alatere-web.com';
 
@@ -12,6 +23,66 @@ const address = {
   addressLocality: company.city,
   addressCountry: 'FR',
 };
+
+const geo = {
+  '@type': 'GeoCoordinates',
+  latitude: 43.5793777,
+  longitude: 7.122309,
+};
+
+/** Jours ouvrés - les trois entités locales sont fermées le week-end. */
+const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+/**
+ * Horaires d'ouverture. Doivent refléter les horaires affichés sur la page :
+ * accueil / contact 9 h - 18 h, retrait du courrier doMo 9 h - 17 h.
+ */
+const openingHours = (opens: string, closes: string) => [
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: WEEKDAYS,
+    opens,
+    closes,
+  },
+];
+
+/**
+ * Offre tarifaire. `per` exprime un prix récurrent ('MON' = par mois,
+ * 'DAY' = par jour, codes UN/CEFACT) ; sans `per`, c'est un forfait unique.
+ * `vatIncluded` doit suivre l'affichage de la page : doMo annonce des prix HT,
+ * coWo des prix TTC.
+ */
+function offer(opts: {
+  name: string;
+  price: number;
+  vatIncluded: boolean;
+  per?: 'MON' | 'DAY';
+  url?: string;
+  availability?: 'InStock' | 'SoldOut';
+}) {
+  const { name, price, vatIncluded, per, url, availability = 'InStock' } = opts;
+  return {
+    '@type': 'Offer',
+    name,
+    availability: `https://schema.org/${availability}`,
+    ...(url ? { url } : {}),
+    priceSpecification: {
+      '@type': per ? 'UnitPriceSpecification' : 'PriceSpecification',
+      price,
+      priceCurrency: 'EUR',
+      valueAddedTaxIncluded: vatIncluded,
+      ...(per
+        ? {
+            referenceQuantity: {
+              '@type': 'QuantitativeValue',
+              value: 1,
+              unitCode: per,
+            },
+          }
+        : {}),
+    },
+  };
+}
 
 export const organizationLd = {
   '@context': 'https://schema.org',
@@ -45,12 +116,10 @@ export const localBusinessLd = {
   telephone: company.phone,
   priceRange: '€€',
   address,
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 43.5793777,
-    longitude: 7.122309,
-  },
+  geo,
   areaServed: 'Côte d’Azur, Alpes-Maritimes',
+  // Horaires affichés sur /contact (ContactPage : « 9h - 18h »).
+  openingHoursSpecification: openingHours('09:00', '18:00'),
   sameAs: [company.facebook, company.linkedin, company.mapsForma],
 };
 
@@ -63,7 +132,21 @@ export const domoLd = {
   telephone: company.phone,
   priceRange: '€€',
   address,
+  geo,
   areaServed: ['Antibes', 'Juan-les-Pins', 'Sophia Antipolis', 'Mougins', 'Vallauris', 'Biot', 'Alpes-Maritimes'],
+  // Retrait du courrier à l'accueil : lundi - vendredi, 9 h - 17 h (cf. DomoPage).
+  openingHoursSpecification: openingHours('09:00', '17:00'),
+  // Tarifs affichés sur /alatere-domo - prix HT, frais de dossier inclus au catalogue.
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Formules de domiciliation',
+    itemListElement: [
+      offer({ name: 'Dropbox - boîte aux lettres', price: 25, vatIncluded: false, per: 'MON' }),
+      offer({ name: 'Headquarters - adresse de siège social', price: 30, vatIncluded: false, per: 'MON' }),
+      offer({ name: 'Forward - numérisation et réexpédition', price: 50, vatIncluded: false, per: 'MON' }),
+      offer({ name: 'Frais de dossier (une seule fois, à l’ouverture)', price: 50, vatIncluded: false }),
+    ],
+  },
   sameAs: [company.mapsDomo, company.facebookDomo, company.linkedinDomo],
 };
 
@@ -76,7 +159,29 @@ export const cowoLd = {
   telephone: company.phone,
   priceRange: '€€',
   address,
+  geo,
   areaServed: 'Antibes, Alpes-Maritimes, Côte d’Azur',
+  // Accès à l'espace 9 h - 18 h du lundi au vendredi ; les abonnés mensuels
+  // disposent d'un badge 24 h/24 (non exprimable en OpeningHoursSpecification).
+  openingHoursSpecification: openingHours('09:00', '18:00'),
+  // Tarifs affichés sur /alatere-cowo - prix TTC.
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Formules de coworking',
+    itemListElement: [
+      offer({ name: 'Pass journée', price: 30, vatIncluded: true, per: 'DAY' }),
+      offer({ name: 'Abonnement mensuel open-space', price: 360, vatIncluded: true, per: 'MON' }),
+      offer({
+        name: 'Bureau privatif',
+        price: 72,
+        vatIncluded: true,
+        per: 'DAY',
+        availability: 'SoldOut',
+      }),
+      offer({ name: 'Salle de réunion - journée', price: 180, vatIncluded: true, per: 'DAY' }),
+      offer({ name: 'Salle de réunion - fin de journée (après 16 h)', price: 80, vatIncluded: true }),
+    ],
+  },
   sameAs: [company.mapsCowo, company.facebookDomo, company.linkedinDomo],
 };
 
@@ -89,7 +194,9 @@ export const educationalOrganizationLd = {
   telephone: company.phone,
   address,
   description:
-    'Organisme de formation professionnelle certifié Qualiopi, enregistré sous le n° ' +
+    'Organisme de formation professionnelle certifié Qualiopi à Antibes : formation IA, ' +
+    'webmarketing, anglais professionnel, communication digitale et immobilier. ' +
+    'Enregistré sous le n° ' +
     company.formationNumber +
     '.',
   hasCredential: {
@@ -99,25 +206,54 @@ export const educationalOrganizationLd = {
   sameAs: [company.mapsForma, company.facebook, company.linkedin],
 };
 
-const domaines = [
-  'Webmarketing',
-  'Intelligence artificielle',
-  'Langues',
-  'Communication digitale',
-  'Immobilier',
-];
-
-export const coursesLd = domaines.map((d) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: d,
-  description: `Formation professionnelle « ${d} » dispensée par Alatere Web SAS (marque Alatere forMa), organisme de formation certifié Qualiopi.`,
-  provider: {
-    '@type': 'EducationalOrganization',
-    name: 'Alatere Web SAS',
-    url: `${SITE_URL}/alatere-forma`,
+/**
+ * Intitulés qualifiés « formation » : ce sont des noms de `Course`, pas des
+ * domaines d'activité - ils doivent lever l'ambiguïté avec le pôle agence.
+ * Clés = slugs de FORMA_DOMAINS, pour que noms, ordre et URL restent en phase.
+ */
+const COURSE_NAMES: Record<string, { fr: string; en: string }> = {
+  webmarketing: { fr: 'Formation webmarketing', en: 'Web marketing training' },
+  'intelligence-artificielle': {
+    fr: 'Formation IA (intelligence artificielle)',
+    en: 'AI (artificial intelligence) training',
   },
-}));
+  langues: {
+    fr: 'Anglais professionnel et langues',
+    en: 'Business English and languages',
+  },
+  'communication-digitale': {
+    fr: 'Formation communication digitale',
+    en: 'Digital communication training',
+  },
+  immobilier: { fr: 'Formation immobilier', en: 'Real-estate training' },
+};
+
+/**
+ * Catalogue `Course` de la page forMa, dans la langue de la page. Chaque cours
+ * pointe vers sa sous-page « domaine », au slug localisé (`enPath`).
+ */
+export function coursesLd(lang: Lang = 'fr') {
+  return FORMA_DOMAINS.map((d) => {
+    const frPath = `/alatere-forma/${d.slug}`;
+    const name = COURSE_NAMES[d.slug]?.[lang] ?? d.name[lang];
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      name,
+      description:
+        lang === 'en'
+          ? `${name}: professional training delivered in Antibes or remotely by Alatere Web SAS (Alatere forMa brand), a Qualiopi-certified training provider.`
+          : `${name} : formation professionnelle dispensée à Antibes ou à distance par Alatere Web SAS (marque Alatere forMa), organisme de formation certifié Qualiopi.`,
+      url: `${SITE_URL}${lang === 'en' ? enPath(frPath) : frPath}`,
+      inLanguage: LANG_TAG[lang],
+      provider: {
+        '@type': 'EducationalOrganization',
+        name: 'Alatere Web SAS',
+        url: `${langBase(lang)}/alatere-forma`,
+      },
+    };
+  });
+}
 
 /** Course - sous-page « domaine » d'Alatere forMa (enrichi pour l'AI SEO). */
 export function courseLd(opts: {
@@ -271,143 +407,21 @@ export function faqLd(items: { q: string; a: string }[]) {
   };
 }
 
-/** FAQ visible de l'accueil (sert aussi au FAQPage - FR = version de référence). */
-export const homeFaq = [
-  {
-    q: "Qu'est-ce qu'Alatere Web ?",
-    a: "Alatere Web est une entreprise familiale créée à Paris en 2002 et installée à Antibes depuis 2008. Elle réunit quatre métiers complémentaires - e-commerce (Alatere ecoM), formation certifiée Qualiopi (Alatere forMa), domiciliation d'entreprise (Alatere doMo) et coworking (Alatere coWo) - avec un seul interlocuteur.",
-  },
-  {
-    q: 'Où se situe Alatere Web ?',
-    a: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
-  },
-  {
-    q: 'Alatere forMa est-il un organisme de formation certifié Qualiopi ?',
-    a: "Oui. L'organisme de formation est Alatere Web SAS, dont Alatere forMa est la marque : il est certifié Qualiopi et enregistré sous le numéro 93.06.07588.06. Les formations peuvent être financées par votre OPCO ou, pour les travailleurs non-salariés, par votre FAF (Fonds d'Assurance Formation).",
-  },
-  {
-    q: "Combien coûte la domiciliation d'entreprise à Antibes ?",
-    a: "La domiciliation commence à 25 € HT par mois (offre Dropbox, boîte aux lettres), 30 € HT par mois (offre Headquarters, adresse de siège social) et 50 € HT par mois (offre Forward, numérisation et réexpédition incluses), avec 50 € HT de frais de dossier réglés une seule fois à l'ouverture. L'adresse est agréée par la préfecture.",
-  },
-  {
-    q: 'Comment contacter Alatere Web ?',
-    a: 'Par le formulaire de contact du site ou au 07 61 56 45 56. Nous répondons sous 48 heures.',
-  },
-];
+/**
+ * FAQPage des pages de pôle - construits depuis `lib/faq.ts`, qui alimente aussi
+ * le rendu visible des mêmes questions. Le balisage reflète donc exactement la
+ * FAQ affichée, dans la langue de la page : appeler avec 'en' sur /en/....
+ */
+const txFaqLd =
+  (tx: FaqDict) =>
+  (lang: Lang = 'fr') =>
+    faqLd(faqPairs(tx, lang));
 
-export const homeFaqLd = faqLd(homeFaq);
-
-export const domoFaqLd = faqLd([
-  {
-    q: "Combien coûte une domiciliation d'entreprise à Antibes ?",
-    a: "L'offre Dropbox (boîte aux lettres) démarre à 25 € HT par mois. L'offre Headquarters est à 30 € HT par mois (adresse de siège social + courrier) et l'offre Forward à 50 € HT par mois (numérisation et réexpédition incluses). Des frais de dossier de 50 € HT s'appliquent une seule fois, à l'ouverture du dossier.",
-  },
-  {
-    q: 'Puis-je domicilier le siège social de ma société chez vous ?',
-    a: "Oui. En tant que société de domiciliation agréée par la préfecture (n° 2022/12 du 20/09/2022), nous délivrons une attestation conforme aux exigences du greffe et du RCS d'Antibes.",
-  },
-  {
-    q: 'Quel est le délai de mise en place ?',
-    a: 'Une fois le contrat signé et les pièces transmises, votre attestation de domiciliation est émise sous 24 à 48 heures.',
-  },
-  {
-    q: 'Puis-je transférer le siège de mon entreprise existante ?',
-    a: 'Oui. Nous vous accompagnons dans les formalités de transfert de siège auprès du greffe et la mise à jour de vos statuts.',
-  },
-  {
-    q: 'Y a-t-il un engagement de durée ?',
-    a: 'Le contrat est renouvelable et résiliable avec préavis. Vous pouvez faire évoluer votre formule à tout moment, sans pénalité.',
-  },
-  {
-    q: 'Une micro-entreprise peut-elle se domicilier chez vous ?',
-    a: "Oui. Les micro-entrepreneurs et entrepreneurs individuels peuvent domicilier leur activité à notre adresse avec l'offre Headquarters ou Forward. Cela évite de faire figurer votre adresse personnelle sur vos factures et dans les annuaires d'entreprises.",
-  },
-  {
-    q: 'Comment récupérer mon courrier ?',
-    a: "Votre courrier est conservé à l'accueil, où vous pouvez le retirer du lundi au vendredi, de 9 h à 17 h. Avec l'offre Forward, il est aussi numérisé et réexpédié chaque semaine à l'adresse de votre choix.",
-  },
-  {
-    q: "Puis-je recevoir mes clients à l'adresse de domiciliation ?",
-    a: "Oui, sur réservation. Les salles de réunion climatisées de notre espace de coworking se louent à la journée ou en fin de journée, et vous pouvez réserver un poste de travail à la journée.",
-  },
-  {
-    q: 'Quelle différence entre domiciliation commerciale et boîte aux lettres ?',
-    a: "La domiciliation commerciale (offres Headquarters et Forward) vous donne une adresse de siège social inscrite au registre du commerce. L'offre Dropbox est une simple boîte aux lettres : elle reçoit votre courrier mais ne peut pas servir de siège social.",
-  },
-]);
-
-export const formaFaqLd = faqLd([
-  {
-    q: 'Alatere forMa est-il certifié Qualiopi ?',
-    a: "Oui. L'organisme de formation est Alatere Web SAS (marque Alatere forMa), certifié Qualiopi et enregistré sous le numéro 93.06.07588.06. La certification Qualiopi atteste de la qualité de nos processus et conditionne l'accès aux financements publics et mutualisés.",
-  },
-  {
-    q: 'Mes formations peuvent-elles être financées ?',
-    a: "Oui. Selon votre situation, nos formations sont finançables par votre OPCO (plan de développement des compétences) ou, pour les travailleurs non-salariés, par votre FAF (Fonds d'Assurance Formation). Nous vous accompagnons dans le montage du dossier de financement.",
-  },
-  {
-    q: 'Quels domaines de formation proposez-vous ?',
-    a: 'Cinq grands domaines : webmarketing (SEO, SEA, e-commerce), intelligence artificielle, langues, communication digitale et immobilier. Le détail des programmes est publié sur notre catalogue dédié.',
-  },
-  {
-    q: 'Les formations sont-elles en présentiel ou à distance ?',
-    a: "Les deux. Nous proposons du présentiel à Antibes (9 Bd Albert 1er), de l'intra-entreprise et du distanciel synchrone. Les parcours sont individualisés, en groupes de 1 à 8 personnes.",
-  },
-  {
-    q: 'Quel est le délai pour démarrer une formation ?',
-    a: 'Comptez en moyenne 14 jours entre la demande et le démarrage, selon le dossier de financement et les disponibilités. Le devis personnalisé est envoyé sous 48 heures.',
-  },
-]);
-
-export const ecomFaqLd = faqLd([
-  {
-    q: 'Que fait Alatere ecoM ?',
-    a: "Alatere ecoM conçoit, exploite et référence des sites e-commerce. Depuis 2003, nous gérons nos propres boutiques d'art en ligne (repro-tableaux.com, copia-di-arte.com). Le SEO, le SEA et les méthodes d'exploitation rodés sur ces sites, nous les appliquons à ceux de nos clients.",
-  },
-  {
-    q: 'Proposez-vous du référencement SEO et de la publicité SEA ?',
-    a: 'Oui : référencement naturel (SEO), publicité en ligne (SEA sur Google, Microsoft et Meta) et acquisition. Nous les pratiquons sur nos propres sites depuis vingt ans.',
-  },
-  {
-    q: "Travaillez-vous pour l'international ?",
-    a: 'Oui. Nous opérons des sites multilingues (hreflang, ciblage géographique, fiscalité UE), notamment via copia-di-arte.com pour les marchés européens.',
-  },
-  {
-    q: 'Comment démarrer un projet e-commerce avec vous ?',
-    a: 'Contactez-nous via le formulaire ou au 07 61 56 45 56. Nous échangeons sur votre besoin et revenons vers vous sous 48 heures avec une première proposition.',
-  },
-]);
-
-export const cowoFaqLd = faqLd([
-  {
-    q: "Où se situe l'espace de coworking ?",
-    a: 'Au 9 Boulevard Albert 1er, 06600 Antibes, à deux pas du port Vauban et à environ dix minutes à pied (700 m) de la gare SNCF.',
-  },
-  {
-    q: 'Quelles formules proposez-vous ?',
-    a: "Pass à la journée (30 € TTC), abonnement mensuel en open-space (360 € TTC par mois), location de salles de réunion (180 € TTC la journée) et bureau privatif à l'année, selon disponibilité. Le pass, l'abonnement et les salles se réservent en ligne.",
-  },
-  {
-    q: 'Puis-je réserver une salle de réunion sans être abonné ?',
-    a: 'Oui, que vous soyez membre ou non. La disponibilité est toutefois limitée : la plupart de nos salles sont louées à l’année par des entreprises, mieux vaut donc réserver quelques jours à l’avance. Tarif : 180 € TTC la journée, ou 80 € TTC en fin de journée (après 16 h).',
-  },
-  {
-    q: 'Puis-je aussi y domicilier mon entreprise ?',
-    a: 'Oui, via notre offre Alatere doMo. Les membres du coworking bénéficient de conditions avantageuses sur la domiciliation.',
-  },
-  {
-    q: "Quels sont les horaires d'accès ?",
-    a: "Le pass journée donne accès à l'espace de 9 h à 18 h, du lundi au vendredi. Les abonnés mensuels disposent d'un badge d'accès à l'immeuble et peuvent venir travailler 24 h/24, 7 j/7.",
-  },
-  {
-    q: 'Combien de personnes travaillent dans l’espace ?',
-    a: "L'espace compte 15 postes de travail répartis dans 5 salles : une ambiance calme et à taille humaine, loin des grands plateaux bruyants.",
-  },
-  {
-    q: 'Peut-on déjeuner sur place ?',
-    a: 'Oui. Une cuisine équipée avec un comptoir est à la disposition de tous les coworkers : vous pouvez y conserver votre repas au frais et déjeuner sur place.',
-  },
-]);
+export const homeFaqLd = txFaqLd(homeFaqTx);
+export const domoFaqLd = txFaqLd(domoFaqTx);
+export const formaFaqLd = txFaqLd(formaFaqTx);
+export const ecomFaqLd = txFaqLd(ecomFaqTx);
+export const cowoFaqLd = txFaqLd(cowoFaqTx);
 
 /**
  * FAQ d'articles de blog - bilingues. Le contenu DOIT refléter la FAQ visible
@@ -577,6 +591,18 @@ export const financerFormationFaqLd = biFaqLd(
       q: 'Combien de temps prend un dossier de financement ?',
       a: 'Un dossier OPCO ou FAF demande souvent plusieurs semaines d’instruction. Chez Alatere forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne sous 14 jours une fois le financement validé.',
     },
+    {
+      q: 'Je suis dirigeant et j’ai des salariés : qui finance quoi ?',
+      a: 'Deux financeurs différents. Votre propre formation relève de votre FAF (FIFPL, AGEFICE ou FAFCEA) si vous êtes non-salarié ; celle de vos salariés relève de l’OPCO de votre entreprise. Une même formation suivie avec votre équipe peut donc être financée par deux dossiers.',
+    },
+    {
+      q: 'Un micro-entrepreneur peut-il faire financer sa formation ?',
+      a: 'Oui, par le FAF de son activité, à condition d’avoir déclaré un chiffre d’affaires et payé la contribution à la formation professionnelle (CFP). L’attestation est disponible sur l’espace URSSAF.',
+    },
+    {
+      q: 'Le CPF peut-il compléter un financement OPCO ou FAF ?',
+      a: 'Oui, pour une formation certifiante inscrite au RNCP ou au Répertoire spécifique : le CPF peut alors couvrir le reste à charge.',
+    },
   ],
   [
     {
@@ -708,6 +734,25 @@ export const cowoJourneeFaqLd = biFaqLd(
 /* ------------------------------------------------------------------------- *
  * Article « Comparatif domiciliation Antibes » (bilingue FR/EN)
  * ------------------------------------------------------------------------- */
+
+/**
+ * FAQ visible de l'article « créer son entreprise à Antibes » (miroir du FAQPage).
+ * Article publié en français uniquement : pas de version anglaise à baliser.
+ */
+export const creerEntrepriseFaqLd = faqLd([
+  {
+    q: 'Peut-on démarrer chez soi puis transférer le siège ?',
+    a: "Oui. Le transfert de siège est une formalité modificative : décision de l'associé ou de l'assemblée, publication d'une annonce légale, dépôt au guichet unique. Elle a un coût et prend quelques jours. Si vous savez déjà que vous ne resterez pas à votre adresse personnelle, autant partir directement sur une adresse professionnelle.",
+  },
+  {
+    q: 'Que se passe-t-il si je déménage hors du département ?',
+    a: "Le transfert entraîne un changement de greffe. La procédure est la même, mais le dossier transite par le greffe d'origine vers le nouveau. Une adresse de domiciliation stable évite précisément cette formalité quand c'est vous qui déménagez, pas votre activité.",
+  },
+  {
+    q: 'La domiciliation change-t-elle quelque chose à la CFE ?',
+    a: "La cotisation foncière des entreprises est due dans la commune où vous disposez de locaux ou de terrains. Une adresse de domiciliation vous rattache à la commune du domiciliataire. Les modalités de calcul dépendent de votre situation : c'est un point à valider avec votre expert-comptable.",
+  },
+]);
 
 /** FAQ visible de l'article comparatif (miroir exact du FAQPage, FR et EN). */
 export const comparatifDomiciliationFaqLd = biFaqLd(

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import HomeGrommet from '@/components/home/HomeGrommet';
 import JsonLd from '@/components/JsonLd';
-import { organizationLd, localBusinessLd, websiteLd } from '@/lib/jsonld';
+import { organizationLd, localBusinessLd, websiteLd, homeFaqLd } from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../grommet-home.css';
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <JsonLd data={[websiteLd, organizationLd, localBusinessLd]} />
+      <JsonLd data={[websiteLd, organizationLd, localBusinessLd, homeFaqLd('en')]} />
       <HomeGrommet />
     </>
   );

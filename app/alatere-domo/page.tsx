@@ -25,7 +25,7 @@ export default function Page() {
       <JsonLd
         data={[
           domoLd,
-          domoFaqLd,
+          domoFaqLd('fr'),
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Alatere doMo', path: '/alatere-domo' },

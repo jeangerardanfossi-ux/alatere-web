@@ -23,7 +23,7 @@ export default function Page() {
       <JsonLd
         data={[
           organizationLd,
-          ecomFaqLd,
+          ecomFaqLd('fr'),
           breadcrumbLd([
             { name: 'Accueil', path: '/' },
             { name: 'Alatere ecoM', path: '/alatere-ecom' },

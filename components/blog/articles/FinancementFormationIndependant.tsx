@@ -1,14 +1,14 @@
 'use client';
 
 import Link from '@/components/grommet/LocalizedLink';
+import { faqFifplOpco } from '@/lib/faq-fifpl-opco';
 
 /**
- * Corps de l'article « Financer sa formation quand on est indépendant » - FR uniquement.
+ * Corps de l'article « FIFPL ou OPCO ? Qui finance la formation d'un indépendant » - FR uniquement.
+ * Requête visée depuis le 09/11/2026 : « opco fifpl » (plan SEO, A7).
  *
- * ⚠️ AVANT PUBLICATION : les plafonds et critères de prise en charge changent chaque
- * année et par fonds. Les cellules marquées « à confirmer » doivent être renseignées
- * depuis le site officiel du fonds concerné (millesime 2026) avant mise en ligne.
- * Ne rien publier de chiffré qui n'ait pas été vérifié à la source.
+ * Les plafonds changent chaque année et par code NAF : ne rien publier de chiffré qui
+ * n'ait pas été vérifié à la source ; on renvoie vers le site de chaque fonds.
  */
 export default function FinancementFormationIndependant() {
   return (
@@ -21,6 +21,71 @@ export default function FinancementFormationIndependant() {
         vous ne le demandez pas. Reste à savoir <em>quel</em> fonds gère votre enveloppe, et{' '}
         <em>comment</em> la mobiliser sans se faire refuser le dossier.
       </p>
+
+      <section>
+        <h2>FIFPL ou OPCO : la réponse en 30 secondes</h2>
+        <p>
+          <strong>
+            Si vous êtes profession libérale non salariée, votre formation relève du FIFPL, pas
+            d&rsquo;un OPCO.
+          </strong>{' '}
+          Les OPCO ne financent que des salariés. Le FIFPL (Fonds interprofessionnel de formation
+          des professionnels libéraux) finance les libéraux qui versent la CFP avec leurs
+          cotisations URSSAF.
+        </p>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>FIFPL</th>
+                <th>OPCO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pour qui</td>
+                <td>Le professionnel libéral lui-même, non salarié (y compris en micro-entreprise)</td>
+                <td>Les salariés d&rsquo;une entreprise, y compris ceux d&rsquo;un cabinet libéral</td>
+              </tr>
+              <tr>
+                <td>Financé par</td>
+                <td>La CFP versée avec vos cotisations URSSAF</td>
+                <td>Les contributions formation de l&rsquo;employeur sur la masse salariale</td>
+              </tr>
+              <tr>
+                <td>Qui dépose la demande</td>
+                <td>Vous, en ligne sur le site du FIFPL</td>
+                <td>L&rsquo;employeur</td>
+              </tr>
+              <tr>
+                <td>Montant pris en charge</td>
+                <td>Plafond annuel fixé par profession (code NAF), publié chaque année</td>
+                <td>Selon les règles de l&rsquo;OPCO et la taille de l&rsquo;entreprise</td>
+              </tr>
+              <tr>
+                <td>Condition commune</td>
+                <td colSpan={2}>Un organisme certifié Qualiopi et une demande déposée dans les délais</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <strong>Vous êtes libéral et employeur ?</strong> Vous avez droit aux deux, pour des
+          personnes différentes : le FIFPL pour vous, l&rsquo;OPCO de votre cabinet pour vos
+          salariés (pour la plupart des cabinets libéraux, l&rsquo;OPCO EP). Vérifiez le vôtre avec
+          l&rsquo;
+          <a
+            className="g-inline"
+            href="https://www.service-public.gouv.fr/particuliers/vosdroits/R63043"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            outil officiel « Trouver son opérateur de compétences »
+          </a>
+          .
+        </p>
+      </section>
 
       <section>
         <h2>OPCO, FAF : deux mots qu&rsquo;on confond tout le temps</h2>
@@ -61,29 +126,29 @@ export default function FinancementFormationIndependant() {
               <tr>
                 <th>Votre situation</th>
                 <th>Votre fonds</th>
-                <th>Plafond annuel indicatif</th>
+                <th>Plafond annuel</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Profession libérale (hors médicale) : consultant, architecte, avocat, kiné, ostéopathe, traducteur&hellip;</td>
                 <td><strong>FIFPL</strong> (Fonds interprofessionnel de formation des professionnels libéraux)</td>
-                <td>à confirmer (millésime 2026)</td>
+                <td>fixé chaque année par le fonds, selon votre activité</td>
               </tr>
               <tr>
                 <td>Dirigeant non salarié du commerce, de l&rsquo;industrie ou des services, et son conjoint collaborateur</td>
                 <td><strong>AGEFICE</strong></td>
-                <td>à confirmer (millésime 2026)</td>
+                <td>fixé chaque année par le fonds, selon votre activité</td>
               </tr>
               <tr>
                 <td>Artisan inscrit au répertoire des métiers</td>
                 <td><strong>FAFCEA</strong>, et selon les cas le <strong>Conseil de la formation</strong> régional</td>
-                <td>à confirmer (millésime 2026)</td>
+                <td>fixé chaque année par le fonds, selon votre activité</td>
               </tr>
               <tr>
                 <td>Profession médicale libérale</td>
                 <td><strong>FAF-PM</strong> (médecins) ou fonds dédié à la profession</td>
-                <td>à confirmer (millésime 2026)</td>
+                <td>fixé chaque année par le fonds, selon votre activité</td>
               </tr>
               <tr>
                 <td>Salarié d&rsquo;une TPE ou PME</td>
@@ -93,7 +158,7 @@ export default function FinancementFormationIndependant() {
               <tr>
                 <td>Exploitant agricole</td>
                 <td><strong>VIVEA</strong></td>
-                <td>à confirmer (millésime 2026)</td>
+                <td>fixé chaque année par le fonds, selon votre activité</td>
               </tr>
             </tbody>
           </table>
@@ -170,7 +235,7 @@ export default function FinancementFormationIndependant() {
       </section>
 
       <section>
-        <h2>Deux cas concrets</h2>
+        <h2>Trois cas concrets</h2>
         <h3>Une architecte d&rsquo;intérieur installée à Antibes</h3>
         <p>
           Profession libérale, affiliée à l&rsquo;URSSAF, elle relève du FIFPL. Elle souhaite se
@@ -186,6 +251,15 @@ export default function FinancementFormationIndependant() {
           liées à son métier, et du Conseil de la formation de sa chambre de métiers pour les
           formations transversales (gestion, commercial, numérique). La distinction compte : le
           même artisan ne dépose pas au même endroit selon le thème de sa formation.
+        </p>
+        <h3>Une agente immobilière libérale et son assistante salariée</h3>
+        <p>
+          Agente commerciale en immobilier installée en entreprise individuelle, elle emploie une
+          assistante à temps partiel. Pour sa formation continue obligatoire, elle dépose
+          elle-même un dossier au FIFPL, qui publie des critères spécifiques aux agents
+          immobiliers. La formation de son assistante est demandée par l&rsquo;employeur, donc
+          par elle, à l&rsquo;OPCO. Les deux peuvent suivre la même session : deux dossiers, deux
+          financeurs.
         </p>
       </section>
 
@@ -224,11 +298,26 @@ export default function FinancementFormationIndependant() {
       </section>
 
       <section>
+        <h2>Questions fréquentes</h2>
+        {faqFifplOpco.map((f) => (
+          <div key={f.q}>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </section>
+
+      <section>
         <h2>Pour aller plus loin</h2>
         <ul>
           <li>
             <Link href="/blog/financer-formation-opco-faf" className="g-inline">
-              Financer sa formation professionnelle : OPCO et FAF, le guide
+              OPCO ou FAF : le tableau par profil (salarié, dirigeant de SAS, gérant de SARL…)
+            </Link>
+          </li>
+          <li>
+            <Link href="/alatere-forma/immobilier" className="g-inline">
+              La formation continue des agents immobiliers chez Alatere forMa
             </Link>
           </li>
           <li>
