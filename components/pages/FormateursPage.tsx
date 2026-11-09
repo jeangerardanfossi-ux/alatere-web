@@ -6,7 +6,8 @@ import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import { Icon, BrandIcon } from '@/components/grommet/icons';
+import { BrandIcon } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import type { ReactNode } from 'react';
 
 const ACCENT = {
@@ -261,22 +262,22 @@ function Body() {
             <span className="g-label">{t('aside_label')}</span>
             <div className="fd-facts">
               <div className="fd-fact">
-                <Icon name="users" />
+                <ImgIcon name="formateurs" ext="svg" className="fd-fact__ic" />
                 <span>
                   <strong>{t('fact1_strong')}</strong>
                   {t('fact1_rest')}
                 </span>
               </div>
               <div className="fd-fact">
-                <Icon name="layers" />
+                <ImgIcon name="strates" ext="svg" className="fd-fact__ic" />
                 <span>{t('fact2')}</span>
               </div>
               <div className="fd-fact">
-                <Icon name="map-pin" />
+                <ImgIcon name="localisation" ext="svg" className="fd-fact__ic" />
                 <span>{t('fact3')}</span>
               </div>
               <div className="fd-fact">
-                <Icon name="badge-check" />
+                <ImgIcon name="qualiopi" ext="svg" className="fd-fact__ic" />
                 <span>{t('fact4')}</span>
               </div>
             </div>
