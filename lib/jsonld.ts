@@ -577,6 +577,18 @@ export const financerFormationFaqLd = biFaqLd(
       q: 'Combien de temps prend un dossier de financement ?',
       a: 'Un dossier OPCO ou FAF demande souvent plusieurs semaines d’instruction. Chez Alatere forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne sous 14 jours une fois le financement validé.',
     },
+    {
+      q: 'Je suis dirigeant et j’ai des salariés : qui finance quoi ?',
+      a: 'Deux financeurs différents. Votre propre formation relève de votre FAF (FIFPL, AGEFICE ou FAFCEA) si vous êtes non-salarié ; celle de vos salariés relève de l’OPCO de votre entreprise. Une même formation suivie avec votre équipe peut donc être financée par deux dossiers.',
+    },
+    {
+      q: 'Un micro-entrepreneur peut-il faire financer sa formation ?',
+      a: 'Oui, par le FAF de son activité, à condition d’avoir déclaré un chiffre d’affaires et payé la contribution à la formation professionnelle (CFP). L’attestation est disponible sur l’espace URSSAF.',
+    },
+    {
+      q: 'Le CPF peut-il compléter un financement OPCO ou FAF ?',
+      a: 'Oui, pour une formation certifiante inscrite au RNCP ou au Répertoire spécifique : le CPF peut alors couvrir le reste à charge.',
+    },
   ],
   [
     {

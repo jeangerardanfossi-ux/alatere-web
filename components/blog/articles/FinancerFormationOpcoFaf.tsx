@@ -58,34 +58,58 @@ function Fr() {
         </p>
       </section>
 
+      <aside className="g-updated">
+        Vous êtes indépendant ou profession libérale ? Le FIFPL, l&rsquo;AGEFICE et le FAFCEA, les
+        pièces à fournir et les erreurs qui font refuser un dossier sont détaillés dans{' '}
+        <Link className="g-inline" href="/blog/financement-formation-independant-fifpl-agefice">
+          FIFPL ou OPCO : qui finance la formation d&rsquo;un indépendant ?
+        </Link>
+      </aside>
+
       <section>
-        <h2>Quel dispositif pour qui ?</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Votre situation</th>
-              <th>Dispositif principal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Salarié</td><td>OPCO (plan de développement des compétences)</td></tr>
-            <tr><td>Indépendant / profession libérale</td><td>FAF (FIF PL, AGEFICE…)</td></tr>
-            <tr><td>Dirigeant assimilé salarié</td><td>OPCO</td></tr>
-            <tr>
-              <td>Demandeur d&rsquo;emploi</td>
-              <td>
-                <a
-                  className="g-inline"
-                  href="https://www.francetravail.fr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  France Travail
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>Qui finance votre formation ? Le tableau par profil</h2>
+        <p>
+          Ce n&rsquo;est pas votre statut juridique qui décide, c&rsquo;est la façon dont vous
+          cotisez : les salariés sont couverts par l&rsquo;OPCO de leur employeur, les non-salariés
+          par le fonds d&rsquo;assurance formation de leur activité.
+        </p>
+        <div style={{ overflowX: 'auto' }}>
+          <table>
+            <thead>
+              <tr>
+                <th>Votre situation</th>
+                <th>Qui finance</th>
+                <th>Qui dépose la demande</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Salarié du privé</td><td>L&rsquo;OPCO de votre employeur (plan de développement des compétences)</td><td>L&rsquo;employeur</td></tr>
+              <tr><td>Président ou directeur général de SAS ou SASU rémunéré (assimilé salarié)</td><td>En principe l&rsquo;OPCO de l&rsquo;entreprise, si celle-ci cotise pour lui</td><td>L&rsquo;entreprise</td></tr>
+              <tr><td>Gérant majoritaire de SARL, commerçant en entreprise individuelle</td><td>AGEFICE, ou le fonds de votre activité</td><td>Vous-même</td></tr>
+              <tr><td>Profession libérale (consultant, formateur, architecte, agent immobilier libéral&hellip;)</td><td><a className="g-inline" href="https://www.fifpl.fr" target="_blank" rel="noopener noreferrer">FIFPL</a></td><td>Vous-même</td></tr>
+              <tr><td>Médecin libéral</td><td>FAF-PM</td><td>Vous-même</td></tr>
+              <tr><td>Artisan inscrit au répertoire des métiers</td><td>FAFCEA, ou Conseil de la formation de la chambre de métiers, selon le thème</td><td>Vous-même</td></tr>
+              <tr><td>Micro-entrepreneur</td><td>Le fonds de votre activité (FIFPL, AGEFICE ou FAFCEA), si vous avez déclaré un chiffre d&rsquo;affaires et payé la contribution à la formation professionnelle</td><td>Vous-même</td></tr>
+              <tr><td>Exploitant agricole</td><td>VIVEA</td><td>Vous-même</td></tr>
+              <tr>
+                <td>Demandeur d&rsquo;emploi</td>
+                <td>
+                  <a className="g-inline" href="https://www.francetravail.fr" target="_blank" rel="noopener noreferrer">
+                    France Travail
+                  </a>
+                  , et votre CPF
+                </td>
+                <td>Vous, avec votre conseiller</td>
+              </tr>
+              <tr><td>Toute personne active, pour un projet personnel</td><td>Le CPF (compte personnel de formation), pour une formation certifiante</td><td>Vous-même</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="g-updated">
+          Les plafonds de prise en charge changent chaque année et dépendent de votre code NAF :
+          vérifiez-les sur le site de votre fonds avant de vous inscrire (le FIFPL, par exemple,
+          publie ses critères profession par profession).
+        </p>
       </section>
 
       <section>
@@ -131,6 +155,13 @@ function Fr() {
           </Link>{' '}
           : réponse sous 48 heures.
         </p>
+        <ul>
+          <li><Link className="g-inline" href="/alatere-forma/immobilier">Formations immobilier</Link> (formation continue des agents immobiliers)</li>
+          <li><Link className="g-inline" href="/alatere-forma/webmarketing">Webmarketing et référencement</Link></li>
+          <li><Link className="g-inline" href="/alatere-forma/communication-digitale">Communication digitale</Link></li>
+          <li><Link className="g-inline" href="/alatere-forma/intelligence-artificielle">Intelligence artificielle générative</Link></li>
+          <li><Link className="g-inline" href="/alatere-forma/langues">Langues</Link></li>
+        </ul>
       </section>
 
       <section>
@@ -170,6 +201,27 @@ function Fr() {
           Un dossier OPCO ou FAF demande souvent plusieurs semaines d&rsquo;instruction. Chez Alatere
           forMa, le devis personnalisé est envoyé sous 48 heures et le démarrage intervient en moyenne
           sous 14 jours une fois le financement validé.
+        </p>
+
+        <h3>Je suis dirigeant et j&rsquo;ai des salariés : qui finance quoi ?</h3>
+        <p>
+          Deux financeurs différents. Votre propre formation relève de votre FAF (FIFPL, AGEFICE ou
+          FAFCEA) si vous êtes non-salarié ; celle de vos salariés relève de l&rsquo;OPCO de votre
+          entreprise. Une même formation suivie avec votre équipe peut donc être financée par deux
+          dossiers.
+        </p>
+
+        <h3>Un micro-entrepreneur peut-il faire financer sa formation ?</h3>
+        <p>
+          Oui, par le FAF de son activité, à condition d&rsquo;avoir déclaré un chiffre
+          d&rsquo;affaires et payé la contribution à la formation professionnelle (CFP).
+          L&rsquo;attestation est disponible sur l&rsquo;espace URSSAF.
+        </p>
+
+        <h3>Le CPF peut-il compléter un financement OPCO ou FAF ?</h3>
+        <p>
+          Oui, pour une formation certifiante inscrite au RNCP ou au Répertoire spécifique : le CPF
+          peut alors couvrir le reste à charge.
         </p>
       </section>
     </>
