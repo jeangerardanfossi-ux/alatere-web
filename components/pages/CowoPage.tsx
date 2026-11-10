@@ -157,8 +157,8 @@ const TX: Dict = {
   },
   rent4_h: { fr: 'Une salle de réunion · 180 €', en: 'A meeting room · €180' },
   rent4_p: {
-    fr: "Réunions, formations, entretiens : salle modulable de 10 à 12 personnes, équipée écran et Wi-Fi, ouverte aux non-membres. 80 € TTC après 16 h.",
-    en: 'Meetings, training sessions, interviews: a modular room for 10 to 12 people with a screen and Wi-Fi, open to non-members. €80 incl. VAT after 4 pm.',
+    fr: "Réunions, formations, entretiens : salle pour 6 personnes, équipée écran et Wi-Fi, ouverte aux non-membres. 80 € TTC après 16 h.",
+    en: 'Meetings, training sessions, interviews: a room for 6 people with a screen and Wi-Fi, open to non-members. €80 incl. VAT after 4 pm.',
   },
   rent_plans: {
     fr: 'Découvrir toutes nos formules et tarifs',
