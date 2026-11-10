@@ -347,21 +347,21 @@ function Body() {
           <div className="ap-grid ap-grid--3">
             <div className="ap-card">
               <div className="ap-card__ic ap-card__ic--color">
-                <ImgIcon name="localisation" ext="svg" dir="cowo-icons" />
+                <ImgIcon name="immeuble" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('why1_h')}</h3>
               <p>{t('why1_p')}</p>
             </div>
             <div className="ap-card">
               <div className="ap-card__ic ap-card__ic--color">
-                <ImgIcon name="acces" ext="svg" dir="cowo-icons" />
+                <ImgIcon name="transports" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('why2_h')}</h3>
               <p>{t('why2_p')}</p>
             </div>
             <div className="ap-card">
               <div className="ap-card__ic ap-card__ic--color">
-                <ImgIcon name="communaute" dir="cowo-icons" />
+                <ImgIcon name="sophia" ext="svg" dir="cowo-icons" />
               </div>
               <h3>{t('why3_h')}</h3>
               <p>{t('why3_p')}</p>

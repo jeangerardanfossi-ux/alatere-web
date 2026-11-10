@@ -9,6 +9,7 @@ import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import GoogleReviews from '@/components/grommet/GoogleReviews';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { BrandTitle } from '@/components/grommet/BrandName';
 
 const REPRO = 'https://repro-tableaux.com';
@@ -298,29 +299,29 @@ function Body() {
             </div>
             <div className="ap-grid">
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="search" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="seo" ext="svg" dir="ecom-icons" />
                 </div>
                 <h3>{t('sk1_h')}</h3>
                 <p>{t('sk1_p')}</p>
               </div>
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="target" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="sea" ext="svg" dir="ecom-icons" />
                 </div>
                 <h3>{t('sk2_h')}</h3>
                 <p>{t('sk2_p')}</p>
               </div>
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="globe" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="international" ext="svg" dir="ecom-icons" />
                 </div>
                 <h3>{t('sk3_h')}</h3>
                 <p>{t('sk3_p')}</p>
               </div>
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="sparkles" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="aeo" ext="svg" dir="ecom-icons" />
                 </div>
                 <h3>{t('sk4_h')}</h3>
                 <p>{t('sk4_p')}</p>
