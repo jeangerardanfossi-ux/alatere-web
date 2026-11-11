@@ -431,6 +431,7 @@ a.g-card:hover, .g-card--link:hover { box-shadow: var(--elev-l); transform: tran
 .g-contact__meta { display: flex; flex-direction: column; gap: 12px; margin-top: var(--m); }
 .g-contact__meta > div { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--dark-2); }
 .g-contact__meta i { width: 18px; height: 18px; stroke-width: 1.6; color: var(--brand); flex-shrink: 0; }
+.g-contact__meta img.g-contact__ic { width: 21px; height: 21px; object-fit: contain; flex-shrink: 0; }
 .g-form { display: flex; flex-direction: column; gap: var(--s); }
 .g-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s); }
 .g-form label { font-size: 12px; font-weight: 600; color: var(--dark-2); display: flex; flex-direction: column; gap: 6px; }

@@ -260,7 +260,7 @@ function Body() {
                   className="g-anchor"
                   style={{ color: 'var(--brand)', fontSize: 14 }}
                 >
-                  <Icon name="map-pin" /> {t('maps_label')}
+                  <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="ap-link__ic" /> {t('maps_label')}
                 </a>
               </div>
             </article>
