@@ -912,6 +912,20 @@ export function partenairesServiceLd(lang: Lang = 'fr') {
       address,
       award: ['Google Partner', 'Qualiopi'],
     },
+    // Prix d'appel affiché sur la page (fixe mensuel HT, hors part variable).
+    offers: {
+      '@type': 'Offer',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        minPrice: 290,
+        priceCurrency: 'EUR',
+        valueAddedTaxIncluded: false,
+        referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' },
+        description: en
+          ? 'Monthly fee per store, plus a share indexed on the sales generated'
+          : 'Fixe mensuel par boutique, plus une part indexée sur les ventes générées',
+      },
+    },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: en ? 'Services that can be handed over' : 'Prestations confiables',

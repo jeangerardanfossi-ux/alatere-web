@@ -10,7 +10,7 @@ import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import { Icon, BrandIcon } from '@/components/grommet/icons';
+import { BrandIcon } from '@/components/grommet/icons';
 import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
@@ -43,13 +43,14 @@ const TOC: [string, string, string][] = [
 ];
 
 /** Périmètre : prestations opérables sous la marque de l'agence. */
+/** Icônes multicolores du jeu « ecom-icons » (même palette que les autres pages). */
 const SCOPE: { icon: string; k: string }[] = [
-  { icon: 'trending-up', k: 'sea' },
-  { icon: 'search', k: 'seo' },
-  { icon: 'file-text', k: 'content' },
-  { icon: 'message-circle', k: 'care' },
-  { icon: 'star', k: 'reviews' },
-  { icon: 'package', k: 'ops' },
+  { icon: 'sea', k: 'sea' },
+  { icon: 'seo', k: 'seo' },
+  { icon: 'content', k: 'content' },
+  { icon: 'care', k: 'care' },
+  { icon: 'reviews', k: 'reviews' },
+  { icon: 'ops', k: 'ops' },
 ];
 
 /** Marchés déjà opérés (panneau international). */
@@ -220,6 +221,10 @@ const TX: Dict = {
   modes_h2: {
     fr: 'Modalités de sous-traitance : marque blanche, régie, forfait, co-traitance',
     en: 'Subcontracting terms: white label, time and materials, fixed price, joint contracting',
+  },
+  modes_price: {
+    fr: "Tarif : un fixe mensuel à partir de 290 € HT par boutique, plus une part indexée sur les ventes générées. Le budget publicitaire reste payé par votre client, sans frais prélevés dessus. Grille détaillée communiquée aux agences au premier rendez-vous.",
+    en: "Pricing: a monthly fee from €290 excl. VAT per store, plus a share indexed on the sales generated. Your client pays the ad budget directly, with no fee taken on it. The detailed price list is shared with agencies at the first meeting.",
   },
   wl_h: { fr: 'Marque blanche', en: 'White label' },
   wl_p: {
@@ -556,7 +561,7 @@ function Body() {
             <div className="pt-scope">
               {SCOPE.map((s) => (
                 <div className="pt-scope__item" key={s.k}>
-                  <Icon name={s.icon} />
+                  <ImgIcon name={s.icon} ext="svg" dir="ecom-icons" className="pt-ic" />
                   <div>
                     <h3>{t(`${s.k}_h`)}</h3>
                     <p>{t(`${s.k}_p`)}</p>
@@ -564,7 +569,7 @@ function Body() {
                 </div>
               ))}
               <div className="pt-scope__item pt-scope__item--wide">
-                <Icon name="award" />
+                <ImgIcon name="formation" ext="svg" dir="ecom-icons" className="pt-ic" />
                 <div>
                   <h3>{t('forma_h')}</h3>
                   <p>{t('forma_p')}</p>
@@ -594,9 +599,11 @@ function Body() {
                   {COMPARE.map((r) => (
                     <tr key={r}>
                       <th scope="row">{t(`${r}_h`)}</th>
-                      <td>{t(`${r}_1`)}</td>
-                      <td>{t(`${r}_2`)}</td>
-                      <td className="is-us">{t(`${r}_3`)}</td>
+                      <td data-label={t('cmp_c1')}>{t(`${r}_1`)}</td>
+                      <td data-label={t('cmp_c2')}>{t(`${r}_2`)}</td>
+                      <td className="is-us" data-label={t('cmp_c3')}>
+                        {t(`${r}_3`)}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -608,6 +615,7 @@ function Body() {
           <section id="international" className="pt-section">
             <div className="pt-intl">
               <div>
+                <ImgIcon name="international" ext="svg" dir="ecom-icons" className="pt-ic pt-ic--head" />
                 <span className="g-label">{t('intl_label')}</span>
                 <h2>{t('intl_h2')}</h2>
                 <p>{t('intl_p')}</p>
@@ -665,6 +673,7 @@ function Body() {
           <section id="modalites" className="pt-section">
             <span className="g-label">{t('modes_label')}</span>
             <h2>{t('modes_h2')}</h2>
+            <p className="pt-price">{t('modes_price')}</p>
             <div className="pt-modes">
               {MODES.map((m, i) => (
                 <div className="pt-mode" key={m}>
@@ -747,22 +756,22 @@ function Body() {
           <section className="pt-section">
             <div className="pt-trust">
               <div className="pt-trustcard">
-                <Icon name="shield-check" />
+                <ImgIcon name="agrement" ext="svg" dir="domo-icons" className="pt-ic" />
                 <div className="pt-trustcard__t">{t('trust1_t')}</div>
                 <div className="pt-trustcard__s">{t('trust1_s')}</div>
               </div>
               <div className="pt-trustcard pt-trustcard--gold">
-                <Icon name="badge-check" />
+                <ImgIcon name="qualiopi" ext="svg" dir="forma-icons" className="pt-ic" />
                 <div className="pt-trustcard__t">{t('trust2_t')}</div>
                 <div className="pt-trustcard__s">{t('trust2_s')}</div>
               </div>
               <div className="pt-trustcard">
-                <BrandIcon name="google" />
+                <BrandIcon name="google" className="pt-ic pt-ic--brand" />
                 <div className="pt-trustcard__t">{t('trust3_t')}</div>
                 <div className="pt-trustcard__s">{t('trust3_s')}</div>
               </div>
               <div className="pt-trustcard pt-trustcard--green">
-                <Icon name="map-pin" />
+                <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="pt-ic" />
                 <div className="pt-trustcard__t">{t('trust4_t')}</div>
                 <div className="pt-trustcard__s">{t('trust4_s')}</div>
               </div>

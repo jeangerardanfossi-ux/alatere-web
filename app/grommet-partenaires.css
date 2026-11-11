@@ -49,6 +49,14 @@
 .pt-section p { font-size: 17px; line-height: 1.6; color: var(--dark-2); margin: 0 0 12px; max-width: 70ch; }
 .pt-section p:last-child { margin-bottom: 0; }
 
+/* ---- Icônes multicolores (jeux ecom-icons, domo-icons, forma-icons, cowo-icons) ---- */
+.pt-ic { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+.pt-scope__item .pt-ic { margin-top: -2px; }
+.pt-ic--head { display: block; width: 48px; height: 48px; margin-bottom: 12px; }
+.pt-trustcard .pt-ic { width: 34px; height: 34px; }
+.pt-trustcard .pt-ic--brand { padding: 3px; }
+.pt-section p.pt-price { margin: 0 0 8px; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-size: 16px; color: var(--dark-1); max-width: none; }
+
 /* ---- Date de mise à jour (signal de fraîcheur) ---- */
 .pt-hero__updated { font-size: 13px; color: var(--dark-3); margin: 0 0 26px; }
 
@@ -181,4 +189,17 @@
   .pt-trust { grid-template-columns: 1fr; }
   .pt-contact h2 { font-size: 30px; }
 }
+/* Comparatif en cartes sur mobile : la colonne Alatere ecoM reste visible. */
+@media (max-width: 720px) {
+  .pt-cmp { overflow: visible; }
+  .pt-cmp table { min-width: 0; }
+  .pt-cmp thead { display: none; }
+  .pt-cmp tr { display: block; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+  .pt-cmp tbody th { display: block; border-bottom: 1px solid var(--border); background: var(--background-back, #f4f5f7); }
+  .pt-cmp td { display: grid; grid-template-columns: 96px 1fr; gap: 10px; border-bottom: 1px solid var(--border); }
+  .pt-cmp td:last-child { border-bottom: none; }
+  .pt-cmp td::before { content: attr(data-label); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--dark-3); padding-top: 2px; }
+  .pt-cmp td.is-us::before { color: var(--accent-dark); }
+}
+
 @media (prefers-reduced-motion: reduce) { .pt-toc a { transition: none !important; } }

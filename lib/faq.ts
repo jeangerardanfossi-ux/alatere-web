@@ -304,8 +304,8 @@ export const partenairesFaqTx: FaqDict = {
     en: 'How is the subcontracting billed?',
   },
   faq6_a: {
-    fr: "De deux façons : en régie, avec un volume de jours par mois mobilisable selon vos pics, ou au forfait, avec un périmètre, un prix ferme et un calendrier. Nous vous facturons, vous facturez votre client. Décrivez votre besoin sur le formulaire de contact : nous répondons sous 48 heures avec une première proposition.",
-    en: 'In two ways: time and materials, with a monthly volume of days called on as your peaks demand, or fixed price, with a defined scope, a firm price and a schedule. We invoice you, you invoice your client. Describe your need on the contact form: we reply within 48 hours with a first proposal.',
+    fr: "Le plus souvent, par un fixe mensuel à partir de 290 € HT par boutique, plus une part indexée sur les ventes générées : vous ne payez la croissance que si elle a lieu. Le budget publicitaire reste payé par votre client. Pour une mission ponctuelle, nous travaillons en régie ou au forfait. Nous vous facturons, vous facturez votre client. Décrivez votre besoin sur le formulaire de contact : nous répondons sous 48 heures avec une première proposition.",
+    en: 'Usually through a monthly fee from €290 excl. VAT per store, plus a share indexed on the sales generated: you only pay for growth if it happens. Your client pays the ad budget directly. For one-off assignments, we work on a day-rate or fixed-price basis. We invoice you, you invoice your client. Describe your need on the contact form: we reply within 48 hours with a first proposal.',
   },
   faq7_q: {
     fr: "Pouvez-vous co-traiter un projet ou un appel d'offres ?",
