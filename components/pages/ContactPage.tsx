@@ -7,7 +7,7 @@ import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import { Icon } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { useAntispam, Honeypot, RecaptchaNotice } from '@/components/grommet/antispam';
 
@@ -115,7 +115,7 @@ function Body() {
         <aside className="g-infocard">
           <h2>{t('info_t')}</h2>
           <div className="g-infoitem">
-            <Icon name="map-pin" />
+            <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="g-infoitem__ic" />
             <div>
               <div className="g-infoitem__l">{t('info_addr_l')}</div>
               <div className="g-infoitem__v">
@@ -126,7 +126,7 @@ function Body() {
             </div>
           </div>
           <div className="g-infoitem">
-            <Icon name="phone" />
+            <ImgIcon name="telephone" ext="svg" dir="cowo-icons" className="g-infoitem__ic" />
             <div>
               <div className="g-infoitem__l">{t('info_phone_l')}</div>
               <div className="g-infoitem__v">
@@ -135,7 +135,7 @@ function Body() {
             </div>
           </div>
           <div className="g-infoitem">
-            <Icon name="mail" />
+            <ImgIcon name="email" ext="svg" dir="cowo-icons" className="g-infoitem__ic" />
             <div>
               <div className="g-infoitem__l">{t('info_email_l')}</div>
               <div className="g-infoitem__v">
@@ -144,7 +144,7 @@ function Body() {
             </div>
           </div>
           <div className="g-infoitem">
-            <Icon name="clock" />
+            <ImgIcon name="horaires" ext="svg" dir="cowo-icons" className="g-infoitem__ic" />
             <div>
               <div className="g-infoitem__l">{t('info_hours_l')}</div>
               <div className="g-hours">

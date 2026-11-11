@@ -86,6 +86,7 @@
 .g-infoitem { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
 .g-infoitem:last-of-type { border-bottom: none; }
 .g-infoitem i { width: 22px; height: 22px; stroke-width: 1.6; color: var(--brand); flex-shrink: 0; margin-top: 2px; }
+.g-infoitem img.g-infoitem__ic { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; margin-top: 1px; }
 .g-infoitem .g-infoitem__l { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dark-3); }
 .g-infoitem .g-infoitem__v { font-size: 16px; color: var(--dark-1); }
 .g-infoitem .g-infoitem__v a { color: var(--brand); font-weight: 600; text-decoration: none; }

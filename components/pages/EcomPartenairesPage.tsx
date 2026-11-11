@@ -11,6 +11,7 @@ import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lan
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon, BrandIcon } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { company } from '@/lib/site';
 
@@ -562,15 +563,15 @@ function Body() {
           <div className="pt-card">
             <span className="g-label">{t('contact_label')}</span>
             <div className="pt-card__row">
-              <Icon name="mail" />
+              <ImgIcon name="email" ext="svg" dir="cowo-icons" className="pt-card__ic" />
               <Email user="contact" />
             </div>
             <div className="pt-card__row">
-              <Icon name="phone" />
+              <ImgIcon name="telephone" ext="svg" dir="cowo-icons" className="pt-card__ic" />
               <a href="tel:+33761564556">07 61 56 45 56</a>
             </div>
             <div className="pt-card__row pt-card__row--addr">
-              <Icon name="map-pin" />
+              <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="pt-card__ic" />
               <span>
                 9 Boulevard Albert 1er
                 <br />

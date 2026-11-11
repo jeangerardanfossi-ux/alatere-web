@@ -12,6 +12,7 @@ import { LangProvider, useReservations } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { faqBureauxAntibes, BUREAUX_TITLE } from '@/lib/faq-bureaux-antibes';
 
@@ -219,26 +220,26 @@ function Body() {
             </div>
             <div className="ap-rows" style={{ marginTop: 24 }}>
               <div>
-                <Icon name="map-pin" />
+                <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                 <span>
                   <strong>Adresse : </strong>9 boulevard Albert 1er, 06600 Antibes, immeuble La Caravelle
                 </span>
               </div>
               <div>
-                <Icon name="navigation" />
+                <ImgIcon name="acces" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                 <span>
                   <strong>Accès : </strong>place de Gaulle à 100 m, gare SNCF à 700 m (10 minutes à
                   pied), gare routière à 200 m, Sophia Antipolis à environ 20 minutes en voiture
                 </span>
               </div>
               <div>
-                <Icon name="phone" />
+                <ImgIcon name="telephone" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                 <span>
                   <strong>Téléphone : </strong>07 61 56 45 56
                 </span>
               </div>
               <div>
-                <Icon name="mail" />
+                <ImgIcon name="email" ext="svg" dir="cowo-icons" className="ap-rows__ic" />
                 <span>
                   <strong>E-mail : </strong>
                   <Email user="coworking" />

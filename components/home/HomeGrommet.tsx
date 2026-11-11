@@ -12,7 +12,7 @@ import { LangProvider, useLang, useReservations, useT, type Dict } from '@/compo
 import { homeFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import { Icon } from '@/components/grommet/icons';
+import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { BrandChip, BrandTitle } from '@/components/grommet/BrandName';
 import { CLIENT_LOGOS } from '@/lib/client-logos';
@@ -589,22 +589,22 @@ function Body() {
           </h2>
           <div className="g-pillars">
             <div>
-              <Icon name="hand-heart" />
+              <ImgIcon name="contact" ext="svg" dir="home-icons" className="g-pillars__ic" />
               <h4>{t('mani_p1t')}</h4>
               <p>{t('mani_p1d')}</p>
             </div>
             <div>
-              <Icon name="layers" />
+              <ImgIcon name="strates" ext="svg" dir="home-icons" className="g-pillars__ic" />
               <h4>{t('mani_p2t')}</h4>
               <p>{t('mani_p2d')}</p>
             </div>
             <div>
-              <Icon name="map-pin" />
+              <ImgIcon name="localisation" ext="svg" dir="home-icons" className="g-pillars__ic" />
               <h4>{t('mani_p3t')}</h4>
               <p>{t('mani_p3d')}</p>
             </div>
             <div>
-              <Icon name="trending-up" />
+              <ImgIcon name="croissance" ext="svg" dir="home-icons" className="g-pillars__ic" />
               <h4>{t('mani_p4t')}</h4>
               <p>{t('mani_p4d')}</p>
             </div>
@@ -706,13 +706,16 @@ function ContactSection() {
           </p>
           <div className="g-contact__meta">
             <div>
-              <Icon name="map-pin" /> 9 Boulevard Albert 1er, 06600 Antibes
+              <ImgIcon name="localisation" ext="svg" dir="cowo-icons" className="g-contact__ic" /> 9
+              Boulevard Albert 1er, 06600 Antibes
             </div>
             <div>
-              <Icon name="phone" /> 07 61 56 45 56
+              <ImgIcon name="telephone" ext="svg" dir="cowo-icons" className="g-contact__ic" /> 07 61
+              56 45 56
             </div>
             <div>
-              <Icon name="mail" /> <Email user="contact" />
+              <ImgIcon name="email" ext="svg" dir="cowo-icons" className="g-contact__ic" />{' '}
+              <Email user="contact" />
             </div>
           </div>
         </div>
