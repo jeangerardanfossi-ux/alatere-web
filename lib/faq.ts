@@ -76,8 +76,8 @@ export const ecomFaqTx: FaqDict = {
     en: 'Do you offer SEO and SEA advertising?',
   },
   faq2_a: {
-    fr: 'Oui : référencement naturel (SEO), publicité en ligne (SEA sur Google, Microsoft et Meta) et acquisition. Nous les pratiquons sur nos propres sites depuis vingt ans.',
-    en: 'Yes: organic search (SEO), online advertising (SEA on Google, Microsoft and Meta) and acquisition. We have been doing this on our own sites for twenty years.',
+    fr: 'Oui : référencement naturel (SEO), publicité en ligne (SEA sur Google, Microsoft et Meta) et acquisition. Nous les pratiquons sur nos propres sites depuis 2003.',
+    en: 'Yes: organic search (SEO), online advertising (SEA on Google, Microsoft and Meta) and acquisition. We have been doing this on our own sites since 2003.',
   },
   faq3_q: { fr: "Travaillez-vous pour l'international ?", en: 'Do you work internationally?' },
   faq3_a: {
@@ -250,5 +250,85 @@ export const cowoFaqTx: FaqDict = {
   faq7_a: {
     fr: 'Oui. Une cuisine équipée avec un comptoir est à la disposition de tous les coworkers : vous pouvez y conserver votre repas au frais et déjeuner sur place.',
     en: 'Yes. An equipped kitchen with a counter is available to all coworkers: you can keep your lunch in the fridge and eat on site.',
+  },
+};
+
+/**
+ * Alatere ecoM - page « Partenaires agences » (sous-traitance en marque blanche).
+ * Affichée dans EcomPartenairesPage et balisée en FAQPage sur /alatere-ecom/partenaires
+ * et /en/alatere-ecom/partners. Ne contient aucun prix : la page n'en affiche pas.
+ */
+export const partenairesFaqTx: FaqDict = {
+  faq1_q: {
+    fr: "Qu'est-ce que la sous-traitance e-commerce en marque blanche ?",
+    en: 'What is white-label e-commerce subcontracting?',
+  },
+  faq1_a: {
+    fr: "C'est le fait de confier à un prestataire l'exploitation d'une boutique en ligne (campagnes, SEO, fiches produits, service client, logistique) qui travaille sous le nom de l'agence. Le client final ne voit que l'agence. Alatere ecoM est le pôle e-commerce d'Alatere Web SAS, à Antibes : nous exploitons nos propres boutiques depuis 2003 et faisons ce travail pour des agences.",
+    en: "It means handing the day-to-day running of an online store (campaigns, SEO, product pages, customer care, logistics) to a provider that works under the agency's name. The end client only sees the agency. Alatere ecoM is the e-commerce arm of Alatere Web SAS, in Antibes: we have run our own stores since 2003 and do this work for agencies.",
+  },
+  faq2_q: {
+    fr: 'Mon client saura-t-il que vous intervenez ?',
+    en: 'Will my client know you are involved?',
+  },
+  faq2_a: {
+    fr: "Non, en marque blanche notre nom n'apparaît nulle part : vous restez l'interlocuteur unique et nous livrons sous votre nom. Si le projet le demande, nous pouvons aussi intervenir en co-traitance et signer avec vous devant le client final.",
+    en: 'No. In white label our name appears nowhere: you remain the single point of contact and we deliver under your name. If the project calls for it, we can also work as joint contractor and sign alongside you before the end client.',
+  },
+  faq3_q: {
+    fr: 'Quelles missions une agence peut-elle vous confier ?',
+    en: 'Which tasks can an agency hand over to you?',
+  },
+  faq3_a: {
+    fr: "Six domaines : acquisition payante (Google Ads, Meta Ads), SEO, contenu et traduction, relation client, avis et e-réputation, back-office et logistique. Nous pouvons aussi former les équipes de vos clients, en tant qu'organisme certifié Qualiopi.",
+    en: "Six areas: paid acquisition (Google Ads, Meta Ads), SEO, content and translation, customer care, reviews and online reputation, back office and logistics. We can also train your clients' teams, as a Qualiopi-certified training provider.",
+  },
+  faq4_q: {
+    fr: 'Dans quelles langues travaillez-vous ?',
+    en: 'Which languages do you work in?',
+  },
+  faq4_a: {
+    fr: "Le service client est assuré en français, anglais, italien et espagnol. Pour les contenus et les marchés, l'équipe couvre aussi l'allemand, le slovaque et le tchèque. Les textes sont rédigés ou traduits par nous, sans traduction automatique.",
+    en: 'Customer care is handled in French, English, Italian and Spanish. For content and markets, the team also covers German, Slovak and Czech. Texts are written or translated by us, without machine translation.',
+  },
+  faq5_q: {
+    fr: 'Sur quels marchés européens intervenez-vous ?',
+    en: 'Which European markets do you cover?',
+  },
+  faq5_a: {
+    fr: "Nous opérons déjà la France (boutiques en propre), l'Italie et l'Espagne (vente et service client), la Tchéquie et la Slovaquie (vente et service client) et l'Allemagne (supply chain et expédition).",
+    en: 'We already operate in France (our own stores), Italy and Spain (sales and customer care), Czechia and Slovakia (sales and customer care) and Germany (supply chain and shipping).',
+  },
+  faq6_q: {
+    fr: 'Comment est facturée la sous-traitance ?',
+    en: 'How is the subcontracting billed?',
+  },
+  faq6_a: {
+    fr: "Le plus souvent, par un fixe mensuel à partir de 290 € HT par boutique, plus une part indexée sur les ventes générées : vous ne payez la croissance que si elle a lieu. Le budget publicitaire reste payé par votre client. Pour une mission ponctuelle, nous travaillons en régie ou au forfait. Nous vous facturons, vous facturez votre client. Décrivez votre besoin sur le formulaire de contact : nous répondons sous 48 heures avec une première proposition.",
+    en: 'Usually through a monthly fee from €290 excl. VAT per store, plus a share indexed on the sales generated: you only pay for growth if it happens. Your client pays the ad budget directly. For one-off assignments, we work on a day-rate or fixed-price basis. We invoice you, you invoice your client. Describe your need on the contact form: we reply within 48 hours with a first proposal.',
+  },
+  faq7_q: {
+    fr: "Pouvez-vous co-traiter un projet ou un appel d'offres ?",
+    en: 'Can you contract jointly on a project or a tender?',
+  },
+  faq7_a: {
+    fr: "Oui. Alatere Web est une SAS, assurée en responsabilité civile professionnelle, qui travaille sous contrat de sous-traitance ou de co-traitance. En co-traitance, nous assumons notre part devant le client final.",
+    en: 'Yes. Alatere Web is a French SAS company, covered by professional liability insurance, working under a subcontracting or joint-contracting agreement. As joint contractor, we answer for our share before the end client.',
+  },
+  faq8_q: {
+    fr: 'La formation des équipes de mes clients peut-elle être financée ?',
+    en: "Can the training of my clients' teams be funded?",
+  },
+  faq8_a: {
+    fr: "Oui, quand un financement est mobilisable : par l'OPCO de l'entreprise pour les salariés, ou par le FAF pour les dirigeants non-salariés. Alatere Web SAS est certifié Qualiopi et enregistré sous le n° 93.06.07588.06. Vous gardez la relation, nous gérons l'administratif de la formation.",
+    en: "Yes, when funding can be mobilised: through the company's OPCO for employees, or through the FAF for self-employed managers. Alatere Web SAS is Qualiopi-certified and registered under no. 93.06.07588.06. You keep the relationship, we handle the training paperwork.",
+  },
+  faq9_q: {
+    fr: 'Qui réalise le travail ?',
+    en: 'Who does the work?',
+  },
+  faq9_a: {
+    fr: "Une équipe de trois personnes à Antibes : Jean-Gérard Anfossi (acquisition et formation, plus de 25 ans en e-commerce et webmarketing), Iveta Siskova Anfossi (opérations e-commerce et relation client, plus de 15 ans en service clients multi-pays) et Simona Ballatore (marketing digital et relation client multilingue).",
+    en: 'A team of three in Antibes: Jean-Gérard Anfossi (acquisition and training, 25+ years in e-commerce and web marketing), Iveta Siskova Anfossi (e-commerce operations and customer care, 15+ years in multi-country customer service) and Simona Ballatore (digital marketing and multilingual customer care).',
   },
 };

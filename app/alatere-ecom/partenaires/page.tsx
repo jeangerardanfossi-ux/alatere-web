@@ -1,15 +1,21 @@
 import type { Metadata } from 'next';
 import EcomPartenairesPage from '@/components/pages/EcomPartenairesPage';
 import JsonLd from '@/components/JsonLd';
-import { organizationLd, breadcrumbLd } from '@/lib/jsonld';
+import {
+  organizationLd,
+  breadcrumbLd,
+  partenairesServiceLd,
+  partenairesFaqLd,
+  ecomTeamLd,
+} from '@/lib/jsonld';
 import { pageAlternates } from '@/lib/i18n';
 import '../../grommet-home.css';
 import '../../grommet-partenaires.css';
 
 const PATH = '/alatere-ecom/partenaires';
-const TITLE = 'Alatere ecoM - Partenaire e-commerce en marque blanche pour agences';
+const TITLE = 'Sous-traitance e-commerce en marque blanche pour agences | Alatere ecoM';
 const DESC =
-  "Agences : confiez-nous l'acquisition, le contenu, la relation client et la logistique de vos projets e-commerce, en marque blanche et en cinq langues. 23 ans de boutiques opérées en propre.";
+  "Agences web : confiez-nous Google Ads, SEO, fiches produits, service client et logistique de vos clients e-commerce, sous votre marque. Régie ou forfait.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -29,6 +35,9 @@ export default function Page() {
             { name: 'Alatere ecoM', path: '/alatere-ecom' },
             { name: 'Partenaires', path: PATH },
           ]),
+          partenairesServiceLd('fr'),
+          partenairesFaqLd('fr'),
+          ...ecomTeamLd('fr'),
         ]}
       />
       <EcomPartenairesPage />

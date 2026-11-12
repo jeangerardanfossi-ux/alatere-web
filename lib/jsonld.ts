@@ -6,10 +6,12 @@ import {
   formaFaqTx,
   ecomFaqTx,
   cowoFaqTx,
+  partenairesFaqTx,
   type FaqDict,
 } from './faq';
 import { FORMA_DOMAINS } from './forma-domains';
 import { enPath } from './i18n';
+import { PARTENAIRES_UPDATED, ECOM_TEAM } from './ecom-partenaires';
 
 const SITE_URL = 'https://www.alatere-web.com';
 
@@ -422,6 +424,7 @@ export const domoFaqLd = txFaqLd(domoFaqTx);
 export const formaFaqLd = txFaqLd(formaFaqTx);
 export const ecomFaqLd = txFaqLd(ecomFaqTx);
 export const cowoFaqLd = txFaqLd(cowoFaqTx);
+export const partenairesFaqLd = txFaqLd(partenairesFaqTx);
 
 /**
  * FAQ d'articles de blog - bilingues. Le contenu DOIT refléter la FAQ visible
@@ -853,3 +856,100 @@ export const comparatifDomiciliationItemListLd = {
     },
   })),
 };
+
+
+/**
+ * Service - offre de sous-traitance e-commerce en marque blanche pour agences
+ * (/alatere-ecom/partenaires). Aucune offre tarifaire : la page n'affiche pas de prix.
+ */
+export function partenairesServiceLd(lang: Lang = 'fr') {
+  const en = lang === 'en';
+  const url = `${SITE_URL}${en ? '/en/alatere-ecom/partners' : '/alatere-ecom/partenaires'}`;
+  const services = en
+    ? [
+        'Paid acquisition (Google Ads, Meta Ads)',
+        'SEO for e-commerce sites',
+        'Product-page writing and translation',
+        'Multilingual customer care',
+        'Customer reviews and online reputation',
+        'Back office and multi-country logistics',
+        'Training for end clients (Qualiopi, OPCO/FAF funding)',
+      ]
+    : [
+        'Acquisition payante (Google Ads, Meta Ads)',
+        'SEO de sites e-commerce',
+        'Rédaction et traduction de fiches produits',
+        'Relation client multilingue',
+        'Avis clients et e-réputation',
+        'Back-office et logistique multi-pays',
+        'Formation des clients finaux (Qualiopi, financement OPCO/FAF)',
+      ];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: en
+      ? 'White-label e-commerce subcontracting for agencies'
+      : 'Sous-traitance e-commerce en marque blanche pour agences',
+    alternateName: 'Alatere ecoM',
+    serviceType: en ? 'White-label e-commerce subcontracting' : 'Sous-traitance e-commerce en marque blanche',
+    description: en
+      ? 'Alatere ecoM runs the acquisition, SEO, content, customer care, reviews and logistics of e-commerce sites on behalf of web agencies, under the agency’s name. Own stores run since 2003, team based in Antibes.'
+      : 'Alatere ecoM exploite pour le compte d’agences web l’acquisition, le SEO, le contenu, la relation client, les avis et la logistique de sites e-commerce, sous le nom de l’agence. Boutiques en propre depuis 2003, équipe basée à Antibes.',
+    url,
+    inLanguage: LANG_TAG[lang],
+    dateModified: PARTENAIRES_UPDATED,
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: en ? 'Web and e-commerce agencies' : 'Agences web et e-commerce',
+    },
+    areaServed: ['FR', 'IT', 'ES', 'DE', 'CZ', 'SK'].map((c) => ({ '@type': 'Country', name: c })),
+    availableLanguage: ['fr', 'en', 'it', 'es', 'de', 'sk', 'cs'],
+    provider: {
+      '@type': 'Organization',
+      name: company.legalName,
+      alternateName: 'Alatere ecoM',
+      url: SITE_URL,
+      address,
+      award: ['Google Partner', 'Qualiopi'],
+    },
+    // Prix d'appel affiché sur la page (fixe mensuel HT, hors part variable).
+    offers: {
+      '@type': 'Offer',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        minPrice: 290,
+        priceCurrency: 'EUR',
+        valueAddedTaxIncluded: false,
+        referenceQuantity: { '@type': 'QuantitativeValue', value: 1, unitCode: 'MON' },
+        description: en
+          ? 'Monthly fee per store, plus a share indexed on the sales generated'
+          : 'Fixe mensuel par boutique, plus une part indexée sur les ventes générées',
+      },
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: en ? 'Services that can be handed over' : 'Prestations confiables',
+      itemListElement: services.map((name) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name },
+      })),
+    },
+  };
+}
+
+/** Person[] - équipe ecoM (E-E-A-T via sameAs LinkedIn), dans la langue de la page. */
+export function ecomTeamLd(lang: Lang = 'fr') {
+  return ECOM_TEAM.map((p) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: p.name,
+    jobTitle: p.role[lang],
+    worksFor: {
+      '@type': 'Organization',
+      name: company.legalName,
+      alternateName: 'Alatere ecoM',
+      url: SITE_URL,
+    },
+    sameAs: [p.linkedin],
+  }));
+}
