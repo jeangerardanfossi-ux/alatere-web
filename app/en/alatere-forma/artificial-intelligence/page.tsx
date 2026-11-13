@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import FormaDomainPage from '@/components/pages/FormaDomainPage';
 import JsonLd from '@/components/JsonLd';
-import { courseLd, faqLd, breadcrumbLd, CONTENT_UPDATED } from '@/lib/jsonld';
+import { courseLd, faqLd, breadcrumbLd, programsLd, CONTENT_UPDATED } from '@/lib/jsonld';
 import { FORMA_DOMAIN_BY_SLUG, FORMA_FAQ } from '@/lib/forma-domains';
 import { pageAlternates, enPath } from '@/lib/i18n';
 import '../../../grommet-home.css';
@@ -11,7 +11,7 @@ import '../../../grommet-forma-pages.css';
 const D = FORMA_DOMAIN_BY_SLUG['intelligence-artificielle'];
 const FR = '/alatere-forma/intelligence-artificielle';
 const DESC_EN =
-  'AI training in Antibes: Claude, ChatGPT, prompts, automation, building your website with AI. Qualiopi-certified, OPCO funding. Quote within 48 hours.';
+  'AI training in Antibes: ChatGPT, Claude and Copilot prompting, AI strategy for directors, no-code automation. Qualiopi, OPCO or FAF funding. Quote in 48 h.';
 
 export const metadata: Metadata = {
   title: { absolute: D.metaTitle.en },
@@ -30,8 +30,9 @@ export default function Page() {
             description: DESC_EN,
             path: enPath(FR),
             teaches: D.skills.map((s) => s.en),
-            dateModified: CONTENT_UPDATED,
+            dateModified: D.updated ?? CONTENT_UPDATED,
           }),
+          programsLd(D, 'en'),
           faqLd(FORMA_FAQ[D.slug].map((f) => ({ q: f.q.en, a: f.a.en }))),
           breadcrumbLd([
             { name: 'Home', path: '/en' },
