@@ -98,7 +98,7 @@ const TX: Dict = {
     fr: "Apprendre le SEO, le SEA, l'AEO, les social ads, l'analytics et l'e-commerce. Notre métier depuis 2003, transmis à vos équipes.",
     en: 'Learn SEO, SEA, AEO, social ads, analytics and e-commerce. Our trade since 2003, passed on to your teams.',
   },
-  dom2_count: { fr: '7 programmes', en: '7 programs' },
+  dom2_count: { fr: '12 programmes', en: '12 programs' },
   dom2_h: { fr: 'Formation IA', en: 'AI training' },
   dom2_p: {
     fr: "Prompts, IA générative, automatisation, intégration de l'intelligence artificielle dans les métiers et les outils du quotidien.",
@@ -135,7 +135,7 @@ const TX: Dict = {
   },
   team_cta: { fr: 'Voir nos formateurs', en: 'Meet our trainers' },
 
-  cat_count: { fr: '59 programmes', en: '59 programs' },
+  cat_count: { fr: '64 programmes', en: '64 programs' },
   cat_h: { fr: 'Catalogue complet', en: 'Full catalog' },
   cat_p: {
     fr: 'Recherche par mot-clé, filtres par durée, prix et modalité, fiche détaillée pour chaque programme.',
