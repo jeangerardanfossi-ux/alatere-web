@@ -7,7 +7,7 @@ import { LangProvider, useLang, useT, type Dict } from '@/components/grommet/lan
 import { domoFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import GoogleReviews from '@/components/grommet/GoogleReviews';
+import CuratedReviews from '@/components/grommet/CuratedReviews';
 import { Icon } from '@/components/grommet/icons';
 import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
@@ -646,6 +646,9 @@ function Body() {
           </div>
         </section>
 
+        {/* AVIS GOOGLE (sélection statique, lib/curated-reviews.ts) */}
+        <CuratedReviews pole="domo" />
+
         {/* DÉMARCHES */}
         <section className="d-section">
           <div className="d-head">
@@ -933,7 +936,6 @@ function Body() {
         </section>
       </main>
 
-      <GoogleReviews pole="domo" />
 
       {/* CTA */}
       <section className="d-cta" id="contact">
