@@ -72,7 +72,7 @@ const TX: Dict = {
   },
   forma_photo: { fr: 'Photo paysage (formation)', en: 'Landscape photo (training)' },
   forma_k1: { fr: 'Catalogue', en: 'Catalog' },
-  forma_v1: { fr: '59 programmes', en: '59 programs' },
+  forma_v1: { fr: '64 programmes', en: '64 programs' },
   forma_k2: { fr: 'Modalités', en: 'Formats' },
   forma_v2: { fr: 'Antibes ou à distance', en: 'Antibes or remote' },
   forma_k3: { fr: 'Financement', en: 'Funding' },

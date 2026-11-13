@@ -176,11 +176,11 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     },
     tag: { fr: 'Sans prérequis technique', en: 'No technical prerequisite' },
     lead: {
-      fr: "Des formations concrètes pour utiliser l'IA générative au travail : rédiger avec Claude ou ChatGPT, automatiser vos tâches répétitives et votre prospection, créer votre site internet avec l'aide de l'IA. Vous repartez avec des méthodes appliquées à vos propres dossiers, dans le respect de vos données.",
-      en: 'Practical courses on using generative AI at work: writing with Claude or ChatGPT, automating repetitive tasks and prospecting, building your website with the help of AI. You leave with methods applied to your own files, while protecting your data.',
+      fr: "Des formations concrètes pour utiliser l'IA générative au travail : découvrir et cadrer l'IA dans l'entreprise, bien prompter avec ChatGPT, Claude, Gemini ou Copilot, définir sa stratégie IA de dirigeant, déléguer et automatiser avec Claude sans coder, automatiser votre prospection, créer votre site internet avec l'aide de l'IA. Vous repartez avec des méthodes appliquées à vos propres dossiers, dans le respect de vos données.",
+      en: 'Practical courses on using generative AI at work: understanding and framing AI in your business, prompting well with ChatGPT, Claude, Gemini or Copilot, setting your AI strategy as a director, delegating and automating with Claude without coding, automating prospecting, building your website with the help of AI. You leave with methods applied to your own files, while protecting your data.',
     },
     facts: [
-      { fr: '7 programmes au catalogue', en: '7 programs in the catalog' },
+      { fr: '12 programmes au catalogue', en: '12 programs in the catalog' },
       { fr: 'Présentiel à Antibes, en intra ou en format mixte', en: 'In person in Antibes, in-house or blended' },
       { fr: 'Aucune connaissance technique requise', en: 'No technical knowledge required' },
       { fr: 'Finançable OPCO ou FAF', en: 'OPCO or FAF funding' },
@@ -190,11 +190,12 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       tag: { fr: 'Former ses équipes', en: 'Training your teams' },
       title: { fr: "Pourquoi former vos salariés à l'IA générative", en: 'Why train your staff in generative AI' },
       paras: [
-        { fr: "La plupart des salariés utilisent déjà ChatGPT ou un autre assistant, souvent sans méthode et parfois avec des données confidentielles. Une formation leur donne les bons réflexes et transforme ces essais isolés en gains de temps mesurables pour l'entreprise. Nos programmes couvrent trois usages :", en: 'Most employees already use ChatGPT or another assistant, often without a method and sometimes with confidential data. Training gives them the right habits and turns these isolated attempts into measurable time savings for the business. Our programs cover three uses:' },
+        { fr: "La plupart des salariés utilisent déjà ChatGPT ou un autre assistant, souvent sans méthode et parfois avec des données confidentielles. Une formation leur donne les bons réflexes et transforme ces essais isolés en gains de temps mesurables pour l'entreprise. Nos programmes couvrent quatre usages :", en: 'Most employees already use ChatGPT or another assistant, often without a method and sometimes with confidential data. Training gives them the right habits and turns these isolated attempts into measurable time savings for the business. Our programs cover four uses:' },
       ],
       bullets: [
+        { fr: "piloter : définir la stratégie IA de l'entreprise, choisir les cas d'usage prioritaires, fixer les règles et accompagner les équipes ;", en: "lead: set the company's AI strategy, pick priority use cases, set the rules and support the teams;" },
         { fr: 'produire plus vite : e-mails, comptes rendus, annonces, contenus marketing, synthèses de documents ;', en: 'produce faster: emails, minutes, listings, marketing content, document summaries;' },
-        { fr: "automatiser : prospection commerciale, suivi client et tâches répétitives, en reliant l'IA à des outils comme Notion ;", en: 'automate: sales prospecting, client follow-up and repetitive tasks, by connecting AI to tools such as Notion;' },
+        { fr: "automatiser : déléguer des tâches à Claude sans coder (projets, skills, connecteurs), prospection commerciale, suivi client, en reliant l'IA à vos outils comme Notion ;", en: 'automate: delegate tasks to Claude without coding (projects, skills, connectors), sales prospecting, client follow-up, by connecting AI to your tools such as Notion;' },
         { fr: "utiliser l'IA de façon responsable : confidentialité, RGPD, vérification des réponses, limites des outils.", en: 'use AI responsibly: confidentiality, GDPR, checking answers, tool limitations.' },
       ],
       after: [
@@ -205,7 +206,9 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     skills: [
       { fr: "Comprendre les usages et les limites de l'IA générative", en: 'Understand the uses and limits of generative AI' },
       { fr: 'Rédiger des prompts efficaces et réutilisables', en: 'Write effective, reusable prompts' },
-      { fr: "Maîtriser l'écosystème Claude AI (projets, documents, automatisations)", en: 'Master the Claude AI ecosystem (projects, documents, automations)' },
+      { fr: "Définir et piloter une stratégie IA à l'échelle de l'entreprise", en: 'Define and lead an AI strategy across the business' },
+      { fr: "Maîtriser l'écosystème Claude AI (projets, skills, connecteurs, artefacts)", en: 'Master the Claude AI ecosystem (projects, skills, connectors, artifacts)' },
+      { fr: 'Déléguer et automatiser des tâches avec Claude, sans coder', en: 'Delegate and automate tasks with Claude, without coding' },
       { fr: 'Automatiser sa prospection et ses tâches répétitives', en: 'Automate prospecting and repetitive tasks' },
       { fr: "Créer son site internet avec l'aide de l'IA", en: 'Build your website with the help of AI' },
       { fr: 'Adopter une démarche responsable (données, RGPD)', en: 'Adopt a responsible approach (data, GDPR)' },
@@ -213,7 +216,18 @@ export const FORMA_DOMAINS: FormaDomain[] = [
     programs: [],
     programGroups: [
       {
-        title: { fr: "L'IA générative pour toutes les entreprises", en: 'Generative AI for every business' },
+        title: { fr: "Bien démarrer avec l'IA générative", en: 'Getting started with generative AI' },
+        intro: { fr: "Un parcours progressif, de la demi-journée de découverte à l'autonomie sur Claude : chaque module se suit seul ou s'enchaîne avec les suivants.", en: 'A step-by-step path, from a half-day introduction to full autonomy on Claude: each module can be taken on its own or combined with the next.' },
+        items: [
+          { fr: "L'IA générative en entreprise : comprendre, cadrer, démarrer", en: 'Generative AI in business: understand, frame, get started', hours: '3 h 30', url: `${CAT}/12/intelligence-artificielle/3367481/lia-generative-en-entreprise-comprendre-cadrer-demarrer` },
+          { fr: 'Prompter efficacement au quotidien (ChatGPT, Claude, Gemini, Copilot)', en: 'Effective everyday prompting (ChatGPT, Claude, Gemini, Copilot)', hours: '7 h', url: `${CAT}/12/intelligence-artificielle/3367482/prompter-efficacement-au-quotidien-chatgpt-claude-gemini-copilot` },
+          { fr: 'Dirigeant : définir et piloter sa stratégie IA', en: 'Directors: define and lead your AI strategy', hours: '7 h', url: `${CAT}/12/intelligence-artificielle/3367483/dirigeant-definir-et-piloter-sa-strategie-ia` },
+          { fr: 'Claude Pro : projets, skills, connecteurs et artefacts', en: 'Claude Pro: projects, skills, connectors and artifacts', hours: '14 h', url: `${CAT}/12/intelligence-artificielle/3367486/claude-pro-projets-skills-connecteurs-et-artefacts` },
+          { fr: 'Déléguer et automatiser avec Claude, sans coder', en: 'Delegate and automate with Claude, without coding', hours: '14 h', url: `${CAT}/12/intelligence-artificielle/3367488/deleguer-et-automatiser-avec-claude-sans-coder` },
+        ],
+      },
+      {
+        title: { fr: 'Aller plus loin : Claude, automatisation et données', en: 'Going further: Claude, automation and data' },
         items: [
           { fr: "Maîtriser l'écosystème Claude AI", en: 'Mastering the Claude AI ecosystem', hours: '28 h', url: `${CAT}/1/management/2889120/maitriser-lecosysteme-claude-ai` },
           { fr: "Automatiser la prospection commerciale avec l'IA et Notion", en: 'Automating sales prospecting with AI and Notion', hours: '21 h', url: `${CAT}/0/webmarketing/2187149/automatiser-la-prospection-commerciale-avec-lia-et-notion` },
@@ -602,7 +616,7 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
     },
     {
       q: { fr: "Quels outils d'IA utilise-t-on pendant la formation ?", en: 'Which AI tools are used during the course?' },
-      a: { fr: "Principalement Claude (Anthropic) et ChatGPT (OpenAI), ainsi que des outils d'organisation comme Notion pour les automatisations. Si votre entreprise a déjà choisi un outil, comme Microsoft Copilot ou Google Gemini, nous adaptons les exercices.", en: 'Mainly Claude (Anthropic) and ChatGPT (OpenAI), plus organization tools such as Notion for automations. If your company has already chosen a tool, such as Microsoft Copilot or Google Gemini, we adapt the exercises.' },
+      a: { fr: "Principalement Claude (Anthropic) et ChatGPT (OpenAI), ainsi que des outils d'organisation comme Notion pour les automatisations. La formation « Prompter efficacement au quotidien » couvre aussi Google Gemini et Microsoft Copilot ; si votre entreprise a déjà choisi l'un de ces outils, nous adaptons les exercices.", en: 'Mainly Claude (Anthropic) and ChatGPT (OpenAI), plus organization tools such as Notion for automations. The \"Effective everyday prompting\" course also covers Google Gemini and Microsoft Copilot; if your company has already chosen one of these tools, we adapt the exercises.' },
     },
     {
       q: { fr: "Pouvez-vous former toute une équipe à l'IA générative ?", en: 'Can you train a whole team in generative AI?' },
