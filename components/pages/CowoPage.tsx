@@ -7,7 +7,7 @@ import { LangProvider, useReservations, useT, type Dict } from '@/components/gro
 import { cowoFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import GoogleReviews from '@/components/grommet/GoogleReviews';
+import CuratedReviews from '@/components/grommet/CuratedReviews';
 import { Icon, ImageSlot } from '@/components/grommet/icons';
 import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
@@ -496,6 +496,9 @@ function Body() {
           </div>
         </section>
 
+        {/* AVIS GOOGLE (sélection statique, lib/curated-reviews.ts) */}
+        <CuratedReviews pole="cowo" />
+
         {/* ÉQUIPEMENTS */}
         <section className="ap-section">
           <div className="ap-head">
@@ -663,7 +666,6 @@ function Body() {
         </section>
       </main>
 
-      <GoogleReviews pole="cowo" />
 
       {/* CTA */}
       <section className="ap-cta" id="contact">

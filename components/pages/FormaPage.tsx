@@ -7,7 +7,7 @@ import { LangProvider, useT, type Dict } from '@/components/grommet/lang';
 import { formaFaqTx } from '@/lib/faq';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import GoogleReviews from '@/components/grommet/GoogleReviews';
+import CuratedReviews from '@/components/grommet/CuratedReviews';
 import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Icon } from '@/components/grommet/icons';
 import { Email } from '@/components/grommet/Email';
@@ -637,6 +637,9 @@ function Body() {
           </div>
         </section>
 
+        {/* AVIS GOOGLE (sélection statique, lib/curated-reviews.ts) */}
+        <CuratedReviews pole="forma" />
+
         {/* PARCOURS */}
         <section className="f-section--alt">
           <div className="f-inner">
@@ -702,7 +705,6 @@ function Body() {
         </section>
       </main>
 
-      <GoogleReviews pole="forma" />
 
       {/* CTA */}
       <section className="f-cta" id="contact">
