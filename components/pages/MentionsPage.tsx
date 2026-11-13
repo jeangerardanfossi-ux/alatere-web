@@ -50,14 +50,19 @@ const TX: Dict = {
   },
 
   s3_t: { fr: 'Hébergement', en: 'Hosting' },
-  s3_p_a: {
-    fr: "Le site est hébergé par un prestataire situé dans l'Union européenne. Les coordonnées complètes de l'hébergeur (raison sociale, adresse, téléphone) sont disponibles sur simple demande à ",
-    en: "The site is hosted by a provider located within the European Union. The host's full details (company name, address, phone) are available on request at ",
+  s3_p: {
+    fr: 'Le site alatere-web.com est hébergé par :',
+    en: 'The alatere-web.com website is hosted by:',
   },
-  s3_p_b: {
-    fr: '.',
-    en: '.',
+  kv_host: { fr: 'Hébergeur', en: 'Host' },
+  kv_host_country: { fr: 'États-Unis', en: 'United States' },
+  kv_host_site: { fr: 'Site web', en: 'Website' },
+  s3_p2_a: {
+    fr: "Vercel Inc. ne publie pas de numéro de téléphone dédié à l'hébergement : son support est joignable depuis vercel.com/help. Vercel intervient en qualité de sous-traitant au sens du RGPD ; les traitements et transferts de données correspondants sont décrits dans notre ",
+    en: 'Vercel Inc. does not publish a dedicated hosting phone number: its support is reachable from vercel.com/help. Vercel acts as a processor under the GDPR; the corresponding data processing and transfers are described in our ',
   },
+  s3_p2_link: { fr: 'politique de confidentialité', en: 'privacy policy' },
+  s3_p2_b: { fr: '.', en: '.' },
 
   s4_t: { fr: 'Propriété intellectuelle', en: 'Intellectual property' },
   s4_p1: {
@@ -181,7 +186,29 @@ function Body() {
           <h2>
             <span className="g-num">3.</span> {t('s3_t')}
           </h2>
-          <p>{t('s3_p_a')}<Email user="contact" />{t('s3_p_b')}</p>
+          <p>{t('s3_p')}</p>
+          <dl className="g-kv">
+            <dt>{t('kv_host')}</dt>
+            <dd>Vercel Inc.</dd>
+            <dt>{t('kv_addr')}</dt>
+            <dd>
+              440 N Barranca Avenue #4133, Covina, CA 91723,{' '}
+              <span>{t('kv_host_country')}</span>
+            </dd>
+            <dt>{t('kv_host_site')}</dt>
+            <dd>
+              <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
+                vercel.com
+              </a>
+            </dd>
+          </dl>
+          <p>
+            {t('s3_p2_a')}
+            <Link className="g-inline" href="/confidentialite">
+              {t('s3_p2_link')}
+            </Link>
+            {t('s3_p2_b')}
+          </p>
         </section>
 
         <section>
