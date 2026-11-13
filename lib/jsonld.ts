@@ -9,7 +9,7 @@ import {
   partenairesFaqTx,
   type FaqDict,
 } from './faq';
-import { FORMA_DOMAINS } from './forma-domains';
+import { FORMA_DOMAINS, type FormaDomain, type FormaProgram } from './forma-domains';
 import { enPath } from './i18n';
 import { PARTENAIRES_UPDATED, ECOM_TEAM } from './ecom-partenaires';
 
@@ -952,4 +952,57 @@ export function ecomTeamLd(lang: Lang = 'fr') {
     },
     sameAs: [p.linkedin],
   }));
+}
+
+/** « 3 h 30 » → « PT3H30M » (durée ISO 8601 pour `timeRequired`). */
+function isoHours(h?: string) {
+  const m = h?.match(/(\d+)\s*h(?:\s*(\d+))?/);
+  if (!m) return undefined;
+  return `PT${m[1]}H${m[2] ? `${m[2]}M` : ''}`;
+}
+
+/**
+ * ItemList de `Course` - chaque programme d'une sous-page « domaine », avec sa
+ * durée et sa fiche catalogue (permet aux moteurs IA de citer le bon programme).
+ */
+export function programsLd(domain: FormaDomain, lang: Lang = 'fr') {
+  const items = domain.programGroups
+    ? domain.programGroups.flatMap((g) => g.items.map((p) => ({ p, group: g.title[lang] })))
+    : domain.programs.map((p) => ({ p: p as FormaProgram, group: domain.name[lang] }));
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name:
+      lang === 'en'
+        ? `${domain.name.en} training programs - Alatere forMa`
+        : `Programmes de formation ${domain.name.fr.toLowerCase()} - Alatere forMa`,
+    numberOfItems: items.length,
+    itemListElement: items.map(({ p, group }, i) => {
+      const workload = isoHours(p.hours);
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Course',
+          name: p[lang],
+          ...(p.url ? { url: p.url } : {}),
+          about: group,
+          inLanguage: 'fr-FR',
+          ...(workload ? { timeRequired: workload } : {}),
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'Alatere Web SAS',
+            alternateName: 'Alatere forMa',
+            url: `${SITE_URL}/alatere-forma`,
+          },
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'Onsite',
+            ...(workload ? { courseWorkload: workload } : {}),
+            location: { '@type': 'Place', name: 'Alatere forMa - Antibes', address },
+          },
+        },
+      };
+    }),
+  };
 }
