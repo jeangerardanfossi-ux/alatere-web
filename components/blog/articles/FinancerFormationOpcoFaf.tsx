@@ -221,7 +221,8 @@ function Fr() {
         <h3>Le CPF peut-il compléter un financement OPCO ou FAF ?</h3>
         <p>
           Oui, pour une formation certifiante inscrite au RNCP ou au Répertoire spécifique : le CPF
-          peut alors couvrir le reste à charge.
+          peut alors couvrir le reste à charge. Les formations Alatere forMa ne sont pas certifiantes :
+          elles ne sont pas éligibles au CPF et se financent par l&rsquo;OPCO ou le FAF.
         </p>
       </section>
     </>
