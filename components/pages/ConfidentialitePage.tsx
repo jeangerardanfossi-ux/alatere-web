@@ -98,8 +98,19 @@ const TX: Dict = {
   },
   s5_p_strong: { fr: 'jamais vendues', en: 'never sold' },
   s5_p_b: {
-    fr: ". Elles peuvent être transmises à nos sous-traitants techniques (hébergeur, outil d'e-mailing) dans le strict cadre de la prestation, et aux financeurs (OPCO) pour les dossiers de formation.",
-    en: '. It may be shared with our technical subcontractors (host, emailing tool) strictly within the scope of the service, and with funders (OPCO) for training files.',
+    fr: ". Elles peuvent être transmises à nos sous-traitants techniques dans le strict cadre de la prestation, et aux financeurs (OPCO) pour les dossiers de formation.",
+    en: '. It may be shared with our technical subcontractors strictly within the scope of the service, and with funders (OPCO) for training files.',
+  },
+  s5_sub: { fr: 'Nos sous-traitants techniques :', en: 'Our technical subcontractors:' },
+  s5_l1_strong: { fr: 'Hébergement du site', en: 'Website hosting' },
+  s5_l1_rest: {
+    fr: " : Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis (vercel.com). L'hébergement implique un transfert de données vers les États-Unis, encadré par l'accord de sous-traitance de Vercel, qui intègre les clauses contractuelles types de la Commission européenne.",
+    en: ': Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States (vercel.com). Hosting involves a transfer of data to the United States, governed by Vercel’s data processing addendum, which incorporates the European Commission’s standard contractual clauses.',
+  },
+  s5_l2_strong: { fr: 'Envoi des e-mails', en: 'Email delivery' },
+  s5_l2_rest: {
+    fr: " : prestataire d'e-mailing utilisé pour acheminer les messages envoyés depuis les formulaires du site.",
+    en: ': emailing provider used to deliver the messages sent from the site’s forms.',
   },
 
   s6_t: { fr: 'Cookies', en: 'Cookies' },
@@ -223,6 +234,17 @@ function Body() {
             <strong>{t('s5_p_strong')}</strong>
             {t('s5_p_b')}
           </p>
+          <p>{t('s5_sub')}</p>
+          <ul>
+            <li>
+              <strong>{t('s5_l1_strong')}</strong>
+              {t('s5_l1_rest')}
+            </li>
+            <li>
+              <strong>{t('s5_l2_strong')}</strong>
+              {t('s5_l2_rest')}
+            </li>
+          </ul>
         </section>
 
         <section>
