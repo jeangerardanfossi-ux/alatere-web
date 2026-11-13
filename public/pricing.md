@@ -63,7 +63,8 @@ Organisme certifié Qualiopi. Page : https://www.alatere-web.com/alatere-forma
 - Tarifs établis sur devis, selon le programme, le format et le nombre de participants
 - Domaines : webmarketing, intelligence artificielle, langues, communication digitale, immobilier
 - Formats : présentiel à Antibes ou distanciel
-- Financements mobilisables : OPCO, CPF, FIFPL, AGEFICE, FAFCEA
+- Financements mobilisables : OPCO (salariés) ou FAF (AGEFICE, FIFPL, FAFCEA) pour les indépendants et dirigeants non salariés
+- Formations non éligibles au CPF
 - Catalogue détaillé : https://alatere-web.catalogueformpro.com
 
 ---
