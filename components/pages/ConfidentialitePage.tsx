@@ -39,8 +39,8 @@ const TX: Dict = {
 
   s2_t: { fr: 'Données collectées', en: 'Data collected' },
   s2_p: {
-    fr: 'Nous collectons uniquement les données que vous nous transmettez volontairement :',
-    en: 'We only collect the data you voluntarily provide:',
+    fr: 'Nous collectons les données que vous nous transmettez volontairement et, pour notre prospection commerciale, des données professionnelles issues de sources publiques :',
+    en: 'We collect the data you voluntarily provide and, for our business prospecting, professional data obtained from public sources:',
   },
   s2_l1_strong: { fr: 'Via le formulaire de contact', en: 'Via the contact form' },
   s2_l1_rest: {
@@ -59,6 +59,14 @@ const TX: Dict = {
   s2_l3_rest: {
     fr: " : éléments d'identification de l'entreprise requis par la réglementation.",
     en: ': company identification details required by regulation.',
+  },
+  s2_l4_strong: {
+    fr: 'Par collecte indirecte, pour la prospection',
+    en: 'Through indirect collection, for prospecting',
+  },
+  s2_l4_rest: {
+    fr: " : nom, fonction, société et adresse e-mail professionnelle, issus de sources professionnelles publiquement accessibles en ligne (sites internet d'entreprises, annuaires et répertoires professionnels). Cette collecte ne concerne que des professionnels, dans le cadre de leur activité.",
+    en: ': name, job title, company and professional email address, obtained from publicly accessible professional sources online (company websites, professional directories and registers). This collection concerns professionals only, in the context of their occupation.',
   },
 
   s3_t: { fr: 'Finalités et base légale', en: 'Purposes and legal basis' },
@@ -79,6 +87,16 @@ const TX: Dict = {
     fr: " ou d'un contrat.",
     en: ' or a contract.',
   },
+  s3_p2_a: {
+    fr: "Les données collectées indirectement servent uniquement à adresser à des professionnels des informations sur nos prestations, en lien avec leur activité. La base légale est notre ",
+    en: 'Data collected indirectly is used solely to send professionals information about our services, in connection with their occupation. The legal basis is our ',
+  },
+  s3_p2_strong: { fr: 'intérêt légitime', en: 'legitimate interest' },
+  s3_p2_b: {
+    fr: " à promouvoir notre activité (article 6.1.f du RGPD). Le premier message vous indique l'origine de vos données et vous pouvez vous opposer à tout moment à ce traitement, par le lien de désinscription présent dans chaque envoi ou en écrivant à ",
+    en: ' in promoting our business (Article 6(1)(f) GDPR). The first message tells you where your data came from, and you may object to this processing at any time, through the unsubscribe link in every message or by writing to ',
+  },
+  s3_p2_c: { fr: '.', en: '.' },
 
   s4_t: { fr: 'Durée de conservation', en: 'Retention period' },
   s4_p_a: {
@@ -209,6 +227,10 @@ function Body() {
               <strong>{t('s2_l3_strong')}</strong>
               {t('s2_l3_rest')}
             </li>
+            <li>
+              <strong>{t('s2_l4_strong')}</strong>
+              {t('s2_l4_rest')}
+            </li>
           </ul>
         </section>
 
@@ -222,6 +244,11 @@ function Body() {
             {t('s3_p_mid')}
             <strong>{t('s3_p_strong2')}</strong>
             {t('s3_p_b')}
+          </p>
+          <p>
+            {t('s3_p2_a')}
+            <strong>{t('s3_p2_strong')}</strong>
+            {t('s3_p2_b')}<Email user="contact" />{t('s3_p2_c')}
           </p>
         </section>
 
