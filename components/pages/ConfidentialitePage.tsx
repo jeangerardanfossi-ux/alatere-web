@@ -107,10 +107,21 @@ const TX: Dict = {
     fr: " : Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis (vercel.com). L'hébergement implique un transfert de données vers les États-Unis, encadré par l'accord de sous-traitance de Vercel, qui intègre les clauses contractuelles types de la Commission européenne.",
     en: ': Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States (vercel.com). Hosting involves a transfer of data to the United States, governed by Vercel’s data processing addendum, which incorporates the European Commission’s standard contractual clauses.',
   },
-  s5_l2_strong: { fr: 'Envoi des e-mails', en: 'Email delivery' },
+  s5_l2_strong: {
+    fr: 'Envoi des e-mails du formulaire',
+    en: 'Delivery of form emails',
+  },
   s5_l2_rest: {
-    fr: " : prestataire d'e-mailing utilisé pour acheminer les messages envoyés depuis les formulaires du site.",
-    en: ': emailing provider used to deliver the messages sent from the site’s forms.',
+    fr: ' : Brevo, SAS au capital de 388 177 €, 17 rue de Salneuve, 75017 Paris, France (RCS Paris 498 019 298), qui achemine les messages envoyés depuis les formulaires du site.',
+    en: ': Brevo, a French simplified joint-stock company, 17 rue de Salneuve, 75017 Paris, France (Paris trade register 498 019 298), which delivers the messages sent from the site’s forms.',
+  },
+  s5_l3_strong: {
+    fr: 'Campagnes et lettres d’information',
+    en: 'Campaigns and newsletters',
+  },
+  s5_l3_rest: {
+    fr: ' : MailerLite Limited, 88 Harcourt Street, Dublin 2, D02 DK18, Irlande.',
+    en: ': MailerLite Limited, 88 Harcourt Street, Dublin 2, D02 DK18, Ireland.',
   },
 
   s6_t: { fr: 'Cookies', en: 'Cookies' },
@@ -243,6 +254,10 @@ function Body() {
             <li>
               <strong>{t('s5_l2_strong')}</strong>
               {t('s5_l2_rest')}
+            </li>
+            <li>
+              <strong>{t('s5_l3_strong')}</strong>
+              {t('s5_l3_rest')}
             </li>
           </ul>
         </section>
