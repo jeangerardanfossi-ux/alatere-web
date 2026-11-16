@@ -33,6 +33,7 @@ const TX: Dict = {
   domo: { fr: 'Alatere doMo - domiciliation', en: 'Alatere doMo - business address' },
   cowo: { fr: 'Alatere coWo - coworking', en: 'Alatere coWo - coworking' },
   bureaux: { fr: 'Bureaux à louer à Antibes', en: 'Offices to rent in Antibes (in French)' },
+  salle: { fr: 'Salle de réunion à Antibes', en: 'Meeting room in Antibes (in French)' },
   todo: { fr: 'Alatere toDo - secrétariat externalisé', en: 'Alatere toDo - outsourced secretariat' },
 
   // Principales
@@ -93,6 +94,7 @@ function Body() {
             <li><Link href="/alatere-domo">{t('domo')}</Link></li>
             <li><Link href="/alatere-cowo">{t('cowo')}</Link></li>
             <li><a href="/bureaux-a-louer-antibes">{t('bureaux')}</a></li>
+            <li><a href="/salle-de-reunion-antibes">{t('salle')}</a></li>
             <li><a href="/alatere-todo.html">{t('todo')}</a></li>
           </ul>
         </section>

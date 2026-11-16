@@ -386,6 +386,39 @@ export const posts: Post[] = [
       },
     },
   },
+  {
+    slug: 'organisme-qualiopi-formation-financee-opco',
+    pole: 'forma',
+    frOnly: true,
+    title: {
+      fr: 'Organisme Qualiopi : pourquoi c’est la condition d’une formation financée par l’OPCO',
+      en: 'Qualiopi-certified provider: why it is required for OPCO-funded training',
+    },
+    metaTitle: {
+      fr: 'Organisme Qualiopi : la clé d’une formation financée par l’OPCO',
+      en: 'Qualiopi: the key to OPCO-funded training',
+    },
+    excerpt: {
+      fr: 'Sans certification Qualiopi, pas de prise en charge OPCO. Ce que garantit le label, le référentiel actualisé au 1er novembre 2026 et comment vérifier un organisme.',
+      en: 'Without Qualiopi certification, no OPCO funding. What the label guarantees and how to check a provider.',
+    },
+    keyword: {
+      fr: 'qualiopi',
+      en: 'qualiopi',
+    },
+    category: { fr: 'Formation', en: 'Training' },
+    date: '2026-11-16',
+    updated: '2026-11-16',
+    readingMin: 6,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, dont la marque Alatere forMa est l'organisme de formation professionnelle certifié Qualiopi (n° 93.06.07588.06).",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, whose Alatere forMa brand is its Qualiopi-certified professional training organisation (no. 93.06.07588.06).',
+      },
+    },
+  },
 ];
 
 /** Résout les champs bilingues d'un article dans une langue donnée. */
