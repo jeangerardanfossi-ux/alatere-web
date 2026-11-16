@@ -12,7 +12,7 @@ import Link from '@/components/grommet/LocalizedLink';
 import { LangProvider } from '@/components/grommet/lang';
 import Header from '@/components/grommet/Header';
 import Footer from '@/components/grommet/Footer';
-import { Icon, ImageSlot } from '@/components/grommet/icons';
+import { ImageSlot } from '@/components/grommet/icons';
 import { ImgIcon } from '@/components/grommet/ImgIcon';
 import { Email } from '@/components/grommet/Email';
 import { faqSalleReunionAntibes, SALLE_TITLE } from '@/lib/faq-salle-reunion-antibes';
@@ -108,29 +108,29 @@ function Body() {
           </div>
           <div className="ap-grid">
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="users-round" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="reunion" ext="svg" dir="cowo-icons" />
               </div>
               <h3>6 places</h3>
               <p>Une table ovale modulable et 6 chaises.</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="layers" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="wifi" ext="svg" dir="cowo-icons" />
               </div>
               <h3>Écrans et Wi-Fi</h3>
               <p>Un écran digital mural, 6 écrans de bureau (un par participant) et le Wi-Fi pour vos visioconférences.</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="snowflake" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="clim" ext="svg" dir="cowo-icons" />
               </div>
               <h3>Climatisation</h3>
               <p>La salle est climatisée.</p>
             </div>
             <div className="ap-card">
-              <div className="ap-card__ic">
-                <Icon name="coffee" />
+              <div className="ap-card__ic ap-card__ic--color">
+                <ImgIcon name="cafe" ext="svg" dir="cowo-icons" />
               </div>
               <h3>Cuisine et café</h3>
               <p>Café compris, et accès à la cuisine et à la salle de bain pendant la location.</p>
@@ -153,22 +153,22 @@ function Body() {
             </div>
             <div className="ap-grid">
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="clock" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="horaires" ext="svg" dir="cowo-icons" />
                 </div>
                 <h3>Fin de journée · 80 €</h3>
                 <p>Du lundi au vendredi, de 16 h à 20 h.</p>
               </div>
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="calendar-days" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="agenda" ext="svg" dir="cowo-icons" />
                 </div>
                 <h3>Journée · 180 €</h3>
                 <p>Du lundi au vendredi, de 8 h 30 à 20 h.</p>
               </div>
               <div className="ap-card">
-                <div className="ap-card__ic">
-                  <Icon name="calendar-check" />
+                <div className="ap-card__ic ap-card__ic--color">
+                  <ImgIcon name="agenda-check" ext="svg" dir="cowo-icons" />
                 </div>
                 <h3>Samedi · 234 €</h3>
                 <p>Sur demande, la journée. Tarif de la journée majoré de 30 %.</p>
@@ -214,8 +214,8 @@ function Body() {
               <h2 className="g-h2">Une salle en plein centre d&rsquo;Antibes</h2>
             </div>
             <div className="ap-gallery ap-gallery--2">
-              <ImageSlot cap="Salle de réunion" src="/photos/cowo-salle.jpg" />
-              <ImageSlot cap="Immeuble La Caravelle" src="/photos/cowo-immeuble.jpg" objectPosition="50% 0%" />
+              <ImageSlot cap="La salle de réunion et son écran mural" src="/photos/salle-reunion-vue-ensemble.webp" />
+              <ImageSlot cap="La table ovale et ses 6 places" src="/photos/salle-reunion-table.webp" />
             </div>
             <div className="ap-rows" style={{ marginTop: 24 }}>
               <div>
