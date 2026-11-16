@@ -146,7 +146,10 @@ function Body() {
                 <h3>Une salle de réunion · 180 €</h3>
                 <p>
                   Recevoir des clients, réunir une équipe, faire passer des entretiens : 180 € la
-                  journée, ou 80 € après 16 h. Ouverte aux non-membres, sur réservation.
+                  journée, ou 80 € après 16 h. Ouverte aux non-membres, sur réservation.{' '}
+                  <Link className="g-inline" href="/salle-de-reunion-antibes">
+                    Voir la salle
+                  </Link>
                 </p>
               </div>
             </div>

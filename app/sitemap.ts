@@ -37,6 +37,7 @@ const BILINGUAL = [
 const FR_ONLY = [
   '/alatere-todo.html',
   '/bureaux-a-louer-antibes',
+  '/salle-de-reunion-antibes',
   // Articles publiés en français uniquement (frOnly dans lib/blog.ts), diffusés.
   ...publishedPosts('fr')
     .filter((p) => p.frOnly)
