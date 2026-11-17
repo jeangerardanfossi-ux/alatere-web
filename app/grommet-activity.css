@@ -49,6 +49,8 @@
 .ap-gallery .g-img-slot { width: 100%; aspect-ratio: 1 / 1; display: block; box-shadow: inset 0 0 0 1px var(--border); }
 .ap-gallery--2 { grid-template-columns: 1fr 1fr; }
 .ap-gallery--2 .g-img-slot { height: 220px; }
+/* Galerie 2 colonnes en pleine hauteur : la photo 4/3 s'affiche entière, sans recadrage. */
+.ap-gallery--tall .g-img-slot { height: auto; aspect-ratio: 4 / 3; }
 
 /* Cartes bénéfices / équipements */
 .ap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--m); }
