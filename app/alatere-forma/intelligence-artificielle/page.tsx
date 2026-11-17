@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import FormaDomainPage from '@/components/pages/FormaDomainPage';
 import JsonLd from '@/components/JsonLd';
-import { courseLd, faqLd, breadcrumbLd, CONTENT_UPDATED } from '@/lib/jsonld';
+import { courseLd, faqLd, breadcrumbLd, programsLd, CONTENT_UPDATED } from '@/lib/jsonld';
 import { FORMA_DOMAIN_BY_SLUG, FORMA_FAQ } from '@/lib/forma-domains';
 import '../../grommet-home.css';
 import '../../grommet-forma.css';
@@ -27,8 +27,9 @@ export default function Page() {
             description: D.metaDescription,
             path: PATH,
             teaches: D.skills.map((s) => s.fr),
-            dateModified: CONTENT_UPDATED,
+            dateModified: D.updated ?? CONTENT_UPDATED,
           }),
+          programsLd(D, 'fr'),
           faqLd(FORMA_FAQ[D.slug].map((f) => ({ q: f.q.fr, a: f.a.fr }))),
           breadcrumbLd([
             { name: 'Accueil', path: '/' },

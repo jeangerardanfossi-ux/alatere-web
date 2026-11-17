@@ -35,6 +35,8 @@ export type FormaDomain = {
   icon: string;
   metaTitle: Bi;
   metaDescription: string;
+  /** Date ISO de dernière mise à jour du contenu de la page (signal de fraîcheur). */
+  updated?: string;
   /** Feuille du fil d'Ariane + titre H1. */
   name: Bi;
   tag: Bi;
@@ -168,7 +170,8 @@ export const FORMA_DOMAINS: FormaDomain[] = [
       en: 'Generative AI training for businesses in Antibes | Alatere forMa',
     },
     metaDescription:
-      "Formation intelligence artificielle à Antibes : Claude, ChatGPT, prompts, automatisation, site internet avec l'IA. Qualiopi, finançable OPCO. Devis 48 h.",
+      "Formation IA à Antibes : prompts ChatGPT, Claude, Copilot, stratégie IA pour dirigeants, automatisation sans code. Qualiopi, OPCO ou FAF. Devis 48 h.",
+    updated: '2026-11-13',
     name: { fr: 'Intelligence artificielle', en: 'Artificial intelligence' },
     h1: {
       fr: "Formations à l'intelligence artificielle pour les entreprises, à Antibes",
@@ -625,6 +628,22 @@ export const FORMA_FAQ: Record<string, { q: Bi; a: Bi }[]> = {
     {
       q: { fr: "Proposez-vous une formation pour créer son site internet avec l'IA ?", en: 'Do you offer a course on building a website with AI?' },
       a: { fr: "Oui, sur mesure. Nous accompagnons les dirigeants et indépendants qui veulent construire ou refaire leur site avec l'aide de l'IA : structure, rédaction des pages, mise en ligne et règles de référencement. Demandez un devis en précisant votre projet.", en: 'Yes, tailor-made. We support directors and freelancers who want to build or redo their website with the help of AI: structure, page writing, publishing and SEO rules. Ask for a quote describing your project.' },
+    },
+    {
+      q: { fr: 'Par quelle formation IA commencer ?', en: 'Which AI course should I start with?' },
+      a: { fr: "Par la demi-journée « L'IA générative en entreprise : comprendre, cadrer, démarrer » (3 h 30), puis « Prompter efficacement au quotidien » (7 h) pour acquérir une méthode de rédaction des prompts avec ChatGPT, Claude, Gemini ou Copilot. Les utilisateurs réguliers poursuivent avec « Claude Pro : projets, skills, connecteurs et artefacts » (14 h), puis « Déléguer et automatiser avec Claude, sans coder » (14 h).", en: 'With the half-day "Generative AI in business: understand, frame, get started" (3.5 h), then "Effective everyday prompting" (7 h) to learn a prompting method with ChatGPT, Claude, Gemini or Copilot. Regular users continue with "Claude Pro: projects, skills, connectors and artifacts" (14 h), then "Delegate and automate with Claude, without coding" (14 h).' },
+    },
+    {
+      q: { fr: 'Existe-t-il une formation IA pour les dirigeants ?', en: 'Is there an AI course for business leaders?' },
+      a: { fr: "Oui : « Dirigeant : définir et piloter sa stratégie IA » (7 h). Le dirigeant y identifie les cas d'usage prioritaires de son entreprise, fixe les règles d'utilisation (données, confidentialité, RGPD), choisit les outils et organise la montée en compétence de ses équipes. Un dirigeant non salarié peut la financer par son FAF.", en: 'Yes: "Directors: define and lead your AI strategy" (7 h). Directors identify their company\'s priority use cases, set usage rules (data, confidentiality, GDPR), choose the tools and plan how their teams build skills. A non-salaried director can fund it through their FAF.' },
+    },
+    {
+      q: { fr: 'Combien de temps dure une formation IA ?', en: 'How long does an AI course last?' },
+      a: { fr: "De 3 h 30 à 28 heures selon le programme : une demi-journée pour découvrir l'IA générative, une journée (7 h) pour les prompts ou la stratégie IA du dirigeant, deux jours (14 h) pour Claude Pro ou l'automatisation sans code, jusqu'à quatre jours (28 h) pour maîtriser tout l'écosystème Claude AI. En intra, la durée et le rythme s'adaptent à votre équipe.", en: 'From 3.5 to 28 hours depending on the program: a half-day to discover generative AI, one day (7 h) for prompting or the director\'s AI strategy, two days (14 h) for Claude Pro or no-code automation, up to four days (28 h) to master the whole Claude AI ecosystem. In-house, duration and pace adapt to your team.' },
+    },
+    {
+      q: { fr: 'Combien coûte une formation IA ?', en: 'How much does an AI course cost?' },
+      a: { fr: "Le prix dépend du programme, du format (inter ou intra) et du nombre de participants : nous envoyons un devis personnalisé sous 48 heures, avec les démarches de prise en charge. La formation peut être financée par l'OPCO de votre entreprise ou par votre FAF, selon les plafonds de votre financeur.", en: "The price depends on the program, the format (open or in-house) and the number of participants: we send a personalized quote within 48 hours, with the funding steps. The course can be funded by your company's OPCO or by your FAF, within your funder's limits." },
     },
     {
       q: { fr: 'Ces formations en IA sont-elles finançables ?', en: 'Can these AI courses be funded?' },
