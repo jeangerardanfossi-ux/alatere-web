@@ -213,7 +213,7 @@ function Body() {
               </span>
               <h2 className="g-h2">Une salle en plein centre d&rsquo;Antibes</h2>
             </div>
-            <div className="ap-gallery ap-gallery--2">
+            <div className="ap-gallery ap-gallery--2 ap-gallery--tall">
               <ImageSlot cap="La salle de réunion et son écran mural" src="/photos/salle-reunion-vue-ensemble.webp" />
               <ImageSlot cap="La table ovale et ses 6 places" src="/photos/salle-reunion-table.webp" />
             </div>
