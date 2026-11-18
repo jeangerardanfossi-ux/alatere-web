@@ -17,6 +17,11 @@
 
 /* HERO */
 .ap-hero { max-width: 1240px; margin: 0 auto; padding: 64px 40px 40px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
+/* Les deux colonnes du héros doivent pouvoir se réduire sous la largeur
+   minimale de leur contenu : sans ce `min-width: 0`, un contenu large
+   (chiffre clé en un seul mot, titre illustré) impose sa largeur à toute la
+   colonne et déborde des marges sur les écrans étroits. */
+.ap-hero > * { min-width: 0; }
 .ap-breadcrumb { font-size: 13px; color: var(--dark-3); margin-bottom: 14px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .ap-breadcrumb a { color: var(--dark-3); text-decoration: none; }
 .ap-breadcrumb a:hover { color: var(--accent-dark); }
@@ -33,7 +38,7 @@
 .ap-rows strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--dark-3); }
 .ap-statgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
 .ap-stat { background: var(--accent-soft); border-radius: 10px; padding: 14px; }
-.ap-stat strong { display: block; font-size: 30px; font-weight: 700; color: var(--accent-dark); line-height: 1; }
+.ap-stat strong { display: block; font-size: 30px; font-weight: 700; color: var(--accent-dark); line-height: 1; overflow-wrap: break-word; }
 .ap-stat span { font-size: 12px; color: var(--dark-2); }
 
 /* Sections */
@@ -136,6 +141,9 @@ a.ap-chip:hover { color: var(--brand); border-color: var(--brand); transform: tr
 @media (max-width: 640px) {
   .ap-hero, .ap-section, .ap-section--alt > .ap-inner, .ap-cta__in, .ap-stripe__in { padding-left: 22px; padding-right: 22px; }
   .ap-grid, .ap-plans, .ap-steps, .ap-gallery { grid-template-columns: 1fr; }
+  /* Une seule colonne de chiffres clés : les valeurs longues (« Climatisation »,
+     « Air conditioning ») tiennent alors sur une ligne au lieu d'être coupées. */
+  .ap-statgrid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* SHIM React : recentrer les placeholders (ImageSlot = div, état vide) */
