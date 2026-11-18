@@ -303,11 +303,6 @@ function Body() {
                 {t('hero_cta2')}
               </a>
             </div>
-            <p className="ap-hero__note">
-              <a href={resa('/installer')} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                {t('hero_app')} →
-              </a>
-            </p>
           </div>
           <aside className="ap-aside">
             <span className="g-label">{t('brief')}</span>
@@ -329,6 +324,19 @@ function Body() {
                 <span>{t('brief_4')}</span>
               </div>
             </div>
+            <a
+              href={resa('/installer')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ap-applink"
+            >
+              <span className="ap-applink__ic">
+                <Icon name="smartphone-download" />
+              </span>
+              <span className="ap-applink__tx">
+                {t('hero_app')} <span className="g-arrow">→</span>
+              </span>
+            </a>
             <a href={resa()} target="_blank" rel="noopener noreferrer" className="g-anchor" style={{ display: 'inline-block', marginTop: 14, color: 'var(--accent-dark)' }}>
               {t('brief_dispo')} →
             </a>
