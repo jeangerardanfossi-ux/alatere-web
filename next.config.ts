@@ -121,9 +121,9 @@ const nextConfig: NextConfig = {
     to301("/:slug(formations?-.*)/", "/alatere-forma");
     to301("/:slug(formations?-.*)", "/alatere-forma");
 
-    // Application Jolik (PWA statique dans public/jolik/) : adresse courte.
-    to301("/jolik", "/jolik/index.html");
-    to301("/jolik/", "/jolik/index.html");
+    // Application Jolik : déplacée sur son propre site (jolik.vercel.app).
+    to301("/jolik", "https://jolik.vercel.app/");
+    to301("/jolik/:path*", "https://jolik.vercel.app/");
 
     // Règle générique (doit rester la dernière) : « /page/ » → « /page »,
     // équivalent de la redirection par défaut de Next.js désactivée ci-dessus.
