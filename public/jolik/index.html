@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jolik · Feuille de marque</title>
+<meta name="description" content="Jolik : la feuille de marque du jeu de cartes, de 2 à 4 joueurs. Saisie des manches, classement, éliminations et historique horodaté.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d6b4f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1411" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Jolik">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+:root{padding-top:env(safe-area-inset-top, 0px); padding-bottom:env(safe-area-inset-bottom, 0px); color-scheme:light}
+body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+/* Layout : une table de jeu — les joueurs sont des cartes posées, la saisie de manche en dessous, l'historique comme une feuille de marque. */
+:root{
+  --bg:#eaefec; --surface:#ffffff; --surface-2:#f4f7f5; --ink:#15211c; --muted:#5b6a63;
+  --line:#d3dcd7; --felt:#0d6b4f; --felt-ink:#ffffff; --red:#c3323c; --gold:#b98a1e;
+  --danger-bg:#fbe9ea;
+  --display:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a1411; --surface:#12201b; --surface-2:#182a23; --ink:#e8efeb; --muted:#94a59d;
+    --line:#26392f; --felt:#3cc493; --felt-ink:#06140f; --red:#ff6b74; --gold:#e5b94a;
+    --danger-bg:#3a1a1d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a1411; --surface:#12201b; --surface-2:#182a23; --ink:#e8efeb; --muted:#94a59d;
+  --line:#26392f; --felt:#3cc493; --felt-ink:#06140f; --red:#ff6b74; --gold:#e5b94a;
+  --danger-bg:#3a1a1d; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--body); font-size:15px; line-height:1.45;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:20px 48px}
+.wrap{max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:22px}
+button{font:inherit; color:inherit; cursor:pointer}
+button:focus-visible, input:focus-visible, select:focus-visible{outline:3px solid var(--felt); outline-offset:2px}
+
+/* En-tête */
+header{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:12px}
+.logo{width:52px; height:68px; border-radius:8px; background:var(--surface); border:1px solid var(--line);
+  box-shadow:0 2px 0 var(--line); display:grid; place-items:center; position:relative; transform:rotate(-6deg)}
+.logo b{font-family:var(--display); font-weight:900; font-size:30px; color:var(--red); line-height:1}
+.logo i{position:absolute; font-style:normal; font-size:11px; color:var(--red)}
+.logo i:first-of-type{top:4px; left:6px} .logo i:last-of-type{bottom:4px; right:6px; transform:rotate(180deg)}
+.brand h1{margin:0; font-family:var(--display); font-weight:900; font-size:40px; letter-spacing:.01em; line-height:.9}
+.brand p{margin:2px 0 0; color:var(--muted); font-size:13px; font-weight:600}
+.hdr-actions{display:flex; gap:8px; flex-wrap:wrap}
+.btn{border:1px solid var(--line); background:var(--surface); padding:9px 14px; border-radius:999px; font-weight:700; font-size:14px}
+.btn:hover{border-color:var(--felt)}
+.btn.primary{background:var(--felt); color:var(--felt-ink); border-color:var(--felt)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--red)}
+.btn:disabled{opacity:.45; cursor:not-allowed}
+
+.notice{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  background:var(--surface-2); border:1px dashed var(--line); border-radius:var(--radius); padding:10px 14px; font-size:14px}
+.notice strong{font-weight:800}
+
+.rules{display:flex; flex-wrap:wrap; gap:6px}
+.chip{font-size:12px; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--surface); border:1px solid var(--line); color:var(--muted)}
+.chip b{color:var(--ink)}
+
+/* Cartes joueurs */
+.board{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px}
+.pcard{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; min-width:0;
+  box-shadow:0 1px 0 var(--line), 0 10px 24px -18px rgba(0,0,0,.35); transition:transform .25s}
+.pcard.lead{border-color:var(--gold); box-shadow:0 0 0 2px var(--gold) inset, 0 10px 24px -18px rgba(0,0,0,.35)}
+.pcard.out{opacity:.55}
+.pcard .top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px}
+.suit{font-size:22px; line-height:1}
+.suit.r{color:var(--red)}
+.rank{font-family:var(--display); font-weight:700; font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.pcard.lead .rank{color:var(--gold)}
+.pname{font-weight:800; font-size:17px; overflow-wrap:anywhere}
+.dealer{font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--felt)}
+.total{font-family:var(--display); font-weight:900; font-size:64px; line-height:.85; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+.bar{height:6px; border-radius:6px; background:var(--surface-2); border:1px solid var(--line); overflow:hidden}
+.bar span{display:block; height:100%; background:var(--felt); border-radius:6px; transition:width .4s}
+.bar span.warn{background:var(--gold)} .bar span.hot{background:var(--red)}
+.left{font-size:12.5px; color:var(--muted); font-weight:600; font-variant-numeric:tabular-nums}
+.badge-out{position:absolute; top:12px; right:42px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--red); border:1.5px solid var(--red); border-radius:6px; padding:1px 6px; transform:rotate(-8deg)}
+
+/* Panneaux */
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px; display:flex; flex-direction:column; gap:14px; min-width:0}
+.panel h2{margin:0; font-family:var(--display); font-weight:900; font-size:26px; letter-spacing:.01em; text-wrap:balance}
+.panel-head{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap}
+.sub{color:var(--muted); font-size:13px; font-weight:600}
+
+.entry{display:flex; flex-direction:column; gap:10px}
+.erow{display:grid; grid-template-columns:minmax(0,1fr) 110px auto; align-items:center; gap:10px;
+  padding:10px 12px; border-radius:12px; background:var(--surface-2); border:1px solid transparent}
+.erow.is-fin{border-color:var(--felt)}
+.erow.is-full{border-color:var(--red)}
+.erow .who{display:flex; align-items:center; gap:8px; min-width:0; font-weight:800}
+.erow .who span:last-child{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.erow input{width:100%; font:inherit; font-family:var(--display); font-weight:700; font-size:26px; text-align:right;
+  padding:4px 10px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font-variant-numeric:tabular-nums}
+.erow input:disabled{color:var(--muted)}
+.toggles{display:flex; gap:6px}
+.tg{border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:6px 10px; font-size:12.5px; font-weight:800; white-space:nowrap}
+.tg[aria-pressed="true"].fin{background:var(--felt); color:var(--felt-ink); border-color:var(--felt)}
+.tg[aria-pressed="true"].full{background:var(--red); color:#fff; border-color:var(--red)}
+.entry-foot{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+.err{color:var(--red); font-weight:700; font-size:13.5px; min-height:1.2em}
+.helper{font-size:12.5px; color:var(--muted)}
+
+/* Historique */
+.tbl-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:12px}
+table{border-collapse:collapse; width:100%; font-variant-numeric:tabular-nums; font-size:14px}
+th,td{padding:8px 12px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap}
+th:first-child, td:first-child{text-align:left; color:var(--muted); font-weight:700}
+thead th{background:var(--surface-2); font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+tbody tr:last-child td{border-bottom:none}
+td .cum{display:block; font-size:11px; color:var(--muted)}
+td .when{display:block; font-size:11px; font-weight:600; color:var(--muted)}
+td .tag{font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; margin-right:6px; padding:1px 5px; border-radius:4px; background:var(--felt); color:var(--felt-ink); vertical-align:middle}
+td.fin{color:var(--felt); font-weight:800}
+td.full{color:var(--red); font-weight:800}
+tfoot td{font-family:var(--display); font-weight:900; font-size:20px; background:var(--surface-2); border-top:2px solid var(--line); border-bottom:none}
+.empty{color:var(--muted); font-size:14px; padding:6px 0}
+
+/* Gagnant */
+.winner{background:var(--felt); color:var(--felt-ink); border-radius:var(--radius); padding:20px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+.winner h2{margin:0; font-family:var(--display); font-weight:900; font-size:38px; line-height:1}
+.winner p{margin:4px 0 0; font-weight:600; opacity:.9}
+.winner .btn{background:var(--felt-ink); color:var(--felt); border-color:var(--felt-ink)}
+.winner .btn.ghost{background:transparent; color:var(--felt-ink); border-color:currentColor}
+
+/* Modale */
+.modal{position:fixed; inset:0; z-index:50; background:rgba(5,15,11,.55); display:grid; place-items:center;
+  padding:max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px))}
+.sheet{background:var(--surface); border:1px solid var(--line); border-radius:18px; width:min(520px, 100%); max-height:100%; overflow:auto; padding:20px; display:flex; flex-direction:column; gap:16px}
+.sheet h2{margin:0; font-family:var(--display); font-weight:900; font-size:30px}
+.field{display:flex; flex-direction:column; gap:6px}
+.field label, .lbl{font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+.field input, .field select{font:inherit; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink); width:100%}
+.seg{display:flex; gap:6px}
+.seg button{flex:1; padding:10px; border-radius:10px; border:1px solid var(--line); background:var(--surface-2); font-family:var(--display); font-weight:900; font-size:22px}
+.seg button[aria-pressed="true"]{background:var(--felt); color:var(--felt-ink); border-color:var(--felt)}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.names{display:grid; gap:8px}
+.name-row{display:grid; grid-template-columns:28px 1fr; align-items:center; gap:8px}
+.sheet-foot{display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap}
+.hint{font-size:12.5px; color:var(--muted); margin:0}
+
+@media (max-width:560px){
+  .brand h1{font-size:32px}
+  .total{font-size:52px}
+  .board{grid-template-columns:1fr 1fr; gap:10px}
+  .pcard{padding:12px}
+  .erow{grid-template-columns:minmax(0,1fr) 92px; }
+  .erow .toggles{grid-column:1 / -1}
+  .erow .toggles .tg{flex:1}
+  .grid2{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important; animation:none!important} }
+@keyframes pop{0%{transform:scale(.96)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+.pop{animation:pop .35s ease}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><i>♥</i><b>J</b><i>♥</i></div>
+      <div>
+        <h1>Jolik</h1>
+        <p>La feuille de marque du Jolik · 2 à 4 joueurs</p>
+      </div>
+    </div>
+    <div class="hdr-actions">
+      <button class="btn" id="btn-install" type="button" hidden>Installer l'app</button>
+      <button class="btn" id="btn-rules" type="button">Règles de la partie</button>
+      <button class="btn primary" id="btn-new" type="button">Nouvelle partie</button>
+    </div>
+  </header>
+
+  <div id="ios-hint" class="notice" hidden>
+    <span><strong>Installer Jolik sur l'iPhone :</strong> touchez le bouton Partager de Safari, puis « Sur l'écran d'accueil ».</span>
+    <button class="btn" id="btn-ios-close" type="button">OK</button>
+  </div>
+
+  <div id="demo-notice" class="notice" hidden>
+    <span><strong>Partie exemple.</strong> Ces scores servent de démonstration. Lancez votre partie quand vous êtes prêts.</span>
+    <button class="btn primary" id="btn-demo-start" type="button">Créer ma partie</button>
+  </div>
+
+  <div class="rules" id="rules"></div>
+
+  <section id="winner" class="winner" hidden></section>
+
+  <section class="board" id="board" aria-label="Scores des joueurs"></section>
+
+  <section class="panel" id="entry-panel">
+    <div class="panel-head">
+      <h2 id="round-title">Manche 1</h2>
+      <span class="sub" id="round-sub"></span>
+    </div>
+    <div class="entry" id="entry"></div>
+    <div class="err" id="err" role="alert"></div>
+    <div class="entry-foot">
+      <span class="helper">Saisissez les points restés en main. « A fini » applique le bonus, « Main pleine » la pénalité. « D'un coup » : le joueur a tout posé en une fois, son bonus et les mains pleines sont doublés.</span>
+      <button class="btn primary" id="btn-validate" type="button">Valider la manche</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Feuille de marque</h2>
+      <button class="btn ghost danger" id="btn-undo" type="button">Annuler la dernière manche</button>
+    </div>
+    <div id="history"></div>
+  </section>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="sheet"></div>
+</div>
+
+<script>
+(function(){
+  const KEY = 'jolie-51-v1';
+  const SUITS = [{s:'♠',r:false},{s:'♥',r:true},{s:'♣',r:false},{s:'♦',r:true}];
+  const DEFAULTS = {limit:500, finishBonus:-10, fullHand:100, oneShotBonus:-20, oneShotFull:200, mode:'elim'};
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function demoState(){
+    return {
+      demo:true,
+      players:['Marie','Paul','Lucie','Karim'],
+      settings:{...DEFAULTS},
+      rounds:[
+        {scores:[-10, 45, 72, 31], fin:0, full:[]},
+        {scores:[38, -10, 100, 22], fin:1, full:[2]},
+        {scores:[15, 64, -10, 47], fin:2, full:[]},
+        {scores:[52, 18, 33, -10], fin:3, full:[]},
+        {scores:[-10, 87, 41, 29], fin:0, full:[]},
+      ].map((r,k,a) => ({...r, at: Date.now() - (a.length - k) * 7 * 60000})),
+      draft:null
+    };
+  }
+  function freshState(players, settings){
+    return {demo:false, players, settings, rounds:[], draft:null};
+  }
+
+  let state = null;
+  try { const raw = localStorage.getItem(KEY); if (raw) state = JSON.parse(raw); } catch(e) {}
+  if (!state || !Array.isArray(state.players)) state = demoState();
+  state.settings = {...DEFAULTS, ...state.settings};
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} }
+
+  /* ---------- Calculs ---------- */
+  function totals(){
+    const t = state.players.map(() => 0);
+    state.rounds.forEach(r => r.scores.forEach((v,i) => { if (v !== null) t[i] += v; }));
+    return t;
+  }
+  function outAfter(roundCount){
+    // joueurs éliminés après N manches (mode élimination)
+    if (state.settings.mode !== 'elim') return state.players.map(() => false);
+    const t = state.players.map(() => 0);
+    for (let k=0; k<roundCount; k++) state.rounds[k].scores.forEach((v,i)=>{ if (v!==null) t[i]+=v; });
+    return t.map(v => v > state.settings.limit);
+  }
+  function status(){
+    const t = totals();
+    const out = outAfter(state.rounds.length);
+    const limit = state.settings.limit;
+    let over = false, winner = null;
+    if (state.settings.mode === 'elim'){
+      const alive = state.players.map((_,i)=>i).filter(i => !out[i]);
+      if (alive.length <= 1 && state.rounds.length){
+        over = true;
+        winner = alive.length === 1 ? [alive[0]] : lowest(t, state.players.map((_,i)=>i));
+      }
+    } else if (t.some(v => v > limit)){
+      over = true;
+      winner = lowest(t, state.players.map((_,i)=>i));
+    }
+    return {t, out, over, winner};
+  }
+  function lowest(t, idx){
+    const m = Math.min(...idx.map(i => t[i]));
+    return idx.filter(i => t[i] === m);
+  }
+  function dealerIndex(out){
+    const n = state.players.length;
+    let d = state.rounds.length % n, guard = 0;
+    while (out[d] && guard < n){ d = (d+1) % n; guard++; }
+    return d;
+  }
+  function ensureDraft(out){
+    const n = state.players.length;
+    if (!state.draft || state.draft.vals.length !== n) state.draft = {vals:Array(n).fill(''), fin:null, full:[], oneShot:false};
+    out.forEach((o,i) => { if (o){ state.draft.vals[i]=''; state.draft.full = state.draft.full.filter(x=>x!==i); if (state.draft.fin===i) state.draft.fin=null; } });
+  }
+
+  /* ---------- Rendu ---------- */
+  function render(popIdx){
+    const {t, out, over, winner} = status();
+    const s = state.settings;
+    $('demo-notice').hidden = !state.demo;
+
+    $('rules').innerHTML =
+      `<span class="chip">Ne pas dépasser <b>${s.limit} pts</b></span>` +
+      `<span class="chip">${s.mode==='elim' ? 'Éliminé au-delà de ' + s.limit + ', <b>dernier en jeu gagne</b>' : 'Fin dès qu\'un joueur dépasse ' + s.limit + ', <b>plus petit score gagne</b>'}</span>` +
+      `<span class="chip">A fini <b>${fmt(s.finishBonus)}</b></span>` +
+      `<span class="chip">Main pleine <b>${s.fullHand}</b></span>` +
+      `<span class="chip">Posé d'un coup <b>${fmt(s.oneShotBonus)}</b>, main pleine <b>${s.oneShotFull}</b></span>`;
+
+    // classement
+    const order = state.players.map((_,i)=>i).sort((a,b) => (out[a]-out[b]) || (t[a]-t[b]));
+    const rankOf = {}; let pos = 0, prev = null;
+    order.forEach((i,k) => { if (out[i]) { rankOf[i] = null; return; } if (t[i] !== prev){ pos = k+1; prev = t[i]; } rankOf[i] = pos; });
+    const d = dealerIndex(out);
+    const started = state.rounds.length > 0;
+
+    $('board').innerHTML = state.players.map((name,i) => {
+      const su = SUITS[i];
+      const pct = Math.max(0, Math.min(100, (t[i] / s.limit) * 100));
+      const cls = pct >= 85 ? 'hot' : pct >= 60 ? 'warn' : '';
+      const remain = s.limit - t[i];
+      const lead = started && rankOf[i] === 1 && !out[i];
+      const rankTxt = out[i] ? 'Éliminé' : started ? (rankOf[i] === 1 ? '1er' : rankOf[i] + 'e') : 'Prêt';
+      return `<article class="pcard ${lead?'lead':''} ${out[i]?'out':''} ${popIdx?.includes(i)?'pop':''}">
+        <div class="top">
+          <div>
+            <div class="rank">${rankTxt}</div>
+            <div class="pname">${esc(name)}</div>
+            ${!over && !out[i] && i===d ? '<div class="dealer">Donne les cartes</div>' : ''}
+          </div>
+          <span class="suit ${su.r?'r':''}" aria-hidden="true">${su.s}</span>
+        </div>
+        ${out[i] ? '<span class="badge-out">Hors jeu</span>' : ''}
+        <div class="total">${t[i]}</div>
+        <div class="bar" aria-hidden="true"><span class="${cls}" style="width:${pct}%"></span></div>
+        <div class="left">${out[i] ? 'A dépassé ' + s.limit : remain === 0 ? 'Pile à ' + s.limit + ' : plus aucun point permis' : 'Peut encore prendre ' + remain + ' pts'}</div>
+      </article>`;
+    }).join('');
+
+    // gagnant
+    const w = $('winner');
+    if (over){
+      const names = winner.map(i => esc(state.players[i])).join(' et ');
+      w.hidden = false;
+      w.innerHTML = `<div><h2>${names} ${winner.length>1?'gagnent':'gagne'} !</h2>
+        <p>Partie terminée en ${state.rounds.length} manches · ${winner.map(i=>t[i]).join(' / ')} pts</p></div>
+        <div class="hdr-actions">
+          <button class="btn ghost" type="button" data-act="undo">Annuler la dernière manche</button>
+          <button class="btn" type="button" data-act="rematch">Revanche</button>
+        </div>`;
+    } else { w.hidden = true; w.innerHTML = ''; }
+
+    // saisie
+    $('entry-panel').hidden = over;
+    if (!over){
+      ensureDraft(out);
+      const dr = state.draft;
+      $('round-title').textContent = 'Manche ' + (state.rounds.length + 1);
+      $('round-sub').textContent = 'Donneur : ' + state.players[d];
+      $('entry').innerHTML = state.players.map((name,i) => {
+        if (out[i]) return '';
+        const su = SUITS[i];
+        const isFin = dr.fin === i, isFull = dr.full.includes(i), isOne = isFin && dr.oneShot;
+        const val = isFin ? (dr.oneShot ? s.oneShotBonus : s.finishBonus) : isFull ? (dr.oneShot ? s.oneShotFull : s.fullHand) : dr.vals[i];
+        return `<div class="erow ${isFin?'is-fin':''} ${isFull?'is-full':''}">
+          <div class="who"><span class="suit ${su.r?'r':''}" aria-hidden="true">${su.s}</span><span>${esc(name)}</span></div>
+          <input id="pts-${i}" data-i="${i}" type="text" inputmode="numeric" autocomplete="off" placeholder="0"
+            aria-label="Points de ${esc(name)}" value="${val}" ${isFin||isFull?'disabled':''}>
+          <div class="toggles">
+            <button type="button" class="tg fin" data-fin="${i}" aria-pressed="${isFin && !isOne}">A fini</button>
+            <button type="button" class="tg fin" data-one="${i}" aria-pressed="${isOne}">D'un coup</button>
+            <button type="button" class="tg full" data-full="${i}" aria-pressed="${isFull}">Main pleine</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    // historique
+    const h = $('history');
+    $('btn-undo').disabled = !state.rounds.length;
+    if (!state.rounds.length){
+      h.innerHTML = '<p class="empty">Aucune manche jouée. Les scores de chaque manche s\'inscrivent ici avec le cumul de chaque joueur.</p>';
+    } else {
+      const cum = state.players.map(()=>0);
+      const rows = state.rounds.map((r,k) => {
+        const cells = r.scores.map((v,i) => {
+          if (v === null) return '<td>—</td>';
+          cum[i] += v;
+          const c = r.fin === i ? 'fin' : (r.full||[]).includes(i) ? 'full' : '';
+          const tag = r.oneShot && r.fin === i ? '<span class="tag">d\'un coup</span>' : '';
+          return `<td class="${c}">${tag}${fmt(v)}<span class="cum">${cum[i]}</span></td>`;
+        }).join('');
+        return `<tr><td>M${k+1}${r.at ? `<span class="when">${stamp(r.at)}</span>` : ''}</td>${cells}</tr>`;
+      }).join('');
+      h.innerHTML = `<div class="tbl-wrap"><table>
+        <thead><tr><th>Manche</th>${state.players.map((n,i)=>`<th>${SUITS[i].s} ${esc(n)}</th>`).join('')}</tr></thead>
+        <tbody>${rows}</tbody>
+        <tfoot><tr><td>Total</td>${t.map(v=>`<td>${v}</td>`).join('')}</tr></tfoot>
+      </table></div>`;
+    }
+    $('err').textContent = '';
+    save();
+  }
+  function stamp(ms){
+    const d = new Date(ms);
+    const day = d.toLocaleDateString('fr-FR', {day:'2-digit', month:'2-digit', year:'numeric'});
+    const time = d.toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+    return day + ' à ' + time;
+  }
+  function fmt(v){ return v > 0 ? String(v) : v < 0 ? '−' + Math.abs(v) : '0'; }
+
+  /* ---------- Saisie ---------- */
+  $('entry').addEventListener('input', e => {
+    const i = e.target.dataset.i; if (i === undefined) return;
+    state.draft.vals[+i] = e.target.value.replace(/[^\d]/g,'');
+    e.target.value = state.draft.vals[+i];
+    save();
+  });
+  $('entry').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT'){
+      const inputs = [...document.querySelectorAll('#entry input:not(:disabled)')];
+      const k = inputs.indexOf(e.target);
+      if (k < inputs.length - 1) inputs[k+1].focus(); else validate();
+    }
+  });
+  $('entry').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const dr = state.draft;
+    if (b.dataset.fin !== undefined){
+      const i = +b.dataset.fin;
+      if (dr.fin === i && !dr.oneShot) dr.fin = null; else { dr.fin = i; }
+      dr.oneShot = false;
+      dr.full = dr.full.filter(x => x !== i);
+    } else if (b.dataset.one !== undefined){
+      const i = +b.dataset.one;
+      if (dr.fin === i && dr.oneShot){ dr.fin = null; dr.oneShot = false; }
+      else { dr.fin = i; dr.oneShot = true; }
+      dr.full = dr.full.filter(x => x !== i);
+    } else if (b.dataset.full !== undefined){
+      const i = +b.dataset.full;
+      if (dr.full.includes(i)) dr.full = dr.full.filter(x => x !== i);
+      else { dr.full.push(i); if (dr.fin === i) dr.fin = null; }
+    }
+    render();
+  });
+
+  function validate(){
+    const {out} = status();
+    const dr = state.draft, s = state.settings;
+    const scores = [];
+    for (let i=0; i<state.players.length; i++){
+      if (out[i]){ scores.push(null); continue; }
+      if (dr.fin === i){ scores.push(dr.oneShot ? s.oneShotBonus : s.finishBonus); continue; }
+      if (dr.full.includes(i)){ scores.push(dr.oneShot ? s.oneShotFull : s.fullHand); continue; }
+      if (dr.vals[i] === ''){
+        $('err').textContent = `Il manque les points de ${state.players[i]}. Saisissez 0 s'il n'a rien en main.`;
+        $('pts-'+i)?.focus();
+        return;
+      }
+      scores.push(parseInt(dr.vals[i], 10));
+    }
+    if (dr.fin === null){
+      $('err').textContent = 'Indiquez qui a fini la manche avec le bouton « A fini ».';
+      return;
+    }
+    state.rounds.push({scores, fin:dr.fin, full:[...dr.full], oneShot:!!dr.oneShot, at:Date.now()});
+    state.draft = null;
+    const changed = scores.map((v,i)=>v!==null?i:-1).filter(i=>i>=0);
+    render(changed);
+  }
+  $('btn-validate').addEventListener('click', validate);
+
+  function undo(){
+    if (!state.rounds.length) return;
+    const last = state.rounds.pop();
+    state.draft = {
+      vals: last.scores.map((v,i) => (v===null || last.fin===i || (last.full||[]).includes(i)) ? '' : String(v)),
+      fin: last.fin, full: [...(last.full||[])], oneShot: !!last.oneShot
+    };
+    render();
+  }
+  $('btn-undo').addEventListener('click', undo);
+  $('winner').addEventListener('click', e => {
+    const a = e.target.closest('button')?.dataset.act;
+    if (a === 'undo') undo();
+    if (a === 'rematch'){ state = freshState([...state.players], {...state.settings}); render(); }
+  });
+
+  /* ---------- Modale nouvelle partie / règles ---------- */
+  let setup = null;
+  function openSetup(mode){
+    const base = state.demo ? {players:['','','',''].slice(0,4), count:2} : {players:[...state.players], count:state.players.length};
+    const names = [0,1,2,3].map(i => base.players[i] || '');
+    setup = {mode, count: mode==='rules' ? state.players.length : (state.demo ? 2 : base.count), names, settings:{...(state.demo?DEFAULTS:state.settings)}, confirm:false};
+    drawSetup();
+    $('modal').hidden = false;
+    setTimeout(() => $('sheet').querySelector('input')?.focus(), 30);
+  }
+  function drawSetup(){
+    const st = setup, rules = st.mode === 'rules';
+    const inProgress = !state.demo && state.rounds.length > 0 && !rules;
+    $('sheet').innerHTML = `
+      <h2 id="modal-title">${rules ? 'Règles de la partie' : 'Nouvelle partie'}</h2>
+      ${rules ? '<p class="hint">Les changements s\'appliquent à la partie en cours. Les manches déjà jouées gardent leurs points.</p>' : `
+      <div class="field"><span class="lbl">Nombre de joueurs</span>
+        <div class="seg">${[2,3,4].map(n=>`<button type="button" data-count="${n}" aria-pressed="${st.count===n}">${n}</button>`).join('')}</div>
+      </div>
+      <div class="field"><span class="lbl">Joueurs</span>
+        <div class="names">${[...Array(st.count)].map((_,i)=>`
+          <div class="name-row"><span class="suit ${SUITS[i].r?'r':''}" aria-hidden="true">${SUITS[i].s}</span>
+          <input id="name-${i}" data-name="${i}" type="text" maxlength="18" placeholder="Joueur ${i+1}" value="${esc(st.names[i])}" aria-label="Nom du joueur ${i+1}"></div>`).join('')}
+        </div>
+        <p class="hint">Le premier joueur donne les cartes à la première manche, puis la donne tourne.</p>
+      </div>`}
+      <div class="grid2">
+        <div class="field"><label for="set-limit">À ne pas dépasser</label>
+          <input id="set-limit" type="number" inputmode="numeric" min="51" step="1" value="${st.settings.limit}"></div>
+        <div class="field"><label for="set-mode">Si un joueur dépasse</label>
+          <select id="set-mode">
+            <option value="elim" ${st.settings.mode==='elim'?'selected':''}>Le joueur est éliminé</option>
+            <option value="lowest" ${st.settings.mode==='lowest'?'selected':''}>Fin, le plus bas gagne</option>
+          </select></div>
+        <div class="field"><label for="set-fin">Points « A fini »</label>
+          <input id="set-fin" type="number" inputmode="numeric" step="1" value="${st.settings.finishBonus}"></div>
+        <div class="field"><label for="set-full">Points « Main pleine »</label>
+          <input id="set-full" type="number" inputmode="numeric" min="0" step="1" value="${st.settings.fullHand}"></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="set-one">« D'un coup » : gagnant</label>
+          <input id="set-one" type="number" inputmode="numeric" step="1" value="${st.settings.oneShotBonus}"></div>
+        <div class="field"><label for="set-onefull">« D'un coup » : main pleine</label>
+          <input id="set-onefull" type="number" inputmode="numeric" min="0" step="1" value="${st.settings.oneShotFull}"></div>
+      </div>
+      <p class="hint">« Main pleine » : le joueur n'a rien posé quand la manche se termine. « D'un coup » : le gagnant a posé tout son jeu en une seule fois.</p>
+      ${st.confirm ? '<div class="notice"><span><strong>La partie en cours sera effacée.</strong> Confirmez pour repartir de zéro.</span></div>' : ''}
+      <div class="err" id="setup-err"></div>
+      <div class="sheet-foot">
+        <button class="btn ghost" type="button" data-act="close">Fermer</button>
+        <button class="btn primary ${st.confirm?'danger':''}" type="button" data-act="go">${rules ? 'Enregistrer' : st.confirm ? 'Oui, effacer et commencer' : (inProgress ? 'Commencer une nouvelle partie' : 'Commencer')}</button>
+      </div>`;
+  }
+  function readSettings(){
+    const lim = parseInt($('set-limit').value,10), fin = parseInt($('set-fin').value,10), full = parseInt($('set-full').value,10);
+    if (!(lim >= 51)) return {err:'La limite doit être d\'au moins 51 points.'};
+    if (isNaN(fin)) return {err:'Indiquez les points pour « A fini » (par exemple −10 ou 0).'};
+    if (!(full >= 0)) return {err:'Indiquez une pénalité « Main pleine » positive.'};
+    const one = parseInt($('set-one').value,10), oneFull = parseInt($('set-onefull').value,10);
+    if (isNaN(one)) return {err:'Indiquez les points du gagnant « D\'un coup » (par exemple −20).'};
+    if (!(oneFull >= 0)) return {err:'Indiquez une pénalité « Main pleine » positive pour « D\'un coup ».'};
+    return {settings:{limit:lim, finishBonus:fin, fullHand:full, oneShotBonus:one, oneShotFull:oneFull, mode:$('set-mode').value}};
+  }
+  $('sheet').addEventListener('input', e => {
+    const n = e.target.dataset.name; if (n !== undefined) setup.names[+n] = e.target.value;
+  });
+  $('sheet').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.count){
+      const r = readSettings(); if (r.settings) setup.settings = r.settings;
+      setup.count = +b.dataset.count; setup.confirm = false; drawSetup(); return;
+    }
+    if (b.dataset.act === 'close'){ $('modal').hidden = true; return; }
+    if (b.dataset.act === 'go'){
+      const r = readSettings();
+      if (r.err){ $('setup-err').textContent = r.err; return; }
+      if (setup.mode === 'rules'){
+        state.settings = r.settings; $('modal').hidden = true; render(); return;
+      }
+      setup.settings = r.settings;
+      const inProgress = !state.demo && state.rounds.length > 0;
+      if (inProgress && !setup.confirm){ setup.confirm = true; drawSetup(); return; }
+      const players = [...Array(setup.count)].map((_,i) => setup.names[i].trim() || ('Joueur ' + (i+1)));
+      state = freshState(players, r.settings);
+      $('modal').hidden = true; render();
+      setTimeout(() => $('pts-0')?.focus(), 30);
+    }
+  });
+  $('modal').addEventListener('click', e => { if (e.target.id === 'modal') $('modal').hidden = true; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') $('modal').hidden = true; });
+
+  $('btn-new').addEventListener('click', () => openSetup('new'));
+  $('btn-demo-start').addEventListener('click', () => openSetup('new'));
+  $('btn-rules').addEventListener('click', () => openSetup('rules'));
+
+  /* ---------- Installation (PWA) ---------- */
+  let deferredPrompt = null;
+  const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; $('btn-install').hidden = false; });
+  window.addEventListener('appinstalled', () => { $('btn-install').hidden = true; deferredPrompt = null; });
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS && !standalone){
+    let dismissed = false; try { dismissed = localStorage.getItem('jolik-ios-hint') === '1'; } catch(e) {}
+    $('btn-install').hidden = false;
+    if (!dismissed) $('ios-hint').hidden = false;
+  }
+  $('btn-install').addEventListener('click', async () => {
+    if (deferredPrompt){ deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; $('btn-install').hidden = true; }
+    else $('ios-hint').hidden = false;
+  });
+  $('btn-ios-close').addEventListener('click', () => { $('ios-hint').hidden = true; try { localStorage.setItem('jolik-ios-hint','1'); } catch(e) {} });
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+
+  render();
+})();
+</script>
+
+</body>
+</html>
