@@ -86,10 +86,10 @@
   </div>
   <div class="cap abs" data-in="3.8" data-out="7.6">
     <div class="k">Votre entreprise est prête à décoller…</div>
-    <div class="m">mais son réservoir<br>est <span class="r">vide.</span></div>
+    <div class="m">mais son réservoir<br>d'euros est <span class="r">vide.</span></div>
   </div>
   <div class="cap abs" data-in="8.2" data-out="12.8">
-    <div class="k">Le carburant existe pourtant :</div>
+    <div class="k">Le carburant, ce sont des euros :</div>
     <div class="m">votre <em>budget formation</em><br><em>OPCO</em> ou <em>FAF.</em></div>
     <div class="n2">Alloué chaque année aux salariés (OPCO) et aux travailleurs non-salariés (FAF).</div>
   </div>
@@ -98,7 +98,7 @@
     <div class="m">il est <span class="r">perdu.</span><br>Définitivement.</div>
   </div>
   <div class="cap abs" data-in="17.3" data-out="22.6">
-    <div class="k">Faites le plein maintenant :</div>
+    <div class="k">Faites le plein d'euros maintenant :</div>
     <div class="m">transformez-le<br>en <em>formations.</em></div>
   </div>
   <div class="cap abs" data-in="25.6" data-out="30.0">
@@ -108,7 +108,7 @@
   <div id="gauge" class="abs" style="opacity:0">
     <div class="t"><span class="ic" id="lock">⛽</span><span id="gt">Réservoir de l'entreprise · vide</span></div>
     <div class="box"><div class="fill" id="gfill"></div></div>
-    <div class="s" id="gs">Carburant : 0 %</div>
+    <div class="s" id="gs">Carburant : 0 % d'euros de formation</div>
   </div>
   <div id="cd" class="abs">3</div>
   <div id="end" class="abs">
@@ -249,27 +249,47 @@ function build() {
   const tg = new THREE.BufferGeometry(); tg.setAttribute('position', new THREE.BufferAttribute(tpos, 3));
   trail = new THREE.Points(tg, new THREE.PointsMaterial({ size: 2.4, map: dot, color: '#ffb36a', transparent: true, opacity: .5, depthWrite: false, blending: THREE.AdditiveBlending })); trail.frustumCulled = false; scene.add(trail);
   /* citerne : budget formation OPCO / FAF */
-  tank = new THREE.Group(); tank.position.set(6.2, 0, -.6); scene.add(tank);
-  const tankTex = canvasTex(1024, 1024, (g, W, H) => { g.fillStyle = '#f4f1ea'; g.fillRect(0, 0, W, H);
-    g.fillStyle = '#0f2a52'; g.fillRect(0, H * .3, W, H * .4); g.fillStyle = '#f2b84b'; g.fillRect(0, H * .3, W, 12); g.fillRect(0, H * .7 - 12, W, 12);
+  tank = new THREE.Group(); tank.position.set(4.9, 0, -.6); scene.add(tank);
+  const white = new THREE.MeshStandardMaterial({ color: '#eef1f6', roughness: .3, metalness: .2, envMapIntensity: 1 });
+  const goldB = new THREE.MeshStandardMaterial({ color: '#f2b84b', metalness: .85, roughness: .25 });
+  const navyM = new THREE.MeshStandardMaterial({ color: '#0f2a52', roughness: .4, metalness: .2 });
+  const tb = new THREE.Mesh(new THREE.CapsuleGeometry(1.15, 2.6, 12, 48), white); tb.position.y = 2.95; tank.add(tb);
+  for (const y of [1.75, 4.15]) { const b = new THREE.Mesh(new THREE.TorusGeometry(1.16, .06, 10, 64), goldB); b.rotation.x = Math.PI / 2; b.position.y = y; tank.add(b); }
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(1.0, 1.25, .5, 48), navyM); base.position.y = .25; tank.add(base);
+  const valve = new THREE.Mesh(new THREE.CylinderGeometry(.18, .18, .5, 16), goldB); valve.rotation.z = Math.PI / 2; valve.position.set(-1.2, 1.3, .4); tank.add(valve);
+  /* grand panneau face caméra */
+  const panel = new THREE.Group(); panel.position.set(0, 3.2, 1.25); panel.rotation.y = .2; tank.add(panel);
+  const plTex = canvasTex(1024, 1024, (g, W, H) => {
+    roundRect(g, 8, 8, W - 16, H - 16, 70); g.fillStyle = '#0f2a52'; g.fill(); g.lineWidth = 16; g.strokeStyle = '#f2b84b'; g.stroke();
     g.textAlign = 'center'; g.textBaseline = 'middle';
-    for (const cx of [W * .5]) { g.fillStyle = '#f2b84b'; g.font = '900 64px Inter, "DejaVu Sans", sans-serif'; g.fillText('BUDGET FORMATION', cx, H * .42);
-      g.fillStyle = '#ffffff'; g.font = '900 92px Inter, "DejaVu Sans", sans-serif'; g.fillText('OPCO · FAF', cx, H * .57); } });
-  const tbody = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 4.6, 48, 1, false, .25 - Math.PI, Math.PI * 2), [new THREE.MeshStandardMaterial({ map: tankTex, roughness: .35, metalness: .15 }), new THREE.MeshStandardMaterial({ color: '#dfe3ea', roughness: .4 }), new THREE.MeshStandardMaterial({ color: '#dfe3ea' })]);
-  tbody.position.y = 3.2; tank.add(tbody);
-  const tcap = new THREE.Mesh(new THREE.SphereGeometry(1.5, 48, 16, 0, Math.PI * 2, 0, Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#dfe3ea', roughness: .35 })); tcap.position.y = 5.5; tank.add(tcap);
-  for (const [x, z] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const l = new THREE.Mesh(new THREE.CylinderGeometry(.09, .09, 1.0, 8), new THREE.MeshStandardMaterial({ color: '#3a4558' })); l.position.set(x * .9, .5, z * .9); tank.add(l); }
-  const win = new THREE.Mesh(new THREE.BoxGeometry(.34, 3.6, .06), new THREE.MeshStandardMaterial({ color: '#0a1220', roughness: .2 })); win.position.set(-1.08, 3.2, 1.08); win.rotation.y = -Math.PI / 4; tank.add(win);
-  tankWin = new THREE.Mesh(new THREE.BoxGeometry(.26, 1, .08), new THREE.MeshBasicMaterial({ color: '#f2b84b' })); tankWin.geometry.translate(0, .5, 0); tankWin.position.set(-1.1, 1.45, 1.1); tankWin.rotation.y = -Math.PI / 4; tank.add(tankWin);
+    g.fillStyle = '#f2b84b'; g.font = '900 210px Inter, "DejaVu Sans", sans-serif'; g.fillText('€', W / 2, 165);
+    g.fillStyle = '#ffffff'; g.font = '900 104px Inter, "DejaVu Sans", sans-serif'; g.fillText('BUDGET', W / 2, 330); g.fillText('FORMATION', W / 2, 445);
+    g.fillStyle = '#f2b84b'; g.fillRect(150, 520, W - 300, 8);
+    g.fillStyle = '#ffd36b'; g.font = '900 150px Inter, "DejaVu Sans", sans-serif'; g.fillText('OPCO', W / 2, 625);
+    g.fillStyle = '#ffffff'; g.font = '800 62px Inter, "DejaVu Sans", sans-serif'; g.fillText('salariés', W / 2, 715);
+    g.fillStyle = '#ffd36b'; g.font = '900 150px Inter, "DejaVu Sans", sans-serif'; g.fillText('FAF', W / 2, 820);
+    g.fillStyle = '#ffffff'; g.font = '800 62px Inter, "DejaVu Sans", sans-serif'; g.fillText('non-salariés', W / 2, 910);
+  });
+  const pl = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 2.6), new THREE.MeshStandardMaterial({ map: plTex, roughness: .5, emissive: '#ffffff', emissiveMap: plTex, emissiveIntensity: .35 }));
+  panel.add(pl);
+  /* jauge sous le panneau */
+  const gBg = new THREE.Mesh(new THREE.BoxGeometry(2.1, .26, .04), new THREE.MeshStandardMaterial({ color: '#0a1220' })); gBg.position.set(0, -1.38, 0); panel.add(gBg);
+  tankWin = new THREE.Mesh(new THREE.BoxGeometry(1, .18, .05), new THREE.MeshBasicMaterial({ color: '#f2b84b' })); tankWin.geometry.translate(.5, 0, 0); tankWin.position.set(-1.0, -1.38, .02); panel.add(tankWin);
   /* tuyau + carburant */
-  hoseCurve = new THREE.CatmullRomCurve3([new V3(3.75, 1.3, .4), new V3(3.0, .25, 1.4), new V3(2.4, .25, 1.6), new V3(1.2, 1.4, 1.0), new V3(.75, 2.4, .45)]);
+  hoseCurve = new THREE.CatmullRomCurve3([new V3(3.75, 1.3, .5), new V3(3.75, .3, 2.4), new V3(2.5, .3, 3.7), new V3(1.0, 1.4, 3.5), new V3(.8, 1.5, 1.6), new V3(.65, 2.4, .6)]);
   hose = new THREE.Mesh(new THREE.TubeGeometry(hoseCurve, 80, .14, 10, false), new THREE.MeshStandardMaterial({ color: '#1e2633', roughness: .6 })); scene.add(hose);
-  const NF = 140, fp = new Float32Array(NF * 3); const fg = new THREE.BufferGeometry(); fg.setAttribute('position', new THREE.BufferAttribute(fp, 3));
-  fuel = new THREE.Points(fg, new THREE.PointsMaterial({ size: .55, map: dot, color: '#ffc94d', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })); fuel.frustumCulled = false; scene.add(fuel);
+  const coinTex = canvasTex(128, 128, g => { const r = g.createRadialGradient(54, 50, 6, 64, 64, 60); r.addColorStop(0, '#fff2b8'); r.addColorStop(.6, '#f2b84b'); r.addColorStop(1, '#b07a1e');
+    g.fillStyle = r; g.beginPath(); g.arc(64, 64, 58, 0, Math.PI * 2); g.fill(); g.lineWidth = 6; g.strokeStyle = '#8a5a10'; g.stroke();
+    g.fillStyle = '#7a4a00'; g.font = '900 78px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('€', 64, 68); });
+  fuel = new THREE.Group(); scene.add(fuel);
+  for (let i = 0; i < 26; i++) { const c = new THREE.Sprite(new THREE.SpriteMaterial({ map: coinTex, transparent: true, depthWrite: false, depthTest: false })); c.renderOrder = 10; c.scale.set(.9, .9, 1); fuel.add(c); }
+  const flowTex = canvasTex(1500, 170, g => { roundRect(g, 6, 6, 1488, 158, 70); g.font = '900 70px Inter, "DejaVu Sans", sans-serif'; g.fillStyle = '#f2b84b'; g.fill();
+    g.fillStyle = '#0f2a52'; g.font = '900 70px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('ENTREPRISE  ⬅  €  BUDGET FORMATION', 750, 90); });
+  fuel.userData.label = new THREE.Sprite(new THREE.SpriteMaterial({ map: flowTex, transparent: true, depthWrite: false, depthTest: false })); fuel.userData.label.renderOrder = 11; fuel.userData.label.scale.set(5.6, .64, 1); scene.add(fuel.userData.label);
   /* panneau « expire le 31/12 » */
   expireS = new THREE.Sprite(new THREE.SpriteMaterial({ map: canvasTex(720, 200, g => { roundRect(g, 6, 6, 708, 188, 40); g.fillStyle = '#ff3b30'; g.fill();
     g.fillStyle = '#fff'; g.font = '900 84px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('EXPIRE LE 31/12', 360, 104); }), transparent: true, depthWrite: false }));
-  expireS.scale.set(3.6, 1.0, 1); expireS.position.set(6.2, 7.6, -.6); scene.add(expireS);
+  expireS.scale.set(3.0, .83, 1); expireS.position.set(4.9, 6.2, -.6); scene.add(expireS);
   /* ratés moteur (bouffées) */
   const NPf = 60, pp = new Float32Array(NPf * 3); const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pp, 3));
   puffs = new THREE.Points(pg, new THREE.PointsMaterial({ size: 1.6, map: dot, color: '#8a93a3', transparent: true, depthWrite: false })); puffs.frustumCulled = false; puffs.userData.d = [...Array(NPf)].map(() => ({ a: rnd() * 6.28, s: rnd(), k: Math.floor(rnd() * 3) })); scene.add(puffs);
@@ -312,15 +332,18 @@ function renderAt(t) {
   const tin = eout(clamp((t - 8.2) / 1.2));
   tank.position.set(lerp(30, 4.9, tin), 0, -.6); tank.visible = t > 8.1 && t < 29;
   const transfer = clamp((t - 18.2) / 4.0), level = 1 - .92 * eio(transfer);
-  tankWin.scale.y = Math.max(.01, 3.5 * level);
+  tankWin.scale.x = Math.max(.01, 2.0 * level);
   tankWin.material.color.set(t > 13.2 && t < 17 && Math.sin(t * 12) > 0 ? '#ff3b30' : '#f2b84b');
   expireS.visible = t > 9.6 && t < 18.2; expireS.position.x = tank.position.x;
   expireS.material.opacity = (t > 13.2 && t < 17 ? (Math.sin(t * 10) > 0 ? 1 : .35) : 1) * sstep(9.6, 10.1, t) * (1 - sstep(17.7, 18.2, t));
   const hk = sstep(17.4, 18.2, t) * (1 - sstep(23.0, 23.6, t));
   hose.visible = hk > .01; hose.geometry.setDrawRange(0, Math.floor(hose.geometry.index.count * hk / 3) * 3);
-  { const a = fuel.geometry.attributes.position.array, n = a.length / 3, on = t > 18.2 && t < 22.4; fuel.visible = on;
-    if (on) for (let i = 0; i < n; i++) { const u = ((i / n + (t - 18.2) * .55) % 1); const p = hoseCurve.getPointAt(u); a[i * 3] = p.x; a[i * 3 + 1] = p.y + .05; a[i * 3 + 2] = p.z; }
-    fuel.geometry.attributes.position.needsUpdate = true; fuel.material.opacity = sstep(18.2, 18.6, t) * (1 - sstep(22.0, 22.4, t)); }
+  { const on = t > 18.1 && t < 22.6, op = sstep(18.1, 18.5, t) * (1 - sstep(22.1, 22.6, t)); fuel.visible = on;
+    if (on) fuel.children.forEach((c, i) => { const u = ((i / 26 + (t - 18.1) * .42) % 1 + 1) % 1; const p = hoseCurve.getPointAt(Math.min(u / .85, 1));
+      if (u > .85) { const k = (u - .85) / .15; p.lerp(new V3(0, PAD_Y + 2.6, .95), k); p.y += Math.sin(Math.PI * k) * .8; }
+      c.position.set(p.x, p.y + .38, p.z); const sc = .9 * (1 - Math.max(0, (u - .93) / .07)); c.scale.set(sc, sc, 1); c.material.opacity = op * Math.min(1, u * 10); });
+    const lb = fuel.userData.label; lb.visible = on; lb.material.opacity = op; lb.position.set(2.2, .1 + .05 * Math.sin(t * 4), 5.2);
+    const lsc = eback(clamp((t - 18.1) / .5)); lb.scale.set(5.6 * lsc, .64 * lsc, 1); }
   portholeM.emissiveIntensity = .1 + 2.5 * sstep(19, 22.4, t);
   bodyM.emissive = bodyM.emissive || new THREE.Color(); bodyM.emissive.set('#f2b84b'); bodyM.emissiveIntensity = .25 * Math.sin(Math.PI * clamp((t - 22.3) / .6));
   /* fumée & traînée */
@@ -345,8 +368,8 @@ function renderAt(t) {
   /* caméra : plan large quand la citerne est là */
   const kc = sstep(LIFT, LIFT + 2.3, t), wide = sstep(8, 9.5, t) * (1 - sstep(23.5, 25, t));
   const focusY = lerp(lerp(5.2, 4.6, wide), ry + 3.5, kc);
-  const camP = new V3(lerp(lerp(9, 11, wide), 10, kc), lerp(4.2 + wide * .8, focusY - 3.5 + 1.5 * kc, kc), lerp(lerp(lerp(22, 18, sstep(0, 8, t)), 25, wide), 26, kc));
-  const lookX = lerp(0, 2.6, wide) * (1 - kc);
+  const camP = new V3(lerp(lerp(9, 8.5, wide), 10, kc), lerp(4.2 + wide * .3, focusY - 3.5 + 1.5 * kc, kc), lerp(lerp(lerp(22, 18, sstep(0, 8, t)), 18.5, wide), 26, kc));
+  const lookX = lerp(0, 2.2, wide) * (1 - kc);
   if (t > 29.5) { camP.y = ry * .9 - 6; camP.z = 34; camP.x = 12; }
   camP.x += Math.sin(t * 71) * shake * .8; camP.y += Math.cos(t * 67) * shake * .8;
   camera.position.copy(camP); camera.lookAt(lookX, focusY, 0); sky.position.copy(camera.position); stars.position.copy(camera.position);
@@ -368,7 +391,7 @@ function renderAt(t) {
   const pct = Math.round(100 * eio(transfer)), full = t >= 22.4;
   $('lock').textContent = full ? '🚀' : '⛽';
   $('gt').innerHTML = full ? "Plein effectué · prêt au décollage" : (pct > 0 ? "Réservoir de l'entreprise · remplissage" : "Réservoir de l'entreprise · vide");
-  $('gs').innerHTML = full ? 'Carburant : budget formation OPCO / FAF transformé en compétences' : `Carburant : ${pct} %`;
+  $('gs').innerHTML = full ? '€ Budget formation OPCO / FAF transformé en compétences' : `Carburant : ${pct} % d'euros de formation`;
   const gf = $('gfill');
   if (pct === 0) { gf.style.width = '4%'; gf.style.background = Math.sin(t * 10) > 0 ? '#ff3b30' : '#7a2622'; }
   else { gf.style.width = Math.max(4, pct) + '%'; gf.style.background = 'linear-gradient(90deg,#f2b84b,#ffe08a)'; }
