@@ -419,6 +419,39 @@ export const posts: Post[] = [
       },
     },
   },
+  {
+    slug: 'formation-continue-obligatoire-agent-immobilier',
+    pole: 'forma',
+    frOnly: true,
+    title: {
+      fr: 'Formation continue obligatoire des agents immobiliers : thèmes, durée, financement',
+      en: 'Mandatory continuing education for French real estate agents: topics, hours, funding',
+    },
+    metaTitle: {
+      fr: 'Formation continue agent immobilier : obligations loi ALUR',
+      en: 'Real estate agent continuing education: ALUR law requirements',
+    },
+    excerpt: {
+      fr: '14 heures par an ou 42 heures sur 3 ans, dont déontologie et non-discrimination : ce que la loi ALUR impose, les thèmes qui comptent et le financement OPCO ou FAF.',
+      en: '14 hours a year or 42 hours over 3 years, including ethics and non-discrimination: what the ALUR law requires and how to fund it.',
+    },
+    keyword: {
+      fr: 'formation continue agent immobilier',
+      en: 'real estate agent continuing education',
+    },
+    category: { fr: 'Formation', en: 'Training' },
+    date: '2026-11-23',
+    updated: '2026-11-23',
+    readingMin: 7,
+    author: {
+      name: 'Jean-Gérard Anfossi',
+      url: 'https://www.linkedin.com/in/jeangerardanfossi/',
+      bio: {
+        fr: "Jean-Gérard Anfossi dirige Alatere Web à Antibes, dont la marque Alatere forMa est l'organisme de formation professionnelle certifié Qualiopi (n° 93.06.07588.06).",
+        en: 'Jean-Gérard Anfossi runs Alatere Web in Antibes, whose Alatere forMa brand is its Qualiopi-certified professional training organisation (no. 93.06.07588.06).',
+      },
+    },
+  },
 ];
 
 /** Résout les champs bilingues d'un article dans une langue donnée. */
