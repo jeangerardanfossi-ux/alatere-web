@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan Compétences Fusée</title>
+<meta name="description" content="Animation 3D (45 s) — Alatere forMa : plus que quelques jours pour utiliser votre budget formation avant le 31 décembre. Faites décoller votre entreprise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0a1830; --red:#ff3b30; --gold:#f2b84b; --cream:#f7f3ea; --u:19.2px; }
+  html, body { margin:0; height:100%; background:var(--navy); overflow:hidden; }
+  #stage { position:relative; width:100vw; height:100vh; overflow:hidden; font-family:Inter, "DejaVu Sans", sans-serif; color:var(--cream); }
+  #stage canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .abs { position:absolute; pointer-events:none; }
+  /* compteur géant d'intro */
+  #big { left:0; right:0; top:50%; transform:translateY(-50%); text-align:center; }
+  #big .pre { font-size:calc(var(--u)*1.9); font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#c8d6ee; }
+  #big .num { font-size:calc(var(--u)*17); font-weight:900; line-height:.95; letter-spacing:-.04em; color:var(--red); font-variant-numeric:tabular-nums;
+              text-shadow:0 0 calc(var(--u)*3) rgba(255,59,48,.55); }
+  #big .post { font-size:calc(var(--u)*2.3); font-weight:800; margin-top:calc(var(--u)*.6); }
+  #big .post b { color:var(--gold); }
+  /* badge compteur permanent */
+  #badge { right:calc(var(--u)*3); top:calc(var(--u)*3); padding:calc(var(--u)*.9) calc(var(--u)*1.6); border-radius:calc(var(--u)*1.1);
+           background:rgba(255,59,48,.14); border:calc(var(--u)*.15) solid var(--red); text-align:center; }
+  #badge .n { font-size:calc(var(--u)*4.2); font-weight:900; line-height:1; color:var(--red); font-variant-numeric:tabular-nums; }
+  #badge .l { font-size:calc(var(--u)*1.05); font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-top:calc(var(--u)*.35); }
+  #badge .bar { height:calc(var(--u)*.35); background:rgba(255,255,255,.15); border-radius:99px; margin-top:calc(var(--u)*.6); overflow:hidden; }
+  #badge .bar i { display:block; height:100%; background:var(--red); width:100%; }
+  /* légendes */
+  .cap { left:calc(var(--u)*5); top:calc(var(--u)*5.5); max-width:calc(var(--u)*46); }
+  .cap > div { opacity:0; }
+  .k { font-size:calc(var(--u)*1.7); font-weight:700; margin-bottom:calc(var(--u)*.5); color:#dfe7f3; }
+  .m { font-size:calc(var(--u)*4); font-weight:900; line-height:1.02; letter-spacing:-.02em; text-shadow:0 calc(var(--u)*.2) calc(var(--u)*1) rgba(0,0,0,.45); }
+  .m em { font-style:normal; color:var(--gold); }
+  .n2 { font-size:calc(var(--u)*1.3); font-weight:600; color:#c8d6ee; margin-top:calc(var(--u)*.8); } .m .r { color:var(--red); }
+  /* jauge */
+  #gauge { left:calc(var(--u)*5); bottom:calc(var(--u)*9.5); width:calc(var(--u)*30); }
+  #gauge .t { font-size:calc(var(--u)*1.1); font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:calc(var(--u)*.6); display:flex; align-items:center; gap:calc(var(--u)*.6); }
+  #gauge .t span.ic { font-size:calc(var(--u)*1.6); }
+  #gauge .box { height:calc(var(--u)*2.2); border-radius:calc(var(--u)*.6); border:calc(var(--u)*.15) solid #c8d6ee; padding:calc(var(--u)*.25); }
+  #gauge .fill { height:100%; border-radius:calc(var(--u)*.4); background:repeating-linear-gradient(45deg,#7d8796 0 calc(var(--u)*.8),#5e6876 calc(var(--u)*.8) calc(var(--u)*1.6)); width:100%; }
+  #gauge .s { font-size:calc(var(--u)*1.05); font-weight:600; margin-top:calc(var(--u)*.5); color:#c8d6ee; }
+  /* 3-2-1 */
+  #cd { left:0; right:0; top:50%; transform:translateY(-50%); text-align:center; font-size:calc(var(--u)*22); font-weight:900; color:#fff; opacity:0;
+        text-shadow:0 0 calc(var(--u)*4) rgba(242,184,75,.8); }
+  /* carton final */
+  #end { left:calc(var(--u)*5); top:50%; transform:translateY(-50%); }
+  #end > * { opacity:0; }
+  #end .big { font-size:calc(var(--u)*6.4); font-weight:900; line-height:.95; letter-spacing:-.03em; color:var(--red); }
+  #end .sub { font-size:calc(var(--u)*2.3); font-weight:800; margin-top:calc(var(--u)*.6); line-height:1.15; }
+  #end .q { font-size:calc(var(--u)*1.5); font-weight:600; margin-top:calc(var(--u)*1.4); color:var(--gold); }
+  #end .logo { display:inline-flex; align-items:center; margin-top:calc(var(--u)*2); background:#fff; border-radius:calc(var(--u)*1); padding:calc(var(--u)*.8) calc(var(--u)*1.4); }
+  #end .logo img { height:calc(var(--u)*3.2); display:block; }
+  #end .url { display:inline-block; margin-left:calc(var(--u)*1.2); padding:calc(var(--u)*.8) calc(var(--u)*1.5); border-radius:99px; border:calc(var(--u)*.15) solid var(--gold);
+              font-size:calc(var(--u)*1.5); font-weight:700; vertical-align:middle; background:rgba(10,24,48,.6); }
+  #end .row { display:flex; align-items:center; margin-top:calc(var(--u)*2); }
+  #end .n { font-size:calc(var(--u)*.95); font-weight:500; color:#c8d6ee; margin-top:calc(var(--u)*1.6); max-width:calc(var(--u)*50); line-height:1.35; }
+  #sub { left:50%; bottom:calc(var(--u)*3.5); transform:translateX(-50%); max-width:calc(var(--u)*78); text-align:center; opacity:0;
+         background:rgba(0,0,0,.72); border-radius:calc(var(--u)*.7); padding:calc(var(--u)*.7) calc(var(--u)*1.8);
+         font-size:calc(var(--u)*2.9); font-weight:800; line-height:1.2; color:#fff; white-space:nowrap; }
+  #sub b { color:var(--gold); font-weight:800; }
+  /* version épurée : une seule phrase à l'écran */
+  .cap { display:none; }
+  #gauge { top:calc(var(--u)*4); bottom:auto !important; }
+  #gauge .s, #end .q, #end .n { display:none; }
+  #intro { inset:0; background:radial-gradient(ellipse at 70% 50%, #163a6e 0%, #0a1830 70%); display:flex; align-items:center; justify-content:space-between;
+           padding:0 calc(var(--u)*6); box-sizing:border-box; }
+  #intro .q { width:calc(var(--u)*50); }
+  #intro .q .a { font-size:calc(var(--u)*2.2); font-weight:700; color:#c8d6ee; letter-spacing:.06em; text-transform:uppercase; margin-bottom:calc(var(--u)*1); }
+  #intro .q .b { font-size:calc(var(--u)*5.2); font-weight:900; line-height:1.05; letter-spacing:-.02em; }
+  #intro .q .b em { font-style:normal; color:var(--gold); }
+  #intro svg { width:calc(var(--u)*36); height:auto; overflow:visible; }
+  #roller { left:calc(var(--u)*5); top:calc(var(--u)*12.5); width:calc(var(--u)*34); opacity:0; }
+  #roller .h { font-size:calc(var(--u)*1.5); font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:calc(var(--u)*.8); }
+  #roller .win { position:relative; height:calc(var(--u)*20); perspective:calc(var(--u)*60); overflow:hidden; border-radius:calc(var(--u)*1);
+                 background:linear-gradient(180deg, rgba(10,24,48,.95), rgba(22,58,110,.55) 50%, rgba(10,24,48,.95)); border:calc(var(--u)*.15) solid rgba(242,184,75,.6);
+                 -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%); mask-image:linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%); }
+  #roller .drum { position:absolute; left:0; right:0; top:50%; height:0; transform-style:preserve-3d; }
+  #roller .it { position:absolute; left:calc(var(--u)*1.2); right:calc(var(--u)*1.2); height:calc(var(--u)*3.4); margin-top:calc(var(--u)*-1.7); display:flex; align-items:center; gap:calc(var(--u)*1);
+                font-size:calc(var(--u)*1.95); font-weight:800; color:#fff; white-space:nowrap; backface-visibility:hidden; border-radius:calc(var(--u)*.6); padding:0 calc(var(--u)*1); box-sizing:border-box; }
+  #roller .it i { font-style:normal; width:calc(var(--u)*2.2); text-align:center; }
+  #flash { inset:0; background:#fff; opacity:0; }
+  #vig { inset:0; background:radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 45%, rgba(255,30,30,.35) 100%); opacity:0; }
+  #fade { inset:0; background:var(--navy); }
+  #sound { right:calc(var(--u)*2); bottom:calc(var(--u)*2); padding:calc(var(--u)*.6) calc(var(--u)*1.2); border-radius:99px; background:rgba(255,59,48,.85);
+           font-size:calc(var(--u)*1.1); font-weight:700; cursor:pointer; pointer-events:auto; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="stage">
+  <div id="dim" class="abs" style="inset:0;background:#0a1830"></div>
+  <div id="vig" class="abs"></div>
+  <div id="big" class="abs">
+    <div class="pre">Budget formation <span class="yr">2026</span></div>
+    <div class="num">J-<span id="bigN">365</span></div>
+    <div class="post">avant le <b>31 décembre</b></div>
+  </div>
+  <div id="badge" class="abs" style="opacity:0">
+    <div class="n">J-<span class="dn">38</span></div>
+    <div class="l">avant le 31/12</div>
+    <div class="bar"><i id="drain"></i></div>
+  </div>
+  <div class="cap abs" data-in="3.8" data-out="7.6">
+    <div class="k">Votre entreprise est prête à décoller…</div>
+    <div class="m">mais son réservoir<br>d'euros est <span class="r">vide.</span></div>
+  </div>
+  <div class="cap abs" data-in="8.2" data-out="12.8">
+    <div class="k">Le carburant, ce sont des euros :</div>
+    <div class="m">votre <em>budget formation</em><br><em>OPCO</em> ou <em>FAF.</em></div>
+    <div class="n2">Alloué chaque année aux salariés (OPCO) et aux travailleurs non-salariés (FAF).</div>
+  </div>
+  <div class="cap abs" data-in="13.2" data-out="16.9">
+    <div class="k">Non utilisé au 31 décembre,</div>
+    <div class="m">il est <span class="r">perdu.</span><br>Définitivement.</div>
+  </div>
+  <div class="cap abs" data-in="17.3" data-out="22.6">
+    <div class="k">Faites le plein d'euros maintenant :</div>
+    <div class="m">transformez-le<br>en <em>formations.</em></div>
+  </div>
+  <div class="cap abs" data-in="25.6" data-out="30.0">
+    <div class="k">Grâce aux nouvelles compétences,</div>
+    <div class="m">votre entreprise<br><em>décolle !</em></div>
+  </div>
+  <div id="gauge" class="abs" style="opacity:0">
+    <div class="t"><span class="ic" id="lock">⛽</span><span id="gt">Réservoir de l'entreprise · vide</span></div>
+    <div class="box"><div class="fill" id="gfill"></div></div>
+    <div class="s" id="gs">Carburant : 0 % d'euros de formation</div>
+  </div>
+  <div id="cd" class="abs">3</div>
+  <div id="end" class="abs">
+    <div class="big" data-in="30.3">Plus que <span class="dn">38</span> jours</div>
+    <div class="sub" data-in="30.6">pour utiliser votre budget formation <span class="yr">2026</span>.</div>
+    <div class="q" data-in="31.0">Organisme certifié Qualiopi · votre formation peut vous coûter 0 €*</div>
+    <div class="row" data-in="31.4"><span class="logo"><img src="/marques/forma-titre.webp" alt="Alatere forMa"></span><span class="url">www.alatere-web.com/alatere-forma</span></div>
+    <div class="n" data-in="31.8">* Budget alloué chaque année aux salariés (OPCO) et aux travailleurs non-salariés (FAF) ; non utilisé, il est perdu. Prise en charge selon les règles et dans la limite des droits de votre OPCO / FAF.</div>
+  </div>
+  <div id="roller" class="abs"><div class="h">Nos formations</div><div class="win"><div class="drum" id="drum"></div></div></div>
+  <div id="sub" class="abs"></div>
+  <div id="intro" class="abs">
+    <div class="q"><div class="a">Question</div><div class="b">Avez-vous mis en place un <em>plan de développement des compétences</em> en <span class="yr">2026</span> ?</div></div>
+    <svg viewBox="0 0 360 440" id="clip">
+      <rect x="20" y="40" width="320" height="390" rx="24" fill="#f4f1ea"/>
+      <rect x="120" y="18" width="120" height="48" rx="12" fill="#c99a48"/><rect x="150" y="8" width="60" height="22" rx="8" fill="#c99a48"/>
+      <text x="180" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="22" fill="#0f2a52">PLAN DE DÉVELOPPEMENT</text>
+      <text x="180" y="132" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="22" fill="#0f2a52">DES COMPÉTENCES <tspan class="yr">2026</tspan></text>
+      <line x1="50" y1="152" x2="310" y2="152" stroke="#c99a48" stroke-width="3"/>
+      <g font-family="Inter, sans-serif" font-weight="700" font-size="19" fill="#33445e">
+        <g class="row" data-i="0"><rect x="50" y="178" width="30" height="30" rx="6" fill="none" stroke="#0f2a52" stroke-width="3"/><text x="96" y="200">Analyser les besoins</text></g>
+        <g class="row" data-i="1"><rect x="50" y="232" width="30" height="30" rx="6" fill="none" stroke="#0f2a52" stroke-width="3"/><text x="96" y="254">Choisir les formations</text></g>
+        <g class="row" data-i="2"><rect x="50" y="286" width="30" height="30" rx="6" fill="none" stroke="#0f2a52" stroke-width="3"/><text x="96" y="308">Financer : OPCO / FAF</text></g>
+        <g class="row" data-i="3"><rect x="50" y="340" width="30" height="30" rx="6" fill="none" stroke="#0f2a52" stroke-width="3"/><text x="96" y="362">Former les équipes</text></g>
+      </g>
+      <g id="qm"><circle cx="310" cy="400" r="52" fill="#ff3b30"/><text x="310" y="425" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="74" fill="#fff">?</text></g>
+    </svg>
+  </div>
+  <div id="flash" class="abs"></div>
+  <div id="fade" class="abs"></div>
+  <div id="sound" class="abs">▶ Cliquer pour le son</div>
+  <audio id="music" src="bande-son.mp3" preload="auto"></audio>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const Q = new URLSearchParams(location.search), RENDER = Q.has('render'), DURATION = 45, INTRO = 6;
+/* jours restants avant le 31 décembre (date du jour, ou ?date=AAAA-MM-JJ) */
+const today = Q.get('date') ? new Date(Q.get('date') + 'T12:00:00') : new Date();
+let YEAR = today.getFullYear();
+const daysLeft = Math.max(1, Math.round((new Date(YEAR, 11, 31, 12) - new Date(today.getFullYear(), today.getMonth(), today.getDate(), 12)) / 864e5));
+document.querySelectorAll('.dn').forEach(e => e.textContent = daysLeft);
+document.querySelectorAll('.yr').forEach(e => e.textContent = YEAR);
+
+const V3 = THREE.Vector3;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const sstep = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+const eio = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const eout = t => 1 - Math.pow(1 - t, 3);
+const eback = t => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+function mulberry(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const rnd = mulberry(31122026);
+const C = h => new THREE.Color(h);
+
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: RENDER });
+renderer.setPixelRatio(RENDER ? 1 : Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, 16 / 9, .1, 3000);
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h;
+  camera.fov = clamp(2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(34)) / camera.aspect) * 180 / Math.PI, 30, 85);
+  if (w >= h) camera.setViewOffset(w, h, -w * .16, 0, w, h); else camera.clearViewOffset();
+  camera.updateProjectionMatrix();
+  stage.style.setProperty('--u', (Math.min(w, h * 16 / 9) / 100) + 'px');
+}
+function canvasTex(w, h, draw) { const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; }
+function roundRect(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+const dot = canvasTex(64, 64, g => { const r = g.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, '#fff'); r.addColorStop(.4, 'rgba(255,255,255,.6)'); r.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64); });
+
+let tank, tankLevel, tankWin, hose, hoseCurve, fuel, expireS, puffs, sky, skyU, rocket, flameO, flameI, flameLight, smoke, smokeD, trail, trailD, tags = [], stars, padLights = [], portholeM, bodyM;
+const PAD_Y = 1.2;
+
+function build() {
+  scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), .04).texture;
+  skyU = { top: { value: C('#050b18') }, bot: { value: C('#1d3a6e') }, k: { value: 0 } };
+  sky = new THREE.Mesh(new THREE.SphereGeometry(1500, 32, 16), new THREE.ShaderMaterial({ uniforms: skyU, side: THREE.BackSide, depthWrite: false,
+    vertexShader: 'varying vec3 d; void main(){ d = position; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+    fragmentShader: `uniform vec3 top, bot; uniform float k; varying vec3 d; void main(){ float h = normalize(d).y; vec3 c = mix(bot, top, clamp(h*1.3+.15,0.,1.));
+      c = mix(c, top*.6, k); gl_FragColor = vec4(c,1.);
+      #include <colorspace_fragment>
+    }` }));
+  sky.frustumCulled = false; scene.add(sky);
+  /* étoiles */
+  const sp = []; for (let i = 0; i < 1600; i++) { const v = new V3(rnd() - .5, rnd() * .9 + .05, rnd() - .5).normalize().multiplyScalar(900); sp.push(v); }
+  stars = new THREE.Points(new THREE.BufferGeometry().setFromPoints(sp), new THREE.PointsMaterial({ size: 2.2, map: dot, color: '#dfe8ff', transparent: true, opacity: .5, depthWrite: false, sizeAttenuation: false }));
+  scene.add(stars);
+  scene.add(new THREE.HemisphereLight('#bcd0ff', '#1a2233', .9));
+  const key = new THREE.DirectionalLight('#ffffff', 2.2); key.position.set(-6, 8, 10); scene.add(key);
+  const rim = new THREE.DirectionalLight('#f2b84b', 1.6); rim.position.set(8, 4, -6); scene.add(rim);
+  /* sol + pas de tir */
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(400, 64), new THREE.MeshStandardMaterial({ color: '#101c33', roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; scene.add(ground);
+  const grid = new THREE.GridHelper(200, 100, '#2b4677', '#1a2d50'); grid.position.y = .01; scene.add(grid);
+  const pad = new THREE.Mesh(new THREE.CylinderGeometry(3.2, 3.6, PAD_Y, 48), new THREE.MeshStandardMaterial({ color: '#3a4558', roughness: .7, metalness: .3 }));
+  pad.position.y = PAD_Y / 2; scene.add(pad);
+  const ringM = new THREE.MeshBasicMaterial({ color: '#f2b84b' });
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(3.25, .06, 8, 64), ringM); ring.rotation.x = -Math.PI / 2; ring.position.y = PAD_Y + .01; scene.add(ring);
+  /* tour de lancement */
+  const towerM = new THREE.MeshStandardMaterial({ color: '#c0392b', roughness: .6, metalness: .4 });
+  const tower = new THREE.Group(); tower.position.set(-3.6, 0, -1.2); scene.add(tower);
+  for (const [x, z] of [[-.5, -.5], [.5, -.5], [-.5, .5], [.5, .5]]) { const c = new THREE.Mesh(new THREE.BoxGeometry(.12, 11, .12), towerM); c.position.set(x, 5.5, z); tower.add(c); }
+  for (let y = 1; y < 11; y += 1.1) { for (const r of [0, Math.PI / 2]) { const b = new THREE.Mesh(new THREE.BoxGeometry(1.1, .08, .08), towerM); b.position.set(0, y, 0); b.rotation.y = r;
+    b.position.x = r ? 0 : 0; tower.add(b); } const l = new THREE.Mesh(new THREE.SphereGeometry(.08, 8, 6), new THREE.MeshBasicMaterial({ color: '#ff3b30' })); l.position.set(.55, y, .55); tower.add(l); padLights.push(l); }
+  const arm = new THREE.Mesh(new THREE.BoxGeometry(2.4, .15, .3), towerM); arm.position.set(1.4, 7.5, 0); tower.add(arm); tower.userData.arm = arm;
+  scene.userData.tower = tower;
+
+  /* fusée = votre entreprise */
+  rocket = new THREE.Group(); rocket.position.y = PAD_Y; scene.add(rocket);
+  const raw = [[0, 0], [.55, 0], [.82, .5], [.9, 1.5], [.9, 5.0], [.82, 5.9], [.6, 6.8], [.32, 7.6], [.08, 8.1], [0, 8.2]];
+  const prof = []; for (let i = 0; i <= 82; i++) { const y = i / 82 * 8.2; let j = 0; while (j < raw.length - 2 && raw[j + 1][1] < y) j++;
+    const [r0, y0] = raw[j], [r1, y1] = raw[j + 1]; prof.push(new THREE.Vector2(i === 0 ? 0 : lerp(r0, r1, y1 > y0 ? clamp((y - y0) / (y1 - y0)) : 1), y)); }
+  prof.splice(1, 0, new THREE.Vector2(.55, 0.0001));
+  const bodyTex = canvasTex(1024, 2048, (g, W, H) => {
+    g.fillStyle = '#f4f1ea'; g.fillRect(0, 0, W, H);
+    g.fillStyle = '#ff3b30'; g.fillRect(0, 0, W, H * .17);                 // nez rouge (haut du canvas = haut de la fusée)
+    g.fillStyle = '#0f2a52'; g.fillRect(0, H * .8, W, H * .2);              // base marine
+    g.fillStyle = '#f2b84b'; g.fillRect(0, H * .78, W, 26); g.fillRect(0, H * .17, W, 18);
+    g.fillStyle = '#0f2a52'; g.font = '900 108px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    const L = 'ENTREPRISE'.split(''), y0 = H * .29, y1 = H * .75;
+    L.forEach((c, i) => { g.save(); g.translate(W * .5, lerp(y0, y1, i / (L.length - 1))); g.scale(1.9, 1.02); g.fillText(c, 0, 0); g.restore(); });
+  });
+  bodyM = new THREE.MeshStandardMaterial({ map: bodyTex, roughness: .35, metalness: .1, envMapIntensity: .8 });
+  const body = new THREE.Mesh(new THREE.LatheGeometry(prof, 64, Math.PI, Math.PI * 2), bodyM); rocket.add(body);
+  portholeM = new THREE.MeshStandardMaterial({ color: '#203a5c', emissive: '#f2b84b', emissiveIntensity: .1, roughness: .1 });
+  const ph = new THREE.Mesh(new THREE.CylinderGeometry(.3, .3, .08, 32), portholeM); ph.rotation.x = Math.PI / 2; ph.position.set(0, 6.55, .7); rocket.add(ph);
+  const phr = new THREE.Mesh(new THREE.TorusGeometry(.32, .05, 8, 32), new THREE.MeshStandardMaterial({ color: '#f2b84b', metalness: .9, roughness: .25 })); phr.position.set(0, 6.55, .72); rocket.add(phr);
+  const finS = new THREE.Shape(); finS.moveTo(0, 0); finS.lineTo(1.3, -.6); finS.lineTo(1.3, .3); finS.lineTo(0, 2.0); finS.closePath();
+  const finG = new THREE.ExtrudeGeometry(finS, { depth: .1, bevelEnabled: false }); finG.translate(.82, .3, -.05);
+  const finM = new THREE.MeshStandardMaterial({ color: '#ff3b30', roughness: .4 });
+  for (let i = 0; i < 4; i++) { const f = new THREE.Mesh(finG, finM); f.rotation.y = i * Math.PI / 2 + Math.PI / 4; rocket.add(f); }
+  const noz = new THREE.Mesh(new THREE.CylinderGeometry(.42, .62, .55, 32, 1, true), new THREE.MeshStandardMaterial({ color: '#2b2f36', metalness: .8, roughness: .35, side: THREE.DoubleSide }));
+  noz.position.y = -.2; rocket.add(noz);
+  /* flammes */
+  const flG = new THREE.ConeGeometry(.55, 3.2, 24, 1, true); flG.translate(0, -1.6, 0); flG.rotateX(Math.PI);
+  flameO = new THREE.Mesh(flG, new THREE.MeshBasicMaterial({ color: '#ff6a1a', transparent: true, opacity: .85, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+  flameI = new THREE.Mesh(flG, new THREE.MeshBasicMaterial({ color: '#fff1b0', transparent: true, opacity: .95, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+  flameO.rotation.x = Math.PI; flameI.rotation.x = Math.PI; flameO.position.y = flameI.position.y = -.45; flameI.scale.set(.5, .6, .5);
+  flameO.position.y = -.45; rocket.add(flameO, flameI);
+  flameLight = new THREE.PointLight('#ff8a3a', 0, 40, 2); flameLight.position.y = -1; rocket.add(flameLight);
+  /* fumée au sol */
+  const NS = 500; smokeD = [];
+  const spos = new Float32Array(NS * 3);
+  for (let i = 0; i < NS; i++) { const a = rnd() * Math.PI * 2; smokeD.push({ a, sp: 2 + rnd() * 7, up: rnd() * 1.6, t0: 24.7 + rnd() * 3.0, life: 2.2 + rnd() * 1.5 }); }
+  const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(spos, 3));
+  smoke = new THREE.Points(sg, new THREE.PointsMaterial({ size: 3.2, map: dot, color: '#c9d2e0', transparent: true, opacity: .55, depthWrite: false })); smoke.frustumCulled = false; scene.add(smoke);
+  /* traînée */
+  const NT = 400; trailD = []; const tpos = new Float32Array(NT * 3);
+  for (let i = 0; i < NT; i++) trailD.push({ t0: 25.2 + i / NT * 10.8, dx: (rnd() - .5) * .6, dz: (rnd() - .5) * .6, grow: 1 + rnd() });
+  const tg = new THREE.BufferGeometry(); tg.setAttribute('position', new THREE.BufferAttribute(tpos, 3));
+  trail = new THREE.Points(tg, new THREE.PointsMaterial({ size: 2.4, map: dot, color: '#ffb36a', transparent: true, opacity: .5, depthWrite: false, blending: THREE.AdditiveBlending })); trail.frustumCulled = false; scene.add(trail);
+  /* citerne : budget formation OPCO / FAF */
+  tank = new THREE.Group(); tank.position.set(4.9, 0, -.6); scene.add(tank);
+  const white = new THREE.MeshStandardMaterial({ color: '#eef1f6', roughness: .3, metalness: .2, envMapIntensity: 1 });
+  const goldB = new THREE.MeshStandardMaterial({ color: '#f2b84b', metalness: .85, roughness: .25 });
+  const navyM = new THREE.MeshStandardMaterial({ color: '#0f2a52', roughness: .4, metalness: .2 });
+  const tb = new THREE.Mesh(new THREE.CapsuleGeometry(1.15, 2.6, 12, 48), white); tb.position.y = 2.95; tank.add(tb);
+  for (const y of [1.75, 4.15]) { const b = new THREE.Mesh(new THREE.TorusGeometry(1.16, .06, 10, 64), goldB); b.rotation.x = Math.PI / 2; b.position.y = y; tank.add(b); }
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(1.0, 1.25, .5, 48), navyM); base.position.y = .25; tank.add(base);
+  const valve = new THREE.Mesh(new THREE.CylinderGeometry(.18, .18, .5, 16), goldB); valve.rotation.z = Math.PI / 2; valve.position.set(-1.2, 1.3, .4); tank.add(valve);
+  /* grand panneau face caméra */
+  const panel = new THREE.Group(); panel.position.set(0, 3.2, 1.25); panel.rotation.y = .2; tank.add(panel);
+  const plTex = canvasTex(1024, 1024, (g, W, H) => {
+    roundRect(g, 8, 8, W - 16, H - 16, 70); g.fillStyle = '#0f2a52'; g.fill(); g.lineWidth = 16; g.strokeStyle = '#f2b84b'; g.stroke();
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillStyle = '#f2b84b'; g.font = '900 210px Inter, "DejaVu Sans", sans-serif'; g.fillText('€', W / 2, 165);
+    g.fillStyle = '#ffffff'; g.font = '900 104px Inter, "DejaVu Sans", sans-serif'; g.fillText('BUDGET', W / 2, 330); g.fillText('FORMATION', W / 2, 445);
+    g.fillStyle = '#f2b84b'; g.fillRect(150, 520, W - 300, 8);
+    g.fillStyle = '#ffd36b'; g.font = '900 150px Inter, "DejaVu Sans", sans-serif'; g.fillText('OPCO', W / 2, 625);
+    g.fillStyle = '#ffffff'; g.font = '800 62px Inter, "DejaVu Sans", sans-serif'; g.fillText('salariés', W / 2, 715);
+    g.fillStyle = '#ffd36b'; g.font = '900 150px Inter, "DejaVu Sans", sans-serif'; g.fillText('FAF', W / 2, 820);
+    g.fillStyle = '#ffffff'; g.font = '800 62px Inter, "DejaVu Sans", sans-serif'; g.fillText('non-salariés', W / 2, 910);
+  });
+  const pl = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 2.6), new THREE.MeshStandardMaterial({ map: plTex, roughness: .5, emissive: '#ffffff', emissiveMap: plTex, emissiveIntensity: .35 }));
+  panel.add(pl);
+  /* jauge sous le panneau */
+  const gBg = new THREE.Mesh(new THREE.BoxGeometry(2.1, .26, .04), new THREE.MeshStandardMaterial({ color: '#0a1220' })); gBg.position.set(0, -1.38, 0); panel.add(gBg);
+  tankWin = new THREE.Mesh(new THREE.BoxGeometry(1, .18, .05), new THREE.MeshBasicMaterial({ color: '#f2b84b' })); tankWin.geometry.translate(.5, 0, 0); tankWin.position.set(-1.0, -1.38, .02); panel.add(tankWin);
+  /* tuyau + carburant */
+  hoseCurve = new THREE.CatmullRomCurve3([new V3(3.75, 1.3, .5), new V3(3.75, .3, 2.4), new V3(2.5, .3, 3.7), new V3(1.0, 1.4, 3.5), new V3(.8, 1.5, 1.6), new V3(.65, 2.4, .6)]);
+  hose = new THREE.Mesh(new THREE.TubeGeometry(hoseCurve, 80, .14, 10, false), new THREE.MeshStandardMaterial({ color: '#1e2633', roughness: .6 })); scene.add(hose);
+  const coinTex = canvasTex(128, 128, g => { const r = g.createRadialGradient(54, 50, 6, 64, 64, 60); r.addColorStop(0, '#fff2b8'); r.addColorStop(.6, '#f2b84b'); r.addColorStop(1, '#b07a1e');
+    g.fillStyle = r; g.beginPath(); g.arc(64, 64, 58, 0, Math.PI * 2); g.fill(); g.lineWidth = 6; g.strokeStyle = '#8a5a10'; g.stroke();
+    g.fillStyle = '#7a4a00'; g.font = '900 78px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('€', 64, 68); });
+  fuel = new THREE.Group(); scene.add(fuel);
+  for (let i = 0; i < 26; i++) { const c = new THREE.Sprite(new THREE.SpriteMaterial({ map: coinTex, transparent: true, depthWrite: false, depthTest: false })); c.renderOrder = 10; c.scale.set(.9, .9, 1); fuel.add(c); }
+  const flowTex = canvasTex(1500, 170, g => { roundRect(g, 6, 6, 1488, 158, 70); g.font = '900 70px Inter, "DejaVu Sans", sans-serif'; g.fillStyle = '#f2b84b'; g.fill();
+    g.fillStyle = '#0f2a52'; g.font = '900 70px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('ENTREPRISE  ⬅  €  BUDGET FORMATION', 750, 90); });
+  fuel.userData.label = new THREE.Sprite(new THREE.SpriteMaterial({ map: flowTex, transparent: true, depthWrite: false, depthTest: false })); fuel.userData.label.renderOrder = 11; fuel.userData.label.scale.set(5.6, .64, 1); scene.add(fuel.userData.label);
+  /* panneau « expire le 31/12 » */
+  expireS = new THREE.Sprite(new THREE.SpriteMaterial({ map: canvasTex(720, 200, g => { roundRect(g, 6, 6, 708, 188, 40); g.fillStyle = '#ff3b30'; g.fill();
+    g.fillStyle = '#fff'; g.font = '900 84px Inter, "DejaVu Sans", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('EXPIRE LE 31/12', 360, 104); }), transparent: true, depthWrite: false }));
+  expireS.scale.set(3.0, .83, 1); expireS.position.set(4.9, 6.2, -.6); scene.add(expireS);
+  /* ratés moteur (bouffées) */
+  const NPf = 60, pp = new Float32Array(NPf * 3); const pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pp, 3));
+  puffs = new THREE.Points(pg, new THREE.PointsMaterial({ size: 1.6, map: dot, color: '#8a93a3', transparent: true, depthWrite: false })); puffs.frustumCulled = false; puffs.userData.d = [...Array(NPf)].map(() => ({ a: rnd() * 6.28, s: rnd(), k: Math.floor(rnd() * 3) })); scene.add(puffs);
+
+  /* compétences */
+  ['Intelligence artificielle', 'Webmarketing', 'SEO', 'Réseaux sociaux', 'Canva', 'Anglais pro', 'E-commerce', 'Google Ads'].forEach((label, i) => {
+    const m = document.createElement('canvas').getContext('2d'); m.font = '800 64px Inter, sans-serif';
+    const W = Math.ceil(m.measureText(label).width) + 140, H = 116;
+    const tex = canvasTex(W, H, g => { roundRect(g, 5, 5, W - 10, H - 10, 52); g.fillStyle = 'rgba(15,42,82,.95)'; g.fill(); g.lineWidth = 7; g.strokeStyle = '#f2b84b'; g.stroke();
+      g.fillStyle = '#f2b84b'; g.beginPath(); g.arc(56, H / 2, 13, 0, Math.PI * 2); g.fill();
+      g.fillStyle = '#fff'; g.font = '800 64px Inter, "DejaVu Sans", sans-serif'; g.textBaseline = 'middle'; g.fillText(label, 88, H / 2 + 3); });
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false })); s.userData = { w: W / H * .62, h: .62, a: i / 8 * Math.PI * 2 };
+    s.visible = false; scene.add(s); tags.push(s);
+  });
+}
+
+function rocketY(t) { const s = Math.max(0, t - 25.2); return PAD_Y + 1.4 * s * s + .6 * s * s * s; }
+
+const caps = [...document.querySelectorAll('.cap')], endEls = [...document.querySelectorAll('#end > *')];
+const $ = id => document.getElementById(id);
+function renderMain(t) {
+  t = clamp(t, 0, 39);
+  const LIFT = 25.2, IGN = 24.7, ry = rocketY(t);
+  const rumble = sstep(IGN - .1, LIFT, t) * (1 - sstep(28, 30, t));
+  const sput = [6.4, 6.9, 7.3].reduce((m, ts) => Math.max(m, Math.sin(Math.PI * clamp((t - ts) / .25))), 0);
+  const shake = rumble * .12 + sput * .04 + (t > 22.4 && t < 22.9 ? .05 * Math.exp(-(t - 22.4) * 8) : 0);
+  rocket.position.set(Math.sin(t * 61) * shake * .4 * (t < LIFT + .1 ? 1 : .3), ry, Math.cos(t * 53) * shake * .3 * (t < LIFT + .1 ? 1 : .3));
+  const ign = sstep(IGN - .05, IGN + .2, t), thrust = Math.max(ign * (.7 + .3 * sstep(LIFT, LIFT + .8, t)), sput * .35);
+  [flameO, flameI].forEach((f, i) => { f.visible = thrust > .01; const fl = 1 + .18 * Math.sin(t * 47 + i) + .12 * Math.sin(t * 83);
+    f.scale.set((i ? .5 : 1) * thrust * (1 + .08 * Math.sin(t * 61)), (i ? .6 : 1) * thrust * fl * (1 + sstep(LIFT, LIFT + 1.3, t) * .8), (i ? .5 : 1) * thrust); });
+  flameLight.intensity = thrust * 80;
+  /* ratés : petites bouffées grises */
+  { const a = puffs.geometry.attributes.position.array; let any = false;
+    puffs.userData.d.forEach((d, i) => { const ts = [6.4, 6.9, 7.3][d.k], s2 = t - ts; if (s2 < 0 || s2 > 1.4) { a[i * 3 + 1] = -100; return; } any = true;
+      const r = .4 + 2.2 * (1 - Math.exp(-s2 * 2)) * d.s; a[i * 3] = Math.cos(d.a) * r; a[i * 3 + 1] = PAD_Y + .2 + s2 * .6; a[i * 3 + 2] = Math.sin(d.a) * r; });
+    puffs.geometry.attributes.position.needsUpdate = true; puffs.visible = any; puffs.material.opacity = .5; }
+  const arm = scene.userData.tower.userData.arm; arm.rotation.y = sstep(23.6, 24.4, t) * -1.2; arm.position.x = 1.4 - sstep(23.6, 24.4, t) * .9;
+  padLights.forEach((l, i) => l.visible = Math.sin(t * 6 + i) > 0 || t > IGN);
+  /* citerne : arrive, alerte, se vide dans la fusée */
+  const tin = eout(clamp((t - 8.2) / 1.2));
+  tank.position.set(lerp(30, 4.9, tin), 0, -.6); tank.visible = t > 8.1 && t < 29;
+  const transfer = clamp((t - 18.2) / 4.0), level = 1 - .92 * eio(transfer);
+  tankWin.scale.x = Math.max(.01, 2.0 * level);
+  tankWin.material.color.set(t > 13.2 && t < 17 && Math.sin(t * 12) > 0 ? '#ff3b30' : '#f2b84b');
+  expireS.visible = t > 9.6 && t < 18.2; expireS.position.x = tank.position.x;
+  expireS.material.opacity = (t > 13.2 && t < 17 ? (Math.sin(t * 10) > 0 ? 1 : .35) : 1) * sstep(9.6, 10.1, t) * (1 - sstep(17.7, 18.2, t));
+  const hk = sstep(17.4, 18.2, t) * (1 - sstep(23.0, 23.6, t));
+  hose.visible = hk > .01; hose.geometry.setDrawRange(0, Math.floor(hose.geometry.index.count * hk / 3) * 3);
+  { const on = t > 18.1 && t < 22.6, op = sstep(18.1, 18.5, t) * (1 - sstep(22.1, 22.6, t)); fuel.visible = on;
+    if (on) fuel.children.forEach((c, i) => { const u = ((i / 26 + (t - 18.1) * .42) % 1 + 1) % 1; const p = hoseCurve.getPointAt(Math.min(u / .85, 1));
+      if (u > .85) { const k = (u - .85) / .15; p.lerp(new V3(0, PAD_Y + 2.6, .95), k); p.y += Math.sin(Math.PI * k) * .8; }
+      c.position.set(p.x, p.y + .38, p.z); const sc = .9 * (1 - Math.max(0, (u - .93) / .07)); c.scale.set(sc, sc, 1); c.material.opacity = op * Math.min(1, u * 10); });
+    const lb = fuel.userData.label; lb.visible = false; lb.material.opacity = op; lb.position.set(2.2, .1 + .05 * Math.sin(t * 4), 5.2);
+    const lsc = eback(clamp((t - 18.1) / .5)); lb.scale.set(5.6 * lsc, .64 * lsc, 1); }
+  portholeM.emissiveIntensity = .1 + 2.5 * sstep(19, 22.4, t);
+  bodyM.emissive = bodyM.emissive || new THREE.Color(); bodyM.emissive.set('#f2b84b'); bodyM.emissiveIntensity = .25 * Math.sin(Math.PI * clamp((t - 22.3) / .6));
+  /* fumée & traînée */
+  const sa = smoke.geometry.attributes.position.array; let anyS = false;
+  smokeD.forEach((d, i) => { const s2 = t - d.t0; if (s2 < 0 || s2 > d.life) { sa[i * 3 + 1] = -100; return; } anyS = true;
+    const r = 1 + d.sp * (1 - Math.exp(-s2 * 1.2)); sa[i * 3] = Math.cos(d.a) * r; sa[i * 3 + 1] = .6 + d.up * s2 + .3 * s2; sa[i * 3 + 2] = Math.sin(d.a) * r; });
+  smoke.geometry.attributes.position.needsUpdate = true; smoke.visible = anyS; smoke.material.opacity = .5;
+  const ta = trail.geometry.attributes.position.array;
+  trailD.forEach((d, i) => { const s2 = t - d.t0; if (s2 < 0) { ta[i * 3 + 1] = -100; return; } const y = rocketY(d.t0) - 1.2;
+    ta[i * 3] = d.dx * (1 + s2 * d.grow); ta[i * 3 + 1] = y - s2 * .5; ta[i * 3 + 2] = d.dz * (1 + s2 * d.grow); });
+  trail.geometry.attributes.position.needsUpdate = true; trail.material.opacity = .45;
+  /* compétences : jaillissent du carburant et entrent dans la fusée */
+  tags.forEach((s2, i) => {
+    const ts = 18.7 + i * .42, k = clamp((t - ts) / 1.1); s2.visible = t > ts && k < 1; if (!s2.visible) return;
+    const src = hoseCurve.getPointAt(.35 + .1 * (i % 3)), up = new V3((i % 2 ? 1 : -1) * 2.4, 3.2 + (i % 4) * .7, 1.5);
+    const mid = src.clone().add(up), dst = new V3(0, PAD_Y + 5.5, .8);
+    const p = k < .55 ? src.clone().lerp(mid, eout(k / .55)) : mid.clone().lerp(dst, eio((k - .55) / .45));
+    s2.position.copy(p); const sc = Math.max(.001, eback(clamp(k / .3)) * (k > .8 ? (1 - (k - .8) / .2) : 1)); s2.scale.set(s2.userData.w * sc, s2.userData.h * sc, 1);
+  });
+  const alt = clamp((ry - 10) / 150);
+  skyU.bot.value.copy(C('#1d3a6e')).lerp(C('#0b1530'), alt); skyU.k.value = alt * .6; stars.material.opacity = .45 + .5 * alt;
+  /* caméra : plan large quand la citerne est là */
+  const kc = sstep(LIFT, LIFT + 2.3, t), wide = sstep(8, 9.5, t) * (1 - sstep(23.5, 25, t));
+  const focusY = lerp(lerp(5.2, 4.6, wide), ry + 3.5, kc);
+  const camP = new V3(lerp(lerp(9, 8.5, wide), 10, kc), lerp(4.2 + wide * .3, focusY - 3.5 + 1.5 * kc, kc), lerp(lerp(lerp(22, 18, sstep(0, 8, t)), 18.5, wide), 26, kc));
+  const lookX = lerp(0, 2.2, wide) * (1 - kc);
+  if (t > 29.5) { camP.y = ry * .9 - 6; camP.z = 34; camP.x = 12; }
+  camP.x += Math.sin(t * 71) * shake * .8; camP.y += Math.cos(t * 67) * shake * .8;
+  camera.position.copy(camP); camera.lookAt(lookX, focusY, 0); sky.position.copy(camera.position); stars.position.copy(camera.position);
+  renderer.render(scene, camera);
+
+  /* ---------- habillage HTML ---------- */
+  const bigK = sstep(.2, .6, t) * (1 - sstep(3.0, 3.4, t));
+  $('big').style.opacity = bigK.toFixed(3);
+  $('dim').style.opacity = (.82 * (1 - sstep(3.0, 3.6, t))).toFixed(3);
+  $('big').style.transform = `translateY(-50%) scale(${(1 + .04 * Math.sin(t * 12) * sstep(2.2, 2.4, t) + (1 - sstep(.2, .6, t)) * .2).toFixed(3)})`;
+  $('bigN').textContent = Math.round(lerp(365, daysLeft, eout(clamp((t - .4) / 1.9))));
+  $('vig').style.opacity = (Math.max(0, Math.sin(t * Math.PI * 2)) * .8 * (sstep(2, 2.4, t) * (1 - sstep(3.2, 3.6, t)) + sstep(13.2, 13.6, t) * (1 - sstep(16.8, 17.2, t)))).toFixed(3);
+  $('badge').style.opacity = (sstep(3.2, 3.7, t) * (1 - sstep(29.6, 30.0, t))).toFixed(3);
+  $('badge').style.transform = `scale(${(1 + .06 * Math.max(0, Math.sin(t * Math.PI * 2)) * (t < 18 ? 1 : 0)).toFixed(3)})`;
+  $('drain').style.width = (t < 22.4 ? lerp(100, 6, clamp((t - 3.2) / 15)) : 100).toFixed(1) + '%';
+  $('drain').style.background = t >= 22.4 ? '#f2b84b' : '#ff3b30';
+  /* jauge du réservoir de la fusée */
+  $('gauge').style.opacity = (sstep(4.0, 4.5, t) * (1 - sstep(24.4, 24.8, t))).toFixed(3);
+  const pct = Math.round(100 * eio(transfer)), full = t >= 22.4;
+  $('lock').textContent = full ? '🚀' : '⛽';
+  $('gt').innerHTML = full ? "Plein effectué · prêt au décollage" : (pct > 0 ? "Réservoir de l'entreprise · remplissage" : "Réservoir de l'entreprise · vide");
+  $('gs').innerHTML = full ? '€ Budget formation OPCO / FAF transformé en compétences' : `Carburant : ${pct} % d'euros de formation`;
+  const gf = $('gfill');
+  if (pct === 0) { gf.style.width = '4%'; gf.style.background = Math.sin(t * 10) > 0 ? '#ff3b30' : '#7a2622'; }
+  else { gf.style.width = Math.max(4, pct) + '%'; gf.style.background = 'linear-gradient(90deg,#f2b84b,#ffe08a)'; }
+  const cdEl = $('cd'); let cdv = '', cdo = 0;
+  for (const [ts, v] of [[23.7, '3'], [24.2, '2'], [24.7, '1']]) { const s2 = t - ts; if (s2 >= 0 && s2 < .5) { cdv = v; cdo = (1 - s2 / .5) ** .6; cdEl.style.transform = `translateY(-50%) scale(${(1.25 - s2 * .6).toFixed(3)})`; } }
+  cdEl.textContent = cdv; cdEl.style.opacity = cdo.toFixed(3);
+  $('flash').style.opacity = (t > LIFT - .05 && t < LIFT + .4 ? .6 * (1 - (t - LIFT + .05) / .45) : 0).toFixed(3);
+  caps.forEach(cap => { const a0 = +cap.dataset.in, a1 = +cap.dataset.out; [...cap.children].forEach((el, i) => {
+    const a = sstep(a0 + i * .18, a0 + i * .18 + .45, t), d = 1 - sstep(a1 - .35, a1, t);
+    el.style.opacity = (a * d).toFixed(3); el.style.transform = `translateX(calc(var(--u) * ${((1 - a) * -2).toFixed(2)}))`; }); });
+  endEls.forEach(el => { const a = sstep(+el.dataset.in, +el.dataset.in + .5, t); el.style.opacity = a.toFixed(3); el.style.transform = `translateY(calc(var(--u) * ${((1 - a) * 1.5).toFixed(2)}))`; });
+  /* sous-titres simplifiés (texte du présentateur) */
+  const SUBS = [[.4, 3.2, `Il reste <b>${daysLeft} jours</b> avant le 31 décembre.`], [3.8, 7.8, 'La fusée, c\'est <b>l\'entreprise</b>. Son réservoir est vide.'],
+    [8.2, 12.9, 'Le carburant, c\'est le <b>budget formation</b> : OPCO ou FAF.'], [13.2, 17.0, 'Pas utilisé avant le 31 décembre ? Il est <b>perdu</b>.'],
+    [17.3, 22.7, 'Ces <b>euros</b> paient vos formations : on fait le plein.'], [23.6, 25.2, '3, 2, 1…'],
+    [25.4, 30.0, 'Nouvelles compétences : <b>l\'entreprise décolle !</b>'], [30.4, 38.6, `<b>Alatere Web</b> s'occupe de tout.`]];
+  let so = 0, sh = '';
+  for (const [a, b, h] of SUBS) if (t >= a - .2 && t <= b + .2) { so = sstep(a - .2, a + .1, t) * (1 - sstep(b - .1, b + .2, t)); sh = h; }
+  const sub = $('sub'); if (sub.dataset.h !== sh) { sub.innerHTML = sh; sub.dataset.h = sh; } sub.style.opacity = so.toFixed(3);
+}
+
+const THEMES = [['🤖', 'Intelligence artificielle'], ['📈', 'Webmarketing'], ['🔎', 'SEO · référencement'], ['🎯', 'Google Ads'], ['💬', 'Réseaux sociaux'],
+  ['🎨', 'Canva'], ['🇬🇧', 'Anglais professionnel'], ['🛒', 'E-commerce'], ['📣', 'Communication digitale'], ['📊', 'Bureautique']];
+function buildRoller() { const d = $('drum'); THEMES.forEach(([ic, tx]) => { const e = document.createElement('div'); e.className = 'it'; e.innerHTML = `<i>${ic}</i><span>${tx}</span>`; d.appendChild(e); }); }
+function updateRoller(tm) {
+  const vis = sstep(16.6, 17.2, tm) * (1 - sstep(29.8, 30.3, tm)); $('roller').style.opacity = vis.toFixed(3); if (vis <= 0) return;
+  const u = parseFloat(getComputedStyle(stage).getPropertyValue('--u')), n = THEMES.length, step = 360 / n, R = 3.6 * u / (2 * Math.tan(Math.PI / n));
+  const rot = (tm - 16.6) * 38;      // degrés par seconde
+  [...$('drum').children].forEach((e, i) => { const a = i * step - rot; e.style.transform = `rotateX(${a}deg) translateZ(${R}px)`;
+    const fr = ((a % 360) + 540) % 360 - 180, front = Math.abs(fr) < step / 2;
+    e.style.background = front ? 'linear-gradient(90deg,#f2b84b,#ffd36b)' : 'transparent'; e.style.color = front ? '#0f2a52' : '#fff'; });
+}
+function renderAt(T) {
+  T = clamp(T, 0, DURATION);
+  const tm = Math.max(0, T - INTRO);
+  renderMain(tm); updateRoller(tm);
+  /* intro : la question + le bloc-notes */
+  const io = 1 - sstep(INTRO - .5, INTRO, T); $('intro').style.opacity = io.toFixed(3); $('intro').style.display = io > 0 ? 'flex' : 'none';
+  if (io > 0) {
+    [...$('intro').querySelectorAll('.q > div')].forEach((e, i) => { const a = sstep(.3 + i * .4, .9 + i * .4, T); e.style.opacity = a.toFixed(3); e.style.transform = `translateY(calc(var(--u) * ${((1 - a) * 2).toFixed(2)}))`; });
+    const cl = $('clip'), ca = eback(clamp((T - .5) / .8)); cl.style.transform = `scale(${Math.max(.01, ca).toFixed(3)}) rotate(${(-6 * (1 - clamp((T - .5) / .8)) + 1.5 * Math.sin(T * 2)).toFixed(2)}deg)`;
+    cl.querySelectorAll('.row').forEach(r => r.style.opacity = sstep(1.2 + r.dataset.i * .35, 1.5 + r.dataset.i * .35, T).toFixed(3));
+    const qm = $('qm'), qa = eback(clamp((T - 3.0) / .5)); qm.style.transformOrigin = '310px 400px'; qm.style.transform = `scale(${(Math.max(.01, qa) * (1 + .08 * Math.sin(T * 9) * sstep(3.5, 3.8, T))).toFixed(3)})`;
+  }
+  $('fade').style.opacity = (1 - sstep(0, .35, T)).toFixed(3);
+}
+
+async function main() {
+  try { await document.fonts.load('900 100px Inter'); await document.fonts.load('800 64px Inter'); } catch (e) {}
+  await document.fonts.ready;
+  build(); buildRoller(); resize(); addEventListener('resize', resize);
+  window.__render = renderAt; window.__ready = true;
+  if (RENDER) { $('sound').style.display = 'none'; renderAt(0); return; }
+  const music = $('music'), hint = $('sound'); let t0 = performance.now(), pt = 0;
+  stage.addEventListener('click', () => { t0 = performance.now(); hint.style.display = 'none'; try { music.currentTime = 0; music.play(); } catch (e) {} });
+  const loop = () => { const np = ((performance.now() - t0) / 1000) % DURATION;
+    if (np < pt && hint.style.display === 'none') { try { music.currentTime = 0; music.play(); } catch (e) {} }
+    pt = np; renderAt(pt); requestAnimationFrame(loop); };
+  loop();
+}
+main();
+</script>
+</body>
+</html>
