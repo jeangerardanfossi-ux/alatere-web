@@ -92,12 +92,13 @@
   .portrait #gauge { left:calc(var(--u)*3.2); right:calc(var(--u)*7); width:auto; top:calc(var(--u)*19) !important; }
   .portrait #gauge .t { font-size:calc(var(--u)*1.4); } .portrait #gauge .box { height:calc(var(--u)*2.6); }
   .portrait #sub { top:calc(var(--u)*25.6); bottom:auto; left:calc(var(--u)*3.2); right:calc(var(--u)*7); transform:none; max-width:none; white-space:normal; font-size:calc(var(--u)*2.7); padding:calc(var(--u)*.9) calc(var(--u)*1.6); }
-  .portrait #roller { left:calc(var(--u)*3.2); right:calc(var(--u)*7); width:auto; top:auto; bottom:calc(var(--u)*21.5); }
+  .portrait #sub.low { top:auto; bottom:calc(var(--u)*21.5); }
+  .portrait #roller { left:calc(var(--u)*3.2); right:calc(var(--u)*7); width:auto; top:auto; bottom:calc(var(--u)*31); }
   .portrait #roller .h { font-size:calc(var(--u)*1.6); } .portrait #roller .win { height:calc(var(--u)*11.5); } .portrait #roller .it { font-size:calc(var(--u)*2.3); }
   .portrait #big .num { font-size:calc(var(--u)*17); } .portrait #big .pre { font-size:calc(var(--u)*2.4); } .portrait #big .post { font-size:calc(var(--u)*3.4); }
   .portrait #cd { font-size:calc(var(--u)*30); }
   .portrait #intro { flex-direction:column; justify-content:center; gap:calc(var(--u)*4); padding:calc(var(--u)*13) calc(var(--u)*4) calc(var(--u)*21); }
-  .portrait #intro .q { width:100%; } .portrait #intro .q .a { font-size:calc(var(--u)*2.2); } .portrait #intro .q .b { font-size:calc(var(--u)*4.6); }
+  .portrait #intro .q { width:100%; order:2; } .portrait #intro .q .a { font-size:calc(var(--u)*2.2); } .portrait #intro .q .b { font-size:calc(var(--u)*4.6); }
   .portrait #intro svg { width:calc(var(--u)*30); }
   .portrait #end { left:calc(var(--u)*3.2); right:calc(var(--u)*7); top:auto; bottom:calc(var(--u)*24); transform:none; }
   .portrait #end .big { font-size:calc(var(--u)*7.4); } .portrait #end .sub { font-size:calc(var(--u)*3.2); }
@@ -220,7 +221,7 @@ function resize() {
   camera.fov = clamp(2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(34)) / camera.aspect) * 180 / Math.PI, 30, 85);
   const portrait = h > w; stage.classList.toggle('portrait', portrait);
   if (!portrait) camera.setViewOffset(w, h, -w * .16, 0, w, h);
-  else { camera.fov = 84; camera.setViewOffset(w, h, 0, h * .005, w, h); }
+  else { camera.fov = 88; camera.setViewOffset(w, h, 0, h * .1, w, h); }
   camera.updateProjectionMatrix();
   stage.style.setProperty('--u', (portrait ? w / 56 : Math.min(w, h * 16 / 9) / 100) + 'px');
 }
@@ -472,7 +473,7 @@ function renderMain(t) {
     [25.4, 30.0, 'Nouvelles compétences : <b>l\'entreprise décolle !</b>'], [30.4, 38.6, `<b>Alatere Web</b> s'occupe de tout.`]];
   let so = 0, sh = '';
   for (const [a, b, h] of SUBS) if (t >= a - .2 && t <= b + .2) { so = sstep(a - .2, a + .1, t) * (1 - sstep(b - .1, b + .2, t)); sh = h; }
-  const sub = $('sub'); if (sub.dataset.h !== sh) { sub.innerHTML = sh; sub.dataset.h = sh; } sub.style.opacity = so.toFixed(3);
+  const sub = $('sub'); if (sub.dataset.h !== sh) { sub.innerHTML = sh; sub.dataset.h = sh; } sub.classList.toggle('low', t < 30.3); sub.style.opacity = so.toFixed(3);
 }
 
 const THEMES = [['🤖', 'Intelligence artificielle'], ['📈', 'Webmarketing'], ['🔎', 'SEO · référencement'], ['🎯', 'Google Ads'], ['💬', 'Réseaux sociaux'],
